@@ -1,0 +1,6 @@
+name: borealis-ai
+recipe: pantheon
+config:
+  framework: wordpress
+  site: borealis-ai
+  id: 7c6ad968-c37a-40d5-8591-e6c85d4abc7f
