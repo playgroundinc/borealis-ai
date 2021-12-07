@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-<div class="page__content">
+<div class="page__content bg-black">
     <?php 
     if ( have_posts() ) : 
         while ( have_posts() ) : 
