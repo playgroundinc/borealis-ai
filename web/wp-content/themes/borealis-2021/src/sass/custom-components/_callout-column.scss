@@ -1,0 +1,28 @@
+.callout-column {
+    height: calc(86.84% + 94px);
+    max-height: 100%;
+    @include lg {
+        min-height: 0;
+    }
+    &__image {
+        @include lg {
+            // Leaving the 100% as a fallback for IE (not technically supported, but don't want to leave her out.
+            padding-top: 100%;
+            padding-top: clamp(200px, 100%, 500px);
+            max-height: 500px;
+            overflow: hidden;
+        }
+        background-size: cover;
+        background-position: center;
+        border-radius: 14px;
+        max-height: 100%;
+    }
+}
+
+.callout-container {
+    .slider-block {
+        padding-top: calc(86.84% + 94px);
+        border-radius: 0;
+        background: transparent;
+    }
+}

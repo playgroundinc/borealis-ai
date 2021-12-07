@@ -1,0 +1,75 @@
+.feature-strip {
+    &__circle {
+        background: color('black');
+        opacity: 0.6;
+        border-radius: 50%;
+        margin: auto;
+        height: $mobile_container_width;
+        width: $mobile_container_width;
+        max-width: 520px;
+        max-height: 520px;
+        @include md {
+            height: $circle-size;
+            width: $circle-size;
+        }
+        @include xl {
+            height: $circle-size-xl;
+            width: $circle-size-xl;
+        }
+        @include xxl {
+            height: $circle-size-xxl;
+            width: $circle-size-xxl;
+        }
+    }
+    &__image-container {
+        position: relative;
+        padding-bottom: 0;
+        @include md {
+            padding-top: $navigation-allowance-mobile;
+        }
+        @include xl {
+            padding-top: $navigation-allowance;
+        }
+    }
+    &__image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: cover;
+        height: 100%;
+        max-width: 522px;
+        max-height: 522px;
+        @include md {
+            height: calc(100% - #{$navigation-allowance-mobile} + 4px);
+            width: $circle-size;
+        }
+        @include xl {
+            height: calc(100%- #{$navigation-allowance} + 2px);
+            width: $circle-size-xl;
+        }
+    }
+    &__content {
+        @include lg {
+            padding-left: 8.33%;
+        }
+        @include xl {
+            padding-left: 0;
+        }
+    }
+    .wp-block-buttons .btn {
+        text-align: left;
+    }
+}
+
+.block--black,
+.block--grey {
+    .feature-strip__circle {
+        background-color: color('white');
+        opacity: 0.4;
+    }
+}

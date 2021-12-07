@@ -1,0 +1,598 @@
+# Copyright (C) 2017 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2021-04-27 12:43-0400\n"
+"PO-Revision-Date: 2021-04-27 12:44-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-KeywordsList: __;esc_html_e;esc_attr_e\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: scripts\n"
+"X-Poedit-SearchPathExcluded-2: src\n"
+"X-Poedit-SearchPathExcluded-3: dist\n"
+
+#: 404.php:23
+msgid "404"
+msgstr "404"
+
+#: 404.php:32
+msgid "Back to Homepage"
+msgstr "Retour à la page d’accueil"
+
+#: footer.php:42
+msgid "Head Office"
+msgstr "Siège social"
+
+#: footer.php:49
+msgid "Tel"
+msgstr "Tél"
+
+#: footer.php:52 inc/classes/class-locations.php:154
+msgid "Fax"
+msgstr "Téléc"
+
+#: footer.php:57
+msgid "Link to Facebook"
+msgstr "Lien vers Facebook"
+
+#: footer.php:58
+msgid "Link to Instagram"
+msgstr "Lien vers Instagram"
+
+#: footer.php:59
+msgid "Link to LinkedIn"
+msgstr "Lien vers LinkedIn"
+
+#: footer.php:60
+msgid "Link to Twitter"
+msgstr "Lien vers Twitter"
+
+#: footer.php:61
+msgid "Link to YouTube"
+msgstr "Lien vers YouTube"
+
+#: footer.php:89
+msgid "Trimac Transportation"
+msgstr "Trimac Transportation"
+
+#: header.php:66
+msgid "Skip to content"
+msgstr "Passer au contenu"
+
+#: header.php:79
+msgid "Open or close menu"
+msgstr ""
+
+#: header.php:139
+msgid "Search"
+msgstr "Rechercher"
+
+#: inc/classes/class-locations.php:35
+msgid "Canada"
+msgstr "Canada"
+
+#: inc/classes/class-locations.php:36
+msgid "United States"
+msgstr "États-Unis"
+
+#: inc/classes/class-locations.php:39
+msgid "Alberta"
+msgstr "Alberta"
+
+#: inc/classes/class-locations.php:40
+msgid "British Columbia"
+msgstr "Colombie-Britannique"
+
+#: inc/classes/class-locations.php:41
+msgid "Manitoba"
+msgstr "Manitoba"
+
+#: inc/classes/class-locations.php:42
+msgid "New Brunswick"
+msgstr "Nouveau-Brunswick"
+
+#: inc/classes/class-locations.php:43
+msgid "Newfoundland and Labrador"
+msgstr "Terre-Neuve-et-Labrador"
+
+#: inc/classes/class-locations.php:44
+msgid "Northwest Territories"
+msgstr "Territoires du Nord-Ouest"
+
+#: inc/classes/class-locations.php:45
+msgid "Nova Scotia"
+msgstr "Nouvelle-Écosse"
+
+#: inc/classes/class-locations.php:46
+msgid "Nunavut"
+msgstr "Nunavut"
+
+#: inc/classes/class-locations.php:47
+msgid "Ontario"
+msgstr "Ontario"
+
+#: inc/classes/class-locations.php:48
+msgid "Prince Edward Island"
+msgstr "Île-du-Prince-Édouard"
+
+#: inc/classes/class-locations.php:49
+msgid "Quebec"
+msgstr "Québec"
+
+#: inc/classes/class-locations.php:50
+msgid "Saskatchewan"
+msgstr "Saskatchewan"
+
+#: inc/classes/class-locations.php:51
+msgid "Yukon Territory"
+msgstr "Yukon Territoire"
+
+#: inc/classes/class-locations.php:54
+msgid "Alabama"
+msgstr "Alabama"
+
+#: inc/classes/class-locations.php:55
+msgid "Alaska"
+msgstr "Alaska"
+
+#: inc/classes/class-locations.php:56
+msgid "Arizona"
+msgstr "Arizona"
+
+#: inc/classes/class-locations.php:57
+msgid "Arkansas"
+msgstr "Arkansas"
+
+#: inc/classes/class-locations.php:58
+msgid "California"
+msgstr "Californie"
+
+#: inc/classes/class-locations.php:59
+msgid "Colorado"
+msgstr "Colorado"
+
+#: inc/classes/class-locations.php:60
+msgid "Connecticut"
+msgstr "Connecticut"
+
+#: inc/classes/class-locations.php:61
+msgid "Delaware"
+msgstr "Delaware"
+
+#: inc/classes/class-locations.php:62
+msgid "District Of Columbia"
+msgstr "L’état de Washington"
+
+#: inc/classes/class-locations.php:63
+msgid "Florida"
+msgstr "Floride"
+
+#: inc/classes/class-locations.php:64
+msgid "Georgia"
+msgstr "Géorgie"
+
+#: inc/classes/class-locations.php:65
+msgid "Hawaii"
+msgstr "Hawaï"
+
+#: inc/classes/class-locations.php:66
+msgid "Idaho"
+msgstr "Idaho"
+
+#: inc/classes/class-locations.php:67
+msgid "Illinois"
+msgstr "Illinois"
+
+#: inc/classes/class-locations.php:68
+msgid "Indiana"
+msgstr "Indiana"
+
+#: inc/classes/class-locations.php:69
+msgid "Iowa"
+msgstr "Iowa"
+
+#: inc/classes/class-locations.php:70
+msgid "Kansas"
+msgstr "Kansas"
+
+#: inc/classes/class-locations.php:71
+msgid "Kentucky"
+msgstr "Kentucky"
+
+#: inc/classes/class-locations.php:72
+msgid "Louisiana"
+msgstr "Louisiane"
+
+#: inc/classes/class-locations.php:73
+msgid "Maine"
+msgstr "Maine"
+
+#: inc/classes/class-locations.php:74
+msgid "Maryland"
+msgstr "Maryland"
+
+#: inc/classes/class-locations.php:75
+msgid "Massachusetts"
+msgstr "Massachusetts"
+
+#: inc/classes/class-locations.php:76
+msgid "Michigan"
+msgstr "Michigan"
+
+#: inc/classes/class-locations.php:77
+msgid "Minnesota"
+msgstr "Minnesota"
+
+#: inc/classes/class-locations.php:78
+msgid "Mississippi"
+msgstr "Mississippi"
+
+#: inc/classes/class-locations.php:79
+msgid "Missouri"
+msgstr "Missouri"
+
+#: inc/classes/class-locations.php:80
+msgid "Montana"
+msgstr "Montana"
+
+#: inc/classes/class-locations.php:81
+msgid "Nebraska"
+msgstr "Nebraska"
+
+#: inc/classes/class-locations.php:82
+msgid "Nevada"
+msgstr "Nevada"
+
+#: inc/classes/class-locations.php:83
+msgid "New Hampshire"
+msgstr "New Hampshire"
+
+#: inc/classes/class-locations.php:84
+msgid "New Jersey"
+msgstr "New Jersey"
+
+#: inc/classes/class-locations.php:85
+msgid "New Mexico"
+msgstr "Nouveau-Mexique"
+
+#: inc/classes/class-locations.php:86
+msgid "New York"
+msgstr "L’état de New York"
+
+#: inc/classes/class-locations.php:87
+msgid "North Carolina"
+msgstr "Caroline du Nord"
+
+#: inc/classes/class-locations.php:88
+msgid "North Dakota"
+msgstr "Dakota du Nord"
+
+#: inc/classes/class-locations.php:89
+msgid "Ohio"
+msgstr "Ohio"
+
+#: inc/classes/class-locations.php:90
+msgid "Oklahoma"
+msgstr "Oklahoma"
+
+#: inc/classes/class-locations.php:91
+msgid "Oregon"
+msgstr "Oregon"
+
+#: inc/classes/class-locations.php:92
+msgid "Pennsylvania"
+msgstr "Pennsylvanie"
+
+#: inc/classes/class-locations.php:93
+msgid "Rhode Island"
+msgstr "Rhode Island"
+
+#: inc/classes/class-locations.php:94
+msgid "South Carolina"
+msgstr "Caroline du Sud"
+
+#: inc/classes/class-locations.php:95
+msgid "South Dakota"
+msgstr "Dakota du Sud"
+
+#: inc/classes/class-locations.php:96
+msgid "Tennessee"
+msgstr "Tennessee"
+
+#: inc/classes/class-locations.php:97
+msgid "Texas"
+msgstr "Texas"
+
+#: inc/classes/class-locations.php:98
+msgid "Utah"
+msgstr "Utah"
+
+#: inc/classes/class-locations.php:99
+msgid "Vermont"
+msgstr "Vermont"
+
+#: inc/classes/class-locations.php:100
+msgid "Virginia"
+msgstr "Virginie"
+
+#: inc/classes/class-locations.php:101
+msgid "Washington"
+msgstr "L’état de Washington"
+
+#: inc/classes/class-locations.php:102
+msgid "West Virginia"
+msgstr "Virginie-Occidentale"
+
+#: inc/classes/class-locations.php:103
+msgid "Wisconsin"
+msgstr "Wisconsin"
+
+#: inc/classes/class-locations.php:104
+msgid "Wyoming"
+msgstr "Wyoming"
+
+#: inc/classes/class-locations.php:151
+msgid "Phone"
+msgstr "Téléphone"
+
+#: inc/classes/class-locations.php:167
+msgid "Hours"
+msgstr "Heures d’ouverture"
+
+#: inc/classes/class-locations.php:182
+msgid "Services"
+msgstr "Services"
+
+#: inc/classes/class-locations.php:267
+msgid "Open in Maps"
+msgstr "Ouvrir dans Maps"
+
+#: inc/classes/class-pagination.php:31
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: inc/classes/class-pagination.php:63
+msgid "Next page"
+msgstr "Page suivante"
+
+#: inc/classes/class-register-cpt.php:19
+msgid "This is the example "
+msgstr "Ceci est l’exemple "
+
+#: inc/classes/class-register-cpt.php:43 inc/classes/class-register-cpt.php:103
+msgid "All "
+msgstr "Toute "
+
+#: inc/classes/class-register-cpt.php:44
+msgid "Add New"
+msgstr "Ajouter un nouveau"
+
+#: inc/classes/class-register-cpt.php:45 inc/classes/class-register-cpt.php:108
+msgid "Add New "
+msgstr "Ajouter un nouveau "
+
+#: inc/classes/class-register-cpt.php:46
+msgid "Edit"
+msgstr "Éditer"
+
+#: inc/classes/class-register-cpt.php:47 inc/classes/class-register-cpt.php:106
+msgid "Edit "
+msgstr "Éditer "
+
+#: inc/classes/class-register-cpt.php:48
+msgid "New "
+msgstr "Nouveau "
+
+#: inc/classes/class-register-cpt.php:49
+msgid "View "
+msgstr "Voir "
+
+#: inc/classes/class-register-cpt.php:50 inc/classes/class-register-cpt.php:102
+msgid "Search "
+msgstr "Rechercher "
+
+#: inc/classes/class-register-cpt.php:51
+msgid "Nothing found in the Database."
+msgstr "Rien trouvé dans la base de données."
+
+#: inc/classes/class-register-cpt.php:52
+msgid "Nothing found in Trash"
+msgstr "Rien trouvé dans la poubelle"
+
+#: inc/classes/class-register-cpt.php:104
+#: inc/classes/class-register-cpt.php:105
+msgid "Parent "
+msgstr "Parente "
+
+#: inc/classes/class-register-cpt.php:107
+msgid "Update "
+msgstr "Mettre à jour "
+
+#: inc/classes/class-register-cpt.php:109
+msgid "New Custom "
+msgstr "Nouvelle coutume "
+
+#: inc/custom-menus/menus.php:12
+msgid "Header Main Menu"
+msgstr "Menu principal header"
+
+#: inc/custom-menus/menus.php:13
+msgid "Footer Main Menu"
+msgstr "Menu principal footer"
+
+#: inc/custom-menus/menus.php:14
+msgid "Footer Legal Menu"
+msgstr "Menu juridique"
+
+#: inc/custom-menus/menus.php:15
+msgid "Footer Secondary Menu"
+msgstr "Menu secondaire footer"
+
+#: inc/gutenberg.php:29
+msgid "Carousels"
+msgstr "Carousels"
+
+#: inc/gutenberg.php:33
+msgid "Containers"
+msgstr "Conteneurs"
+
+#: inc/gutenberg.php:37
+msgid "Forms"
+msgstr "Formes"
+
+#: inc/gutenberg.php:41
+msgid "Page Strips"
+msgstr "Bandes de page"
+
+#: inc/gutenberg.php:45
+msgid "Specialty Blocks"
+msgstr "Blocs de spécialité"
+
+#: inc/gutenberg/accordion/render-accordion-row-block.php:53
+msgid "Expand or collapse item"
+msgstr ""
+
+#: inc/gutenberg/callouts/render-callout-container-block.php:103
+#: inc/gutenberg/slider/render-body-copy-slider-container-block.php:70
+#: inc/gutenberg/slider/render-slider-container-block.php:73
+#: inc/gutenberg/slider/render-testimonial-slider-container-block.php:72
+msgid "Previous slide"
+msgstr ""
+
+#: inc/gutenberg/callouts/render-callout-container-block.php:105
+#: inc/gutenberg/slider/render-body-copy-slider-container-block.php:72
+#: inc/gutenberg/slider/render-slider-container-block.php:75
+#: inc/gutenberg/slider/render-testimonial-slider-container-block.php:74
+msgid "Next slide"
+msgstr ""
+
+#: inc/gutenberg/content-cards/render-content-card-block.php:42
+#: inc/gutenberg/content-cards/render-content-card-container.php:41
+msgid "Learn More"
+msgstr "En savoir plus"
+
+#: inc/gutenberg/form-builder/email-requests.php:118
+msgid "This action is not allowed"
+msgstr "Cette action n’est pas autorisée"
+
+#: inc/gutenberg/form-builder/email-requests.php:127
+msgid "Hmm, something strange is going on..."
+msgstr "Hmm, quelque chose d’étrange se passe…"
+
+#: inc/gutenberg/form-builder/form-fields.php:105
+#: inc/gutenberg/form-builder/form-fields.php:255
+#: inc/gutenberg/form-builder/form-fields.php:311
+#: inc/gutenberg/form-builder/form-fields.php:374
+msgid "This field is required"
+msgstr "Ce champ est requis"
+
+#: inc/gutenberg/form-builder/form-fields.php:154
+msgid "Choose a file..."
+msgstr "Choisissez un fichier…"
+
+#: inc/gutenberg/form-builder/form-fields.php:228
+msgid "Select"
+msgstr "Sélectionner"
+
+#: inc/gutenberg/form-builder/render-form-builder-block.php:41
+msgid "Submit"
+msgstr "Soumettre"
+
+#: inc/gutenberg/form-builder/render-form-builder-block.php:43
+msgid "Thank You!"
+msgstr "Merci!"
+
+#: inc/gutenberg/form-builder/render-form-builder-block.php:44
+msgid "Your message has been successfully sent. We will contact you very soon!"
+msgstr ""
+
+#: inc/gutenberg/form-builder/render-form-builder-block.php:87
+msgid "Dismiss success message"
+msgstr ""
+
+#: inc/gutenberg/map/render-map-block.php:177
+msgid "Country"
+msgstr "Pays"
+
+#: inc/gutenberg/map/render-map-block.php:182
+msgid "State / Province"
+msgstr "État / Province"
+
+#: inc/gutenberg/map/render-map-block.php:188
+msgid "Service"
+msgstr "Service"
+
+#: inc/gutenberg/map/render-map-block.php:229
+#: inc/gutenberg/map/render-map-block.php:256
+msgid "No Results Found"
+msgstr "Aucun résultat ne correspond à votre recherche. Veuillez réessayer"
+
+#: inc/gutenberg/render-video-block.php:38
+#: inc/gutenberg/render-video-block.php:46
+msgid "Play video"
+msgstr "Lire la vidéo"
+
+#: inc/reusable/document-row.php:32
+msgid "Download file"
+msgstr ""
+
+#: page-news-releases.php:56 partials/content-hero.php:65
+msgid "Published on"
+msgstr "Publié le"
+
+#: page-news-releases.php:58
+msgid "View Article"
+msgstr "Voir le communiqué de presse"
+
+#: page-search.php:45
+msgid "Search Results"
+msgstr "Résultats"
+
+#: page-search.php:62
+msgid "Read more"
+msgstr "En savoir plus"
+
+#: partials/content-alert.php:46
+msgid "Dismiss alert bar"
+msgstr ""
+
+#: partials/content-cookie.php:42
+msgid "Dismiss cookies notification"
+msgstr ""
+
+#: partials/content-hero.php:106
+msgid "Pause or play hero video"
+msgstr "Mettre la vidéo en pause"
+
+#: partials/content-hero.php:135
+msgid "News Releases"
+msgstr "Communiqués de presse"
+
+#: searchform.php:8
+msgid "Looking for something"
+msgstr "À la recherche de quelque chose"
+
+#: searchform.php:15
+msgid "Execute search"
+msgstr "Exécuter la recherche"
+
+#: single-news-releases.php:31
+msgid "Back to News Releases"
+msgstr "Retour au communiqués de presse"
+
+#~ msgid "Play hero video"
+#~ msgstr "Lire la vidéo"
+
+#~ msgid "State"
+#~ msgstr "État"

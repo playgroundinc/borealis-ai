@@ -1,0 +1,56 @@
+.custom-form,
+.development-block,
+.custom-form__input-row,
+.custom-form__input,
+.development-block__component,
+.development-block__column,
+.custom-container,
+.custom-child,
+.custom-component {
+    padding: 10px;
+    position: relative;
+    .block-title {
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        background: white;
+        left:-1px;
+        padding-right: 10px;
+    }
+}
+
+.custom-form,
+.development-block,
+.custom-container {
+    border: 1px solid lightcoral;
+    .block-title {
+        color: darken(lightcoral, 20);
+    }
+    .custom-child,
+    &__input-row,
+    &__component {
+        border: 1px solid mediumpurple;
+        .block-title {
+            color: mediumpurple;
+        }
+    }
+    .custom-child .custom-child {
+        border: 1px solid #3CB371;
+        .block-title {
+            color: #3CB371;
+        }
+    }
+    &__input,
+    &__column {
+        border: 1px solid lightseagreen;
+        .block-title {
+            color: darken(lightseagreen, 20);
+        }
+    }
+}
+.custom-component {
+    border: 1px solid mediumpurple;
+    .block-title {
+        color: mediumpurple;
+    }
+}

@@ -1,0 +1,72 @@
+
+@mixin flexDirection($classname) {
+    .col-#{$classname} {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        flex-basis: auto;
+    }
+    .row-#{$classname} {
+        flex: 1 1 100%;
+        flex-direction: row;
+    }
+    
+    .row-#{$classname}-reverse {
+        flex-direction: row-reverse;
+    }
+    .col-#{$classname}-reverse {
+        flex-direction: column-reverse;
+    }
+}
+
+@mixin flexChild($classname) {
+    @for $i from 0 through 10 {
+        .fg-#{$classname}-#{$i} {
+            flex-grow: $i;
+            width: auto;
+        }
+    }
+    .fg-#{$classname}-0 {
+        flex-grow: 0;
+    }
+    .fs-#{$classname}-0 {
+        flex-shrink: 0;
+    }
+    .fc-#{$classname} {
+        flex: 0 0 auto;
+        width: auto;
+    }
+    .fc-#{$classname}-25 {
+        flex-basis: 25%;
+    }
+    .fc-#{$classname}-33 {
+        flex-basis: calc(100% / 3);
+    }
+    .fc-#{$classname}-40 {
+        flex-basis: 40%;
+    }
+    .fc-#{$classname}-50 {
+        flex: 0 1 50%;
+        width: 50%;
+    }
+    .fc-#{$classname}-60 {
+        flex-basis: 60%;
+    }
+    .fc-#{$classname}-66 {
+        flex-basis: calc(100% - (100% / 3));
+    }
+    .fc-#{$classname}-70 {
+        flex-basis: 70%;
+        width: 70%;
+    }
+    .fc-#{$classname}-75 {
+        flex-basis: 75%;
+        max-width: 75%;
+    }
+    .fc-#{$classname}-100 {
+        flex: 0 1 100%;
+        width: 100%;
+    }
+    .fw-#{$classname} {
+        flex-wrap: wrap;
+    }
+}

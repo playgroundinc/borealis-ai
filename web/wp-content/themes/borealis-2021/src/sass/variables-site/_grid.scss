@@ -1,0 +1,22 @@
+$xxl: 1590px;
+$xl: 1440px;
+$lg: 996px;
+$md: 768px;
+$sm: 544px;
+$xs: 420px;
+$columns: 12;
+
+$outer-margin: 50px;
+$gutter-width: 40px;
+$gutter-compensation: ($gutter-width * 0.5) * -1;
+$half-gutter-width: $gutter-width * 0.5;
+
+$mobile-outer-margin: 25px;
+$mobile-gutter-width: 15px;
+$mobile-gutter-compensation: ($mobile-gutter-width * 0.5) * -1;
+$mobile-half-gutter-width: $mobile-gutter-width * 0.5;
+
+$container_width: calc(100vw - (#{$outer-margin} * 2));
+$container_width_xxl: calc((#{$xxl} / 100vw) * 100%);
+$mobile_container_width: calc(100vw - (#{$mobile-outer-margin} * 2));
+

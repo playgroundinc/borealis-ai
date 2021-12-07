@@ -1,0 +1,21 @@
+.image-block {
+    padding-top: 100%;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    @include sm {
+        padding-top: 34.59%;
+    }
+    &.image-block--body-copy {
+        padding-top: 83.33%;
+        border-radius: 0;
+    }
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+    }
+}

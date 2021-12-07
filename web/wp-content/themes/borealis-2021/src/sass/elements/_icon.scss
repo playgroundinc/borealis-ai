@@ -1,0 +1,30 @@
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    overflow: hidden;
+    fill: currentColor;
+    line-height: 1;
+    transition: color 0.3s ease-in-out;
+    &--link {
+        &:first-child {
+            padding-left: 0;
+        }
+        padding: 0 spacing(1);
+    }
+    &-lg {
+        text-decoration: none;
+        @include fluid-type(24, 24);
+    }
+    &-xl {
+        text-decoration: none;
+        @include fluid-type(32, 32);
+    }
+}
+
+.decoration {
+    width: 50%;
+    height: 7px;
+    color: color('red');
+    text-align: right;
+}

@@ -1,0 +1,29 @@
+.statistic-block {
+    &__single {
+        padding-left: spacing(2);
+        border-left: 2px solid color('red', 'light');
+        @include md {
+            padding-right: spacing(4);
+        }
+    }
+    &__container {
+        div:nth-child(2) {
+            margin-top: spacing(9);
+        }
+        @include md {
+            div:nth-child(2) {
+                margin-top: 0;
+            }
+        }
+        div:nth-child(n + 3) {
+            margin-top: spacing(9);
+            @include xl {
+                margin-top: 0;
+            }
+        }
+        div:nth-child(n + 5) {
+            margin-top: spacing(9);
+        }
+    }
+    
+}

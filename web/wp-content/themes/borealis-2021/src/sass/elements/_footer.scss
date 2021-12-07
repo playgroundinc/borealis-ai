@@ -1,0 +1,23 @@
+.footer {
+    .menu-item__link {
+        color: color('white');
+        text-decoration: none;
+        &:hover {
+            color: color('white');
+        }
+    }
+    &__banner__copy {
+        @include lg {
+            @include fluid-type(17, 17);
+        }
+    }
+    &__logo {
+        max-width: 147px;
+        @include md {
+            max-width: 125px;
+        }
+        @include lg {
+            max-width: 147px;
+        }
+    }
+}

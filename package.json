@@ -1,0 +1,25 @@
+{
+    "name": "borealis-ai",
+    "version": "1.0.0",
+    "description": "A custom wp site",
+    "main": "index.js",
+    "directories": {
+      "test": "tests"
+    },
+    "scripts": {
+      "clean": "cd web/wp-content/themes/borealis-2021 && rm -rf ./node_modules package-lock.json",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build-local": "cd web/wp-content/themes/borealis-2021 && npm i && npm run dev",
+      "start": "cd web/wp-content/themes/borealis-2021 && npm i && npm run dev"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/playgroundinc/borealis-ai.git"
+    },
+    "author": "Jenny at Playground Inc.",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/playgroundinc/borealis-ai/issues"
+    },
+    "homepage": "https://github.com/playgroundinc/borealis-ai#readme"
+  }

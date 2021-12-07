@@ -1,0 +1,202 @@
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+.container-fluid,
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container-fluid,
+.inner-container {
+    max-width: $xxl;
+    padding-right: $mobile-outer-margin;
+    padding-left: $mobile-outer-margin;
+    @media (min-width: $lg) {
+        padding-right: $outer-margin;
+        padding-left: $outer-margin;
+    }
+    &.container--content {
+        @media (min-width: $sm) {
+            max-width: 85%;
+        }
+        @media (min-width: $lg) {
+            max-width: 75%;
+        }
+        @media (min-width: $xl) {
+            margin: 0 auto;
+            max-width: 50%;
+        }
+    }
+    @media (min-width: $xl) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+.inner-container {
+    width: 100%;
+    @media (min-width: $xl) {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.container {
+	max-width: $xxl;
+    @media (min-width: $xl) {
+        width: calc(100% - (2 * #{$outer-margin}));
+    }
+    &--single {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 744px;
+        padding-right: $mobile-outer-margin;
+        padding-left: $mobile-outer-margin;
+        @media (min-width: $lg) {
+            padding-right: $outer-margin;
+            padding-left: $outer-margin;
+        }
+    }
+}
+
+.row {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: $mobile-gutter-compensation;
+    margin-left: $mobile-gutter-compensation;
+    @media (min-width: $lg) {
+        margin-right: $gutter-compensation;
+        margin-left: $gutter-compensation;
+    }
+
+}
+
+.row.reverse {
+    flex-direction: row-reverse;
+}
+
+.col.reverse {
+    flex-direction: column-reverse;
+}
+
+[class^='col-'] {
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    padding-right: $mobile-half-gutter-width;
+    padding-left: $mobile-half-gutter-width;
+    @media (min-width: $md) {
+        padding-right: $half-gutter-width;
+        padding-left: $half-gutter-width;
+    }
+}
+
+@mixin generateColumnWidths($className) {
+    @for $i from 1 through $columns {
+        .col-#{$className}-#{$i} {
+            flex-basis: $i / $columns * 100%;
+            max-width: $i / $columns * 100%;
+        }
+    }
+}
+
+@mixin generateOffset($className) {
+    @for $i from 1 through $columns {
+        .col-#{$className}-offset-#{$i} {
+            margin-left: $i / $columns * 100%;
+        }
+    }
+}
+
+@mixin helperClasses($className) {
+    .col-#{$className} {
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%;
+    }
+
+    .start-#{$className} {
+        justify-content: flex-start;
+        text-align: start;
+    }
+
+    .center-#{$className} {
+        justify-content: center;
+    }
+
+    .end-#{$className} {
+        justify-content: flex-end;
+    }
+
+    .top-#{$className} {
+        align-items: flex-start;
+    }
+
+    .middle-#{$className} {
+        align-items: center;
+    }
+
+    .even-#{$className} {
+        justify-content: space-evenly;
+    }
+
+    .bottom-#{$className} {
+        align-items: flex-end;
+    }
+
+    .around-#{$className} {
+        justify-content: space-around;
+    }
+
+    .between-#{$className} {
+        justify-content: space-between;
+    }
+
+    .first-#{$className} {
+        order: -1;
+    }
+
+    .last-#{$className} {
+        order: 1;
+    }
+}
+
+@mixin makeGrid($sizes...) {
+    @each $classname, $width in keywords($sizes) {
+        $minwidth: strip-unit($width);
+        @if $width {
+            @media screen and (min-width: #{$minwidth}px) {
+                @include generateColumnWidths($classname);
+                @include generateOffset($classname);
+                @include helperClasses($classname);
+                @include addSpacing($classname);
+                @include flexChild($classname);
+                @include flexDirection($classname);
+                @include borders($classname);
+                @include responsive($classname);
+                @include headings($classname);
+            }
+        } @else {
+            @include generateColumnWidths($classname);
+            @include generateOffset($classname);
+            @include helperClasses($classname);
+            @include addSpacing($classname);
+            @include flexChild($classname);
+            @include flexDirection($classname);
+            @include borders($classname);
+            @include responsive($classname);
+            @include headings($classname);
+        }
+    }
+}
+
+@include makeGrid($xs: null, $sm: $sm, $md: $md, $lg: $lg, $xl: $xl);
