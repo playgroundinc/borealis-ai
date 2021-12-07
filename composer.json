@@ -87,9 +87,6 @@
       "@cleanup",
       "WordPressProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
-    "code-sniff": [
-      "./vendor/bin/phpcs --standard=WordPress ./web/wp-content/themes/borealis-2021"
-    ],
     "unit-test": [
       "./vendor/bin/phpunit tests/unit/*"
     ],
