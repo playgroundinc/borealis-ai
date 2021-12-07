@@ -29,16 +29,16 @@ Once your PR is merged into master, CircleCI will deploy this code to the Panthe
 ### **Local setup**
 
 1. Clone this repo into a local working directory.
-2. In the root of your working directory, run `lando init --recipe pantheon`. Select your `current working directory` as the codebase. Use the `yourfriend@playgroundinc.com` Panteon account. The site is `choice-properties-reit`.
+2. In the root of your working directory, run `lando init --recipe pantheon`. Select your `current working directory` as the codebase. Use the `yourfriend@playgroundinc.com` Panteon account. The site is `borealis-ai`.
 3. If you're prompted to enter a machine token, you'll have to create one. You can do this from the Pantheon Dashboard > Account > Machine Tokens.
 4. Install the composer dependencies: `lando composer install --no-ansi --no-interaction --optimize-autoloader --no-progress`.
 5. Pull down the current DB: `lando pull --code=none`. Choose the Live environment.
 
 ### **Local development**
 
-1. Run `lando start` to start the service. Once that runs it will display some URLs where you can access your local site (something like choice-properties-reit.lndo.site/).
+1. Run `lando start` to start the service. Once that runs it will display some URLs where you can access your local site (something like borealis-ai.lndo.site/).
 2. In a separate terminal window, run `lando npm start` to start up webpack, which will compile our code.
-3. Our working directory will be the `web/wp-content/themes/choice-properties`. Changes outside this folder shouldn't be commited to the repo (with the exception of plugins).
+3. Our working directory will be the `web/wp-content/themes/borealis-2021`. Changes outside this folder shouldn't be commited to the repo (with the exception of plugins).
 4. When you're ready to stop development, run `lando stop` to shut the process down.
 
 ***
