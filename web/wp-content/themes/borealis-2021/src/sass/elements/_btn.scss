@@ -1,0 +1,93 @@
+.btn,
+.wp-block-button .wp-block-button__link,
+.btn.trmc-btn {
+    display: inline-block;
+    min-width: 170px;
+    text-align: center;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    @include xl {
+        width: auto;
+    }
+    &.btn--primary,
+    .wp-block-button__link,
+    &.btn--primary:visited {
+        @include fluid-type(16, 16);
+        color: color('white');
+        background: color('red');
+        padding: spacing(1) spacing(3);
+        border: 1px solid color('red');
+        &:hover {
+            background: color('red', 'hover');
+            border: 1px solid color('red', 'hover');
+        }
+    }
+    &--secondary,
+    &.is-style-outline .wp-block-button__link,
+    &--secondary:visited,
+    &--secondary:active {
+        @include fluid-type(16, 16);
+        color: color('black');
+        background: color('white');
+        padding: spacing(1) spacing(3);
+        border: 1px solid color('grey', 'base');
+        &:hover {
+            background: color('white', 'hover');
+            color: color('black', 'hover');
+        }
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: 0;
+        &.focus-visible {
+            outline: 1px solid blue;
+        }
+    }
+    &.focus-visible {
+        outline: 1px solid color('focus');
+    }    
+}
+
+.btn--left .btn {
+    text-align: left;
+}
+
+.wp-block-buttons {
+    margin-top: spacing(4);
+    @include sm {
+        margin-top: spacing(0);
+    }
+    .wp-block-button {
+        margin: 0;
+        flex-basis: 100%;
+        @include sm {
+            flex-basis: auto;
+            margin-top: spacing(4);
+        }
+        & + .wp-block-button,
+        & + .btn,
+        & + .btn.trmc-btn {
+            margin-top: spacing(3);
+            @include sm {
+                margin-left: spacing(3);
+                margin-top: spacing(4);
+            }
+        }
+    }
+}
+
+.btn--custom {
+    border: 0;
+    appearance: none;
+    border-radius: 0;
+    background: none;
+    color: color('black');
+    transition: color 0.3s ease-in-out;
+    &:hover {
+        cursor: pointer;
+        color: color('black', 'hover');
+    }
+}

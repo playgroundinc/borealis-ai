@@ -1,0 +1,79 @@
+a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    color: inherit;
+
+	&:visited {
+		color: inherit;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+        text-decoration: none;
+	}
+    &:focus {
+        outline: 0;
+        &.focus-visible {
+            outline: 1px solid blue;
+        }
+    }
+    &.focus-visible {
+        outline: 1px solid color('focus');
+    }
+    
+}
+
+.link {
+    &--plain {
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+        &:hover {
+            color: color('grey', 'hover');
+            .copy--dark {
+                color: color('black', 'hover');
+            }
+        }
+    }
+    &--card {
+        display: block;
+        text-decoration: none;
+        height: 100%;
+    }
+    &--phone,
+    &--maps {
+        color: color('red');
+    }
+    &--maps {
+        text-decoration-style: solid;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &--arrow {
+        border-radius: 50%;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+        svg {
+            display: block;
+        }
+        &:hover {
+            background-color: color('grey', 'light');
+        }
+    }
+    .faux-link {
+        text-transform: none;
+    }
+    &:hover {
+        .faux-link {
+            text-decoration: underline;
+        }
+    }
+}
+
+.menu-link {
+    text-decoration: none;
+    &:hover {
+        color: color('black', 'hover');
+        text-decoration: none;
+    }
+}

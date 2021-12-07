@@ -84,7 +84,21 @@ jobs:
           key: composer-cache-{{ checksum "composer.lock" }}
           paths:
             - $HOME/.composer/cache
-
+  build_webpack:
+    docker:
+      - image: "node:10.15.3"
+    steps:
+      - checkout
+      - run:
+          name: install npm dependencies in a custom WordPress child theme
+          command: cd web/wp-content/themes/borealis-2021 && npm i
+      - run:
+          name: Compile Sass
+          command: cd web/wp-content/themes/borealis-2021 && npm run build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - web/wp-content/themes/borealis-2021/dist
   build_php:
     <<: *defaults
     steps:

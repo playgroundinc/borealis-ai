@@ -1,0 +1,103 @@
+.menu {
+    &-item--single {
+        @include md {
+            &:last-child {
+                .menu-item__link {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    &-item-has-children {
+        position: relative;
+    }
+    &-toggle {
+        position: relative;
+        right: -24px;
+    }
+    &-item__link {
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        line-height: 1;
+        width: 100%;
+        transition: color 0.3s ease-in-out;
+        &--secondary {
+            color: inherit;
+            padding: spacing(3) spacing(2);
+        }
+        &:hover {
+            color: color('grey', 'hover');
+        }
+    }
+    &-item__parent {
+        .icon {
+            transition: transform 0.3s ease-in-out;
+            margin-left: spacing(1);
+            transform: rotate(0deg);
+        }
+        &[aria-expanded=true] .icon {
+            transform: rotate(180deg);
+        }
+    }
+    .dropdown {
+        left: -8px;
+        top: calc(100% + 14px);
+        min-width: 240px;
+        @include xl {
+            position: absolute;
+        }
+        .menu-item__link {
+            margin-left: calc(-1 * #{$mobile-outer-margin});
+            margin-right: calc(-1 * #{$mobile-outer-margin});
+            padding-left: $mobile-outer-margin;
+            padding-right: $mobile-outer-margin;
+            width: calc(100% + (2 * #{$mobile-outer-margin}));
+            @include lg {
+                margin-left: calc(-1 * #{$outer-margin});
+                margin-right: calc(-1 * #{$outer-margin});
+                padding-left: $outer-margin;
+                padding-right: $outer-margin;
+                width: calc(100% + (2 * #{$outer-margin}));
+            }
+            @include xl {
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: spacing(3);
+                padding-right: spacing(3);
+            }
+        }
+        .menu-item:last-child .menu-item__link {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+    }
+    .submenu--lang.dropdown {
+        min-width: 120px;
+    }
+}
+
+.dropdown-menu {
+    @include xl {
+        display: flex;
+    }
+    .menu-item__link {
+        transition: color 0.3s ease-in-out;
+    }
+    .submenu {
+        .menu-item__link:hover {
+            background: color('black', 'trans');
+        }
+    }
+}
+
+.custom-logo-link img  {
+    display: block;
+}
+
+.dark {
+    .menu-item__link:hover {
+        text-decoration: underline;
+    }
+}

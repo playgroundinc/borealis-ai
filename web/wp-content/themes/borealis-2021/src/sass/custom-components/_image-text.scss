@@ -1,0 +1,5 @@
+.image-text-block {
+    @include xl {
+        background: color('white');
+    }
+}

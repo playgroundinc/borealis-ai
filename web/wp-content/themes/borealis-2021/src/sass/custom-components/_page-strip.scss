@@ -1,0 +1,53 @@
+.page-strip {
+    min-height: 400px;
+    @include md {
+        min-height: 450px;
+    }
+    @include lg {
+        min-height: 400px;
+    }
+    @include xl {
+        min-height: 450px;
+    }
+    .block--white {
+        border: 1px solid color('grey', 'light');
+    }
+    .paragraph, 
+    p {
+        margin-top: spacing(2);
+        @include md {
+            max-width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        @include lg {
+            max-width: 100%;
+        }
+        @include xl {
+            max-width: 80%;
+        }
+    }
+    .wp-block-buttons {
+        justify-content: center;
+        .wp-block-button + .wp-block-button {
+            margin-top: spacing(2);
+            display: block;
+            @include sm {
+                display: inline-block;
+                margin-top: spacing(4);
+            }
+        }
+    }
+    &--graphic {
+        background-size: cover;
+        background-position: center;
+        color: color('white');
+        .copy--left,
+        .copy--right {
+            text-align: center;
+        }
+    }
+    &.block--white {
+        border: 1px solid color('grey', 'light');
+    }
+}

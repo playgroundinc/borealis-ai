@@ -1,0 +1,45 @@
+.cookie-policy {
+    position: fixed;
+    z-index: 200;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .container {
+        position: relative;
+    }
+    &__container {
+        position: absolute;
+        max-width: 300px;
+        background: color('white');
+        border-radius: 16px;
+        bottom: spacing(4);
+        left: $mobile-outer-margin;
+        right: $mobile-outer-margin;
+        @include lg {
+            left: $outer-margin;
+            right: $outer-margin;
+        }
+        @include xl {
+            left: 0;
+        }
+    }
+    &__dismiss {
+        position: absolute;
+        width: auto;
+        top: 10px;
+        right: 10px;
+        background-color: color('grey', 'light');
+        font-size: 1.1rem;
+        padding: 5px;
+        line-height: 1;
+        border-radius: 50%;
+        transition: background-color 0.3s ease-in-out;
+        &:hover {
+            cursor: pointer;
+            background-color: color('grey', 'hover-lt');
+        }
+        svg {
+            display: block;
+        }
+    }
+}

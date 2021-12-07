@@ -1,0 +1,14 @@
+button {
+    background: none;
+    border: 0;
+    width: 100%;
+    &:focus {
+        outline: 0;
+        &.focus-visible {
+            outline: 1px solid blue;
+        }
+    }
+    &.focus-visible {
+        outline: 1px solid color('focus');
+    }
+}

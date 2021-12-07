@@ -1,0 +1,43 @@
+.alert-bar {
+    position: fixed;
+    top: 0;
+    z-index: 200;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    &--active {
+        top: 0;
+    }
+    @include lg {
+        text-align: center;
+    }
+    .container {
+        position: relative;
+    }
+    &__dismiss {
+        position: absolute;
+        background-color: color('grey', 'light');
+        top: 50%;
+        transform: translateY(-50%);
+        width: auto;
+        font-size: 1.1rem;
+        padding: 5px;
+        line-height: 1;
+        border-radius: 50%;
+        transition: background-color 0.3s ease-in-out;
+        right: $mobile-outer-margin;
+        @include lg {
+            right: $outer-margin;
+        }
+        @include xl {
+            right: 0;
+        }
+        &:hover {
+            cursor: pointer;
+            background-color: color('grey', 'hover-lt');
+        }
+        svg {
+            display: block;
+        }
+    }
+}

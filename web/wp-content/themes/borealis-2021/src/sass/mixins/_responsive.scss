@@ -1,0 +1,11 @@
+@mixin responsive($classname) {
+    .hide-#{$classname} {
+        display: none;
+    }
+    .show-#{$classname} {
+        display: block;
+    }
+    .flex-#{$classname} {
+        display: flex ;
+    }
+}

@@ -1,0 +1,21 @@
+.logo-block {
+    &__single {
+        @include md {
+            text-align: left;
+        }
+        @include lg {
+            text-align: center;
+        }
+        img {
+            max-height: 100px;
+        }
+    }
+}
+
+a.logo-block__single {
+    border-radius: 13px;
+    border: 1px solid transparent;
+    &:hover {
+        border: 1px solid color('grey', 'hover-lt');
+    }
+}

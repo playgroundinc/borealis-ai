@@ -1,0 +1,12 @@
+.lazy {
+    transition: filter 0.3s ease;
+    filter: blur(20px);
+    &[data-src] {
+        height: 100%;
+        width: 100%;
+    }
+    &.img-loaded,
+    &.video-loaded {
+        filter: none;
+    }
+}
