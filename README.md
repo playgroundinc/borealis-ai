@@ -1,5 +1,3 @@
-# borealis-ai
-
 ## **The workflow**
 
 This repo is part of a workflow that includes GitHub, CircleCI, and Pantheon.
@@ -43,6 +41,7 @@ Once your PR is merged into master, CircleCI will deploy this code to the Panthe
 3. Our working directory will be the `web/wp-content/themes/choice-properties`. Changes outside this folder shouldn't be commited to the repo (with the exception of plugins).
 4. When you're ready to stop development, run `lando stop` to shut the process down.
 
+***
 [![CircleCI](https://circleci.com/gh/playgroundinc/borealis-ai.svg?style=shield&circle-token=000d534c7fb99f1c13ef8bd848d893d9a0038419)](https://circleci.com/gh/playgroundinc/borealis-ai)
 [![Dashboard borealis-ai](https://img.shields.io/badge/dashboard-borealis_ai-yellow.svg)](https://dashboard.pantheon.io/sites/7c6ad968-c37a-40d5-8591-e6c85d4abc7f#dev/code)
 [![Dev Site borealis-ai](https://img.shields.io/badge/site-borealis_ai-blue.svg)](http://dev-borealis-ai.pantheonsite.io/)
