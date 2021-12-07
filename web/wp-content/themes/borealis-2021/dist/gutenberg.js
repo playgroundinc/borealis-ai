@@ -1112,10 +1112,10 @@ function imageTextBlock() {
 
 /***/ }),
 
-/***/ "./src/js/blocks/core-extends/video-embed-poster.js":
-/*!**********************************************************!*\
-  !*** ./src/js/blocks/core-extends/video-embed-poster.js ***!
-  \**********************************************************/
+/***/ "./src/js/blocks/core-extends/video-embed-poster.jsx":
+/*!***********************************************************!*\
+  !*** ./src/js/blocks/core-extends/video-embed-poster.jsx ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2587,59 +2587,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Location; });
 /* harmony import */ var _us_states__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./us-states */ "./src/js/blocks/helper-functions/us-states.js");
 /* harmony import */ var _provinces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./provinces */ "./src/js/blocks/helper-functions/provinces.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 
-
-
-var Location = /*#__PURE__*/function () {
-  function Location() {
-    _classCallCheck(this, Location);
-
+class Location {
+  constructor() {
     this.states = _us_states__WEBPACK_IMPORTED_MODULE_0__["default"];
     this.provinces = _provinces__WEBPACK_IMPORTED_MODULE_1__["default"];
   }
 
-  _createClass(Location, [{
-    key: "getProvinces",
-    value: function getProvinces() {
-      var provinces = [];
+  getProvinces() {
+    const provinces = [];
 
-      for (var province in this.provinces) {
-        var option = {
-          label: this.provinces[province],
-          value: province
-        };
-        provinces.push(option);
-      }
-
-      return provinces;
+    for (let province in this.provinces) {
+      const option = {
+        label: this.provinces[province],
+        value: province
+      };
+      provinces.push(option);
     }
-  }, {
-    key: "getStates",
-    value: function getStates() {
-      var states = [];
 
-      for (var state in this.states) {
-        var option = {
-          label: this.states[state],
-          value: state
-        };
-        states.push(option);
-      }
+    return provinces;
+  }
 
-      return states;
+  getStates() {
+    const states = [];
+
+    for (let state in this.states) {
+      const option = {
+        label: this.states[state],
+        value: state
+      };
+      states.push(option);
     }
-  }]);
 
-  return Location;
-}();
+    return states;
+  }
 
-
+}
 
 /***/ }),
 
@@ -2655,8 +2639,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return booleanAttrs; });
 function booleanAttrs(attributes, fields) {
   if (Array.isArray(fields) && fields.length > 0) {
-    fields.forEach(function (field) {
-      attributes["".concat(field)] = {
+    fields.forEach(field => {
+      attributes[`${field}`] = {
         type: 'boolean',
         default: false
       };
@@ -2677,7 +2661,7 @@ function booleanAttrs(attributes, fields) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "namespace", function() { return namespace; });
-var namespace = 'pg';
+const namespace = 'pg';
 
 /***/ }),
 
@@ -2692,22 +2676,22 @@ var namespace = 'pg';
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CustomErrors; });
 function CustomErrors(fields, values) {
-  var compileErrors = function compileErrors(fields, values) {
+  const compileErrors = (fields, values) => {
     if (Object.keys(fields).length > 0 && fields.constructor === Object && values.length > 0) {
-      var errorFields = values.filter(function (value) {
-        return fields["".concat(value)] === undefined;
+      const errorFields = values.filter(value => {
+        return fields[`${value}`] === undefined;
       });
       return errorFields;
     }
 
-    throw new Error("".concat(fields.type, " control missing all required fields"));
+    throw new Error(`${fields.type} control missing all required fields`);
   };
 
-  var verifyInputs = function verifyInputs(fields, values) {
-    var errorFields = compileErrors(fields, values);
+  const verifyInputs = (fields, values) => {
+    const errorFields = compileErrors(fields, values);
 
     if (errorFields.length > 0) {
-      throw new Error("".concat(fields.type, " control is missing properties ").concat(errorFields.join(', '), " "));
+      throw new Error(`${fields.type} control is missing properties ${errorFields.join(', ')} `);
     }
   };
 
@@ -2726,20 +2710,19 @@ function CustomErrors(fields, values) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DefaultAttrs; });
-function DefaultAttrs(fields) {
-  var source = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-  var attributes = {};
+function DefaultAttrs(fields, source = null) {
+  const attributes = {};
 
   if (Array.isArray(fields) && fields.length > 0) {
-    fields.forEach(function (field) {
-      attributes["".concat(field)] = {
+    fields.forEach(field => {
+      attributes[`${field}`] = {
         type: 'string',
         default: ''
       };
 
       if (source) {
-        attributes["".concat(field)]['source'] = source;
-        attributes["".concat(field)]['meta'] = field;
+        attributes[`${field}`]['source'] = source;
+        attributes[`${field}`]['meta'] = field;
       }
     });
     return attributes;
@@ -6684,7 +6667,7 @@ function richTextBlocks() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _blocks_core_extends_video_embed_poster__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/core-extends/video-embed-poster */ "./src/js/blocks/core-extends/video-embed-poster.js");
+/* harmony import */ var _blocks_core_extends_video_embed_poster_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/core-extends/video-embed-poster.jsx */ "./src/js/blocks/core-extends/video-embed-poster.jsx");
 /* harmony import */ var _blocks_meta_page_meta_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/meta/page-meta.jsx */ "./src/js/blocks/meta/page-meta.jsx");
 /* harmony import */ var _blocks_meta_location_meta_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/meta/location-meta.jsx */ "./src/js/blocks/meta/location-meta.jsx");
 /* harmony import */ var _blocks_meta_news_releases_meta_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/meta/news-releases-meta.jsx */ "./src/js/blocks/meta/news-releases-meta.jsx");
@@ -6790,7 +6773,7 @@ __webpack_require__.r(__webpack_exports__);
  // Core Extends Blocks
 // customButtonIcons();
 
-Object(_blocks_core_extends_video_embed_poster__WEBPACK_IMPORTED_MODULE_0__["default"])(); // Init meta blocks
+Object(_blocks_core_extends_video_embed_poster_jsx__WEBPACK_IMPORTED_MODULE_0__["default"])(); // Init meta blocks
 
 Object(_blocks_meta_page_meta_jsx__WEBPACK_IMPORTED_MODULE_1__["default"])();
 Object(_blocks_meta_location_meta_jsx__WEBPACK_IMPORTED_MODULE_2__["default"])();

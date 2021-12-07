@@ -10324,7 +10324,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! @babel/polyfill */"./node_modules/@babel/polyfill/lib/index.js");
-module.exports = __webpack_require__(/*! /Users/kycapstick/Documents/Sites/pg-wp-starter-21/app/public/wp-content/themes/pg-wp-starter/src/js/main.js */"./src/js/main.js");
+module.exports = __webpack_require__(/*! /app/web/wp-content/themes/borealis-2021/src/js/main.js */"./src/js/main.js");
 
 
 /***/ })

@@ -1,5 +1,5 @@
 // import customButtonIcons from './blocks/core-extends/button-icons';
-import customVideoPoster from './blocks/core-extends/video-embed-poster';
+import customVideoPoster from './blocks/core-extends/video-embed-poster.jsx';
 
 // Meta
 import pageMetaBlock from "./blocks/meta/page-meta.jsx"
