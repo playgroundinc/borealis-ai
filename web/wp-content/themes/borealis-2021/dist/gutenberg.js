@@ -2587,10 +2587,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return jobBlock; });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 function jobBlock() {
-  var registerBlockType = wp.blocks.registerBlockType;
+  var _wp$blocks = wp.blocks,
+      registerBlockType = _wp$blocks.registerBlockType,
+      createBlock = _wp$blocks.createBlock;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "job-block";
@@ -2615,47 +2619,28 @@ function jobBlock() {
     category: blockCategory,
     icon: blockIcon,
     attributes: attributes,
-    supports: {
-      multiple: false
-    },
-    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/form-builder")],
     edit: function edit(props) {
       var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var attributes = props.attributes;
       var title = attributes.title,
-          emptyState = attributes.emptyState; // const apiCall = async (url) => {
-      //     try {
-      //         const resp = await fetch(url, { method: 'GET', redirect: 'follow', referrer: 'no-referrer', });
-      //         const data = await resp.json();
-      //         const locations = data.features;
-      //         if (locations && locations.length && locations[0].geometry && locations[0].geometry.coordinates) {
-      //             setLatLng(locations[0].geometry.coordinates);
-      //         }
-      //     } catch(err) {
-      //         updateAttributeValue('error', 'Something went wrong');
-      //     }
-      // };
-      // const buildUrl = (address) => {
-      //     const encodedAddress = encodeURI(address);
-      //     const country = location_country ? location_country : 'CA';
-      //     if (ajaxInfo.apiKey) {
-      //         const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodedAddress}.json?country=${country}&access_token=${ajaxInfo.apiKey}`;
-      //         apiCall(url);
-      //     }
-      // }
+          emptyState = attributes.emptyState;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
 
       return [/*#__PURE__*/React.createElement("div", {
         class: "custom-job__block"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Update job in block settings"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Jobs Block"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         },
         components: [{
           value: title,
-          reference: "label",
+          reference: "title",
           tagName: "p",
           placeholder: "Please provide a title"
         }]
@@ -2665,18 +2650,15 @@ function jobBlock() {
         },
         components: [{
           value: emptyState,
-          reference: "option",
-          tagName: "p",
-          placeholder: "Please provide an option"
+          reference: "emptyState",
+          tagName: "p"
         }]
       })))];
     },
     save: function save(_ref) {
       var attributes = _ref.attributes;
-      var label = attributes.label,
-          required = attributes.required,
-          options = attributes.options,
-          option = attributes.option;
+      var title = attributes.title,
+          emptyState = attributes.emptyState;
     }
   });
 }

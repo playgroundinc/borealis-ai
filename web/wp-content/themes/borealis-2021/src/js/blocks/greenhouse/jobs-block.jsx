@@ -3,7 +3,7 @@ import { namespace } from "../helper-functions/constants";
 import CustomRichText from '../reusable/custom-richtext-component.jsx';
 
 export default function jobBlock() {
-    const { registerBlockType } = wp.blocks;
+    const { registerBlockType, createBlock } = wp.blocks;
     const { i18n } = wp;
 
     const blockSlug = "job-block";
@@ -29,45 +29,23 @@ export default function jobBlock() {
 		category: blockCategory,
         icon: blockIcon,
 		attributes,
-        supports: {
-            multiple: false,
-        },
-        parent: [`${namespace}/form-builder`],
 		edit: (props, editor = false, save = false) => {
 			const { attributes } = props;
 			const { title, emptyState } = attributes;
 
-            // const apiCall = async (url) => {
-            //     try {
-            //         const resp = await fetch(url, { method: 'GET', redirect: 'follow', referrer: 'no-referrer', });
-            //         const data = await resp.json();
-            //         const locations = data.features;
-            //         if (locations && locations.length && locations[0].geometry && locations[0].geometry.coordinates) {
-            //             setLatLng(locations[0].geometry.coordinates);
-            //         }
-            //     } catch(err) {
-            //         updateAttributeValue('error', 'Something went wrong');
-            //     }
-            // };
-
-            // const buildUrl = (address) => {
-            //     const encodedAddress = encodeURI(address);
-            //     const country = location_country ? location_country : 'CA';
-            //     if (ajaxInfo.apiKey) {
-            //         const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodedAddress}.json?country=${country}&access_token=${ajaxInfo.apiKey}`;
-            //         apiCall(url);
-            //     }
-            // }
+            function updateAttributeValue(attribute, value) {
+				setAttributes({ [attribute]: value });
+            }
 
 			return [
                 <div class="custom-job__block">
-                    <p className="block-title">Update job in block settings</p>
+                    <p className="block-title">Jobs Block</p>
                     <CustomRichText 
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
                         components={[
                             {
                                 value: title,
-                                reference: "label", 
+                                reference: "title", 
                                 tagName: "p",
                                 placeholder: "Please provide a title"
                             },
@@ -79,9 +57,8 @@ export default function jobBlock() {
                             components={[
                                 {
                                     value: emptyState,
-                                    reference: "option",
+                                    reference: "emptyState",
                                     tagName: "p",
-                                    placeholder: "Please provide an option"
                                 }
                             ]}
                         />
@@ -90,8 +67,7 @@ export default function jobBlock() {
 			];
 		},
 		save: ({ attributes }) => {
-            
-			const { label, required, options, option } = attributes;
+			const { title, emptyState } = attributes;
 		},
 	});
 }
