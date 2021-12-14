@@ -1122,9 +1122,9 @@ function imageTextBlock() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return extendCoreVideo; });
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -2569,6 +2569,114 @@ function formStackEmbedBlock() {
       var attributes = _ref.attributes;
       var formstack_url = attributes.formstack_url;
       return null;
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/greenhouse/jobs-block.jsx":
+/*!*************************************************!*\
+  !*** ./src/js/blocks/greenhouse/jobs-block.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return jobBlock; });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+
+
+function jobBlock() {
+  var registerBlockType = wp.blocks.registerBlockType;
+  var _wp = wp,
+      i18n = _wp.i18n;
+  var blockSlug = "job-block";
+  var blockTitle = "Create job block";
+  var blockDescription = "Component to create job block";
+  var blockCategory = "common";
+  var blockIcon = "email"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+
+  var attributes = {
+    title: {
+      type: 'String',
+      default: ''
+    },
+    emptyState: {
+      type: 'String',
+      default: ''
+    }
+  };
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+    title: i18n.__(blockTitle),
+    description: i18n.__(blockDescription),
+    category: blockCategory,
+    icon: blockIcon,
+    attributes: attributes,
+    supports: {
+      multiple: false
+    },
+    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/form-builder")],
+    edit: function edit(props) {
+      var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var attributes = props.attributes;
+      var title = attributes.title,
+          emptyState = attributes.emptyState; // const apiCall = async (url) => {
+      //     try {
+      //         const resp = await fetch(url, { method: 'GET', redirect: 'follow', referrer: 'no-referrer', });
+      //         const data = await resp.json();
+      //         const locations = data.features;
+      //         if (locations && locations.length && locations[0].geometry && locations[0].geometry.coordinates) {
+      //             setLatLng(locations[0].geometry.coordinates);
+      //         }
+      //     } catch(err) {
+      //         updateAttributeValue('error', 'Something went wrong');
+      //     }
+      // };
+      // const buildUrl = (address) => {
+      //     const encodedAddress = encodeURI(address);
+      //     const country = location_country ? location_country : 'CA';
+      //     if (ajaxInfo.apiKey) {
+      //         const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodedAddress}.json?country=${country}&access_token=${ajaxInfo.apiKey}`;
+      //         apiCall(url);
+      //     }
+      // }
+
+      return [/*#__PURE__*/React.createElement("div", {
+        class: "custom-job__block"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "block-title"
+      }, "Update job in block settings"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        },
+        components: [{
+          value: title,
+          reference: "label",
+          tagName: "p",
+          placeholder: "Please provide a title"
+        }]
+      }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        },
+        components: [{
+          value: emptyState,
+          reference: "option",
+          tagName: "p",
+          placeholder: "Please provide an option"
+        }]
+      })))];
+    },
+    save: function save(_ref) {
+      var attributes = _ref.attributes;
+      var label = attributes.label,
+          required = attributes.required,
+          options = attributes.options,
+          option = attributes.option;
     }
   });
 }
@@ -6711,6 +6819,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_stats_column_jsx__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./blocks/stats-column.jsx */ "./src/js/blocks/stats-column.jsx");
 /* harmony import */ var _blocks_timeline_timeline_container_block_jsx__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./blocks/timeline/timeline-container-block.jsx */ "./src/js/blocks/timeline/timeline-container-block.jsx");
 /* harmony import */ var _blocks_timeline_milestone_block_jsx__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./blocks/timeline/milestone-block.jsx */ "./src/js/blocks/timeline/milestone-block.jsx");
+/* harmony import */ var _blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./blocks/greenhouse/jobs-block.jsx */ "./src/js/blocks/greenhouse/jobs-block.jsx");
 // import customButtonIcons from './blocks/core-extends/button-icons';
  // Meta
 
@@ -6769,6 +6878,8 @@ __webpack_require__.r(__webpack_exports__);
 
  // Timeline Blocks 
 
+
+ // Greenhouse Blocks
 
  // Core Extends Blocks
 // customButtonIcons();
@@ -6832,7 +6943,9 @@ Object(_blocks_stats_container_jsx__WEBPACK_IMPORTED_MODULE_40__["default"])();
 Object(_blocks_stats_column_jsx__WEBPACK_IMPORTED_MODULE_41__["default"])(); // Timeline Blocks
 
 Object(_blocks_timeline_timeline_container_block_jsx__WEBPACK_IMPORTED_MODULE_42__["default"])();
-Object(_blocks_timeline_milestone_block_jsx__WEBPACK_IMPORTED_MODULE_43__["default"])();
+Object(_blocks_timeline_milestone_block_jsx__WEBPACK_IMPORTED_MODULE_43__["default"])(); // Greenhouse Blocks
+
+Object(_blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_44__["default"])();
 
 /***/ })
 
