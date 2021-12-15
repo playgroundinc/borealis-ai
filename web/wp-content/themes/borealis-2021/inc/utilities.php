@@ -5,7 +5,7 @@ if (!function_exists('pg_get_namespace')) {
      * Sets the namespace for rendering all the blocks.
      */
     function pg_get_namespace() {
-        return 'trmc';
+        return 'pg';
     }
 }
 

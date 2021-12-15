@@ -150,3 +150,6 @@ require get_template_directory() . '/inc/gutenberg/stats/render-stat-column-bloc
 // Timeline Blocks
 require get_template_directory() . '/inc/gutenberg/timeline/render-timeline-container-block.php';
 require get_template_directory() . '/inc/gutenberg/timeline/render-milestone-block.php';
+
+// Greenhouse Blocks
+require get_template_directory() . '/inc/gutenberg/greenhouse/render-jobs-block.php';
