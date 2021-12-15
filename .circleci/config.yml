@@ -220,10 +220,6 @@ workflows:
             branches:
               ignore:
                 - master
-      - behat_test:
-          requires:
-            - deploy_to_pantheon
-            - visual_regression_test
 
   scheduled_update_check:
     triggers:

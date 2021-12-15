@@ -75,6 +75,9 @@ import statColumnBlock from "./blocks/stats-column.jsx";
 import timelineContainerBlock from "./blocks/timeline/timeline-container-block.jsx";
 import trmcMilestoneBlock from './blocks/timeline/milestone-block.jsx';
 
+// Greenhouse Blocks
+import jobBlock from "./blocks/greenhouse/jobs-block.jsx";
+
 // Core Extends Blocks
 // customButtonIcons();
 customVideoPoster();
@@ -153,4 +156,7 @@ statColumnBlock();
 // Timeline Blocks
 timelineContainerBlock();
 trmcMilestoneBlock();
+
+// Greenhouse Blocks
+jobBlock();
 
