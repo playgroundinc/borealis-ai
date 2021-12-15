@@ -45,7 +45,7 @@ if ( ! function_exists( 'pg_render_job_block' ) ) {
                     <div class="page-strip flex middle-xs center-xs ph-md-5 ph-lg-3 pv-md-12 pv-xs-7 ph-xs-3 br-xs-lg">
                         <div class="fc-md-100 fc-lg-70 fc-xl-50 ph-md-5 ph-lg-0 copy--center">
                             <?php if (!empty($attributes->title)): ?>
-                                <h2 class="heading_two heading-one-lg mb-xs-0"><?php echo esc_html($attributes->title) ?></h2>
+                                <h2 class="heading_two heading-one-lg mb-xs-0 text-2xl"><?php echo esc_html($attributes->title) ?></h2>
                             <?php endif; ?>
                             <!-- <?php if (!empty($attributes->emptyState)): ?>
                                 <p class="mb-xs-0"><?php echo esc_html($attributes->emptyState) ?></p>
@@ -56,7 +56,10 @@ if ( ! function_exists( 'pg_render_job_block' ) ) {
                                         'Authorization' => 'Basic ODliOGE2OWNkNDJlYjMyOTg2NGQwZjU0YWUxNmU0NDAtMjo='
                                     )
                                 );
-                                $url = 'https://harvest.greenhouse.io/v1/jobs?status=open';
+                                // Harvest API Url
+                                // $url = 'https://harvest.greenhouse.io/v1/jobs?status=open';
+                                // Job Board API Url
+                                $url = 'https://boards-api.greenhouse.io/v1/boards/borealisai/jobs?content=true';
                                 $response = wp_remote_get( $url, $args );
                         
                                 if( is_wp_error( $response ) || ! is_array( $response ) || empty( $response )  ) {
@@ -67,10 +70,10 @@ if ( ! function_exists( 'pg_render_job_block' ) ) {
                                 $data = json_decode( $body, true );
                                 $http_code = wp_remote_retrieve_response_code( $response );
                                 if ( is_array( $response ) && ! is_wp_error( $response ) ) {
-                                    $open_jobs[] = $data;
+                                    $open_jobs[] = $data['jobs'];
                         
                                     foreach( $open_jobs[0] as $job ) {
-                                        $job_title = $job['name'];
+                                        $job_title = $job['title'];
                                         $job_offices = $job['offices'];
                                         $job_department = $job['departments'][0]['name'];
                                         echo '<p> JOB TITLE: ' . $job_title . '</p>';
@@ -93,7 +96,10 @@ if ( ! function_exists( 'pg_render_job_block' ) ) {
                                         'Authorization' => 'Basic ODliOGE2OWNkNDJlYjMyOTg2NGQwZjU0YWUxNmU0NDAtMjo='
                                     )
                                 );
-                                $url = 'https://harvest.greenhouse.io/v1/departments';
+                                // Harvest API Url
+                                // $url = 'https://harvest.greenhouse.io/v1/departments';
+                                // Job Board API Url
+                                $url = 'https://boards-api.greenhouse.io/v1/boards/borealisai/departments';
                                 $response = wp_remote_get( $url, $args );
                         
                                 if( is_wp_error( $response ) || ! is_array( $response ) || empty( $response )  ) {
@@ -104,8 +110,8 @@ if ( ! function_exists( 'pg_render_job_block' ) ) {
                                 $data = json_decode( $body, true );
                                 $http_code = wp_remote_retrieve_response_code( $response );
                                 if ( is_array( $response ) && ! is_wp_error( $response ) ) {
-                                    $departments[] = $data;
-                                    echo '<p>DEPARTMENTS ' . $job_title . '</p>';
+                                    $departments[] = $data['departments'];
+                                    echo '<p class="text-2xl">DEPARTMENTS</p>';
                                     foreach( $departments[0] as $department ) {
                                         $department_name = $department['name'];
                                         $department_id = $department['id'];
