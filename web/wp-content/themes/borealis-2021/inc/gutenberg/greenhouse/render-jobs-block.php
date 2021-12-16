@@ -59,6 +59,7 @@ if ( ! function_exists( 'pg_render_job_block' ) ) {
                                 // Harvest API Url
                                 // $url = 'https://harvest.greenhouse.io/v1/jobs?status=open';
                                 // Job Board API Url
+                                // https://boards-api.greenhouse.io/v1/boards/:board_token/jobs/:job_id 5626198002
                                 $url = 'https://boards-api.greenhouse.io/v1/boards/borealisai/jobs?content=true';
                                 $response = wp_remote_get( $url, $args );
                         
