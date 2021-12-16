@@ -36,6 +36,7 @@ export default function jobBlock() {
             function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
             }
+            
 
 			return [
                 <div class="custom-job__block">
