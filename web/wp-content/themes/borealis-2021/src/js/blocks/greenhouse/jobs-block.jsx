@@ -10,7 +10,7 @@ export default function jobBlock() {
 	const blockTitle = "Create job block";
 	const blockDescription = "Component to create job block";
 	const blockCategory = "common";
-    const blockIcon = "email"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+    const blockIcon = "users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
         title: {
@@ -30,7 +30,7 @@ export default function jobBlock() {
         icon: blockIcon,
 		attributes,
 		edit: (props, editor = false, save = false) => {
-			const { attributes } = props;
+			const { attributes, setAttributes } = props;
 			const { title, emptyState } = attributes;
 
             function updateAttributeValue(attribute, value) {

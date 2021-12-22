@@ -2601,7 +2601,7 @@ function jobBlock() {
   var blockTitle = "Create job block";
   var blockDescription = "Component to create job block";
   var blockCategory = "common";
-  var blockIcon = "email"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  var blockIcon = "users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
@@ -2622,7 +2622,8 @@ function jobBlock() {
     edit: function edit(props) {
       var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-      var attributes = props.attributes;
+      var attributes = props.attributes,
+          setAttributes = props.setAttributes;
       var title = attributes.title,
           emptyState = attributes.emptyState;
 
