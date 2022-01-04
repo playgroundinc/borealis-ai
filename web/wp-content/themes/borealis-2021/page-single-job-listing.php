@@ -8,6 +8,10 @@
  */
     get_header();
 ?>
+<?php 
+    $setting_names = array('greenhouse_api_key');
+    $settings = pg_get_settings($setting_names);
+    if ( ! empty( $settings['greenhouse_api_key'] ) ) : ?>
     <div>
         <div class="news-releases custom-component">
             <div class="container container-fluid">
@@ -48,5 +52,6 @@
             </div>
         </div>
     </div>
+<?php endif; ?>
 <?php
 get_footer();

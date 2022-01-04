@@ -53,15 +53,6 @@ if ( ! function_exists( 'pg_render_job_block' ) and !empty($settings['greenhouse
                             <!-- <?php if (!empty($attributes->emptyState)): ?>
                                 <p class="mb-xs-0"><?php echo esc_html($attributes->emptyState) ?></p>
                             <?php endif; ?> -->
-                            <?php if(!empty($options['cookie_policy_link'])): ?>
-
-                                <a href="<?php echo esc_url_raw($options['cookie_policy_link']) ?>"><?php echo !empty($options['cookie_policy_link_text']) ? esc_attr($options['cookie_policy_link_text']) : 'view here'; ?></a>
-
-                            <?php endif; ?>
-
-
-        
-       
                             <?php 
                                 $args = array(
                                     'headers' => array(
@@ -104,7 +95,7 @@ if ( ! function_exists( 'pg_render_job_block' ) and !empty($settings['greenhouse
                                     }
                                 }
                             ?>
-                             <?php 
+                            <?php 
                                 $args = array(
                                     'headers' => array(
                                         'Authorization' => 'Basic' . esc_attr($settings['greenhouse_api_key'])
