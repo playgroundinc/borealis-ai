@@ -22,7 +22,10 @@ if ( function_exists( 'register_block_type' ) ) {
     );
 }
 
-if ( ! function_exists( 'pg_render_job_block' ) ) {
+$setting_names = array('greenhouse_api_key');
+$settings = pg_get_settings($setting_names);
+
+if ( ! function_exists( 'pg_render_job_block' ) and !empty($settings['greenhouse_api_key'])) {
     /**
      * Render out page strip block
      *
@@ -53,9 +56,10 @@ if ( ! function_exists( 'pg_render_job_block' ) ) {
                             <?php 
                                 $args = array(
                                     'headers' => array(
-                                        'Authorization' => 'Basic ODliOGE2OWNkNDJlYjMyOTg2NGQwZjU0YWUxNmU0NDAtMjo='
+                                        'Authorization' => 'Basic' . esc_attr($settings['greenhouse_api_key'])
                                     )
                                 );
+                                
                                 // Harvest API Url
                                 // $url = 'https://harvest.greenhouse.io/v1/jobs?status=open';
                                 // Job Board API Url
@@ -91,12 +95,13 @@ if ( ! function_exists( 'pg_render_job_block' ) ) {
                                     }
                                 }
                             ?>
-                             <?php 
+                            <?php 
                                 $args = array(
                                     'headers' => array(
-                                        'Authorization' => 'Basic ODliOGE2OWNkNDJlYjMyOTg2NGQwZjU0YWUxNmU0NDAtMjo='
+                                        'Authorization' => 'Basic' . esc_attr($settings['greenhouse_api_key'])
                                     )
                                 );
+                               
                                 // Harvest API Url
                                 // $url = 'https://harvest.greenhouse.io/v1/departments';
                                 // Job Board API Url

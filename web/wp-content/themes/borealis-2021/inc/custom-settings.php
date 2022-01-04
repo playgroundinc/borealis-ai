@@ -42,6 +42,12 @@ function pg_init_menus() {
                         'gtm_container_id' => 'text',
                     )
                 ),
+                'Greenhouse API Keys' => array(
+                    'id' => $namespace . '-integrations-greenhouse',
+                    'fields' => array(
+                        'greenhouse_api_key' => 'text',
+                    )
+                ),
             )
         ),
 
