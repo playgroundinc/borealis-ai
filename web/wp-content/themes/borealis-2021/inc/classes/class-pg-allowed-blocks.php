@@ -81,6 +81,9 @@ class PG_Allowed_Blocks {
         $this->news_release_blocks = array(
             $this->namespace . '/' . 'news-release-meta-block',
         );
+        $this->research_blog_blocks = array(
+            $this->namespace . '/' . 'research-blog-meta-block',
+        );
         $this->page_blocks = array(
             $this->namespace . '/' . 'page-meta-block'
         );
@@ -120,6 +123,10 @@ class PG_Allowed_Blocks {
         if ($this->post_type === 'news-releases') {
             $news_release_blocks = array_merge($body_copy_blocks, $this->news_release_blocks);
             return $news_release_blocks;
+        } 
+        if ($this->post_type === 'research-blogs') {
+            $research_blog_blocks = array_merge($body_copy_blocks, $this->research_blog_blocks);
+            return $research_blog_blocks;
         } 
         $custom_blocks = array_map(array($this, 'add_namespace'), $this->custom_blocks);
         $custom_blocks = array_merge($this->core_blocks, $custom_blocks);
