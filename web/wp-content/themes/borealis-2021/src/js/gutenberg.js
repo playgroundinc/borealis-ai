@@ -7,7 +7,6 @@ import locationMetaBlock from "./blocks/meta/location-meta.jsx"
 import newsReleaseMetaBlock from "./blocks/meta/news-releases-meta.jsx";
 import researchBlogMetaBlock from "./blocks/meta/research-blogs-meta.jsx";
 
-
 // Development Blocks
 import developmentBlocks from "./development/blocks/development-blocks.jsx"
 
@@ -79,6 +78,12 @@ import trmcMilestoneBlock from './blocks/timeline/milestone-block.jsx';
 
 // Greenhouse Blocks
 import jobBlock from "./blocks/greenhouse/jobs-block.jsx";
+
+// Greenhouse Blocks
+import jobBlock from "./blocks/greenhouse/jobs-block.jsx";
+
+// Sidebar Table Of Contents Blocks
+import customSectionBlock from './blocks/sidebar-table-of-contents/custom-section-blok.jsx';
 
 // Core Extends Blocks
 // customButtonIcons();
@@ -163,3 +168,5 @@ trmcMilestoneBlock();
 // Greenhouse Blocks
 jobBlock();
 
+// Sidebar Table Of Contents Blocks
+customSectionBlock();

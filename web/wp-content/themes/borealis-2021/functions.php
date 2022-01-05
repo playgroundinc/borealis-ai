@@ -153,3 +153,6 @@ require get_template_directory() . '/inc/gutenberg/timeline/render-milestone-blo
 
 // Greenhouse Blocks
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-jobs-block.php';
+
+// Sidebar Table Of Contents Blocks
+require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-section-block.php';
