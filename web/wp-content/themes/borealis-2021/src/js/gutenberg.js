@@ -79,9 +79,6 @@ import trmcMilestoneBlock from './blocks/timeline/milestone-block.jsx';
 // Greenhouse Blocks
 import jobBlock from "./blocks/greenhouse/jobs-block.jsx";
 
-// Greenhouse Blocks
-import jobBlock from "./blocks/greenhouse/jobs-block.jsx";
-
 // Sidebar Table Of Contents Blocks
 import customSectionBlock from './blocks/sidebar-table-of-contents/custom-section-blok.jsx';
 
