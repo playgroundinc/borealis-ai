@@ -10,7 +10,7 @@ export default function customSectionBlock() {
 	const blockTitle = "Create custom section block";
 	const blockDescription = "Component to create custom section block";
 	const blockCategory = "common";
-    const blockIcon = "users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+    const blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
         title: {
