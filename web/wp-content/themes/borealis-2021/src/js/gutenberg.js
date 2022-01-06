@@ -81,6 +81,7 @@ import jobBlock from "./blocks/greenhouse/jobs-block.jsx";
 
 // Sidebar Table Of Contents Blocks
 import customSectionBlock from './blocks/sidebar-table-of-contents/custom-section-blok.jsx';
+import customSubsectionBlock from './blocks/sidebar-table-of-contents/custom-subsection-blok.jsx';
 
 // Core Extends Blocks
 // customButtonIcons();
@@ -167,3 +168,4 @@ jobBlock();
 
 // Sidebar Table Of Contents Blocks
 customSectionBlock();
+customSubsectionBlock();

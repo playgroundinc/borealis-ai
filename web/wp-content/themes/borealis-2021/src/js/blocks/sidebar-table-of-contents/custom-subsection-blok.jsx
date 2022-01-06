@@ -2,16 +2,13 @@ import { namespace } from "../helper-functions/constants";
 
 import CustomRichText from '../reusable/custom-richtext-component.jsx';
 
-export default function customSectionBlock() {
+export default function customSubsectionBlock() {
     const { registerBlockType, createBlock } = wp.blocks;
-    const {
-		InnerBlocks,
-    } = wp.blockEditor;
     const { i18n } = wp;
 
-    const blockSlug = "custom-section-block"; // slug for the block
-	const blockTitle = "Create custom section block";
-	const blockDescription = "Component to create custom section block";
+    const blockSlug = "custom-subsection-block"; // slug for the block
+	const blockTitle = "Create custom subsection block";
+	const blockDescription = "Component to create custom subsection block";
 	const blockCategory = "common";
     const blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
@@ -28,6 +25,7 @@ export default function customSectionBlock() {
 		category: blockCategory,
         icon: blockIcon,
 		attributes,
+        parent: [`${namespace}/custom-section-block`],
 		edit: (props, editor = false, save = false) => {
 			const { attributes, setAttributes } = props;
 			const { title } = attributes;
@@ -37,8 +35,8 @@ export default function customSectionBlock() {
             }
 
 			return [
-                <div class="custom-section__block">
-                    <p className="block-title">Custom Section Block</p>
+                <div class="custom-subsection__block">
+                    <p className="block-title">Custom Subsection Block</p>
                     <CustomRichText 
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
                         components={[
@@ -50,19 +48,11 @@ export default function customSectionBlock() {
                             },
                         ]}
                     />
-                    { save ? (
-                        <InnerBlocks.Content />
-                    ) : (
-                        <InnerBlocks
-                            allowedBlocks={[`${namespace}/custom-subsection-block`]}
-                        />
-                    )}
                 </div>,
 			];
 		},
 		save: ({ attributes }) => {
 			const { title } = attributes;
-            return <InnerBlocks.Content />;
 		},
 	});
-}
+} 
