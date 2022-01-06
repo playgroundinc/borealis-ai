@@ -5,6 +5,8 @@ import customVideoPoster from './blocks/core-extends/video-embed-poster.jsx';
 import pageMetaBlock from "./blocks/meta/page-meta.jsx"
 import locationMetaBlock from "./blocks/meta/location-meta.jsx"
 import newsReleaseMetaBlock from "./blocks/meta/news-releases-meta.jsx";
+import researchBlogMetaBlock from "./blocks/meta/research-blogs-meta.jsx";
+
 
 // Development Blocks
 import developmentBlocks from "./development/blocks/development-blocks.jsx"
@@ -86,6 +88,7 @@ customVideoPoster();
 pageMetaBlock();
 locationMetaBlock();
 newsReleaseMetaBlock();
+researchBlogMetaBlock();
 
 // Init development blocks!
 developmentBlocks();
