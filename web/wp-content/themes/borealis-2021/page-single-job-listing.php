@@ -8,6 +8,10 @@
  */
     get_header();
 ?>
+<?php 
+    $setting_names = array('greenhouse_api_key');
+    $settings = pg_get_settings($setting_names);
+    if ( ! empty( $settings['greenhouse_api_key'] ) ) : ?>
     <div>
         <div class="news-releases custom-component">
             <div class="container container-fluid">
@@ -17,12 +21,15 @@
                     if (isset($_GET['gh_jid'])) {
                         $jobIdQuery = sanitize_text_field(wp_unslash($_GET['gh_jid']));
                     }
-                
+
+                    $setting_names = array('greenhouse_api_key');
+                    $settings = pg_get_settings($setting_names);
                     $args = array(
                         'headers' => array(
-                            'Authorization' => 'Basic ODliOGE2OWNkNDJlYjMyOTg2NGQwZjU0YWUxNmU0NDAtMjo='
+                            'Authorization' => 'Basic' . esc_attr($settings['greenhouse_api_key'])
                         )
                     );
+                
                     $url = 'https://boards-api.greenhouse.io/v1/boards/borealisai/jobs/' . $jobIdQuery;
                     $response = wp_remote_get( $url, $args );
                 
@@ -45,5 +52,6 @@
             </div>
         </div>
     </div>
+<?php endif; ?>
 <?php
 get_footer();
