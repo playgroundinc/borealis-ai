@@ -5264,6 +5264,165 @@ function CustomVideoUpload(props) {
 
 /***/ }),
 
+/***/ "./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx":
+/*!*************************************************************************!*\
+  !*** ./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return customSectionBlock; });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function customSectionBlock() {
+  var _wp$blocks = wp.blocks,
+      registerBlockType = _wp$blocks.registerBlockType,
+      createBlock = _wp$blocks.createBlock;
+  var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var _wp = wp,
+      i18n = _wp.i18n;
+  var blockSlug = "custom-section-block"; // slug for the block
+
+  var blockTitle = "Create custom section block";
+  var blockDescription = "Component to create custom section block";
+  var blockCategory = "common";
+  var blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+
+  var attributes = {
+    title: {
+      type: 'String',
+      default: ''
+    }
+  };
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+    title: i18n.__(blockTitle),
+    description: i18n.__(blockDescription),
+    category: blockCategory,
+    icon: blockIcon,
+    attributes: attributes,
+    edit: function edit(props) {
+      var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var attributes = props.attributes,
+          setAttributes = props.setAttributes;
+      var title = attributes.title;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
+
+      return [/*#__PURE__*/React.createElement("div", {
+        class: "custom-section__block"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "block-title"
+      }, "Custom Section Block"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        },
+        components: [{
+          value: title,
+          reference: "title",
+          tagName: "p",
+          placeholder: "Please provide a title"
+        }]
+      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/custom-subsection-block")]
+      }))];
+    },
+    save: function save(_ref) {
+      var attributes = _ref.attributes;
+      var title = attributes.title;
+      return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/sidebar-table-of-contents/custom-subsection-blok.jsx":
+/*!****************************************************************************!*\
+  !*** ./src/js/blocks/sidebar-table-of-contents/custom-subsection-blok.jsx ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return customSubsectionBlock; });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function customSubsectionBlock() {
+  var _wp$blocks = wp.blocks,
+      registerBlockType = _wp$blocks.registerBlockType,
+      createBlock = _wp$blocks.createBlock;
+  var _wp = wp,
+      i18n = _wp.i18n;
+  var blockSlug = "custom-subsection-block"; // slug for the block
+
+  var blockTitle = "Create custom subsection block";
+  var blockDescription = "Component to create custom subsection block";
+  var blockCategory = "common";
+  var blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+
+  var attributes = {
+    title: {
+      type: 'String',
+      default: ''
+    }
+  };
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+    title: i18n.__(blockTitle),
+    description: i18n.__(blockDescription),
+    category: blockCategory,
+    icon: blockIcon,
+    attributes: attributes,
+    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/custom-section-block")],
+    edit: function edit(props) {
+      var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var attributes = props.attributes,
+          setAttributes = props.setAttributes;
+      var title = attributes.title;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
+
+      return [/*#__PURE__*/React.createElement("div", {
+        class: "custom-subsection__block"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "block-title"
+      }, "Custom Subsection Block"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        },
+        components: [{
+          value: title,
+          reference: "title",
+          tagName: "p",
+          placeholder: "Please provide a title"
+        }]
+      }))];
+    },
+    save: function save(_ref) {
+      var attributes = _ref.attributes;
+      var title = attributes.title;
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/blocks/slider/body-copy-image-slide.jsx":
 /*!********************************************************!*\
   !*** ./src/js/blocks/slider/body-copy-image-slide.jsx ***!
@@ -6869,6 +7028,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_timeline_timeline_container_block_jsx__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./blocks/timeline/timeline-container-block.jsx */ "./src/js/blocks/timeline/timeline-container-block.jsx");
 /* harmony import */ var _blocks_timeline_milestone_block_jsx__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./blocks/timeline/milestone-block.jsx */ "./src/js/blocks/timeline/milestone-block.jsx");
 /* harmony import */ var _blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./blocks/greenhouse/jobs-block.jsx */ "./src/js/blocks/greenhouse/jobs-block.jsx");
+/* harmony import */ var _blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-section-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx");
+/* harmony import */ var _blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-subsection-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-subsection-blok.jsx");
 // import customButtonIcons from './blocks/core-extends/button-icons';
  // Meta
 
@@ -6930,6 +7091,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // Greenhouse Blocks
+
+ // Sidebar Table Of Contents Blocks
+
 
  // Core Extends Blocks
 // customButtonIcons();
@@ -6996,7 +7160,10 @@ Object(_blocks_stats_column_jsx__WEBPACK_IMPORTED_MODULE_42__["default"])(); // 
 Object(_blocks_timeline_timeline_container_block_jsx__WEBPACK_IMPORTED_MODULE_43__["default"])();
 Object(_blocks_timeline_milestone_block_jsx__WEBPACK_IMPORTED_MODULE_44__["default"])(); // Greenhouse Blocks
 
-Object(_blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_45__["default"])();
+Object(_blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_45__["default"])(); // Sidebar Table Of Contents Blocks
+
+Object(_blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_46__["default"])();
+Object(_blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_47__["default"])();
 
 /***/ })
 
