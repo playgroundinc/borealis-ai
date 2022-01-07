@@ -17,20 +17,6 @@ if (!function_exists('trmc_mapbox_scripts')) {
  * Enqueue scripts and styles.
  */
 function pg_wp_starter_scripts() {
-
-    wp_enqueue_script( 'footnotes-made-easy', 'https://github.com/dartiss/footnotes-made-easy/blob/main/js/tooltips.min.js', array(), '20151215', true );
-
-
-    // include custom jQuery
-function shapeSpace_include_custom_jquery() {
-
-	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
-
-}
-add_action('wp_enqueue_scripts', 'shapeSpace_include_custom_jquery');
-
-    
     wp_enqueue_script( 'focus-visible', 'https://unpkg.com/focus-visible@latest/dist/focus-visible.min.js', array(), '20151215', true );
 	wp_enqueue_style( 'pg-wp-starter-style', get_template_directory_uri() . '/dist/build.css' );
 
