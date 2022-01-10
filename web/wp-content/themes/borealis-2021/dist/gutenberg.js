@@ -4012,6 +4012,7 @@ function locationMetaBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var news_release_date = attributes.news_release_date;
+      console.log(news_release_date, 'news');
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -4244,7 +4245,7 @@ function researchBlogMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
   var Inserter = wp.blockEditor.Inserter;
-  var meta_fields = ['publication_date'];
+  var meta_fields = ['publication_date', 'post_info'];
   var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/research-blog-meta-block"), {
     title: 'Research Blogs Meta',
@@ -4257,7 +4258,9 @@ function researchBlogMetaBlock() {
     edit: function edit(props) {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var publication_date = attributes.publication_date;
+      var publication_date = attributes.publication_date,
+          post_info = attributes.post_info;
+      console.log(attributes);
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
