@@ -65,18 +65,10 @@ if (!function_exists('pg_handle_research_blog_sidebar_save')) {
      * @param int $post_id the id for the current post.
      */
     function pg_handle_research_blog_sidebar_save($post_id) {
-        // $post = get_post($post_id);
-        // $test = $post->post_content;
-        // update_post_meta($post_id, 'post_info', $test);
-
         $post = get_post( $post_id );
-        update_post_meta($post_id, 'post_info', '123123213');
-        
-
-        // $post   = get_post( $post_id );
-        // $blocks = parse_blocks( $post->post_content );
-        // $output =  apply_filters( 'the_content', $post->post_content );
-        // update_post_meta($post_id, 'post_info', $output);
+        $data = apply_filters( 'the_content', $post->post_content );
+        // This is working, but all the section/subsection titles are coming back in string.
+        update_post_meta($post_id, 'post_info', $data);
     }
 }
 
