@@ -54,7 +54,7 @@ export default function customSectionBlock() {
                         <InnerBlocks.Content />
                     ) : (
                         <InnerBlocks
-                            allowedBlocks={[`${namespace}/custom-subsection-block`]}
+                            allowedBlocks={[`${namespace}/custom-subsection-block`, `${namespace}/paragraph`]}
                         />
                     )}
                 </div>,

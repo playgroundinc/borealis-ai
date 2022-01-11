@@ -64,11 +64,46 @@ if (!function_exists('pg_handle_research_blog_sidebar_save')) {
      * 
      * @param int $post_id the id for the current post.
      */
-    function pg_handle_research_blog_sidebar_save($post_id) {
-        $post = get_post( $post_id );
-        $data = apply_filters( 'the_content', $post->post_content );
-        // This is working, but all the section/subsection titles are coming back in string.
-        update_post_meta($post_id, 'post_info', $data);
+    function pg_handle_research_blog_sidebar_save($post_id, $post) {
+        // Parses the blocks from the $post objects content
+        $blocks = parse_blocks($post->post_content);
+        // Filter blocks so we're only working with the custom-section blocks.
+        $sections =  array_filter(
+            // Array
+            $blocks, 
+            // Callback
+            function($block) { 
+                return $block['blockName'] === 'pg/custom-section-block'; 
+            }
+        );
+        // Set up an empty array so we're never pushing an empty value to post_meta.
+        $post_sections = array();
+        if (!empty($sections)) {
+            foreach ($sections as $section_block) {
+                $info = array();
+                // Pulls the title off of the block attributes.
+                $info['title'] = $section_block['attrs']['title'];
+                // Sets up an empty array for subsections.
+                $info['subsections'] = array();
+                // If the block has innerBlocks, check if any are subsections.
+                if (!empty($section_block['innerBlocks'])) {
+                    // Filters innerBlocks so we're only using subsection blocks.
+                    $subsections = array_filter($section_block['innerBlocks'], function($inner_block) { return $inner_block['blockName'] === 'pg/custom-subsection-block'; });
+                    // If we have any subsections, add their titles to the array.
+                    if (!empty($subsections)) {
+                        foreach ( $subsections as $inner_block) {
+                            array_push($info['subsections'], $inner_block['attrs']['title']);
+                        }
+                    }
+                    
+                }
+                // Adds this item to the $post_info array.
+                array_push($post_sections, $info);
+            }
+        }
+        // Using json_encode to transform the array into a JSON string which can be easily stored.
+        // We can then decode it on the front end. 
+        update_post_meta($post_id, 'post_sections', json_encode($post_sections));
     }
 }
 
@@ -82,12 +117,7 @@ if (!function_exists('pg_save_post_research_blog_sidebar_callback')) {
      */
     function pg_save_post_research_blog_sidebar_callback($post_id, $post, $update){
         if ($post->post_type === 'research-blogs'){
-            // We're only interested in setting the metavalue by default right now.
-            if ($update) {
-                pg_handle_research_blog_sidebar_save($post_id);
-                // return;
-            }
-            pg_handle_research_blog_sidebar_save($post_id);
+            pg_handle_research_blog_sidebar_save($post_id, $post);
         }
     }
 }
