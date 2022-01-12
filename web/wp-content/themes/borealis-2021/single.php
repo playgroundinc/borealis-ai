@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-    <div class="page__content">
+    <div>
         <?php 
             $post_sections = get_post_meta($post->ID, 'post_sections', true);
             if (isset($post_sections) && !empty($post_sections)) {

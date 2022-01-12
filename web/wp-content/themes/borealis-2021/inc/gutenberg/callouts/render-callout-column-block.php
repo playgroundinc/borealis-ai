@@ -17,12 +17,12 @@ if ( function_exists( 'register_block_type' ) ) {
     register_block_type(
         $namespace . '/callout-column',
         array(
-            'render_callback' => 'trmc_render_callout_column_block',
+            'render_callback' => 'pg_render_callout_column_block',
         )
     );
 }
 
-if ( ! function_exists( 'trmc_render_callout_column_block' ) ) {
+if ( ! function_exists( 'pg_render_callout_column_block' ) ) {
     /**
      * Render out carousel container block.
      *
@@ -30,7 +30,7 @@ if ( ! function_exists( 'trmc_render_callout_column_block' ) ) {
      * @param mixed $content the content of the block.
      * @param array $block_obj array of the block features.
      */
-    function trmc_render_callout_column_block( $attrs, $content, $block_obj ) {
+    function pg_render_callout_column_block( $attrs, $content, $block_obj ) {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
@@ -48,22 +48,22 @@ if ( ! function_exists( 'trmc_render_callout_column_block' ) ) {
         ob_start();
         ?>
             <?php if (!empty($attributes->link)): ?>
-                <?php 
-                    $label = 'aria-label="' . esc_attr($attributes->title) . '"';
-
-                ?>
-                <a class="link--card link" href="<?php echo esc_attr($attributes->link)?>" <?php echo !empty($attributes->title) ? $label : null; ?>>
+                <?php $label = 'aria-label="' . esc_attr($attributes->title) . '"'; ?>
+                <a  
+                    href="<?php echo esc_attr($attributes->link)?>" 
+                    <?php echo !empty($attributes->title) ? $label : null; ?>
+                >
             <?php endif; ?>
         
-                <div class="callout-column flex col-xs">
-                    <div class="callout-column__image fg-xs-1 fg-lg-0" style="background-image: url(<?php echo esc_url_raw($image)?>)">
+                <div>
+                    <div style="background-image: url(<?php echo esc_url_raw($image)?>)">
                     </div>
-                    <div class="callout-column__content mt-xs-3 fg-xs-0">
+                    <div>
                         <?php if (!empty($attributes->title)): ?>
-                            <h3 class="heading_four mb-xs-0"><?php echo esc_html($attributes->title) ?></h3>
+                            <h3><?php echo esc_html($attributes->title) ?></h3>
                         <?php endif; ?>
                         <?php if (!empty($attributes->link_text)): ?>
-                            <p class="faux-link label mt-xs-2"><?php echo esc_attr($attributes->link_text); ?></p>
+                            <p><?php echo esc_attr($attributes->link_text); ?></p>
                         <?php endif; ?>
                     </div>
                     

@@ -17,12 +17,12 @@ if ( function_exists( 'register_block_type' ) ) {
     register_block_type(
         $namespace . '/stats-container',
         array(
-            'render_callback' => 'trmc_render_stats_container_block',
+            'render_callback' => 'pg_render_stats_container_block',
         )
     );
 }
 
-if ( ! function_exists( 'trmc_render_stats_container_block' ) ) {
+if ( ! function_exists( 'pg_render_stats_container_block' ) ) {
     /**
      * Render out carousel container block.
      *
@@ -30,7 +30,7 @@ if ( ! function_exists( 'trmc_render_stats_container_block' ) ) {
      * @param mixed $content the content of the block.
      * @param array $block_obj array of the block features.
      */
-    function trmc_render_stats_container_block( $attrs, $content, $block_obj ) {
+    function pg_render_stats_container_block( $attrs, $content, $block_obj ) {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
@@ -42,24 +42,16 @@ if ( ! function_exists( 'trmc_render_stats_container_block' ) ) {
         $id = !empty($attributes->title) ? pg_slugify($attributes->title) : 'callout-column-slider';
         ob_start();
         ?>
-            <div class="custom-component statistic-block">
-                <div class="container container-fluid animated-element">
-                    <?php if (!empty($attributes->title)): ?>
-                        <div class="mb-xl-14 mb-xs-5 fc-xl-50">                        
-                            <h2 class="heading_one m-xs-0"><?php echo wp_kses($attributes->title, $allowed_html) ?></h2>
-                            <?php if (!empty($attributes->description)): ?>
-                                <div class="mt-xs-3">
-                                    <?php echo wpautop($attributes->description); ?>
-                                </div>
-                            <?php endif; ?>
-                        </div>
+            <div>
+                <?php if (!empty($attributes->title)): ?>                     
+                    <h2><?php echo wp_kses($attributes->title, $allowed_html) ?></h2>
+                    <?php if (!empty($attributes->description)): ?>
+                        <?php echo wpautop($attributes->description); ?>
                     <?php endif; ?>
-                    <div class="flex statistic-block__container">
-                        <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
-                            <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
+                <?php endif; ?>
+                <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
+                    <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
+                <?php endforeach; ?>
             </div>
         <?php
         return ob_get_clean();

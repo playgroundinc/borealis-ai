@@ -17,12 +17,12 @@ if ( function_exists( 'register_block_type' ) ) {
     register_block_type(
         $namespace . '/stat-column',
         array(
-            'render_callback' => 'trmc_render_stat_column_block',
+            'render_callback' => 'pg_render_stat_column_block',
         )
     );
 }
 
-if ( ! function_exists( 'trmc_render_stat_coloumn_block' ) ) {
+if ( ! function_exists( 'pg_render_stat_coloumn_block' ) ) {
     /**
      * Render out stat column block
      *
@@ -30,7 +30,7 @@ if ( ! function_exists( 'trmc_render_stat_coloumn_block' ) ) {
      * @param mixed $content the content of the block.
      * @param array $block_obj array of the block features.
      */
-    function trmc_render_stat_column_block( $attrs, $content, $block_obj ) {
+    function pg_render_stat_column_block( $attrs, $content, $block_obj ) {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
@@ -42,13 +42,11 @@ if ( ! function_exists( 'trmc_render_stat_coloumn_block' ) ) {
         ob_start();
         if (!empty($attributes->statistic)):
         ?>
-            <div class="fc-xl-25 fc-md-50 fc-xs-100 flex col-xs">
-                <div class="statistic-block__single fg-xs-1">
-                    <p>
-                        <span class="heading_two block-link"><?php echo esc_html($attributes->statistic); ?></span>
-                        <span class="paragraph"><?php echo !empty($attributes->description) ? esc_html($attributes->description) : null; ?></span>
-                    </p>
-                </div>
+            <div>
+                <p>
+                    <span><?php echo esc_html($attributes->statistic); ?></span>
+                    <span><?php echo !empty($attributes->description) ? esc_html($attributes->description) : null; ?></span>
+                </p>
             </div>
         <?php
         endif;

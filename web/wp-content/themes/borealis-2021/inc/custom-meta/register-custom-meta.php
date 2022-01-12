@@ -4,8 +4,8 @@
  */
 
 //  Page Meta
-if (!function_exists( 'trmc_add_custom_meta')) {
-    function trmc_add_custom_meta( ) {
+if (!function_exists( 'pg_add_custom_meta')) {
+    function pg_add_custom_meta( ) {
         $page_meta_args = array(
             'gradient_background' => 'text',
             'hero_style' => 'text',
@@ -24,4 +24,4 @@ if (!function_exists( 'trmc_add_custom_meta')) {
     }
 }
 
-add_action('init', 'trmc_add_custom_meta');
+add_action('init', 'pg_add_custom_meta');

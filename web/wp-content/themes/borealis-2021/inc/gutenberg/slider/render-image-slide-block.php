@@ -17,12 +17,12 @@ if ( function_exists( 'register_block_type' ) ) {
     register_block_type(
         $namespace . '/image-slide',
         array(
-            'render_callback' => 'trmc_render_image_slide_block',
+            'render_callback' => 'pg_render_image_slide_block',
         )
     );
 }
 
-if ( ! function_exists( 'trmc_render_image_slide_block' ) ) {
+if ( ! function_exists( 'pg_render_image_slide_block' ) ) {
     /**
      * Render out carousel container block.
      *
@@ -30,7 +30,7 @@ if ( ! function_exists( 'trmc_render_image_slide_block' ) ) {
      * @param mixed $content the content of the block.
      * @param array $block_obj array of the block features.
      */
-    function trmc_render_image_slide_block( $attrs, $content, $block_obj ) {
+    function pg_render_image_slide_block( $attrs, $content, $block_obj ) {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
@@ -51,7 +51,7 @@ if ( ! function_exists( 'trmc_render_image_slide_block' ) ) {
         ob_start();
         if (!empty($image)): 
         ?>
-            <div class="slide flex middle-xs" aria-roledescription="slide" data-caption="<?php echo !empty($attributes->caption) ? esc_attr($attributes->caption) : esc_attr($attributes->image_alt); ?>">
+            <div aria-roledescription="slide" data-caption="<?php echo !empty($attributes->caption) ? esc_attr($attributes->caption) : esc_attr($attributes->image_alt); ?>">
                 <picture class="lazy">
                     <?php if (!empty($srcset)): ?>
                         <source media="(min-width: <?php echo esc_attr($breakpoints['xl'] . 'px') ?>)" sizes="<?php echo esc_attr($breakpoints['default'] . 'px'); ?>" data-srcset="<?php echo esc_attr($srcset) ?>" srcset="<?php echo esc_attr($placeholder_srcset) ?>">
