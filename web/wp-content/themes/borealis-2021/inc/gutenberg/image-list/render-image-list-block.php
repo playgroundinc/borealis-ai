@@ -17,12 +17,12 @@ if ( function_exists( 'register_block_type' ) ) {
     register_block_type(
         $namespace . '/image-list',
         array(
-            'render_callback' => 'trmc_render_image_list_block',
+            'render_callback' => 'pg_render_image_list_block',
         )
     );
 }
 
-if ( ! function_exists( 'trmc_render_image_list_block' ) ) {
+if ( ! function_exists( 'pg_render_image_list_block' ) ) {
     /**
      * Render out carousel container block.
      *
@@ -30,7 +30,7 @@ if ( ! function_exists( 'trmc_render_image_list_block' ) ) {
      * @param mixed $content the content of the block.
      * @param array $block_obj array of the block features.
      */
-    function trmc_render_image_list_block( $attrs, $content, $block_obj ) {
+    function pg_render_image_list_block( $attrs, $content, $block_obj ) {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
@@ -45,14 +45,14 @@ if ( ! function_exists( 'trmc_render_image_list_block' ) ) {
         $allowed_html = pg_allowed_html();
         ob_start();
         ?>
-            <div class="image-list__single">
+            <div>
                 <?php if (!empty($image_src)): ?>
                     <img src="<?php echo esc_url_raw($image_src[0]); ?>" alt="<?php echo esc_attr($attributes->image_alt) ?>">
                 <?php endif; ?>
                 <?php if (!empty($attributes->title)): ?>
-                    <h3 class="heading_three mb-xs-0 <?php echo !empty($image_src) ? esc_attr('mt-xs-2') : null; ?>"><?php echo wp_kses($attributes->title, $allowed_html)?></h3>
+                    <h3><?php echo wp_kses($attributes->title, $allowed_html)?></h3>
                 <?php endif; ?>
-                <div class="copy--body <?php echo !empty($attributes->title) || !empty($image_src) ? esc_attr('mt-xs-2') : null; ?>" >
+                <div>
                     <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
                         <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
                     <?php endforeach; ?>      

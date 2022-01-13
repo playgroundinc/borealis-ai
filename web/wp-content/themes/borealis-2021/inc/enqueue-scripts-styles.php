@@ -1,10 +1,10 @@
 <?php
 
-if (!function_exists('trmc_mapbox_scripts')) {
+if (!function_exists('pg_mapbox_scripts')) {
     /**
      * Only load in mapbox scripts if they're necessary.
      */
-    function trmc_mapbox_scripts() {
+    function pg_mapbox_scripts() {
         $namespace = pg_get_namespace();
         if (has_block($namespace . '/map-block')) {
             wp_enqueue_script('mapbox', 'https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js', array(), '20151215', false);
@@ -52,7 +52,7 @@ function pg_wp_starter_scripts() {
 
     if ( !is_admin() ) wp_deregister_script('jquery');
     // Conditional function to only load MapBoxGL when necessary.
-    trmc_mapbox_scripts();
+    pg_mapbox_scripts();
 }
 add_action( 'wp_enqueue_scripts', 'pg_wp_starter_scripts' );
 

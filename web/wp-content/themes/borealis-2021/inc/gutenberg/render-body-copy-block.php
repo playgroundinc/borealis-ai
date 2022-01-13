@@ -17,12 +17,12 @@ if ( function_exists( 'register_block_type' ) ) {
     register_block_type(
         $namespace . '/body-copy',
         array(
-            'render_callback' => 'trmc_render_body_copy_block',
+            'render_callback' => 'pg_render_body_copy_block',
         )
     );
 }
 
-if ( ! function_exists( 'trmc_render_body_copy_block' ) ) {
+if ( ! function_exists( 'pg_render_body_copy_block' ) ) {
     /**
      * Render out cognito embed block
      *
@@ -30,12 +30,12 @@ if ( ! function_exists( 'trmc_render_body_copy_block' ) ) {
      * @param mixed $content the content of the block.
      * @param array $block_obj array of the block features.
      */
-    function trmc_render_body_copy_block( $attrs, $content, $block_obj ) {
+    function pg_render_body_copy_block( $attrs, $content, $block_obj ) {
         $block = $block_obj->parsed_block;
         $allowed_html = pg_allowed_html();
         ob_start();
         ?> 
-            <div class="custom-component container container--single body-copy">
+            <div>
                 <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
                     <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
                 <?php endforeach; ?>

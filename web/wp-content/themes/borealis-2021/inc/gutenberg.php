@@ -12,7 +12,7 @@ add_action('enqueue_block_editor_assets', 'pg_blocks', 10, 1);
  * @param array $categories the current categoriess.
  * @param objects $post the current post object.
  */
-function trmc_custom_block_categories( $categories, $post ) {
+function pg_custom_block_categories( $categories, $post ) {
 	return array_merge(
 		$categories,
 		array(
@@ -41,4 +41,4 @@ function trmc_custom_block_categories( $categories, $post ) {
 	);
 }
 
-add_filter( 'block_categories', 'trmc_custom_block_categories', 10, 2);
+add_filter( 'block_categories', 'pg_custom_block_categories', 10, 2);

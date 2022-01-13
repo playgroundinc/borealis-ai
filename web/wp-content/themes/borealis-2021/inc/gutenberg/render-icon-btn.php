@@ -11,14 +11,14 @@
  * @since  1.0.0
  */
 
-if ( ! function_exists( 'trmc_render_icon_button_block' ) ) {
+if ( ! function_exists( 'pg_render_icon_button_block' ) ) {
     /**
      * Render button with icon.
      *
      * @param mixed $block_content the content of the block.
      * @param array $block array of the block features.
      */
-    function trmc_render_icon_button_block( $block_content, $block ) {
+    function pg_render_icon_button_block( $block_content, $block ) {
 
         $fields = array(
             'icon' => null,

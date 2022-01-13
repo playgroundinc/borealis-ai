@@ -17,12 +17,12 @@ if ( function_exists( 'register_block_type' ) ) {
     register_block_type(
         $namespace . '/custom-image',
         array(
-            'render_callback' => 'trmc_render_image_block',
+            'render_callback' => 'pg_render_image_block',
         )
     );
 }
 
-if ( ! function_exists( 'trmc_render_image_block' ) ) {
+if ( ! function_exists( 'pg_render_image_block' ) ) {
     /**
      * Render out carousel container block.
      *
@@ -30,7 +30,7 @@ if ( ! function_exists( 'trmc_render_image_block' ) ) {
      * @param mixed $content the content of the block.
      * @param array $block_obj array of the block features.
      */
-    function trmc_render_image_block( $attrs, $content, $block_obj ) {
+    function pg_render_image_block( $attrs, $content, $block_obj ) {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(

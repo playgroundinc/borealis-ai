@@ -20,6 +20,7 @@
 		JS_DIR + '/main.js'
 	],
 	gutenberg: JS_DIR + '/gutenberg.js',
+	carousel: JS_DIR + '/scripts/carousel.js'
  }
  
  const output = {

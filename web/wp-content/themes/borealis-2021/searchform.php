@@ -8,14 +8,11 @@ if (isset($_GET['q'])) {
 $placeholder = __('Looking for something', 'trmc');
 ?>
 
-<form class="search animated-element" method="get">
-    <label class="screen-reader-only" for="search">Search</label>
-    <div class="flex search__form center-xs">
-        <input id="search" name="q" type="search" class="pv-xs-2 search__form__input heading-three-xs" placeholder="<?php echo esc_attr($placeholder . '?') ?>" value="<?php echo esc_attr($query); ?>">
-        <button class="icon-lg p-xs-2 search__form__trigger" aria-label="<?php esc_attr_e('Execute search', 'trmc'); ?>" type="submit">
-            <?php
-                echo wp_kses(pg_render_icon('search'), $allowed_html);
-            ?>
+<form method="get">
+    <label for="search">Search</label>
+    <div>
+        <input id="search" name="q" type="search" placeholder="<?php echo esc_attr($placeholder . '?') ?>" value="<?php echo esc_attr($query); ?>">
+        <button aria-label="<?php esc_attr('Execute search'); ?>" type="submit">
         </button>
     </div>
 </form>

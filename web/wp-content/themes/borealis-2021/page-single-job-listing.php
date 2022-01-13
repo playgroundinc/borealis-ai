@@ -13,8 +13,8 @@
     $settings = pg_get_settings($setting_names);
     if ( ! empty( $settings['greenhouse_api_key'] ) ) : ?>
     <div>
-        <div class="news-releases custom-component">
-            <div class="container container-fluid">
+        <div>
+            <div>
                 <h1>SINGLE JOB LISTING PAGE</h1>
                 <?php 
                     $jobIdQuery = "";
