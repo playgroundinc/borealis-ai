@@ -105,6 +105,5 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script src="https://boards.greenhouse.io/embed/job_board/js?for=borealisai"></script>
 </body>
 </html>

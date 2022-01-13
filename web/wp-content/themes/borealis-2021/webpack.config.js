@@ -20,6 +20,7 @@
 		JS_DIR + '/main.js'
 	],
 	gutenberg: JS_DIR + '/gutenberg.js',
+	shader: JS_DIR + '/scripts/shader.js',
  }
  
  const output = {

@@ -44,7 +44,6 @@ export default function researchBlogMetaBlock() {
                             />
                         </div>
                     </div> 
-                    
                 </div>
 			])
 		},
