@@ -21,6 +21,7 @@
 	],
 	gutenberg: JS_DIR + '/gutenberg.js',
 	shader: JS_DIR + '/scripts/shader.js',
+	carousel: JS_DIR + '/scripts/carousel.js'
  }
  
  const output = {

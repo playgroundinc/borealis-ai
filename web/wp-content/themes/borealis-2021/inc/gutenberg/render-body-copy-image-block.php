@@ -17,12 +17,12 @@ if ( function_exists( 'register_block_type' ) ) {
     register_block_type(
         $namespace . '/body-copy-image',
         array(
-            'render_callback' => 'trmc_render_body_copy_image_block',
+            'render_callback' => 'pg_render_body_copy_image_block',
         )
     );
 }
 
-if ( ! function_exists( 'trmc_render_body_copy_image_block' ) ) {
+if ( ! function_exists( 'pg_render_body_copy_image_block' ) ) {
     /**
      * Render out carousel container block.
      *
@@ -30,7 +30,7 @@ if ( ! function_exists( 'trmc_render_body_copy_image_block' ) ) {
      * @param mixed $content the content of the block.
      * @param array $block_obj array of the block features.
      */
-    function trmc_render_body_copy_image_block( $attrs, $content, $block_obj ) {
+    function pg_render_body_copy_image_block( $attrs, $content, $block_obj ) {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
@@ -45,14 +45,12 @@ if ( ! function_exists( 'trmc_render_body_copy_image_block' ) ) {
         $allowed_html = pg_allowed_html();
         ob_start();
         ?>
-            <div class="body-copy__block mt-xs-7">
-                <div class="image-block image-block--body-copy animated-element">
-                    <picture class="image-block__img">
-                        <img class="lazy" data-src="<?php echo esc_url_raw($image) ?>" src="<?php echo esc_attr($placeholder)?>" alt="<?php echo !empty($attributes->image_alt) ? esc_attr($attributes->image_alt) : null ?>">
-                    </picture>
-                </div>
+            <div>
+                <picture>
+                    <img class="lazy" data-src="<?php echo esc_url_raw($image) ?>" src="<?php echo esc_attr($placeholder)?>" alt="<?php echo !empty($attributes->image_alt) ? esc_attr($attributes->image_alt) : null ?>">
+                </picture>
                 <?php if (!empty($attributes->caption) || !empty($attributes->image_alt)): ?>
-                    <p class="caption mt-xs-2"><?php echo !empty($attributes->caption) ? esc_html($attributes->caption) : esc_html($attributes->image_alt); ?></p>
+                    <p><?php echo !empty($attributes->caption) ? esc_html($attributes->caption) : esc_html($attributes->image_alt); ?></p>
                 <?php endif; ?>
             </div>
         <?php

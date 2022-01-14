@@ -9,8 +9,8 @@
 
 get_header();
 ?>
-<div class="container container-fluid">
-	<div class="content-area">
+<div>
+	<div>
 
 	</div><!-- #primary -->
 </div>

@@ -11,7 +11,7 @@ export default function researchBlogMetaBlock() {
     } = wp.blockEditor;
 
     const meta_fields = [
-        'publication_date',
+        'publication_date', 'post_info'
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
@@ -25,7 +25,8 @@ export default function researchBlogMetaBlock() {
         attributes,
         edit: (props) => {
 			const { setAttributes, attributes } = props;
-			const { publication_date } = attributes;
+			const { publication_date, post_info } = attributes;
+            console.log(attributes)
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });

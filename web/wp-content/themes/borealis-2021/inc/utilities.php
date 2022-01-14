@@ -308,20 +308,20 @@ if ( ! function_exists( 'pg_get_translated_urls' ) ) {
     }
 }
 
-if (!function_exists('trmc_map_for_ids')) {
+if (!function_exists('pg_map_for_ids')) {
     /**
      * Maps over array of terms and returns ID.
      */
-    function trmc_map_for_term_ids($item) {
+    function pg_map_for_term_ids($item) {
         return $item['term_id'];
     }
 }
 
-if (!function_exists('trmc_build_service_options')) {
+if (!function_exists('pg_build_service_options')) {
     /**
      * Map over terms and return array of options.
      */
-    function trmc_build_service_options($site_name, $terms) {
+    function pg_build_service_options($site_name, $terms) {
         $options = array();
         $lang = pg_current_lang();
         foreach ($terms as $term) {

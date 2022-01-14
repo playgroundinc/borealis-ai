@@ -7,7 +7,7 @@
  * @package pg-wp-starter
  */
 
-if ( ! function_exists( 'trmc_svg_spritemap' ) ) {
+if ( ! function_exists( 'pg_svg_spritemap' ) ) {
     /**
      *
      * Outputs a sprite map at the top of each page.
@@ -26,7 +26,7 @@ if ( ! function_exists( 'trmc_svg_spritemap' ) ) {
      * Hamburger
      * 
      **/
-    function trmc_svg_spritemap() {
+    function pg_svg_spritemap() {
 ?>
         <svg height="0" width="0" aria-hidden="true" style="position:absolute; left: 100%" focusable="false"> 
             <!--  Slanted Clip Path -->
