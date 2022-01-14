@@ -38,7 +38,7 @@ get_header();
             }
         ?>
     </div>
-    <div class="page-content">
+    <div class="page__content">
         <?php 
         if ( have_posts() ) : 
             while ( have_posts() ) : 
