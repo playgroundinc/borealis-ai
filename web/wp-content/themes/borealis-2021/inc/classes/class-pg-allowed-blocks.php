@@ -84,6 +84,12 @@ class PG_Allowed_Blocks {
         $this->research_blog_blocks = array(
             $this->namespace . '/' . 'research-blog-meta-block',
         );
+        $this->news_blocks = array(
+            $this->namespace . '/' . 'news-meta-block',
+        );
+        $this->leadership_blocks = array(
+            $this->namespace . '/' . 'leadership-meta-block',
+        );
         $this->page_blocks = array(
             $this->namespace . '/' . 'page-meta-block'
         );
@@ -127,6 +133,14 @@ class PG_Allowed_Blocks {
         if ($this->post_type === 'research-blogs') {
             $research_blog_blocks = array_merge($body_copy_blocks, $this->research_blog_blocks);
             return $research_blog_blocks;
+        } 
+        if ($this->post_type === 'news') {
+            $news_blocks = array_merge($body_copy_blocks, $this->news_blocks);
+            return $news_blocks;
+        } 
+        if ($this->post_type === 'leadership') {
+            $news_blocks = array_merge($body_copy_blocks, $this->news_blocks);
+            return $news_blocks;
         } 
         $custom_blocks = array_map(array($this, 'add_namespace'), $this->custom_blocks);
         $custom_blocks = array_merge($this->core_blocks, $custom_blocks);
