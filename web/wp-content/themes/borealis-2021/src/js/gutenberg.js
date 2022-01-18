@@ -7,7 +7,7 @@ import locationMetaBlock from "./blocks/meta/location-meta.jsx"
 import newsReleaseMetaBlock from "./blocks/meta/news-releases-meta.jsx";
 import researchBlogMetaBlock from "./blocks/meta/research-blogs-meta.jsx";
 import newsMetaBlock from "./blocks/meta/news-meta.jsx";
-
+import leadershipMetaBlock from "./blocks/meta/leadership-meta.jsx";
 
 import textColumnBlock from "../js/blocks/text-column.jsx";
 import imageTextBlock from "./blocks/image-text.jsx";
@@ -66,7 +66,7 @@ locationMetaBlock();
 newsReleaseMetaBlock();
 researchBlogMetaBlock();
 newsMetaBlock();
-
+leadershipMetaBlock();
 
 // Init blocks here
 textColumnBlock(); 

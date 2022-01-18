@@ -25,7 +25,7 @@ if (!function_exists('pg_register_news_cpt')) {
             'external_link' => 'text',
             'image_alt' => 'text',
             'image_url' => 'text',
-            'image_id' => 'text',
+            'image_id' => 'number',
         );
         $News_CPT->register_meta($meta_values);
     }
