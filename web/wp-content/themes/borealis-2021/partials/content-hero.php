@@ -52,6 +52,7 @@ if ($fields['hero_style'] === 'video') {
 ?>
 
 <div class="<?php echo esc_attr($classes)?>">
+    <canvas id="canvas"></canvas>
     <?php if ($single): ?>
         <?php 
             $news_release_fields = array('news_release_date' => ''); 
@@ -160,5 +161,4 @@ if ($fields['hero_style'] === 'video') {
         <?php endif; ?>
     </div>
     <?php endif; ?>
-
 </div>
