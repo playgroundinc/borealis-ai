@@ -20,11 +20,7 @@ if (!function_exists('pg_register_leadership_cpt')) {
             'name' => 'text',
             'position' => 'text',
             'education' => 'text',
-            'excerpt' => 'text',
             'copy' => 'text',
-            'image_alt' => 'text',
-            'image_url' => 'text',
-            'image_id' => 'number',
         );
         $Leadership_CPT->register_meta($meta_values);
     }

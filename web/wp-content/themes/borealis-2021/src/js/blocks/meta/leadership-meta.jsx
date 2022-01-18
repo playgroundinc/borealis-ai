@@ -16,11 +16,7 @@ export default function leadershipMetaBlock() {
         'name',
         'position',
         'education',
-        'excerpt',
         'copy',
-        'image_alt',
-        'image_url',
-        'image_id'
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
@@ -34,7 +30,7 @@ export default function leadershipMetaBlock() {
         attributes,
         edit: (props) => {
 			const { setAttributes, attributes } = props;
-			const { name, position, education, excerpt, copy, image_url, image_id, image_alt } = attributes;
+			const { name, position, education, copy } = attributes;
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
@@ -64,18 +60,6 @@ export default function leadershipMetaBlock() {
                             <CustomRichText 
                                 components={[
                                     {
-                                        reference: 'excerpt',
-                                        value: excerpt,
-                                        tagName: 'p',
-                                        classes: ['paragraph'],
-                                        placeholder: 'Add excerpt',
-                                    }
-                                ]}
-                                onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
-                            />
-                             <CustomRichText 
-                                components={[
-                                    {
                                         reference: 'copy',
                                         value: copy,
                                         tagName: 'p',
@@ -84,21 +68,6 @@ export default function leadershipMetaBlock() {
                                     }
                                 ]}
                                 onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
-                            />
-                            <CustomImageUpload
-                                components={[
-                                    {
-                                        value: image_url,
-                                        reference: 'image_url',
-                                        altValue: image_alt,
-                                        altReference: 'image_alt',
-                                        idValue: image_id,
-                                        idReference: 'image_id',
-                                        buttonText: 'Add Image',
-                                        imageClasses: ['image-text__image']
-                                    }
-                                ]}
-                                onChange={(attribute, change) => { updateAttributeValue(attribute, change) }}
                             />
                         </div>
                     </div> 

@@ -14,13 +14,9 @@ export default function newsMetaBlock() {
 
     const meta_fields = [
         'publication_date',
-        'description',
         'source_publication',
         'authors',
         'external_link',
-        'image_url',
-        'image_alt',
-        'image_id',
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
@@ -34,7 +30,7 @@ export default function newsMetaBlock() {
         attributes,
         edit: (props) => {
 			const { setAttributes, attributes } = props;
-			const { publication_date, description, source_publication, authors, external_link, image_url, image_id, image_alt } = attributes;
+			const { publication_date, source_publication, authors, external_link } = attributes;
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
@@ -51,18 +47,6 @@ export default function newsMetaBlock() {
                                 onChange={(value) => { updateAttributeValue('publication_date', value) }}
                                 label="Publication date (YYYY/MM/DD):"
                             />
-                            <CustomRichText 
-                                components={[
-                                    {
-                                        reference: 'description',
-                                        value: description,
-                                        tagName: 'p',
-                                        classes: ['paragraph'],
-                                        placeholder: 'Add description',
-                                    }
-                                ]}
-                                onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
-                            />
                             <TextControl
                                 value={source_publication}
                                 onChange={(value) => { updateAttributeValue('source_publication', value) }}
@@ -78,21 +62,6 @@ export default function newsMetaBlock() {
                                 value={external_link}
                                 onChange={(value) => { updateAttributeValue('external_link', value) }}
                                 label="External link:"
-                            />
-                            <CustomImageUpload
-                                components={[
-                                    {
-                                        value: image_url,
-                                        reference: 'image_url',
-                                        altValue: image_alt,
-                                        altReference: 'image_alt',
-                                        idValue: image_id,
-                                        idReference: 'image_id',
-                                        buttonText: 'Add Image',
-                                        imageClasses: ['image-text__image']
-                                    }
-                                ]}
-                                onChange={(attribute, change) => { updateAttributeValue(attribute, change) }}
                             />
                         </div>
                     </div> 

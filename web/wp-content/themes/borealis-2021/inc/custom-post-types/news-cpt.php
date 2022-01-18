@@ -13,19 +13,14 @@ if (!function_exists('pg_register_news_cpt')) {
         $namespace = pg_get_namespace();
         $News_CPT = new PG_Custom_Post_Type('news', 'News', 'News', array('icon' => 'dashicons-category', 'has_archive' => 'false', 'template' => [ [$namespace . '/news-meta-block']]));
         $News_CPT->register();
-        $News_CPT->register_tags('research-area', 'Research-area', 'Research-areas');
 
         // Register Meta.
         // Slug will automatically be pulled from when it's registered.
         $meta_values = array(
             'publication_date' => 'text',
-            'description' => 'text',
             'source_publication' => 'text',
             'authors' => 'text',
             'external_link' => 'text',
-            'image_alt' => 'text',
-            'image_url' => 'text',
-            'image_id' => 'number',
         );
         $News_CPT->register_meta($meta_values);
     }
