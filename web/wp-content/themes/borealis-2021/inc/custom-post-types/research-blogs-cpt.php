@@ -12,6 +12,8 @@ if (!function_exists('pg_register_research_blog_cpt')) {
         // - args (an optional array to overwrite any default settings).
         $namespace = pg_get_namespace();
         $Research_Blogs_CPT = new PG_Custom_Post_Type('research-blogs', 'Research Blog', 'Research Blogs', array('icon' => 'dashicons-category', 'has_archive' => 'false', 'template' => [ [$namespace . '/research-blog-meta-block'], [ $namespace . '/custom-section-block']]));
+        // Register Series as a custom taxonomy.
+        $Research_Blogs_CPT->register_tags('series', 'Series', 'Series');
         $Research_Blogs_CPT->register();
         $Research_Blogs_CPT->register_tags('content-type', 'Content Type', 'Content Types');
 
