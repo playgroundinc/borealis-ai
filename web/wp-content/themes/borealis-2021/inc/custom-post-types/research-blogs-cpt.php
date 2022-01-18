@@ -2,7 +2,7 @@
 
 if (!function_exists('pg_register_research_blog_cpt')) {
     /**
-     * Creates a Location Custom Post Type with a services custom taxonomy and custom metadata
+     * Creates a Research Blog Custom Post Type with a content type custom taxonomy and custom metadata
      */
     function pg_register_research_blog_cpt() {
         // Arguments are:
@@ -12,7 +12,10 @@ if (!function_exists('pg_register_research_blog_cpt')) {
         // - args (an optional array to overwrite any default settings).
         $namespace = pg_get_namespace();
         $Research_Blogs_CPT = new PG_Custom_Post_Type('research-blogs', 'Research Blog', 'Research Blogs', array('icon' => 'dashicons-category', 'has_archive' => 'false', 'template' => [ [$namespace . '/research-blog-meta-block'], [ $namespace . '/custom-section-block']]));
+        // Register Series as a custom taxonomy.
+        $Research_Blogs_CPT->register_tags('series', 'Series', 'Series');
         $Research_Blogs_CPT->register();
+        $Research_Blogs_CPT->register_tags('content-type', 'Content Type', 'Content Types');
 
         // Register Meta.
         // Slug will automatically be pulled from when it's registered.
@@ -26,7 +29,7 @@ if (!function_exists('pg_register_research_blog_cpt')) {
 
 if (!function_exists('pg_handle_research_blog_save')) {
     /**
-     * Since all News Releases are sorted by this key, this function sets today's date as the default. 
+     * Since all Research Blogs are sorted by this key, this function sets today's date as the default. 
      * 
      * @param int $post_id the id for the current post.
      */
@@ -60,7 +63,7 @@ if (!function_exists('pg_save_post_research_blog_date_callback')) {
 
 if (!function_exists('pg_handle_research_blog_sidebar_save')) {
     /**
-     * Since all News Releases are sorted by this key, this function sets today's date as the default. 
+     * Since all Research blogs are sorted by this key, this function sets today's date as the default. 
      * 
      * @param int $post_id the id for the current post.
      */

@@ -27,8 +27,6 @@ export default function locationMetaBlock() {
 			const { setAttributes, attributes } = props;
 			const { news_release_date } = attributes;
 
-            console.log(news_release_date, 'news')
-
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
             }
