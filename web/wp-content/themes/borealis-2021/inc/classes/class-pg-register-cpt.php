@@ -18,7 +18,7 @@ class PG_Custom_Post_Type {
         $this->icon = !empty($args['icon']) ? $args['icon'] : 'dashicons-book';
         $this->description = !empty($args['description']) ? $args['description'] : __( 'This is the example '.$this->single, $this->namespace );
         $this->archive = !empty($args['has_archive']) ? $args['has_archive'] : true;
-        $this->supports = !empty($args['supports']) ? $args['supports'] : array('title','editor','thumbnail','sticky', 'custom-fields');
+        $this->supports = !empty($args['supports']) ? $args['supports'] : array('title','excerpt','editor','thumbnail','sticky', 'custom-fields');
         $this->public = !empty($args['public']) ? $args['public'] : true;
         $this->publicly_queryable = !empty($args['publicly_queryable']) ? $args['publicly_queryable'] : true;
         $this->show_ui = !empty($args['show_ui']) ? $args['show_ui'] : true;

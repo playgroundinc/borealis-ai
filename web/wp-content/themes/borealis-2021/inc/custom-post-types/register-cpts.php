@@ -14,6 +14,7 @@
 
 require get_template_directory() . '/inc/custom-post-types/news-releases-cpt.php';
 require get_template_directory() . '/inc/custom-post-types/research-blogs-cpt.php';
+require get_template_directory() . '/inc/custom-post-types/publications-cpt.php';
 require get_template_directory() . '/inc/custom-post-types/news-cpt.php';
 require get_template_directory() . '/inc/custom-post-types/leadership-cpt.php';
 
@@ -25,6 +26,7 @@ if (!function_exists( 'pg_register_custom_post_types' )) {
 	function pg_register_custom_post_types() {
         pg_register_press_release_cpt();
         pg_register_research_blog_cpt();
+        pg_register_publications_cpt();
         pg_register_news_cpt();
         pg_register_leadership_cpt();
 	}
