@@ -4,7 +4,7 @@ import { namespace } from '../blocks/helper-functions/constants';
 import CustomImageUpload from "../blocks/reusable/custom-image-upload.jsx";
 import CustomRichText from "../blocks/reusable/custom-richtext-component.jsx";
 
-export default function developmentBlock() {
+export default function imageBlock() {
 	const { registerBlockType } = wp.blocks;
 	const { i18n } = wp;
 

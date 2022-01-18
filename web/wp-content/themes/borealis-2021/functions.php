@@ -73,11 +73,7 @@ require get_template_directory() . '/inc/custom-post-types/register-cpts.php';
 require get_template_directory() . '/inc/admin-columns/custom-post.php';
 
 // Reusable
-require get_template_directory() . '/inc/reusable/document-row.php';
 require get_template_directory() . '/inc/gutenberg/render-icon-btn.php';
-
-// Developement Blocks
-require get_template_directory() . '/inc/gutenberg/development/development-functions.php';
 
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';
@@ -85,24 +81,7 @@ require get_template_directory() . '/inc/gutenberg/render-select-post-block.php'
 require get_template_directory() . '/inc/gutenberg/render-text-column.php';
 require get_template_directory() . '/inc/gutenberg/render-image-text-block.php';
 require get_template_directory() . '/inc/gutenberg/render-video-block.php';
-require get_template_directory() . '/inc/gutenberg/render-feature-strip-block.php';
 require get_template_directory() . '/inc/gutenberg/render-image-block.php';
-
-//Form Blocks
-require get_template_directory() . '/inc/gutenberg/form-builder/email-requests.php';
-require get_template_directory() . '/inc/gutenberg/form-builder/form-fields.php';
-require get_template_directory() . '/inc/gutenberg/form-builder/render-form-builder-block.php';
-require get_template_directory() . '/inc/gutenberg/form-builder/render-form-input-row-block.php';
-require get_template_directory() . '/inc/gutenberg/form-builder/render-form-text-input.php';
-require get_template_directory() . '/inc/gutenberg/form-builder/render-form-textarea-input.php';
-require get_template_directory() . '/inc/gutenberg/form-builder/render-form-date-input.php';
-require get_template_directory() . '/inc/gutenberg/form-builder/render-form-number-input.php';
-require get_template_directory() . '/inc/gutenberg/form-builder/render-form-select-input.php';
-require get_template_directory() . '/inc/gutenberg/form-builder/render-destination-select-block.php';
-
-// Form Embed Blocks
-require get_template_directory() . '/inc/gutenberg/render-cognito-embed-block.php';
-require get_template_directory() . '/inc/gutenberg/render-formstack-embed-block.php';
 
 // Accordion Blocks
 require get_template_directory() . '/inc/gutenberg/accordion/render-accordion-container.php';
@@ -120,9 +99,6 @@ require get_template_directory() . '/inc/gutenberg/render-body-copy-image-block.
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-container.php';
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-block.php';
 
-// Document Blocks
-require get_template_directory() . '/inc/gutenberg/document/render-document-row-block.php';
-
 // Image List Blocks
 require get_template_directory() . '/inc/gutenberg/image-list/render-image-list-container-block.php';
 require get_template_directory() . '/inc/gutenberg/image-list/render-image-list-block.php';
@@ -138,15 +114,14 @@ require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-blo
 // Slider Blocks
 require get_template_directory() . '/inc/gutenberg/slider/render-slider-container-block.php';
 require get_template_directory() . '/inc/gutenberg/slider/render-image-slide-block.php';
-require get_template_directory() . '/inc/gutenberg/slider/render-testimonial-slider-container-block.php';
-require get_template_directory() . '/inc/gutenberg/slider/render-testimonial-slide-block.php';
-require get_template_directory() . '/inc/gutenberg/slider/render-body-copy-slider-container-block.php';
-require get_template_directory() . '/inc/gutenberg/slider/render-body-copy-image-slide-block.php';
 
 // Stat Blocks
 require get_template_directory() . '/inc/gutenberg/stats/render-stat-container-block.php';
 require get_template_directory() . '/inc/gutenberg/stats/render-stat-column-block.php';
 
-// Timeline Blocks
-require get_template_directory() . '/inc/gutenberg/timeline/render-timeline-container-block.php';
-require get_template_directory() . '/inc/gutenberg/timeline/render-milestone-block.php';
+// Greenhouse Blocks
+require get_template_directory() . '/inc/gutenberg/greenhouse/render-jobs-block.php';
+
+// Sidebar Table Of Contents Blocks
+require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-section-block.php';
+require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-subsection-block.php';

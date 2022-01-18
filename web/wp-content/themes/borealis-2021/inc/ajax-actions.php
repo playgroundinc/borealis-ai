@@ -14,5 +14,5 @@
  */
 
  // Send emails
-add_action( 'wp_ajax_send_email', 'trmc_verify_email_request' );
-add_action( 'wp_ajax_nopriv_send_email', 'trmc_verify_email_request' );
+add_action( 'wp_ajax_send_email', 'pg_verify_email_request' );
+add_action( 'wp_ajax_nopriv_send_email', 'pg_verify_email_request' );
