@@ -14,11 +14,11 @@ if (!function_exists('pg_mapbox_scripts')) {
 
 }
 
-if (!function_exists('threejs_scripts')) {
+if (!function_exists('pg_threejs_scripts')) {
     /**
      * Only load in threejs script if on homepage.
      */
-    function threejs_scripts() {
+    function pg_threejs_scripts() {
         if (is_front_page()) {
             wp_register_script( 'threejs', 'https://cdn.jsdelivr.net/npm/three@0.130.1/build/three.min.js', array(), '20151215', true );
             wp_enqueue_script( 'shader', get_template_directory_uri() . '/dist/shader.js', array( 'threejs' ), '20151215', true );    
@@ -26,11 +26,11 @@ if (!function_exists('threejs_scripts')) {
     }
 }
 
-if (!function_exists('borealis_script')) {
+if (!function_exists('pg_borealis_script')) {
     /**
      * Only load in threejs script if on homepage.
      */
-    function borealis_script() {
+    function pg_borealis_script() {
         if (is_page_template( 'page-single-job-listing.php' )) {
             wp_enqueue_script( 'borealis', 'https://boards.greenhouse.io/embed/job_board/js?for=borealisai', array(), '20151215', true );
             
@@ -79,8 +79,8 @@ function pg_wp_starter_scripts() {
     if ( !is_admin() ) wp_deregister_script('jquery');
     // Conditional function to only load MapBoxGL when necessary.
     pg_mapbox_scripts();
-    threejs_scripts();
-    borealis_script();
+    pg_threejs_scripts();
+    pg_borealis_script();
 }
 add_action( 'wp_enqueue_scripts', 'pg_wp_starter_scripts' );
 
