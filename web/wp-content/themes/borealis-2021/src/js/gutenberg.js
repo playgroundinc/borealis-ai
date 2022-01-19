@@ -57,6 +57,11 @@ import jobBlock from "./blocks/greenhouse/jobs-block.jsx";
 import customSectionBlock from './blocks/sidebar-table-of-contents/custom-section-blok.jsx';
 import customSubsectionBlock from './blocks/sidebar-table-of-contents/custom-subsection-blok.jsx';
 
+// Tabbed Content Blocks
+import tabbedContentContainerBlock from "./blocks/tabbed-content/tabbed-content-container.jsx";
+import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-panel.jsx";
+
+
 // Core Extends Blocks
 customVideoPoster();
 
@@ -114,3 +119,7 @@ jobBlock();
 // Sidebar Table Of Contents Blocks
 customSectionBlock();
 customSubsectionBlock();
+
+// Tabbed Content Blocks
+tabbedContentContainerBlock();
+tabbedContentPanelBlock();
