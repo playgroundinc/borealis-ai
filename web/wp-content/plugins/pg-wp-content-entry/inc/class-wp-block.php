@@ -57,7 +57,7 @@ class PG_WP_Block {
    * i.e. A core/paragraph or a core/heading.
    * Based on the current anatomy of a Gutenberg comment.
    */
-  public function generate_core_comment() {
+  public function pg_generate_core_comment() {
     $comment = "<!-- wp:" . $this->name . " ";
     $comment .= isset($this->attributes) && !empty($this->attributes) ? $this->attributes : null;
     $comment .= " -->";
@@ -81,7 +81,7 @@ class PG_WP_Block {
    * 
    * Based on the current anatomy of a Gutenberg comment.
    */
-  public function generate_custom_image() {
+  public function pg_generate_custom_image() {
     $comment = "<!-- wp:pg/custom-image ";
     $comment .= isset($this->attributes) && !empty($this->attributes) ? $this->attributes : null;
     $comment .= " /-->";
@@ -89,23 +89,42 @@ class PG_WP_Block {
   }
 
   /**
+   * Generates a comment for an equation.
+   * 
+   * Based on the current anatomy of a Gutenberg comment.
+   */
+  public function pg_generate_equation_comment() {
+    $slashed_content = addslashes($this->content);
+    $comment = '<!-- wp:katex/display-block -->
+    <div class="wp-block-katex-display-block katex-eq" data-katex-display="true"><pre>' . $slashed_content . '</pre></div>
+    <!-- /wp:katex/display-block -->';
+    return $comment;
+  }
+
+  /**
    * Dictates which kind of comment to generate.
    */
-  public function generate_comment() {
+  public function pg_generate_comment() {
       if ($this->type !== 'core') {
-        if ($this->name === 'pg/custom-image') {
-          $comment = $this->generate_custom_image();
-          return $comment;
+        switch($this->name) {
+          case 'pg/custom-image':
+            $comment = $this->pg_generate_custom_image();
+            return $comment;
+          break;
+          case 'katex/display-block':
+            $comment = $this->pg_generate_equation_comment();
+            return $comment;  
+          break;
+          default:
+            $comment = $this->pg_generate_core_comment();
+            return $comment;
+          break;
         }
       }
       if(!isset($this->content) || empty($this->content) ) {
         return null;
       }
-      switch($this->name) {
-        default:
-          $comment = $this->generate_core_comment();
-        break;
-      }
+      $comment = $this->pg_generate_core_comment();
       return $comment;
   }
 }
