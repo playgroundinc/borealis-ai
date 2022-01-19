@@ -13,6 +13,7 @@ if (!function_exists('pg_register_publications_cpt')) {
         $namespace = pg_get_namespace();
         $Publications_CPT = new PG_Custom_Post_Type('publications', 'Publication', 'Publications', array('icon' => 'dashicons-category', 'has_archive' => 'false'));
         $Publications_CPT->register();
+        $Publications_CPT->register_tags('conferences', 'Conference', 'Conferences');
 
         // Register Meta.
         // Slug will automatically be pulled from when it's registered.
