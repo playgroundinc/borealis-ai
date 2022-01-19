@@ -1,5 +1,6 @@
 function tabbedContent() {
     const tabs = document.querySelectorAll('[role=tab]');
+    const tabList = document.querySelectorAll('[role=tablist]')[0];
 
     for (i = 0; i < tabs.length; i++) {
         tabs[i].addEventListener("click", showTabPanel);
@@ -25,23 +26,22 @@ function tabbedContent() {
 
         document.getElementById(tabPanelToOpen).style.display = "block";
     }
-    
-    $('[role=tablist]').keydown(function(e) {
-        if (e.keyCode == 37) {
-            $("[aria-selected=true]").prev().click().focus();
-            e.preventDefault();
+
+    tabList.addEventListener("keydown", e => {
+        const ariaSelected = document.querySelectorAll('[aria-selected=true]')[0];
+        
+        if (e.keyCode == 37 || e.keyCode == 38) {
+            if(ariaSelected.previousElementSibling !== null) {
+                ariaSelected.previousElementSibling.focus();
+                e.preventDefault();
+            }
         }
-        if (e.keyCode == 38) {
-            $("[aria-selected=true]").prev().click().focus();
-            e.preventDefault();
-        }
-        if (e.keyCode == 39) {
-            $("[aria-selected=true]").next().click().focus();
-            e.preventDefault();
-        }
-        if (e.keyCode == 40) {
-            $("[aria-selected=true]").next().click().focus();
-            e.preventDefault();
+
+        if (e.keyCode == 39 || e.keyCode == 40) {
+            if(ariaSelected.nextElementSibling !== null) {
+                ariaSelected.nextElementSibling.focus();
+                e.preventDefault();
+            }
         }
     });
 }
