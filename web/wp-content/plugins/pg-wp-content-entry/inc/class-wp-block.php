@@ -65,7 +65,7 @@ class PG_WP_Block {
       if ($this->tag === 'blockquote') {
         $comment .= "<" . $this->tag . " class='wp-block-quote'>" . $this->content . "</" . $this->tag . ">";
       } else if ($this->tag === 'pre') {
-        $comment .= "<" . $this->tag . " class='wp-block-code'>" . $this->content . "</" . $this->tag . ">";
+        $comment .= "<" . $this->tag . ' class="wp-block-preformatted wp-block-code">' . $this->content . "</" . $this->tag . ">";
       } else if ($this->name === 'table') {
           $comment .= "<" . $this->tag . " class='wp-block-table'>" . $this->content . "</" . $this->tag . ">";
       } else {
