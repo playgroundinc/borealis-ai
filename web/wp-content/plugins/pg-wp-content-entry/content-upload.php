@@ -56,6 +56,11 @@
       'callback' => 'pg_add_post_excerpt',
       'permission_callback' => 'pg_authenticate_user',
     ) );
+    register_rest_route( 'pg/v1', '/add-taxonomy', array(
+      'methods' => 'POST',
+      'callback' => 'pg_add_taxonomy',
+      'permission_callback' => 'pg_authenticate_user',
+    ) );
   } );
   /**
    * Performs basic authentication of base64 encoded header.
@@ -245,7 +250,7 @@
       }
       foreach($blocks as $block) {
         $wp_block = new PG_WP_Block($block);
-        $comment = $wp_block->generate_comment();
+        $comment = $wp_block->pg_generate_comment();
         $content .= $comment;
       }
       return $content;
@@ -265,15 +270,25 @@
         $post = get_post($request['post_id']);
         $blocks = $request['content'];
         $content = pg_generate_blocks($blocks);
+       
         if (!empty($content)) {
-          wp_update_post(array(
+          $resp = wp_update_post(array(
             'ID' => $request['post_id'],
             'post_content' => $content,
           ));
+
+          $response = new WP_REST_Response( $resp );
+          // Add a custom status codes
+          $response->set_status( 201 ); 
+          return $response;
         }
+        $response = new WP_REST_Response( array('error' => 'Missing content') );
+        // Add a custom status codes
+        $response->set_status( 400 ); 
+        return $response;
       } 
       // Create the response object
-      $response = new WP_REST_Response(  $content );
+      $response = new WP_REST_Response( array('status' => 'success!') );
       // Add a custom status codes
       $response->set_status( 201 ); 
       return $response;
@@ -425,4 +440,33 @@
       return $response;
     }
   }
+
+  if (!function_exists('pg_check_for_existing_term')) {
+    function pg_check_for_existing_term($taxonomy, $value) {
+      $term = get_term_by('name', $value, $taxonomy);
+      if ($term) {
+        return $term->term_id;
+      }
+      $new_term = wp_insert_term($value, $taxonomy);
+      return $new_term['term_id'];
+    }
+  }
   
+  if (!function_exists('pg_add_taxonomy')) {
+    function pg_add_taxonomy(WP_REST_Request $request) {
+      $post_id = wp_unslash($request['post_id']);
+      $taxonomy = sanitize_text_field(wp_unslash($request['taxonomy']));
+      $value = sanitize_text_field(wp_unslash($request['name']));
+      if (!isset($taxonomy) || !isset($post_id) || !isset($value)) {
+        $response = new WP_REST_Response( array('error' => 'Missing value, taxonomy or Post ID'));
+        $response->set_status(400);
+        return $response;
+      }
+      $term_id = pg_check_for_existing_term($taxonomy, $value);
+      $success = wp_set_post_terms($post_id, array(intval($term_id)), $taxonomy, true);
+      $response = new WP_REST_Response(array( 'success' => $success) );
+      // Add a custom status codes
+      $response->set_status( 201 ); 
+      return $response;
+    }
+  }
