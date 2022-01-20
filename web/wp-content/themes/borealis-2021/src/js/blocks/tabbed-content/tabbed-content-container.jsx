@@ -13,7 +13,7 @@ export default function tabbedContentContainerBlock() {
 	const blockTitle = "Tabbed content container block";
 	const blockDescription = "Component to create tabbed content container block";
 	const blockCategory = "common";
-    const blockIcon = "dashicons-block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+    const blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
         title: {
