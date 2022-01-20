@@ -130,3 +130,7 @@ require get_template_directory() . '/inc/gutenberg/greenhouse/render-jobs-block.
 // Sidebar Table Of Contents Blocks
 require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-section-block.php';
 require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-subsection-block.php';
+
+// Tabbed Content Blocks
+require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-container-block.php';
+require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-panel-block.php';

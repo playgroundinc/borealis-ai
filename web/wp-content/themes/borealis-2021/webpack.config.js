@@ -21,6 +21,7 @@
 	],
 	gutenberg: JS_DIR + '/gutenberg.js',
 	shader: JS_DIR + '/scripts/shader.js',
+	tabbedContent: JS_DIR + '/scripts/tabbed-content.js',
 	carousel: JS_DIR + '/scripts/carousel.js'
  }
  
