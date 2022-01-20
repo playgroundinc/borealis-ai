@@ -1,22 +1,14 @@
 import { namespace } from '../helper-functions/constants';
 import defaultAttrs from '../helper-functions/default-attrs';
-import CustomRichText from '../reusable/custom-richtext-component.jsx';
-import CustomImageUpload from '../reusable/custom-image-upload.jsx';
-
 
 export default function leadershipMetaBlock() {
 
     const { registerBlockType } = wp.blocks;
 	const { TextControl } = wp.components;
-    const {
-        Inserter
-    } = wp.blockEditor;
 
     const meta_fields = [
-        'name',
         'position',
-        'education',
-        'copy',
+        'education'
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
@@ -30,7 +22,7 @@ export default function leadershipMetaBlock() {
         attributes,
         edit: (props) => {
 			const { setAttributes, attributes } = props;
-			const { name, position, education, copy } = attributes;
+			const { position, education } = attributes;
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
@@ -43,11 +35,6 @@ export default function leadershipMetaBlock() {
                     <div className="page-settings__controls">
                         <div className="mt-xs-3">
                             <TextControl
-                                value={name}
-                                onChange={(value) => { updateAttributeValue('name', value) }}
-                                label="Name:"
-                            />
-                            <TextControl
                                 value={position}
                                 onChange={(value) => { updateAttributeValue('position', value) }}
                                 label="Position:"
@@ -56,18 +43,6 @@ export default function leadershipMetaBlock() {
                                 value={education}
                                 onChange={(value) => { updateAttributeValue('education', value) }}
                                 label="Education:"
-                            />
-                            <CustomRichText 
-                                components={[
-                                    {
-                                        reference: 'copy',
-                                        value: copy,
-                                        tagName: 'p',
-                                        classes: ['paragraph'],
-                                        placeholder: 'Add copy',
-                                    }
-                                ]}
-                                onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
                             />
                         </div>
                     </div> 

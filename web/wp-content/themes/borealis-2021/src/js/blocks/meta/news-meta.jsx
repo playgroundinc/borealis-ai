@@ -14,9 +14,6 @@ export default function newsMetaBlock() {
 
     const meta_fields = [
         'publication_date',
-        'source_publication',
-        'authors',
-        'external_link',
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
@@ -46,22 +43,6 @@ export default function newsMetaBlock() {
                                 value={publication_date}
                                 onChange={(value) => { updateAttributeValue('publication_date', value) }}
                                 label="Publication date (YYYY/MM/DD):"
-                            />
-                            <TextControl
-                                value={source_publication}
-                                onChange={(value) => { updateAttributeValue('source_publication', value) }}
-                                label="Source publication:"
-                            />
-                            <TextControl
-                                value={authors}
-                                onChange={(value) => { updateAttributeValue('authors', value) }}
-                                label="Author(s):"
-                                placeholder="Please separate authors with a comma"
-                            />
-                              <TextControl
-                                value={external_link}
-                                onChange={(value) => { updateAttributeValue('external_link', value) }}
-                                label="External link:"
                             />
                         </div>
                     </div> 

@@ -1,22 +1,18 @@
 import { namespace } from '../helper-functions/constants';
-
 import defaultAttrs from '../helper-functions/default-attrs';
 
-export default function locationMetaBlock() {
+export default function authorMetaBlock() {
 
     const { registerBlockType } = wp.blocks;
 	const { TextControl } = wp.components;
-    const {
-        Inserter
-    } = wp.blockEditor;
 
     const meta_fields = [
-        'news_release_date',
+        'external_link',
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
-	registerBlockType(`${namespace}/news-release-meta-block`, {
-		title: 'News Release Meta',
+	registerBlockType(`${namespace}/author-meta-block`, {
+		title: 'Author Meta',
 		icon: 'align-full-width',
         category: 'common',
         supports: {
@@ -25,7 +21,7 @@ export default function locationMetaBlock() {
         attributes,
         edit: (props) => {
 			const { setAttributes, attributes } = props;
-			const { news_release_date } = attributes;
+			const { external_link } = attributes;
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
@@ -34,17 +30,16 @@ export default function locationMetaBlock() {
 			return ([
 				null,
 				<div className="custom-component">
-                    <p className="block-title">New Release Meta</p>
+                    <p className="block-title">Author Meta</p>
                     <div className="page-settings__controls">
                         <div className="mt-xs-3">
                             <TextControl
-                                value={news_release_date}
-                                onChange={(value) => { updateAttributeValue('news_release_date', value) }}
-                                label="Release Date (YYYY/MM/DD):"
+                                value={external_link}
+                                onChange={(value) => { updateAttributeValue('external_link', value) }}
+                                label="External Link:"
                             />
                         </div>
                     </div> 
-                    
                 </div>
 			])
 		},
@@ -55,4 +50,3 @@ export default function locationMetaBlock() {
 		}
 	});
 }
-
