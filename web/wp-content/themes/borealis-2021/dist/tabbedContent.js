@@ -119,10 +119,7 @@ function tabbedContent(tabContainer) {
 
     for (i = 0; i < tabPanels.length; i++) {
       classToggle(tabPanels[i], 'block', 'hidden');
-    } // console.log(tabPanelToOpen);
-    // console.log(document.getElementById(tabPanelToOpen))
-    // console.log(tabContainer.querySelector(`#${tabPanelToOpen}`))
-
+    }
 
     classToggle(tabContainer.querySelector(`#${tabPanelToOpen}`), 'hidden', 'block');
   }
