@@ -5,7 +5,7 @@ import customVideoPoster from './blocks/core-extends/video-embed-poster.jsx';
 import pageMetaBlock from "./blocks/meta/page-meta.jsx"
 import researchBlogMetaBlock from "./blocks/meta/research-blogs-meta.jsx";
 import newsMetaBlock from "./blocks/meta/news-meta.jsx";
-import leadershipMetaBlock from "./blocks/meta/leadership-meta.jsx";
+import teamMemberMetaBlock from "./blocks/meta/team-member-meta.jsx";
 import authorMetaBlock from './blocks/meta/author-meta.jsx';
 
 import textColumnBlock from "../js/blocks/text-column.jsx";
@@ -68,7 +68,7 @@ customVideoPoster();
 pageMetaBlock();
 researchBlogMetaBlock();
 newsMetaBlock();
-leadershipMetaBlock();
+teamMemberMetaBlock();
 authorMetaBlock();
 
 // Init blocks here

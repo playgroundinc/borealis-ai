@@ -2044,77 +2044,6 @@ function authorMetaBlock() {
 
 /***/ }),
 
-/***/ "./src/js/blocks/meta/leadership-meta.jsx":
-/*!************************************************!*\
-  !*** ./src/js/blocks/meta/leadership-meta.jsx ***!
-  \************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return leadershipMetaBlock; });
-/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-function leadershipMetaBlock() {
-  var registerBlockType = wp.blocks.registerBlockType;
-  var TextControl = wp.components.TextControl;
-  var meta_fields = ['position', 'education'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/leadership-meta-block"), {
-    title: 'Leadership Meta',
-    icon: 'align-full-width',
-    category: 'common',
-    supports: {
-      multiple: false
-    },
-    attributes: attributes,
-    edit: function edit(props) {
-      var setAttributes = props.setAttributes,
-          attributes = props.attributes;
-      var position = attributes.position,
-          education = attributes.education;
-
-      function updateAttributeValue(attribute, value) {
-        setAttributes(_defineProperty({}, attribute, value));
-      }
-
-      return [null, /*#__PURE__*/React.createElement("div", {
-        className: "custom-component"
-      }, /*#__PURE__*/React.createElement("p", {
-        className: "block-title"
-      }, "Leadership Meta"), /*#__PURE__*/React.createElement("div", {
-        className: "page-settings__controls"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "mt-xs-3"
-      }, /*#__PURE__*/React.createElement(TextControl, {
-        value: position,
-        onChange: function onChange(value) {
-          updateAttributeValue('position', value);
-        },
-        label: "Position:"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: education,
-        onChange: function onChange(value) {
-          updateAttributeValue('education', value);
-        },
-        label: "Education:"
-      }))))];
-    },
-    // No information saved to the block
-    // Data is saved to post meta via attributes
-    save: function save() {
-      return null;
-    }
-  });
-}
-
-/***/ }),
-
 /***/ "./src/js/blocks/meta/news-meta.jsx":
 /*!******************************************!*\
   !*** ./src/js/blocks/meta/news-meta.jsx ***!
@@ -2423,6 +2352,77 @@ function researchBlogMetaBlock() {
           updateAttributeValue('publication_date', value);
         },
         label: "Publication Date (YYYY/MM/DD):"
+      }))))];
+    },
+    // No information saved to the block
+    // Data is saved to post meta via attributes
+    save: function save() {
+      return null;
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/meta/team-member-meta.jsx":
+/*!*************************************************!*\
+  !*** ./src/js/blocks/meta/team-member-meta.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return leadershipMetaBlock; });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function leadershipMetaBlock() {
+  var registerBlockType = wp.blocks.registerBlockType;
+  var TextControl = wp.components.TextControl;
+  var meta_fields = ['position', 'education'];
+  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/team-member-meta-block"), {
+    title: 'Team Member Meta',
+    icon: 'align-full-width',
+    category: 'common',
+    supports: {
+      multiple: false
+    },
+    attributes: attributes,
+    edit: function edit(props) {
+      var setAttributes = props.setAttributes,
+          attributes = props.attributes;
+      var position = attributes.position,
+          education = attributes.education;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
+
+      return [null, /*#__PURE__*/React.createElement("div", {
+        className: "custom-component"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "block-title"
+      }, "Team Member Meta"), /*#__PURE__*/React.createElement("div", {
+        className: "page-settings__controls"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "mt-xs-3"
+      }, /*#__PURE__*/React.createElement(TextControl, {
+        value: position,
+        onChange: function onChange(value) {
+          updateAttributeValue('position', value);
+        },
+        label: "Position:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: education,
+        onChange: function onChange(value) {
+          updateAttributeValue('education', value);
+        },
+        label: "Education:"
       }))))];
     },
     // No information saved to the block
@@ -4099,7 +4099,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_meta_page_meta_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/meta/page-meta.jsx */ "./src/js/blocks/meta/page-meta.jsx");
 /* harmony import */ var _blocks_meta_research_blogs_meta_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/meta/research-blogs-meta.jsx */ "./src/js/blocks/meta/research-blogs-meta.jsx");
 /* harmony import */ var _blocks_meta_news_meta_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/meta/news-meta.jsx */ "./src/js/blocks/meta/news-meta.jsx");
-/* harmony import */ var _blocks_meta_leadership_meta_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/meta/leadership-meta.jsx */ "./src/js/blocks/meta/leadership-meta.jsx");
+/* harmony import */ var _blocks_meta_team_member_meta_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/meta/team-member-meta.jsx */ "./src/js/blocks/meta/team-member-meta.jsx");
 /* harmony import */ var _blocks_meta_author_meta_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/meta/author-meta.jsx */ "./src/js/blocks/meta/author-meta.jsx");
 /* harmony import */ var _js_blocks_text_column_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../js/blocks/text-column.jsx */ "./src/js/blocks/text-column.jsx");
 /* harmony import */ var _blocks_image_text_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./blocks/image-text.jsx */ "./src/js/blocks/image-text.jsx");
@@ -4178,7 +4178,7 @@ Object(_blocks_core_extends_video_embed_poster_jsx__WEBPACK_IMPORTED_MODULE_0__[
 Object(_blocks_meta_page_meta_jsx__WEBPACK_IMPORTED_MODULE_1__["default"])();
 Object(_blocks_meta_research_blogs_meta_jsx__WEBPACK_IMPORTED_MODULE_2__["default"])();
 Object(_blocks_meta_news_meta_jsx__WEBPACK_IMPORTED_MODULE_3__["default"])();
-Object(_blocks_meta_leadership_meta_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])();
+Object(_blocks_meta_team_member_meta_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])();
 Object(_blocks_meta_author_meta_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])(); // Init blocks here
 
 Object(_js_blocks_text_column_jsx__WEBPACK_IMPORTED_MODULE_6__["default"])();

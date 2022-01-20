@@ -12,8 +12,8 @@ export default function leadershipMetaBlock() {
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
-	registerBlockType(`${namespace}/leadership-meta-block`, {
-		title: 'Leadership Meta',
+	registerBlockType(`${namespace}/team-member-meta-block`, {
+		title: 'Team Member Meta',
 		icon: 'align-full-width',
         category: 'common',
         supports: {
@@ -31,7 +31,7 @@ export default function leadershipMetaBlock() {
 			return ([
 				null,
 				<div className="custom-component">
-                    <p className="block-title">Leadership Meta</p>
+                    <p className="block-title">Team Member Meta</p>
                     <div className="page-settings__controls">
                         <div className="mt-xs-3">
                             <TextControl
