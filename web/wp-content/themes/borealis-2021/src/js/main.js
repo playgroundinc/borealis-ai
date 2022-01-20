@@ -1,6 +1,7 @@
 // require('./scripts/polyfills/closest-polyfill');
 
 import '../sass/style.scss';
+import search from './scripts/search';
 // import alertBar from './scripts/alert-bar';
 // import animate from './scripts/animate';
 // import fixSkipLinkFocus from './scripts/skip-link-focus-fix';
@@ -17,3 +18,5 @@ import '../sass/style.scss';
 // accordion();
 // videoBlocks();
 // heroVideo();
+
+search();

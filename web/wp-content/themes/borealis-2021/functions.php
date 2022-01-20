@@ -31,6 +31,9 @@ require get_template_directory() . '/inc/classes/class-pg-responsive-images.php'
 // Register Custom Post Types
 require get_template_directory() . '/inc/classes/class-pg-register-cpt.php';
 
+// Register Custom Taxonomy
+require get_template_directory() . '/inc/classes/class-pg-custom-taxonomy.php';
+
 // Pagination - Comment out if you do not need to render pagination.
 require get_template_directory() . '/inc/classes/class-pg-pagination.php';
 
@@ -70,10 +73,12 @@ require get_template_directory() . '/inc/custom-images/register-image-sizes.php'
 require get_template_directory() . '/inc/ajax-actions.php';
 
 require get_template_directory() . '/inc/custom-post-types/register-cpts.php';
+require get_template_directory() . '/inc/custom-taxonomies/register-taxonomies.php';
 require get_template_directory() . '/inc/admin-columns/custom-post.php';
 
 // Reusable
 require get_template_directory() . '/inc/gutenberg/render-icon-btn.php';
+require get_template_directory() . '/inc/partials/search-bar.php';
 
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';

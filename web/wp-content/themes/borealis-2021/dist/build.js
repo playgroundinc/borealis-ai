@@ -10286,7 +10286,9 @@ try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/style.scss */ "./src/sass/style.scss");
 /* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _scripts_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/search */ "./src/js/scripts/search.js");
 // require('./scripts/polyfills/closest-polyfill');
+
  // import alertBar from './scripts/alert-bar';
 // import animate from './scripts/animate';
 // import fixSkipLinkFocus from './scripts/skip-link-focus-fix';
@@ -10302,6 +10304,161 @@ __webpack_require__.r(__webpack_exports__);
 // accordion();
 // videoBlocks();
 // heroVideo();
+
+Object(_scripts_search__WEBPACK_IMPORTED_MODULE_1__["default"])();
+
+/***/ }),
+
+/***/ "./src/js/scripts/classes/class-query-params.js":
+/*!******************************************************!*\
+  !*** ./src/js/scripts/classes/class-query-params.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return QueryParams; });
+class QueryParams {
+  constructor(param) {
+    this.param = param;
+    this.UrlParams = new URLSearchParams(window.location.search);
+  }
+
+  setParam(value) {
+    this.UrlParams.set(this.param, value);
+    history.replaceState({}, 'Borealis AI', `${location.pathname}?${this.UrlParams.toString()}`);
+  }
+
+}
+
+/***/ }),
+
+/***/ "./src/js/scripts/classes/class-search.js":
+/*!************************************************!*\
+  !*** ./src/js/scripts/classes/class-search.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SearchBar; });
+/* harmony import */ var _class_query_params__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./class-query-params */ "./src/js/scripts/classes/class-query-params.js");
+
+class SearchBar {
+  constructor(form) {
+    this.form = form;
+    this.input = null;
+    this.error = false;
+    this.errorElement = null;
+    this.helperTextElement = null;
+    this.searchTerm = '';
+    this.QueryParams = new _class_query_params__WEBPACK_IMPORTED_MODULE_0__["default"]('q');
+    this.addEvents = this.addEvents.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.checkForError = this.checkForError.bind(this);
+    this.setValue = this.setValue.bind(this);
+  }
+
+  setValue(name, value) {
+    this[name] = value;
+  }
+
+  getInput() {
+    const input = this.form.querySelector('input');
+    this.setValue('input', input);
+  }
+
+  getErrorElement() {
+    const errorElement = this.form.querySelector('#error-state');
+    this.setValue('errorElement', errorElement);
+  }
+
+  getHelperTextElement() {
+    const helperTextElement = this.form.querySelector('#helper-text');
+    this.setValue('helperTextElement', helperTextElement);
+  }
+
+  getElements() {
+    this.getInput();
+    this.getHelperTextElement();
+    this.getErrorElement();
+  }
+
+  addEvents() {
+    this.form.addEventListener('submit', this.handleSubmit);
+    this.input.addEventListener('keyup', this.handleChange);
+  }
+
+  checkForError() {
+    if (this.searchTerm !== '') {
+      return false;
+    }
+
+    this.setValue('error', true);
+    this.helperTextElement.classList.add('hidden');
+    this.errorElement.classList.remove('hidden');
+    return true;
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const error = this.checkForError();
+
+    if (!error) {
+      this.QueryParams.setParam(this.searchTerm);
+    }
+  }
+
+  handleChange(e) {
+    if (e.keyCode === 13) {
+      return;
+    }
+
+    this.setValue('searchTerm', e.target.value);
+
+    if (!this.error) {
+      return;
+    }
+
+    this.setValue('error', false);
+    this.helperTextElement.classList.remove('hidden');
+    this.errorElement.classList.add('hidden');
+  }
+
+  init() {
+    this.getElements();
+    this.addEvents();
+  }
+
+}
+
+/***/ }),
+
+/***/ "./src/js/scripts/search.js":
+/*!**********************************!*\
+  !*** ./src/js/scripts/search.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return search; });
+/* harmony import */ var _classes_class_search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/class-search */ "./src/js/scripts/classes/class-search.js");
+
+function search() {
+  const searchForm = [...document.querySelectorAll('.search-form')];
+
+  if (searchForm && searchForm.length > 0) {
+    searchForm.forEach(form => {
+      const SearchBar = new _classes_class_search__WEBPACK_IMPORTED_MODULE_0__["default"](form);
+      SearchBar.init();
+    });
+  }
+}
 
 /***/ }),
 
