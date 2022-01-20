@@ -74,6 +74,7 @@ require get_template_directory() . '/inc/admin-columns/custom-post.php';
 
 // Reusable
 require get_template_directory() . '/inc/gutenberg/render-icon-btn.php';
+require get_template_directory() . '/inc/partials/search-bar.php';
 
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';

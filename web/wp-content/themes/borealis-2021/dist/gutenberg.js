@@ -2156,7 +2156,7 @@ function leadershipMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
   var Inserter = wp.blockEditor.Inserter;
-  var meta_fields = ['name', 'position', 'education', 'excerpt', 'copy', 'image_alt', 'image_url', 'image_id'];
+  var meta_fields = ['name', 'position', 'education', 'copy'];
   var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/leadership-meta-block"), {
     title: 'Leadership Meta',
@@ -2172,11 +2172,7 @@ function leadershipMetaBlock() {
       var name = attributes.name,
           position = attributes.position,
           education = attributes.education,
-          excerpt = attributes.excerpt,
-          copy = attributes.copy,
-          image_url = attributes.image_url,
-          image_id = attributes.image_id,
-          image_alt = attributes.image_alt;
+          copy = attributes.copy;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -2210,36 +2206,11 @@ function leadershipMetaBlock() {
         label: "Education:"
       }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
-          reference: 'excerpt',
-          value: excerpt,
-          tagName: 'p',
-          classes: ['paragraph'],
-          placeholder: 'Add excerpt'
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        components: [{
           reference: 'copy',
           value: copy,
           tagName: 'p',
           classes: ['paragraph'],
           placeholder: 'Add copy'
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        components: [{
-          value: image_url,
-          reference: 'image_url',
-          altValue: image_alt,
-          altReference: 'image_alt',
-          idValue: image_id,
-          idReference: 'image_id',
-          buttonText: 'Add Image',
-          imageClasses: ['image-text__image']
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -2575,7 +2546,7 @@ function newsMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
   var Inserter = wp.blockEditor.Inserter;
-  var meta_fields = ['publication_date', 'description', 'source_publication', 'authors', 'external_link', 'image_url', 'image_alt', 'image_id'];
+  var meta_fields = ['publication_date', 'source_publication', 'authors', 'external_link'];
   var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/news-meta-block"), {
     title: 'News Meta',
@@ -2589,13 +2560,9 @@ function newsMetaBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var publication_date = attributes.publication_date,
-          description = attributes.description,
           source_publication = attributes.source_publication,
           authors = attributes.authors,
-          external_link = attributes.external_link,
-          image_url = attributes.image_url,
-          image_id = attributes.image_id,
-          image_alt = attributes.image_alt;
+          external_link = attributes.external_link;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -2615,17 +2582,6 @@ function newsMetaBlock() {
           updateAttributeValue('publication_date', value);
         },
         label: "Publication date (YYYY/MM/DD):"
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        components: [{
-          reference: 'description',
-          value: description,
-          tagName: 'p',
-          classes: ['paragraph'],
-          placeholder: 'Add description'
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
       }), /*#__PURE__*/React.createElement(TextControl, {
         value: source_publication,
         onChange: function onChange(value) {
@@ -2645,20 +2601,6 @@ function newsMetaBlock() {
           updateAttributeValue('external_link', value);
         },
         label: "External link:"
-      }), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        components: [{
-          value: image_url,
-          reference: 'image_url',
-          altValue: image_alt,
-          altReference: 'image_alt',
-          idValue: image_id,
-          idReference: 'image_id',
-          buttonText: 'Add Image',
-          imageClasses: ['image-text__image']
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
       }))))];
     },
     // No information saved to the block
