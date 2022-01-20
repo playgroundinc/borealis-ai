@@ -7,10 +7,10 @@ export default function tabbedContentPanelBlock() {
     const { i18n } = wp;
 
     const blockSlug = "tabbed-content-panel-block"; // slug for the block
-	const blockTitle = "Create tabbed content panel block";
+	const blockTitle = "Tabbed content panel block";
 	const blockDescription = "Component to create tabbed content panel block";
 	const blockCategory = "common";
-    const blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+    const blockIcon = "dashicons-columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
         title: {

@@ -14,16 +14,9 @@ if (!function_exists('pg_mapbox_scripts')) {
 }
 
 if (!function_exists('pg_tabbed_content_script')) {
-    /**
-     * Only load in tabbed content script if necessary.
-     */
     function pg_tabbed_content_script() {
-        $namespace = pg_get_namespace();
-        if (has_block($namespace . '/tabbed-content-container-block')) {
-            wp_enqueue_script( 'tabbedContent', get_template_directory_uri() . '/dist/tabbedContent.js', array(), '20151215', true );  
-        }
+        wp_register_script('tabbedContent', get_template_directory_uri() . '/dist/tabbedContent.js', array(), '20151215', true);
     }
-
 }
 
 if (!function_exists('pg_threejs_scripts')) {

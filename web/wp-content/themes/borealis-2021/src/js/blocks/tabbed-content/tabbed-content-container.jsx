@@ -10,10 +10,10 @@ export default function tabbedContentContainerBlock() {
     const { i18n } = wp;
 
     const blockSlug = "tabbed-content-container-block"; // slug for the block
-	const blockTitle = "Create tabbed content container block";
+	const blockTitle = "Tabbed content container block";
 	const blockDescription = "Component to create tabbed content container block";
 	const blockCategory = "common";
-    const blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+    const blockIcon = "dashicons-block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
         title: {

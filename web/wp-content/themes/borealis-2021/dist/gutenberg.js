@@ -4330,10 +4330,10 @@ function tabbedContentContainerBlock() {
       i18n = _wp.i18n;
   var blockSlug = "tabbed-content-container-block"; // slug for the block
 
-  var blockTitle = "Create tabbed content container block";
+  var blockTitle = "Tabbed content container block";
   var blockDescription = "Component to create tabbed content container block";
   var blockCategory = "common";
-  var blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  var blockIcon = "dashicons-block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
@@ -4426,10 +4426,10 @@ function tabbedContentPanelBlock() {
       i18n = _wp.i18n;
   var blockSlug = "tabbed-content-panel-block"; // slug for the block
 
-  var blockTitle = "Create tabbed content panel block";
+  var blockTitle = "Tabbed content panel block";
   var blockDescription = "Component to create tabbed content panel block";
   var blockCategory = "common";
-  var blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  var blockIcon = "dashicons-columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
