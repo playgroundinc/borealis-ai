@@ -11,7 +11,10 @@ get_header();
 
 ?>
     <div>
-        <?php get_search_form() ?>
+        <?php      
+            $query = sanitize_text_field(wp_unslash($_GET['q'])) ?? null;
+            echo pg_generate_search_bar($query); 
+        ?>
     </div>
 <?php
 get_footer();
