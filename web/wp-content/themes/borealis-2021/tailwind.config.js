@@ -55,6 +55,9 @@ module.exports = {
 				yellow: {
 					400: "#FFF07C"
 				},
+				seafoam: {
+					400: "#D2FFF4"
+				}
 			},
 			shade: {
 				black: {
