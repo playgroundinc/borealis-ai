@@ -1,13 +1,83 @@
-// const tailwindcss = require("tailwindcss");
+const tailwindcss = require("tailwindcss");
 const { breakpoints, spacing, duration, delay } = require("./utils/constants");
 // const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
+	content: ["./*", "./src/**/*{jsx, js}", "./inc/*", "./inc/**/*"],
+  	darkMode: false, // or 'media' or 'class'
+  	theme: {
     spacing: spacing,
     extend: {
+		// Colors use font-weight rules:
+		// - Standard is 400
+		// - Lighter versions are 100, 200, or 300
+		// - Darker versions are 700, 800, or 900
+		// - Any value less than 100 represents opacity (so 80 would have an opacity of 0.8)
+		colors: {
+			primary: {
+				navy: {
+					400: '#000F78',
+				},
+				purple: {
+					400: '#55009B'
+				},
+				forestGreen: {
+					400: "#005055"
+				},
+				teal: {
+					400: "#00BEB4",
+				},
+				electric: {
+					blue: {
+						400: "#0044FF"
+					},
+					purple: {
+						400: "#6037D7",	
+					},
+					yellow: {
+						400: "#FEDF00",
+					}
+				}
+			},
+			tint: {
+				purple: {
+					400: "#4E65F9"
+				},
+				lightBlue: {
+					400: "#6FDEFA"
+				},
+				pink: {
+					400: "#FFC1E6"
+				},
+				teal: {
+					400: "#8DFAC9"
+				},
+				yellow: {
+					400: "#FFF07C"
+				},
+			},
+			shade: {
+				black: {
+					400: "#222731" // Cool Black
+				},
+				grey: {
+					100: "#F4F4FB", // Light Grey
+					400: "#D8D8E4", // Medium Grey
+					700: "#5C5D76", // Dark Grey
+				},
+				white: {
+					400: "#FFFFFF" // White
+				}
+			},
+			alert: {
+				error: {
+					400: "#F05C5C",
+				},
+				success: {
+					400: "#3ECD80"
+				}
+			}
+		},
     },
   },
   variants: {
@@ -18,7 +88,7 @@ module.exports = {
 		cursor: ["disabled", "hover"],
 		flex: ["responsive"],
 		fontStyle: ["hover", "responsive"],
-    minWidth: ["responsive"],
+    	minWidth: ["responsive"],
 		minHeight: ["responsive"],
 		margin: [
 			"nth-child-2",
