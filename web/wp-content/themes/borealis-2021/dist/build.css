@@ -495,9 +495,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: -webkit-sticky;
   position: sticky;
 }
-.mt-10{
-  margin-top: 40px;
-}
 .mt-15{
   margin-top: 60px;
 }
@@ -535,14 +532,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .italic{
   font-style: italic;
-}
-.text-tint-purple-400{
-  --tw-text-opacity: 1;
-  color: rgb(78 101 249 / var(--tw-text-opacity));
-}
-.text-alert-success-400{
-  --tw-text-opacity: 1;
-  color: rgb(62 205 128 / var(--tw-text-opacity));
 }
 .container{
   margin: 0 28px;

@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "clean": "cd web/wp-content/themes/borealis-2021 && rm -rf ./node_modules package-lock.json",
+    "clean": "cd web/wp-content/themes/borealis-2021 && rm -rf ./node_modules package-lock.json ./dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-local": "cd web/wp-content/themes/borealis-2021 && npm i && npm run dev",
     "start": "cd web/wp-content/themes/borealis-2021 && npm i && npm run dev"
