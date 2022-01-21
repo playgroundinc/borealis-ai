@@ -510,19 +510,47 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hidden{
   display: none;
 }
+.w-8\/12{
+  width: 66.666667%;
+}
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.flex-col-reverse{
+  flex-direction: column-reverse;
 }
 .border{
   border-width: 1px;
 }
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.border-l{
+  border-left-width: 1px;
+}
+.border-l-2{
+  border-left-width: 2px;
+}
+.border-shade-black-400{
+  --tw-border-opacity: 1;
+  border-color: rgb(34 39 49 / var(--tw-border-opacity));
+}
+.pt-41{
+  padding-top: 164px;
+}
+.pr-4{
+  padding-right: 16px;
+}
+.pl-4{
+  padding-left: 16px;
+}
+.pt-8{
+  padding-top: 32px;
 }
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
+}
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 .font-bold{
   font-weight: 700;
@@ -533,6 +561,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .italic{
   font-style: italic;
 }
+.text-shade-grey-700{
+  --tw-text-opacity: 1;
+  color: rgb(92 93 118 / var(--tw-text-opacity));
+}
 .container{
   margin: 0 28px;
   max-width: 100%;
@@ -540,7 +572,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (min-width: 1920px){
   .container{
     width: calc(100% - 150px);
-    max-width: 1770px;
+    max-width: 1300px;
   }
 }
 @media (min-width: 768px){
