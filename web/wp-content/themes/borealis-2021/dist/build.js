@@ -40,6 +40,209 @@ __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerat
 
 /***/ }),
 
+/***/ "./src/js/scripts/accordion.js":
+/*!*************************************!*\
+  !*** ./src/js/scripts/accordion.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ accordion; }
+/* harmony export */ });
+/* harmony import */ var _classes_class_accordion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/class-accordion */ "./src/js/scripts/classes/class-accordion.js");
+
+function accordion() {
+  const getTriggers = block => {
+    const triggers = [...block.querySelectorAll('.accordion-row__header')];
+
+    if (triggers && triggers.length) {
+      triggers.forEach((trigger, index) => {
+        const AccordionControl = new _classes_class_accordion__WEBPACK_IMPORTED_MODULE_0__["default"](block, trigger, triggers, index);
+        AccordionControl.addTriggerClickHandlers();
+      });
+    }
+  };
+
+  const accordionBlocks = [...document.querySelectorAll('.accordion-block')];
+
+  if (accordionBlocks && accordionBlocks.length) {
+    accordionBlocks.forEach(block => {
+      getTriggers(block);
+    });
+  }
+}
+
+/***/ }),
+
+/***/ "./src/js/scripts/classes/class-accordion.js":
+/*!***************************************************!*\
+  !*** ./src/js/scripts/classes/class-accordion.js ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Accordion; }
+/* harmony export */ });
+/* harmony import */ var _slide_toggle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slide-toggle */ "./src/js/scripts/classes/slide-toggle.js");
+
+class Accordion {
+  constructor(accordion, trigger, elements, index) {
+    this.accordion = accordion;
+    this.trigger = trigger;
+    this.elements = elements;
+    this.index = index;
+    this.first = null;
+    this.last = null;
+    this.active = false;
+    this.panel = null;
+    this.handleTriggerClick = this.handleTriggerClick.bind(this);
+    this.handleArrowControls = this.handleArrowControls.bind(this);
+    this.handleWindowResize = this.handleWindowResize.bind(this);
+  }
+
+  setState(name, value) {
+    this[name] = value;
+  }
+
+  moveFocus($parent) {
+    $header = $parent.find('.accordion-row__header');
+    $header.focus();
+  }
+
+  handleUpKey() {
+    const prevIndex = this.index - 1;
+
+    if (this.elements[prevIndex]) {
+      this.elements[prevIndex].focus();
+      return;
+    }
+
+    this.last.focus();
+  }
+
+  handleEndKey() {
+    this.last.focus();
+  }
+
+  handleHomeKey() {
+    this.first.focus();
+  }
+
+  handleDownKey() {
+    const nextIndex = this.index + 1;
+
+    if (this.elements[nextIndex]) {
+      this.elements[nextIndex].focus();
+      return;
+    }
+
+    this.first.focus();
+  }
+
+  handleArrowControls(e) {
+    // 38 is up
+    if (e.keyCode === 38) {
+      e.preventDefault();
+      this.handleUpKey();
+    } // 40 is down
+
+
+    if (e.keyCode === 40) {
+      e.preventDefault();
+      this.handleDownKey();
+    } // 35 is end key
+
+
+    if (e.keyCode === 35) {
+      e.preventDefault();
+      this.handleEndKey();
+    } // 36 is home key
+
+
+    if (e.keyCode === 36) {
+      e.preventDefault();
+      this.handleHomeKey();
+    }
+  }
+
+  clearActiveElement(element) {
+    this.getPanel(element);
+    (0,_slide_toggle__WEBPACK_IMPORTED_MODULE_0__.slideToggle)(this.panel);
+    element.classList.remove('accordion-row--active');
+    element.setAttribute('aria-expanded', false);
+    this.getPanel(this.trigger);
+  }
+
+  handleWindowResize() {
+    if (this.panel.classList.contains('slide-toggle--active')) {
+      this.panel.style.maxHeight = 'unset';
+      const height = this.panel.offsetHeight;
+      this.panel.style.maxHeight = `${height}px`;
+    }
+  }
+
+  handleActiveElements() {
+    const activeElements = [...this.accordion.querySelectorAll('.accordion-row--active')];
+
+    if (activeElements && activeElements.length) {
+      activeElements.forEach(element => {
+        this.clearActiveElement(element);
+      });
+    }
+  }
+
+  handleTriggerClick(e) {
+    (0,_slide_toggle__WEBPACK_IMPORTED_MODULE_0__.slideToggle)(this.panel);
+
+    if (this.trigger.classList.contains('accordion-row--active')) {
+      this.trigger.classList.remove('accordion-row--active');
+      this.trigger.setAttribute('aria-expanded', false);
+      return;
+    }
+
+    this.handleActiveElements();
+    this.trigger.setAttribute('aria-expanded', true);
+    this.trigger.classList.add('accordion-row--active');
+  }
+
+  getPanel(element) {
+    const panelId = element.getAttribute('aria-controls');
+    const panel = document.getElementById(`${panelId}`);
+    this.setState('panel', panel);
+  }
+
+  getFirst() {
+    const first = this.elements[0];
+    this.setState('first', first);
+  }
+
+  getLast() {
+    const index = this.elements.length - 1;
+    const last = this.elements[index];
+    this.setState('last', last);
+  }
+
+  getRelatedElements() {
+    this.getPanel(this.trigger);
+    this.getFirst();
+    this.getLast();
+  }
+
+  addTriggerClickHandlers() {
+    this.getRelatedElements();
+    this.trigger.addEventListener('click', this.handleTriggerClick);
+    this.trigger.addEventListener('keydown', this.handleArrowControls);
+    window.addEventListener('resize', this.handleWindowResize);
+  }
+
+}
+
+/***/ }),
+
 /***/ "./src/js/scripts/classes/class-query-params.js":
 /*!******************************************************!*\
   !*** ./src/js/scripts/classes/class-query-params.js ***!
@@ -166,6 +369,35 @@ class SearchBar {
     this.addEvents();
   }
 
+}
+
+/***/ }),
+
+/***/ "./src/js/scripts/classes/slide-toggle.js":
+/*!************************************************!*\
+  !*** ./src/js/scripts/classes/slide-toggle.js ***!
+  \************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "slideToggle": function() { return /* binding */ slideToggle; }
+/* harmony export */ });
+function slideToggle(element) {
+  if (element.classList.contains('slide-toggle--active')) {
+    element.classList.remove('slide-toggle--active');
+    element.style.maxHeight = '0px';
+    element.style.overflow = '';
+    return;
+  }
+
+  const height = element.scrollHeight;
+  element.style.maxHeight = `${height}px`;
+  element.classList.add('slide-toggle--active');
+  setTimeout(function () {
+    element.style.overflow = 'unset';
+  }, 300);
 }
 
 /***/ }),
@@ -10115,22 +10347,23 @@ _global["default"]._babelPolyfill = true;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/style.scss */ "./src/sass/style.scss");
 /* harmony import */ var _scripts_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/search */ "./src/js/scripts/search.js");
+/* harmony import */ var _scripts_accordion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/accordion */ "./src/js/scripts/accordion.js");
 // require('./scripts/polyfills/closest-polyfill');
 
  // import alertBar from './scripts/alert-bar';
 // import animate from './scripts/animate';
 // import fixSkipLinkFocus from './scripts/skip-link-focus-fix';
 // import navigation from './scripts/navigation';
-// import accordion from './scripts/accordion';
-// import videoBlocks from './scripts/video-block';
+
+ // import videoBlocks from './scripts/video-block';
 // import heroVideo from './scripts/hero-video';
 // // Import JS Modules here
 // alertBar();
 // animate();
 // fixSkipLinkFocus();
 // navigation();
-// accordion();
-// videoBlocks();
+
+(0,_scripts_accordion__WEBPACK_IMPORTED_MODULE_2__["default"])(); // videoBlocks();
 // heroVideo();
 
 (0,_scripts_search__WEBPACK_IMPORTED_MODULE_1__["default"])();

@@ -52,7 +52,7 @@ if ( ! function_exists( 'pg_render_accordion_block' ) ) {
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
-            <div>
+            <div class="accordion-block">
                 <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
                     <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
                 <?php endforeach; ?>

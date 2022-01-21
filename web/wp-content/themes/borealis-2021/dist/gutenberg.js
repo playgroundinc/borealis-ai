@@ -148,7 +148,7 @@ function accordionBlock() {
           updateAttributeValue(attribute, change);
         }
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph-no-alignment"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/document-row"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four")]
+        allowedBlocks: ['core/paragraph', "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/document-row"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four")]
       }))];
     },
     save: function save() {
