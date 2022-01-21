@@ -11,7 +11,7 @@ if (!function_exists('pg_register_publications_cpt')) {
         // - plural.
         // - args (an optional array to overwrite any default settings).
         $namespace = pg_get_namespace();
-        $Publications_CPT = new PG_Custom_Post_Type('publications', 'Publication', 'Publications', array('icon' => 'dashicons-category', 'has_archive' => 'false'));
+        $Publications_CPT = new PG_Custom_Post_Type('publications', 'Publication', 'Publications', array('icon' => 'dashicons-book', 'has_archive' => 'false'));
         $Publications_CPT->register();
         $Publications_CPT->register_tags('conferences', 'Conference', 'Conferences');
 

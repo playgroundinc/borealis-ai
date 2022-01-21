@@ -1139,58 +1139,6 @@ function jobBlock() {
 
 /***/ }),
 
-/***/ "./src/js/blocks/helper-functions/Locations.js":
-/*!*****************************************************!*\
-  !*** ./src/js/blocks/helper-functions/Locations.js ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Location; });
-/* harmony import */ var _us_states__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./us-states */ "./src/js/blocks/helper-functions/us-states.js");
-/* harmony import */ var _provinces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./provinces */ "./src/js/blocks/helper-functions/provinces.js");
-
-
-class Location {
-  constructor() {
-    this.states = _us_states__WEBPACK_IMPORTED_MODULE_0__["default"];
-    this.provinces = _provinces__WEBPACK_IMPORTED_MODULE_1__["default"];
-  }
-
-  getProvinces() {
-    const provinces = [];
-
-    for (let province in this.provinces) {
-      const option = {
-        label: this.provinces[province],
-        value: province
-      };
-      provinces.push(option);
-    }
-
-    return provinces;
-  }
-
-  getStates() {
-    const states = [];
-
-    for (let state in this.states) {
-      const option = {
-        label: this.states[state],
-        value: state
-      };
-      states.push(option);
-    }
-
-    return states;
-  }
-
-}
-
-/***/ }),
-
 /***/ "./src/js/blocks/helper-functions/constants.js":
 /*!*****************************************************!*\
   !*** ./src/js/blocks/helper-functions/constants.js ***!
@@ -1268,106 +1216,6 @@ function DefaultAttrs(fields, source = null) {
     return attributes;
   }
 }
-
-/***/ }),
-
-/***/ "./src/js/blocks/helper-functions/provinces.js":
-/*!*****************************************************!*\
-  !*** ./src/js/blocks/helper-functions/provinces.js ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  AB: "Alberta",
-  BC: "British Columbia",
-  MB: "Manitoba",
-  NB: "New Brunswick",
-  NL: "Newfoundland and Labrador",
-  NT: "Northwest Territories",
-  NS: "Nova Scotia",
-  NU: "Nunavut",
-  ON: "Ontario",
-  PE: "Prince Edward Island",
-  QC: "Quebec",
-  SK: "Saskatchewan",
-  YT: "Yukon Territory"
-});
-
-/***/ }),
-
-/***/ "./src/js/blocks/helper-functions/us-states.js":
-/*!*****************************************************!*\
-  !*** ./src/js/blocks/helper-functions/us-states.js ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  AL: "Alabama",
-  AK: "Alaska",
-  AS: "American Samoa",
-  AZ: "Arizona",
-  AR: "Arkansas",
-  CA: "California",
-  CO: "Colorado",
-  CT: "Connecticut",
-  DE: "Delaware",
-  DC: "District Of Columbia",
-  FM: "Federated States Of Micronesia",
-  FL: "Florida",
-  GA: "Georgia",
-  GU: "Guam",
-  HI: "Hawaii",
-  ID: "Idaho",
-  IL: "Illinois",
-  IN: "Indiana",
-  IA: "Iowa",
-  KS: "Kansas",
-  KY: "Kentucky",
-  LA: "Louisiana",
-  ME: "Maine",
-  MH: "Marshall Islands",
-  MD: "Maryland",
-  MA: "Massachusetts",
-  MI: "Michigan",
-  MN: "Minnesota",
-  MS: "Mississippi",
-  MO: "Missouri",
-  MT: "Montana",
-  NE: "Nebraska",
-  NV: "Nevada",
-  NH: "New Hampshire",
-  NJ: "New Jersey",
-  NM: "New Mexico",
-  NY: "New York",
-  NC: "North Carolina",
-  ND: "North Dakota",
-  MP: "Northern Mariana Islands",
-  OH: "Ohio",
-  OK: "Oklahoma",
-  OR: "Oregon",
-  PW: "Palau",
-  PA: "Pennsylvania",
-  PR: "Puerto Rico",
-  RI: "Rhode Island",
-  SC: "South Carolina",
-  SD: "South Dakota",
-  TN: "Tennessee",
-  TX: "Texas",
-  UT: "Utah",
-  VT: "Vermont",
-  VI: "Virgin Islands",
-  VA: "Virginia",
-  WA: "Washington",
-  WV: "West Virginia",
-  WI: "Wisconsin",
-  WY: "Wyoming"
-});
 
 /***/ }),
 
@@ -2132,34 +1980,29 @@ function logoBlock() {
 
 /***/ }),
 
-/***/ "./src/js/blocks/meta/leadership-meta.jsx":
-/*!************************************************!*\
-  !*** ./src/js/blocks/meta/leadership-meta.jsx ***!
-  \************************************************/
+/***/ "./src/js/blocks/meta/author-meta.jsx":
+/*!********************************************!*\
+  !*** ./src/js/blocks/meta/author-meta.jsx ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return leadershipMetaBlock; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return authorMetaBlock; });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
-/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
-/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
-
-
-function leadershipMetaBlock() {
+function authorMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
-  var Inserter = wp.blockEditor.Inserter;
-  var meta_fields = ['name', 'position', 'education', 'copy'];
+  var meta_fields = ['external_link'];
   var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/leadership-meta-block"), {
-    title: 'Leadership Meta',
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/author-meta-block"), {
+    title: 'Author Meta',
     icon: 'align-full-width',
     category: 'common',
     supports: {
@@ -2169,10 +2012,7 @@ function leadershipMetaBlock() {
     edit: function edit(props) {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var name = attributes.name,
-          position = attributes.position,
-          education = attributes.education,
-          copy = attributes.copy;
+      var external_link = attributes.external_link;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -2182,334 +2022,16 @@ function leadershipMetaBlock() {
         className: "custom-component"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Leadership Meta"), /*#__PURE__*/React.createElement("div", {
+      }, "Author Meta"), /*#__PURE__*/React.createElement("div", {
         className: "page-settings__controls"
       }, /*#__PURE__*/React.createElement("div", {
         className: "mt-xs-3"
       }, /*#__PURE__*/React.createElement(TextControl, {
-        value: name,
+        value: external_link,
         onChange: function onChange(value) {
-          updateAttributeValue('name', value);
+          updateAttributeValue('external_link', value);
         },
-        label: "Name:"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: position,
-        onChange: function onChange(value) {
-          updateAttributeValue('position', value);
-        },
-        label: "Position:"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: education,
-        onChange: function onChange(value) {
-          updateAttributeValue('education', value);
-        },
-        label: "Education:"
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        components: [{
-          reference: 'copy',
-          value: copy,
-          tagName: 'p',
-          classes: ['paragraph'],
-          placeholder: 'Add copy'
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }))))];
-    },
-    // No information saved to the block
-    // Data is saved to post meta via attributes
-    save: function save() {
-      return null;
-    }
-  });
-}
-
-/***/ }),
-
-/***/ "./src/js/blocks/meta/location-meta.jsx":
-/*!**********************************************!*\
-  !*** ./src/js/blocks/meta/location-meta.jsx ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return locationMetaBlock; });
-/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
-/* harmony import */ var _helper_functions_Locations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper-functions/Locations */ "./src/js/blocks/helper-functions/Locations.js");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-function locationMetaBlock() {
-  var registerBlockType = wp.blocks.registerBlockType;
-  var _wp$components = wp.components,
-      TextControl = _wp$components.TextControl,
-      TextareaControl = _wp$components.TextareaControl,
-      RadioControl = _wp$components.RadioControl,
-      SelectControl = _wp$components.SelectControl,
-      Button = _wp$components.Button;
-  var meta_fields = ['location_country', 'location_address', 'location_city', 'location_code', 'location_province', 'location_lat', 'location_lng', 'location_phone', 'location_fax', 'location_hours'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
-  attributes['error'] = {
-    type: 'String',
-    default: ''
-  };
-  var Location = new _helper_functions_Locations__WEBPACK_IMPORTED_MODULE_2__["default"]();
-  var provinces = Location.getProvinces();
-  provinces.unshift({
-    label: 'Select province',
-    value: ''
-  });
-  var states = Location.getStates();
-  states.unshift({
-    label: 'Select state',
-    value: ''
-  });
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/location-meta-block"), {
-    title: 'Location Meta',
-    icon: 'align-full-width',
-    category: 'common',
-    supports: {
-      multiple: false
-    },
-    attributes: attributes,
-    edit: function edit(props) {
-      var setAttributes = props.setAttributes,
-          attributes = props.attributes;
-      var location_country = attributes.location_country,
-          location_address = attributes.location_address,
-          location_city = attributes.location_city,
-          location_province = attributes.location_province,
-          location_code = attributes.location_code,
-          location_lat = attributes.location_lat,
-          location_lng = attributes.location_lng,
-          location_phone = attributes.location_phone,
-          location_fax = attributes.location_fax,
-          location_hours = attributes.location_hours,
-          error = attributes.error;
-
-      function updateAttributeValue(attribute, value) {
-        setAttributes(_defineProperty({}, attribute, value));
-      }
-
-      var setLatLng = function setLatLng(coordinates) {
-        if (coordinates.length > 1) {
-          updateAttributeValue('location_lng', "".concat(coordinates[0]));
-          updateAttributeValue('location_lat', "".concat(coordinates[1]));
-        }
-      };
-
-      var apiCall = /*#__PURE__*/function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(url) {
-          var resp, data, locations;
-          return regeneratorRuntime.wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  _context.prev = 0;
-                  _context.next = 3;
-                  return fetch(url, {
-                    method: 'GET',
-                    redirect: 'follow',
-                    referrer: 'no-referrer'
-                  });
-
-                case 3:
-                  resp = _context.sent;
-                  _context.next = 6;
-                  return resp.json();
-
-                case 6:
-                  data = _context.sent;
-                  locations = data.features;
-
-                  if (locations && locations.length && locations[0].geometry && locations[0].geometry.coordinates) {
-                    setLatLng(locations[0].geometry.coordinates);
-                  }
-
-                  _context.next = 14;
-                  break;
-
-                case 11:
-                  _context.prev = 11;
-                  _context.t0 = _context["catch"](0);
-                  updateAttributeValue('error', 'Something went wrong');
-
-                case 14:
-                case "end":
-                  return _context.stop();
-              }
-            }
-          }, _callee, null, [[0, 11]]);
-        }));
-
-        return function apiCall(_x) {
-          return _ref.apply(this, arguments);
-        };
-      }();
-
-      var buildUrl = function buildUrl(address) {
-        var encodedAddress = encodeURI(address);
-        var country = location_country ? location_country : 'CA';
-
-        if (ajaxInfo.apiKey) {
-          var url = "https://api.mapbox.com/geocoding/v5/mapbox.places/".concat(encodedAddress, ".json?country=").concat(country, "&access_token=").concat(ajaxInfo.apiKey);
-          apiCall(url);
-        }
-      };
-
-      var verifyAddress = function verifyAddress() {
-        if ('' === location_address || '' === location_city || '' === location_province || '' === location_code) {
-          updateAttributeValue('error', 'Please provide address, city, province/state, and postal/zip code');
-          return false;
-        }
-
-        updateAttributeValue('error', '');
-        return "".concat(location_address, " ").concat(location_city, " ").concat(location_province, " ").concat(location_code);
-      };
-
-      var fetchLatLng = /*#__PURE__*/function () {
-        var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-          var address;
-          return regeneratorRuntime.wrap(function _callee2$(_context2) {
-            while (1) {
-              switch (_context2.prev = _context2.next) {
-                case 0:
-                  address = verifyAddress();
-
-                  if (address) {
-                    _context2.next = 3;
-                    break;
-                  }
-
-                  return _context2.abrupt("return");
-
-                case 3:
-                  buildUrl(address);
-
-                case 4:
-                case "end":
-                  return _context2.stop();
-              }
-            }
-          }, _callee2);
-        }));
-
-        return function fetchLatLng() {
-          return _ref2.apply(this, arguments);
-        };
-      }();
-
-      return [null, /*#__PURE__*/React.createElement("div", {
-        className: "custom-component"
-      }, /*#__PURE__*/React.createElement("p", {
-        className: "block-title"
-      }, "Location Metadata"), /*#__PURE__*/React.createElement("div", {
-        className: "page-settings__controls"
-      }, /*#__PURE__*/React.createElement(RadioControl, {
-        value: location_country,
-        onChange: function onChange(value) {
-          updateAttributeValue('location_province', '');
-          updateAttributeValue('location_country', value);
-        },
-        label: "Country:",
-        selected: location_country ? location_country : 'CA',
-        options: [{
-          label: "Canada",
-          value: "CA"
-        }, {
-          label: "United States",
-          value: "US"
-        }]
-      }), /*#__PURE__*/React.createElement("div", {
-        className: "mt-xs-3"
-      }, /*#__PURE__*/React.createElement(TextControl, {
-        value: location_address,
-        onChange: function onChange(value) {
-          updateAttributeValue('location_address', value);
-        },
-        label: "Street Address:"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: location_city,
-        onChange: function onChange(value) {
-          updateAttributeValue('location_city', value);
-        },
-        label: "City:"
-      }), /*#__PURE__*/React.createElement(SelectControl, {
-        value: location_province,
-        onChange: function onChange(value) {
-          updateAttributeValue('location_province', value);
-        },
-        label: location_country !== 'US' ? "Province/Territory:" : "State",
-        options: location_country !== 'US' ? provinces : states
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: location_code,
-        onChange: function onChange(value) {
-          updateAttributeValue('location_code', value);
-        },
-        label: location_country !== 'US' ? 'Postal Code:' : 'Zip Code'
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: location_phone,
-        onChange: function onChange(value) {
-          updateAttributeValue('location_phone', value);
-        },
-        label: "Phone:"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: location_fax,
-        onChange: function onChange(value) {
-          updateAttributeValue('location_fax', value);
-        },
-        label: "Fax:"
-      }), /*#__PURE__*/React.createElement(TextareaControl, {
-        value: location_hours,
-        onChange: function onChange(value) {
-          updateAttributeValue('location_hours', value);
-        },
-        label: "Hours:"
-      }), /*#__PURE__*/React.createElement("p", {
-        style: {
-          fontSize: '14px',
-          paddingTop: '10px',
-          fontStyle: 'italic',
-          textAlign: 'center'
-        }
-      }, "Longitude and Latitude are generated by the MapBox Geocode API. Please ensure the MapBox API Key is set in the theme settings."), /*#__PURE__*/React.createElement("p", {
-        style: {
-          fontSize: '14px',
-          paddingTop: '10px',
-          fontStyle: 'italic',
-          textAlign: 'center'
-        }
-      }, "If you'd prefer to limit the number of calls to the MapBox API you can manually find Latitude and Longitude using ", /*#__PURE__*/React.createElement("a", {
-        href: "https://www.latlong.net/"
-      }, "this tool"), " and add them manually."), /*#__PURE__*/React.createElement("div", {
-        className: "button-container copy--center"
-      }, /*#__PURE__*/React.createElement(Button, {
-        className: "button button-large",
-        onClick: fetchLatLng
-      }, '' !== location_lat && '' !== location_lng ? 'Update Longitude and Latitude' : 'Generate Longitude and Latitude')), error !== '' ? /*#__PURE__*/React.createElement("p", {
-        class: "copy--center"
-      }, error) : null, /*#__PURE__*/React.createElement(TextControl, {
-        value: location_lat,
-        onChange: function onChange(value) {
-          updateAttributeValue('location_lat', value);
-        },
-        label: "Latitude"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: location_lng,
-        onChange: function onChange(value) {
-          updateAttributeValue('location_lng', value);
-        },
-        label: "Longitude"
+        label: "External Link:"
       }))))];
     },
     // No information saved to the block
@@ -2546,7 +2068,7 @@ function newsMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
   var Inserter = wp.blockEditor.Inserter;
-  var meta_fields = ['publication_date', 'source_publication', 'authors', 'external_link'];
+  var meta_fields = ['publication_date'];
   var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/news-meta-block"), {
     title: 'News Meta',
@@ -2582,90 +2104,6 @@ function newsMetaBlock() {
           updateAttributeValue('publication_date', value);
         },
         label: "Publication date (YYYY/MM/DD):"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: source_publication,
-        onChange: function onChange(value) {
-          updateAttributeValue('source_publication', value);
-        },
-        label: "Source publication:"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: authors,
-        onChange: function onChange(value) {
-          updateAttributeValue('authors', value);
-        },
-        label: "Author(s):",
-        placeholder: "Please separate authors with a comma"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: external_link,
-        onChange: function onChange(value) {
-          updateAttributeValue('external_link', value);
-        },
-        label: "External link:"
-      }))))];
-    },
-    // No information saved to the block
-    // Data is saved to post meta via attributes
-    save: function save() {
-      return null;
-    }
-  });
-}
-
-/***/ }),
-
-/***/ "./src/js/blocks/meta/news-releases-meta.jsx":
-/*!***************************************************!*\
-  !*** ./src/js/blocks/meta/news-releases-meta.jsx ***!
-  \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return locationMetaBlock; });
-/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-function locationMetaBlock() {
-  var registerBlockType = wp.blocks.registerBlockType;
-  var TextControl = wp.components.TextControl;
-  var Inserter = wp.blockEditor.Inserter;
-  var meta_fields = ['news_release_date'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/news-release-meta-block"), {
-    title: 'News Release Meta',
-    icon: 'align-full-width',
-    category: 'common',
-    supports: {
-      multiple: false
-    },
-    attributes: attributes,
-    edit: function edit(props) {
-      var setAttributes = props.setAttributes,
-          attributes = props.attributes;
-      var news_release_date = attributes.news_release_date;
-
-      function updateAttributeValue(attribute, value) {
-        setAttributes(_defineProperty({}, attribute, value));
-      }
-
-      return [null, /*#__PURE__*/React.createElement("div", {
-        className: "custom-component"
-      }, /*#__PURE__*/React.createElement("p", {
-        className: "block-title"
-      }, "New Release Meta"), /*#__PURE__*/React.createElement("div", {
-        className: "page-settings__controls"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "mt-xs-3"
-      }, /*#__PURE__*/React.createElement(TextControl, {
-        value: news_release_date,
-        onChange: function onChange(value) {
-          updateAttributeValue('news_release_date', value);
-        },
-        label: "Release Date (YYYY/MM/DD):"
       }))))];
     },
     // No information saved to the block
@@ -2914,6 +2352,77 @@ function researchBlogMetaBlock() {
           updateAttributeValue('publication_date', value);
         },
         label: "Publication Date (YYYY/MM/DD):"
+      }))))];
+    },
+    // No information saved to the block
+    // Data is saved to post meta via attributes
+    save: function save() {
+      return null;
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/meta/team-member-meta.jsx":
+/*!*************************************************!*\
+  !*** ./src/js/blocks/meta/team-member-meta.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return leadershipMetaBlock; });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function leadershipMetaBlock() {
+  var registerBlockType = wp.blocks.registerBlockType;
+  var TextControl = wp.components.TextControl;
+  var meta_fields = ['position', 'education'];
+  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/team-member-meta-block"), {
+    title: 'Team Member Meta',
+    icon: 'align-full-width',
+    category: 'common',
+    supports: {
+      multiple: false
+    },
+    attributes: attributes,
+    edit: function edit(props) {
+      var setAttributes = props.setAttributes,
+          attributes = props.attributes;
+      var position = attributes.position,
+          education = attributes.education;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
+
+      return [null, /*#__PURE__*/React.createElement("div", {
+        className: "custom-component"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "block-title"
+      }, "Team Member Meta"), /*#__PURE__*/React.createElement("div", {
+        className: "page-settings__controls"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "mt-xs-3"
+      }, /*#__PURE__*/React.createElement(TextControl, {
+        value: position,
+        onChange: function onChange(value) {
+          updateAttributeValue('position', value);
+        },
+        label: "Position:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: education,
+        onChange: function onChange(value) {
+          updateAttributeValue('education', value);
+        },
+        label: "Education:"
       }))))];
     },
     // No information saved to the block
@@ -4588,39 +4097,37 @@ function textColumnBlock() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_core_extends_video_embed_poster_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/core-extends/video-embed-poster.jsx */ "./src/js/blocks/core-extends/video-embed-poster.jsx");
 /* harmony import */ var _blocks_meta_page_meta_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/meta/page-meta.jsx */ "./src/js/blocks/meta/page-meta.jsx");
-/* harmony import */ var _blocks_meta_location_meta_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/meta/location-meta.jsx */ "./src/js/blocks/meta/location-meta.jsx");
-/* harmony import */ var _blocks_meta_news_releases_meta_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/meta/news-releases-meta.jsx */ "./src/js/blocks/meta/news-releases-meta.jsx");
-/* harmony import */ var _blocks_meta_research_blogs_meta_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/meta/research-blogs-meta.jsx */ "./src/js/blocks/meta/research-blogs-meta.jsx");
-/* harmony import */ var _blocks_meta_news_meta_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/meta/news-meta.jsx */ "./src/js/blocks/meta/news-meta.jsx");
-/* harmony import */ var _blocks_meta_leadership_meta_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blocks/meta/leadership-meta.jsx */ "./src/js/blocks/meta/leadership-meta.jsx");
-/* harmony import */ var _js_blocks_text_column_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../js/blocks/text-column.jsx */ "./src/js/blocks/text-column.jsx");
-/* harmony import */ var _blocks_image_text_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blocks/image-text.jsx */ "./src/js/blocks/image-text.jsx");
-/* harmony import */ var _blocks_image_block_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blocks/image-block.jsx */ "./src/js/blocks/image-block.jsx");
-/* harmony import */ var _blocks_accordion_accordion_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./blocks/accordion/accordion.jsx */ "./src/js/blocks/accordion/accordion.jsx");
-/* harmony import */ var _blocks_accordion_accordion_row_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./blocks/accordion/accordion-row.jsx */ "./src/js/blocks/accordion/accordion-row.jsx");
-/* harmony import */ var _blocks_body_copy_jsx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./blocks/body-copy.jsx */ "./src/js/blocks/body-copy.jsx");
-/* harmony import */ var _blocks_callouts_callout_container_jsx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./blocks/callouts/callout-container.jsx */ "./src/js/blocks/callouts/callout-container.jsx");
-/* harmony import */ var _blocks_callouts_callout_column_jsx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./blocks/callouts/callout-column.jsx */ "./src/js/blocks/callouts/callout-column.jsx");
-/* harmony import */ var _blocks_content_cards_content_card_container_jsx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./blocks/content-cards/content-card-container.jsx */ "./src/js/blocks/content-cards/content-card-container.jsx");
-/* harmony import */ var _blocks_content_cards_content_card_jsx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./blocks/content-cards/content-card.jsx */ "./src/js/blocks/content-cards/content-card.jsx");
-/* harmony import */ var _blocks_image_list_image_list_container_jsx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./blocks/image-list/image-list-container.jsx */ "./src/js/blocks/image-list/image-list-container.jsx");
-/* harmony import */ var _blocks_image_list_image_list_block_jsx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./blocks/image-list/image-list-block.jsx */ "./src/js/blocks/image-list/image-list-block.jsx");
-/* harmony import */ var _blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./blocks/logos/logo-container.jsx */ "./src/js/blocks/logos/logo-container.jsx");
-/* harmony import */ var _blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./blocks/logos/logo.jsx */ "./src/js/blocks/logos/logo.jsx");
-/* harmony import */ var _blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./blocks/page-strips/page-strip.jsx */ "./src/js/blocks/page-strips/page-strip.jsx");
-/* harmony import */ var _blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./blocks/page-strips/page-strip-graphic.jsx */ "./src/js/blocks/page-strips/page-strip-graphic.jsx");
-/* harmony import */ var _blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./blocks/slider/slider-container.jsx */ "./src/js/blocks/slider/slider-container.jsx");
-/* harmony import */ var _blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./blocks/slider/image-slide.jsx */ "./src/js/blocks/slider/image-slide.jsx");
-/* harmony import */ var _blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./blocks/stats/stats-container.jsx */ "./src/js/blocks/stats/stats-container.jsx");
-/* harmony import */ var _blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./blocks/stats/stats-column.jsx */ "./src/js/blocks/stats/stats-column.jsx");
-/* harmony import */ var _blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./blocks/greenhouse/jobs-block.jsx */ "./src/js/blocks/greenhouse/jobs-block.jsx");
-/* harmony import */ var _blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-section-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx");
-/* harmony import */ var _blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-subsection-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-subsection-blok.jsx");
-/* harmony import */ var _blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-container.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-container.jsx");
-/* harmony import */ var _blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-panel.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-panel.jsx");
+/* harmony import */ var _blocks_meta_research_blogs_meta_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/meta/research-blogs-meta.jsx */ "./src/js/blocks/meta/research-blogs-meta.jsx");
+/* harmony import */ var _blocks_meta_news_meta_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/meta/news-meta.jsx */ "./src/js/blocks/meta/news-meta.jsx");
+/* harmony import */ var _blocks_meta_team_member_meta_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/meta/team-member-meta.jsx */ "./src/js/blocks/meta/team-member-meta.jsx");
+/* harmony import */ var _blocks_meta_author_meta_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/meta/author-meta.jsx */ "./src/js/blocks/meta/author-meta.jsx");
+/* harmony import */ var _js_blocks_text_column_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../js/blocks/text-column.jsx */ "./src/js/blocks/text-column.jsx");
+/* harmony import */ var _blocks_image_text_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./blocks/image-text.jsx */ "./src/js/blocks/image-text.jsx");
+/* harmony import */ var _blocks_image_block_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blocks/image-block.jsx */ "./src/js/blocks/image-block.jsx");
+/* harmony import */ var _blocks_accordion_accordion_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blocks/accordion/accordion.jsx */ "./src/js/blocks/accordion/accordion.jsx");
+/* harmony import */ var _blocks_accordion_accordion_row_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./blocks/accordion/accordion-row.jsx */ "./src/js/blocks/accordion/accordion-row.jsx");
+/* harmony import */ var _blocks_body_copy_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./blocks/body-copy.jsx */ "./src/js/blocks/body-copy.jsx");
+/* harmony import */ var _blocks_callouts_callout_container_jsx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./blocks/callouts/callout-container.jsx */ "./src/js/blocks/callouts/callout-container.jsx");
+/* harmony import */ var _blocks_callouts_callout_column_jsx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./blocks/callouts/callout-column.jsx */ "./src/js/blocks/callouts/callout-column.jsx");
+/* harmony import */ var _blocks_content_cards_content_card_container_jsx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./blocks/content-cards/content-card-container.jsx */ "./src/js/blocks/content-cards/content-card-container.jsx");
+/* harmony import */ var _blocks_content_cards_content_card_jsx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./blocks/content-cards/content-card.jsx */ "./src/js/blocks/content-cards/content-card.jsx");
+/* harmony import */ var _blocks_image_list_image_list_container_jsx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./blocks/image-list/image-list-container.jsx */ "./src/js/blocks/image-list/image-list-container.jsx");
+/* harmony import */ var _blocks_image_list_image_list_block_jsx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./blocks/image-list/image-list-block.jsx */ "./src/js/blocks/image-list/image-list-block.jsx");
+/* harmony import */ var _blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./blocks/logos/logo-container.jsx */ "./src/js/blocks/logos/logo-container.jsx");
+/* harmony import */ var _blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./blocks/logos/logo.jsx */ "./src/js/blocks/logos/logo.jsx");
+/* harmony import */ var _blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./blocks/page-strips/page-strip.jsx */ "./src/js/blocks/page-strips/page-strip.jsx");
+/* harmony import */ var _blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./blocks/page-strips/page-strip-graphic.jsx */ "./src/js/blocks/page-strips/page-strip-graphic.jsx");
+/* harmony import */ var _blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./blocks/slider/slider-container.jsx */ "./src/js/blocks/slider/slider-container.jsx");
+/* harmony import */ var _blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./blocks/slider/image-slide.jsx */ "./src/js/blocks/slider/image-slide.jsx");
+/* harmony import */ var _blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./blocks/stats/stats-container.jsx */ "./src/js/blocks/stats/stats-container.jsx");
+/* harmony import */ var _blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./blocks/stats/stats-column.jsx */ "./src/js/blocks/stats/stats-column.jsx");
+/* harmony import */ var _blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./blocks/greenhouse/jobs-block.jsx */ "./src/js/blocks/greenhouse/jobs-block.jsx");
+/* harmony import */ var _blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-section-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx");
+/* harmony import */ var _blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-subsection-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-subsection-blok.jsx");
+/* harmony import */ var _blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-container.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-container.jsx");
+/* harmony import */ var _blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-panel.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-panel.jsx");
 // import customButtonIcons from './blocks/core-extends/button-icons';
  // Meta
-
 
 
 
@@ -4669,49 +4176,48 @@ __webpack_require__.r(__webpack_exports__);
 Object(_blocks_core_extends_video_embed_poster_jsx__WEBPACK_IMPORTED_MODULE_0__["default"])(); // Init meta blocks
 
 Object(_blocks_meta_page_meta_jsx__WEBPACK_IMPORTED_MODULE_1__["default"])();
-Object(_blocks_meta_location_meta_jsx__WEBPACK_IMPORTED_MODULE_2__["default"])();
-Object(_blocks_meta_news_releases_meta_jsx__WEBPACK_IMPORTED_MODULE_3__["default"])();
-Object(_blocks_meta_research_blogs_meta_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])();
-Object(_blocks_meta_news_meta_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])();
-Object(_blocks_meta_leadership_meta_jsx__WEBPACK_IMPORTED_MODULE_6__["default"])(); // Init blocks here
+Object(_blocks_meta_research_blogs_meta_jsx__WEBPACK_IMPORTED_MODULE_2__["default"])();
+Object(_blocks_meta_news_meta_jsx__WEBPACK_IMPORTED_MODULE_3__["default"])();
+Object(_blocks_meta_team_member_meta_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])();
+Object(_blocks_meta_author_meta_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])(); // Init blocks here
 
-Object(_js_blocks_text_column_jsx__WEBPACK_IMPORTED_MODULE_7__["default"])();
-Object(_blocks_image_text_jsx__WEBPACK_IMPORTED_MODULE_8__["default"])(); // Page Strips
+Object(_js_blocks_text_column_jsx__WEBPACK_IMPORTED_MODULE_6__["default"])();
+Object(_blocks_image_text_jsx__WEBPACK_IMPORTED_MODULE_7__["default"])(); // Page Strips
 
-Object(_blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_21__["default"])();
-Object(_blocks_image_block_jsx__WEBPACK_IMPORTED_MODULE_9__["default"])();
-Object(_blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_22__["default"])(); // Accordion Blocks
+Object(_blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_20__["default"])();
+Object(_blocks_image_block_jsx__WEBPACK_IMPORTED_MODULE_8__["default"])();
+Object(_blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_21__["default"])(); // Accordion Blocks
 
-Object(_blocks_accordion_accordion_jsx__WEBPACK_IMPORTED_MODULE_10__["default"])();
-Object(_blocks_accordion_accordion_row_jsx__WEBPACK_IMPORTED_MODULE_11__["default"])(); // Body Copy
+Object(_blocks_accordion_accordion_jsx__WEBPACK_IMPORTED_MODULE_9__["default"])();
+Object(_blocks_accordion_accordion_row_jsx__WEBPACK_IMPORTED_MODULE_10__["default"])(); // Body Copy
 
-Object(_blocks_body_copy_jsx__WEBPACK_IMPORTED_MODULE_12__["default"])(); // Callout Columns
+Object(_blocks_body_copy_jsx__WEBPACK_IMPORTED_MODULE_11__["default"])(); // Callout Columns
 
-Object(_blocks_callouts_callout_container_jsx__WEBPACK_IMPORTED_MODULE_13__["default"])();
-Object(_blocks_callouts_callout_column_jsx__WEBPACK_IMPORTED_MODULE_14__["default"])(); // Content Cards
+Object(_blocks_callouts_callout_container_jsx__WEBPACK_IMPORTED_MODULE_12__["default"])();
+Object(_blocks_callouts_callout_column_jsx__WEBPACK_IMPORTED_MODULE_13__["default"])(); // Content Cards
 
-Object(_blocks_content_cards_content_card_container_jsx__WEBPACK_IMPORTED_MODULE_15__["default"])();
-Object(_blocks_content_cards_content_card_jsx__WEBPACK_IMPORTED_MODULE_16__["default"])(); // Image List Blocks
+Object(_blocks_content_cards_content_card_container_jsx__WEBPACK_IMPORTED_MODULE_14__["default"])();
+Object(_blocks_content_cards_content_card_jsx__WEBPACK_IMPORTED_MODULE_15__["default"])(); // Image List Blocks
 
-Object(_blocks_image_list_image_list_container_jsx__WEBPACK_IMPORTED_MODULE_17__["default"])();
-Object(_blocks_image_list_image_list_block_jsx__WEBPACK_IMPORTED_MODULE_18__["default"])(); // Logo Blocks
+Object(_blocks_image_list_image_list_container_jsx__WEBPACK_IMPORTED_MODULE_16__["default"])();
+Object(_blocks_image_list_image_list_block_jsx__WEBPACK_IMPORTED_MODULE_17__["default"])(); // Logo Blocks
 
-Object(_blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_19__["default"])();
-Object(_blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_20__["default"])(); // Slide Blocks
+Object(_blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_18__["default"])();
+Object(_blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_19__["default"])(); // Slide Blocks
 
-Object(_blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_23__["default"])();
-Object(_blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_24__["default"])(); // Stat Blocks
+Object(_blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_22__["default"])();
+Object(_blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_23__["default"])(); // Stat Blocks
 
-Object(_blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_25__["default"])();
-Object(_blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_26__["default"])(); // Greenhouse Blocks
+Object(_blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_24__["default"])();
+Object(_blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_25__["default"])(); // Greenhouse Blocks
 
-Object(_blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_27__["default"])(); // Sidebar Table Of Contents Blocks
+Object(_blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_26__["default"])(); // Sidebar Table Of Contents Blocks
 
-Object(_blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_28__["default"])();
-Object(_blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_29__["default"])(); // Tabbed Content Blocks
+Object(_blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_27__["default"])();
+Object(_blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_28__["default"])(); // Tabbed Content Blocks
 
-Object(_blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_30__["default"])();
-Object(_blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_31__["default"])();
+Object(_blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_29__["default"])();
+Object(_blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_30__["default"])();
 
 /***/ })
 
