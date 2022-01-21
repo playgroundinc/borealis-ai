@@ -4,102 +4,92 @@ const { breakpoints } = require("../utils/constants");
 module.exports = plugin(function({ addBase }) {
     const fluidFonts = [
         {
-            className: 'headline',
-            max: '65',
-            min: '40',
-            lineHeight: '1.10',
-            fontFamily: 'PolySans Bulky, sans-serif'
-        },
-        {
             className: 'h1',
-            max: '52',
-            min: '40',
-            lineHeight: '1.15',
-            fontFamily: 'PolySans Bulky, sans-serif'
+            max: '70',
+            min: '70',
+            lineHeight: '1.10',
+            fontFamily: 'Metrophobic, sans-serif'
         },
         {
             className: 'h2',
-            max: '42',
-            min: '30',
+            max: '60',
+            min: '60',
             lineHeight: '1.10',
-            fontFamily: 'PolySans Median, sans-serif'
+            fontFamily: 'Metrophobic, sans-serif'
         },
         {
             className: 'h3',
-            max: '36',
-            min: '26',
-            lineHeight: '1.22',
-            fontFamily: 'PolySans Median, sans-serif'
+            max: '30',
+            min: '30',
+            lineHeight: '1.10',
+            fontFamily: 'Inter, sans-serif'
         },
         {
             className: 'h4',
-            max: '24',
-            min: '20',
-            lineHeight: '1.25',
-            fontFamily: 'PolySans Median, sans-serif'
+            max: '18',
+            min: '18',
+            lineHeight: '1.5',
+            fontWeight: '700',
+            fontFamily: 'Inter, sans-serif'
         },
         {
-            className: 'h5',
-            max: '20',
-            min: '20',
-            lineHeight: '1.3',
-            letterSpacing: '0.02em',
-            fontFamily: 'PolySans Median, sans-serif'
-        },
-        {
-            className: 'h6',
-            max: '14',
-            min: '14',
-            lineHeight: '1.2',
-            letterSpacing: '0.02em',
-            fontFamily: 'PolySans Median, sans-serif'
+            className: 'paragraph-lg',
+            max: '30',
+            min: '30',
+            fontFamily: 'Inter, sans-serif',
+            lineHeight: '1.80',
+            fontWeight: '300',
         },
         {
             className: 'paragraph',
-            max: '20',
-            min: '20',
-            fontFamily: 'Source Sans Pro, sans-serif',
-            lineHeight: '1.47',
-            fontWeight: '400',
+            max: '18',
+            min: '18',
+            fontFamily: 'Inter, sans-serif',
+            lineHeight: '1.80'
         },
         {
-            className: 'subtitle',
-            max: '16',
-            min: '16',
-            fontFamily: 'PolySans Median, sans-serif',
-            lineHeight: '1.5',
+            className: 'paragraph-sm',
+            max: '14',
+            min: '14',
+            fontFamily: 'Inter, sans-serif',
+            lineHeight: '1.50'
         },
         {
-            className: 'caption',
-            max: '15',
-            min: '15',
-            fontFamily: 'Source Sans Pro, sans-serif',
-            lineHeight: '1.2',
-            fontWeight: '600',
+            className: 'paragraph-blog',
+            fontFamily: 'Martel, serif',
+            max: '18',
+            min: '18',
+            lineHeight: '2.2',
+            letterSpacing: '0.01em'
         },
         {
-            className: 'label',
-            max: '17',
-            min: '17',
-            fontFamily: 'Source Sans Pro, sans-serif',
-            lineHeight: '1',
-            fontWeight: '700',
-        },
-        {
-            className: 'input',
-            max: '17',
-            min: '17',
-            fontFamily: 'Source Sans Pro, sans-serif',
-            lineHeight: '1',
-            fontWeight: '600',
+            className: 'hyperlink',
+            max: '14',
+            min: '14',
+            fontFamily: 'Inter, sans-serif',
+            lineHeight: 'auto',
         },
         {
             className: 'legal',
-            max: '13',
-            min: '13',
-            fontFamily: 'Source Sans Pro, sans-serif',
-            lineHeight: '1.3',
-            fontWeight: '400',
+            max: '14',
+            min: '14',
+            fontFamily: 'Inter, sans-serif',
+            lineHeight: 'auto',
+        },
+        {
+            className: 'primary-button',
+            max: '18',
+            min: '18',
+            fontFamily: 'Inter, sans-serif',
+            lineHeight: 'auto',
+            fontWeight: '700'
+        },
+        {
+            className: 'text-link',
+            max: '18',
+            min: '18',
+            fontFamily: 'Inter, sans-serif',
+            lineHeight: '1.50',
         },
         {
             className: 'icon--lg',
