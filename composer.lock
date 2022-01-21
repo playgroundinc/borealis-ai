@@ -639,16 +639,16 @@
     "packages-dev": [
         {
             "name": "antecedent/patchwork",
-            "version": "2.1.18",
+            "version": "2.1.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antecedent/patchwork.git",
-                "reference": "c4077e223d6da058a840a325bc4b48631892e3d0"
+                "reference": "94fe587cb0a6c1695b1ddc650e877231be80b8bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antecedent/patchwork/zipball/c4077e223d6da058a840a325bc4b48631892e3d0",
-                "reference": "c4077e223d6da058a840a325bc4b48631892e3d0",
+                "url": "https://api.github.com/repos/antecedent/patchwork/zipball/94fe587cb0a6c1695b1ddc650e877231be80b8bc",
+                "reference": "94fe587cb0a6c1695b1ddc650e877231be80b8bc",
                 "shasum": ""
             },
             "require": {
@@ -679,7 +679,7 @@
                 "runkit",
                 "testing"
             ],
-            "time": "2022-01-19T11:06:53+00:00"
+            "time": "2022-01-20T04:47:04+00:00"
         },
         {
             "name": "behat/behat",
