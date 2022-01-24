@@ -27,6 +27,10 @@ export default function search() {
         if (currentValues.split(",").includes(checkbox.value)) {
           topicsNum += 1;
           checkbox.checked = true;
+          selections[checkbox.value] = {
+            name: checkbox.value,
+            value: checkbox.value,
+          }
         }
       });
     }
@@ -58,12 +62,7 @@ export default function search() {
         topicsNum -= 1;
         topics.innerHTML = topicsNum;
         params.setParam("");
-        delete selections[e.target.id];
-        const leftovers = [];
-        checkboxEls.forEach((checkbox) => {
-          checkbox.checked === true ? leftovers.push(checkbox.value) : "";
-        });
-        params.setParam(leftovers.join(","));
+        delete selections[e.target.id];    
       }
 
       const results = [];
@@ -72,16 +71,7 @@ export default function search() {
         results.push(selections[key].value);
       }
 
-      let uniqArr = [...new Set(results)];
-
-      if(currentValues !== "") {
-        //   console.log('aadsadass')
-        //   console.log(current)
-      }
-
-      if (uniqArr.length > 0) {
-        params.setParam(uniqArr.join(","));
-      }
+      params.setParam(results.join(","));
     }
   };
 
