@@ -8,6 +8,7 @@ if (!function_exists('pg_generate_search_bar')) {
             $taxonomy['label'] = ucwords(str_replace('-', ' ', $taxonomy['name']));
             array_push($taxonomies_array, $taxonomy);
         }
+        $topics = 0;
         ob_start();
 ?>
 
@@ -24,6 +25,7 @@ if (!function_exists('pg_generate_search_bar')) {
             </div>
         </form>
         <div id="accordion-group" class="accordion">
+            <p>Topics <span class="topics">0</span></p>
             <?php
             foreach ($taxonomies_array as $taxonomy) {
                 $terms = get_terms(array(
