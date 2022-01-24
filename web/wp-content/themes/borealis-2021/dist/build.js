@@ -10330,6 +10330,15 @@ class QueryParams {
     history.replaceState({}, 'Borealis AI', `${location.pathname}?${this.UrlParams.toString()}`);
   }
 
+  getParam(value) {
+    return this.UrlParams.get(value);
+  }
+
+  appendParam(param, value) {
+    this.UrlParams.append(param, value);
+    history.replaceState({}, 'Borealis AI', `${location.pathname}?${this.UrlParams.toString()}`);
+  }
+
 }
 
 /***/ }),
@@ -10448,9 +10457,11 @@ class SearchBar {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return search; });
 /* harmony import */ var _classes_class_search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/class-search */ "./src/js/scripts/classes/class-search.js");
+/* harmony import */ var _classes_class_query_params__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/class-query-params */ "./src/js/scripts/classes/class-query-params.js");
+
 
 function search() {
-  const searchForm = [...document.querySelectorAll('.search-form')];
+  const searchForm = [...document.querySelectorAll(".search-form")];
 
   if (searchForm && searchForm.length > 0) {
     searchForm.forEach(form => {
@@ -10458,6 +10469,67 @@ function search() {
       SearchBar.init();
     });
   }
+
+  const checkboxSearchForm = container => {
+    let selections = {};
+    const checkboxEls = document.querySelectorAll("input[type='checkbox']");
+    const params = new _classes_class_query_params__WEBPACK_IMPORTED_MODULE_1__["default"](container.id);
+    const currentValues = params.getParam(container.id);
+    const clearAll = document.querySelector(".clear-checkboxes");
+    clearAll.addEventListener("click", clearAllCheckboxes);
+
+    if (currentValues) {
+      checkboxEls.forEach(checkbox => {
+        if (currentValues.split(",").includes(checkbox.value)) {
+          checkbox.checked = true;
+        }
+      });
+    }
+
+    function clearAllCheckboxes() {
+      checkboxEls.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+      params.setParam("", "");
+      selections = {};
+    }
+
+    for (let i = 0; i < checkboxEls.length; i++) {
+      checkboxEls[i].addEventListener("click", updateUrl);
+    }
+
+    function updateUrl(e) {
+      if (e.target.checked) {
+        selections[e.target.id] = {
+          name: e.target.name,
+          value: e.target.value
+        };
+      } else {
+        params.setParam('');
+        delete selections[e.target.id];
+        const leftovers = [];
+        checkboxEls.forEach(checkbox => {
+          checkbox.checked === true ? leftovers.push(checkbox.value) : '';
+        });
+        params.setParam(leftovers.join(","));
+      }
+
+      const results = [];
+
+      for (let key in selections) {
+        results.push(selections[key].value);
+      }
+
+      let uniqArr = [...new Set(results)];
+
+      if (uniqArr.length > 0) {
+        params.setParam(uniqArr.join(','));
+      }
+    }
+  };
+
+  const checkboxContainers = document.querySelectorAll(".checkbox-form");
+  checkboxContainers.forEach(checkboxContainer => checkboxSearchForm(checkboxContainer));
 }
 
 /***/ }),
