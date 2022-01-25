@@ -32,7 +32,7 @@ if (!function_exists('pg_generate_search_bar')) {
                     'taxonomy' => $taxonomy['name'],
                     'hide_empty' => true,
                 ));
-                if ($taxonomy['active'] and !empty($terms)) {
+                if (!empty($terms)) {
                     echo '<h3>
                                 <button aria-expanded="true" class="" aria-controls="' . $taxonomy['name'] . '" id="' . $taxonomy['name'] . '">
                                         <span class="">' . $taxonomy['label'] . '<span class="icon">></span></span>

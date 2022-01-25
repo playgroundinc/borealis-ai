@@ -20,6 +20,15 @@ export default function search() {
     const topics = document.querySelector(".topics");
     let topicsNum = parseInt(topics.innerHTML);
 
+    const taxonomyButton = document.getElementById(container.id);
+    taxonomyButton.addEventListener("click", addTaxonomyParam);
+
+    function addTaxonomyParam() {
+        if (window.location.href.indexOf(container.id) > -1 === false) {
+            params.appendParam(container.id, '');
+        } 
+    }
+
     clearAll.addEventListener("click", clearAllCheckboxes);
 
     if (currentValues) {
@@ -41,6 +50,7 @@ export default function search() {
         checkbox.checked = false;
       });
       params.setParam("", "");
+      window.location.href = window.location.origin + window.location.pathname;
       selections = {};
       topicsNum = 0;
       topics.innerHTML = topicsNum;
