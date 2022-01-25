@@ -48,7 +48,10 @@
         <div class="container">
             <?php 
                 if (is_singular(['research-blogs', 'news'])) {
-                    echo pg_generate_blog_header($post->ID);
+                    $header = pg_generate_blog_header($post->ID);
+                    if (isset($header) && !empty($header)) {
+                        echo $header;
+                    }
                 } 
             ?>
         </div>
