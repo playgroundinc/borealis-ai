@@ -1,8 +1,8 @@
 <?php 
 if (!function_exists('pg_generate_blog_sidebar')) {
     function pg_generate_blog_sidebar($id) {
-        ob_start();
         $post_sections = get_post_meta($id, 'post_sections', true);
+        ob_start();
         if (isset($post_sections) && !empty($post_sections)) {
             $table_of_contents = json_decode($post_sections);
             if (isset($table_of_contents) && !empty($table_of_contents)) {
