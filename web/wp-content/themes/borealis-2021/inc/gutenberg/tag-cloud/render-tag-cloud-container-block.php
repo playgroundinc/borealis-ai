@@ -41,15 +41,19 @@ if ( ! function_exists( 'pg_render_tag_cloud_container_block' ) ) {
         $attributes = pg_get_attributes( $attrs, $fields );
         ob_start();
         ?>
-            <section class="tag-cloud-container" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
+            <section class="container flex px-18" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                 <?php if (!empty($attributes->title)): ?>
-                    <h2 class=""><?php echo esc_html($attributes->title) ?></h2>
+                    <div class="w-4/12">
+                        <h3 class="h3 text-shade-black-400"><?php echo esc_html($attributes->title) ?></h3>
+                    </div>
                 <?php endif; ?>
-                <?php if (!empty($block['innerBlocks'])): ?>
-                    <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
-                        <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+                <div  class="w-8/12 flex justify-between flex-wrap">
+                    <?php if (!empty($block['innerBlocks'])): ?>
+                        <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
+                            <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
             </section>
         <?php
         return ob_get_clean();
