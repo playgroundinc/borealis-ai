@@ -11,6 +11,8 @@ import authorMetaBlock from './blocks/meta/author-meta.jsx';
 import textColumnBlock from "../js/blocks/text-column.jsx";
 import imageTextBlock from "./blocks/image-text.jsx";
 
+import customSelects from './blocks/meta/custom-selects.jsx';
+
 // Page Strips
 import imageBlock from "./blocks/image-block.jsx";
 
@@ -76,6 +78,8 @@ researchBlogMetaBlock();
 newsMetaBlock();
 teamMemberMetaBlock();
 authorMetaBlock();
+
+customSelects();
 
 // Init blocks here
 textColumnBlock(); 
