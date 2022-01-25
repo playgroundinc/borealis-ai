@@ -37,7 +37,6 @@ if ( ! function_exists( 'pg_render_tag_cloud_container_block' ) ) {
         // Need to set the name of the attribute and the default as a safeguard.
         $fields = array(
             'title' => '',
-            'tags' => '',
         );
         $attributes = pg_get_attributes( $attrs, $fields );
         ob_start();
@@ -45,9 +44,6 @@ if ( ! function_exists( 'pg_render_tag_cloud_container_block' ) ) {
             <section class="tag-cloud-container" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                 <?php if (!empty($attributes->title)): ?>
                     <h2 class=""><?php echo esc_html($attributes->title) ?></h2>
-                <?php endif; ?>
-                <?php if (!empty($attributes->tags)): ?>
-                    <p class=""><?php echo esc_html($attributes->tags) ?></p>
                 <?php endif; ?>
                 <?php if (!empty($block['innerBlocks'])): ?>
                     <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>

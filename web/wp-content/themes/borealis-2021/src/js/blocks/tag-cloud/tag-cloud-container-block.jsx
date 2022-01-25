@@ -20,10 +20,6 @@ export default function tagCloudContainerBlock() {
             type: 'String',
             default: '',
         },
-        tags: {
-            type: 'String',
-            default: '',
-        }
     }
 
     registerBlockType(`${namespace}/${blockSlug}`, {
@@ -34,7 +30,7 @@ export default function tagCloudContainerBlock() {
 		attributes,
 		edit: (props, editor = false, save = false) => {
 			const { attributes, setAttributes } = props;
-			const { title, tags } = attributes;
+			const { title } = attributes;
 
             function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
@@ -54,17 +50,6 @@ export default function tagCloudContainerBlock() {
                             },
                         ]}
                     />
-                    <CustomRichText 
-                        onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
-                        components={[
-                            {
-                                value: tags,
-                                reference: "tags", 
-                                tagName: "p",
-                                placeholder: "Please provide tags (optional)"
-                            },
-                        ]}
-                    />
                     { save ? (
                         <InnerBlocks.Content />
                     ) : (
@@ -76,7 +61,7 @@ export default function tagCloudContainerBlock() {
 			];
 		},
 		save: ({ attributes }) => {
-			const { title, tags } = attributes;
+			const { title } = attributes;
             return <InnerBlocks.Content />;
 		},
 	});
