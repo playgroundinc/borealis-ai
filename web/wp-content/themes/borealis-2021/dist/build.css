@@ -326,6 +326,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 @media (min-width: 375px){
   .h1{
@@ -344,6 +348,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 @media (min-width: 375px){
   .h2{
@@ -362,6 +370,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 @media (min-width: 375px){
   .h3{
@@ -380,6 +392,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: normal;
   text-transform: none;
   font-weight: 700;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 @media (min-width: 375px){
   .h4{
@@ -398,6 +414,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 @media (min-width: 375px){
   .paragraph{
@@ -416,6 +436,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 @media (min-width: 375px){
   .legal{
@@ -495,8 +519,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: -webkit-sticky;
   position: sticky;
 }
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
 .mt-15{
   margin-top: 60px;
+}
+.mt-19{
+  margin-top: 76px;
 }
 .block{
   display: block;
@@ -510,8 +541,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hidden{
   display: none;
 }
-.w-8\/12{
-  width: 66.666667%;
+.w-1\/6{
+  width: 16.666667%;
+}
+.w-5\/6{
+  width: 83.333333%;
 }
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -522,27 +556,36 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border{
   border-width: 1px;
 }
-.border-l{
-  border-left-width: 1px;
-}
-.border-l-2{
-  border-left-width: 2px;
-}
 .border-shade-black-400{
   --tw-border-opacity: 1;
   border-color: rgb(34 39 49 / var(--tw-border-opacity));
 }
+.bg-cover{
+  background-size: cover;
+}
+.bg-contain{
+  background-size: contain;
+}
+.bg-center{
+  background-position: center;
+}
+.bg-no-repeat{
+  background-repeat: no-repeat;
+}
+.pt-100{
+  padding-top: 400px;
+}
+.pt-14{
+  padding-top: 56px;
+}
 .pt-41{
   padding-top: 164px;
 }
-.pr-4{
-  padding-right: 16px;
-}
-.pl-4{
-  padding-left: 16px;
-}
 .pt-8{
   padding-top: 32px;
+}
+.pr-4{
+  padding-right: 16px;
 }
 .text-2xl{
   font-size: 1.5rem;
@@ -595,6 +638,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
+}
+@media (min-width: 768px){
+  .md\:flex{
+    display: flex;
+  }
+  .md\:w-8\/12{
+    width: 66.666667%;
+  }
+  .md\:border-l{
+    border-left-width: 1px;
+  }
+  .md\:pl-4{
+    padding-left: 16px;
+  }
 }
 
 
