@@ -46,7 +46,8 @@ export default function tagCloudContainerBlock() {
                                 value: title,
                                 reference: "title", 
                                 tagName: "p",
-                                placeholder: "Please provide a title (optional)"
+                                placeholder: "Please provide a title (optional)",
+                                settings: []
                             },
                         ]}
                     />

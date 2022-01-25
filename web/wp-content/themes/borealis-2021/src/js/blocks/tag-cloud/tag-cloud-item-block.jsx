@@ -48,7 +48,8 @@ export default function tagCloudItemBlock() {
                                 value: text,
                                 reference: "text", 
                                 tagName: "p",
-                                placeholder: "Please provide a title"
+                                placeholder: "Please provide a title",
+                                settings: []
                             },
                         ]}
                     />
@@ -59,7 +60,8 @@ export default function tagCloudItemBlock() {
                                 value: link,
                                 reference: "link", 
                                 tagName: "p",
-                                placeholder: "Please provide a link"
+                                placeholder: "Please provide a link",
+                                settings: []
                             },
                         ]}
                     />
