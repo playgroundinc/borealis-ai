@@ -4039,10 +4039,6 @@ function tagCloudContainerBlock() {
     title: {
       type: 'String',
       default: ''
-    },
-    tags: {
-      type: 'String',
-      default: ''
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
@@ -4056,8 +4052,7 @@ function tagCloudContainerBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var attributes = props.attributes,
           setAttributes = props.setAttributes;
-      var title = attributes.title,
-          tags = attributes.tags;
+      var title = attributes.title;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -4077,24 +4072,13 @@ function tagCloudContainerBlock() {
           tagName: "p",
           placeholder: "Please provide a title (optional)"
         }]
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        },
-        components: [{
-          value: tags,
-          reference: "tags",
-          tagName: "p",
-          placeholder: "Please provide tags (optional)"
-        }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/tag-cloud-item-block")]
       }))];
     },
     save: function save(_ref) {
       var attributes = _ref.attributes;
-      var title = attributes.title,
-          tags = attributes.tags;
+      var title = attributes.title;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
