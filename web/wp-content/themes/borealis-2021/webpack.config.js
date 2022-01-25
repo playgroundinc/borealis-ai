@@ -7,6 +7,7 @@
  const cssnano                 = require('cssnano')
  const { CleanWebpackPlugin }  = require('clean-webpack-plugin')
  const UglifyJsPlugin          = require('uglifyjs-webpack-plugin')
+const autoprefixer = require('autoprefixer')
  
  // JS Directory path.
  const JS_DIR    = path.resolve(__dirname, 'src/js')
@@ -61,9 +62,11 @@
 	 exclude: /node_modules/,
 	 use: [
 	   MiniCssExtractPlugin.loader,
-	   'css-loader',
+	   { loader: 'css-loader', options: { importLoaders: 1 } },
 	   'postcss-loader',
-	   'sass-loader',
+	   {
+		   loader: 'sass-loader',
+	   },
 	 ]
    },
    {
@@ -131,8 +134,5 @@
    },
  
    plugins: plugins(argv),
- 
-   externals: {
-	 jquery: 'jQuery'
-   }
+
  })

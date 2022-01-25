@@ -45,13 +45,13 @@ if ( ! function_exists( 'pg_render_accordion_row_block' ) ) {
     ?>
         <div>
             <h3>
-                <button id="<?php echo esc_attr( $heading_id ); ?>" aria-controls="<?php echo esc_attr( $id ); ?>" aria-label="<?php esc_attr_e('Expand or collapse item', 'pg'); ?>" aria-expanded="false">
+                <button class="accordion-row__header" id="<?php echo esc_attr( $heading_id ); ?>" aria-controls="<?php echo esc_attr( $id ); ?>" aria-label="<?php esc_attr_e('Expand or collapse item', 'pg'); ?>" aria-expanded="false">
                     <span>
                         <?php echo esc_html( $attributes->title ); ?>
                     </span>                
                </button>
             </h3>
-            <div id="<?php echo esc_attr( $id ); ?>" role="region" aria-labelledby="<?php echo esc_attr( $heading_id ); ?>">
+            <div id="<?php echo esc_attr( $id ); ?>" class="slide-toggle" role="region" aria-labelledby="<?php echo esc_attr( $heading_id ); ?>">
                 <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
                     <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
                 <?php endforeach; ?>
