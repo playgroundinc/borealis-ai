@@ -1,101 +1,97 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/gutenberg.js");
-/******/ })
-/************************************************************************/
-/******/ ({
+/******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/js/blocks/helper-functions/constants.js":
+/*!*****************************************************!*\
+  !*** ./src/js/blocks/helper-functions/constants.js ***!
+  \*****************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "namespace": function() { return /* binding */ namespace; }
+/* harmony export */ });
+const namespace = 'pg';
+
+/***/ }),
+
+/***/ "./src/js/blocks/helper-functions/custom-error.js":
+/*!********************************************************!*\
+  !*** ./src/js/blocks/helper-functions/custom-error.js ***!
+  \********************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ CustomErrors; }
+/* harmony export */ });
+function CustomErrors(fields, values) {
+  const compileErrors = (fields, values) => {
+    if (Object.keys(fields).length > 0 && fields.constructor === Object && values.length > 0) {
+      const errorFields = values.filter(value => {
+        return fields[`${value}`] === undefined;
+      });
+      return errorFields;
+    }
+
+    throw new Error(`${fields.type} control missing all required fields`);
+  };
+
+  const verifyInputs = (fields, values) => {
+    const errorFields = compileErrors(fields, values);
+
+    if (errorFields.length > 0) {
+      throw new Error(`${fields.type} control is missing properties ${errorFields.join(', ')} `);
+    }
+  };
+
+  verifyInputs(fields, values);
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/helper-functions/default-attrs.js":
+/*!*********************************************************!*\
+  !*** ./src/js/blocks/helper-functions/default-attrs.js ***!
+  \*********************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ DefaultAttrs; }
+/* harmony export */ });
+function DefaultAttrs(fields, source = null) {
+  const attributes = {};
+
+  if (Array.isArray(fields) && fields.length > 0) {
+    fields.forEach(field => {
+      attributes[`${field}`] = {
+        type: 'string',
+        default: ''
+      };
+
+      if (source) {
+        attributes[`${field}`]['source'] = source;
+        attributes[`${field}`]['meta'] = field;
+      }
+    });
+    return attributes;
+  }
+}
+
+/***/ }),
 
 /***/ "./src/js/blocks/accordion/accordion-row.jsx":
 /*!***************************************************!*\
   !*** ./src/js/blocks/accordion/accordion-row.jsx ***!
   \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return accordionBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ accordionBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
@@ -116,14 +112,14 @@ function accordionBlock() {
   var blockIcon = "table-row-after"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var stringAttrs = ['title'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
     icon: blockIcon,
     attributes: attributes,
-    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/accordion")],
+    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/accordion")],
     edit: function edit(props) {
       var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
@@ -152,7 +148,7 @@ function accordionBlock() {
           updateAttributeValue(attribute, change);
         }
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/paragraph-no-alignment"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/document-row"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/heading-four")]
+        allowedBlocks: ['core/paragraph', "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/document-row"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four")]
       }))];
     },
     save: function save() {
@@ -167,12 +163,12 @@ function accordionBlock() {
 /*!***********************************************!*\
   !*** ./src/js/blocks/accordion/accordion.jsx ***!
   \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return accordionBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ accordionBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
@@ -195,9 +191,9 @@ function accordionBlock() {
   var blockIcon = "feedback"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var stringAttrs = ['anchor_id', 'description', 'title', 'bg_color'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_3__["default"])(stringAttrs);
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_3__["default"])(stringAttrs);
   attributes['bg_color']['default'] = 'white';
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
@@ -261,7 +257,7 @@ function accordionBlock() {
           updateAttributeValue(attribute, change);
         }
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/accordion-row")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/accordion-row")]
       }))];
     },
     save: function save() {
@@ -276,12 +272,12 @@ function accordionBlock() {
 /*!*************************************!*\
   !*** ./src/js/blocks/body-copy.jsx ***!
   \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return bodyCopyBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ bodyCopyBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -298,7 +294,7 @@ function bodyCopyBlock() {
   var blockCategory = "common";
   var blockIcon = "editor-bold"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
@@ -319,7 +315,7 @@ function bodyCopyBlock() {
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
       }, "Body Copy"), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/heading-two"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/heading-three"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/heading-four"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/heading-five"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/paragraph"), 'core/list', "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/body-copy-carousel"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/body-copy-image")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-two"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-three"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-five"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), 'core/list', "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/body-copy-carousel"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/body-copy-image")]
       }))];
     },
     save: function save(_ref) {
@@ -335,12 +331,12 @@ function bodyCopyBlock() {
 /*!***************************************************!*\
   !*** ./src/js/blocks/callouts/callout-column.jsx ***!
   \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return imageTextBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ imageTextBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants.js */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
@@ -393,13 +389,13 @@ function imageTextBlock() {
       default: ""
     }
   };
-  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(slug), {
-    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
-    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
+  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
+    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
+    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
     category: category,
     icon: icon,
     attributes: attributes,
-    parent: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/callout-container")],
+    parent: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/callout-container")],
     edit: function edit(props) {
       var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
@@ -484,12 +480,12 @@ function imageTextBlock() {
 /*!******************************************************!*\
   !*** ./src/js/blocks/callouts/callout-container.jsx ***!
   \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return trmcAccordionBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ trmcAccordionBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
@@ -524,7 +520,7 @@ function trmcAccordionBlock() {
       default: ''
     }
   };
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
@@ -588,7 +584,7 @@ function trmcAccordionBlock() {
       }), /*#__PURE__*/React.createElement("div", {
         className: "col--".concat(columns)
       }, save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/callout-column")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/callout-column")]
       })))];
     },
     save: function save() {
@@ -606,12 +602,12 @@ function trmcAccordionBlock() {
 /*!****************************************************************!*\
   !*** ./src/js/blocks/content-cards/content-card-container.jsx ***!
   \****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return trmcContentContainerBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ trmcContentContainerBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
@@ -657,7 +653,7 @@ function trmcContentContainerBlock() {
       default: ''
     }
   };
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
@@ -744,7 +740,7 @@ function trmcContentContainerBlock() {
       }), /*#__PURE__*/React.createElement("div", {
         className: icon ? "col--4" : "col--4 no-icon"
       }, save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/content-card")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/content-card")]
       })))];
     },
     save: function save() {
@@ -762,12 +758,12 @@ function trmcContentContainerBlock() {
 /*!******************************************************!*\
   !*** ./src/js/blocks/content-cards/content-card.jsx ***!
   \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return imageTextBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ imageTextBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants.js */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
@@ -820,13 +816,13 @@ function imageTextBlock() {
       default: ""
     }
   };
-  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(slug), {
-    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
-    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
+  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
+    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
+    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
     category: category,
     icon: icon,
     attributes: attributes,
-    parent: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/content-card-container")],
+    parent: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/content-card-container")],
     edit: function edit(props) {
       var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
@@ -875,7 +871,7 @@ function imageTextBlock() {
           updateAttributeValue(attribute, change);
         }
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/paragraph-no-alignment")]
+        allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph-no-alignment")]
       }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
           value: link_text,
@@ -913,12 +909,12 @@ function imageTextBlock() {
 /*!***********************************************************!*\
   !*** ./src/js/blocks/core-extends/video-embed-poster.jsx ***!
   \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return extendCoreVideo; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ extendCoreVideo; }
+/* harmony export */ });
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -1052,12 +1048,12 @@ function extendCoreVideo() {
 /*!*************************************************!*\
   !*** ./src/js/blocks/greenhouse/jobs-block.jsx ***!
   \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return jobBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ jobBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -1086,7 +1082,7 @@ function jobBlock() {
       default: ''
     }
   };
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
@@ -1139,96 +1135,16 @@ function jobBlock() {
 
 /***/ }),
 
-/***/ "./src/js/blocks/helper-functions/constants.js":
-/*!*****************************************************!*\
-  !*** ./src/js/blocks/helper-functions/constants.js ***!
-  \*****************************************************/
-/*! exports provided: namespace */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "namespace", function() { return namespace; });
-const namespace = 'pg';
-
-/***/ }),
-
-/***/ "./src/js/blocks/helper-functions/custom-error.js":
-/*!********************************************************!*\
-  !*** ./src/js/blocks/helper-functions/custom-error.js ***!
-  \********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CustomErrors; });
-function CustomErrors(fields, values) {
-  const compileErrors = (fields, values) => {
-    if (Object.keys(fields).length > 0 && fields.constructor === Object && values.length > 0) {
-      const errorFields = values.filter(value => {
-        return fields[`${value}`] === undefined;
-      });
-      return errorFields;
-    }
-
-    throw new Error(`${fields.type} control missing all required fields`);
-  };
-
-  const verifyInputs = (fields, values) => {
-    const errorFields = compileErrors(fields, values);
-
-    if (errorFields.length > 0) {
-      throw new Error(`${fields.type} control is missing properties ${errorFields.join(', ')} `);
-    }
-  };
-
-  verifyInputs(fields, values);
-}
-
-/***/ }),
-
-/***/ "./src/js/blocks/helper-functions/default-attrs.js":
-/*!*********************************************************!*\
-  !*** ./src/js/blocks/helper-functions/default-attrs.js ***!
-  \*********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DefaultAttrs; });
-function DefaultAttrs(fields, source = null) {
-  const attributes = {};
-
-  if (Array.isArray(fields) && fields.length > 0) {
-    fields.forEach(field => {
-      attributes[`${field}`] = {
-        type: 'string',
-        default: ''
-      };
-
-      if (source) {
-        attributes[`${field}`]['source'] = source;
-        attributes[`${field}`]['meta'] = field;
-      }
-    });
-    return attributes;
-  }
-}
-
-/***/ }),
-
 /***/ "./src/js/blocks/image-block.jsx":
 /*!***************************************!*\
   !*** ./src/js/blocks/image-block.jsx ***!
   \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return imageBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ imageBlock; }
+/* harmony export */ });
 /* harmony import */ var _blocks_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../blocks/helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _blocks_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../blocks/reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
 /* harmony import */ var _blocks_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../blocks/reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
@@ -1248,7 +1164,7 @@ function imageBlock() {
   var blockCategory = "media";
   var blockIcon = "format-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  registerBlockType("".concat(_blocks_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_blocks_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: blockTitle,
     description: blockDescription,
     category: blockCategory,
@@ -1333,12 +1249,12 @@ function imageBlock() {
 /*!*******************************************************!*\
   !*** ./src/js/blocks/image-list/image-list-block.jsx ***!
   \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return listImageBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ listImageBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants.js */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
@@ -1385,12 +1301,12 @@ function listImageBlock() {
       default: ''
     }
   };
-  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(slug), {
-    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
-    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
+  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
+    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
+    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
     category: category,
     icon: icon,
-    parent: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/image-list-container")],
+    parent: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-list-container")],
     attributes: attributes,
     edit: function edit(props) {
       var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
@@ -1436,7 +1352,7 @@ function listImageBlock() {
           updateAttributeValue(attribute, change);
         }
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ['core/list', "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/paragraph-no-alignment")]
+        allowedBlocks: ['core/list', "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph-no-alignment")]
       })))];
     },
     save: function save(_ref) {
@@ -1457,12 +1373,12 @@ function listImageBlock() {
 /*!***********************************************************!*\
   !*** ./src/js/blocks/image-list/image-list-container.jsx ***!
   \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return listImageContainerBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ listImageContainerBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants.js */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
@@ -1513,9 +1429,9 @@ function listImageContainerBlock() {
       default: false
     }
   };
-  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(slug), {
-    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
-    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
+  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
+    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
+    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
     category: category,
     icon: icon,
     attributes: attributes,
@@ -1590,8 +1506,8 @@ function listImageContainerBlock() {
       })), /*#__PURE__*/React.createElement("div", {
         className: "col-xs-12 col-md-6 col-v-center"
       }, save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/image-list")],
-        template: [["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/image-list")]]
+        allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-list")],
+        template: [["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-list")]]
       })))))];
     },
     save: function save(_ref) {
@@ -1612,12 +1528,12 @@ function listImageContainerBlock() {
 /*!**************************************!*\
   !*** ./src/js/blocks/image-text.jsx ***!
   \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return imageTextBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ imageTextBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helper-functions/constants.js */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
@@ -1649,7 +1565,7 @@ function imageTextBlock() {
   var icon = "align-left"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var stringAttributes = ['image_url', 'image_alt', 'title', 'bg_color'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(stringAttributes);
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(stringAttributes);
   attributes['reverse'] = {
     type: 'boolean',
     default: false
@@ -1659,9 +1575,9 @@ function imageTextBlock() {
     default: 0
   };
   attributes['bg_color']['default'] = 'white';
-  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(slug), {
-    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
-    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
+  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
+    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
+    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
     category: category,
     icon: icon,
     attributes: attributes,
@@ -1723,7 +1639,7 @@ function imageTextBlock() {
           updateAttributeValue(attribute, change);
         }
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/paragraph-no-alignment"), 'core/list', 'core/buttons']
+        allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph-no-alignment"), 'core/list', 'core/buttons']
       })), /*#__PURE__*/React.createElement("div", {
         className: "col-xs-12 col-md-6 col-v-center"
       }, /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1760,12 +1676,12 @@ function imageTextBlock() {
 /*!************************************************!*\
   !*** ./src/js/blocks/logos/logo-container.jsx ***!
   \************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return trmcLogoContainerBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ trmcLogoContainerBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
@@ -1799,7 +1715,7 @@ function trmcLogoContainerBlock() {
       default: ''
     }
   };
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
@@ -1859,8 +1775,8 @@ function trmcLogoContainerBlock() {
       }), /*#__PURE__*/React.createElement("div", {
         className: "col--4"
       }, save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/logo")],
-        template: [["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/logo")]]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/logo")],
+        template: [["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/logo")]]
       })))];
     },
     save: function save() {
@@ -1875,12 +1791,12 @@ function trmcLogoContainerBlock() {
 /*!**************************************!*\
   !*** ./src/js/blocks/logos/logo.jsx ***!
   \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return logoBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ logoBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
@@ -1900,7 +1816,7 @@ function logoBlock() {
   var blockCategory = "common";
   var blockIcon = "format-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: blockTitle,
     description: blockDescription,
     category: blockCategory,
@@ -1923,7 +1839,7 @@ function logoBlock() {
         default: ''
       }
     },
-    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/logos-container")],
+    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/logos-container")],
     edit: function edit(props) {
       var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
@@ -1984,12 +1900,12 @@ function logoBlock() {
 /*!********************************************!*\
   !*** ./src/js/blocks/meta/author-meta.jsx ***!
   \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return authorMetaBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ authorMetaBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -2000,8 +1916,8 @@ function authorMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
   var meta_fields = ['external_link'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/author-meta-block"), {
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/author-meta-block"), {
     title: 'Author Meta',
     icon: 'align-full-width',
     category: 'common',
@@ -2048,12 +1964,12 @@ function authorMetaBlock() {
 /*!******************************************!*\
   !*** ./src/js/blocks/meta/news-meta.jsx ***!
   \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return newsMetaBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ newsMetaBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
@@ -2069,8 +1985,8 @@ function newsMetaBlock() {
   var TextControl = wp.components.TextControl;
   var Inserter = wp.blockEditor.Inserter;
   var meta_fields = ['publication_date'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/news-meta-block"), {
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/news-meta-block"), {
     title: 'News Meta',
     icon: 'align-full-width',
     category: 'common',
@@ -2120,12 +2036,12 @@ function newsMetaBlock() {
 /*!******************************************!*\
   !*** ./src/js/blocks/meta/page-meta.jsx ***!
   \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return pageMetaBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ pageMetaBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 /* harmony import */ var _reusable_custom_video_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-video-upload.jsx */ "./src/js/blocks/reusable/custom-video-upload.jsx");
@@ -2145,11 +2061,11 @@ function pageMetaBlock() {
       Button = _wp$components.Button;
   var Inserter = wp.blockEditor.Inserter;
   var meta_fields = ['hero_style', 'hero_background_color', 'headline', 'hero_cta_one_link', 'hero_cta_one_text', 'hero_cta_two_link', 'hero_cta_two_text', 'hero_video_id', 'hero_video_url', 'hero_video_alt', 'gradient_background'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
   attributes['hero_style']['default'] = 'square';
   attributes['hero_background_color']['default'] = 'grey';
   attributes['gradient_background']['default'] = 'false';
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/page-meta-block"), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/page-meta-block"), {
     title: 'Page Meta',
     icon: 'align-full-width',
     category: 'common',
@@ -2301,12 +2217,12 @@ function pageMetaBlock() {
 /*!****************************************************!*\
   !*** ./src/js/blocks/meta/research-blogs-meta.jsx ***!
   \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return researchBlogMetaBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ researchBlogMetaBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -2318,8 +2234,8 @@ function researchBlogMetaBlock() {
   var TextControl = wp.components.TextControl;
   var Inserter = wp.blockEditor.Inserter;
   var meta_fields = ['publication_date', 'post_info'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/research-blog-meta-block"), {
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/research-blog-meta-block"), {
     title: 'Research Blogs Meta',
     icon: 'align-full-width',
     category: 'common',
@@ -2368,12 +2284,12 @@ function researchBlogMetaBlock() {
 /*!*************************************************!*\
   !*** ./src/js/blocks/meta/team-member-meta.jsx ***!
   \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return leadershipMetaBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ leadershipMetaBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -2384,8 +2300,8 @@ function leadershipMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
   var meta_fields = ['position', 'education'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/team-member-meta-block"), {
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/team-member-meta-block"), {
     title: 'Team Member Meta',
     icon: 'align-full-width',
     category: 'common',
@@ -2439,12 +2355,12 @@ function leadershipMetaBlock() {
 /*!**********************************************************!*\
   !*** ./src/js/blocks/page-strips/page-strip-graphic.jsx ***!
   \**********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return trmcPageStripGraphicBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ trmcPageStripGraphicBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants.js */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
@@ -2489,18 +2405,18 @@ function trmcPageStripGraphicBlock() {
       default: ''
     }
   };
-  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(slug), {
-    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
-    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
+  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
+    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
+    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
     category: category,
     icon: icon,
     attributes: attributes,
     transforms: {
       to: [{
         type: "block",
-        blocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/page-strip")],
+        blocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/page-strip")],
         transform: function transform(attributes, innerBlocks) {
-          return wp.blocks.createBlock("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/page-strip"), attributes, innerBlocks);
+          return wp.blocks.createBlock("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/page-strip"), attributes, innerBlocks);
         }
       }]
     },
@@ -2556,7 +2472,7 @@ function trmcPageStripGraphicBlock() {
           updateAttributeValue(attribute, change);
         }
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/paragraph-no-alignment"), 'core/buttons']
+        allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph-no-alignment"), 'core/buttons']
       })))))];
     },
     save: function save(_ref) {
@@ -2573,12 +2489,12 @@ function trmcPageStripGraphicBlock() {
 /*!**************************************************!*\
   !*** ./src/js/blocks/page-strips/page-strip.jsx ***!
   \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return pageStripBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ pageStripBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants.js */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
@@ -2608,20 +2524,20 @@ function pageStripBlock() {
   var icon = "align-center"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var stringAttributes = ['bg_color', 'title'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(stringAttributes);
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(stringAttributes);
   attributes['bg_color']['default'] = 'white';
-  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(slug), {
-    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
-    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"])),
+  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
+    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
+    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
     category: category,
     icon: icon,
     attributes: attributes,
     transforms: {
       to: [{
         type: "block",
-        blocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/page-strip-graphic")],
+        blocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/page-strip-graphic")],
         transform: function transform(attributes, innerBlocks) {
-          return wp.blocks.createBlock("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/page-strip-graphic"), attributes, innerBlocks);
+          return wp.blocks.createBlock("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/page-strip-graphic"), attributes, innerBlocks);
         }
       }]
     },
@@ -2680,7 +2596,7 @@ function pageStripBlock() {
           updateAttributeValue(attribute, change);
         }
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/paragraph-no-alignment"), 'core/buttons']
+        allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph-no-alignment"), 'core/buttons']
       })))))];
     },
     save: function save(_ref) {
@@ -2698,12 +2614,12 @@ function pageStripBlock() {
 /*!**********************************************************!*\
   !*** ./src/js/blocks/reusable/block-custom-settings.jsx ***!
   \**********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BlockSettings; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ BlockSettings; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/custom-error.js */ "./src/js/blocks/helper-functions/custom-error.js");
 {
   /* 
@@ -2793,7 +2709,7 @@ function BlockSettings(props) {
     switch (control.type) {
       case 'radio':
         requiredFields = ['label', 'value', 'options', 'reference'];
-        Object(_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
+        (0,_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
         return /*#__PURE__*/React.createElement(RadioControl, {
           label: i18n.__("".concat(control.label)),
           selected: control.value,
@@ -2805,7 +2721,7 @@ function BlockSettings(props) {
 
       case 'range':
         requiredFields = ['label', 'value', 'reference', 'min', 'max'];
-        Object(_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
+        (0,_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
         return /*#__PURE__*/React.createElement(RangeControl, {
           label: control.label,
           value: control.value,
@@ -2819,7 +2735,7 @@ function BlockSettings(props) {
 
       case 'select':
         requiredFields = ['label', 'value', 'options', 'reference'];
-        Object(_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
+        (0,_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
         return /*#__PURE__*/React.createElement(SelectControl, {
           label: i18n.__("".concat(control.label)),
           value: control.value,
@@ -2831,7 +2747,7 @@ function BlockSettings(props) {
 
       case 'text':
         requiredFields = ['label', 'value', 'reference'];
-        Object(_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
+        (0,_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
         return /*#__PURE__*/React.createElement(TextControl, {
           label: i18n.__("".concat(control.label)),
           value: control.value,
@@ -2842,7 +2758,7 @@ function BlockSettings(props) {
 
       case 'toggle':
         requiredFields = ['label', 'value', 'reference'];
-        Object(_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
+        (0,_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
         return /*#__PURE__*/React.createElement(ToggleControl, {
           label: i18n.__("".concat(control.label)),
           checked: control.value,
@@ -2853,7 +2769,7 @@ function BlockSettings(props) {
 
       case 'image':
         requiredFields = ['label', 'image_id', 'id_reference', 'image_url', 'url_reference', 'image_alt', 'alt_reference'];
-        Object(_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
+        (0,_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
         return /*#__PURE__*/React.createElement(MediaUpload, {
           onSelect: function onSelect(media) {
             _onChange(control.alt_reference, media.alt);
@@ -2872,7 +2788,7 @@ function BlockSettings(props) {
 
       case 'file':
         requiredFields = ['label', 'id_value', 'id_reference', 'url_value', 'url_reference', 'name_value', 'name_reference'];
-        Object(_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
+        (0,_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
         return /*#__PURE__*/React.createElement(MediaUpload, {
           onSelect: function onSelect(file) {
             _onChange(control.url_reference, file.url);
@@ -2891,7 +2807,7 @@ function BlockSettings(props) {
 
       case 'checkbox':
         requiredFields = ['label', 'value', 'reference'];
-        Object(_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
+        (0,_helper_functions_custom_error_js__WEBPACK_IMPORTED_MODULE_0__["default"])(control, requiredFields);
         return /*#__PURE__*/React.createElement(CheckboxControl, {
           label: control.label,
           checked: control.value,
@@ -2912,12 +2828,12 @@ function BlockSettings(props) {
 /*!********************************************************!*\
   !*** ./src/js/blocks/reusable/custom-image-upload.jsx ***!
   \********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CustomImageUpload; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ CustomImageUpload; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/custom-error */ "./src/js/blocks/helper-functions/custom-error.js");
 {
   /* 
@@ -2971,14 +2887,14 @@ function CustomImageUpload(props) {
     var requiredFields = ['components', 'onChange'];
     var values = props;
     values.type = 'Custom Image';
-    Object(_helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__["default"])(values, requiredFields);
+    (0,_helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__["default"])(values, requiredFields);
   };
 
   var checkRequiredImageAttributes = function checkRequiredImageAttributes(props) {
     var requiredFields = ['reference', 'value', 'altValue', 'altReference', 'idReference', 'idValue', 'buttonText'];
     var values = props;
     values.type = 'Custom Image';
-    Object(_helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__["default"])(values, requiredFields);
+    (0,_helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__["default"])(values, requiredFields);
   };
 
   checkRequiredValues(props);
@@ -3039,12 +2955,12 @@ function CustomImageUpload(props) {
 /*!**************************************************************!*\
   !*** ./src/js/blocks/reusable/custom-richtext-component.jsx ***!
   \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CustomRichText; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ CustomRichText; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/custom-error */ "./src/js/blocks/helper-functions/custom-error.js");
 {
   /* 
@@ -3103,7 +3019,7 @@ function CustomRichText(props) {
       BlockControls = _wp$blockEditor.BlockControls;
 
   var checkFields = function checkFields(values, fields) {
-    Object(_helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__["default"])(values, fields);
+    (0,_helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__["default"])(values, fields);
   };
 
   var checkRequiredComponentFields = function checkRequiredComponentFields(values) {
@@ -3163,12 +3079,12 @@ function CustomRichText(props) {
 /*!********************************************************!*\
   !*** ./src/js/blocks/reusable/custom-video-upload.jsx ***!
   \********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CustomVideoUpload; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ CustomVideoUpload; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/custom-error */ "./src/js/blocks/helper-functions/custom-error.js");
 {
   /* 
@@ -3222,14 +3138,14 @@ function CustomVideoUpload(props) {
     var requiredFields = ['components', 'onChange'];
     var values = props;
     values.type = 'Custom Video';
-    Object(_helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__["default"])(values, requiredFields);
+    (0,_helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__["default"])(values, requiredFields);
   };
 
   var checkRequiredVideoAttributes = function checkRequiredVideoAttributes(props) {
     var requiredFields = ['reference', 'value', 'altValue', 'altReference', 'idReference', 'idValue', 'buttonText'];
     var values = props;
     values.type = 'Custom Video';
-    Object(_helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__["default"])(values, requiredFields);
+    (0,_helper_functions_custom_error__WEBPACK_IMPORTED_MODULE_0__["default"])(values, requiredFields);
   };
 
   checkRequiredValues(props);
@@ -3291,12 +3207,12 @@ function CustomVideoUpload(props) {
 /*!*************************************************************************!*\
   !*** ./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx ***!
   \*************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return customSectionBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ customSectionBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -3323,7 +3239,7 @@ function customSectionBlock() {
       default: ''
     }
   };
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
@@ -3355,7 +3271,7 @@ function customSectionBlock() {
           placeholder: "Please provide a title"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/custom-subsection-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/paragraph")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-subsection-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph")]
       }))];
     },
     save: function save(_ref) {
@@ -3372,12 +3288,12 @@ function customSectionBlock() {
 /*!****************************************************************************!*\
   !*** ./src/js/blocks/sidebar-table-of-contents/custom-subsection-blok.jsx ***!
   \****************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return customSubsectionBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ customSubsectionBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -3403,13 +3319,13 @@ function customSubsectionBlock() {
       default: ''
     }
   };
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
     icon: blockIcon,
     attributes: attributes,
-    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/custom-section-block")],
+    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-section-block")],
     edit: function edit(props) {
       var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
@@ -3450,12 +3366,12 @@ function customSubsectionBlock() {
 /*!**********************************************!*\
   !*** ./src/js/blocks/slider/image-slide.jsx ***!
   \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return trmcImageSlideBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ trmcImageSlideBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
@@ -3478,18 +3394,18 @@ function trmcImageSlideBlock() {
   var blockIcon = "feedback"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var stringAttrs = ['caption', 'image_alt', 'image_url'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_3__["default"])(stringAttrs);
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_3__["default"])(stringAttrs);
   attributes['image_id'] = {
     type: 'Number',
     default: 0
   };
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
     icon: blockIcon,
     attributes: attributes,
-    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/carousel")],
+    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/carousel")],
     edit: function edit(props) {
       var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
@@ -3555,12 +3471,12 @@ function trmcImageSlideBlock() {
 /*!***************************************************!*\
   !*** ./src/js/blocks/slider/slider-container.jsx ***!
   \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return trmcSliderBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ trmcSliderBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
@@ -3581,9 +3497,9 @@ function trmcSliderBlock() {
   var blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var stringAttrs = ['alignment', 'title'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
   attributes['alignment']['default'] = 'center';
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
@@ -3621,7 +3537,7 @@ function trmcSliderBlock() {
           updateAttributeValue(attribute, change);
         }
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/image-slide"), 'core/video']
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-slide"), 'core/video']
       }))];
     },
     save: function save() {
@@ -3637,12 +3553,12 @@ function trmcSliderBlock() {
 /*!**********************************************!*\
   !*** ./src/js/blocks/stats/stats-column.jsx ***!
   \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return trmcStatsColumnBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ trmcStatsColumnBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -3670,13 +3586,13 @@ function trmcStatsColumnBlock() {
       default: ''
     }
   };
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
     icon: blockIcon,
     attributes: attributes,
-    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/stats-container")],
+    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/stats-container")],
     edit: function edit(props) {
       var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
@@ -3726,12 +3642,12 @@ function trmcStatsColumnBlock() {
 /*!*************************************************!*\
   !*** ./src/js/blocks/stats/stats-container.jsx ***!
   \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return trmcStatsContainerBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ trmcStatsContainerBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -3759,7 +3675,7 @@ function trmcStatsContainerBlock() {
       default: ''
     }
   };
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
@@ -3801,7 +3717,7 @@ function trmcStatsContainerBlock() {
       }), /*#__PURE__*/React.createElement("div", {
         className: "col--3"
       }, save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/stat-column")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/stat-column")]
       })))];
     },
     save: function save() {
@@ -3818,12 +3734,12 @@ function trmcStatsContainerBlock() {
 /*!*******************************************************************!*\
   !*** ./src/js/blocks/tabbed-content/tabbed-content-container.jsx ***!
   \*******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tabbedContentContainerBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ tabbedContentContainerBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -3854,7 +3770,7 @@ function tabbedContentContainerBlock() {
       default: ''
     }
   };
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
@@ -3897,7 +3813,7 @@ function tabbedContentContainerBlock() {
           placeholder: "Please provide copy (optional)"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/tabbed-content-panel-block")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tabbed-content-panel-block")]
       }))];
     },
     save: function save(_ref) {
@@ -3915,12 +3831,12 @@ function tabbedContentContainerBlock() {
 /*!***************************************************************!*\
   !*** ./src/js/blocks/tabbed-content/tabbed-content-panel.jsx ***!
   \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return tabbedContentPanelBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ tabbedContentPanelBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -3950,13 +3866,13 @@ function tabbedContentPanelBlock() {
       default: ''
     }
   };
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
     icon: blockIcon,
     attributes: attributes,
-    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/tabbed-content-container-block")],
+    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tabbed-content-container-block")],
     edit: function edit(props) {
       var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
@@ -4009,12 +3925,12 @@ function tabbedContentPanelBlock() {
 /*!***************************************!*\
   !*** ./src/js/blocks/text-column.jsx ***!
   \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return textColumnBlock; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ textColumnBlock; }
+/* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
@@ -4036,8 +3952,8 @@ function textColumnBlock() {
   var blockIcon = "table-col-after"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var stringAttributes = ['title'];
-  var attributes = Object(_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(stringAttributes);
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__["namespace"], "/").concat(blockSlug), {
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(stringAttributes);
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
     category: blockCategory,
@@ -4084,16 +4000,70 @@ function textColumnBlock() {
   });
 }
 
-/***/ }),
+/***/ })
 
-/***/ "./src/js/gutenberg.js":
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	!function() {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = function(exports) {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+!function() {
 /*!*****************************!*\
   !*** ./src/js/gutenberg.js ***!
   \*****************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_core_extends_video_embed_poster_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/core-extends/video-embed-poster.jsx */ "./src/js/blocks/core-extends/video-embed-poster.jsx");
 /* harmony import */ var _blocks_meta_page_meta_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/meta/page-meta.jsx */ "./src/js/blocks/meta/page-meta.jsx");
@@ -4173,53 +4143,52 @@ __webpack_require__.r(__webpack_exports__);
 
  // Core Extends Blocks
 
-Object(_blocks_core_extends_video_embed_poster_jsx__WEBPACK_IMPORTED_MODULE_0__["default"])(); // Init meta blocks
+(0,_blocks_core_extends_video_embed_poster_jsx__WEBPACK_IMPORTED_MODULE_0__["default"])(); // Init meta blocks
 
-Object(_blocks_meta_page_meta_jsx__WEBPACK_IMPORTED_MODULE_1__["default"])();
-Object(_blocks_meta_research_blogs_meta_jsx__WEBPACK_IMPORTED_MODULE_2__["default"])();
-Object(_blocks_meta_news_meta_jsx__WEBPACK_IMPORTED_MODULE_3__["default"])();
-Object(_blocks_meta_team_member_meta_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])();
-Object(_blocks_meta_author_meta_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])(); // Init blocks here
+(0,_blocks_meta_page_meta_jsx__WEBPACK_IMPORTED_MODULE_1__["default"])();
+(0,_blocks_meta_research_blogs_meta_jsx__WEBPACK_IMPORTED_MODULE_2__["default"])();
+(0,_blocks_meta_news_meta_jsx__WEBPACK_IMPORTED_MODULE_3__["default"])();
+(0,_blocks_meta_team_member_meta_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])();
+(0,_blocks_meta_author_meta_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])(); // Init blocks here
 
-Object(_js_blocks_text_column_jsx__WEBPACK_IMPORTED_MODULE_6__["default"])();
-Object(_blocks_image_text_jsx__WEBPACK_IMPORTED_MODULE_7__["default"])(); // Page Strips
+(0,_js_blocks_text_column_jsx__WEBPACK_IMPORTED_MODULE_6__["default"])();
+(0,_blocks_image_text_jsx__WEBPACK_IMPORTED_MODULE_7__["default"])(); // Page Strips
 
-Object(_blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_20__["default"])();
-Object(_blocks_image_block_jsx__WEBPACK_IMPORTED_MODULE_8__["default"])();
-Object(_blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_21__["default"])(); // Accordion Blocks
+(0,_blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_20__["default"])();
+(0,_blocks_image_block_jsx__WEBPACK_IMPORTED_MODULE_8__["default"])();
+(0,_blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_21__["default"])(); // Accordion Blocks
 
-Object(_blocks_accordion_accordion_jsx__WEBPACK_IMPORTED_MODULE_9__["default"])();
-Object(_blocks_accordion_accordion_row_jsx__WEBPACK_IMPORTED_MODULE_10__["default"])(); // Body Copy
+(0,_blocks_accordion_accordion_jsx__WEBPACK_IMPORTED_MODULE_9__["default"])();
+(0,_blocks_accordion_accordion_row_jsx__WEBPACK_IMPORTED_MODULE_10__["default"])(); // Body Copy
 
-Object(_blocks_body_copy_jsx__WEBPACK_IMPORTED_MODULE_11__["default"])(); // Callout Columns
+(0,_blocks_body_copy_jsx__WEBPACK_IMPORTED_MODULE_11__["default"])(); // Callout Columns
 
-Object(_blocks_callouts_callout_container_jsx__WEBPACK_IMPORTED_MODULE_12__["default"])();
-Object(_blocks_callouts_callout_column_jsx__WEBPACK_IMPORTED_MODULE_13__["default"])(); // Content Cards
+(0,_blocks_callouts_callout_container_jsx__WEBPACK_IMPORTED_MODULE_12__["default"])();
+(0,_blocks_callouts_callout_column_jsx__WEBPACK_IMPORTED_MODULE_13__["default"])(); // Content Cards
 
-Object(_blocks_content_cards_content_card_container_jsx__WEBPACK_IMPORTED_MODULE_14__["default"])();
-Object(_blocks_content_cards_content_card_jsx__WEBPACK_IMPORTED_MODULE_15__["default"])(); // Image List Blocks
+(0,_blocks_content_cards_content_card_container_jsx__WEBPACK_IMPORTED_MODULE_14__["default"])();
+(0,_blocks_content_cards_content_card_jsx__WEBPACK_IMPORTED_MODULE_15__["default"])(); // Image List Blocks
 
-Object(_blocks_image_list_image_list_container_jsx__WEBPACK_IMPORTED_MODULE_16__["default"])();
-Object(_blocks_image_list_image_list_block_jsx__WEBPACK_IMPORTED_MODULE_17__["default"])(); // Logo Blocks
+(0,_blocks_image_list_image_list_container_jsx__WEBPACK_IMPORTED_MODULE_16__["default"])();
+(0,_blocks_image_list_image_list_block_jsx__WEBPACK_IMPORTED_MODULE_17__["default"])(); // Logo Blocks
 
-Object(_blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_18__["default"])();
-Object(_blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_19__["default"])(); // Slide Blocks
+(0,_blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_18__["default"])();
+(0,_blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_19__["default"])(); // Slide Blocks
 
-Object(_blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_22__["default"])();
-Object(_blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_23__["default"])(); // Stat Blocks
+(0,_blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_22__["default"])();
+(0,_blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_23__["default"])(); // Stat Blocks
 
-Object(_blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_24__["default"])();
-Object(_blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_25__["default"])(); // Greenhouse Blocks
+(0,_blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_24__["default"])();
+(0,_blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_25__["default"])(); // Greenhouse Blocks
 
-Object(_blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_26__["default"])(); // Sidebar Table Of Contents Blocks
+(0,_blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_26__["default"])(); // Sidebar Table Of Contents Blocks
 
-Object(_blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_27__["default"])();
-Object(_blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_28__["default"])(); // Tabbed Content Blocks
+(0,_blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_27__["default"])();
+(0,_blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_28__["default"])(); // Tabbed Content Blocks
 
-Object(_blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_29__["default"])();
-Object(_blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_30__["default"])();
-
-/***/ })
-
-/******/ });
+(0,_blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_29__["default"])();
+(0,_blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_30__["default"])();
+}();
+/******/ })()
+;
 //# sourceMappingURL=gutenberg.js.map
