@@ -22,6 +22,7 @@ if (!function_exists('pg_register_research_blog_cpt')) {
         $meta_values = array(
             'publication_date' => 'text',
             'post_info' => 'text',
+            'authors' => 'text'
         );
         $Research_Blogs_CPT->register_meta($meta_values);
     }

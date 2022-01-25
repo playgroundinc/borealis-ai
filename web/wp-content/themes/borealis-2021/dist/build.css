@@ -565,10 +565,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   visibility: hidden;
   opacity: 0;
 }
-.slide-toggle--active{
-  opacity: 1;
-  visibility: visible;
-}
 .\[https\:\/\/pantheon\.io\/docs\/guides\/multisite\/workflows\/\#deploying-across-environments\]{
   https: //pantheon.io/docs/guides/multisite/workflows/#deploying-across-environments;
 }
