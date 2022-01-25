@@ -133,6 +133,7 @@ module.exports = {
 		require("./tailwind-plugins/nth-child"),
 
 		require("./tailwind-plugins/animationDelay"),
+		require("./tailwind-plugins/slideToggle"),
 	],
   corePlugins: {
 		// Removes the core tailwind class of container as it doesn't work for what we need.
