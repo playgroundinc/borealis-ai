@@ -498,18 +498,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-15{
   margin-top: 60px;
 }
-.mb-0{
-  margin-bottom: 0px;
-}
-.mb-2{
-  margin-bottom: 8px;
-}
-.mb-10{
-  margin-bottom: 40px;
-}
-.mb-8{
-  margin-bottom: 32px;
-}
 .mb-6{
   margin-bottom: 24px;
 }
@@ -525,11 +513,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hidden{
   display: none;
 }
-.w-8\/12{
-  width: 66.666667%;
-}
 .w-4\/12{
   width: 33.333333%;
+}
+.w-8\/12{
+  width: 66.666667%;
 }
 .w-1\/3{
   width: 33.333333%;
@@ -545,14 +533,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border{
   border-width: 1px;
-}
-.px-12{
-  padding-left: 48px;
-  padding-right: 48px;
-}
-.px-16{
-  padding-left: 64px;
-  padding-right: 64px;
 }
 .px-18{
   padding-left: 72px;
@@ -575,13 +555,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .italic{
   font-style: italic;
 }
-.text-primary-electric-blue-400{
-  --tw-text-opacity: 1;
-  color: rgb(0 68 255 / var(--tw-text-opacity));
-}
 .text-shade-black-400{
   --tw-text-opacity: 1;
   color: rgb(34 39 49 / var(--tw-text-opacity));
+}
+.text-primary-electric-blue-400{
+  --tw-text-opacity: 1;
+  color: rgb(0 68 255 / var(--tw-text-opacity));
 }
 .container{
   margin: 0 28px;
