@@ -1,8 +1,0 @@
-.document-block {
-    &__container {
-        display: block;
-        @include lg {
-            display: flex;
-        }
-    }
-}

@@ -11,7 +11,12 @@ if (!function_exists('pg_mapbox_scripts')) {
             wp_enqueue_style( 'mapbox-css', 'https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css');
         }
     }
+}
 
+if (!function_exists('pg_tabbed_content_script')) {
+    function pg_tabbed_content_script() {
+        wp_register_script('tabbedContent', get_template_directory_uri() . '/dist/tabbedContent.js', array(), '20151215', true);
+    }
 }
 
 if (!function_exists('pg_threejs_scripts')) {
@@ -81,6 +86,7 @@ function pg_wp_starter_scripts() {
     pg_mapbox_scripts();
     pg_threejs_scripts();
     pg_borealis_script();
+    pg_tabbed_content_script();
 }
 add_action( 'wp_enqueue_scripts', 'pg_wp_starter_scripts' );
 
