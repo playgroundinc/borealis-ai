@@ -42,7 +42,7 @@ if ( ! function_exists( 'pg_render_page_strip_block' ) ) {
         ?>
             <div class="custom-component">
                 <div class="container container-fluid animated-element">
-                    <div class="page-strip flex middle-xs center-xs ph-md-5 ph-lg-3 pv-md-12 pv-xs-7 ph-xs-3 br-xs-lg <?php echo esc_attr('block--' . $attributes->bg_color) ?>">
+                    <div class="page-strip mt-15 flex middle-xs center-xs ph-md-5 ph-lg-3 pv-md-12 pv-xs-7 ph-xs-3 br-xs-lg <?php echo esc_attr('block--' . $attributes->bg_color) ?>">
                         <div class="fc-md-100 fc-lg-70 fc-xl-50 ph-md-5 ph-lg-0 copy--center">
                             <?php if (!empty($attributes->title)): ?>
                                 <h2 class="heading_two heading-one-lg mb-xs-0"><?php echo esc_html($attributes->title) ?></h2>

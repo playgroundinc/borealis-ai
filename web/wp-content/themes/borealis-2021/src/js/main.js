@@ -6,7 +6,7 @@ import search from './scripts/search';
 // import animate from './scripts/animate';
 // import fixSkipLinkFocus from './scripts/skip-link-focus-fix';
 // import navigation from './scripts/navigation';
-// import accordion from './scripts/accordion';
+import accordion from './scripts/accordion';
 // import videoBlocks from './scripts/video-block';
 // import heroVideo from './scripts/hero-video';
 
@@ -15,7 +15,7 @@ import search from './scripts/search';
 // animate();
 // fixSkipLinkFocus();
 // navigation();
-// accordion();
+accordion();
 // videoBlocks();
 // heroVideo();
 

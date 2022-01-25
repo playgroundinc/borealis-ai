@@ -1,24 +1,18 @@
 import { namespace } from '../helper-functions/constants';
 import defaultAttrs from '../helper-functions/default-attrs';
-import CustomRichText from '../reusable/custom-richtext-component.jsx';
-import CustomImageUpload from '../reusable/custom-image-upload.jsx';
 
-
-export default function newsMetaBlock() {
+export default function authorMetaBlock() {
 
     const { registerBlockType } = wp.blocks;
 	const { TextControl } = wp.components;
-    const {
-        Inserter
-    } = wp.blockEditor;
 
     const meta_fields = [
-        'publication_date',
+        'external_link',
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
-	registerBlockType(`${namespace}/news-meta-block`, {
-		title: 'News Meta',
+	registerBlockType(`${namespace}/author-meta-block`, {
+		title: 'Author Meta',
 		icon: 'align-full-width',
         category: 'common',
         supports: {
@@ -27,7 +21,7 @@ export default function newsMetaBlock() {
         attributes,
         edit: (props) => {
 			const { setAttributes, attributes } = props;
-			const { publication_date, source_publication, authors, external_link } = attributes;
+			const { external_link } = attributes;
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
@@ -36,13 +30,13 @@ export default function newsMetaBlock() {
 			return ([
 				null,
 				<div className="custom-component">
-                    <p className="block-title">News Meta</p>
+                    <p className="block-title">Author Meta</p>
                     <div className="page-settings__controls">
                         <div className="mt-xs-3">
                             <TextControl
-                                value={publication_date}
-                                onChange={(value) => { updateAttributeValue('publication_date', value) }}
-                                label="Publication date (YYYY/MM/DD):"
+                                value={external_link}
+                                onChange={(value) => { updateAttributeValue('external_link', value) }}
+                                label="External Link:"
                             />
                         </div>
                     </div> 

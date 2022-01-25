@@ -1,24 +1,19 @@
 import { namespace } from '../helper-functions/constants';
 import defaultAttrs from '../helper-functions/default-attrs';
-import CustomRichText from '../reusable/custom-richtext-component.jsx';
-import CustomImageUpload from '../reusable/custom-image-upload.jsx';
 
-
-export default function newsMetaBlock() {
+export default function leadershipMetaBlock() {
 
     const { registerBlockType } = wp.blocks;
 	const { TextControl } = wp.components;
-    const {
-        Inserter
-    } = wp.blockEditor;
 
     const meta_fields = [
-        'publication_date',
+        'position',
+        'education'
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
-	registerBlockType(`${namespace}/news-meta-block`, {
-		title: 'News Meta',
+	registerBlockType(`${namespace}/team-member-meta-block`, {
+		title: 'Team Member Meta',
 		icon: 'align-full-width',
         category: 'common',
         supports: {
@@ -27,7 +22,7 @@ export default function newsMetaBlock() {
         attributes,
         edit: (props) => {
 			const { setAttributes, attributes } = props;
-			const { publication_date, source_publication, authors, external_link } = attributes;
+			const { position, education } = attributes;
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
@@ -36,13 +31,18 @@ export default function newsMetaBlock() {
 			return ([
 				null,
 				<div className="custom-component">
-                    <p className="block-title">News Meta</p>
+                    <p className="block-title">Team Member Meta</p>
                     <div className="page-settings__controls">
                         <div className="mt-xs-3">
                             <TextControl
-                                value={publication_date}
-                                onChange={(value) => { updateAttributeValue('publication_date', value) }}
-                                label="Publication date (YYYY/MM/DD):"
+                                value={position}
+                                onChange={(value) => { updateAttributeValue('position', value) }}
+                                label="Position:"
+                            />
+                            <TextControl
+                                value={education}
+                                onChange={(value) => { updateAttributeValue('education', value) }}
+                                label="Education:"
                             />
                         </div>
                     </div> 
