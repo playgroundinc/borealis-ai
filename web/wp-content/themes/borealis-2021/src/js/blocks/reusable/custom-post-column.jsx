@@ -20,14 +20,12 @@ export default function selectPostBlock(postObject) {
 
     const stringAttrs = ['post'];
     const attributes = defaultAttrs(stringAttrs);
-
 	registerBlockType(`${namespace}/select-${slug}`, {
 		title: `Select ${single}`,
 		description: "Allows user to select a post",
 		icon,
 		category: "common",
-    attributes,
-    parent: [`${namespace}/content-column-container`],
+		attributes,
 		edit: withSelect((select) => {
 			return {
 				posts: select("core").getEntityRecords("postType", slug, {
