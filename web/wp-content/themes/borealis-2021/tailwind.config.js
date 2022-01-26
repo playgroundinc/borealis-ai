@@ -81,6 +81,10 @@ module.exports = {
 				}
 			}
 		},
+		width: {
+			'3/8': 'calc((100% /8) * 3)',
+			'5/8': 'calc((100% /8) * 5)',
+		}
     },
   },
   variants: {

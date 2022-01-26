@@ -4,6 +4,12 @@ if (!function_exists('pg_generate_blog_header')) {
         $type = get_the_terms($id, 'content-type');
         $research_areas = get_the_terms($id, 'research-areas');
         $publication_date = get_post_meta($id, 'publication_date', true);
+        $authors = get_post_meta($id, 'authors', true);
+        if (isset($authors) && $authors !== '') {
+            $authors = json_decode($authors);
+            $authors_mapped = array_map(function($author) { if ($author->equal) { return '*' . $author->label; } return $author->label; }, $authors);
+            $authors_string = implode(', ', $authors_mapped);
+        }
         if (!empty($research_areas)) {
             $research_areas = array_map(function($area) { return $area->name; }, $research_areas);
             $research_areas = join(", ", $research_areas);
@@ -22,7 +28,15 @@ if (!function_exists('pg_generate_blog_header')) {
                     </div>
                 </div>
                 <div class="flex pt-8">
-                    <p class="h4"><?php echo esc_attr($publication_date); ?></p>
+                    <div class="w-3/8">
+                        <p class="h4"><?php echo esc_attr($publication_date); ?></p>
+                    </div>  
+                    <?php if (isset($authors_string)): ?>
+                        <div class="w-5/8">
+                            <p class="paragraph"><?php echo esc_html($authors_string); ?></p>
+                            <p class="mt-4 paragraph-sm text-shade-grey-700"><?php echo esc_html('*Denotes Equal Contribution')?></p>
+                        </div>
+                    <?php endif; ?>
                 </div> 
                 <!-- TODO: Add Read Time -->
                 <!-- TODO: Add Authors -->

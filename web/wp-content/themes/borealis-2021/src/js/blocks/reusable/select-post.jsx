@@ -1,10 +1,11 @@
-export default function SelectPost({ slug, label = "Select a Post"}) {
-    console.log(slug)
+export default function SelectPost({ slug, label = "Select a Post", setValues }) {
 	const { SelectControl } = wp.components;
     const { useSelect } = wp.data;
     const { posts } = useSelect((select) => {
         return {
-			posts: select( 'core' ).getEntityRecords( 'postType', slug ),
+			posts: select( 'core' ).getEntityRecords( 'postType', slug, {
+                per_page: -1,
+            } ),
 		};
     })
     let selectPosts = []
@@ -15,6 +16,7 @@ export default function SelectPost({ slug, label = "Select a Post"}) {
                 value: post.id
             }
         })
+        selectPosts.push({ label: 'Select', value: 0})
     }
     return (
         <div>
@@ -24,8 +26,9 @@ export default function SelectPost({ slug, label = "Select a Post"}) {
                     label={label}
                     value={ 0}
                     options={selectPosts}
-                    onChange={(post) => {
-                        console.log(post);
+                    onChange={(id) => {
+                        const post = selectPosts.find((post) => {  return post.value === Number(id) });
+                        setValues(post);
                     }}
                 />
                 : 

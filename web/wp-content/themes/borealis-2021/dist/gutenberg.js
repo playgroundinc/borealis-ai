@@ -2248,6 +2248,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_select_post_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/select-post.jsx */ "./src/js/blocks/reusable/select-post.jsx");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
@@ -2256,8 +2268,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function researchBlogMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
-  var Inserter = wp.blockEditor.Inserter;
-  var meta_fields = ['publication_date', 'post_info'];
+  var meta_fields = ['publication_date', 'authors'];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(meta_fields, 'meta');
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/research-blog-meta-block"), {
     title: 'Research Blogs Meta',
@@ -2271,11 +2282,35 @@ function researchBlogMetaBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var publication_date = attributes.publication_date,
-          post_info = attributes.post_info;
+          authors = attributes.authors;
+      var authorsArray = authors !== '' ? JSON.parse(authors) : [];
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
+
+      var setAuthors = function setAuthors(val) {
+        if (val.label && authorsArray.filter(function (author) {
+          return author.label === val.label;
+        }).length === 0) {
+          val.equal = false;
+          updateAttributeValue('authors', JSON.stringify([].concat(_toConsumableArray(authorsArray), [val])));
+        }
+      };
+
+      var updateContribution = function updateContribution(e, index) {
+        e.preventDefault();
+        var tempAuthors = authorsArray;
+        tempAuthors[index].equal = !tempAuthors[index].equal;
+        updateAttributeValue('authors', JSON.stringify(tempAuthors));
+      };
+
+      var removeAuthor = function removeAuthor(e, index) {
+        e.preventDefault();
+        var tempAuthors = authorsArray;
+        tempAuthors.splice(index, 1);
+        updateAttributeValue('authors', JSON.stringify(tempAuthors));
+      };
 
       return [null, /*#__PURE__*/React.createElement("div", {
         className: "custom-component"
@@ -2291,10 +2326,52 @@ function researchBlogMetaBlock() {
           updateAttributeValue('publication_date', value);
         },
         label: "Publication Date (YYYY/MM/DD):"
-      }), /*#__PURE__*/React.createElement(_reusable_select_post_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Current Authors"), authorsArray.length > 0 && /*#__PURE__*/React.createElement("ol", {
+        style: {
+          padding: '16px'
+        }
+      }, authorsArray.map(function (author, index) {
+        return /*#__PURE__*/React.createElement("li", {
+          style: {
+            fontWeight: 700,
+            padding: '4px 0'
+          }
+        }, /*#__PURE__*/React.createElement("div", {
+          style: {
+            display: 'flex',
+            justifyContent: 'space-between'
+          }
+        }, /*#__PURE__*/React.createElement("span", {
+          style: {
+            width: '33.33%'
+          }
+        }, "".concat(author.label).concat(author.equal ? '*' : '')), /*#__PURE__*/React.createElement("button", {
+          style: {
+            fontWeight: 400,
+            width: '33.33%',
+            border: 0,
+            padding: '8px 24px'
+          },
+          onClick: function onClick(e) {
+            return updateContribution(e, index);
+          }
+        }, author.equal ? 'Remove Equal Contribution' : 'Add equal contribution'), /*#__PURE__*/React.createElement("button", {
+          style: {
+            background: '#F05C5C',
+            width: '33.33%',
+            border: 0,
+            padding: '8px 24px',
+            color: 'white'
+          },
+          onClick: function onClick(e) {
+            return removeAuthor(e, index);
+          }
+        }, "Remove Author")));
+      })), /*#__PURE__*/React.createElement("h3", null, "Add an Author"), /*#__PURE__*/React.createElement(_reusable_select_post_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         slug: "author",
+        setValues: setAuthors,
         label: "Select an Author"
-      }))))];
+      })))))];
     },
     // No information saved to the block
     // Data is saved to post meta via attributes
@@ -3341,14 +3418,16 @@ __webpack_require__.r(__webpack_exports__);
 function SelectPost(_ref) {
   var slug = _ref.slug,
       _ref$label = _ref.label,
-      label = _ref$label === void 0 ? "Select a Post" : _ref$label;
-  console.log(slug);
+      label = _ref$label === void 0 ? "Select a Post" : _ref$label,
+      setValues = _ref.setValues;
   var SelectControl = wp.components.SelectControl;
   var useSelect = wp.data.useSelect;
 
   var _useSelect = useSelect(function (select) {
     return {
-      posts: select('core').getEntityRecords('postType', slug)
+      posts: select('core').getEntityRecords('postType', slug, {
+        per_page: -1
+      })
     };
   }),
       posts = _useSelect.posts;
@@ -3362,14 +3441,21 @@ function SelectPost(_ref) {
         value: post.id
       };
     });
+    selectPosts.push({
+      label: 'Select',
+      value: 0
+    });
   }
 
   return /*#__PURE__*/React.createElement("div", null, posts && posts.length > 0 ? /*#__PURE__*/React.createElement(SelectControl, {
     label: label,
     value: 0,
     options: selectPosts,
-    onChange: function onChange(post) {
-      console.log(post);
+    onChange: function onChange(id) {
+      var post = selectPosts.find(function (post) {
+        return post.value === Number(id);
+      });
+      setValues(post);
     }
   }) : /*#__PURE__*/React.createElement("p", null, "No posts found"));
 }
