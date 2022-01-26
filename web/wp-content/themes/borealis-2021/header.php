@@ -40,6 +40,7 @@
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
     <?php endif; ?>
+    <?php pg_svg_spritemap(); ?>
     <div id="page" class="site">
     <!-- Skip to Content link -->
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pg-wp-starter' ); ?></a>

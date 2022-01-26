@@ -95,7 +95,19 @@ module.exports = plugin(function({ addBase }) {
             className: 'icon--lg',
             max: '24',
             min: '24',
-            fontFamily: 'Source Sans Pro, sans-serif',
+            fontFamily: 'Inter, sans-serif',
+        },
+        {
+            className: 'icon-md',
+            max: '12',
+            min: '12',
+            fontFamily: 'Inter, sans-serif',
+        },
+        {
+            className: 'icon-sm',
+            max: '10',
+            min: '10',
+            fontFamily: 'Inter, sans-serif',
         },
     ]
     const fontClasses = fluidFonts.map((font) => {

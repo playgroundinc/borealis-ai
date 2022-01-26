@@ -66,6 +66,7 @@ module.exports = {
 				grey: {
 					100: "#F4F4FB", // Light Grey
 					400: "#D8D8E4", // Medium Grey
+					500: "#656892", // Medium Dark Grey
 					700: "#5C5D76", // Dark Grey
 				},
 				white: {
