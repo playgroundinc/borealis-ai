@@ -1,4 +1,5 @@
 import { namespace } from '../helper-functions/constants';
+import SelectPost from '../reusable/select-post.jsx';
 
 import defaultAttrs from '../helper-functions/default-attrs';
 
@@ -26,7 +27,6 @@ export default function researchBlogMetaBlock() {
         edit: (props) => {
 			const { setAttributes, attributes } = props;
 			const { publication_date, post_info } = attributes;
-            console.log(attributes)
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
@@ -42,6 +42,10 @@ export default function researchBlogMetaBlock() {
                                 value={publication_date}
                                 onChange={(value) => { updateAttributeValue('publication_date', value) }}
                                 label="Publication Date (YYYY/MM/DD):"
+                            />
+                            <SelectPost 
+                                slug="author"
+                                label="Select an Author"
                             />
                         </div>
                     </div> 

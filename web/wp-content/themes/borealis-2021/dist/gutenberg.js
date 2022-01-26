@@ -2246,8 +2246,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ researchBlogMetaBlock; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
+/* harmony import */ var _reusable_select_post_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/select-post.jsx */ "./src/js/blocks/reusable/select-post.jsx");
+/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -2256,7 +2258,7 @@ function researchBlogMetaBlock() {
   var TextControl = wp.components.TextControl;
   var Inserter = wp.blockEditor.Inserter;
   var meta_fields = ['publication_date', 'post_info'];
-  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(meta_fields, 'meta');
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/research-blog-meta-block"), {
     title: 'Research Blogs Meta',
     icon: 'align-full-width',
@@ -2270,7 +2272,6 @@ function researchBlogMetaBlock() {
           attributes = props.attributes;
       var publication_date = attributes.publication_date,
           post_info = attributes.post_info;
-      console.log(attributes);
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -2290,6 +2291,9 @@ function researchBlogMetaBlock() {
           updateAttributeValue('publication_date', value);
         },
         label: "Publication Date (YYYY/MM/DD):"
+      }), /*#__PURE__*/React.createElement(_reusable_select_post_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        slug: "author",
+        label: "Select an Author"
       }))))];
     },
     // No information saved to the block
@@ -3320,6 +3324,54 @@ function CustomVideoUpload(props) {
       }
     }));
   }));
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/reusable/select-post.jsx":
+/*!************************************************!*\
+  !*** ./src/js/blocks/reusable/select-post.jsx ***!
+  \************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ SelectPost; }
+/* harmony export */ });
+function SelectPost(_ref) {
+  var slug = _ref.slug,
+      _ref$label = _ref.label,
+      label = _ref$label === void 0 ? "Select a Post" : _ref$label;
+  console.log(slug);
+  var SelectControl = wp.components.SelectControl;
+  var useSelect = wp.data.useSelect;
+
+  var _useSelect = useSelect(function (select) {
+    return {
+      posts: select('core').getEntityRecords('postType', slug)
+    };
+  }),
+      posts = _useSelect.posts;
+
+  var selectPosts = [];
+
+  if (posts && posts.length > 0) {
+    selectPosts = posts.map(function (post) {
+      return {
+        label: post.title.rendered,
+        value: post.id
+      };
+    });
+  }
+
+  return /*#__PURE__*/React.createElement("div", null, posts && posts.length > 0 ? /*#__PURE__*/React.createElement(SelectControl, {
+    label: label,
+    value: 0,
+    options: selectPosts,
+    onChange: function onChange(post) {
+      console.log(post);
+    }
+  }) : /*#__PURE__*/React.createElement("p", null, "No posts found"));
 }
 
 /***/ }),
