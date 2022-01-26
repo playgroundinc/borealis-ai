@@ -3,9 +3,13 @@ const { breakpoints, spacing, duration, delay } = require("./utils/constants");
 // const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-	content: ["./*", "./src/**/*{jsx, js}", "./inc/*", "./inc/**/*"],
+	content: ["./*", "./src/**/*", "./src/**/**/*", "./src/**/**/**/*", "./inc/*", "./inc/**/*"],
   	darkMode: false, // or 'media' or 'class'
   	theme: {
+		borderRadius: {
+			full: "50%",
+			pill: "30px",
+		},
     spacing: spacing,
     extend: {
 		// Colors use font-weight rules:

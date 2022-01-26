@@ -89,7 +89,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _classes_class_query_params__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/class-query-params */ "./src/js/scripts/classes/class-query-params.js");
 
-function checkboxSearchForm(container) {
+function checkboxSearchForm(container, setCount) {
   let selections = {}; // Checkbox elements
 
   const checkboxEls = container.querySelectorAll("input[type='checkbox']"); // Params and current values
@@ -100,7 +100,8 @@ function checkboxSearchForm(container) {
   const clearAll = document.querySelector(".clear-checkboxes"); // Topics increment/decrement vars
 
   const topics = document.querySelector(".topics");
-  let topicsNum = parseInt(topics.innerHTML); // Handles clear all button functionality
+  let topicsNum = parseInt(topics.innerHTML);
+  let count = setCount(topicsNum); // Handles clear all button functionality
 
   clearAll.addEventListener("click", clearAllCheckboxes);
 
@@ -114,8 +115,8 @@ function checkboxSearchForm(container) {
 
     selections = {}; // Update topics number
 
-    topicsNum = 0;
-    topics.innerHTML = topicsNum;
+    count = setCount('clear');
+    topics.innerHTML = count;
   } // Handles checking of checkboxes and updating of params
 
 
@@ -123,7 +124,7 @@ function checkboxSearchForm(container) {
     checkboxEls.forEach(checkbox => {
       if (currentValues.split(",").includes(checkbox.value)) {
         // Increment topics number
-        topicsNum += 1; // Set checkbox to checked
+        count = setCount('check'); // Set checkbox to checked
 
         checkbox.checked = true; // Add to selections object
 
@@ -136,7 +137,7 @@ function checkboxSearchForm(container) {
   } // Set topics number
 
 
-  topics.innerHTML = topicsNum; // Add event listener to checkboxes to updateUrl with term id's
+  topics.innerHTML = count; // Add event listener to checkboxes to updateUrl with term id's
 
   for (let i = 0; i < checkboxEls.length; i++) {
     checkboxEls[i].addEventListener("click", updateUrl);
@@ -145,8 +146,8 @@ function checkboxSearchForm(container) {
   function updateUrl(e) {
     if (e.target.checked) {
       // Increment topics number
-      topicsNum += 1;
-      topics.innerHTML = topicsNum; // Add to selections object
+      count = setCount('check');
+      topics.innerHTML = count; // Add to selections object
 
       selections[e.target.id] = {
         name: e.target.name,
@@ -154,8 +155,8 @@ function checkboxSearchForm(container) {
       };
     } else {
       // Decrement topics number
-      topicsNum -= 1;
-      topics.innerHTML = topicsNum; // Remove from selections object AND params
+      count = setCount('uncheck');
+      topics.innerHTML = count; // Remove from selections object AND params
 
       params.setParam("");
       delete selections[e.target.id];
@@ -165,18 +166,38 @@ function checkboxSearchForm(container) {
 
     for (let key in selections) {
       results.push(selections[key].value);
-    } // Update params
+    } // params.UrlParams = new URLSearchParams(window.location.search);
 
-
-    console.log(params); // params.UrlParams = new URLSearchParams(window.location.search);
 
     params.setParam(results.join(","));
   }
 } //   Add checkbox functionality to all taxonomy search forms
 
 const checkboxContainers = document.querySelectorAll(".checkbox-form");
+let count = 0;
+
+const setCount = action => {
+  switch (action) {
+    case 'check':
+      count = count + 1;
+      return count;
+
+    case 'uncheck':
+      count = count - 1;
+      return count;
+
+    case 'clear':
+      count = 0;
+      return count;
+
+    default:
+      count = action;
+      return count;
+  }
+};
+
 checkboxContainers.forEach(checkboxContainer => {
-  checkboxSearchForm(checkboxContainer);
+  checkboxSearchForm(checkboxContainer, setCount);
 });
 
 /***/ }),

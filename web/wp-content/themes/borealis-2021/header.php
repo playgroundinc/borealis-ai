@@ -33,7 +33,7 @@
 </head>
 
 
-<body <?php body_class(); ?>>
+<body <?php body_class('text-shade-black-400'); ?>>
     <?php if ( ! empty( $settings['gtm_container_id'] ) ) : ?>
         <!-- Google Tag Manager (noscript) -->
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo esc_attr($settings['gtm_container_id'])?>"

@@ -148,8 +148,8 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
             </symbol>
 
             <!-- Search Icon -->
-            <symbol id="icon-search" viewBox="0 0 22 22">
-                <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18c4.4183 0 8-3.5817 8-8 0-4.41828-3.5817-8-8-8-4.41828 0-8 3.58172-8 8 0 4.4183 3.58172 8 8 8zM20 20.0004l-4.35-4.35"/></g>
+            <symbol id="icon-search" viewBox="0 0 24 24">
+                <g transform="translate(4 4)" stroke="#5C5D76" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="6.417" cy="6.354" rx="6.417" ry="6.354"/><path d="M16.5 16.339 11 10.893"/></g>
             </symbol>
 
             <!--  Cookie Close -->
