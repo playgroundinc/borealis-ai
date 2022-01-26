@@ -559,6 +559,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(34 39 49 / var(--tw-text-opacity));
 }
+.text-primary-navy-400{
+  --tw-text-opacity: 1;
+  color: rgb(0 15 120 / var(--tw-text-opacity));
+}
+.text-blue-600{
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
+}
 .text-primary-electric-blue-400{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
@@ -600,6 +608,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
+}
+.visited\:text-primary-purple-400:visited{
+  --tw-text-opacity: 1;
+  color: rgb(85 0 155 / var(--tw-text-opacity));
+}
+.visited\:text-purple-600:visited{
+  --tw-text-opacity: 1;
+  color: rgb(147 51 234 / var(--tw-text-opacity));
 }
 .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
