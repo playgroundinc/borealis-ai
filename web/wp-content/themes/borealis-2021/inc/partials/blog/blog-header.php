@@ -4,6 +4,7 @@ if (!function_exists('pg_generate_blog_header')) {
         $type = get_the_terms($id, 'content-type');
         $research_areas = get_the_terms($id, 'research-areas');
         $publication_date = get_post_meta($id, 'publication_date', true);
+        $time_to_read = get_post_meta($id, 'time_to_read', true);
         $authors = get_post_meta($id, 'authors', true);
         if (isset($authors) && $authors !== '') {
             $authors = json_decode($authors);
@@ -30,6 +31,9 @@ if (!function_exists('pg_generate_blog_header')) {
                 <div class="flex pt-8">
                     <div class="w-3/8">
                         <p class="h4"><?php echo esc_attr($publication_date); ?></p>
+                        <?php if (isset($time_to_read) && $time_to_read !== ''): ?>
+                            <p class="paragraph-sm mt-4"><?php echo esc_html($time_to_read . ' minute read'); ?></p>
+                        <?php endif; ?>
                     </div>  
                     <?php if (isset($authors_string)): ?>
                         <div class="w-5/8">
@@ -38,8 +42,6 @@ if (!function_exists('pg_generate_blog_header')) {
                         </div>
                     <?php endif; ?>
                 </div> 
-                <!-- TODO: Add Read Time -->
-                <!-- TODO: Add Authors -->
             </div>
             <!-- TODO: Add series -->
         </div>
