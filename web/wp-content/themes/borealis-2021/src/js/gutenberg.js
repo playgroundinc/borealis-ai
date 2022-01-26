@@ -62,6 +62,12 @@ import customSubsectionBlock from './blocks/sidebar-table-of-contents/custom-sub
 import tabbedContentContainerBlock from "./blocks/tabbed-content/tabbed-content-container.jsx";
 import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-panel.jsx";
 
+// Tag Cloud Content Blocks
+import tagCloudContainerBlock from "./blocks/tag-cloud/tag-cloud-container-block.jsx";
+import tagCloudItemBlock from "./blocks/tag-cloud/tag-cloud-item-block.jsx";
+
+
+
 
 // Core Extends Blocks
 customVideoPoster();
@@ -125,3 +131,7 @@ customSubsectionBlock();
 // Tabbed Content Blocks
 tabbedContentContainerBlock();
 tabbedContentPanelBlock();
+
+// Tag Cloud Content Blocks
+tagCloudContainerBlock();
+tagCloudItemBlock();
