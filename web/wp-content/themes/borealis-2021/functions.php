@@ -140,3 +140,7 @@ require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/ren
 // Tabbed Content Blocks
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-container-block.php';
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-panel-block.php';
+
+// Tag Cloud Blocks
+require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-container-block.php';
+require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-item-block.php';

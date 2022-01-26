@@ -529,6 +529,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-15{
   margin-top: 60px;
 }
+.mb-6{
+  margin-bottom: 24px;
+}
 .block{
   display: block;
 }
@@ -547,11 +550,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-5\/6{
   width: 83.333333%;
 }
+.w-4\/12{
+  width: 33.333333%;
+}
+.w-8\/12{
+  width: 66.666667%;
+}
+.w-1\/3{
+  width: 33.333333%;
+}
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .flex-col-reverse{
   flex-direction: column-reverse;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.justify-between{
+  justify-content: space-between;
 }
 .border{
   border-width: 1px;
@@ -568,6 +586,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .bg-no-repeat{
   background-repeat: no-repeat;
+}
+.px-18{
+  padding-left: 72px;
+  padding-right: 72px;
 }
 .pt-100{
   padding-top: 400px;
@@ -600,6 +622,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .italic{
   font-style: italic;
+}
+.text-shade-black-400{
+  --tw-text-opacity: 1;
+  color: rgb(34 39 49 / var(--tw-text-opacity));
+}
+.text-primary-electric-blue-400{
+  --tw-text-opacity: 1;
+  color: rgb(0 68 255 / var(--tw-text-opacity));
 }
 .text-shade-grey-700{
   --tw-text-opacity: 1;
@@ -642,6 +672,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
+}
+.hover\:underline:hover{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 @media (min-width: 768px){
   .md\:flex{
