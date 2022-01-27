@@ -378,3 +378,13 @@ if (!function_exists('pg_filter_valid_emails')) {
         return filter_var($email, FILTER_VALIDATE_EMAIL);
     }
 }
+
+if (!function_exists('pg_get_query_values')) {
+    function pg_get_query_values($req, $param) {
+        $value = sanitize_text_field(wp_unslash($req[$param]));
+        if (isset($value) && $value !== '') {
+            return explode(',', $value);
+        }
+        return [];
+    }
+}
