@@ -16,7 +16,6 @@ export default function SelectPost({ slug, label = "Select a Post", setValues })
                 value: post.id
             }
         })
-        selectPosts.push({ label: 'Select', value: 0})
         selectPosts.sort((a,b) => { 
             if (a.label < b.label) { 
                 return -1;
@@ -26,6 +25,8 @@ export default function SelectPost({ slug, label = "Select a Post", setValues })
             }
             return 0
         })
+        selectPosts.push({ label: 'Select', value: 0})
+        
     }
     return (
         <div>
