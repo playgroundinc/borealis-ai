@@ -49,7 +49,6 @@
         if(is_page('research') or is_page('products')) {
             $hasSubnav = true;
         }
-        // <?php echo ($hasSubnav)? 'h-30': 'h-16';
     ?>
     <div id="page" class="site">
         <!-- Skip to Content link -->
