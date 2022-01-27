@@ -137,7 +137,8 @@ function checkboxSearchForm(container, setCount) {
   } // Set topics number
 
 
-  topics.innerHTML = count; // Add event listener to checkboxes to updateUrl with term id's
+  topics.innerHTML = count;
+  topics.classList.add('opacity-100'); // Add event listener to checkboxes to updateUrl with term id's
 
   for (let i = 0; i < checkboxEls.length; i++) {
     checkboxEls[i].addEventListener("click", updateUrl);
@@ -191,7 +192,6 @@ const setCount = action => {
       return count;
 
     default:
-      count = action;
       return count;
   }
 };
