@@ -11,13 +11,14 @@ if (!function_exists('pg_register_publications_cpt')) {
         // - plural.
         // - args (an optional array to overwrite any default settings).
         $namespace = pg_get_namespace();
-        $Publications_CPT = new PG_Custom_Post_Type('publications', 'Publication', 'Publications', array('icon' => 'dashicons-book', 'has_archive' => 'false'));
+        $Publications_CPT = new PG_Custom_Post_Type('publications', 'Publication', 'Publications', array('icon' => 'dashicons-book', 'has_archive' => 'false', 'template' => [ [$namespace . '/publications-meta-block']]));
         $Publications_CPT->register();
         $Publications_CPT->register_tags('conferences', 'Conference', 'Conferences');
 
         // Register Meta.
         // Slug will automatically be pulled from when it's registered.
         $meta_values = array(
+            'authors' => 'text',
             'abstract' => 'text',
             'code' => 'text',            
             'paper' => 'text',

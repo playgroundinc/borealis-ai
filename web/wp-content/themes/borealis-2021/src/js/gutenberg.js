@@ -4,14 +4,12 @@ import customVideoPoster from './blocks/core-extends/video-embed-poster.jsx';
 // Meta
 import pageMetaBlock from "./blocks/meta/page-meta.jsx"
 import researchBlogMetaBlock from "./blocks/meta/research-blogs-meta.jsx";
-import newsMetaBlock from "./blocks/meta/news-meta.jsx";
 import teamMemberMetaBlock from "./blocks/meta/team-member-meta.jsx";
 import authorMetaBlock from './blocks/meta/author-meta.jsx';
+import publicationMetaBlock from './blocks/meta/publications-meta.jsx';
 
 import textColumnBlock from "../js/blocks/text-column.jsx";
 import imageTextBlock from "./blocks/image-text.jsx";
-
-import customSelects from './blocks/meta/custom-selects.jsx';
 
 // Page Strips
 import imageBlock from "./blocks/image-block.jsx";
@@ -66,20 +64,15 @@ import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-pane
 import tagCloudContainerBlock from "./blocks/tag-cloud/tag-cloud-container-block.jsx";
 import tagCloudItemBlock from "./blocks/tag-cloud/tag-cloud-item-block.jsx";
 
-
-
-
 // Core Extends Blocks
 customVideoPoster();
 
 // Init meta blocks
 pageMetaBlock();
 researchBlogMetaBlock();
-newsMetaBlock();
 teamMemberMetaBlock();
 authorMetaBlock();
-
-customSelects();
+publicationMetaBlock();
 
 // Init blocks here
 textColumnBlock(); 
