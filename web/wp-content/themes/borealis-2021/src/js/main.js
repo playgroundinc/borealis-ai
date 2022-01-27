@@ -2,6 +2,7 @@
 
 import '../sass/style.scss';
 import search from './scripts/search';
+import loadMore from './scripts/load-more';
 // import alertBar from './scripts/alert-bar';
 // import animate from './scripts/animate';
 // import fixSkipLinkFocus from './scripts/skip-link-focus-fix';
@@ -16,6 +17,7 @@ import accordion from './scripts/accordion';
 // fixSkipLinkFocus();
 // navigation();
 accordion();
+loadMore();
 // videoBlocks();
 // heroVideo();
 

@@ -28,7 +28,11 @@ get_header();
             $args = array(
                 'post_type' => 'publications',
                 'posts_per_page' => 12,
+                'paged' => 1,
             );
+            if ($query) {
+                $args['s'] = $query;
+            }
             if (!empty($research_areas)) {
                 $args['tax_query'] = array(
                     'relation' => 'OR',
@@ -40,50 +44,21 @@ get_header();
                 );
             }
             $Query = new WP_Query($args);
+            wp_reset_query();
             if (!empty($Query->posts)): // Empty Query check. 
-                
         ?>
-        <ul>
+        <ul class="posts-listing" data-page="1" data-total="<?php echo esc_attr($Query->max_num_pages)?>" data-query="<?php echo esc_attr(json_encode($args))?>">
             <?php foreach ($Query->posts as $post): // Start of Query loop ?>
-                <?php 
-                    $allowed_html = pg_allowed_html();
-                    $url = get_permalink($post->ID);
-                    $terms = get_the_terms($post->ID, 'research-areas');
-                    if (!empty($terms)) {
-                        $terms = array_map(
-                            function($term) use ($research_areas) {
-                                if (!empty($research_areas)) {
-                                    $match = array_search(strval($term->term_id), $research_areas);
-                                    if ($match !== false) {
-                                        return '<span class="text-primary-electric-blue-400">' . $term->name . '</span>';
-                                    }
-                                }
-                                return $term->name;
-                            }, 
-                            $terms
-                        );
-                        $terms_string = implode(', ', $terms);
-                    }
-                ?>
                 <li class="border-b border-shade-grey-500">
-                    <a href="<?php echo esc_attr($url)?>" class="py-5 block">
-                        <div class="container">
-                            <div class="flex items-center">
-                                <div class="grow">
-                                   <p class="paragraph"><?php echo esc_html($post->post_title) ?></p>
-                                   <?php if (isset($terms_string) && $terms_string !== ''): // Start of Terms String check ?>
-                                        <p class="mt-3 text-shade-grey-700">
-                                            <?php echo wp_kses($terms_string, $allowed_html) ?>
-                                        </p>
-                                    <?php endif; // End of Terms String check ?>
-                                </div>
-                                <p class="paragraph-sm text-shade-grey-700"><?php echo esc_html('Publication'); ?></p>
-                            </div>
-                        </div>
-                    </a>
+                    <?php echo pg_generate_publication_result($post); ?>
                 </li>
-            <?php endforeach; // End of Query Loop ?>
+            <?php   endforeach;  // End of Query Loop ?>
         </ul>
+        <?php if (intval($Query->max_num_pages) > 1): ?>
+            <div class="container">
+                <button class="block h4 pt-10 pb-8 text-center w-full load-more"><?php echo esc_html('Load More Publications') ?></button>
+            </div>
+        <?php endif;?>
         <?php endif; // End of Empty Query check ?> 
     </main>
 <?php

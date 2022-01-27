@@ -369,6 +369,77 @@ class Accordion {
 
 /***/ }),
 
+/***/ "./src/js/scripts/classes/class-loader.js":
+/*!************************************************!*\
+  !*** ./src/js/scripts/classes/class-loader.js ***!
+  \************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Loader; }
+/* harmony export */ });
+class Loader {
+  constructor(trigger, list) {
+    this.trigger = trigger;
+    this.list = list;
+    this.page = this.list.dataset?.page ? Number(this.list.dataset.page) + 1 : 2;
+    this.total = this.list.dataset?.total ? this.list.dataset.total : 2;
+    this.query = this.list.dataset?.query ? this.list.dataset.query : false;
+    this.data = new FormData();
+    this.url = ajaxInfo.ajaxUrl;
+    this.nonce = ajaxInfo.securityLoadMore;
+  }
+
+  generateMarkup = markup => {
+    markup.shift();
+    markup.forEach(inner => {
+      const listItem = document.createElement('li');
+      listItem.classList = 'border-shade-grey-500 border-b';
+      listItem.innerHTML = inner;
+      this.list.append(listItem);
+    });
+  };
+  makeRequest = async () => {
+    try {
+      console.log(this.data);
+      const resp = await window.fetch(this.url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: this.data
+      });
+      const json = await resp.json();
+      console.log(json);
+
+      if (json.status === 'success') {
+        this.generateMarkup(JSON.parse(json.markup));
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  handleClick = async e => {
+    e.preventDefault();
+    const results = await this.makeRequest();
+  };
+  addListeners = () => {
+    this.trigger.addEventListener('click', this.handleClick);
+  };
+  populateData = () => {
+    this.data.append('action', 'load_more');
+    this.data.append('load_more', this.nonce);
+    this.data.append('page', this.page);
+    this.data.append('query', this.query);
+  };
+  init = () => {
+    this.populateData();
+    this.addListeners();
+  };
+}
+
+/***/ }),
+
 /***/ "./src/js/scripts/classes/class-query-params.js":
 /*!******************************************************!*\
   !*** ./src/js/scripts/classes/class-query-params.js ***!
@@ -426,15 +497,11 @@ class SearchBar {
   constructor(form) {
     this.form = form;
     this.input = null;
-    this.error = false;
-    this.errorElement = null;
-    this.helperTextElement = null;
     this.searchTerm = '';
     this.QueryParams = new _class_query_params__WEBPACK_IMPORTED_MODULE_0__["default"]('q');
     this.addEvents = this.addEvents.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.checkForError = this.checkForError.bind(this);
     this.setValue = this.setValue.bind(this);
   }
 
@@ -447,20 +514,8 @@ class SearchBar {
     this.setValue('input', input);
   }
 
-  getErrorElement() {
-    const errorElement = this.form.querySelector('#error-state');
-    this.setValue('errorElement', errorElement);
-  }
-
-  getHelperTextElement() {
-    const helperTextElement = this.form.querySelector('#helper-text');
-    this.setValue('helperTextElement', helperTextElement);
-  }
-
   getElements() {
     this.getInput();
-    this.getHelperTextElement();
-    this.getErrorElement();
   }
 
   addEvents() {
@@ -468,24 +523,9 @@ class SearchBar {
     this.input.addEventListener('keyup', this.handleChange);
   }
 
-  checkForError() {
-    if (this.searchTerm !== '') {
-      return false;
-    }
-
-    this.setValue('error', true);
-    this.helperTextElement.classList.add('hidden');
-    this.errorElement.classList.remove('hidden');
-    return true;
-  }
-
   handleSubmit(e) {
     e.preventDefault();
-    const error = this.checkForError();
-
-    if (!error) {
-      this.QueryParams.setParam(this.searchTerm);
-    }
+    this.QueryParams.setParam(this.searchTerm);
   }
 
   handleChange(e) {
@@ -494,14 +534,6 @@ class SearchBar {
     }
 
     this.setValue('searchTerm', e.target.value);
-
-    if (!this.error) {
-      return;
-    }
-
-    this.setValue('error', false);
-    this.helperTextElement.classList.remove('hidden');
-    this.errorElement.classList.add('hidden');
   }
 
   init() {
@@ -538,6 +570,31 @@ function slideToggle(element) {
   setTimeout(function () {
     element.style.overflow = 'unset';
   }, 300);
+}
+
+/***/ }),
+
+/***/ "./src/js/scripts/load-more.js":
+/*!*************************************!*\
+  !*** ./src/js/scripts/load-more.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ loadMore; }
+/* harmony export */ });
+/* harmony import */ var _classes_class_loader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/class-loader */ "./src/js/scripts/classes/class-loader.js");
+
+function loadMore() {
+  const loadMoreButton = document.querySelector('.load-more');
+
+  if (loadMoreButton) {
+    const list = document.querySelector('.posts-listing');
+    const PostLoader = new _classes_class_loader__WEBPACK_IMPORTED_MODULE_0__["default"](loadMoreButton, list);
+    PostLoader.init();
+  }
 }
 
 /***/ }),
@@ -10492,8 +10549,10 @@ _global["default"]._babelPolyfill = true;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/style.scss */ "./src/sass/style.scss");
 /* harmony import */ var _scripts_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/search */ "./src/js/scripts/search.js");
-/* harmony import */ var _scripts_accordion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/accordion */ "./src/js/scripts/accordion.js");
+/* harmony import */ var _scripts_load_more__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/load-more */ "./src/js/scripts/load-more.js");
+/* harmony import */ var _scripts_accordion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/accordion */ "./src/js/scripts/accordion.js");
 // require('./scripts/polyfills/closest-polyfill');
+
 
  // import alertBar from './scripts/alert-bar';
 // import animate from './scripts/animate';
@@ -10508,7 +10567,8 @@ __webpack_require__.r(__webpack_exports__);
 // fixSkipLinkFocus();
 // navigation();
 
-(0,_scripts_accordion__WEBPACK_IMPORTED_MODULE_2__["default"])(); // videoBlocks();
+(0,_scripts_accordion__WEBPACK_IMPORTED_MODULE_3__["default"])();
+(0,_scripts_load_more__WEBPACK_IMPORTED_MODULE_2__["default"])(); // videoBlocks();
 // heroVideo();
 
 (0,_scripts_search__WEBPACK_IMPORTED_MODULE_1__["default"])();
