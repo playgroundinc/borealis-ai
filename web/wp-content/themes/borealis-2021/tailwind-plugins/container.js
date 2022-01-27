@@ -32,7 +32,7 @@ module.exports = plugin(function({ addUtilities }) {
             maxWidth: '100%',
             [`@media (min-width: ${breakpoints.xl}px)`]: {
                 width: 'calc(100% - 150px)',
-                maxWidth: '1770px',
+                maxWidth: '1300px',
             }
         },
         '.container--single': {

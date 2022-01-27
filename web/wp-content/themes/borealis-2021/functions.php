@@ -78,7 +78,13 @@ require get_template_directory() . '/inc/admin-columns/custom-post.php';
 
 // Reusable
 require get_template_directory() . '/inc/gutenberg/render-icon-btn.php';
+
+// Partials
 require get_template_directory() . '/inc/partials/search-bar.php';
+
+// Blogs
+require get_template_directory() . '/inc/partials/blog/blog-sidebar.php';
+require get_template_directory() . '/inc/partials/blog/blog-header.php';
 
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';
@@ -135,8 +141,11 @@ require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/ren
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-container-block.php';
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-panel-block.php';
 
+// Tag Cloud Blocks
+require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-container-block.php';
+require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-item-block.php';
 
-// add hook
+// add hook for subnav
 add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
 
 // filter_hook function to react on sub_menu flag
