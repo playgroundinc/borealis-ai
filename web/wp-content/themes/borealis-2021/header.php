@@ -41,11 +41,20 @@
         <!-- End Google Tag Manager (noscript) -->
     <?php endif; ?>
     <div id="page" class="site">
-        <!-- Skip to Content link -->
-        <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pg-wp-starter' ); ?></a>
+    <!-- Skip to Content link -->
+    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pg-wp-starter' ); ?></a>
 
-        <header id="masthead">
+    <header id="masthead">
+        <div class="container">
+            <?php 
+                if (is_singular(['research-blogs', 'news'])) {
+                    $header = pg_generate_blog_header($post->ID);
+                    if (isset($header) && !empty($header)) {
+                        echo $header;
+                    }
+                } 
+            ?>
+        </div>
 
-        </header><!-- #masthead -->
-        <main id="content">
+    </header><!-- #masthead -->
         
