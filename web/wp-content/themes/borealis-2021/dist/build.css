@@ -525,46 +525,33 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: -webkit-sticky;
   position: sticky;
 }
-<<<<<<< HEAD
 .top-2{
   top: 8px;
-}
-.top-18{
-  top: 72px;
-}
-.right-0{
-  right: 0px;
 }
 .top-20{
   top: 80px;
 }
-.mt-2{
-  margin-top: 8px;
+.right-0{
+  right: 0px;
 }
-.ml-10{
-  margin-left: 40px;
-=======
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
 }
+.mt-2{
+  margin-top: 8px;
+}
 .mt-19{
   margin-top: 76px;
->>>>>>> 289b3db91fc02e8cfadcecb9b140ae32c2e65ec8
+}
+.ml-9{
+  margin-left: 36px;
 }
 .mt-15{
   margin-top: 60px;
 }
-<<<<<<< HEAD
-.ml-8{
-  margin-left: 32px;
-}
-.ml-9{
-  margin-left: 36px;
-=======
 .mb-6{
   margin-bottom: 24px;
->>>>>>> 289b3db91fc02e8cfadcecb9b140ae32c2e65ec8
 }
 .block{
   display: block;
@@ -578,12 +565,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hidden{
   display: none;
 }
-<<<<<<< HEAD
 .h-30{
   height: 120px;
 }
 .h-16{
   height: 64px;
+}
+.h-20{
+  height: 80px;
 }
 .h-fit{
   height: -webkit-fit-content;
@@ -599,9 +588,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-22{
   height: 88px;
 }
-.h-20{
-  height: 80px;
-}
 .w-7\/12{
   width: 58.333333%;
 }
@@ -611,28 +597,41 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-6{
   width: 24px;
 }
-.w-full{
-  width: 100%;
-=======
 .w-1\/6{
   width: 16.666667%;
 }
 .w-5\/6{
   width: 83.333333%;
 }
-.w-4\/12{
-  width: 33.333333%;
->>>>>>> 289b3db91fc02e8cfadcecb9b140ae32c2e65ec8
+.w-full{
+  width: 100%;
+}
+.w-100{
+  width: 400px;
 }
 .w-8\/12{
   width: 66.666667%;
 }
-<<<<<<< HEAD
+.w-4\/12{
+  width: 33.333333%;
+}
+.w-1\/3{
+  width: 33.333333%;
+}
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .flex-row-reverse{
   flex-direction: row-reverse;
+}
+.flex-col-reverse{
+  flex-direction: column-reverse;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.justify-between{
+  justify-content: space-between;
 }
 .justify-evenly{
   justify-content: space-evenly;
@@ -647,27 +646,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded-b-md{
   border-bottom-right-radius: 0.375rem;
   border-bottom-left-radius: 0.375rem;
-=======
-.w-1\/3{
-  width: 33.333333%;
-}
-.transform{
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.flex-col-reverse{
-  flex-direction: column-reverse;
-}
-.flex-wrap{
-  flex-wrap: wrap;
-}
-.justify-between{
-  justify-content: space-between;
->>>>>>> 289b3db91fc02e8cfadcecb9b140ae32c2e65ec8
 }
 .border{
   border-width: 1px;
 }
-<<<<<<< HEAD
+.border-shade-black-400{
+  --tw-border-opacity: 1;
+  border-color: rgb(34 39 49 / var(--tw-border-opacity));
+}
 .bg-transparent{
   background-color: transparent;
 }
@@ -679,39 +665,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.py-4{
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-.py-3{
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-.py-5{
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.py-6{
-  padding-top: 24px;
-  padding-bottom: 24px;
-}
-.pl-18{
-  padding-left: 72px;
-}
-.pr-12{
-  padding-right: 48px;
-}
-.pr-28{
-  padding-right: 112px;
-}
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-=======
-.border-shade-black-400{
-  --tw-border-opacity: 1;
-  border-color: rgb(34 39 49 / var(--tw-border-opacity));
-}
 .bg-cover{
   background-size: cover;
 }
@@ -721,15 +674,32 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-no-repeat{
   background-repeat: no-repeat;
 }
+.py-5{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.py-3{
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
 .px-18{
   padding-left: 72px;
   padding-right: 72px;
+}
+.pl-18{
+  padding-left: 72px;
+}
+.pr-12{
+  padding-right: 48px;
 }
 .pt-100{
   padding-top: 400px;
 }
 .pt-14{
   padding-top: 56px;
+}
+.pr-28{
+  padding-right: 112px;
 }
 .pt-41{
   padding-top: 164px;
@@ -739,7 +709,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-4{
   padding-right: 16px;
->>>>>>> 289b3db91fc02e8cfadcecb9b140ae32c2e65ec8
 }
 .text-2xl{
   font-size: 1.5rem;
@@ -758,7 +727,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .italic{
   font-style: italic;
 }
-<<<<<<< HEAD
 .text-shade-white-400{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -766,7 +734,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-primary-navy-400{
   --tw-text-opacity: 1;
   color: rgb(0 15 120 / var(--tw-text-opacity));
-=======
+}
 .text-shade-black-400{
   --tw-text-opacity: 1;
   color: rgb(34 39 49 / var(--tw-text-opacity));
@@ -778,7 +746,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-shade-grey-700{
   --tw-text-opacity: 1;
   color: rgb(92 93 118 / var(--tw-text-opacity));
->>>>>>> 289b3db91fc02e8cfadcecb9b140ae32c2e65ec8
 }
 .container{
   margin: 0 28px;
@@ -821,16 +788,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
 }
-<<<<<<< HEAD
-body {
-  background: yellow; }
-.group:hover .group-hover\:bg-tint-teal-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(141 250 201 / var(--tw-bg-opacity));
-=======
 .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+.group:hover .group-hover\:bg-tint-teal-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
 @media (min-width: 768px){
   .md\:flex{
@@ -845,7 +809,6 @@ body {
   .md\:pl-4{
     padding-left: 16px;
   }
->>>>>>> 289b3db91fc02e8cfadcecb9b140ae32c2e65ec8
 }
 
 
