@@ -55,7 +55,7 @@
         <!-- Skip to Content link -->
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pg-wp-starter' ); ?></a>
         <header id="masthead">
-            <nav id="main-navigation" class="<?php echo ($hasSubnav)? 'rounded-t-md': 'rounded-md';?> top-2 py-4 container relative flex <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-primary-navy-400'; ?> ">
+            <nav id="main-navigation" class="<?php echo ($hasSubnav)? 'rounded-t-md': 'rounded-md';?> top-2 py-5 h-20 container relative flex <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-primary-navy-400'; ?> ">
                 <div class="pl-18 logo w-7/12 h-fit">
                     <a href="/home">
                         <img src="<?php echo $image[0] ?>" alt="">

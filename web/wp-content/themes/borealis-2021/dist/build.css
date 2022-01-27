@@ -510,6 +510,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .right-0{
   right: 0px;
 }
+.top-20{
+  top: 80px;
+}
 .mt-2{
   margin-top: 8px;
 }
@@ -518,6 +521,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-15{
   margin-top: 60px;
+}
+.ml-8{
+  margin-left: 32px;
+}
+.ml-9{
+  margin-left: 36px;
 }
 .block{
   display: block;
@@ -550,6 +559,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-22{
   height: 88px;
+}
+.h-20{
+  height: 80px;
 }
 .w-7\/12{
   width: 58.333333%;
@@ -607,6 +619,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-3{
   padding-top: 12px;
   padding-bottom: 12px;
+}
+.py-5{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.py-6{
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 .pl-18{
   padding-left: 72px;

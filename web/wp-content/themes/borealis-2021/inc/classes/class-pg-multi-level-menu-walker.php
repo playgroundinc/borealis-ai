@@ -28,7 +28,7 @@ class PG_Multi_Level_Menu_Walker extends Walker_Nav_Menu {
         );
         if($submenu) {
             $indent  = str_repeat( "\t", $depth );
-            $output .= "\n$indent<div role=\"region\" class=\"submenu  bg-shade-white-400 py-3 rounded-b-md w-full flex flex-row-reverse text-primary-navy-400 absolute top-18 right-0 w-100 mb-xs-2 mb-md-5\">\n";
+            $output .= "\n$indent<div role=\"region\" class=\"submenu  bg-shade-white-400 py-3 rounded-b-md w-full flex flex-row-reverse text-primary-navy-400 absolute top-20 right-0 w-100 mb-xs-2 mb-md-5\">\n";
             $output .= "\n$indent<ul class=\"mv-xs-0 pr-28 w-8/12 flex flex-row-reverse\" role=\"menu\">\n";
         }
 
@@ -79,7 +79,7 @@ class PG_Multi_Level_Menu_Walker extends Walker_Nav_Menu {
             $output .= '</li>';
             return $output;
         }
-        $output .= '<li role="menuitem" class="ml-10 ' . $classes . ' ">';
+        $output .= '<li role="menuitem" class="ml-9 ' . $classes . ' ">';
         $output .= '<a class="group ' . $link_classes . '" href="' . $permalink . '">';
         $output .= $title;
         $output .= '<span class="group-hover:bg-tint-teal-400 nav-underline block"></span></a>';
