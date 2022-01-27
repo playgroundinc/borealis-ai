@@ -40,12 +40,37 @@
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
     <?php endif; ?>
+    <?php
+        pg_svg_spritemap(); 
+        $Menu = new PG_Custom_Menus();  
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+        $hasSubnav = false;
+        if(is_page('research') or is_page('products')) {
+            $hasSubnav = true;
+        }
+        // <?php echo ($hasSubnav)? 'h-30': 'h-16';
+    ?>
     <div id="page" class="site">
         <!-- Skip to Content link -->
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pg-wp-starter' ); ?></a>
-
         <header id="masthead">
-
+            <nav id="main-navigation" class="<?php echo ($hasSubnav)? 'rounded-t-md': 'rounded-md';?> top-2 py-4 container relative flex <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-primary-navy-400'; ?> ">
+                <div class="pl-18 logo w-7/12 h-fit">
+                    <a href="/home">
+                        <img src="<?php echo $image[0] ?>" alt="">
+                    </a>
+                </div>
+                <div class="nav-items flex text-shade-white-400 mt-2 w-5/12 h-8">
+                    <?php 
+                        $Menu->generate_menu('navigation-main', 'multi-level');
+                    ?>
+                    <a href="/search" class="pr-12">
+                        <svg class="icon-search w-6 h-6" aria-labelledby="icon-search"><title id="icon-search">Search</title><use xlink:href="#icon-search"></use></svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
         </header><!-- #masthead -->
         <main id="content">
         

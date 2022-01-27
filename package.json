@@ -21,7 +21,5 @@
   "bugs": {
     "url": "https://github.com/playgroundinc/borealis-ai/issues"
   },
-  "homepage": "https://github.com/playgroundinc/borealis-ai#readme",
-  "devDependencies": {},
-  "dependencies": {}
+  "homepage": "https://github.com/playgroundinc/borealis-ai#readme"
 }

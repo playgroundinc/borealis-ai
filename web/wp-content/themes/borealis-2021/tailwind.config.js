@@ -118,7 +118,10 @@ module.exports = {
 			"nth-child-3n-3",
 			"responsive",
 		],
-		textColor: ["responsive", "hover", "focus", "group-hover", "disabled"],
+		textColor: ["responsive", "hover", "focus", "group-hover", "disabled", 'before',
+        'after',
+        'hover::before',
+        'hover::after',],
 		transform: ["motion-safe"],
 	},
 	plugins: [

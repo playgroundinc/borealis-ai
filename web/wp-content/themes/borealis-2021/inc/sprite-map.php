@@ -163,8 +163,10 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
 
             <!-- Search Icon -->
             <symbol id="icon-search" viewBox="0 0 22 22">
-                <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18c4.4183 0 8-3.5817 8-8 0-4.41828-3.5817-8-8-8-4.41828 0-8 3.58172-8 8 0 4.4183 3.58172 8 8 8zM20 20.0004l-4.35-4.35"/></g>
+                <ellipse cx="5.83331" cy="5.77634" rx="4.08331" ry="4.04343" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.25 12.1303L8.75 8.66455" stroke="white" fill="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
+
 
             <!--  Cookie Close -->
             <symbol id="icon-cookie-close" viewBox="0 0 8 8">

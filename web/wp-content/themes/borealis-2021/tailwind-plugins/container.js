@@ -46,7 +46,10 @@ module.exports = plugin(function({ addUtilities }) {
         '.container--full': {
             maxWidth: `${breakpoints.xl}px`,
             margin: '0 auto'
-        }
+        },
+        '.nav-underline': {
+            height: '2px'
+        },
     }
     addUtilities([newUtility, ...mediaQueries], ['responsive']);
 })
