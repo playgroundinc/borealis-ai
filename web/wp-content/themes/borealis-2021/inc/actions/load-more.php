@@ -14,7 +14,12 @@ if ( ! function_exists( 'pg_load_more_results' ) ) {
             die();
         }
         $query = json_decode(wp_unslash($_POST['query']));
-        $query->paged = intval(wp_unslash($_POST['page']));
+        $page = intval(wp_unslash($_POST['page']));
+        $display_count = 12;
+        $offset = ( $page - 1 ) * $display_count;
+        $query->page = $page; 
+        $query->offset = $offset;
+
         // wp_send_json(array('status' => $query, 'markup' => json_encode($markup)), 200);
         $posts = new WP_Query($query);
         $markup = array_map(

@@ -10,7 +10,6 @@ export default class Loader {
         this.nonce = ajaxInfo.securityLoadMore;
     }
     generateMarkup = (markup) => {
-        markup.shift();
         markup.forEach((inner) => {
             const listItem = document.createElement('li');
             listItem.classList = 'border-shade-grey-500 border-b';
@@ -20,7 +19,6 @@ export default class Loader {
     }
     makeRequest = async() => {
         try {
-            console.log(this.data);
             const resp = await window.fetch(this.url, {
                 method: 'POST',
                 credentials: 'same-origin',
@@ -30,6 +28,11 @@ export default class Loader {
             console.log(json)
             if (json.status === 'success') {
                 this.generateMarkup(JSON.parse(json.markup));
+                if (this.page + 1 > this.total) {
+                    this.trigger.classList.add('hidden');
+                }
+                this.data.append('page', this.page + 1);
+                this.page = this.page + 1;
             }
         } catch(err) {
             console.log(err);
@@ -37,6 +40,7 @@ export default class Loader {
     }
     handleClick = async (e) => {
         e.preventDefault();
+        this.populateData();
         const results = await this.makeRequest();
     }
     addListeners = () => {

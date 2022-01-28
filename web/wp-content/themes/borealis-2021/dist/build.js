@@ -393,7 +393,6 @@ class Loader {
   }
 
   generateMarkup = markup => {
-    markup.shift();
     markup.forEach(inner => {
       const listItem = document.createElement('li');
       listItem.classList = 'border-shade-grey-500 border-b';
@@ -403,7 +402,6 @@ class Loader {
   };
   makeRequest = async () => {
     try {
-      console.log(this.data);
       const resp = await window.fetch(this.url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -414,6 +412,13 @@ class Loader {
 
       if (json.status === 'success') {
         this.generateMarkup(JSON.parse(json.markup));
+
+        if (this.page + 1 > this.total) {
+          this.trigger.classList.add('hidden');
+        }
+
+        this.data.append('page', this.page + 1);
+        this.page = this.page + 1;
       }
     } catch (err) {
       console.log(err);
@@ -421,6 +426,7 @@ class Loader {
   };
   handleClick = async e => {
     e.preventDefault();
+    this.populateData();
     const results = await this.makeRequest();
   };
   addListeners = () => {
@@ -461,6 +467,7 @@ class QueryParams {
     this.UrlParams = new URLSearchParams(window.location.search);
     this.UrlParams.set(this.param, value);
     history.replaceState({}, 'Borealis AI', `${location.pathname}?${this.UrlParams.toString()}`);
+    window.location.reload();
   }
 
   getParam(value) {

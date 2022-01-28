@@ -28,7 +28,11 @@ get_header();
             $args = array(
                 'post_type' => 'publications',
                 'posts_per_page' => 12,
-                'paged' => 1,
+                'page' => 1,
+                'offset' => 0,
+                'meta_key' => 'publication_date',
+                'orderby' => 'publication_date',
+                'order' => 'DESC'
             );
             if ($query) {
                 $args['s'] = $query;

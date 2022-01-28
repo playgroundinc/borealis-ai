@@ -7,6 +7,7 @@ export default class QueryParams {
         this.UrlParams = new URLSearchParams(window.location.search);
         this.UrlParams.set(this.param, value);
         history.replaceState({}, 'Borealis AI', `${location.pathname}?${this.UrlParams.toString()}`);
+        window.location.reload();
     }
     getParam(value) {
         return this.UrlParams.get(value);
