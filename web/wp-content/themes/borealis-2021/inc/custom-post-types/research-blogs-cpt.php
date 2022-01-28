@@ -20,9 +20,10 @@ if (!function_exists('pg_register_research_blog_cpt')) {
         // Register Meta.
         // Slug will automatically be pulled from when it's registered.
         $meta_values = array(
+            'authors' => 'text',
             'publication_date' => 'text',
             'post_info' => 'text',
-            'authors' => 'text'
+            'time_to_read' => 'text',  
         );
         $Research_Blogs_CPT->register_meta($meta_values);
     }
