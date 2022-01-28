@@ -55,7 +55,7 @@ export default class Loader {
     }
     handleRefresh = (e) => {
         e.preventDefault();
-        console.log('running');
+        this.trigger.classList.add('hidden');
         while (this.list.lastElementChild) {
             this.list.removeChild(this.list.lastElementChild);
         }

@@ -10,7 +10,13 @@ export default class QueryParams {
         this.appendParam = this.appendParam.bind(this);
         this.deleteParams = this.deleteParams.bind(this);
     }
-    setListData() {
+    setListData(action = 'populate') {
+        if (action === 'clear') {
+            this.UrlParams.forEach((value, key) => {
+                this.list.setAttribute(`data-${key}`, ``);
+            })
+            return;
+        }
         this.UrlParams.forEach((value, key) => {
             this.list.setAttribute(`data-${key}`, `${value}`);
         })
@@ -19,8 +25,6 @@ export default class QueryParams {
         this.UrlParams = new URLSearchParams(window.location.search);
         this.UrlParams.set(this.param, value);
         history.replaceState({}, 'Borealis AI', `${location.pathname}?${this.UrlParams.toString()}`);
-        console.log(this.list);
-        console.log(this.refresh);
         if (this.list) {
             this.setListData();
             if (this.refresh) {
@@ -37,5 +41,11 @@ export default class QueryParams {
     }
     deleteParams() {
         history.replaceState(null, null, window.location.pathname);
+        if (this.list) {
+            this.setListData('clear');
+            if (this.refresh) {
+                this.refresh.click();
+            }
+        }
     }
 }

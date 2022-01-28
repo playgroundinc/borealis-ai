@@ -766,6 +766,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-b{
   border-bottom-width: 1px;
 }
+.border-t{
+  border-top-width: 1px;
+}
 .border-shade-grey-500{
   --tw-border-opacity: 1;
   border-color: rgb(101 104 146 / var(--tw-border-opacity));

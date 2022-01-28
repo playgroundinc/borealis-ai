@@ -415,7 +415,7 @@ class Loader {
   };
   handleRefresh = e => {
     e.preventDefault();
-    console.log('running');
+    this.trigger.classList.add('hidden');
 
     while (this.list.lastElementChild) {
       this.list.removeChild(this.list.lastElementChild);
@@ -493,7 +493,14 @@ class QueryParams {
     this.deleteParams = this.deleteParams.bind(this);
   }
 
-  setListData() {
+  setListData(action = 'populate') {
+    if (action === 'clear') {
+      this.UrlParams.forEach((value, key) => {
+        this.list.setAttribute(`data-${key}`, ``);
+      });
+      return;
+    }
+
     this.UrlParams.forEach((value, key) => {
       this.list.setAttribute(`data-${key}`, `${value}`);
     });
@@ -503,8 +510,6 @@ class QueryParams {
     this.UrlParams = new URLSearchParams(window.location.search);
     this.UrlParams.set(this.param, value);
     history.replaceState({}, 'Borealis AI', `${location.pathname}?${this.UrlParams.toString()}`);
-    console.log(this.list);
-    console.log(this.refresh);
 
     if (this.list) {
       this.setListData();
@@ -526,6 +531,14 @@ class QueryParams {
 
   deleteParams() {
     history.replaceState(null, null, window.location.pathname);
+
+    if (this.list) {
+      this.setListData('clear');
+
+      if (this.refresh) {
+        this.refresh.click();
+      }
+    }
   }
 
 }

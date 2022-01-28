@@ -30,7 +30,7 @@ get_header();
             if (!empty($Query->posts)): // Empty Query check. 
         ?>
         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
-        <ul class="posts-listing" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages)?>" data-query="<?php echo esc_attr($query)?>" data-posttype="publications">
+        <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages)?>" data-query="<?php echo esc_attr($query)?>" data-posttype="publications">
             <?php foreach ($Query->posts as $post): // Start of Query loop ?>
                 <li class="border-b border-shade-grey-500">
                     <?php echo pg_generate_publication_result($post, $research_areas); ?>
