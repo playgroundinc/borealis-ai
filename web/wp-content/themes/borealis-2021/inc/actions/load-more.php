@@ -13,21 +13,20 @@ if ( ! function_exists( 'pg_load_more_results' ) ) {
             );
             die();
         }
-        $query = json_decode(wp_unslash($_POST['query']));
+        $post_type = sanitize_text_field(wp_unslash($_POST['post_type']));
+        $query = sanitize_text_field(wp_unslash($_POST['query']));
         $page = intval(wp_unslash($_POST['page']));
-        $display_count = 12;
-        $offset = ( $page - 1 ) * $display_count;
-        $query->page = $page; 
-        $query->offset = $offset;
-
-        // wp_send_json(array('status' => $query, 'markup' => json_encode($markup)), 200);
-        $posts = new WP_Query($query);
+        $taxonomies = json_decode(wp_unslash($_POST['params']));
+        $args = pg_generate_query($post_type, $query, $taxonomies, $page);
+        $posts = new WP_Query($args);
+        $taxonomies_array = get_object_vars($taxonomies);
         $markup = array_map(
-            function($post) {
-                return pg_generate_publication_result($post);
+            function($post) use ($taxonomies_array) {
+                return pg_generate_publication_result($post, $taxonomies_array['research-areas']);
             },
             $posts->posts
         );
-        wp_send_json(array('status' => 'success', 'markup' => json_encode($markup)), 200);
+        wp_reset_query();
+        wp_send_json(array('status' => 'success', 'posts' => $posts->posts, 'markup' => json_encode($markup), 'total' => $posts->max_num_pages), 200);
     }
 }

@@ -1,7 +1,7 @@
 <?php 
 
 if (!function_exists('pg_generate_publication_result')) {
-    function pg_generate_publication_result($post) {
+    function pg_generate_publication_result($post, $research_areas) {
         $allowed_html = pg_allowed_html();
         $url = get_permalink($post->ID);
         $terms = get_the_terms($post->ID, 'research-areas');

@@ -1,10 +1,13 @@
 export default class Loader {
-    constructor(trigger, list) {
+    constructor(trigger, list, params) {
+        this.resetTrigger = document.querySelector('.refresh-results');
         this.trigger = trigger;
         this.list = list;
         this.page = this.list.dataset?.page ? Number(this.list.dataset.page) + 1 : 2;
         this.total = this.list.dataset?.total ? this.list.dataset.total : 2;
-        this.query = this.list.dataset?.query ? this.list.dataset.query : false;
+        this.postType = this.list.dataset?.posttype ? this.list.dataset.posttype : 'page';
+        this.params = params;
+        this.queryParams = {};
         this.data = new FormData();
         this.url = ajaxInfo.ajaxUrl;
         this.nonce = ajaxInfo.securityLoadMore;
@@ -19,19 +22,26 @@ export default class Loader {
     }
     makeRequest = async() => {
         try {
+            console.log(this.data);
             const resp = await window.fetch(this.url, {
                 method: 'POST',
                 credentials: 'same-origin',
                 body: this.data,
             })
             const json = await resp.json();
-            console.log(json)
+            console.log(json);
             if (json.status === 'success') {
-                this.generateMarkup(JSON.parse(json.markup));
-                if (this.page + 1 > this.total) {
-                    this.trigger.classList.add('hidden');
+                this.total = json.total;
+                const markup = JSON.parse(json.markup)
+                if (markup && markup.length >0) {
+                    this.generateMarkup(markup);
                 }
-                this.data.append('page', this.page + 1);
+                if (this.page + 1 > json.total ) {
+                    this.trigger.classList.add('hidden');
+                } else {
+                    this.trigger.classList.remove('hidden');
+                }
+                this.data.set('page', this.page + 1);
                 this.page = this.page + 1;
             }
         } catch(err) {
@@ -40,17 +50,49 @@ export default class Loader {
     }
     handleClick = async (e) => {
         e.preventDefault();
-        this.populateData();
+        this.updateData();
         const results = await this.makeRequest();
     }
+    handleRefresh = (e) => {
+        e.preventDefault();
+        console.log('running');
+        while (this.list.lastElementChild) {
+            this.list.removeChild(this.list.lastElementChild);
+        }
+        this.page = 1;
+        this.updateData();
+        this.makeRequest();
+    }
     addListeners = () => {
-        this.trigger.addEventListener('click', this.handleClick);
+        if (this.trigger) {
+            this.trigger.addEventListener('click', this.handleClick);
+        }
+        this.resetTrigger.addEventListener('click', this.handleRefresh);
+    }
+    updateData = () => {
+        this.queryParams = {};
+        if (this.params && this.params.length > 0) {
+            this.params.forEach((param) => {
+                if (this.list.getAttribute(`data-${param}`)) {
+                    let terms = this.list.getAttribute(`data-${param}`).split(',');
+                    terms = terms.map((term) => Number(term));
+                    this.queryParams[param] = terms;
+                    console.log(this.queryParams);
+                }
+            })
+            this.data.set('params', JSON.stringify(this.queryParams));
+        }   
+        this.query = this.list.dataset.q;
+        if (this.query) {
+            this.data.set('query', this.query);
+        }
+        this.data.set('page', this.page);
     }
     populateData = () => {
-        this.data.append('action', 'load_more');
-        this.data.append('load_more', this.nonce);
-        this.data.append('page', this.page);
-        this.data.append('query', this.query);
+        this.data.set('action', 'load_more');
+        this.data.set('load_more', this.nonce);
+        this.data.set('page', this.page);    
+        this.data.set('post_type', this.postType);
     }
     init = () => {
         this.populateData();

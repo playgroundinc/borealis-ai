@@ -159,7 +159,6 @@ function checkboxSearchForm(container, setCount) {
       count = setCount('uncheck');
       topics.innerHTML = count; // Remove from selections object AND params
 
-      params.setParam("");
       delete selections[e.target.id];
     }
 
@@ -172,33 +171,7 @@ function checkboxSearchForm(container, setCount) {
 
     params.setParam(results.join(","));
   }
-} //   Add checkbox functionality to all taxonomy search forms
-
-const checkboxContainers = document.querySelectorAll(".checkbox-form");
-let count = 0;
-
-const setCount = action => {
-  switch (action) {
-    case 'check':
-      count = count + 1;
-      return count;
-
-    case 'uncheck':
-      count = count - 1;
-      return count;
-
-    case 'clear':
-      count = 0;
-      return count;
-
-    default:
-      return count;
-  }
-};
-
-checkboxContainers.forEach(checkboxContainer => {
-  checkboxSearchForm(checkboxContainer, setCount);
-});
+}
 
 /***/ }),
 
@@ -381,12 +354,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ Loader; }
 /* harmony export */ });
 class Loader {
-  constructor(trigger, list) {
+  constructor(trigger, list, params) {
+    this.resetTrigger = document.querySelector('.refresh-results');
     this.trigger = trigger;
     this.list = list;
     this.page = this.list.dataset?.page ? Number(this.list.dataset.page) + 1 : 2;
     this.total = this.list.dataset?.total ? this.list.dataset.total : 2;
-    this.query = this.list.dataset?.query ? this.list.dataset.query : false;
+    this.postType = this.list.dataset?.posttype ? this.list.dataset.posttype : 'page';
+    this.params = params;
+    this.queryParams = {};
     this.data = new FormData();
     this.url = ajaxInfo.ajaxUrl;
     this.nonce = ajaxInfo.securityLoadMore;
@@ -402,6 +378,7 @@ class Loader {
   };
   makeRequest = async () => {
     try {
+      console.log(this.data);
       const resp = await window.fetch(this.url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -411,13 +388,20 @@ class Loader {
       console.log(json);
 
       if (json.status === 'success') {
-        this.generateMarkup(JSON.parse(json.markup));
+        this.total = json.total;
+        const markup = JSON.parse(json.markup);
 
-        if (this.page + 1 > this.total) {
-          this.trigger.classList.add('hidden');
+        if (markup && markup.length > 0) {
+          this.generateMarkup(markup);
         }
 
-        this.data.append('page', this.page + 1);
+        if (this.page + 1 > json.total) {
+          this.trigger.classList.add('hidden');
+        } else {
+          this.trigger.classList.remove('hidden');
+        }
+
+        this.data.set('page', this.page + 1);
         this.page = this.page + 1;
       }
     } catch (err) {
@@ -426,17 +410,56 @@ class Loader {
   };
   handleClick = async e => {
     e.preventDefault();
-    this.populateData();
+    this.updateData();
     const results = await this.makeRequest();
   };
+  handleRefresh = e => {
+    e.preventDefault();
+    console.log('running');
+
+    while (this.list.lastElementChild) {
+      this.list.removeChild(this.list.lastElementChild);
+    }
+
+    this.page = 1;
+    this.updateData();
+    this.makeRequest();
+  };
   addListeners = () => {
-    this.trigger.addEventListener('click', this.handleClick);
+    if (this.trigger) {
+      this.trigger.addEventListener('click', this.handleClick);
+    }
+
+    this.resetTrigger.addEventListener('click', this.handleRefresh);
+  };
+  updateData = () => {
+    this.queryParams = {};
+
+    if (this.params && this.params.length > 0) {
+      this.params.forEach(param => {
+        if (this.list.getAttribute(`data-${param}`)) {
+          let terms = this.list.getAttribute(`data-${param}`).split(',');
+          terms = terms.map(term => Number(term));
+          this.queryParams[param] = terms;
+          console.log(this.queryParams);
+        }
+      });
+      this.data.set('params', JSON.stringify(this.queryParams));
+    }
+
+    this.query = this.list.dataset.q;
+
+    if (this.query) {
+      this.data.set('query', this.query);
+    }
+
+    this.data.set('page', this.page);
   };
   populateData = () => {
-    this.data.append('action', 'load_more');
-    this.data.append('load_more', this.nonce);
-    this.data.append('page', this.page);
-    this.data.append('query', this.query);
+    this.data.set('action', 'load_more');
+    this.data.set('load_more', this.nonce);
+    this.data.set('page', this.page);
+    this.data.set('post_type', this.postType);
   };
   init = () => {
     this.populateData();
@@ -460,14 +483,36 @@ __webpack_require__.r(__webpack_exports__);
 class QueryParams {
   constructor(param) {
     this.param = param;
+    this.list = document.querySelector('.posts-listing');
+    this.refresh = document.querySelector('.refresh-results');
     this.UrlParams = new URLSearchParams(window.location.search);
+    this.setListData = this.setListData.bind(this);
+    this.setParam = this.setParam.bind(this);
+    this.getParam = this.getParam.bind(this);
+    this.appendParam = this.appendParam.bind(this);
+    this.deleteParams = this.deleteParams.bind(this);
+  }
+
+  setListData() {
+    this.UrlParams.forEach((value, key) => {
+      this.list.setAttribute(`data-${key}`, `${value}`);
+    });
   }
 
   setParam(value) {
     this.UrlParams = new URLSearchParams(window.location.search);
     this.UrlParams.set(this.param, value);
     history.replaceState({}, 'Borealis AI', `${location.pathname}?${this.UrlParams.toString()}`);
-    window.location.reload();
+    console.log(this.list);
+    console.log(this.refresh);
+
+    if (this.list) {
+      this.setListData();
+
+      if (this.refresh) {
+        this.refresh.click();
+      }
+    }
   }
 
   getParam(value) {
@@ -596,12 +641,9 @@ __webpack_require__.r(__webpack_exports__);
 
 function loadMore() {
   const loadMoreButton = document.querySelector('.load-more');
-
-  if (loadMoreButton) {
-    const list = document.querySelector('.posts-listing');
-    const PostLoader = new _classes_class_loader__WEBPACK_IMPORTED_MODULE_0__["default"](loadMoreButton, list);
-    PostLoader.init();
-  }
+  const list = document.querySelector('.posts-listing');
+  const PostLoader = new _classes_class_loader__WEBPACK_IMPORTED_MODULE_0__["default"](loadMoreButton, list, ['research-areas']);
+  PostLoader.init();
 }
 
 /***/ }),
@@ -618,9 +660,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ search; }
 /* harmony export */ });
 /* harmony import */ var _classes_class_search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/class-search */ "./src/js/scripts/classes/class-search.js");
-/* harmony import */ var _classes_class_query_params__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/class-query-params */ "./src/js/scripts/classes/class-query-params.js");
-/* harmony import */ var _checkbox_searchform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./checkbox-searchform */ "./src/js/scripts/checkbox-searchform.js");
-
+/* harmony import */ var _checkbox_searchform__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./checkbox-searchform */ "./src/js/scripts/checkbox-searchform.js");
 
 
 function search() {
@@ -631,7 +671,34 @@ function search() {
       const SearchBar = new _classes_class_search__WEBPACK_IMPORTED_MODULE_0__["default"](form);
       SearchBar.init();
     });
-  }
+  } //   Add checkbox functionality to all taxonomy search forms
+
+
+  const checkboxContainers = document.querySelectorAll(".checkbox-form");
+  let count = 0;
+
+  const setCount = action => {
+    switch (action) {
+      case 'check':
+        count = count + 1;
+        return count;
+
+      case 'uncheck':
+        count = count - 1;
+        return count;
+
+      case 'clear':
+        count = 0;
+        return count;
+
+      default:
+        return count;
+    }
+  };
+
+  checkboxContainers.forEach(checkboxContainer => {
+    (0,_checkbox_searchform__WEBPACK_IMPORTED_MODULE_1__["default"])(checkboxContainer, setCount);
+  });
 }
 ;
 

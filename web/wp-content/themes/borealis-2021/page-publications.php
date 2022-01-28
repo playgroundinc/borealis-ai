@@ -25,45 +25,23 @@ get_header();
         <?php
             $research_areas = pg_get_query_values($_GET, 'research-areas');
 
-            $args = array(
-                'post_type' => 'publications',
-                'posts_per_page' => 12,
-                'page' => 1,
-                'offset' => 0,
-                'meta_key' => 'publication_date',
-                'orderby' => 'publication_date',
-                'order' => 'DESC'
-            );
-            if ($query) {
-                $args['s'] = $query;
-            }
-            if (!empty($research_areas)) {
-                $args['tax_query'] = array(
-                    'relation' => 'OR',
-                    array(
-                        'taxonomy' => 'research-areas',
-                        'field'    => 'id',
-                        'terms'    => $research_areas,
-                    ),
-                );
-            }
+            $args = pg_generate_query('publications', $query, array('research-areas' => $research_areas));
             $Query = new WP_Query($args);
-            wp_reset_query();
             if (!empty($Query->posts)): // Empty Query check. 
         ?>
-        <ul class="posts-listing" data-page="1" data-total="<?php echo esc_attr($Query->max_num_pages)?>" data-query="<?php echo esc_attr(json_encode($args))?>">
+        <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
+        <ul class="posts-listing" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages)?>" data-query="<?php echo esc_attr($query)?>" data-posttype="publications">
             <?php foreach ($Query->posts as $post): // Start of Query loop ?>
                 <li class="border-b border-shade-grey-500">
-                    <?php echo pg_generate_publication_result($post); ?>
+                    <?php echo pg_generate_publication_result($post, $research_areas); ?>
                 </li>
             <?php   endforeach;  // End of Query Loop ?>
         </ul>
-        <?php if (intval($Query->max_num_pages) > 1): ?>
-            <div class="container">
-                <button class="block h4 pt-10 pb-8 text-center w-full load-more"><?php echo esc_html('Load More Publications') ?></button>
-            </div>
+        <div class="container">
+            <button class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> block h4 pt-10 pb-8 text-center w-full load-more"><?php echo esc_html('Load More Publications') ?></button>
+        </div>
         <?php endif;?>
-        <?php endif; // End of Empty Query check ?> 
+        <?php wp_reset_query(); ?>
     </main>
 <?php
 get_footer();
