@@ -376,33 +376,37 @@ class Loader {
       this.list.append(listItem);
     });
   };
+  toggleTrigger = hide => {
+    if (hide) {
+      this.trigger.classList.add('hidden');
+      return;
+    }
+
+    this.trigger.classList.remove('hidden');
+  };
+  handleSuccess = data => {
+    this.total = data.total;
+    const markup = JSON.parse(data.markup);
+
+    if (markup && markup.length > 0) {
+      this.generateMarkup(markup);
+    }
+
+    this.toggleTrigger(this.page + 1 > data.total);
+    this.data.set('page', this.page + 1);
+    this.page = this.page + 1;
+  };
   makeRequest = async () => {
     try {
-      console.log(this.data);
       const resp = await window.fetch(this.url, {
         method: 'POST',
         credentials: 'same-origin',
         body: this.data
       });
-      const json = await resp.json();
-      console.log(json);
+      const data = await resp.json();
 
-      if (json.status === 'success') {
-        this.total = json.total;
-        const markup = JSON.parse(json.markup);
-
-        if (markup && markup.length > 0) {
-          this.generateMarkup(markup);
-        }
-
-        if (this.page + 1 > json.total) {
-          this.trigger.classList.add('hidden');
-        } else {
-          this.trigger.classList.remove('hidden');
-        }
-
-        this.data.set('page', this.page + 1);
-        this.page = this.page + 1;
+      if (data.status === 'success') {
+        this.handleSuccess(data);
       }
     } catch (err) {
       console.log(err);
@@ -411,11 +415,11 @@ class Loader {
   handleClick = async e => {
     e.preventDefault();
     this.updateData();
-    const results = await this.makeRequest();
+    this.makeRequest();
   };
   handleRefresh = e => {
     e.preventDefault();
-    this.trigger.classList.add('hidden');
+    this.toggleTrigger(true);
 
     while (this.list.lastElementChild) {
       this.list.removeChild(this.list.lastElementChild);
@@ -426,13 +430,10 @@ class Loader {
     this.makeRequest();
   };
   addListeners = () => {
-    if (this.trigger) {
-      this.trigger.addEventListener('click', this.handleClick);
-    }
-
+    this.trigger.addEventListener('click', this.handleClick);
     this.resetTrigger.addEventListener('click', this.handleRefresh);
   };
-  updateData = () => {
+  setQueryParams = () => {
     this.queryParams = {};
 
     if (this.params && this.params.length > 0) {
@@ -441,18 +442,21 @@ class Loader {
           let terms = this.list.getAttribute(`data-${param}`).split(',');
           terms = terms.map(term => Number(term));
           this.queryParams[param] = terms;
-          console.log(this.queryParams);
         }
       });
       this.data.set('params', JSON.stringify(this.queryParams));
     }
-
+  };
+  setQuery = () => {
     this.query = this.list.dataset.q;
 
     if (this.query) {
       this.data.set('query', this.query);
     }
-
+  };
+  updateData = () => {
+    this.setQueryParams();
+    this.setQuery();
     this.data.set('page', this.page);
   };
   populateData = () => {
