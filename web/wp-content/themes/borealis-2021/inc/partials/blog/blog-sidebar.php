@@ -8,20 +8,25 @@ if (!function_exists('pg_generate_blog_sidebar')) {
             if (isset($table_of_contents) && !empty($table_of_contents)) {
                 foreach($table_of_contents as $key => $item) {
                 ?>
-                    <h2 class="font-bold text-xl">Custom Section: <?php echo esc_html($item->title); ?></h2>
+                    <a class="text-primary-electric-blue-400 hover:text-primary-electric-purple-400 focus:text-primary-electric-purple-400" href="#<?php echo pg_slugify($item->title); ?>">
+                        <p class="mb-4 paragraph-sm cursor-pointer"><?php echo esc_html($item->title); ?></p>
+                    </a>
                 <?php
                     if (isset($item->subsections) && !empty($item->subsections)) {
                         ?> 
-                            <h3 class="font-bold">Subsections</h3>
                             <ul>
-                        <?php
-                            foreach($item->subsections as $subsection) {
-                                ?>
-                                    <li><?php echo esc_html($subsection) ?></li>
                                 <?php
-                            }   
-                        ?>
-                        </ul>
+                                    foreach($item->subsections as $subsection) {
+                                        ?>
+                                            <li class="mb-4 pl-5 paragraph-sm cursor-pointer">
+                                                <a class="text-primary-electric-blue-400 hover:text-primary-electric-purple-400 focus:text-primary-electric-purple-400" href="#<?php echo pg_slugify($subsection); ?>">
+                                                    <?php echo esc_html($subsection) ?>
+                                                </a>
+                                            </li>
+                                        <?php
+                                    }   
+                                ?>
+                            </ul>
                         <?php
                     }
                 }

@@ -3534,6 +3534,7 @@ function customSubsectionBlock() {
       createBlock = _wp$blocks.createBlock;
   var _wp = wp,
       i18n = _wp.i18n;
+  var InnerBlocks = wp.blockEditor.InnerBlocks;
   var blockSlug = "custom-subsection-block"; // slug for the block
 
   var blockTitle = "Create custom subsection block";
@@ -3579,11 +3580,14 @@ function customSubsectionBlock() {
           tagName: "p",
           placeholder: "Please provide a title"
         }]
+      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+        allowedBlocks: ['core/paragraph']
       }))];
     },
     save: function save(_ref) {
       var attributes = _ref.attributes;
       var title = attributes.title;
+      return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
 }
