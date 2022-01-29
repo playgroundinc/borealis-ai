@@ -537,9 +537,33 @@ Ensure the default browser behavior of the `hidden` attribute.
   white-space: nowrap;
   border-width: 0;
 }
+.fixed{
+  position: fixed;
+}
+.absolute{
+  position: absolute;
+}
 .sticky{
   position: -webkit-sticky;
   position: sticky;
+}
+.right-0{
+  right: 0px;
+}
+.left-0{
+  left: 0px;
+}
+.top-96{
+  top: 384px;
+}
+.top-4{
+  top: 16px;
+}
+.right-4{
+  right: 16px;
+}
+.m-auto{
+  margin: auto;
 }
 .mx-auto{
   margin-left: auto;
@@ -548,20 +572,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-19{
   margin-top: 76px;
 }
-.mb-5{
-  margin-bottom: 20px;
+.mb-6{
+  margin-bottom: 24px;
+}
+.ml-1{
+  margin-left: 4px;
 }
 .mt-15{
   margin-top: 60px;
-}
-.mb-6{
-  margin-bottom: 24px;
 }
 .mt-4{
   margin-top: 16px;
 }
 .mb-4{
   margin-bottom: 16px;
+}
+.ml-2{
+  margin-left: 8px;
 }
 .block{
   display: block;
@@ -575,8 +602,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hidden{
   display: none;
 }
+.h-6{
+  height: 24px;
+}
 .w-1\/6{
   width: 16.666667%;
+}
+.w-6{
+  width: 24px;
 }
 .w-5\/6{
   width: 83.333333%;
@@ -589,6 +622,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-1\/3{
   width: 33.333333%;
+}
+.w-2\/5{
+  width: 40%;
 }
 .w-3\/8{
   width: calc((100% /8) * 3);
@@ -628,6 +664,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(34 39 49 / var(--tw-border-opacity));
 }
+.bg-shade-white-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-shade-grey-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 244 251 / var(--tw-bg-opacity));
+}
 .bg-cover{
   background-size: cover;
 }
@@ -641,14 +685,29 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 72px;
   padding-right: 72px;
 }
+.py-10{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.py-8{
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.px-12{
+  padding-left: 48px;
+  padding-right: 48px;
+}
 .pt-100{
   padding-top: 400px;
 }
 .pt-14{
   padding-top: 56px;
 }
-.pb-5{
-  padding-bottom: 20px;
+.pb-4{
+  padding-bottom: 16px;
+}
+.pl-12{
+  padding-left: 48px;
 }
 .pt-41{
   padding-top: 164px;
@@ -700,6 +759,9 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1300px;
   }
 }
+.border-radius-10{
+  border-radius: 10px;
+}
 .max-w-sidebar{
   max-width: 220px;
 }
@@ -731,14 +793,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
 }
-.visited\:text-primary-electric-purple-400:visited{
-  --tw-text-opacity: 1;
-  color: rgb(96 55 215 / var(--tw-text-opacity));
-}
-.visited\:text-primary-electric-blue-400:visited{
-  --tw-text-opacity: 1;
-  color: rgb(0 68 255 / var(--tw-text-opacity));
-}
 .hover\:text-primary-electric-purple-400:hover{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
@@ -750,10 +804,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .focus\:text-primary-electric-purple-400:focus{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
-}
-.group:hover .group-hover\:bg-tint-teal-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
 @media (min-width: 768px){
   .md\:flex{

@@ -85,6 +85,8 @@ require get_template_directory() . '/inc/partials/search-bar.php';
 // Blogs
 require get_template_directory() . '/inc/partials/blog/blog-sidebar.php';
 require get_template_directory() . '/inc/partials/blog/blog-header.php';
+require get_template_directory() . '/inc/partials/blog/blog-cite.php';
+
 
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';

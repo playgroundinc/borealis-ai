@@ -47,9 +47,12 @@ module.exports = plugin(function({ addUtilities }) {
             maxWidth: `${breakpoints.xl}px`,
             margin: '0 auto'
         },
+        '.border-radius-10': {
+            borderRadius: `10px`,
+        },
         '.max-w-sidebar': {
             maxWidth: `220px`,
-        }
+        },
     }
     addUtilities([newUtility, ...mediaQueries], ['responsive']);
 })
