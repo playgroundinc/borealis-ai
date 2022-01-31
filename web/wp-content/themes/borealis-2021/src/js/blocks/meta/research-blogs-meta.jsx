@@ -11,7 +11,7 @@ export default function researchBlogMetaBlock() {
     const meta_fields = [
         'publication_date', 
         'time_to_read',
-        'authors',
+        'authors'
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
