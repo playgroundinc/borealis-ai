@@ -28,20 +28,6 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
      **/
     function pg_svg_spritemap() {
 ?>
-        <svg height="0" width="0" aria-hidden="true" style="position:absolute; left: 100%" focusable="false"> 
-            <!--  Slanted Clip Path -->
-            <defs>
-                <!-- Transform values are defined by dividing 1 by the respective viewbox sizes of the original svg -->
-                <!-- Need to add the clipPathUnits for this to work -->
-                <!-- Pulled from this answer https://stackoverflow.com/questions/53618192/create-responsive-svg-clip-path-making-svg-path-responsive -->
-                <clipPath transform="scale(0.001669449082, 0.002222222222222)" id="clip-path-slanted" clipPathUnits="objectBoundingBox">
-                    <path d="M585 450H14c-9 0-15-9-13-18L136 10c2-6 7-9 13-9h436c7 0 14 6 14 13v422c0 7-7 14-14 14z" stroke="#000"/>
-                </clipPath>
-                <clipPath transform="scale(0.001669449082, 0.002222222222222)" id="clip-path-slanted-reverse" clipPathUnits="objectBoundingBox">
-                    <path d="M584.83 449.5H14C6.54413 449.5.5 443.456.5 436V14C.5 6.54416 6.54413.5 14 .5h436.01c5.873 0 11.072 3.79709 12.859 9.39157L597.69 431.892c2.782 8.709-3.716 17.608-12.86 17.608z" stroke="#000"/>
-                </clipPath>
-            </defs>
-        </svg>
         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display: none">
 
 
@@ -77,8 +63,8 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
             </symbol>
 
             <!-- Down Chevron -->
-            <symbol id="icon-chevron" viewBox="0 0 13 12">
-                <path d="M1.21967 3.21967c.292893-.292893.767767-.292893 1.06066 0L6.25 7.18934l3.96967-3.96967c.29289-.292893.76777-.292893 1.06063 0 .2929.292893.2929.767767 0 1.06066l-4.49997 4.5c-.29289.29289-.76777.29289-1.06066 0l-4.5-4.5c-.292893-.292893-.292893-.767767 0-1.06066z" fill="currentColor" fill-rule="evenodd"/>
+            <symbol id="icon-chevron" viewBox="0 0 10 10">
+                <path d="m2 3.5 3 3.066L8 3.5" stroke="#5C5D76" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
 
             <!-- Hamburger Icon -->
@@ -175,8 +161,8 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
             </symbol>
 
             <!-- Search Icon -->
-            <symbol id="icon-search" viewBox="0 0 22 22">
-                <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18c4.4183 0 8-3.5817 8-8 0-4.41828-3.5817-8-8-8-4.41828 0-8 3.58172-8 8 0 4.4183 3.58172 8 8 8zM20 20.0004l-4.35-4.35"/></g>
+            <symbol id="icon-search" viewBox="0 0 24 24">
+                <g transform="translate(4 4)" stroke="#5C5D76" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="6.417" cy="6.354" rx="6.417" ry="6.354"/><path d="M16.5 16.339 11 10.893"/></g>
             </symbol>
 
             <!--  Cookie Close -->

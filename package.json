@@ -23,5 +23,8 @@
   },
   "homepage": "https://github.com/playgroundinc/borealis-ai#readme",
   "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "cross": "^1.0.0",
+    "env": "0.0.2"
+  }
 }

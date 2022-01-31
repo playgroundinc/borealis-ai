@@ -33,13 +33,14 @@
 </head>
 
 
-<body <?php body_class(); ?>>
+<body <?php body_class('text-shade-black-400'); ?>>
     <?php if ( ! empty( $settings['gtm_container_id'] ) ) : ?>
         <!-- Google Tag Manager (noscript) -->
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo esc_attr($settings['gtm_container_id'])?>"
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
     <?php endif; ?>
+    <?php pg_svg_spritemap(); ?>
     <div id="page" class="site">
     <!-- Skip to Content link -->
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pg-wp-starter' ); ?></a>

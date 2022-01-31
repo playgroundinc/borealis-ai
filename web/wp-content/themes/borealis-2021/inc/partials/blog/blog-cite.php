@@ -29,6 +29,8 @@ if (!function_exists('pg_generate_blog_sidebar_cite')) {
             && isset($url) && !empty($url)) {
                 ?>
                     <div id="modal" class="bg-navy-400 w-2/5 m-auto fixed right-0 left-0 top-96 bg-shade-white-400 border-radius-10 hidden">
+                        <div class="overflow-hidden bg-shade-black-400 bg-opacity-70 hidden">
+                        </div>
                         <button id="close-cite" class="absolute top-4 right-4">
                             <svg class="icon-close w-6 h-6" aria-labelledby="icon-close">
                                 <title id="icon-close"></title>
