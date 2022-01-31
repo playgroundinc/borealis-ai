@@ -26,7 +26,7 @@ if (!function_exists('pg_blog_modal_script')) {
 }
 
 if (!function_exists('pg_blog_share_script')) {
-    function pg_blog_modal_script() {
+    function pg_blog_share_script() {
         wp_enqueue_script('blogShare', get_template_directory_uri() . '/dist/blogShare.js', array(), '20151215', true);
     }
 }

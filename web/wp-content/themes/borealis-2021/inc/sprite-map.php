@@ -91,6 +91,14 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
                 <path d="M16 15H17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
 
+            <!-- Share Icon -->
+            <symbol id="icon-share" viewBox="0 0 24 24" fill="none">
+                <circle cx="6" cy="12" r="3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="18" cy="6" r="3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="18" cy="18" r="3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.69922 10.6998L15.2992 7.2998" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.69922 13.2998L15.2992 16.6998" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
 
             <!-- Plus Icon -->
             <symbol id="icon-plus" viewBox="0 0 22 22">
