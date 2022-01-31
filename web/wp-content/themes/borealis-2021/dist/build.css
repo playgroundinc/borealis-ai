@@ -1022,6 +1022,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
 }
+.visited\:text-primary-purple-400:visited{
+  --tw-text-opacity: 1;
+  color: rgb(85 0 155 / var(--tw-text-opacity));
+}
 .hover\:cursor-pointer:hover{
   cursor: pointer;
 }
