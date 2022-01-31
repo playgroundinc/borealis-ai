@@ -40,7 +40,7 @@ if ( ! function_exists( 'pg_render_tag_cloud_item_block' ) ) {
         ob_start();
         ?>
             <?php if (!empty($attributes->link) and !empty($attributes->text)): ?>
-                <a class="text-primary-electric-blue-400 w-1/3 mb-6 hover:underline" href="<?php echo esc_attr($attributes->link)?>"><?php echo $attributes->text ?></a>
+                <a class="text-primary-electric-blue-400 hover:underline visited:text-primary-purple-400 w-1/3 mb-6" href="<?php echo esc_attr($attributes->link)?>"><?php echo $attributes->text ?></a>
             <?php endif; ?>
         <?php
         return ob_get_clean();

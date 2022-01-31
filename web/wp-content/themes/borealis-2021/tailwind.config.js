@@ -3,9 +3,13 @@ const { breakpoints, spacing, duration, delay } = require("./utils/constants");
 // const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-	content: ["./*", "./src/**/*{jsx, js}", "./inc/*", "./inc/**/*"],
+	content: ["./*", "./src/**/*", "./src/**/**/*", "./src/**/**/**/*", "./inc/*", "./inc/**/*"],
   	darkMode: false, // or 'media' or 'class'
   	theme: {
+		borderRadius: {
+			full: "50%",
+			pill: "30px",
+		},
     spacing: spacing,
     extend: {
 		// Colors use font-weight rules:
@@ -66,6 +70,7 @@ module.exports = {
 				grey: {
 					100: "#F4F4FB", // Light Grey
 					400: "#D8D8E4", // Medium Grey
+					500: "#656892", // Medium Dark Grey
 					700: "#5C5D76", // Dark Grey
 				},
 				white: {
@@ -122,7 +127,7 @@ module.exports = {
 			"nth-child-3n-3",
 			"responsive",
 		],
-		textColor: ["responsive", "hover", "focus", "group-hover", "disabled"],
+		textColor: ["responsive", "hover", "visited", "focus", "group-hover", "disabled"],
 		transform: ["motion-safe"],
 	},
 	plugins: [
