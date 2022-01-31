@@ -75,7 +75,7 @@ module.exports = {
 				},
 				white: {
 					400: "#FFFFFF" // White
-				},
+				}
 			},
 			alert: {
 				error: {

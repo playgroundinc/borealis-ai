@@ -24,7 +24,6 @@ if (!function_exists('pg_register_research_blog_cpt')) {
             'publication_date' => 'text',
             'post_info' => 'text',
             'time_to_read' => 'text',  
-            'cite' => 'text',
         );
         $Research_Blogs_CPT->register_meta($meta_values);
     }
