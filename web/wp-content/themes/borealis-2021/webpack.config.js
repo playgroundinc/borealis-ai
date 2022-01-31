@@ -25,6 +25,7 @@ const autoprefixer = require('autoprefixer')
 	tabbedContent: JS_DIR + '/scripts/tabbed-content.js',
 	carousel: JS_DIR + '/scripts/carousel.js',
 	blogModal: JS_DIR + '/scripts/blogModal.js',
+	blogShare: JS_DIR + '/scripts/blogShare.js',
  }
  
  const output = {

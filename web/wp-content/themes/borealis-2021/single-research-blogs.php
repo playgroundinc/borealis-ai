@@ -27,6 +27,9 @@ $hero_image_url = get_the_post_thumbnail_url($post->ID, 'full');
                     </svg>
                     <button class="ml-2 paragraph-sm">Cite</button>
                 </div>
+                <div>
+                    <?php echo pg_generate_blog_share($post->ID); ?>
+                </div>
             </aside>
             <div class="page__content w-5/6">
                 <div class="mx-auto w-5/6">
