@@ -550,38 +550,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .top-2{
   top: 8px;
 }
-.top-20{
-  top: 80px;
-}
-.right-0{
-  right: 0px;
-}
-.top-0{
-  top: 0px;
-}
-.right-2{
-  right: 8px;
-}
-.top-4{
-  top: 16px;
-}
-.top-8{
-  top: 32px;
-}
 .top-7{
   top: 28px;
-}
-.right-7{
-  right: 28px;
 }
 .right-6{
   right: 24px;
 }
-.top-18{
-  top: 72px;
-}
 .top-16{
   top: 64px;
+}
+.right-0{
+  right: 0px;
 }
 .mx-auto{
   margin-left: auto;
@@ -592,9 +571,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-19{
   margin-top: 76px;
-}
-.ml-9{
-  margin-left: 36px;
 }
 .mt-15{
   margin-top: 60px;
@@ -634,9 +610,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-full{
   width: 100%;
 }
-.w-100{
-  width: 400px;
-}
 .w-8\/12{
   width: 66.666667%;
 }
@@ -645,17 +618,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-1\/3{
   width: 33.333333%;
-}
-.max-w-sm{
-  max-width: 24rem;
-}
-.max-w-xs{
-  max-width: 20rem;
-}
-.max-w-fit{
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
 }
 .grow{
   flex-grow: 1;
@@ -684,10 +646,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded-t-lg{
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-}
-.rounded-b-md{
-  border-bottom-right-radius: 0.375rem;
-  border-bottom-left-radius: 0.375rem;
 }
 .rounded-b-lg{
   border-bottom-right-radius: 0.5rem;
@@ -720,9 +678,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-no-repeat{
   background-repeat: no-repeat;
 }
-.p-12{
-  padding: 48px;
-}
 .p-2{
   padding: 8px;
 }
@@ -734,21 +689,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 12px;
   padding-bottom: 12px;
 }
-.px-18{
-  padding-left: 72px;
-  padding-right: 72px;
-}
 .py-1{
   padding-top: 4px;
   padding-bottom: 4px;
 }
-.px-10{
-  padding-left: 40px;
-  padding-right: 40px;
-}
 .px-5{
   padding-left: 20px;
   padding-right: 20px;
+}
+.px-18{
+  padding-left: 72px;
+  padding-right: 72px;
 }
 .pb-2{
   padding-bottom: 8px;
@@ -759,17 +710,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-2{
   padding-top: 8px;
 }
-.pr-12{
-  padding-right: 48px;
-}
 .pt-100{
   padding-top: 400px;
 }
 .pt-14{
   padding-top: 56px;
-}
-.pr-28{
-  padding-right: 112px;
 }
 .pt-41{
   padding-top: 164px;
