@@ -473,6 +473,72 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 14px;
   }
 }
+.icon--lg{
+  font-size: 24px;
+  font-family: Inter, sans-serif;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+@media (min-width: 375px){
+  .icon--lg{
+    font-size: calc(24px + ((24 - 24) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .icon--lg{
+    font-size: 24px;
+  }
+}
+.icon-md{
+  font-size: 12px;
+  font-family: Inter, sans-serif;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+@media (min-width: 375px){
+  .icon-md{
+    font-size: calc(12px + ((12 - 12) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .icon-md{
+    font-size: 12px;
+  }
+}
+.icon-sm{
+  font-size: 10px;
+  font-family: Inter, sans-serif;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+@media (min-width: 375px){
+  .icon-sm{
+    font-size: calc(10px + ((10 - 10) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .icon-sm{
+    font-size: 10px;
+  }
+}
 .icon{
   width: 1em;
   height: 1em;
@@ -526,6 +592,47 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.pill{
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+@media (min-width: 375px){
+  .pill{
+    font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .pill{
+    font-size: 14px;
+  }
+}
+.pill{
+  display: inline-block;
+  border-radius: 30px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(34 39 49 / var(--tw-border-opacity));
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.pill-active{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 68 255 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 68 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -575,11 +682,29 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-15{
   margin-top: 60px;
 }
+.mr-2{
+  margin-right: 8px;
+}
+.ml-2{
+  margin-left: 8px;
+}
+.mr-7{
+  margin-right: 28px;
+}
+.mb-4{
+  margin-bottom: 16px;
+}
 .mb-6{
   margin-bottom: 24px;
 }
+.mt-4{
+  margin-top: 16px;
+}
 .block{
   display: block;
+}
+.inline-block{
+  display: inline-block;
 }
 .flex{
   display: flex;
@@ -654,6 +779,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border{
   border-width: 1px;
 }
+.border-0{
+  border-width: 0px;
+}
+.border-b{
+  border-bottom-width: 1px;
+}
+.border-shade-grey-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(101 104 146 / var(--tw-border-opacity));
+}
 .border-shade-black-400{
   --tw-border-opacity: 1;
   border-color: rgb(34 39 49 / var(--tw-border-opacity));
@@ -716,14 +851,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-14{
   padding-top: 56px;
 }
+.pl-10{
+  padding-left: 40px;
+}
+.pr-4{
+  padding-right: 16px;
+}
+.pt-12{
+  padding-top: 48px;
+}
+.pb-6{
+  padding-bottom: 24px;
+}
 .pt-41{
   padding-top: 164px;
 }
 .pt-8{
   padding-top: 32px;
 }
-.pr-4{
-  padding-right: 16px;
+.text-center{
+  text-align: center;
 }
 .text-2xl{
   font-size: 1.5rem;
@@ -754,13 +901,42 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(34 39 49 / var(--tw-text-opacity));
 }
+.text-shade-grey-700{
+  --tw-text-opacity: 1;
+  color: rgb(92 93 118 / var(--tw-text-opacity));
+}
 .text-primary-electric-blue-400{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
 }
-.text-shade-grey-700{
-  --tw-text-opacity: 1;
-  color: rgb(92 93 118 / var(--tw-text-opacity));
+.underline{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+.opacity-0{
+  opacity: 0;
+}
+.opacity-100{
+  opacity: 1;
+}
+.outline{
+  outline-style: solid;
+}
+.ring{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.transition-opacity{
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-300{
+  transition-duration: 300ms;
 }
 .container{
   margin: 0 28px;
@@ -801,11 +977,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   visibility: hidden;
   opacity: 0;
 }
+.slide-toggle--active{
+  opacity: 1;
+  visibility: visible;
+}
 .\[https\:\/\/pantheon\.io\/docs\/guides\/multisite\/workflows\/\#deploying-across-environments\]{
   https: //pantheon.io/docs/guides/multisite/workflows/#deploying-across-environments;
 }
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
+}
+.visited\:text-primary-purple-400:visited{
+  --tw-text-opacity: 1;
+  color: rgb(85 0 155 / var(--tw-text-opacity));
+}
+.hover\:cursor-pointer:hover{
+  cursor: pointer;
 }
 .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
