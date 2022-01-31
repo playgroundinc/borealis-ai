@@ -47,6 +47,10 @@ module.exports = plugin(function({ addUtilities }) {
             maxWidth: `${breakpoints.xl}px`,
             margin: '0 auto'
         },
+        '.nav-container': {
+            maxWidth: '1400px',
+            margin: '18px auto',
+        },
         '.nav-underline': {
             height: '2px'
         },

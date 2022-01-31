@@ -43,8 +43,12 @@
     <?php
         pg_svg_spritemap(); 
         $Menu = new PG_Custom_Menus();  
-        $custom_logo_id = get_theme_mod( 'custom_logo' );
-        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+        $custom_logo_id = get_theme_mod( 'custom_logo' );        
+        $image = wp_get_attachment_image_src( $custom_logo_id , 'full' )[0];
+        $imgPath= parse_url($image)['path'];
+        $url = get_home_url();
+        $logoUrl = $url . $imgPath;
+
         $hasSubnav = false;
         if(is_page('research') or is_page('products')) {
             $hasSubnav = true;
@@ -54,20 +58,22 @@
         <!-- Skip to Content link -->
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pg-wp-starter' ); ?></a>
         <header id="masthead">
-            <nav id="main-navigation" class="<?php echo ($hasSubnav)? 'rounded-t-md': 'rounded-md';?> top-2 py-5 h-20 container relative flex <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-primary-navy-400'; ?> ">
-                <div class="pl-18 logo w-7/12 h-fit">
-                    <a href="/home">
-                        <img src="<?php echo $image[0] ?>" alt="">
-                    </a>
+            <nav id="main-navigation" class="<?php echo ($hasSubnav)? 'rounded-t-lg': 'rounded-lg';?> relative mt-4 top-2 pb-2 pt-4 nav-container <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-primary-navy-400'; ?> ">
+                <div class="relative flex">
+                    <div class="pt-2 logo h-fit container">
+                        <a href="/home">
+                            <img src="<?php echo $logoUrl ?>" alt="">
+                        </a>
+                    </div>
+                    <div class="container nav-items grow flex text-shade-white-400 py-4">
+                        <?php 
+                            $Menu->generate_menu('navigation-main', 'multi-level');
+                        ?>
+                    </div>
                 </div>
-                <div class="nav-items flex text-shade-white-400 mt-2 w-5/12 h-8">
-                    <?php 
-                        $Menu->generate_menu('navigation-main', 'multi-level');
-                    ?>
-                    <a href="/search" class="pr-12">
-                        <svg class="icon-search w-6 h-6" aria-labelledby="icon-search"><title id="icon-search">Search</title><use xlink:href="#icon-search"></use></svg>
-                    </a>
-                </div>
+                <a href="/search" class="p-2 absolute top-7 right-6">
+                    <svg class="w-6 h-6 icon-search" aria-labelledby="icon-search"><title id="icon-search">Search</title><use xlink:href="#icon-search"></use></svg>
+                </a>
             </nav>
         </div>
         </header><!-- #masthead -->
