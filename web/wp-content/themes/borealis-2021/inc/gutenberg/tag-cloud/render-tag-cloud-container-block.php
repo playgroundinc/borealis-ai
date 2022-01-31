@@ -42,11 +42,11 @@ if ( ! function_exists( 'pg_render_tag_cloud_container_block' ) ) {
         ob_start();
         ?>
             <section class="container flex px-18" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
-                <?php if (!empty($attributes->title)): ?>
-                    <div class="w-4/12">
+                <div class="w-4/12">
+                    <?php if (!empty($attributes->title)): ?>
                         <h3 class="h3 text-shade-black-400"><?php echo esc_html($attributes->title) ?></h3>
-                    </div>
-                <?php endif; ?>
+                        <?php endif; ?>
+                </div>
                 <div  class="w-8/12 flex justify-between flex-wrap">
                     <?php if (!empty($block['innerBlocks'])): ?>
                         <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
