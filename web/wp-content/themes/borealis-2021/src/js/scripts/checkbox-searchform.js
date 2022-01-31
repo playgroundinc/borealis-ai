@@ -1,6 +1,6 @@
 import QueryParams from "./classes/class-query-params";
 
-export default function checkboxSearchForm(container) {
+export default function checkboxSearchForm(container, setCount) {
   let selections = {};
   // Checkbox elements
   const checkboxEls = container.querySelectorAll("input[type='checkbox']");
@@ -12,6 +12,7 @@ export default function checkboxSearchForm(container) {
   // Topics increment/decrement vars
   const topics = document.querySelector(".topics");
   let topicsNum = parseInt(topics.innerHTML);
+  let count = setCount(topicsNum);
 
 
   // Handles clear all button functionality
@@ -26,8 +27,8 @@ export default function checkboxSearchForm(container) {
     // Set selections to empty object
     selections = {};
     // Update topics number
-    topicsNum = 0;
-    topics.innerHTML = topicsNum;
+    count = setCount('clear')
+    topics.innerHTML = count;
   }
 
   // Handles checking of checkboxes and updating of params
@@ -35,7 +36,7 @@ export default function checkboxSearchForm(container) {
     checkboxEls.forEach((checkbox) => {
       if (currentValues.split(",").includes(checkbox.value)) {
         // Increment topics number
-        topicsNum += 1;
+        count = setCount('check')
         // Set checkbox to checked
         checkbox.checked = true;
         // Add to selections object
@@ -47,7 +48,8 @@ export default function checkboxSearchForm(container) {
     });
   }
   // Set topics number
-  topics.innerHTML = topicsNum;
+  topics.innerHTML = count;
+  topics.classList.add('opacity-100');
 
   // Add event listener to checkboxes to updateUrl with term id's
   for (let i = 0; i < checkboxEls.length; i++) {
@@ -56,8 +58,8 @@ export default function checkboxSearchForm(container) {
   function updateUrl(e) {
     if (e.target.checked) {
       // Increment topics number
-      topicsNum += 1;
-      topics.innerHTML = topicsNum;
+      count = setCount('check')
+      topics.innerHTML = count;
       // Add to selections object
       selections[e.target.id] = {
         name: e.target.name,
@@ -65,8 +67,8 @@ export default function checkboxSearchForm(container) {
       };
     } else {
       // Decrement topics number
-      topicsNum -= 1;
-      topics.innerHTML = topicsNum;
+      count = setCount('uncheck')
+      topics.innerHTML = count;
       // Remove from selections object AND params
       params.setParam("");
       delete selections[e.target.id];
@@ -77,8 +79,6 @@ export default function checkboxSearchForm(container) {
     for (let key in selections) {
       results.push(selections[key].value);
     }
-    // Update params
-    console.log(params)
     // params.UrlParams = new URLSearchParams(window.location.search);
     params.setParam(results.join(","));
   }
@@ -86,6 +86,22 @@ export default function checkboxSearchForm(container) {
 
 //   Add checkbox functionality to all taxonomy search forms
 const checkboxContainers = document.querySelectorAll(".checkbox-form");
+let count = 0;
+const setCount = (action) => {
+  switch(action) {
+    case 'check':
+      count = count + 1;
+      return count;
+    case 'uncheck':
+      count = count - 1;
+      return count;
+    case 'clear':
+      count = 0;  
+      return count;
+    default: 
+      return count;
+  }
+}
 checkboxContainers.forEach((checkboxContainer) => {
-  checkboxSearchForm(checkboxContainer);
+  checkboxSearchForm(checkboxContainer, setCount);
 });
