@@ -28,7 +28,7 @@ class PG_Multi_Level_Menu_Walker extends Walker_Nav_Menu {
         );
         if($submenu) {
             $indent  = str_repeat( "\t", $depth );
-            $output .= "\n$indent<div role=\"region\" class=\"submenu  bg-shade-white-400 py-3 rounded-b-lg w-full flex flex-row-reverse text-primary-navy-400 absolute top-16 right-0 mb-xs-2 mb-md-5\">\n";
+            $output .= "\n$indent<div role=\"region\" class=\"submenu  bg-shade-white-400 py-3 rounded-b-nav w-full flex flex-row-reverse text-primary-navy-400 absolute top-16 right-0 mb-xs-2 mb-md-5\">\n";
             $output .= "\n$indent<ul class=\"mv-xs-0 w-8/12 flex container flex-row-reverse\" role=\"menu\">\n";
         }
 

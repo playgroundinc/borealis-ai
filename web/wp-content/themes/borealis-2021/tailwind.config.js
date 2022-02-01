@@ -9,6 +9,7 @@ module.exports = {
 		borderRadius: {
 			full: "50%",
 			pill: "30px",
+			nav: "10px",
 		},
     spacing: spacing,
     extend: {
