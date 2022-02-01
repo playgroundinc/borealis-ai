@@ -704,14 +704,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
   margin-right: auto;
 }
-.mx-5{
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.my-1{
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
 .mt-4{
   margin-top: 16px;
 }
@@ -1111,13 +1103,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-.group:hover .group-hover\:bg-tint-teal-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(141 250 201 / var(--tw-bg-opacity));
-}
 .focus\:text-primary-electric-purple-400:focus{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
+}
+.group:hover .group-hover\:bg-tint-teal-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
 .peer:checked ~ .peer-checked\:pill-active{
   --tw-border-opacity: 1;
