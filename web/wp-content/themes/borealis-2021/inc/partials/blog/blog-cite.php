@@ -26,7 +26,7 @@ if (!function_exists('pg_generate_blog_sidebar_cite')) {
             && isset($title) && !empty($title)
             && isset($url) && !empty($url)) {
                 ?>
-                    <div id="modal" class="bg-navy-400 w-2/5 m-auto fixed right-0 left-0 top-96 bg-shade-white-400 border-radius-10 hidden">
+                    <div id="modal" class="bg-navy-400 w-2/5 m-auto fixed right-0 left-0 top-96 bg-shade-white-400 rounded-large hidden">
                         <button id="close-cite" class="absolute top-4 right-4">
                             <svg class="icon-close w-6 h-6" aria-labelledby="icon-close">
                                 <title id="icon-close"></title>
@@ -34,7 +34,7 @@ if (!function_exists('pg_generate_blog_sidebar_cite')) {
                             </svg>
                         </button>
                         <h3 class="h3 pl-12 py-10">Citation</h3>
-                        <div class="bg-shade-grey-100 py-8 px-12 border-radius-10">
+                        <div class="bg-shade-grey-100 py-8 px-12 rounded-large">
                             <p class="paragraph">
                                 <?php echo wp_kses($authors_string, $allowed_html); ?>
                                 (<?php echo esc_html(substr($publication_date, 0 ,4)); ?>).

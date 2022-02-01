@@ -17,9 +17,9 @@ $hero_image_url = get_the_post_thumbnail_url($post->ID, 'full');
         <?php echo pg_generate_blog_sidebar_cite($post->ID); ?>
         <div class="pt-14 flex">
             <aside class="w-1/6">
-                <div class="research-blog-sidebar pb-4 border-solid border-b border-black max-w-sidebar mb-6">
+                <ul class="research-blog-sidebar pb-4 border-solid border-b border-black max-w-sidebar mb-6">
                     <?php echo pg_generate_blog_sidebar($post->ID); ?>
-                </div>
+                </ul>
                 <div class="flex cursor-pointer" id="open-cite">
                     <svg class="icon-cite w-6 h-6" aria-labelledby="icon-cite">
                         <title id="icon-cite"></title>

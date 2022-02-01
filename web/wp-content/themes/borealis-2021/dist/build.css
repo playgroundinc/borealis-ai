@@ -796,6 +796,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded-pill{
   border-radius: 30px;
 }
+.rounded-large{
+  border-radius: 10px;
+}
 .border{
   border-width: 1px;
 }
@@ -905,6 +908,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-6{
   padding-bottom: 24px;
 }
+.pt-10{
+  padding-top: 40px;
+}
 .pl-12{
   padding-left: 48px;
 }
@@ -984,12 +990,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     max-width: 1300px;
   }
 }
-.border-radius-10{
-  border-radius: 10px;
-}
-.max-w-sidebar{
-  max-width: 220px;
-}
 @media (min-width: 768px){
   .container{
     margin: 0 25px;
@@ -1025,6 +1025,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .visited\:text-primary-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(85 0 155 / var(--tw-text-opacity));
+}
+.visited\:text-primary-electric-purple-400:visited{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
 }
 .hover\:cursor-pointer:hover{
   cursor: pointer;
