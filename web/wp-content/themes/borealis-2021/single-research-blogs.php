@@ -13,7 +13,7 @@ $hero_image_url = get_the_post_thumbnail_url($post->ID, 'full')
     <?php if (isset($hero_image_url) && !empty($hero_image_url)): ?>
         <div aria-hidden="true" class="pt-100 mt-19 bg-cover bg-no-repeat bg-center" style="background-image: url(<?php echo esc_url_raw($hero_image_url) ?>)"></div>
     <?php endif; ?>
-    <main class="main-content container">
+    <main id="content" class="main-content container">
         <div class="pt-14 flex">
             <aside class="w-1/6">
                 <ul class="research-blog-sidebar pb-5 border-solid border-b border-black mb-5">

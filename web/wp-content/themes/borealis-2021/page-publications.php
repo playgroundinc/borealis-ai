@@ -10,7 +10,7 @@
 get_header();
 
 ?>
-    <main id="main-content">
+    <main id="content">
         <?php      
             $query = sanitize_text_field(wp_unslash($_GET['q'])) ?? null;
             $taxonomies = array(array('name' => 'research-areas'), array('name'=> 'conferences'));
