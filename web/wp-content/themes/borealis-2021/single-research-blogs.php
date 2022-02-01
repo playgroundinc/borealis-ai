@@ -35,10 +35,10 @@ $url = $post->guid;
                     </div>
                 </div>
                 <div id="share-modal" class="hidden border-radius-10 text-shade-grey-700 paragraph-sm mt-6 ml-19 bg-shade-grey-100 flex flex-col justify-center items-start p-5">
-                    <a class="mb-4" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo $url ?>" target="_blank" rel="noopener noreferrer">
+                    <a class="mb-4" href="https://www.linkedin.com/shareArticle?mini=true&url=https://dev-borealis-ai.pantheonsite.io/?shareSlug%3Dsearch" target="_blank" rel="noopener noreferrer">
                         LinkedIn
                     </a>
-                    <a class="twitter-share-button" href="http://twitter.com/share?text=Check this out:&url=<?php echo $url ?>" target="_blank" rel="noopener noreferrer">
+                    <a class="twitter-share-button" href="http://twitter.com/share?text=Hiring across all teams: research, product, engineering, and more! Check out this role with Borealis AI.&url=<?php echo $url ?>" target="_blank" rel="noopener noreferrer">
                         Twitter
                     </a>
                 </div>
