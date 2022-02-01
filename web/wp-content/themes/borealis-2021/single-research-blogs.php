@@ -16,9 +16,9 @@ $hero_image_url = get_the_post_thumbnail_url($post->ID, 'full')
     <main class="main-content container">
         <div class="pt-14 flex">
             <aside class="w-1/6">
-                <div class="research-blog-sidebar">
+                <ul class="research-blog-sidebar pb-5 border-solid border-b border-black mb-5">
                     <?php echo pg_generate_blog_sidebar($post->ID); ?>
-                </div>
+                </ul>
             </aside>
             <div class="page__content w-5/6">
                 <div class="mx-auto w-5/6">
