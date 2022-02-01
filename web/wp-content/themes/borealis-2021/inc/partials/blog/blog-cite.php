@@ -38,8 +38,8 @@ if (!function_exists('pg_generate_blog_sidebar_cite')) {
                             <p class="paragraph">
                                 <?php echo wp_kses($authors_string, $allowed_html); ?>
                                 (<?php echo esc_html(substr($publication_date, 0 ,4)); ?>).
-                                <?php echo esc_html($title); ?>.
-                                <a href="<?php echo esc_url($url); ?>"><?php echo esc_html($title); ?></a>
+                                <?php echo esc_html($title); ?>. Borealis AI. 
+                                <?php echo esc_html($url); ?>
                             </p>
                         </div>
                     </div>
