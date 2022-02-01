@@ -704,6 +704,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
   margin-right: auto;
 }
+.mx-5{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.my-1{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
 .mt-4{
   margin-top: 16px;
 }
@@ -811,14 +819,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-between{
   justify-content: space-between;
 }
+.rounded-nav{
+  border-radius: 10px;
+}
 .rounded-full{
   border-radius: 50%;
 }
 .rounded-pill{
   border-radius: 30px;
-}
-.rounded-nav{
-  border-radius: 10px;
 }
 .rounded-t-nav{
   border-top-left-radius: 10px;

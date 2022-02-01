@@ -65,22 +65,22 @@ class PG_Multi_Level_Menu_Walker extends Walker_Nav_Menu {
 
         if ( intval( $item->menu_item_parent ) === 0 ) {
             if ( $parent ) {
-                $output .= '<li role="menuitem" class=" ' . $classes . ' hyperlink py-1 px-5 block pr-xs-2 fc-xs-100 fc-lg fc-md-50">';
-                $output .= '<a class="group ' . $link_classes . '" href="' . $permalink . '">';
+                $output .= '<li role="menuitem" class=" ' . $classes . ' hyperlink pr-xs-2 fc-xs-100 fc-lg fc-md-50">';
+                $output .= '<a class="py-1 px-5 block group ' . $link_classes . '" href="' . $permalink . '">';
                 $output .= $title;
                 $output .= '<span class="group-hover:bg-tint-teal-400 nav-underline block"></span></a>';
                 $output .= '</li>';
                 return $output;
             }
-            $output .= '<li role="menuitem" class=" ' . $classes . ' hyperlink py-1 px-5 block pr-xs-2 fc-xs-100 fc-lg fc-md-50 ">';
-            $output .= '<a class="group ' . $link_classes . '" href="' . $permalink . '">';
+            $output .= '<li role="menuitem" class=" ' . $classes . ' hyperlink pr-xs-2 fc-xs-100 fc-lg fc-md-50 ">';
+            $output .= '<a class="py-1 px-5 block group ' . $link_classes . '" href="' . $permalink . '">';
             $output .= $title;
             $output .= '<span class="group-hover:bg-tint-teal-400 nav-underline block"></span></a>';
             $output .= '</li>';
             return $output;
         }
-        $output .= '<li role="menuitem" class="' . $classes . ' hyperlink py-1 px-5 block ">';
-        $output .= '<a class="group ' . $link_classes . '" href="' . $permalink . '">';
+        $output .= '<li role="menuitem" class="' . $classes . ' hyperlink">';
+        $output .= '<a class="py-1 px-5 block group ' . $link_classes . '" href="' . $permalink . '">';
         $output .= $title;
         $output .= '<span class="group-hover:bg-tint-teal-400 nav-underline block"></span></a>';
 
