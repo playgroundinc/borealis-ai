@@ -703,9 +703,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .top-6{
   top: 24px;
 }
-.right-0{
-  right: 0px;
-}
 .top-96{
   top: 384px;
 }
@@ -752,12 +749,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-4{
   margin-bottom: 16px;
 }
-.mb-6{
-  margin-bottom: 24px;
-}
-.mt-4{
-  margin-top: 16px;
-}
 .mt-3{
   margin-top: 12px;
 }
@@ -781,14 +772,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: -moz-fit-content;
   height: fit-content;
 }
-.h-6{
-  height: 24px;
-}
 .h-4{
   height: 16px;
-}
-.w-6{
-  width: 24px;
 }
 .h-6{
   height: 24px;
@@ -804,9 +789,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-5\/6{
   width: 83.333333%;
-}
-.w-full{
-  width: 100%;
 }
 .w-8\/12{
   width: 66.666667%;
@@ -883,13 +865,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded-pill{
   border-radius: 30px;
 }
-.rounded-t-nav{
+.rounded-t-large{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-}
-.rounded-b-nav{
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 .border{
   border-width: 1px;
@@ -929,17 +907,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(0 15 120 / var(--tw-bg-opacity));
 }
-.bg-shade-white-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-.bg-tint-lightBlue-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(111 222 250 / var(--tw-bg-opacity));
-}
 .bg-shade-grey-100{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
+}
+.bg-shade-white-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .bg-tint-lightBlue-400{
   --tw-bg-opacity: 1;
@@ -948,10 +922,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-primary-electric-blue-400{
   --tw-bg-opacity: 1;
   background-color: rgb(0 68 255 / var(--tw-bg-opacity));
-}
-.bg-shade-white-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .bg-shade-black-400{
   --tw-bg-opacity: 1;
@@ -972,6 +942,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-2{
   padding: 8px;
 }
+.p-5{
+  padding: 20px;
+}
 .py-4{
   padding-top: 16px;
   padding-bottom: 16px;
@@ -987,8 +960,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-5{
   padding-left: 20px;
   padding-right: 20px;
-.p-5{
-  padding: 20px;
 }
 .py-6{
   padding-top: 24px;
@@ -1001,15 +972,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-18{
   padding-left: 72px;
   padding-right: 72px;
-}
-.pb-2{
-  padding-bottom: 8px;
-}
-.pt-4{
-  padding-top: 16px;
-}
-.pt-2{
-  padding-top: 8px;
 }
 .py-10{
   padding-top: 40px;
@@ -1026,6 +988,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-5{
   padding-top: 20px;
   padding-bottom: 20px;
+}
+.pb-2{
+  padding-bottom: 8px;
+}
+.pt-4{
+  padding-top: 16px;
+}
+.pt-2{
+  padding-top: 8px;
 }
 .pt-10{
   padding-top: 40px;
@@ -1069,15 +1040,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-8{
   padding-top: 32px;
 }
-.pl-5{
-  padding-left: 20px;
-}
-.pb-4{
-  padding-bottom: 16px;
-}
-.pl-8{
-  padding-left: 32px;
-}
 .text-center{
   text-align: center;
 }
@@ -1088,18 +1050,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
-}
-.text-lg{
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 .font-bold{
   font-weight: 700;
@@ -1118,13 +1068,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.text-primary-navy-400{
-  --tw-text-opacity: 1;
-  color: rgb(0 15 120 / var(--tw-text-opacity));
-}
 .text-shade-grey-700{
   --tw-text-opacity: 1;
   color: rgb(92 93 118 / var(--tw-text-opacity));
+}
+.text-primary-navy-400{
+  --tw-text-opacity: 1;
+  color: rgb(0 15 120 / var(--tw-text-opacity));
 }
 .text-primary-electric-blue-400{
   --tw-text-opacity: 1;
