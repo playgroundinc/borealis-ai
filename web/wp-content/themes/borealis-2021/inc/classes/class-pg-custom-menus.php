@@ -48,10 +48,12 @@ class PG_Custom_Menus {
                 // %1$s  - $wrap_id (the id for the wrapping ul)
                 // %2$s - $wrap_class (the usual classes used for the wrapping ul)
                 // %3$s - $items (the menu items as li's)
-                'items_wrap'        => '<ul id="%1$s" role="menu" class="%2$s flex between-md mv-xs-0">%3$s</ul>',  
+                'items_wrap'        => '<ul id="%1$s" role="menu" class="%2$s flex w-full justify-end between-md mv-xs-0">%3$s</ul>',  
                 'depth'             => 0,                              // Limit the depth of the nav.
                 'fallback_cb'       => '',                             // Fallback function.
                 'walker'            => new PG_Multi_Level_Menu_Walker(),
+                'sub_menu' => true,
+                'show_parent' => true
             )
         );
     }
