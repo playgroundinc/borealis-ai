@@ -11,7 +11,7 @@ function mainSearch() {
         }
     })
 
-    searchInput.addEventListener('keydown', e => {
+    searchInput.addEventListener('input', e => {
         if(e.target.value) {
             searchInput.classList.remove('text-shade-grey-700');
             searchInput.classList.add('text-primary-navy-400');
