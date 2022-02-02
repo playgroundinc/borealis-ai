@@ -1211,6 +1211,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:w-8\/12{
     width: 66.666667%;
   }
+  .md\:w-4\/12{
+    width: 33.333333%;
+  }
   .md\:border-l{
     border-left-width: 1px;
   }

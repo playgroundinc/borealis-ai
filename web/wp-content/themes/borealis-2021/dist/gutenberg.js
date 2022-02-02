@@ -2668,6 +2668,102 @@ function pageStripBlock() {
 
 /***/ }),
 
+/***/ "./src/js/blocks/publications/publications-container.jsx":
+/*!***************************************************************!*\
+  !*** ./src/js/blocks/publications/publications-container.jsx ***!
+  \***************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ publicationsContainerBlock; }
+/* harmony export */ });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function publicationsContainerBlock() {
+  var registerBlockType = wp.blocks.registerBlockType;
+  var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var _wp = wp,
+      i18n = _wp.i18n;
+  var blockSlug = "publications-container"; // slug for the block
+
+  var blockTitle = "Publications container";
+  var blockDescription = "Component to create publications container block";
+  var blockCategory = "common";
+  var blockIcon = "archive"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+
+  var attributes = {
+    title: {
+      type: 'String',
+      default: ''
+    },
+    link: {
+      type: 'String',
+      default: ''
+    }
+  };
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
+    title: i18n.__(blockTitle),
+    description: i18n.__(blockDescription),
+    category: blockCategory,
+    icon: blockIcon,
+    attributes: attributes,
+    edit: function edit(props) {
+      var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var attributes = props.attributes,
+          setAttributes = props.setAttributes;
+      var title = attributes.title,
+          link = attributes.link;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
+
+      return [/*#__PURE__*/React.createElement("div", {
+        class: "block-container"
+      }, /*#__PURE__*/React.createElement("p", {
+        class: "block-title"
+      }, "Tag Cloud Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        },
+        components: [{
+          value: title,
+          reference: "title",
+          tagName: "p",
+          placeholder: "Please provide a title (optional)",
+          settings: []
+        }]
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        },
+        components: [{
+          value: link,
+          reference: "link",
+          tagName: "p",
+          placeholder: "Please provide a link for the View All button",
+          settings: []
+        }]
+      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks // allowedBlocks={[`${namespace}/tag-cloud-item-block`]}
+      , null))];
+    },
+    save: function save(_ref) {
+      var attributes = _ref.attributes;
+      var title = attributes.title,
+          link = attributes.link;
+      return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/blocks/reusable/block-custom-settings.jsx":
 /*!**********************************************************!*\
   !*** ./src/js/blocks/reusable/block-custom-settings.jsx ***!
@@ -4497,17 +4593,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./blocks/logos/logo.jsx */ "./src/js/blocks/logos/logo.jsx");
 /* harmony import */ var _blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./blocks/page-strips/page-strip.jsx */ "./src/js/blocks/page-strips/page-strip.jsx");
 /* harmony import */ var _blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./blocks/page-strips/page-strip-graphic.jsx */ "./src/js/blocks/page-strips/page-strip-graphic.jsx");
-/* harmony import */ var _blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./blocks/slider/slider-container.jsx */ "./src/js/blocks/slider/slider-container.jsx");
-/* harmony import */ var _blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./blocks/slider/image-slide.jsx */ "./src/js/blocks/slider/image-slide.jsx");
-/* harmony import */ var _blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./blocks/stats/stats-container.jsx */ "./src/js/blocks/stats/stats-container.jsx");
-/* harmony import */ var _blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./blocks/stats/stats-column.jsx */ "./src/js/blocks/stats/stats-column.jsx");
-/* harmony import */ var _blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./blocks/greenhouse/jobs-block.jsx */ "./src/js/blocks/greenhouse/jobs-block.jsx");
-/* harmony import */ var _blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-section-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx");
-/* harmony import */ var _blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-subsection-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-subsection-blok.jsx");
-/* harmony import */ var _blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-container.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-container.jsx");
-/* harmony import */ var _blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-panel.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-panel.jsx");
-/* harmony import */ var _blocks_tag_cloud_tag_cloud_container_block_jsx__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./blocks/tag-cloud/tag-cloud-container-block.jsx */ "./src/js/blocks/tag-cloud/tag-cloud-container-block.jsx");
-/* harmony import */ var _blocks_tag_cloud_tag_cloud_item_block_jsx__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./blocks/tag-cloud/tag-cloud-item-block.jsx */ "./src/js/blocks/tag-cloud/tag-cloud-item-block.jsx");
+/* harmony import */ var _blocks_publications_publications_container_jsx__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./blocks/publications/publications-container.jsx */ "./src/js/blocks/publications/publications-container.jsx");
+/* harmony import */ var _blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./blocks/slider/slider-container.jsx */ "./src/js/blocks/slider/slider-container.jsx");
+/* harmony import */ var _blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./blocks/slider/image-slide.jsx */ "./src/js/blocks/slider/image-slide.jsx");
+/* harmony import */ var _blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./blocks/stats/stats-container.jsx */ "./src/js/blocks/stats/stats-container.jsx");
+/* harmony import */ var _blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./blocks/stats/stats-column.jsx */ "./src/js/blocks/stats/stats-column.jsx");
+/* harmony import */ var _blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./blocks/greenhouse/jobs-block.jsx */ "./src/js/blocks/greenhouse/jobs-block.jsx");
+/* harmony import */ var _blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-section-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx");
+/* harmony import */ var _blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-subsection-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-subsection-blok.jsx");
+/* harmony import */ var _blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-container.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-container.jsx");
+/* harmony import */ var _blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-panel.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-panel.jsx");
+/* harmony import */ var _blocks_tag_cloud_tag_cloud_container_block_jsx__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./blocks/tag-cloud/tag-cloud-container-block.jsx */ "./src/js/blocks/tag-cloud/tag-cloud-container-block.jsx");
+/* harmony import */ var _blocks_tag_cloud_tag_cloud_item_block_jsx__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./blocks/tag-cloud/tag-cloud-item-block.jsx */ "./src/js/blocks/tag-cloud/tag-cloud-item-block.jsx");
 // import customButtonIcons from './blocks/core-extends/button-icons';
  // Meta
 
@@ -4538,6 +4635,8 @@ __webpack_require__.r(__webpack_exports__);
 
  // Page Strips
 
+
+ // Publications
 
  // Slider Blocks
 
@@ -4588,24 +4687,26 @@ __webpack_require__.r(__webpack_exports__);
 (0,_blocks_image_list_image_list_block_jsx__WEBPACK_IMPORTED_MODULE_17__["default"])(); // Logo Blocks
 
 (0,_blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_18__["default"])();
-(0,_blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_19__["default"])(); // Slide Blocks
+(0,_blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_19__["default"])(); // Publications
 
-(0,_blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_22__["default"])();
-(0,_blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_23__["default"])(); // Stat Blocks
+(0,_blocks_publications_publications_container_jsx__WEBPACK_IMPORTED_MODULE_22__["default"])(); // Slide Blocks
 
-(0,_blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_24__["default"])();
-(0,_blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_25__["default"])(); // Greenhouse Blocks
+(0,_blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_23__["default"])();
+(0,_blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_24__["default"])(); // Stat Blocks
 
-(0,_blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_26__["default"])(); // Sidebar Table Of Contents Blocks
+(0,_blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_25__["default"])();
+(0,_blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_26__["default"])(); // Greenhouse Blocks
 
-(0,_blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_27__["default"])();
-(0,_blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_28__["default"])(); // Tabbed Content Blocks
+(0,_blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_27__["default"])(); // Sidebar Table Of Contents Blocks
 
-(0,_blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_29__["default"])();
-(0,_blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_30__["default"])(); // Tag Cloud Content Blocks
+(0,_blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_28__["default"])();
+(0,_blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_29__["default"])(); // Tabbed Content Blocks
 
-(0,_blocks_tag_cloud_tag_cloud_container_block_jsx__WEBPACK_IMPORTED_MODULE_31__["default"])();
-(0,_blocks_tag_cloud_tag_cloud_item_block_jsx__WEBPACK_IMPORTED_MODULE_32__["default"])();
+(0,_blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_30__["default"])();
+(0,_blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_31__["default"])(); // Tag Cloud Content Blocks
+
+(0,_blocks_tag_cloud_tag_cloud_container_block_jsx__WEBPACK_IMPORTED_MODULE_32__["default"])();
+(0,_blocks_tag_cloud_tag_cloud_item_block_jsx__WEBPACK_IMPORTED_MODULE_33__["default"])();
 }();
 /******/ })()
 ;
