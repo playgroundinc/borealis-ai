@@ -495,6 +495,28 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 14px;
   }
 }
+.text-link{
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+@media (min-width: 375px){
+  .text-link{
+    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .text-link{
+    font-size: 18px;
+  }
+}
 .icon--lg{
   font-size: 24px;
   font-family: Inter, sans-serif;
@@ -654,6 +676,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(0 68 255 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-link{
+  display: block;
+  --tw-text-opacity: 1;
+  color: rgb(0 68 255 / var(--tw-text-opacity));
+}
+.text-link:visited{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
+}
+.text-link:hover{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 .sr-only{
   position: absolute;
@@ -1233,13 +1268,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
 }
-.visited\:text-primary-purple-400:visited{
-  --tw-text-opacity: 1;
-  color: rgb(85 0 155 / var(--tw-text-opacity));
-}
 .visited\:text-primary-electric-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
+}
+.visited\:text-primary-purple-400:visited{
+  --tw-text-opacity: 1;
+  color: rgb(85 0 155 / var(--tw-text-opacity));
 }
 .hover\:cursor-pointer:hover{
   cursor: pointer;
