@@ -70,7 +70,6 @@ export default function checkboxSearchForm(container, setCount) {
       count = setCount('uncheck')
       topics.innerHTML = count;
       // Remove from selections object AND params
-      params.setParam("");
       delete selections[e.target.id];
     }
 
@@ -83,25 +82,3 @@ export default function checkboxSearchForm(container, setCount) {
     params.setParam(results.join(","));
   }
 }
-
-//   Add checkbox functionality to all taxonomy search forms
-const checkboxContainers = document.querySelectorAll(".checkbox-form");
-let count = 0;
-const setCount = (action) => {
-  switch(action) {
-    case 'check':
-      count = count + 1;
-      return count;
-    case 'uncheck':
-      count = count - 1;
-      return count;
-    case 'clear':
-      count = 0;  
-      return count;
-    default: 
-      return count;
-  }
-}
-checkboxContainers.forEach((checkboxContainer) => {
-  checkboxSearchForm(checkboxContainer, setCount);
-});
