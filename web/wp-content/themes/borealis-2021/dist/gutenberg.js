@@ -2792,6 +2792,11 @@ function selectPostsBlocks() {
     parent: parent,
     slug: 'research-blogs',
     single: 'Research'
+  }, {
+    icon: icon,
+    parent: parent,
+    slug: 'news',
+    single: 'News'
   }];
   selectBlocks.forEach(function (block) {
     return (0,_reusable_custom_post_column_jsx__WEBPACK_IMPORTED_MODULE_1__["default"])(block);

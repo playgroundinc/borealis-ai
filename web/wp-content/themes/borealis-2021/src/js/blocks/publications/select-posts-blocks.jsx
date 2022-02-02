@@ -17,6 +17,12 @@ export default function selectPostsBlocks() {
             slug: 'research-blogs',
             single: 'Research',
         },
+        {
+            icon,
+            parent, 
+            slug: 'news',
+            single: 'News',
+        },
     ]
     selectBlocks.forEach((block) => selectPostBlock(block));
 }
