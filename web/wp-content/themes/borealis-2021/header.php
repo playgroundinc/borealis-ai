@@ -58,7 +58,7 @@
         <!-- Skip to Content link -->
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pg-wp-starter' ); ?></a>
         <header id="masthead">
-            <nav id="main-navigation" class="<?php echo ($hasSubnav)? 'rounded-t-nav': 'rounded-nav';?> relative mt-4 top-2 pb-2 pt-4 nav-container <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-primary-navy-400'; ?> ">
+            <nav id="main-navigation" class="<?php echo ($hasSubnav)? 'rounded-t-large': 'rounded-large';?> relative mt-4 top-2 pb-2 pt-4 nav-container <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-primary-navy-400'; ?> ">
                 <div class="relative flex">
                     <div class="pt-2 logo h-fit container">
                         <a href="/home">

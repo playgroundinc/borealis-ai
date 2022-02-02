@@ -23,7 +23,9 @@ const autoprefixer = require('autoprefixer')
 	gutenberg: JS_DIR + '/gutenberg.js',
 	shader: JS_DIR + '/scripts/shader.js',
 	tabbedContent: JS_DIR + '/scripts/tabbed-content.js',
-	carousel: JS_DIR + '/scripts/carousel.js'
+	carousel: JS_DIR + '/scripts/carousel.js',
+	blogModal: JS_DIR + '/scripts/blogModal.js',
+	blogShare: JS_DIR + '/scripts/blogShare.js',
  }
  
  const output = {
