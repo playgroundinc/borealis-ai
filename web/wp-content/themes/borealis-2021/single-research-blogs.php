@@ -20,9 +20,9 @@ $url = $post->guid;
     <?php echo pg_generate_blog_sidebar_cite($post->ID); ?>
     <div class="pt-14 flex">
         <aside class="w-1/6 max-w-sidebar">
-            <div class="research-blog-sidebar pb-4 border-solid border-b border-black mb-6">
+            <ul class="research-blog-sidebar pb-4 border-solid border-b border-black mb-6">
                 <?php echo pg_generate_blog_sidebar($post->ID); ?>
-            </div>
+            </ul>
             <div class="flex justify-between">
                 <div class="w-22 flex cursor-pointer text-3xl" id="open-cite">
                     <?php echo pg_render_icon('cite') ?>
@@ -33,14 +33,14 @@ $url = $post->guid;
                 </div>
             </div>
             <div id="share-modal" class="hidden rounded-large text-shade-grey-700 paragraph-sm mt-6 ml-19 bg-shade-grey-100 flex flex-col justify-center items-start">
-                <ul>
-                    <li class="p-5"> 
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://dev-borealis-ai.pantheonsite.io/?shareSlug%3Dsearch" target="_blank" rel="noopener noreferrer">
+                <ul class="w-full">
+                    <li> 
+                        <a class="block p-5" href="https://www.linkedin.com/shareArticle?mini=true&url=https://dev-borealis-ai.pantheonsite.io/?shareSlug%3D<?php echo $url ?>" target="_blank" rel="noopener noreferrer">
                             LinkedIn
                         </a>
                     </li>
-                    <li class="pb-5 pl-5"> 
-                        <a class="twitter-share-button" href="http://twitter.com/share?text=Hiring across all teams: research, product, engineering, and more! Check out this role with Borealis AI.&url=<?php echo $url ?>" target="_blank" rel="noopener noreferrer">
+                    <li> 
+                        <a class="pb-5 pl-5 block twitter-share-button" href="http://twitter.com/share?text=Hiring across all teams: research, product, engineering, and more! Check out this role with Borealis AI.&url=<?php echo $url ?>" target="_blank" rel="noopener noreferrer">
                             Twitter
                         </a>
                     </li>
