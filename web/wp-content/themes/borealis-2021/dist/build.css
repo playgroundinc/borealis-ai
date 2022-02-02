@@ -694,6 +694,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-4{
   margin-top: 16px;
 }
+.mt-3{
+  margin-top: 12px;
+}
 .block{
   display: block;
 }
@@ -712,14 +715,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-4{
   height: 16px;
 }
+.w-full{
+  width: 100%;
+}
 .w-1\/6{
   width: 16.666667%;
 }
 .w-5\/6{
   width: 83.333333%;
-}
-.w-full{
-  width: 100%;
 }
 .w-4{
   width: 16px;
@@ -775,6 +778,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-0{
   border-width: 0px;
 }
+.border-t{
+  border-top-width: 1px;
+}
 .border-b{
   border-bottom-width: 1px;
 }
@@ -809,6 +815,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(0 68 255 / var(--tw-bg-opacity));
 }
+.bg-shade-white-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
 .bg-cover{
   background-size: cover;
 }
@@ -833,6 +843,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-18{
   padding-left: 72px;
   padding-right: 72px;
+}
+.py-5{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.pt-10{
+  padding-top: 40px;
+}
+.pb-8{
+  padding-bottom: 32px;
 }
 .pt-100{
   padding-top: 400px;
@@ -924,6 +944,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.transition-background-color{
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 .duration-300{
   transition-duration: 300ms;
 }
@@ -983,6 +1008,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:text-primary-electric-purple-400:hover{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
+}
+.hover\:bg-shade-grey-50:hover{
+  background-color: rgba(244,244,251,0.5);
 }
 .hover\:underline:hover{
   -webkit-text-decoration-line: underline;

@@ -70,6 +70,11 @@ require get_template_directory() . '/inc/custom-images/custom-images.php';
 require get_template_directory() . '/inc/custom-images/mobile-image-sizes.php';
 require get_template_directory() . '/inc/custom-images/register-image-sizes.php';
 
+/**
+ * Actions
+ */
+require get_template_directory() . '/inc/actions/load-more.php';
+
 require get_template_directory() . '/inc/ajax-actions.php';
 
 require get_template_directory() . '/inc/custom-post-types/register-cpts.php';
@@ -82,9 +87,12 @@ require get_template_directory() . '/inc/gutenberg/render-icon-btn.php';
 // Partials
 require get_template_directory() . '/inc/partials/search-bar.php';
 
-// Blogs
+// Partials - Blogs
 require get_template_directory() . '/inc/partials/blog/blog-sidebar.php';
 require get_template_directory() . '/inc/partials/blog/blog-header.php';
+
+// Partials - Publications
+require get_template_directory() . '/inc/partials/publications/publication-result.php';
 
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';
