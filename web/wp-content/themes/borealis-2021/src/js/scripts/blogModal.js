@@ -14,8 +14,10 @@ function blogModal() {
         container.classList.add('overflow-hidden', 'bg-shade-black-400', 'bg-opacity-70');
     }
 
-    closeBtn.addEventListener('click', closeModal);
-    openBtn.addEventListener('click', openModal);
+    if(closeBtn && openBtn) { 
+        closeBtn.addEventListener('click', closeModal);
+        openBtn.addEventListener('click', openModal);
+    }
 }
 
 blogModal();
