@@ -8,9 +8,11 @@ if (!function_exists('pg_generate_blog_sidebar')) {
             if (isset($table_of_contents) && !empty($table_of_contents)) {
                 foreach($table_of_contents as $key => $item) {
                 ?>
-                    <a class="hover:text-primary-electric-purple-400 focus:text-primary-electric-purple-400" href="#<?php echo pg_slugify($item->title); ?>">
-                        <p class="mb-4 paragraph-sm cursor-pointer"><?php echo esc_html($item->title); ?></p>
+                <li class="pl-5">
+                    <a class="pb-4 block text-shade-black-400 hover:text-primary-electric-purple-400 focus:text-primary-electric-purple-400 visited:text-primary-electric-purple-400" href="#<?php echo pg_slugify($item->title); ?>">
+                        <p class="paragraph-sm cursor-pointer"><?php echo esc_html($item->title); ?></p>
                     </a>
+                </li>
                 <?php
                     if (isset($item->subsections) && !empty($item->subsections)) {
                         ?> 
@@ -18,8 +20,8 @@ if (!function_exists('pg_generate_blog_sidebar')) {
                                 <?php
                                     foreach($item->subsections as $subsection) {
                                         ?>
-                                            <li class="mb-4 pl-5 paragraph-sm cursor-pointer">
-                                                <a class="hover:text-primary-electric-purple-400 focus:text-primary-electric-purple-400" href="#<?php echo pg_slugify($subsection); ?>">
+                                            <li class="pl-10 paragraph-sm cursor-pointer">
+                                                <a class="pb-4 block text-shade-black-400 hover:text-primary-electric-purple-400 focus:text-primary-electric-purple-400 visited:text-primary-electric-purple-400" href="#<?php echo pg_slugify($subsection); ?>">
                                                     <?php echo esc_html($subsection) ?>
                                                 </a>
                                             </li>
