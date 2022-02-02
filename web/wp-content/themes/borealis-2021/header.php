@@ -71,8 +71,8 @@
                         ?>
                     </div>
                 </div>
-                <a href="/search" class="p-2 absolute top-7 right-6">
-                    <svg class="w-6 h-6 icon-search" aria-labelledby="icon-search"><title id="icon-search">Search</title><use xlink:href="#icon-search"></use></svg>
+                <a href="/search" class="p-2 absolute top-7 right-6 text-3xl">
+                    <?php echo pg_render_icon('search') ?>
                 </a>
             </nav>
         </div>
