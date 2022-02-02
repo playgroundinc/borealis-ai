@@ -6,7 +6,7 @@ if (!function_exists('pg_generate_search_bar')) {
 ?> 
     <div class="border-b border-shade-grey-500">
         <div class="container flex">
-            <form class="search-form relative grow" action="<?php echo esc_attr($_SERVER['REQUEST_URI']) ?>">
+            <form class="search-form relative grow">
                 <label class="sr-only" for="search">Search</label>
                 <span class="icon icon--lg absolute left-0 top-6"><?php echo pg_render_icon('search')?></span>
                 <input class="border block w-full border-0 py-6 pl-10 pr-4" id="search" name="q" type="search" placeholder="<?php echo esc_attr('Search our Publications')?>" value="<?php echo isset($query) && !empty($query) ? esc_attr($query) : null; ?>">
@@ -16,7 +16,6 @@ if (!function_exists('pg_generate_search_bar')) {
                 </button>
                 <div role="region" id="search-info" aria-atomic="true" aria-live="assertive">
                     <p id="helper-text" class="sr-only"><?php echo esc_html('Press enter to search') ?></p>
-                    <p id="error-state" class="hidden"><?php echo esc_html('Please provide a search term.') ?></p>
                 </div>
             </form>
             <div class="flex items-center accordion-block">
