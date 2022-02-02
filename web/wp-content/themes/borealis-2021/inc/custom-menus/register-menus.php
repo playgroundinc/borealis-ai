@@ -16,6 +16,7 @@ if (!function_exists('pg_register_menus')) {
                 'footer-main' => __('Footer Main Menu', $namespace),
                 'footer-legal' => __('Footer Legal Menu', $namespace),
                 'footer-secondary' => __('Footer Secondary Menu', $namespace),
+                'navigation-main' => __('Navigation Main Menu', $namespace),
             )
         );
     }

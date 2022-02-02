@@ -83,8 +83,29 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
             </symbol>
 
             <!-- Close Icon -->
-            <symbol id="icon-close" viewBox="0 0 22 22">
-                <path d="M19.722632 2.796958c.411052-.411084.411052-1.077572 0-1.48865-.411053-.411078-1.07758-.411078-1.488632 0l-7.718526 7.718524-7.718516-7.718524c-.411084-.411078-1.077572-.411078-1.48865 0-.411078.411078-.411078 1.077566 0 1.48865l7.718524 7.718516L1.308308 18.234c-.411078.411053-.411078 1.077579 0 1.488632.411078.411052 1.077566.411052 1.48865 0l7.718516-7.718527L18.234 19.722632c.411053.411052 1.077579.411052 1.488632 0 .411052-.411053.411052-1.07758 0-1.488632l-7.718527-7.718526 7.718527-7.718516z" fill="currentColor" fill-rule="evenodd"/>
+            <symbol id="icon-close" viewBox="0 0 26 26">
+                <path d="M19 7L7 19" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 7L19 19" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
+            <!-- Cite Icon -->
+            <symbol id="icon-cite" fill="none" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 19H4C3.44772 19 3 18.5523 3 18V4C3 3.44772 3.44772 3 4 3H10C11.1046 3 12 3.89543 12 5C12 3.89543 12.8954 3 14 3H20C20.5523 3 21 3.44772 21 4V18C21 18.5523 20.5523 19 20 19H14C12.8954 19 12 19.8954 12 21C12 19.8954 11.1046 19 10 19Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 5V21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 7H8" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 11H8" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 7H17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 11H17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 15H17" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
+            <!-- Share Icon -->
+            <symbol id="icon-share" viewBox="0 0 24 24" fill="none">
+                <circle cx="6" cy="12" r="3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="18" cy="6" r="3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="18" cy="18" r="3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.69922 10.6998L15.2992 7.2998" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.69922 13.2998L15.2992 16.6998" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
 
             <!-- Plus Icon -->
@@ -156,9 +177,11 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
             </symbol>
 
             <!-- Search Icon -->
-            <symbol id="icon-search" viewBox="0 0 24 24">
-                <g transform="translate(4 4)" stroke="#5C5D76" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="6.417" cy="6.354" rx="6.417" ry="6.354"/><path d="M16.5 16.339 11 10.893"/></g>
+            <symbol id="icon-search" viewBox="0 0 22 22">
+                <ellipse cx="5.83331" cy="5.77634" rx="4.08331" ry="4.04343" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.25 12.1303L8.75 8.66455" stroke="white" fill="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
+
 
             <!--  Cookie Close -->
             <symbol id="icon-cookie-close" viewBox="0 0 8 8">
