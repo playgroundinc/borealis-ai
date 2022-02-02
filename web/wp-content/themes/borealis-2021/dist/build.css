@@ -725,6 +725,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-19{
   margin-top: 76px;
 }
+.mb-5{
+  margin-bottom: 20px;
+}
 .mb-6{
   margin-bottom: 24px;
 }
@@ -1010,11 +1013,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-14{
   padding-top: 56px;
 }
-.pb-4{
-  padding-bottom: 16px;
-}
 .pb-5{
   padding-bottom: 20px;
+}
+.pb-4{
+  padding-bottom: 16px;
 }
 .pl-5{
   padding-left: 20px;
