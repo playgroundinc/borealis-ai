@@ -1015,10 +1015,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-no-repeat{
   background-repeat: no-repeat;
 }
-.py-10{
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
 .p-2{
   padding: 8px;
 }
@@ -1041,6 +1037,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 20px;
   padding-right: 20px;
 }
+.py-10{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 .py-6{
   padding-top: 24px;
   padding-bottom: 24px;
@@ -1052,10 +1052,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-18{
   padding-left: 72px;
   padding-right: 72px;
-}
-.py-10{
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 .py-8{
   padding-top: 32px;
@@ -1168,10 +1164,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-primary-electric-blue-400{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
-}
-.text-primary-navy-400{
-  --tw-text-opacity: 1;
-  color: rgb(0 15 120 / var(--tw-text-opacity));
 }
 .underline{
   -webkit-text-decoration-line: underline;

@@ -16,7 +16,7 @@ if (!function_exists('pg_generate_search_bar_main')) {
                     <p id="helper-text" class="sr-only"><?php echo esc_html('Press enter to search') ?></p>
                 </div>
             </form>
-            <div class="flex items-center accordion-block">
+            <div class="cursor-pointer flex items-center accordion-block">
                 <span id="open-search" class="icon icon--xl"><?php echo pg_render_icon('large-search')?></span>
                 <span id="close-search" class="icon icon--xl hidden"><?php echo pg_render_icon('large-search-close')?></span>
             </div>
