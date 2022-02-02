@@ -7,7 +7,7 @@ if (!function_exists('pg_generate_blog_sidebar_cite')) {
         $title = get_the_title($id);
         $publication_date = get_post_meta($id, 'publication_date', true);
         $authors = get_post_meta($id, 'authors', true);
-        $url = $post->guid;
+        $url = get_permalink($post->ID);
         if (isset($authors) && $authors !== '') {
             $authors = json_decode($authors);
             $authors_mapped = array_map(
@@ -37,8 +37,8 @@ if (!function_exists('pg_generate_blog_sidebar_cite')) {
                             <p class="paragraph">
                                 <?php echo wp_kses($authors_string, $allowed_html); ?>
                                 (<?php echo esc_html(substr($publication_date, 0 ,4)); ?>).
-                                <?php echo esc_html($title); ?>.
-                                <a href="<?php echo esc_url($url); ?>"><?php echo esc_html($title); ?></a>
+                                <?php echo esc_html($title); ?>. Borealis AI. 
+                                <?php echo esc_html($url); ?>
                             </p>
                         </div>
                     </div>
