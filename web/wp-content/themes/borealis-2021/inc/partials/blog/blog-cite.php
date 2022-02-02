@@ -1,7 +1,6 @@
 <?php 
 if (!function_exists('pg_generate_blog_sidebar_cite')) {
     function pg_generate_blog_sidebar_cite($id) {
-        pg_svg_spritemap(); 
         $post_sections = get_post_meta($id, 'post_sections', true);
         $allowed_html = pg_allowed_html();
         $post   = get_post( $id );

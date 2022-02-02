@@ -50,6 +50,34 @@ $url = $post->guid;
                 endif;
                 ?>
             </div>
+            <div id="share-modal" class="hidden rounded-large text-shade-grey-700 paragraph-sm mt-6 ml-19 bg-shade-grey-100 flex flex-col justify-center items-start">
+                <ul class="w-full">
+                    <li> 
+                        <a class="block p-5" href="https://www.linkedin.com/shareArticle?mini=true&url=https://dev-borealis-ai.pantheonsite.io/?shareSlug%3D<?php echo $url ?>" target="_blank" rel="noopener noreferrer">
+                            LinkedIn
+                        </a>
+                    </li>
+                    <li> 
+                        <a class="pb-5 pl-5 block twitter-share-button" href="http://twitter.com/share?text=Hiring across all teams: research, product, engineering, and more! Check out this role with Borealis AI.&url=<?php echo $url ?>" target="_blank" rel="noopener noreferrer">
+                            Twitter
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class="page__content w-5/6">
+            <div class="mx-auto w-5/6">
+                <?php
+                if (have_posts()) :
+                    while (have_posts()) :
+                        the_post();
+                ?>
+                <?php
+                        the_content();
+                    endwhile;
+                endif;
+                ?>
+            </div>
         </div>
     </div>
 </main>
