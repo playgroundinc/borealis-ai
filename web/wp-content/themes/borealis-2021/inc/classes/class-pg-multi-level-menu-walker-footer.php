@@ -77,7 +77,7 @@ class PG_Multi_Level_Menu_Walker_Footer extends Walker_Nav_Menu {
             $output .= '<a class="' . $link_classes . '" href="' . $permalink . '">';
             $output .= $title;
             $output .= '</a>';
-            $output .= '<svg class="-top-2 right-5 absolute icon-careers h-6 w-18" aria-labelledby="icon-careers">
+            $output .= '<svg class="-top-3 right-5 absolute icon-careers h-6 w-18" aria-labelledby="icon-careers">
                 <title id="icon-careers">careers</title>
                 <use xlink:href="#icon-careers"></use>
                 </svg>';

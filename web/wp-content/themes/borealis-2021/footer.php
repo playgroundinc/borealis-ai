@@ -53,7 +53,7 @@ $options = pg_get_options($option_names);
 			foreach ($icons as $id => $title) {
 				if (!empty($options[$id])) {
 			?>
-					<a class="pr-10 icon--lg" aria-label="<?php esc_attr_e($title); ?>" href="<?php echo esc_url_raw($options[$id]) ?>">
+					<a class="pl-8 icon--lg" aria-label="<?php esc_attr_e($title); ?>" href="<?php echo esc_url_raw($options[$id]) ?>">
 						<?php
 						$icon = pg_render_icon($id);
 						echo wp_kses($icon, $allowed_html);
