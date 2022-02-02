@@ -6,6 +6,18 @@ if (!function_exists('pg_tabbed_content_script')) {
     }
 }
 
+if (!function_exists('pg_blog_modal_script')) {
+    function pg_blog_modal_script() {
+        wp_enqueue_script('blogModal', get_template_directory_uri() . '/dist/blogModal.js', array(), '20151215', true);
+    }
+}
+
+if (!function_exists('pg_blog_share_script')) {
+    function pg_blog_share_script() {
+        wp_enqueue_script('blogShare', get_template_directory_uri() . '/dist/blogShare.js', array(), '20151215', true);
+    }
+}
+
 if (!function_exists('pg_threejs_scripts')) {
     /**
      * Only load in threejs script if on homepage.
@@ -61,6 +73,8 @@ function pg_wp_starter_scripts() {
     pg_threejs_scripts();
     pg_borealis_script();
     pg_tabbed_content_script();
+    pg_blog_modal_script();
+    pg_blog_share_script();
 }
 add_action( 'wp_enqueue_scripts', 'pg_wp_starter_scripts' );
 

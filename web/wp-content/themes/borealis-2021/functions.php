@@ -90,6 +90,9 @@ require get_template_directory() . '/inc/partials/search-bar.php';
 // Partials - Blogs
 require get_template_directory() . '/inc/partials/blog/blog-sidebar.php';
 require get_template_directory() . '/inc/partials/blog/blog-header.php';
+require get_template_directory() . '/inc/partials/blog/blog-cite.php';
+require get_template_directory() . '/inc/partials/blog/blog-share.php';
+
 
 // Partials - Publications
 require get_template_directory() . '/inc/partials/publications/publication-result.php';
