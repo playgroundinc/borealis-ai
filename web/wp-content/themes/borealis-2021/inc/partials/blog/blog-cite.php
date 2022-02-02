@@ -7,7 +7,7 @@ if (!function_exists('pg_generate_blog_sidebar_cite')) {
         $title = get_the_title($id);
         $publication_date = get_post_meta($id, 'publication_date', true);
         $authors = get_post_meta($id, 'authors', true);
-        $url = $post->guid;
+        $url = get_permalink($post->ID);
         if (isset($authors) && $authors !== '') {
             $authors = json_decode($authors);
             $authors_mapped = array_map(

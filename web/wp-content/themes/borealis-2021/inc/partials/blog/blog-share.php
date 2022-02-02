@@ -4,7 +4,7 @@ if (!function_exists('pg_generate_blog_share')) {
     {
         pg_svg_spritemap();
         $post   = get_post($id);
-        $url = $post->guid;
+        $url = get_permalink($post->ID);
         ob_start();
         if (isset($url) && !empty($url)) {
 ?>
