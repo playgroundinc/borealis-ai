@@ -47,7 +47,7 @@ if ( ! function_exists( 'pg_render_publications_container_block' ) ) {
                     <?php if (!empty($attributes->title)): ?>                   
                         <h2 class="h3"><?php echo esc_html($attributes->title) ?></h2>
                         <?php if (!empty($attributes->link)): ?>
-                            <a class="py-4 block text-primary-electric-blue-400" href="<?php echo esc_attr($attributes->link)?>"><?php echo esc_html('View All'); ?></a>
+                            <a class="py-4 text-link paragraph" href="<?php echo esc_attr($attributes->link)?>"><?php echo esc_html('View All'); ?></a>
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>
