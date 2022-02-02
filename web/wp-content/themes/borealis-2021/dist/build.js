@@ -659,8 +659,11 @@ __webpack_require__.r(__webpack_exports__);
 function loadMore() {
   const loadMoreButton = document.querySelector('.load-more');
   const list = document.querySelector('.posts-listing');
-  const PostLoader = new _classes_class_loader__WEBPACK_IMPORTED_MODULE_0__["default"](loadMoreButton, list, ['research-areas']);
-  PostLoader.init();
+
+  if (loadMoreButton && list) {
+    const PostLoader = new _classes_class_loader__WEBPACK_IMPORTED_MODULE_0__["default"](loadMoreButton, list, ['research-areas']);
+    PostLoader.init();
+  }
 }
 
 /***/ }),
