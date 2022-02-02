@@ -6,6 +6,12 @@ if (!function_exists('pg_tabbed_content_script')) {
     }
 }
 
+if (!function_exists('pg_main_search_script')) {
+    function pg_main_search_script() {
+        wp_enqueue_script('mainSearch', get_template_directory_uri() . '/dist/mainSearch.js', array(), '20151215', true);
+    }
+}
+
 if (!function_exists('pg_threejs_scripts')) {
     /**
      * Only load in threejs script if on homepage.
@@ -61,6 +67,7 @@ function pg_wp_starter_scripts() {
     pg_threejs_scripts();
     pg_borealis_script();
     pg_tabbed_content_script();
+    pg_main_search_script();
 }
 add_action( 'wp_enqueue_scripts', 'pg_wp_starter_scripts' );
 

@@ -152,6 +152,18 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
                 <g transform="translate(4 4)" stroke="#5C5D76" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="6.417" cy="6.354" rx="6.417" ry="6.354"/><path d="M16.5 16.339 11 10.893"/></g>
             </symbol>
 
+            <!-- Large Search Icon -->
+            <symbol id="icon-large-search" viewBox="0 0 66 66" fill="none">
+                <ellipse cx="27.4999" cy="27.5" rx="19.2499" ry="19.25" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M57.75 57.75L41.25 41.25" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
+            <!-- Large Search Close Icon -->
+            <symbol id="icon-large-search-close" viewBox="0 0 92 92" fill="none">
+                <path d="M67.2301 24.7695L24.7686 67.2311" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24.7686 24.7695L67.2301 67.2311" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
             <!--  Cookie Close -->
             <symbol id="icon-cookie-close" viewBox="0 0 8 8">
                 <path d="M6.3536 2.35355c.1952-.19526.1952-.51184 0-.7071-.1953-.19527-.51189-.19527-.70715 0L3.9999975 3.29289 2.35355 1.64645c-.19526-.19527-.51184-.19527-.7071 0-.19527.19526-.19527.51184 0 .7071l1.64644 1.6464475L1.64645 5.64645c-.19527.19526-.19527.51185 0 .70715.19526.1952.51184.1952.7071 0l1.6464475-1.64649L5.64645 6.3536c.19526.1952.51185.1952.70715 0 .1952-.1953.1952-.51189 0-.70715L4.70711 3.9999975 6.3536 2.35355z" fill="currentColor" fill-rule="evenodd"/>

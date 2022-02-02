@@ -473,6 +473,28 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 14px;
   }
 }
+.icon--xl{
+  font-size: 66px;
+  font-family: Inter, sans-serif;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+@media (min-width: 375px){
+  .icon--xl{
+    font-size: calc(66px + ((66 - 66) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .icon--xl{
+    font-size: 66px;
+  }
+}
 .icon--lg{
   font-size: 24px;
   font-family: Inter, sans-serif;
@@ -676,6 +698,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-15{
   margin-top: 60px;
 }
+.mt-8{
+  margin-top: 32px;
+}
 .mr-2{
   margin-right: 8px;
 }
@@ -828,6 +853,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-no-repeat{
   background-repeat: no-repeat;
 }
+.py-10{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 .py-6{
   padding-top: 24px;
   padding-bottom: 24px;
@@ -914,6 +943,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-primary-electric-blue-400{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
+}
+.text-primary-navy-400{
+  --tw-text-opacity: 1;
+  color: rgb(0 15 120 / var(--tw-text-opacity));
 }
 .underline{
   -webkit-text-decoration-line: underline;
