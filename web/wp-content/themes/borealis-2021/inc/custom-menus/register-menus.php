@@ -2,6 +2,7 @@
 
 require get_template_directory() . '/inc/classes/class-pg-single-level-menu-walker.php';
 require get_template_directory() . '/inc/classes/class-pg-multi-level-menu-walker.php';
+require get_template_directory() . '/inc/classes/class-pg-multi-level-menu-walker-footer.php';
 require get_template_directory() . '/inc/classes/class-pg-dropdown-menu-walker.php';
 require get_template_directory() . '/inc/classes/class-pg-custom-menus.php';
 
