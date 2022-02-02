@@ -30,7 +30,7 @@ export default function researchBlogMetaBlock() {
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
             }
-
+    
 			return ([
 				null,
 				<div className="custom-component">
@@ -48,7 +48,6 @@ export default function researchBlogMetaBlock() {
                                 onChange={(value) => { updateAttributeValue('time_to_read', value) }}
                                 label="Time to Read:"
                             />
-                           
                             <SelectAuthors 
                                 authors={authors}
                                 updateAttributeValue={updateAttributeValue}

@@ -9,6 +9,7 @@ module.exports = {
 		borderRadius: {
 			full: "50%",
 			pill: "30px",
+			large: "10px"
 		},
     spacing: spacing,
     extend: {
@@ -68,6 +69,7 @@ module.exports = {
 					400: "#222731" // Cool Black
 				},
 				grey: {
+					50: 'rgba(244,244,251,0.5)', // 50% opacity
 					100: "#F4F4FB", // Light Grey
 					400: "#D8D8E4", // Medium Grey
 					500: "#656892", // Medium Dark Grey
@@ -85,6 +87,9 @@ module.exports = {
 					400: "#3ECD80"
 				}
 			}
+		},
+		transitionProperty: {
+			'background-color': 'background-color'
 		},
 		width: {
 			'3/8': 'calc((100% /8) * 3)',

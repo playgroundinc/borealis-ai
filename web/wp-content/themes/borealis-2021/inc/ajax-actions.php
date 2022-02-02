@@ -13,6 +13,6 @@
  * @since  1.0.0
  */
 
- // Send emails
-add_action( 'wp_ajax_send_email', 'pg_verify_email_request' );
-add_action( 'wp_ajax_nopriv_send_email', 'pg_verify_email_request' );
+// Load More Results
+add_action( 'wp_ajax_load_more', 'pg_load_more_results' );
+add_action( 'wp_ajax_nopriv_load_more', 'pg_load_more_results' );
