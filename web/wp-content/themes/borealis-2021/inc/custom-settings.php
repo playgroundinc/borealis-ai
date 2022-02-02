@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 /**
  * Theme Custom Settings.
  * 
@@ -12,7 +13,8 @@
 /**
  * Initializes the custom settings menus.
  */
-function pg_init_menus() {
+function pg_init_menus()
+{
     // Attempting to bypass a regular issue I have where I need to find and replace all namespacing. 
     $namespace = 'pg';
     // Defining parent as this slug needs to be provided to every submenu item. 
@@ -73,7 +75,7 @@ function pg_init_menus() {
                 )
             )
         ),
-        
+
         // Alert Bar settings submenu with English and French sections.
         'Alert Bar Settings' => array(
             'slug' => $namespace . '-alert-settings',
@@ -154,32 +156,6 @@ function pg_init_menus() {
                     'id' => $namespace . '-footer-banner-en',
                     'fields' => array(
                         'footer_banner_copy_en' => 'textarea',
-                        'footer_cta_text_en' => 'text',
-                        'footer_cta_link_en' => 'text',
-                    )
-                ),
-                'Footer Address English' => array(
-                    'id' => $namespace . '-footer-address-en',
-                    'fields' => array(
-                        'footer_address_en' => 'textarea',
-                        'footer_telephone_en' => 'text',
-                        'footer_fax_en' => 'text',
-                    )
-                ),
-                'Footer Banner French' => array(
-                    'id' => $namespace . '-footer-banner-fr',
-                    'fields' => array(
-                        'footer_banner_copy_fr' => 'textarea',
-                        'footer_cta_text_fr' => 'text',
-                        'footer_cta_link_fr' => 'text',
-                    )
-                ),
-                'Footer Address French' => array(
-                    'id' => $namespace . '-footer-address-fr',
-                    'fields' => array(
-                        'footer_address_fr' => 'textarea',
-                        'footer_telephone_fr' => 'text',
-                        'footer_fax_fr' => 'text',
                     )
                 ),
             ),
@@ -247,6 +223,30 @@ function pg_init_menus() {
                 )
             )
         ),
+        // Social Media settings submenu.
+        'Social Media Settings' => array(
+            'slug' => $namespace . '-social-settings',
+            // This will create a submenu page. 
+            'parent' => $parent,
+            'description' => 'This is where you can add links for the social media integrations on your site. If left blank it will default to the value set on the main Trimac site.',
+            // Sections allow for breaking up the inputs onto the page. 
+            // The key for each item will act as the section's title. 
+            'sections' => array(
+
+                'Social Media English' => array(
+                    'id' => $namespace . '-socials-en',
+                    // The key should be written in kebab case. 
+                    // It will be deslugified and turned into the label. 
+                    // The value here defines what kind of input it should be.
+                    'fields' => array(
+                        'linkedin_en' => 'text',
+                        'github_en' => 'text',
+                        'youtube_en' => 'text',
+                        'twitter_en' => 'text',
+                    )
+                ),
+            )
+        ),
     );
 
     foreach ($menus as $name => $args) {
@@ -262,4 +262,4 @@ function pg_init_menus() {
     }
 }
 
-add_action( 'admin_menu', 'pg_init_menus' );
+add_action('admin_menu', 'pg_init_menus');
