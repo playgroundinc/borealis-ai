@@ -71,7 +71,7 @@ export default function publicationsContainerBlock() {
                         <InnerBlocks.Content />
                     ) : (
                         <InnerBlocks
-                            // allowedBlocks={[`${namespace}/tag-cloud-item-block`]}
+                            allowedBlocks={[`${namespace}/select-publications`, `${namespace}/select-research-blogs`]}
                         />
                     )}
                 </div>,

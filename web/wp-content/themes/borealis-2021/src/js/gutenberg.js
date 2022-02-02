@@ -43,6 +43,7 @@ import pageStripGraphic from "./blocks/page-strips/page-strip-graphic.jsx";
 
 // Publications
 import publicationsContainerBlock from './blocks/publications/publications-container.jsx';
+import selectPostsBlocks from './blocks/publications/select-posts-blocks.jsx';
 
 // Slider Blocks
 import sliderBlock from "./blocks/slider/slider-container.jsx";
@@ -111,6 +112,7 @@ logoBlock();
 
 // Publications
 publicationsContainerBlock();
+selectPostsBlocks();
 
 // Slide Blocks
 sliderBlock();

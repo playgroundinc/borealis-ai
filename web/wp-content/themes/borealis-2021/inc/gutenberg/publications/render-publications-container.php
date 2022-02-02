@@ -42,8 +42,8 @@ if ( ! function_exists( 'pg_render_publications_container_block' ) ) {
 
         ob_start();
         ?>
-            <div class="flex container">
-                <div class="md:w-4/12">
+            <div class="md:flex md:container">
+                <div class="md:w-4/12 container md:m-0">
                     <?php if (!empty($attributes->title)): ?>                   
                         <h2 class="h3"><?php echo esc_html($attributes->title) ?></h2>
                         <?php if (!empty($attributes->link)): ?>
@@ -51,10 +51,10 @@ if ( ! function_exists( 'pg_render_publications_container_block' ) ) {
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>
-                <div class="md:w-8/12">
-                    <ul>
+                <div class="md:w-8/12 mt-18 md:mt-0">
+                    <ul class="border-t border-color-shade-grey-700">
                         <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
-                            <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
+                            <?php echo pg_render_publications_item($inner_block, $attributes->link) ?>
                         <?php endforeach; ?>
                     </ul>
                 </div>                
