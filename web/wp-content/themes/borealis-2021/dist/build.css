@@ -682,12 +682,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: -webkit-sticky;
   position: sticky;
 }
-.-top-2{
-  top: -8px;
-}
-.right-5{
-  right: 20px;
-}
 .top-2{
   top: 8px;
 }
@@ -696,6 +690,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .right-6{
   right: 24px;
+}
+.-top-3{
+  top: -12px;
+}
+.right-5{
+  right: 20px;
 }
 .top-16{
   top: 64px;
@@ -708,9 +708,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .top-6{
   top: 24px;
-}
-.-top-3{
-  top: -12px;
 }
 .top-96{
   top: 384px;
@@ -776,15 +773,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-7{
   margin-right: 28px;
 }
-.mb-6{
-  margin-bottom: 24px;
-}
-.mt-4{
-  margin-top: 16px;
-}
-.mb-4{
-  margin-bottom: 16px;
-}
 .mt-3{
   margin-top: 12px;
 }
@@ -806,13 +794,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-16{
   height: 64px;
 }
-.h-6{
-  height: 24px;
-}
 .h-fit{
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+}
+.h-6{
+  height: 24px;
 }
 .h-4{
   height: 16px;
@@ -832,9 +820,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-2\/12{
   width: 16.666667%;
 }
-.h-6{
-  height: 24px;
-}
 .w-full{
   width: 100%;
 }
@@ -846,9 +831,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-18{
   width: 72px;
-}
-.w-full{
-  width: 100%;
 }
 .w-8\/12{
   width: 66.666667%;
@@ -941,11 +923,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-0{
   border-width: 0px;
 }
-.border-t{
-  border-top-width: 1px;
-}
 .border-b{
   border-bottom-width: 1px;
+}
+.border-t{
+  border-top-width: 1px;
 }
 .border-solid{
   border-style: solid;
@@ -983,10 +965,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-shade-grey-100{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
-}
-.bg-shade-white-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .bg-tint-lightBlue-400{
   --tw-bg-opacity: 1;
@@ -1046,12 +1024,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 72px;
   padding-right: 72px;
 }
-.pt-13{
-  padding-top: 52px;
-}
-.pr-10{
-  padding-right: 40px;
-}
 .py-10{
   padding-top: 40px;
   padding-bottom: 40px;
@@ -1067,6 +1039,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-5{
   padding-top: 20px;
   padding-bottom: 20px;
+}
+.pt-13{
+  padding-top: 52px;
+}
+.pl-8{
+  padding-left: 32px;
 }
 .pb-2{
   padding-bottom: 8px;
@@ -1092,14 +1070,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-5{
   padding-bottom: 20px;
 }
-.pb-7{
-  padding-bottom: 28px;
-}
 .pb-4{
   padding-bottom: 16px;
 }
 .pl-5{
   padding-left: 20px;
+}
+.pb-7{
+  padding-bottom: 28px;
 }
 .pl-10{
   padding-left: 40px;
@@ -1122,18 +1100,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-8{
   padding-top: 32px;
 }
-.pl-5{
-  padding-left: 20px;
-}
-.pb-4{
-  padding-bottom: 16px;
-}
-.pr-8{
-  padding-right: 32px;
-}
-.pl-8{
-  padding-left: 32px;
-}
 .text-center{
   text-align: center;
 }
@@ -1154,14 +1120,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .italic{
   font-style: italic;
 }
-.text-shade-black-400{
-  --tw-text-opacity: 1;
-  color: rgb(34 39 49 / var(--tw-text-opacity));
-}
-.text-shade-white-400{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
 .text-shade-grey-700{
   --tw-text-opacity: 1;
   color: rgb(92 93 118 / var(--tw-text-opacity));
@@ -1169,6 +1127,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-shade-black-400{
   --tw-text-opacity: 1;
   color: rgb(34 39 49 / var(--tw-text-opacity));
+}
+.text-shade-white-400{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .text-primary-navy-400{
   --tw-text-opacity: 1;
@@ -1272,12 +1234,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:cursor-pointer:hover{
   cursor: pointer;
 }
+.hover\:bg-shade-grey-50:hover{
+  background-color: rgba(244,244,251,0.5);
+}
 .hover\:text-primary-electric-blue-400:hover{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
-}
-.hover\:bg-shade-grey-50:hover{
-  background-color: rgba(244,244,251,0.5);
 }
 .hover\:text-primary-electric-purple-400:hover{
   --tw-text-opacity: 1;
