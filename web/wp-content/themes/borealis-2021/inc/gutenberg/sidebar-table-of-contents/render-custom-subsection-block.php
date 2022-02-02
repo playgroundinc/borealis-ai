@@ -46,6 +46,9 @@ if ( ! function_exists( 'pg_render_custom_subsection_block' ) ) {
                             <?php if (!empty($attributes->title)): ?>
                                 <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="heading_two heading-one-lg mb-xs-0 text-2xl"><?php echo esc_html($attributes->title) ?></h2>
                             <?php endif; ?>
+                            <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
+                                <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
 

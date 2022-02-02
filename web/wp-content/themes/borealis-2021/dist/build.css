@@ -670,6 +670,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-19{
   margin-top: 76px;
 }
+.mb-5{
+  margin-bottom: 20px;
+}
 .mt-15{
   margin-top: 60px;
 }
@@ -745,6 +748,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.cursor-pointer{
+  cursor: pointer;
+}
 .resize{
   resize: both;
 }
@@ -778,9 +784,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-b{
   border-bottom-width: 1px;
 }
+.border-solid{
+  border-style: solid;
+}
 .border-shade-grey-500{
   --tw-border-opacity: 1;
   border-color: rgb(101 104 146 / var(--tw-border-opacity));
+}
+.border-black{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 .border-shade-black-400{
   --tw-border-opacity: 1;
@@ -847,6 +860,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-14{
   padding-top: 56px;
 }
+.pb-5{
+  padding-bottom: 20px;
+}
 .pl-10{
   padding-left: 40px;
 }
@@ -865,16 +881,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-8{
   padding-top: 32px;
 }
+.pl-5{
+  padding-left: 20px;
+}
+.pb-4{
+  padding-bottom: 16px;
+}
 .text-center{
   text-align: center;
 }
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
-}
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 .font-bold{
   font-weight: 700;
@@ -973,15 +991,31 @@ Ensure the default browser behavior of the `hidden` attribute.
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
 }
+.visited\:text-primary-purple-400:visited{
+  --tw-text-opacity: 1;
+  color: rgb(85 0 155 / var(--tw-text-opacity));
+}
+.visited\:text-primary-electric-purple-400:visited{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
+}
 .hover\:cursor-pointer:hover{
   cursor: pointer;
 }
 .hover\:bg-shade-grey-50:hover{
   background-color: rgba(244,244,251,0.5);
 }
+.hover\:text-primary-electric-purple-400:hover{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
+}
 .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+.focus\:text-primary-electric-purple-400:focus{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
 }
 .peer:checked ~ .peer-checked\:pill-active{
   --tw-border-opacity: 1;
