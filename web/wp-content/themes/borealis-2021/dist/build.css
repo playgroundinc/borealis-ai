@@ -700,9 +700,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-19{
   margin-left: 76px;
 }
-.mb-4{
-  margin-bottom: 16px;
-}
 .mt-15{
   margin-top: 60px;
 }
@@ -711,6 +708,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mr-7{
   margin-right: 28px;
+}
+.mb-4{
+  margin-bottom: 16px;
 }
 .mt-4{
   margin-top: 16px;
@@ -908,10 +908,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 48px;
   padding-right: 48px;
 }
-.py-4{
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
 .pt-100{
   padding-top: 400px;
 }
@@ -920,6 +916,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pb-4{
   padding-bottom: 16px;
+}
+.pb-5{
+  padding-bottom: 20px;
+}
+.pl-5{
+  padding-left: 20px;
 }
 .pl-10{
   padding-left: 40px;
@@ -942,21 +944,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-8{
   padding-top: 32px;
 }
-.pl-5{
-  padding-left: 20px;
-}
-.pt-5{
-  padding-top: 20px;
-}
-.pb-5{
-  padding-bottom: 20px;
-}
 .text-center{
   text-align: center;
 }
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
+}
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .font-bold{
   font-weight: 700;

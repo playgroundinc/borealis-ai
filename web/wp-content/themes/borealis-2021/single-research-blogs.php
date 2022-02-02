@@ -24,11 +24,8 @@ $url = $post->guid;
                 <?php echo pg_generate_blog_sidebar($post->ID); ?>
             </div>
             <div class="flex justify-between">
-                <div class="w-22 flex cursor-pointer" id="open-cite">
-                    <svg class="icon-cite w-6 h-6" aria-labelledby="icon-cite">
-                        <title id="icon-cite"></title>
-                        <use xlink:href="#icon-cite"></use>
-                    </svg>
+                <div class="w-22 flex cursor-pointer text-3xl" id="open-cite">
+                    <?php echo pg_render_icon('cite') ?>
                     <button class="ml-2 paragraph-sm">Cite</button>
                 </div>
                 <div>
