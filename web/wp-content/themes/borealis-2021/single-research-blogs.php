@@ -15,6 +15,30 @@ $publication_date = get_post_meta($post->ID, 'publication_date', true);
 $authors = get_post_meta($post->ID, 'authors', true);
 $url = get_permalink($post->ID);
 ?>
+<<<<<<< HEAD
+    <?php if (isset($hero_image_url) && !empty($hero_image_url)): ?>
+        <div aria-hidden="true" class="pt-100 mt-19 bg-cover bg-no-repeat bg-center" style="background-image: url(<?php echo esc_url_raw($hero_image_url) ?>)"></div>
+    <?php endif; ?>
+    <main id="content" class="main-content container">
+        <div class="pt-14 flex">
+            <aside class="w-1/6">
+                <ul class="research-blog-sidebar pb-5 border-solid border-b border-black mb-5">
+                    <?php echo pg_generate_blog_sidebar($post->ID); ?>
+                </ul>
+            </aside>
+            <div class="page__content w-5/6">
+                <div class="mx-auto w-5/6">
+                    <?php 
+                    if ( have_posts() ) : 
+                        while ( have_posts() ) : 
+                            the_post();
+                        ?>
+                        <?php
+                            the_content();
+                        endwhile;
+                    endif;
+                    ?>
+=======
 <?php if (isset($hero_image_url) && !empty($hero_image_url)) : ?>
     <div aria-hidden="true" class="pt-100 mt-19 bg-cover bg-no-repeat bg-center" style="background-image: url(<?php echo esc_url_raw($hero_image_url) ?>)"></div>
 <?php endif; ?>
@@ -34,6 +58,7 @@ $url = get_permalink($post->ID);
                 <div class="flex cursor-pointer text-3xl" id="open-cite">
                     <?php echo pg_render_icon('cite') ?>
                     <button class="ml-2 paragraph-sm">Cite</button>
+>>>>>>> 0a893b7b678058cc29a0b518074643dc60017ede
                 </div>
             <?php endif; ?>
         </aside>
