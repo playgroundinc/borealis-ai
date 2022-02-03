@@ -690,6 +690,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 16px;
   padding-top: 4px;
   padding-bottom: 4px;
+  text-align: center;
 }
 .pill-active{
   --tw-border-opacity: 1;
@@ -824,11 +825,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-8{
   margin-top: 32px;
 }
-.mr-2{
-  margin-right: 8px;
-}
 .mr-7{
   margin-right: 28px;
+}
+.mr-2{
+  margin-right: 8px;
 }
 .mt-18{
   margin-top: 72px;
@@ -1146,17 +1147,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-7{
   padding-bottom: 28px;
 }
-.pl-10{
-  padding-left: 40px;
-}
-.pr-4{
-  padding-right: 16px;
-}
 .pt-12{
   padding-top: 48px;
 }
 .pb-6{
   padding-bottom: 24px;
+}
+.pl-10{
+  padding-left: 40px;
+}
+.pr-4{
+  padding-right: 16px;
 }
 .pt-5{
   padding-top: 20px;
