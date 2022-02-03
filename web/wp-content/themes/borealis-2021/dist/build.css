@@ -517,6 +517,28 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 18px;
   }
 }
+.icon--xl{
+  font-size: 66px;
+  font-family: Inter, sans-serif;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+@media (min-width: 375px){
+  .icon--xl{
+    font-size: calc(66px + ((66 - 66) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .icon--xl{
+    font-size: 66px;
+  }
+}
 .icon--lg{
   font-size: 24px;
   font-family: Inter, sans-serif;
@@ -799,6 +821,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-15{
   margin-top: 60px;
 }
+.mt-8{
+  margin-top: 32px;
+}
 .mr-2{
   margin-right: 8px;
 }
@@ -1054,6 +1079,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 20px;
   padding-right: 20px;
 }
+.py-10{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 .py-6{
   padding-top: 24px;
   padding-bottom: 24px;
@@ -1065,10 +1094,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-18{
   padding-left: 72px;
   padding-right: 72px;
-}
-.py-10{
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 .py-8{
   padding-top: 32px;

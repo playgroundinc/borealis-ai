@@ -10,7 +10,6 @@ if (!function_exists('pg_generate_search_bar')) {
                 <label class="sr-only" for="search">Search</label>
                 <span class="icon icon--lg absolute left-0 top-6"><?php echo pg_render_icon('search')?></span>
                 <input class="border block w-full border-0 py-6 pl-10 pr-4" id="search" name="q" type="search" placeholder="<?php echo esc_attr('Search our Publications')?>" value="<?php echo isset($query) && !empty($query) ? esc_attr($query) : null; ?>">
-
                 <button class="sr-only" type="submit">
                     <span ><?php echo esc_html('Search') ?></span>
                 </button>

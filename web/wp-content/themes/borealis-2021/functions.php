@@ -86,6 +86,7 @@ require get_template_directory() . '/inc/gutenberg/render-icon-btn.php';
 
 // Partials
 require get_template_directory() . '/inc/partials/search-bar.php';
+require get_template_directory() . '/inc/partials/search-bar-main.php';
 
 // Partials - Blogs
 require get_template_directory() . '/inc/partials/blog/blog-sidebar.php';

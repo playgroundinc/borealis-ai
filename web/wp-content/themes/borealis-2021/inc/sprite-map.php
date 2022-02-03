@@ -182,6 +182,17 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
                 <path d="M12.25 12.1303L8.75 8.66455" stroke="white" fill="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
 
+            <!-- Large Search Icon -->
+            <symbol id="icon-large-search" viewBox="0 0 66 66" fill="none">
+                <ellipse cx="27.4999" cy="27.5" rx="19.2499" ry="19.25" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M57.75 57.75L41.25 41.25" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
+            <!-- Large Search Close Icon -->
+            <symbol id="icon-large-search-close" viewBox="0 0 92 92" fill="none">
+                <path d="M67.2301 24.7695L24.7686 67.2311" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24.7686 24.7695L67.2301 67.2311" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
 
             <!--  Cookie Close -->
             <symbol id="icon-cookie-close" viewBox="0 0 8 8">
