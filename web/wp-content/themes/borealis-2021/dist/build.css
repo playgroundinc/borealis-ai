@@ -739,6 +739,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: -webkit-sticky;
   position: sticky;
 }
+.inset-0{
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
 .top-2{
   top: 8px;
 }
@@ -836,6 +842,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-16{
   margin-top: 64px;
 }
+.ml-17{
+  margin-left: 68px;
+}
 .mt-3{
   margin-top: 12px;
 }
@@ -901,6 +910,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-4{
   width: 16px;
 }
+.w-1\/4{
+  width: 25%;
+}
 .w-4\/12{
   width: 33.333333%;
 }
@@ -921,6 +933,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-22{
   width: 88px;
+}
+.shrink-0{
+  flex-shrink: 0;
 }
 .grow{
   flex-grow: 1;
@@ -995,6 +1010,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-t{
   border-top-width: 1px;
+}
+.border-l{
+  border-left-width: 1px;
 }
 .border-solid{
   border-style: solid;
@@ -1091,6 +1109,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 16px;
   padding-right: 16px;
 }
+.py-2{
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
 .px-18{
   padding-left: 72px;
   padding-right: 72px;
@@ -1161,6 +1183,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-5{
   padding-top: 20px;
 }
+.pb-13{
+  padding-bottom: 52px;
+}
+.pr-14{
+  padding-right: 56px;
+}
+.pt-7{
+  padding-top: 28px;
+}
+.pr-2{
+  padding-right: 8px;
+}
+.pl-2{
+  padding-left: 8px;
+}
 .pl-12{
   padding-left: 48px;
 }
@@ -1169,6 +1206,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-8{
   padding-top: 32px;
+}
+.pt-72{
+  padding-top: 288px;
 }
 .text-center{
   text-align: center;
@@ -1186,9 +1226,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .font-normal{
   font-weight: 400;
-}
-.italic{
-  font-style: italic;
 }
 .text-shade-grey-700{
   --tw-text-opacity: 1;
@@ -1209,6 +1246,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-primary-electric-blue-400{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
+}
+.text-shade-grey-500{
+  --tw-text-opacity: 1;
+  color: rgb(101 104 146 / var(--tw-text-opacity));
 }
 .underline{
   -webkit-text-decoration-line: underline;
@@ -1327,9 +1368,25 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
+.disabled\:text-shade-grey-700:disabled{
+  --tw-text-opacity: 1;
+  color: rgb(92 93 118 / var(--tw-text-opacity));
+}
+.disabled\:text-shade-grey-400:disabled{
+  --tw-text-opacity: 1;
+  color: rgb(216 216 228 / var(--tw-text-opacity));
+}
+.disabled\:text-shade-grey-500:disabled{
+  --tw-text-opacity: 1;
+  color: rgb(101 104 146 / var(--tw-text-opacity));
+}
 .group:hover .group-hover\:bg-tint-teal-400{
   --tw-bg-opacity: 1;
   background-color: rgb(141 250 201 / var(--tw-bg-opacity));
+}
+.group:hover .group-hover\:underline{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 .peer:checked ~ .peer-checked\:pill-active{
   --tw-border-opacity: 1;

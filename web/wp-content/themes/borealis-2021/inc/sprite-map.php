@@ -138,13 +138,13 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
             </symbol>
 
             <!-- Right Chevron (arrow) -->
-            <symbol id="icon-arrow" viewBox="0 0 16 16">
-                <path d="M4.792893 14.7071c-.390524-.3905-.390524-1.0237 0-1.4142l5.292897-5.29290385L4.792893 2.7071c-.390525-.39052-.390525-1.023686 0-1.414209C5.18342.9023647 5.81658.9023647 6.20711 1.29289l6 6c.39052.39053.39052 1.02369 0 1.41421l-6 6c-.39053.3905-1.02369.3905-1.414217 0z" fill="currentColor" fill-rule="evenodd"/>
+            <symbol id="icon-arrow" viewBox="0 0 18 18">
+                <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9h14M12 13l4-4M12 5l4 4"/></g>
             </symbol>
             
             <!-- Left Chevron (arrow) -->
-            <symbol id="icon-arrow-left" viewBox="0 0 16 16">
-                <path d="M11.70709701 1.29289382c.39053732.3905251.39053732 1.02369152 0 1.41421428L6.41420872 8l5.29288829 5.2928727c.39053732.3906005.39053732 1.0237125 0 1.4142352-.39052177.3905228-1.02368659.3905228-1.41421614 0l-5.9999878-5.99998822c-.3905241-.39053054-.3905241-1.02369696 0-1.41421972l5.99999558-6.00000614c.39052177-.3905251 1.02368659-.3905251 1.41420836 0z" fill="currentColor" fill-rule="evenodd"/>
+            <symbol id="icon-arrow-left" viewBox="0 0 18 18">
+                <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9h14M2 9l4 4M2 9l4-4"/></g>
             </symbol>
             
             <!-- Radio -->

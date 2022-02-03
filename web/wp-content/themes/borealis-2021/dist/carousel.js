@@ -1,5 +1,4 @@
 /******/ (function() { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/scripts/classes/class-slider.js":
@@ -8,33 +7,42 @@
   \************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* binding */ Slider; }
 /* harmony export */ });
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../utils/constants */ "./utils/constants.js");
+
 class Slider {
   constructor(slider) {
     this.slider = slider;
     this.slides = [];
-    this.activeSlide = null;
-    this.caption = null;
+    this.container = null;
+    this.activeSlide = 1;
     this.prev = null;
     this.next = null;
-    this.count = null;
-    this.percentage = 0;
+    this.count = 0;
+    this.left = 0;
+    this.right = 0;
+    this.slideCount = 1;
+    this.slideCounts = {
+      md: 2,
+      lg: 4,
+      xl: 4
+    };
+    this.breakpoints = _utils_constants__WEBPACK_IMPORTED_MODULE_0__.breakpoints;
+    this.breakpoint = 'lg';
     this.current = null;
     this.pageXStart = null;
     this.pageXEnd = null;
     this.button = null;
+    this.getSlides = this.getSlides.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.handleMouseUp = this.handleMouseUp.bind(this);
     this.handleDrag = this.handleDrag.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handlePrev = this.handlePrev.bind(this);
-    this.handleSingleNext = this.handleSingleNext.bind(this);
-    this.handleSinglePrev = this.handleSinglePrev.bind(this);
-    this.singlePrev = this.singlePrev.bind(this);
-    this.singleNext = this.singleNext.bind(this);
   }
 
   setState(name, value) {
@@ -49,46 +57,6 @@ class Slider {
     });
   }
 
-  setPrevSlide() {
-    const previousSlide = this.slider.querySelector('.slide--prev');
-
-    if (previousSlide) {
-      previousSlide.classList.remove('slide--prev');
-    }
-
-    if (Number(this.activeSlide) > 0) {
-      this.slides[this.activeSlide - 1].classList.add('slide--prev');
-      return;
-    }
-
-    this.slides[this.slides.length - 1].classList.add('slide--prev');
-  }
-
-  setNextSlide() {
-    const nextSlide = this.slider.querySelector('.slide--next');
-
-    if (nextSlide) {
-      nextSlide.classList.remove('slide--next');
-    }
-
-    if (Number(this.activeSlide) === Number(this.slides.length - 1)) {
-      this.slides[0].classList.add('slide--next');
-      return;
-    }
-
-    const nextIndex = Number(this.activeSlide + 1);
-    this.slides[nextIndex].classList.add('slide--next');
-  }
-
-  setActiveSlide() {
-    if (this.slides.length > 2) {
-      this.setNextSlide();
-      this.setPrevSlide();
-    }
-
-    this.slides[this.activeSlide].classList.add('slide--active');
-  }
-
   getButtons() {
     const nextBtn = this.slider.querySelector('.slider-block__next');
     this.setState('next', nextBtn);
@@ -96,61 +64,50 @@ class Slider {
     this.setState('prev', prevBtn);
   }
 
+  getContainer() {
+    const container = this.slider.querySelector('.slider-block');
+    this.setState('container', container);
+  }
+
   getCounters() {
     const total = this.slider.querySelector('.slider-block__count__total');
     const current = this.slider.querySelector('.slider-block__count__current');
-    const percentage = this.slider.querySelector('.slider-block__count__percentage--active');
     this.setState('total', total);
     this.setState('current', current);
-    this.setState('percentage', percentage);
-  }
-
-  getCaption() {
-    const caption = this.slider.querySelector('.slider-block__caption');
-    this.setState('caption', caption);
   }
 
   getElements() {
     this.getButtons();
+    this.getContainer();
     this.getCounters();
-    this.getCaption();
+  }
+
+  getBreakpoint() {
+    for (let breakpoint in this.breakpoints) {
+      if (window.innerWidth >= this.breakpoints[breakpoint]) {
+        this.setState('breakpoint', breakpoint);
+      }
+    }
+  }
+
+  getCount() {
+    if (this.breakpoint && this.slideCounts[this.breakpoint]) {
+      this.setState('slideCount', this.slideCounts[this.breakpoint]);
+      return;
+    }
   }
 
   setTotal() {
-    this.total.innerText = this.slides.length < 10 ? '0' + `${this.slides.length}` : this.slides.length;
-  }
+    const totalSlides = Math.ceil(this.slides.length / this.slideCount);
 
-  setCount() {
-    this.current.innerText = Number(this.activeSlide + 1) < 10 ? '0' + `${Number(this.activeSlide + 1)}` : Number(this.activeSlide);
-    const currentPercentage = 100 * ((Number(this.activeSlide) + 1) / Number(this.slides.length));
-    this.percentage.style.width = `${currentPercentage}%`;
-  }
-
-  setCaption() {
-    if (this.slides[this.activeSlide].dataset.caption) {
-      this.caption.innerText = this.slides[this.activeSlide].dataset.caption;
+    if (totalSlides > 1) {
+      this.total.innerText = totalSlides;
       return;
     }
 
-    this.caption.innerText = '';
-  }
-
-  setActive() {
-    this.setState('activeSlide', 0);
-    this.setActiveSlide();
-    this.setAriaLabel();
-
-    if (this.caption) {
-      this.setCaption();
-    }
-
-    if (this.total) {
-      this.setTotal();
-    }
-
-    if (this.current) {
-      this.setCount();
-    }
+    this.total.innerText = '1';
+    this.next.setAttribute('disabled', true);
+    this.prev.setAttribute('disabled', true);
   }
 
   getSlides() {
@@ -163,119 +120,54 @@ class Slider {
   }
 
   conditionalEvents() {
-    if (this.caption) {
-      this.setCaption();
-    }
-
     if (this.current) {
       this.setCount();
     }
   }
 
+  setSliderPosition() {
+    this.container.style.left = `${this.left}%`;
+    this.container.style.right = `${this.right}%`;
+  }
+
   handleNext(e) {
-    if (e) {
-      e.preventDefault();
+    e.preventDefault();
+    const nextPage = Number(this.slideCount) * Number(this.activeSlide + 1);
+    const currentPage = Number(this.activeSlide * this.slideCount);
+    let offset = 100;
+
+    if (nextPage >= this.slides.length) {
+      const strays = Number(this.slides.length - currentPage);
+      offset = Number(offset / this.slideCount) * strays;
+      this.next.setAttribute('disabled', true);
     }
 
-    this.handleVideo();
-    this.slides[this.activeSlide].classList.remove('slide--active');
-    const nextSlide = Number(this.activeSlide) !== Number(this.slides.length - 1) ? Number(this.activeSlide + 1) : 0;
-    this.setState('activeSlide', nextSlide);
-    this.setActiveSlide();
-    this.conditionalEvents();
+    this.prev.removeAttribute('disabled');
+    this.setState('left', Number(this.left - offset));
+    this.setState('right', Number(this.right + offset));
+    this.setState('activeSlide', this.activeSlide + 1);
+    this.setSliderPosition();
   }
 
   handlePrev(e) {
-    if (e) {
-      e.preventDefault();
-    }
+    e.preventDefault();
+    const prevPage = Number(this.activeSlide - 1);
+    let offset = 100;
 
-    this.handleVideo();
-    this.slides[this.activeSlide].classList.remove('slide--active');
-    const activeSlide = Number(this.activeSlide) > 0 ? Number(this.activeSlide - 1) : Number(this.slides.length - 1);
-    this.setState('activeSlide', activeSlide);
-    this.setActiveSlide();
-    this.conditionalEvents();
-  }
-
-  singlePrev() {
-    this.slides[this.activeSlide].classList.add('slide--active');
-    this.slides[this.activeSlide].classList.remove('slide--prev');
-    this.setCount();
-  }
-
-  singleNext() {
-    this.slides[this.activeSlide].classList.add('slide--active');
-    this.slides[this.activeSlide].classList.remove('slide--next');
-    this.setCount();
-  }
-
-  setSingleNextSlide() {
-    if (this.slides[this.activeSlide].classList.contains('slide--prev')) {
-      this.slides[this.activeSlide].classList.remove('slide--prev');
-    }
-
-    this.slides[this.activeSlide].classList.add('slide--next');
-    setTimeout(this.singleNext, 300);
-    this.conditionalEvents();
-    return;
-  }
-
-  setSinglePrevSlide() {
-    if (this.slides[this.activeSlide].classList.contains('slide--next')) {
-      this.slides[this.activeSlide].classList.remove('slide--next');
-    }
-
-    this.slides[this.activeSlide].classList.add('slide--prev');
-    setTimeout(this.singlePrev, 300);
-    this.conditionalEvents();
-    return;
-  }
-
-  handleVideo() {
-    const video = this.slides[this.activeSlide].querySelector('video');
-
-    if (video) {
-      video.pause();
-    }
-  }
-
-  handleSingleNext(e) {
-    if (e) {
-      e.preventDefault();
-    }
-
-    this.handleVideo();
-    this.slides[this.activeSlide].classList.remove('slide--active');
-    this.slides[this.activeSlide].classList.add('slide--prev');
-
-    if (this.activeSlide === 0) {
-      this.setState('activeSlide', 1);
-      this.setSingleNextSlide();
+    if (prevPage <= 1) {
+      this.setState('left', 0);
+      this.setState('right', 0);
+      this.prev.setAttribute('disabled', true);
+      this.next.removeAttribute('disabled');
+      this.setState('activeSlide', this.activeSlide - 1);
+      this.setSliderPosition();
       return;
     }
 
-    this.setState('activeSlide', 0);
-    this.setSingleNextSlide();
-  }
-
-  handleSinglePrev(e) {
-    if (e) {
-      e.preventDefault();
-    }
-
-    this.handleVideo();
-    this.slides[this.activeSlide].classList.remove('slide--active');
-    this.slides[this.activeSlide].classList.add('slide--next');
-
-    if (this.activeSlide === 0) {
-      this.setState('activeSlide', 1);
-      this.setSinglePrevSlide();
-      return;
-    }
-
-    this.setState('activeSlide', 0);
-    this.setSinglePrevSlide();
+    this.setState('left', Number(this.left + offset));
+    this.setState('right', Number(this.right - offset));
+    this.setState('activeSlide', this.activeSlide + 1);
+    this.setSliderPosition();
   }
 
   addListeners() {
@@ -283,21 +175,8 @@ class Slider {
       slide.addEventListener('mousedown', this.handleDrag);
       slide.addEventListener('touchstart', this.handleDrag);
     });
-
-    if (this.slides.length > 2) {
-      this.next.addEventListener('click', this.handleNext);
-      this.prev.addEventListener('click', this.handlePrev);
-      return;
-    }
-
-    if (this.slides.length > 1) {
-      this.next.addEventListener('click', this.handleSingleNext);
-      this.prev.addEventListener('click', this.handleSinglePrev);
-      return;
-    }
-
-    this.prev.setAttribute('disabled', true);
-    this.next.setAttribute('disabled', true);
+    this.next.addEventListener('click', this.handleNext);
+    this.prev.addEventListener('click', this.handlePrev);
   }
 
   handleMouseMove(e) {
@@ -389,15 +268,72 @@ class Slider {
 
     if (this.slides.length) {
       this.getElements();
-      this.setActive();
+      this.getBreakpoint();
+      this.getCount();
+      this.setTotal();
       this.addListeners();
       return;
-    }
+    } // this.hideCarousel();
 
-    this.hideCarousel();
   }
 
 }
+
+/***/ }),
+
+/***/ "./utils/constants.js":
+/*!****************************!*\
+  !*** ./utils/constants.js ***!
+  \****************************/
+/***/ (function(module) {
+
+// BREAKPOINTS
+// Defi             s the project's breakpoints
+// Doesn't use units as I need the bare values for fluid type.
+module.exports.breakpoints = {
+    sm: 375,
+    md: 768,
+    tb: 1000,
+    lg: 1440,
+    xl: 1920,
+  };
+  
+  // SPACING
+  // Genereates a spacing object from a base value up to a max
+  const generateSpacing = (base = 4, max = 200) => {
+    const spacing = {};
+    for (let i = 0; i <= max; i = i + 1) {
+      spacing[i] = `${i * base}px`;
+    }
+  
+    return spacing;
+  };
+  
+  module.exports.spacing = generateSpacing();
+  
+  // Duration
+  // Generates duration values from 0.1 to 1 second
+  
+  const generateDuration = (max = 9) => {
+    const duration = {};
+    for (let i = 1; i <= max; i = i + 1) {
+      duration[i] = `0.${i}s`;
+    }
+    return duration;
+  };
+  
+  module.exports.duration = generateDuration();
+  
+  const generateDelay = (max = 10, base = 0.2) => {
+    const delays = {};
+    for (let i = 1; i <= max; i = i + 1) {
+      delays[i] = `${Number(i * base)}s`;
+    }
+    return delays;
+  };
+  
+  module.exports.delay = generateDelay();
+  
 
 /***/ })
 
@@ -458,8 +394,9 @@ class Slider {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 !function() {
+"use strict";
 /*!************************************!*\
   !*** ./src/js/scripts/carousel.js ***!
   \************************************/

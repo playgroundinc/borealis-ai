@@ -4,7 +4,7 @@ import CustomRichText from '../reusable/custom-richtext-component.jsx';
 
 import defaultAttrs from '../helper-functions/default-attrs';
 
-export default function trmcSliderBlock() {
+export default function pgCarouselBlock() {
 	const { registerBlockType } = wp.blocks;
 	const {
 		InnerBlocks,
@@ -12,17 +12,16 @@ export default function trmcSliderBlock() {
     const { i18n } = wp;
 
 	const blockSlug = "carousel";
-	const blockTitle = "Media - Slider";
+	const blockTitle = "News Carousel";
 	const blockDescription = "Creates a carousel.";
 	const blockCategory = "carousels";
     const blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const stringAttrs = [
-        'alignment',
+        'link',
         'title'
     ];
     const attributes = defaultAttrs(stringAttrs);
-    attributes['alignment']['default'] = 'center';
 
 	registerBlockType(`${namespace}/${blockSlug}`, {
 		title: i18n.__(blockTitle),
@@ -32,7 +31,7 @@ export default function trmcSliderBlock() {
         attributes,
 		edit: (props, editor = false, save = false ) => {
         const { setAttributes, attributes } = props;
-        const { alignment, title } = attributes;
+        const { link, title } = attributes;
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
@@ -47,12 +46,17 @@ export default function trmcSliderBlock() {
                                 reference: 'title',
                                 value: title,
                                 tagName: 'h2',
-                                classes: ['heading_two'],
+                                classes: ['h2'],
+                                settings: [],
                                 placeholder: 'Provide a Carousel title (optional)',
-                                align: {
-                                    value: alignment,
-                                    reference: 'alignment',
-                                }
+                            },
+                            {
+                                reference: 'link',
+                                value: link,
+                                tagName: 'p',
+                                classes: ['paragraph'],
+                                settings: [],
+                                placeholder: 'Provide a Carousel View All link (optional)',
                             }
                         ]}
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
@@ -61,14 +65,14 @@ export default function trmcSliderBlock() {
                         <InnerBlocks.Content />
                     ) : (
                         <InnerBlocks
-                            allowedBlocks={[`${namespace}/image-slide`, 'core/video']}
+                            allowedBlocks={[`${namespace}/select-research-blogs`, `${namespace}/select-news`]}
                         />
                     )}
                 </div>, 
             ];
 		},
 		save: () => {
-            const { title } = attributes;
+            const { link, title } = attributes;
 			return <InnerBlocks.Content />;
 		},
 	});
