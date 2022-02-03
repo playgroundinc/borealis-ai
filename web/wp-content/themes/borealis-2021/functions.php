@@ -135,6 +135,7 @@ require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-blo
 
 // Publications 
 require get_template_directory() . '/inc/gutenberg/publications/render-publications-container.php';
+require get_template_directory() . '/inc/gutenberg/publications/render-publications-item.php';
 
 // Slider Blocks
 require get_template_directory() . '/inc/gutenberg/slider/render-slider-container-block.php';
