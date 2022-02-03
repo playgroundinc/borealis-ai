@@ -495,15 +495,32 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 14px;
   }
 }
-.icon--xl{
-  font-size: 66px;
-  font-family: Inter, sans-serif;
-  line-height: normal;
-}
 .text-link{
   font-size: 18px;
   font-family: Inter, sans-serif;
   line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+@media (min-width: 375px){
+  .text-link{
+    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .text-link{
+    font-size: 18px;
+  }
+}
+.icon--xl{
+  font-size: 66px;
+  font-family: Inter, sans-serif;
+  line-height: normal;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -520,14 +537,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (min-width: 1920px){
   .icon--xl{
     font-size: 66px;
-  }
-  .text-link{
-    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
-  }
-}
-@media (min-width: 1920px){
-  .text-link{
-    font-size: 18px;
   }
 }
 .icon--lg{
