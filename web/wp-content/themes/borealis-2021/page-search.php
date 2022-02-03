@@ -31,12 +31,18 @@ get_header();
     if (!empty($Query->posts)) :
     ?>
         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
+        <div class="container pt-8">
+            <?php if(!empty($search_query)) : ?> 
+                <p class="h3 py-10">Results for <?php echo esc_html($search_query) ?></p>
+            <?php elseif(empty($search_query)) : ?>
+                <p class="h3 py-10">No results found for …</p>
+            <?php endif; ?> 
+        </div>
         <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="research-areas">
             <?php foreach ($Query->posts as $post) :
             ?>
                 <li class="border-b border-shade-grey-500">
-                    <!-- TODO: results generation here -->
-                    <!-- <?php echo pg_generate_publication_result($post, $search_query); ?> -->
+                    <?php echo pg_generate_main_search_result($post, $search_query); ?>
                 </li>
             <?php endforeach; ?>
         </ul>
