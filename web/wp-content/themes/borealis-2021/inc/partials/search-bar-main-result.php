@@ -1,10 +1,11 @@
 <?php 
 
 if (!function_exists('pg_generate_main_search_result')) {
-    function pg_generate_main_search_result($post, $research_areas) {
+    function pg_generate_main_search_result($post, $research_areas, $id) {
         $allowed_html = pg_allowed_html();
         $url = get_permalink($post->ID);
         $terms = get_the_terms($post->ID, 'research-areas');
+        var_dump($id);
         if (!empty($terms)) {
             $terms = array_map(
                 function($term) use ($research_areas) {
