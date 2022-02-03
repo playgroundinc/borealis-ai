@@ -2,7 +2,7 @@ import { namespace } from '../helper-functions/constants';
 import defaultAttrs from '../helper-functions/default-attrs';
 
 export default function selectPostBlock(postObject) {
-    const { icon, slug, single } = postObject;
+    const { icon, slug, single, parent } = postObject;
 	const { registerBlockType } = wp.blocks;
 	const { withSelect } = wp.data;
 	const { SelectControl } = wp.components;
@@ -26,6 +26,7 @@ export default function selectPostBlock(postObject) {
 		icon,
 		category: "common",
 		attributes,
+		parent,
 		edit: withSelect((select) => {
 			return {
 				posts: select("core").getEntityRecords("postType", slug, {
