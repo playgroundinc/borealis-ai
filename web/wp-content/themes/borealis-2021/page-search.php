@@ -43,19 +43,18 @@ get_header();
     // var_dump($Query->posts);
     $search_query = pg_get_query_values($_GET, 'q')[0];
     $research_areas = pg_get_query_values($_GET, 'research-areas');
-    // var_dump($research_areas);
     $args = pg_generate_query('any', $search_query, array('research-areas' => $research_areas));
     $Query = new WP_Query($args);
-    // var_dump($Query->posts);
     if (!empty($Query->posts)) :
     ?>
         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
         <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="research-areas">
-            <?php foreach ($Query->posts as $post) : // Start of Query loop 
+            <?php foreach ($Query->posts as $post) :
             ?>
-                <!-- <li class="border-b border-shade-grey-500">
+                <li class="border-b border-shade-grey-500">
+                    <!-- WORK ON THIS -->
                     <?php echo pg_generate_publication_result($post, $search_query); ?>
-                </li> -->
+                </li>
             <?php endforeach; ?>
         </ul>
         <div class="container">
