@@ -690,6 +690,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 16px;
   padding-top: 4px;
   padding-bottom: 4px;
+  text-align: center;
 }
 .pill-active{
   --tw-border-opacity: 1;
@@ -830,11 +831,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-8{
   margin-top: 32px;
 }
-.mr-2{
-  margin-right: 8px;
-}
 .mr-7{
   margin-right: 28px;
+}
+.mr-2{
+  margin-right: 8px;
 }
 .mt-18{
   margin-top: 72px;
@@ -930,9 +931,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-22{
   width: 88px;
-}
-.w-1\/2{
-  width: 50%;
 }
 .shrink-0{
   flex-shrink: 0;
@@ -1119,6 +1117,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 8px;
   padding-bottom: 8px;
 }
+.py-14{
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
 .px-18{
   padding-left: 72px;
   padding-right: 72px;
@@ -1134,10 +1136,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-5{
   padding-top: 20px;
   padding-bottom: 20px;
-}
-.py-14{
-  padding-top: 56px;
-  padding-bottom: 56px;
 }
 .pt-13{
   padding-top: 52px;
@@ -1178,17 +1176,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-7{
   padding-bottom: 28px;
 }
-.pl-10{
-  padding-left: 40px;
-}
-.pr-4{
-  padding-right: 16px;
-}
 .pt-12{
   padding-top: 48px;
 }
 .pb-6{
   padding-bottom: 24px;
+}
+.pl-10{
+  padding-left: 40px;
+}
+.pr-4{
+  padding-right: 16px;
 }
 .pt-5{
   padding-top: 20px;
@@ -1196,8 +1194,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-13{
   padding-bottom: 52px;
 }
-.pr-14{
-  padding-right: 56px;
+.pl-6{
+  padding-left: 24px;
 }
 .pt-7{
   padding-top: 28px;
@@ -1219,9 +1217,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-8{
   padding-top: 32px;
-}
-.pl-6{
-  padding-left: 24px;
 }
 .text-center{
   text-align: center;
@@ -1440,9 +1435,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:w-full{
     width: 100%;
   }
-  .md\:w-1\/2{
-    width: 50%;
-  }
   .md\:border-l{
     border-left-width: 1px;
   }
@@ -1463,9 +1455,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:pl-4{
     padding-left: 16px;
-  }
-  .md\:pt-0{
-    padding-top: 0px;
   }
   .md\:pl-8{
     padding-left: 32px;

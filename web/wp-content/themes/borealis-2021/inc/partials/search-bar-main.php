@@ -21,6 +21,49 @@ if (!function_exists('pg_generate_search_bar_main')) {
                 <span id="close-search" class="icon icon--xl hidden"><?php echo pg_render_icon('large-search-close')?></span>
             </div>
         </div>
+        <div class="hidden">
+            <button id="search-topics"> <span class="topics"><?php echo esc_html('0') ?></span></button>
+        </div>
+    </div>
+    <div class="bg-shade-grey-100">
+        <div id="search-filters" class="container" role="region" aria-labelledby="search-topics">
+            <div class="pt-12 pb-6">
+                <form method="post">
+                <?php
+                    foreach ($taxonomies as $taxonomy):
+                        $terms = get_terms(array(
+                            'taxonomy' => $taxonomy['name'],
+                            'hide_empty' => true,
+                        ));
+                        ?>
+                        <fieldset class="checkbox-form" id="<?php echo esc_attr($taxonomy['name']) ?>">
+                            <legend class="sr-only"><?php echo esc_html($taxonomy['label']) ?></legend>
+                            <div class="flex flex-wrap">
+                                <?php foreach ($terms as $term): ?>
+                                    <div class="mr-7 mb-4">
+                                        <input 
+                                            class="peer sr-only"
+                                            value="<?php echo esc_attr($term->term_id)?>" 
+                                            name="<?php echo esc_attr($term->term_id . '[]') ?>" 
+                                            type="checkbox" 
+                                            id="<?php echo esc_attr($term->term_id) ?>" 
+                                        >
+                                        <label 
+                                            class="pill peer-checked:pill-active hover:cursor-pointer"
+                                            for="<?php echo esc_attr($term->term_id) ?>">
+                                            <?php echo esc_html($term->name)?> 
+                                        </label>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </fieldset>
+                    <?php endforeach; ?>
+                </form>
+                <button class="clear-checkboxes">
+                    <?php echo esc_html('Clear All') ?>
+                </button>
+            </div>
+        </div>
     </div>
 <?php
         return ob_get_clean();

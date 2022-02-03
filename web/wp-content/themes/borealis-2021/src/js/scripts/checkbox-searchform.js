@@ -14,7 +14,6 @@ export default function checkboxSearchForm(container, setCount) {
   let topicsNum = parseInt(topics.innerHTML);
   let count = setCount(topicsNum);
 
-
   // Handles clear all button functionality
   clearAll.addEventListener("click", clearAllCheckboxes);
   function clearAllCheckboxes() {
