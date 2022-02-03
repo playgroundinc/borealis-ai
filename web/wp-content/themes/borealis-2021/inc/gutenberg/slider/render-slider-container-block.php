@@ -45,7 +45,7 @@ if ( ! function_exists( 'pg_render_slider_container_block' ) ) {
             if (!empty($block['innerBlocks'])):
             ?>
                 <div class="container">
-                    <div class="flex slider">
+                    <div class="md:flex slider">
                         <div class="md:w-4/12f flex flex-col">
                             <div class="flex flex-col grow justify-between">
                                 <div>
@@ -56,7 +56,7 @@ if ( ! function_exists( 'pg_render_slider_container_block' ) ) {
                                         <a href="<?php echo esc_attr($attributes->link) ?>" class="text-link py-2">View All</a>
                                     <?php endif; // End of Link check ?>
                                 </div>
-                                <div class="slider-block__controls">
+                                <div class="slider-block__controls py-14 md:py-0">
                                     <div class="flex">
                                         <div class="">
                                             <?php $prev_icon = pg_render_icon('arrow-left')?>
@@ -77,11 +77,11 @@ if ( ! function_exists( 'pg_render_slider_container_block' ) ) {
                         </div>
                         <div 
                             id="<?php echo esc_attr($id); ?>"
-                            class="relative w-full pt-72 overflow-hidden" 
+                            class="relative w-full pt-72 overflow-hidden border-r border-color-shade-grey-500" 
                             aria-roledescription="carousel"
                             <?php echo !empty($attributes->title) ? esc_html('aria-label="' .$attributes->title .'"') : null ?>
                         >
-                                <ul class="slider-block flex absolute inset-0" aria-live="polite">
+                                <ul class="slider-block flex absolute inset-0 transition-slider duration-500" aria-live="polite">
                                     <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
                                         <?php echo pg_render_news_slide($inner_block) ?>
                                     <?php endforeach; ?>

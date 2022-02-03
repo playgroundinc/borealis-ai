@@ -27,22 +27,26 @@ class Slider {
     this.right = 0;
     this.slideCount = 1;
     this.slideCounts = {
+      sm: 2,
       md: 2,
+      tb: 4,
       lg: 4,
       xl: 4
     };
     this.breakpoints = _utils_constants__WEBPACK_IMPORTED_MODULE_0__.breakpoints;
-    this.breakpoint = 'lg';
+    this.breakpoint = null;
     this.current = null;
     this.pageXStart = null;
     this.pageXEnd = null;
     this.button = null;
     this.getSlides = this.getSlides.bind(this);
+    this.getBreakpoint = this.getBreakpoint.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
     this.handleMouseUp = this.handleMouseUp.bind(this);
     this.handleDrag = this.handleDrag.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handlePrev = this.handlePrev.bind(this);
+    this.handleResize = this.handleResize.bind(this);
   }
 
   setState(name, value) {
@@ -83,6 +87,11 @@ class Slider {
   }
 
   getBreakpoint() {
+    if (window.innerWidth < this.breakpoints.sm) {
+      this.setState('breakpoint', false);
+      return;
+    }
+
     for (let breakpoint in this.breakpoints) {
       if (window.innerWidth >= this.breakpoints[breakpoint]) {
         this.setState('breakpoint', breakpoint);
@@ -95,6 +104,8 @@ class Slider {
       this.setState('slideCount', this.slideCounts[this.breakpoint]);
       return;
     }
+
+    this.setState('slideCount', 1);
   }
 
   setTotal() {
@@ -108,6 +119,10 @@ class Slider {
     this.total.innerText = '1';
     this.next.setAttribute('disabled', true);
     this.prev.setAttribute('disabled', true);
+  }
+
+  setCounter() {
+    this.current.innerText = this.activeSlide;
   }
 
   getSlides() {
@@ -131,10 +146,17 @@ class Slider {
   }
 
   handleNext(e) {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
+
     const nextPage = Number(this.slideCount) * Number(this.activeSlide + 1);
     const currentPage = Number(this.activeSlide * this.slideCount);
     let offset = 100;
+
+    if (nextPage - this.slides.length > this.slideCount) {
+      return;
+    }
 
     if (nextPage >= this.slides.length) {
       const strays = Number(this.slides.length - currentPage);
@@ -146,13 +168,21 @@ class Slider {
     this.setState('left', Number(this.left - offset));
     this.setState('right', Number(this.right + offset));
     this.setState('activeSlide', this.activeSlide + 1);
+    this.setCounter();
     this.setSliderPosition();
   }
 
   handlePrev(e) {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
+
     const prevPage = Number(this.activeSlide - 1);
     let offset = 100;
+
+    if (prevPage === 0) {
+      return;
+    }
 
     if (prevPage <= 1) {
       this.setState('left', 0);
@@ -161,13 +191,33 @@ class Slider {
       this.next.removeAttribute('disabled');
       this.setState('activeSlide', this.activeSlide - 1);
       this.setSliderPosition();
+      this.setCounter();
       return;
     }
 
+    this.next.removeAttribute('disabled');
     this.setState('left', Number(this.left + offset));
     this.setState('right', Number(this.right - offset));
-    this.setState('activeSlide', this.activeSlide + 1);
+    this.setState('activeSlide', this.activeSlide - 1);
     this.setSliderPosition();
+    this.setCounter();
+  }
+
+  handleResize() {
+    this.setState('left', 0);
+    this.setState('right', 0);
+    this.setState('activeSlide', 1);
+    this.setSliderPosition();
+    this.getBreakpoint();
+    this.getCount();
+    this.setTotal();
+    this.setCounter();
+
+    if (this.slides.length > this.slideCount) {
+      this.next.removeAttribute('disabled');
+    }
+
+    this.prev.setAttribute('disabled', true);
   }
 
   addListeners() {
@@ -175,6 +225,7 @@ class Slider {
       slide.addEventListener('mousedown', this.handleDrag);
       slide.addEventListener('touchstart', this.handleDrag);
     });
+    window.addEventListener('resize', this.handleResize);
     this.next.addEventListener('click', this.handleNext);
     this.prev.addEventListener('click', this.handlePrev);
   }
@@ -272,6 +323,7 @@ class Slider {
       this.getCount();
       this.setTotal();
       this.addListeners();
+      console.log(this);
       return;
     } // this.hideCarousel();
 
