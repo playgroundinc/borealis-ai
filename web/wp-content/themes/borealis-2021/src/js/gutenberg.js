@@ -41,6 +41,10 @@ import logoBlock from "./blocks/logos/logo.jsx";
 import pageStripBlock from "./blocks/page-strips/page-strip.jsx";
 import pageStripGraphic from "./blocks/page-strips/page-strip-graphic.jsx";
 
+// Publications
+import publicationsContainerBlock from './blocks/publications/publications-container.jsx';
+import selectPostsBlocks from './blocks/publications/select-posts-blocks.jsx';
+
 // Slider Blocks
 import sliderBlock from "./blocks/slider/slider-container.jsx";
 import imageSlideBlock from "./blocks/slider/image-slide.jsx";
@@ -105,6 +109,10 @@ imageListBlock();
 // Logo Blocks
 logosContainer();
 logoBlock();
+
+// Publications
+publicationsContainerBlock();
+selectPostsBlocks();
 
 // Slide Blocks
 sliderBlock();
