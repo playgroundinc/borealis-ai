@@ -134,6 +134,10 @@ require get_template_directory() . '/inc/gutenberg/logos/render-logo-block.php';
 require get_template_directory() . '/inc/gutenberg/render-page-strip-block.php';
 require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-block.php';
 
+// Publications 
+require get_template_directory() . '/inc/gutenberg/publications/render-publications-container.php';
+require get_template_directory() . '/inc/gutenberg/publications/render-publications-item.php';
+
 // Slider Blocks
 require get_template_directory() . '/inc/gutenberg/slider/render-slider-container-block.php';
 require get_template_directory() . '/inc/gutenberg/slider/render-image-slide-block.php';

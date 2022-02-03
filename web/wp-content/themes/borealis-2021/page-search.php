@@ -24,23 +24,6 @@ get_header();
     echo pg_generate_search_bar_main($query, $taxonomies_array);
     ?>
     <?php
-    // $search_query = pg_get_query_values($_GET, 'q')[0];
-    // $term_query = pg_get_query_values($_GET, 'research-areas');
-    // var_dump($term_query);
-    // $query_args = array(
-    //     's' => $search_query, 
-    //     'post_type' => 'any',
-    //     'tax_query' => array(
-    //         array(
-    //             'taxonomy' => 'research-areas',
-    //             'field' => 'term_id',
-    //             // MAKE THIS DYNAMIC as array of active terms
-    //             'terms' => $term_query[0],
-    //         )
-    //     )
-    // );
-    // $Query = new WP_Query($query_args);
-    // var_dump($Query->posts);
     $search_query = pg_get_query_values($_GET, 'q')[0];
     $research_areas = pg_get_query_values($_GET, 'research-areas');
     $args = pg_generate_query('any', $search_query, array('research-areas' => $research_areas));
@@ -52,8 +35,8 @@ get_header();
             <?php foreach ($Query->posts as $post) :
             ?>
                 <li class="border-b border-shade-grey-500">
-                    <!-- WORK ON THIS -->
-                    <?php echo pg_generate_publication_result($post, $search_query); ?>
+                    <!-- TODO: results generation here -->
+                    <!-- <?php echo pg_generate_publication_result($post, $search_query); ?> -->
                 </li>
             <?php endforeach; ?>
         </ul>
