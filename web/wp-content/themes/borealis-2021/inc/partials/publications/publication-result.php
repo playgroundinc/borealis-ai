@@ -25,7 +25,7 @@ if (!function_exists('pg_generate_publication_result')) {
         <a href="<?php echo esc_attr($url)?>" class="py-5 block bg-shade-white-400 hover:bg-shade-grey-50 transition-background-color duration-300">
             <div class="container">
                 <div class="md:flex items-center">
-                    <div class="grow">
+                    <div class="grow pr-3">
                         <p class="paragraph"><?php echo esc_html($post->post_title) ?></p>
                         <?php if (isset($terms_string) && $terms_string !== ''): // Start of Terms String check ?>
                             <p class="mt-5 md:mt-3 text-shade-grey-700">
