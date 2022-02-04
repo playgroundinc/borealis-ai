@@ -5,6 +5,7 @@ export default class Accordion {
         this.accordion = accordion;
         this.trigger = trigger;
         this.elements = elements;
+        this.icon = this.trigger.querySelector('svg');
         this.index = index;
         this.first = null;
         this.last = null;
@@ -103,11 +104,15 @@ export default class Accordion {
     handleTriggerClick(e) {
         slideToggle(this.panel);
         if (this.trigger.classList.contains('accordion-row--active')) {
+            this.icon.classList.add('rotate-0');
+            this.icon.classList.remove('rotate-180');
             this.trigger.classList.remove('accordion-row--active');
             this.trigger.setAttribute('aria-expanded', false);
             return;
         }
         this.handleActiveElements();
+        this.icon.classList.add('rotate-180');
+        this.icon.classList.remove('rotate-0');
         this.trigger.setAttribute('aria-expanded', true);
         this.trigger.classList.add('accordion-row--active');
     }
