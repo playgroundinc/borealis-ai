@@ -46,7 +46,7 @@ if ( ! function_exists( 'pg_render_slider_container_block' ) ) {
             ?>
                 <div class="container">
                     <div class="md:flex slider">
-                        <div class="md:w-4/12f flex flex-col">
+                        <div class="md:w-4/12 md:pr-4 flex flex-col">
                             <div class="flex flex-col grow justify-between">
                                 <div>
                                     <?php if (!empty($attributes->title)): ?>
@@ -64,7 +64,7 @@ if ( ! function_exists( 'pg_render_slider_container_block' ) ) {
                                             <?php $next_icon = pg_render_icon('arrow')?>
                                             <button class="slider-block__button pl-2 slider-block__next icon--lg disabled:text-shade-grey-400" aria-label="<?php esc_attr_e('Next slide', 'trmc') ?>" aria-controls="<?php echo esc_attr($id)?>"><?php echo wp_kses($next_icon, $allowed_html); ?></button>
                                         </div>    
-                                        <div class="ml-17 slider-block__count middle-xs flex">
+                                        <div class="ml-15 slider-block__count middle-xs flex">
                                             <p class="h4 text-shade-grey-500">
                                                 <span class="slider-block__count__current">1</span>
                                                 <?php echo esc_html('/'); ?>

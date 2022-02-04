@@ -4,22 +4,23 @@ import CustomRichText from '../reusable/custom-richtext-component.jsx';
 
 import defaultAttrs from '../helper-functions/default-attrs';
 
-export default function pgCarouselBlock() {
+export default function pgNewsSlideBlock() {
 	const { registerBlockType } = wp.blocks;
 	const {
 		InnerBlocks,
     } = wp.blockEditor;
     const { i18n } = wp;
 
-	const blockSlug = "carousel";
-	const blockTitle = "News Carousel";
-	const blockDescription = "Creates a carousel.";
+	const blockSlug = "news-slide";
+	const blockTitle = "News Slide";
+	const blockDescription = "Creates a slide for an external news source.";
 	const blockCategory = "carousels";
     const blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const stringAttrs = [
         'link',
-        'title'
+        'title',
+        'source'
     ];
     const attributes = defaultAttrs(stringAttrs);
 
@@ -29,9 +30,10 @@ export default function pgCarouselBlock() {
 		category: blockCategory,
         icon: blockIcon,
         attributes,
+        parent: [`${namespace}/carousel`],
 		edit: (props, editor = false, save = false ) => {
         const { setAttributes, attributes } = props;
-        const { link, title } = attributes;
+        const { link, title, source } = attributes;
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
@@ -39,16 +41,16 @@ export default function pgCarouselBlock() {
 
 			return [
                 <div className={`custom-container` }>
-                    <p className="block-title">Media - Slider</p>
+                    <p className="block-title">News Slide</p>
                     <CustomRichText 
                         components={[
                             {
                                 reference: 'title',
                                 value: title,
-                                tagName: 'h2',
-                                classes: ['h2'],
+                                tagName: 'h3',
+                                classes: ['h3'],
                                 settings: [],
-                                placeholder: 'Provide a Carousel title (optional)',
+                                placeholder: 'Provide the title for the news item (required)',
                             },
                             {
                                 reference: 'link',
@@ -56,23 +58,24 @@ export default function pgCarouselBlock() {
                                 tagName: 'p',
                                 classes: ['paragraph'],
                                 settings: [],
-                                placeholder: 'Provide a Carousel View All link (optional)',
+                                placeholder: 'Provide a link to the news item (required)',
+                            },
+                            {
+                                reference: 'source',
+                                value: source,
+                                tagName: 'p',
+                                classes: ['paragraph'],
+                                settings: [],
+                                placeholder: 'Provide the name for the news source (optional)',
                             }
                         ]}
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
                     />
-                    {save ? (
-                        <InnerBlocks.Content />
-                    ) : (
-                        <InnerBlocks
-                            allowedBlocks={[`${namespace}/select-research-blogs`, `${namespace}/select-news`, `${namespace}/news-slide`]}
-                        />
-                    )}
                 </div>, 
             ];
 		},
 		save: () => {
-            const { link, title } = attributes;
+            const { link, title, source } = attributes;
 			return <InnerBlocks.Content />;
 		},
 	});
