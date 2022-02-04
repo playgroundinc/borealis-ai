@@ -15,7 +15,7 @@ export default function pgNewsSlideBlock() {
 	const blockTitle = "News Slide";
 	const blockDescription = "Creates a slide for an external news source.";
 	const blockCategory = "carousels";
-    const blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+    const blockIcon = "external"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const stringAttrs = [
         'link',

@@ -801,14 +801,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-16{
   margin-top: 64px;
 }
-.ml-17{
-  margin-left: 68px;
+.ml-15{
+  margin-left: 60px;
 }
 .mt-3{
   margin-top: 12px;
-}
-.ml-15{
-  margin-left: 60px;
 }
 .block{
   display: block;

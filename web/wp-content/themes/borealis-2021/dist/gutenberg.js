@@ -3859,7 +3859,7 @@ function pgNewsSlideBlock() {
   var blockTitle = "News Slide";
   var blockDescription = "Creates a slide for an external news source.";
   var blockCategory = "carousels";
-  var blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  var blockIcon = "external"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var stringAttrs = ['link', 'title', 'source'];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
