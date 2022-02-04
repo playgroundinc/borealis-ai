@@ -13,7 +13,7 @@ export default function customSubsectionBlock() {
 	const blockTitle = "Create custom subsection block";
 	const blockDescription = "Component to create custom subsection block";
 	const blockCategory = "common";
-    const blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+    const blockIcon = "admin-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
         title: {
@@ -38,7 +38,7 @@ export default function customSubsectionBlock() {
             }
 
 			return [
-                <div class="custom-subsection__block">
+                <div class="custom-child custom-subsection__block">
                     <p className="block-title">Custom Subsection Block</p>
                     <CustomRichText 
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }

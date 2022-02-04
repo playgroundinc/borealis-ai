@@ -2725,10 +2725,10 @@ function publicationsContainerBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "block-container"
+        class: "custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
-      }, "Tag Cloud Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Publications List Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         },
@@ -3213,11 +3213,19 @@ function selectPostBlock(postObject) {
           setAttributes = _ref2.setAttributes;
 
       if (!posts) {
-        return "Loading...";
+        return /*#__PURE__*/React.createElement("div", {
+          className: "custom-component"
+        }, /*#__PURE__*/React.createElement("p", {
+          className: "block-title"
+        }, "Select ".concat(single)), /*#__PURE__*/React.createElement("p", null, "Loading..."));
       }
 
       if (posts && posts.length === 0) {
-        return "No posts";
+        return /*#__PURE__*/React.createElement("div", {
+          className: "custom-component"
+        }, /*#__PURE__*/React.createElement("p", {
+          className: "block-title"
+        }, "Select ".concat(single)), /*#__PURE__*/React.createElement("p", null, "No Posts"));
       }
 
       var options = posts.map(function (post) {
@@ -3231,8 +3239,10 @@ function selectPostBlock(postObject) {
         label: "Select"
       });
       return /*#__PURE__*/React.createElement("div", {
-        className: "custom-container ".concat(editor ? "content-column--editor" : "content-column--fe")
-      }, /*#__PURE__*/React.createElement(MySelectControl, {
+        className: "custom-component"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "block-title"
+      }, "Select ".concat(single)), /*#__PURE__*/React.createElement(MySelectControl, {
         setAttributes: setAttributes,
         options: options,
         post: attributes.post
@@ -3697,7 +3707,7 @@ function customSectionBlock() {
   var blockTitle = "Create custom section block";
   var blockDescription = "Component to create custom section block";
   var blockCategory = "common";
-  var blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  var blockIcon = "welcome-add-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
@@ -3723,7 +3733,7 @@ function customSectionBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "custom-section__block"
+        class: "custom-container custom-section__block"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
       }, "Custom Section Block"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -3778,7 +3788,7 @@ function customSubsectionBlock() {
   var blockTitle = "Create custom subsection block";
   var blockDescription = "Component to create custom subsection block";
   var blockCategory = "common";
-  var blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  var blockIcon = "admin-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
@@ -3805,7 +3815,7 @@ function customSubsectionBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "custom-subsection__block"
+        class: "custom-child custom-subsection__block"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
       }, "Custom Subsection Block"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -4445,7 +4455,7 @@ function tagCloudContainerBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "tag-cloud-container__block"
+        class: "tag-cloud-container__block custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
       }, "Tag Cloud Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -4532,7 +4542,7 @@ function tagCloudItemBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "tag-cloud-item__block"
+        class: "tag-cloud-item__block custom-child"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
       }, "Tag Cloud Item"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {

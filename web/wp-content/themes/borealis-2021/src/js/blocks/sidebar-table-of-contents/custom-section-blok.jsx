@@ -13,7 +13,7 @@ export default function customSectionBlock() {
 	const blockTitle = "Create custom section block";
 	const blockDescription = "Component to create custom section block";
 	const blockCategory = "common";
-    const blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+    const blockIcon = "welcome-add-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
         title: {
@@ -37,7 +37,7 @@ export default function customSectionBlock() {
             }
 
 			return [
-                <div class="custom-section__block">
+                <div class="custom-container custom-section__block">
                     <p className="block-title">Custom Section Block</p>
                     <CustomRichText 
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
