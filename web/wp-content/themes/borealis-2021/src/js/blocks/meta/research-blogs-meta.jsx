@@ -1,17 +1,17 @@
 import { namespace } from '../helper-functions/constants';
 
+import SelectAuthors from '../reusable/select-authors.jsx';
+
 import defaultAttrs from '../helper-functions/default-attrs';
 
 export default function researchBlogMetaBlock() {
 
     const { registerBlockType } = wp.blocks;
 	const { TextControl } = wp.components;
-    const {
-        Inserter
-    } = wp.blockEditor;
-
     const meta_fields = [
-        'publication_date', 'post_info'
+        'publication_date', 
+        'time_to_read',
+        'authors'
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
@@ -25,13 +25,12 @@ export default function researchBlogMetaBlock() {
         attributes,
         edit: (props) => {
 			const { setAttributes, attributes } = props;
-			const { publication_date, post_info } = attributes;
-            console.log(attributes)
-
+			const { authors, publication_date, time_to_read } = attributes;
+            
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
             }
-
+    
 			return ([
 				null,
 				<div className="custom-component">
@@ -42,6 +41,16 @@ export default function researchBlogMetaBlock() {
                                 value={publication_date}
                                 onChange={(value) => { updateAttributeValue('publication_date', value) }}
                                 label="Publication Date (YYYY/MM/DD):"
+                            />
+                            <TextControl
+                                value={time_to_read}
+                                type="number"
+                                onChange={(value) => { updateAttributeValue('time_to_read', value) }}
+                                label="Time to Read:"
+                            />
+                            <SelectAuthors 
+                                authors={authors}
+                                updateAttributeValue={updateAttributeValue}
                             />
                         </div>
                     </div> 

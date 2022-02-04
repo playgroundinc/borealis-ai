@@ -1960,100 +1960,6 @@ function authorMetaBlock() {
 
 /***/ }),
 
-/***/ "./src/js/blocks/meta/custom-selects.jsx":
-/*!***********************************************!*\
-  !*** ./src/js/blocks/meta/custom-selects.jsx ***!
-  \***********************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ customSelects; }
-/* harmony export */ });
-/* harmony import */ var _reusable_custom_post_column_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../reusable/custom-post-column.jsx */ "./src/js/blocks/reusable/custom-post-column.jsx");
-
-function customSelects() {
-  (0,_reusable_custom_post_column_jsx__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    icon: 'admin-users',
-    slug: 'author',
-    single: 'Author'
-  });
-}
-
-/***/ }),
-
-/***/ "./src/js/blocks/meta/news-meta.jsx":
-/*!******************************************!*\
-  !*** ./src/js/blocks/meta/news-meta.jsx ***!
-  \******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ newsMetaBlock; }
-/* harmony export */ });
-/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
-/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
-/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-function newsMetaBlock() {
-  var registerBlockType = wp.blocks.registerBlockType;
-  var TextControl = wp.components.TextControl;
-  var Inserter = wp.blockEditor.Inserter;
-  var meta_fields = ['publication_date'];
-  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/news-meta-block"), {
-    title: 'News Meta',
-    icon: 'align-full-width',
-    category: 'common',
-    supports: {
-      multiple: false
-    },
-    attributes: attributes,
-    edit: function edit(props) {
-      var setAttributes = props.setAttributes,
-          attributes = props.attributes;
-      var publication_date = attributes.publication_date,
-          source_publication = attributes.source_publication,
-          authors = attributes.authors,
-          external_link = attributes.external_link;
-
-      function updateAttributeValue(attribute, value) {
-        setAttributes(_defineProperty({}, attribute, value));
-      }
-
-      return [null, /*#__PURE__*/React.createElement("div", {
-        className: "custom-component"
-      }, /*#__PURE__*/React.createElement("p", {
-        className: "block-title"
-      }, "News Meta"), /*#__PURE__*/React.createElement("div", {
-        className: "page-settings__controls"
-      }, /*#__PURE__*/React.createElement("div", {
-        className: "mt-xs-3"
-      }, /*#__PURE__*/React.createElement(TextControl, {
-        value: publication_date,
-        onChange: function onChange(value) {
-          updateAttributeValue('publication_date', value);
-        },
-        label: "Publication date (YYYY/MM/DD):"
-      }))))];
-    },
-    // No information saved to the block
-    // Data is saved to post meta via attributes
-    save: function save() {
-      return null;
-    }
-  });
-}
-
-/***/ }),
-
 /***/ "./src/js/blocks/meta/page-meta.jsx":
 /*!******************************************!*\
   !*** ./src/js/blocks/meta/page-meta.jsx ***!
@@ -2235,30 +2141,31 @@ function pageMetaBlock() {
 
 /***/ }),
 
-/***/ "./src/js/blocks/meta/research-blogs-meta.jsx":
-/*!****************************************************!*\
-  !*** ./src/js/blocks/meta/research-blogs-meta.jsx ***!
-  \****************************************************/
+/***/ "./src/js/blocks/meta/publications-meta.jsx":
+/*!**************************************************!*\
+  !*** ./src/js/blocks/meta/publications-meta.jsx ***!
+  \**************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ researchBlogMetaBlock; }
+/* harmony export */   "default": function() { return /* binding */ publicationMetaBlock; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
+/* harmony import */ var _reusable_select_authors_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/select-authors.jsx */ "./src/js/blocks/reusable/select-authors.jsx");
+/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
-function researchBlogMetaBlock() {
+
+function publicationMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
-  var Inserter = wp.blockEditor.Inserter;
-  var meta_fields = ['publication_date', 'post_info'];
-  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
-  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/research-blog-meta-block"), {
-    title: 'Research Blogs Meta',
+  var meta_fields = ['authors', 'abstract', 'code', 'paper', 'blog', 'publication_date', 'time_to_read', 'citation', 'citation_link'];
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(meta_fields, 'meta');
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-meta-block"), {
+    title: 'Publications Meta',
     icon: 'align-full-width',
     category: 'common',
     supports: {
@@ -2268,9 +2175,15 @@ function researchBlogMetaBlock() {
     edit: function edit(props) {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var publication_date = attributes.publication_date,
-          post_info = attributes.post_info;
-      console.log(attributes);
+      var authors = attributes.authors,
+          abstract = attributes.abstract,
+          code = attributes.code,
+          paper = attributes.paper,
+          blog = attributes.blog,
+          publication_date = attributes.publication_date,
+          time_to_read = attributes.time_to_read,
+          citation = attributes.citation,
+          citation_link = attributes.citation_link;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -2290,6 +2203,129 @@ function researchBlogMetaBlock() {
           updateAttributeValue('publication_date', value);
         },
         label: "Publication Date (YYYY/MM/DD):"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: abstract,
+        onChange: function onChange(value) {
+          updateAttributeValue('abstract', value);
+        },
+        label: "Abstract:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: code,
+        onChange: function onChange(value) {
+          updateAttributeValue('code', value);
+        },
+        label: "Code:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: paper,
+        onChange: function onChange(value) {
+          updateAttributeValue('paper', value);
+        },
+        label: "Paper:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: blog,
+        onChange: function onChange(value) {
+          updateAttributeValue('blog', value);
+        },
+        label: "Blog:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: time_to_read,
+        onChange: function onChange(value) {
+          updateAttributeValue('time_to_read', value);
+        },
+        label: "Time to Read:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: citation,
+        onChange: function onChange(value) {
+          updateAttributeValue('citation', value);
+        },
+        label: "Citation:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: citation_link,
+        onChange: function onChange(value) {
+          updateAttributeValue('citation_link', value);
+        },
+        label: "Citation Link:"
+      }), /*#__PURE__*/React.createElement(_reusable_select_authors_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        authors: authors,
+        updateAttributeValue: updateAttributeValue
+      }))))];
+    },
+    // No information saved to the block
+    // Data is saved to post meta via attributes
+    save: function save() {
+      return null;
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/meta/research-blogs-meta.jsx":
+/*!****************************************************!*\
+  !*** ./src/js/blocks/meta/research-blogs-meta.jsx ***!
+  \****************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ researchBlogMetaBlock; }
+/* harmony export */ });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _reusable_select_authors_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/select-authors.jsx */ "./src/js/blocks/reusable/select-authors.jsx");
+/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+function researchBlogMetaBlock() {
+  var registerBlockType = wp.blocks.registerBlockType;
+  var TextControl = wp.components.TextControl;
+  var meta_fields = ['publication_date', 'time_to_read', 'authors'];
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(meta_fields, 'meta');
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/research-blog-meta-block"), {
+    title: 'Research Blogs Meta',
+    icon: 'align-full-width',
+    category: 'common',
+    supports: {
+      multiple: false
+    },
+    attributes: attributes,
+    edit: function edit(props) {
+      var setAttributes = props.setAttributes,
+          attributes = props.attributes;
+      var authors = attributes.authors,
+          publication_date = attributes.publication_date,
+          time_to_read = attributes.time_to_read;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
+
+      return [null, /*#__PURE__*/React.createElement("div", {
+        className: "custom-component"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "block-title"
+      }, "Research Blog Meta"), /*#__PURE__*/React.createElement("div", {
+        className: "page-settings__controls"
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "mt-xs-3"
+      }, /*#__PURE__*/React.createElement(TextControl, {
+        value: publication_date,
+        onChange: function onChange(value) {
+          updateAttributeValue('publication_date', value);
+        },
+        label: "Publication Date (YYYY/MM/DD):"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: time_to_read,
+        type: "number",
+        onChange: function onChange(value) {
+          updateAttributeValue('time_to_read', value);
+        },
+        label: "Time to Read:"
+      }), /*#__PURE__*/React.createElement(_reusable_select_authors_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        authors: authors,
+        updateAttributeValue: updateAttributeValue
       }))))];
     },
     // No information saved to the block
@@ -2627,6 +2663,143 @@ function pageStripBlock() {
           title = attributes.title;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/publications/publications-container.jsx":
+/*!***************************************************************!*\
+  !*** ./src/js/blocks/publications/publications-container.jsx ***!
+  \***************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ publicationsContainerBlock; }
+/* harmony export */ });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function publicationsContainerBlock() {
+  var registerBlockType = wp.blocks.registerBlockType;
+  var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var _wp = wp,
+      i18n = _wp.i18n;
+  var blockSlug = "publications-container"; // slug for the block
+
+  var blockTitle = "Publications container";
+  var blockDescription = "Component to create publications container block";
+  var blockCategory = "common";
+  var blockIcon = "archive"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+
+  var attributes = {
+    title: {
+      type: 'String',
+      default: ''
+    },
+    link: {
+      type: 'String',
+      default: ''
+    }
+  };
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
+    title: i18n.__(blockTitle),
+    description: i18n.__(blockDescription),
+    category: blockCategory,
+    icon: blockIcon,
+    attributes: attributes,
+    edit: function edit(props) {
+      var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var attributes = props.attributes,
+          setAttributes = props.setAttributes;
+      var title = attributes.title,
+          link = attributes.link;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
+
+      return [/*#__PURE__*/React.createElement("div", {
+        class: "block-container"
+      }, /*#__PURE__*/React.createElement("p", {
+        class: "block-title"
+      }, "Tag Cloud Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        },
+        components: [{
+          value: title,
+          reference: "title",
+          tagName: "p",
+          placeholder: "Please provide a title (optional)",
+          settings: []
+        }]
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        },
+        components: [{
+          value: link,
+          reference: "link",
+          tagName: "p",
+          placeholder: "Please provide a link for the View All button",
+          settings: []
+        }]
+      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-publications"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-research-blogs")]
+      }))];
+    },
+    save: function save(_ref) {
+      var attributes = _ref.attributes;
+      var title = attributes.title,
+          link = attributes.link;
+      return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/publications/select-posts-blocks.jsx":
+/*!************************************************************!*\
+  !*** ./src/js/blocks/publications/select-posts-blocks.jsx ***!
+  \************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ selectPostsBlocks; }
+/* harmony export */ });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _reusable_custom_post_column_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-post-column.jsx */ "./src/js/blocks/reusable/custom-post-column.jsx");
+
+
+function selectPostsBlocks() {
+  var parent = ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-container")];
+  var icon = 'open-folder';
+  var selectBlocks = [{
+    icon: icon,
+    parent: parent,
+    slug: 'publications',
+    single: 'Publication'
+  }, {
+    icon: icon,
+    parent: parent,
+    slug: 'research-blogs',
+    single: 'Research'
+  }, {
+    icon: icon,
+    parent: parent,
+    slug: 'news',
+    single: 'News'
+  }];
+  selectBlocks.forEach(function (block) {
+    return (0,_reusable_custom_post_column_jsx__WEBPACK_IMPORTED_MODULE_1__["default"])(block);
   });
 }
 
@@ -2996,7 +3169,8 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 function selectPostBlock(postObject) {
   var icon = postObject.icon,
       slug = postObject.slug,
-      single = postObject.single;
+      single = postObject.single,
+      parent = postObject.parent;
   var registerBlockType = wp.blocks.registerBlockType;
   var withSelect = wp.data.withSelect;
   var SelectControl = wp.components.SelectControl;
@@ -3026,6 +3200,7 @@ function selectPostBlock(postObject) {
     icon: icon,
     category: "common",
     attributes: attributes,
+    parent: parent,
     edit: withSelect(function (select) {
       return {
         posts: select("core").getEntityRecords("postType", slug, {
@@ -3324,6 +3499,176 @@ function CustomVideoUpload(props) {
 
 /***/ }),
 
+/***/ "./src/js/blocks/reusable/select-authors.jsx":
+/*!***************************************************!*\
+  !*** ./src/js/blocks/reusable/select-authors.jsx ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ SelectAuthors; }
+/* harmony export */ });
+/* harmony import */ var _select_post_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./select-post.jsx */ "./src/js/blocks/reusable/select-post.jsx");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+function SelectAuthors(_ref) {
+  var authors = _ref.authors,
+      updateAttributeValue = _ref.updateAttributeValue;
+  var authorsArray = authors !== '' ? JSON.parse(authors) : [];
+
+  var setAuthors = function setAuthors(val) {
+    if (val.label && authorsArray.filter(function (author) {
+      return author.label === val.label;
+    }).length === 0) {
+      val.equal = false;
+      updateAttributeValue('authors', JSON.stringify([].concat(_toConsumableArray(authorsArray), [val])));
+    }
+  };
+
+  var updateContribution = function updateContribution(e, index) {
+    e.preventDefault();
+    var tempAuthors = authorsArray;
+    tempAuthors[index].equal = !tempAuthors[index].equal;
+    updateAttributeValue('authors', JSON.stringify(tempAuthors));
+  };
+
+  var removeAuthor = function removeAuthor(e, index) {
+    e.preventDefault();
+    var tempAuthors = authorsArray;
+    tempAuthors.splice(index, 1);
+    updateAttributeValue('authors', JSON.stringify(tempAuthors));
+  };
+
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h3", null, "Current Authors"), authorsArray.length > 0 && /*#__PURE__*/React.createElement("ol", {
+    style: {
+      padding: '16px'
+    }
+  }, authorsArray.map(function (author, index) {
+    return /*#__PURE__*/React.createElement("li", {
+      style: {
+        fontWeight: 700,
+        padding: '4px 0'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        justifyContent: 'space-between'
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: '33.33%'
+      }
+    }, "".concat(author.label).concat(author.equal ? '*' : '')), /*#__PURE__*/React.createElement("button", {
+      style: {
+        fontWeight: 400,
+        width: '33.33%',
+        border: 0,
+        padding: '8px 24px'
+      },
+      onClick: function onClick(e) {
+        return updateContribution(e, index);
+      }
+    }, author.equal ? 'Remove Equal Contribution' : 'Add equal contribution'), /*#__PURE__*/React.createElement("button", {
+      style: {
+        background: '#F05C5C',
+        width: '33.33%',
+        border: 0,
+        padding: '8px 24px',
+        color: 'white'
+      },
+      onClick: function onClick(e) {
+        return removeAuthor(e, index);
+      }
+    }, "Remove Author")));
+  })), /*#__PURE__*/React.createElement("h3", null, "Add an Author"), /*#__PURE__*/React.createElement(_select_post_jsx__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    slug: "author",
+    setValues: setAuthors,
+    label: "Select an Author"
+  }));
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/reusable/select-post.jsx":
+/*!************************************************!*\
+  !*** ./src/js/blocks/reusable/select-post.jsx ***!
+  \************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ SelectPost; }
+/* harmony export */ });
+function SelectPost(_ref) {
+  var slug = _ref.slug,
+      _ref$label = _ref.label,
+      label = _ref$label === void 0 ? "Select a Post" : _ref$label,
+      setValues = _ref.setValues;
+  var SelectControl = wp.components.SelectControl;
+  var useSelect = wp.data.useSelect;
+
+  var _useSelect = useSelect(function (select) {
+    return {
+      posts: select('core').getEntityRecords('postType', slug, {
+        per_page: -1
+      })
+    };
+  }),
+      posts = _useSelect.posts;
+
+  var selectPosts = [];
+
+  if (posts && posts.length > 0) {
+    selectPosts = posts.map(function (post) {
+      return {
+        label: post.title.rendered,
+        value: post.id
+      };
+    });
+    selectPosts.sort(function (a, b) {
+      if (a.label < b.label) {
+        return -1;
+      }
+
+      if (a.label > b.label) {
+        return 1;
+      }
+
+      return 0;
+    });
+    selectPosts.push({
+      label: 'Select',
+      value: 0
+    });
+  }
+
+  return /*#__PURE__*/React.createElement("div", null, posts && posts.length > 0 ? /*#__PURE__*/React.createElement(SelectControl, {
+    label: label,
+    value: 0,
+    options: selectPosts,
+    onChange: function onChange(id) {
+      var post = selectPosts.find(function (post) {
+        return post.value === Number(id);
+      });
+      setValues(post);
+    }
+  }) : /*#__PURE__*/React.createElement("p", null, "No posts found"));
+}
+
+/***/ }),
+
 /***/ "./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx":
 /*!*************************************************************************!*\
   !*** ./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx ***!
@@ -3427,6 +3772,7 @@ function customSubsectionBlock() {
       createBlock = _wp$blocks.createBlock;
   var _wp = wp,
       i18n = _wp.i18n;
+  var InnerBlocks = wp.blockEditor.InnerBlocks;
   var blockSlug = "custom-subsection-block"; // slug for the block
 
   var blockTitle = "Create custom subsection block";
@@ -3472,11 +3818,14 @@ function customSubsectionBlock() {
           tagName: "p",
           placeholder: "Please provide a title"
         }]
+      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+        allowedBlocks: ['core/paragraph']
       }))];
     },
     save: function save(_ref) {
       var attributes = _ref.attributes;
       var title = attributes.title;
+      return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
 }
@@ -4042,6 +4391,184 @@ function tabbedContentPanelBlock() {
 
 /***/ }),
 
+/***/ "./src/js/blocks/tag-cloud/tag-cloud-container-block.jsx":
+/*!***************************************************************!*\
+  !*** ./src/js/blocks/tag-cloud/tag-cloud-container-block.jsx ***!
+  \***************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ tagCloudContainerBlock; }
+/* harmony export */ });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function tagCloudContainerBlock() {
+  var _wp$blocks = wp.blocks,
+      registerBlockType = _wp$blocks.registerBlockType,
+      createBlock = _wp$blocks.createBlock;
+  var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var _wp = wp,
+      i18n = _wp.i18n;
+  var blockSlug = "tag-cloud-container-block"; // slug for the block
+
+  var blockTitle = "Tag cloud container block";
+  var blockDescription = "Component to create tag cloud container block";
+  var blockCategory = "common";
+  var blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+
+  var attributes = {
+    title: {
+      type: 'String',
+      default: ''
+    }
+  };
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
+    title: i18n.__(blockTitle),
+    description: i18n.__(blockDescription),
+    category: blockCategory,
+    icon: blockIcon,
+    attributes: attributes,
+    edit: function edit(props) {
+      var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var attributes = props.attributes,
+          setAttributes = props.setAttributes;
+      var title = attributes.title;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
+
+      return [/*#__PURE__*/React.createElement("div", {
+        class: "tag-cloud-container__block"
+      }, /*#__PURE__*/React.createElement("p", {
+        class: "block-title"
+      }, "Tag Cloud Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        },
+        components: [{
+          value: title,
+          reference: "title",
+          tagName: "p",
+          placeholder: "Please provide a title (optional)",
+          settings: []
+        }]
+      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-item-block")]
+      }))];
+    },
+    save: function save(_ref) {
+      var attributes = _ref.attributes;
+      var title = attributes.title;
+      return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/tag-cloud/tag-cloud-item-block.jsx":
+/*!**********************************************************!*\
+  !*** ./src/js/blocks/tag-cloud/tag-cloud-item-block.jsx ***!
+  \**********************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ tagCloudItemBlock; }
+/* harmony export */ });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function tagCloudItemBlock() {
+  var _wp$blocks = wp.blocks,
+      registerBlockType = _wp$blocks.registerBlockType,
+      createBlock = _wp$blocks.createBlock;
+  var _wp = wp,
+      i18n = _wp.i18n;
+  var blockSlug = "tag-cloud-item-block"; // slug for the block
+
+  var blockTitle = "Tag cloud item block";
+  var blockDescription = "Component to create tag cloud item block";
+  var blockCategory = "common";
+  var blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+
+  var attributes = {
+    text: {
+      type: 'String',
+      default: ''
+    },
+    link: {
+      type: 'String',
+      default: ''
+    }
+  };
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
+    title: i18n.__(blockTitle),
+    description: i18n.__(blockDescription),
+    category: blockCategory,
+    icon: blockIcon,
+    attributes: attributes,
+    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block")],
+    edit: function edit(props) {
+      var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var attributes = props.attributes,
+          setAttributes = props.setAttributes;
+      var text = attributes.text,
+          link = attributes.link;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
+
+      return [/*#__PURE__*/React.createElement("div", {
+        class: "tag-cloud-item__block"
+      }, /*#__PURE__*/React.createElement("p", {
+        class: "block-title"
+      }, "Tag Cloud Item"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        },
+        components: [{
+          value: text,
+          reference: "text",
+          tagName: "p",
+          placeholder: "Please provide a title",
+          settings: []
+        }]
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        },
+        components: [{
+          value: link,
+          reference: "link",
+          tagName: "p",
+          placeholder: "Please provide a link",
+          settings: []
+        }]
+      }))];
+    },
+    save: function save(_ref) {
+      var attributes = _ref.attributes;
+      var text = attributes.text,
+          link = attributes.link;
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/blocks/text-column.jsx":
 /*!***************************************!*\
   !*** ./src/js/blocks/text-column.jsx ***!
@@ -4189,38 +4716,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_core_extends_video_embed_poster_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/core-extends/video-embed-poster.jsx */ "./src/js/blocks/core-extends/video-embed-poster.jsx");
 /* harmony import */ var _blocks_meta_page_meta_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/meta/page-meta.jsx */ "./src/js/blocks/meta/page-meta.jsx");
 /* harmony import */ var _blocks_meta_research_blogs_meta_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blocks/meta/research-blogs-meta.jsx */ "./src/js/blocks/meta/research-blogs-meta.jsx");
-/* harmony import */ var _blocks_meta_news_meta_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/meta/news-meta.jsx */ "./src/js/blocks/meta/news-meta.jsx");
-/* harmony import */ var _blocks_meta_team_member_meta_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/meta/team-member-meta.jsx */ "./src/js/blocks/meta/team-member-meta.jsx");
-/* harmony import */ var _blocks_meta_author_meta_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/meta/author-meta.jsx */ "./src/js/blocks/meta/author-meta.jsx");
+/* harmony import */ var _blocks_meta_team_member_meta_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blocks/meta/team-member-meta.jsx */ "./src/js/blocks/meta/team-member-meta.jsx");
+/* harmony import */ var _blocks_meta_author_meta_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./blocks/meta/author-meta.jsx */ "./src/js/blocks/meta/author-meta.jsx");
+/* harmony import */ var _blocks_meta_publications_meta_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blocks/meta/publications-meta.jsx */ "./src/js/blocks/meta/publications-meta.jsx");
 /* harmony import */ var _js_blocks_text_column_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../js/blocks/text-column.jsx */ "./src/js/blocks/text-column.jsx");
 /* harmony import */ var _blocks_image_text_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./blocks/image-text.jsx */ "./src/js/blocks/image-text.jsx");
-/* harmony import */ var _blocks_meta_custom_selects_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blocks/meta/custom-selects.jsx */ "./src/js/blocks/meta/custom-selects.jsx");
-/* harmony import */ var _blocks_image_block_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blocks/image-block.jsx */ "./src/js/blocks/image-block.jsx");
-/* harmony import */ var _blocks_accordion_accordion_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./blocks/accordion/accordion.jsx */ "./src/js/blocks/accordion/accordion.jsx");
-/* harmony import */ var _blocks_accordion_accordion_row_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./blocks/accordion/accordion-row.jsx */ "./src/js/blocks/accordion/accordion-row.jsx");
-/* harmony import */ var _blocks_body_copy_jsx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./blocks/body-copy.jsx */ "./src/js/blocks/body-copy.jsx");
-/* harmony import */ var _blocks_callouts_callout_container_jsx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./blocks/callouts/callout-container.jsx */ "./src/js/blocks/callouts/callout-container.jsx");
-/* harmony import */ var _blocks_callouts_callout_column_jsx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./blocks/callouts/callout-column.jsx */ "./src/js/blocks/callouts/callout-column.jsx");
-/* harmony import */ var _blocks_content_cards_content_card_container_jsx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./blocks/content-cards/content-card-container.jsx */ "./src/js/blocks/content-cards/content-card-container.jsx");
-/* harmony import */ var _blocks_content_cards_content_card_jsx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./blocks/content-cards/content-card.jsx */ "./src/js/blocks/content-cards/content-card.jsx");
-/* harmony import */ var _blocks_image_list_image_list_container_jsx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./blocks/image-list/image-list-container.jsx */ "./src/js/blocks/image-list/image-list-container.jsx");
-/* harmony import */ var _blocks_image_list_image_list_block_jsx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./blocks/image-list/image-list-block.jsx */ "./src/js/blocks/image-list/image-list-block.jsx");
-/* harmony import */ var _blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./blocks/logos/logo-container.jsx */ "./src/js/blocks/logos/logo-container.jsx");
-/* harmony import */ var _blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./blocks/logos/logo.jsx */ "./src/js/blocks/logos/logo.jsx");
-/* harmony import */ var _blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./blocks/page-strips/page-strip.jsx */ "./src/js/blocks/page-strips/page-strip.jsx");
-/* harmony import */ var _blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./blocks/page-strips/page-strip-graphic.jsx */ "./src/js/blocks/page-strips/page-strip-graphic.jsx");
-/* harmony import */ var _blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./blocks/slider/slider-container.jsx */ "./src/js/blocks/slider/slider-container.jsx");
-/* harmony import */ var _blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./blocks/slider/image-slide.jsx */ "./src/js/blocks/slider/image-slide.jsx");
-/* harmony import */ var _blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./blocks/stats/stats-container.jsx */ "./src/js/blocks/stats/stats-container.jsx");
-/* harmony import */ var _blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./blocks/stats/stats-column.jsx */ "./src/js/blocks/stats/stats-column.jsx");
-/* harmony import */ var _blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./blocks/greenhouse/jobs-block.jsx */ "./src/js/blocks/greenhouse/jobs-block.jsx");
-/* harmony import */ var _blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-section-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx");
-/* harmony import */ var _blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-subsection-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-subsection-blok.jsx");
-/* harmony import */ var _blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-container.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-container.jsx");
-/* harmony import */ var _blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-panel.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-panel.jsx");
+/* harmony import */ var _blocks_image_block_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./blocks/image-block.jsx */ "./src/js/blocks/image-block.jsx");
+/* harmony import */ var _blocks_accordion_accordion_jsx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./blocks/accordion/accordion.jsx */ "./src/js/blocks/accordion/accordion.jsx");
+/* harmony import */ var _blocks_accordion_accordion_row_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./blocks/accordion/accordion-row.jsx */ "./src/js/blocks/accordion/accordion-row.jsx");
+/* harmony import */ var _blocks_body_copy_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./blocks/body-copy.jsx */ "./src/js/blocks/body-copy.jsx");
+/* harmony import */ var _blocks_callouts_callout_container_jsx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./blocks/callouts/callout-container.jsx */ "./src/js/blocks/callouts/callout-container.jsx");
+/* harmony import */ var _blocks_callouts_callout_column_jsx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./blocks/callouts/callout-column.jsx */ "./src/js/blocks/callouts/callout-column.jsx");
+/* harmony import */ var _blocks_content_cards_content_card_container_jsx__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./blocks/content-cards/content-card-container.jsx */ "./src/js/blocks/content-cards/content-card-container.jsx");
+/* harmony import */ var _blocks_content_cards_content_card_jsx__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./blocks/content-cards/content-card.jsx */ "./src/js/blocks/content-cards/content-card.jsx");
+/* harmony import */ var _blocks_image_list_image_list_container_jsx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./blocks/image-list/image-list-container.jsx */ "./src/js/blocks/image-list/image-list-container.jsx");
+/* harmony import */ var _blocks_image_list_image_list_block_jsx__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./blocks/image-list/image-list-block.jsx */ "./src/js/blocks/image-list/image-list-block.jsx");
+/* harmony import */ var _blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./blocks/logos/logo-container.jsx */ "./src/js/blocks/logos/logo-container.jsx");
+/* harmony import */ var _blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./blocks/logos/logo.jsx */ "./src/js/blocks/logos/logo.jsx");
+/* harmony import */ var _blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./blocks/page-strips/page-strip.jsx */ "./src/js/blocks/page-strips/page-strip.jsx");
+/* harmony import */ var _blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./blocks/page-strips/page-strip-graphic.jsx */ "./src/js/blocks/page-strips/page-strip-graphic.jsx");
+/* harmony import */ var _blocks_publications_publications_container_jsx__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./blocks/publications/publications-container.jsx */ "./src/js/blocks/publications/publications-container.jsx");
+/* harmony import */ var _blocks_publications_select_posts_blocks_jsx__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./blocks/publications/select-posts-blocks.jsx */ "./src/js/blocks/publications/select-posts-blocks.jsx");
+/* harmony import */ var _blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./blocks/slider/slider-container.jsx */ "./src/js/blocks/slider/slider-container.jsx");
+/* harmony import */ var _blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./blocks/slider/image-slide.jsx */ "./src/js/blocks/slider/image-slide.jsx");
+/* harmony import */ var _blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./blocks/stats/stats-container.jsx */ "./src/js/blocks/stats/stats-container.jsx");
+/* harmony import */ var _blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./blocks/stats/stats-column.jsx */ "./src/js/blocks/stats/stats-column.jsx");
+/* harmony import */ var _blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./blocks/greenhouse/jobs-block.jsx */ "./src/js/blocks/greenhouse/jobs-block.jsx");
+/* harmony import */ var _blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-section-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx");
+/* harmony import */ var _blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-subsection-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-subsection-blok.jsx");
+/* harmony import */ var _blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-container.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-container.jsx");
+/* harmony import */ var _blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-panel.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-panel.jsx");
+/* harmony import */ var _blocks_tag_cloud_tag_cloud_container_block_jsx__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./blocks/tag-cloud/tag-cloud-container-block.jsx */ "./src/js/blocks/tag-cloud/tag-cloud-container-block.jsx");
+/* harmony import */ var _blocks_tag_cloud_tag_cloud_item_block_jsx__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./blocks/tag-cloud/tag-cloud-item-block.jsx */ "./src/js/blocks/tag-cloud/tag-cloud-item-block.jsx");
 // import customButtonIcons from './blocks/core-extends/button-icons';
  // Meta
-
 
 
 
@@ -4250,6 +4779,9 @@ __webpack_require__.r(__webpack_exports__);
  // Page Strips
 
 
+ // Publications
+
+
  // Slider Blocks
 
 
@@ -4264,54 +4796,62 @@ __webpack_require__.r(__webpack_exports__);
  // Tabbed Content Blocks
 
 
+ // Tag Cloud Content Blocks
+
+
  // Core Extends Blocks
 
 (0,_blocks_core_extends_video_embed_poster_jsx__WEBPACK_IMPORTED_MODULE_0__["default"])(); // Init meta blocks
 
 (0,_blocks_meta_page_meta_jsx__WEBPACK_IMPORTED_MODULE_1__["default"])();
 (0,_blocks_meta_research_blogs_meta_jsx__WEBPACK_IMPORTED_MODULE_2__["default"])();
-(0,_blocks_meta_news_meta_jsx__WEBPACK_IMPORTED_MODULE_3__["default"])();
-(0,_blocks_meta_team_member_meta_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])();
-(0,_blocks_meta_author_meta_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])();
-(0,_blocks_meta_custom_selects_jsx__WEBPACK_IMPORTED_MODULE_8__["default"])(); // Init blocks here
+(0,_blocks_meta_team_member_meta_jsx__WEBPACK_IMPORTED_MODULE_3__["default"])();
+(0,_blocks_meta_author_meta_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])();
+(0,_blocks_meta_publications_meta_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])(); // Init blocks here
 
 (0,_js_blocks_text_column_jsx__WEBPACK_IMPORTED_MODULE_6__["default"])();
 (0,_blocks_image_text_jsx__WEBPACK_IMPORTED_MODULE_7__["default"])(); // Page Strips
 
-(0,_blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_21__["default"])();
-(0,_blocks_image_block_jsx__WEBPACK_IMPORTED_MODULE_9__["default"])();
-(0,_blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_22__["default"])(); // Accordion Blocks
+(0,_blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_20__["default"])();
+(0,_blocks_image_block_jsx__WEBPACK_IMPORTED_MODULE_8__["default"])();
+(0,_blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_21__["default"])(); // Accordion Blocks
 
-(0,_blocks_accordion_accordion_jsx__WEBPACK_IMPORTED_MODULE_10__["default"])();
-(0,_blocks_accordion_accordion_row_jsx__WEBPACK_IMPORTED_MODULE_11__["default"])(); // Body Copy
+(0,_blocks_accordion_accordion_jsx__WEBPACK_IMPORTED_MODULE_9__["default"])();
+(0,_blocks_accordion_accordion_row_jsx__WEBPACK_IMPORTED_MODULE_10__["default"])(); // Body Copy
 
-(0,_blocks_body_copy_jsx__WEBPACK_IMPORTED_MODULE_12__["default"])(); // Callout Columns
+(0,_blocks_body_copy_jsx__WEBPACK_IMPORTED_MODULE_11__["default"])(); // Callout Columns
 
-(0,_blocks_callouts_callout_container_jsx__WEBPACK_IMPORTED_MODULE_13__["default"])();
-(0,_blocks_callouts_callout_column_jsx__WEBPACK_IMPORTED_MODULE_14__["default"])(); // Content Cards
+(0,_blocks_callouts_callout_container_jsx__WEBPACK_IMPORTED_MODULE_12__["default"])();
+(0,_blocks_callouts_callout_column_jsx__WEBPACK_IMPORTED_MODULE_13__["default"])(); // Content Cards
 
-(0,_blocks_content_cards_content_card_container_jsx__WEBPACK_IMPORTED_MODULE_15__["default"])();
-(0,_blocks_content_cards_content_card_jsx__WEBPACK_IMPORTED_MODULE_16__["default"])(); // Image List Blocks
+(0,_blocks_content_cards_content_card_container_jsx__WEBPACK_IMPORTED_MODULE_14__["default"])();
+(0,_blocks_content_cards_content_card_jsx__WEBPACK_IMPORTED_MODULE_15__["default"])(); // Image List Blocks
 
-(0,_blocks_image_list_image_list_container_jsx__WEBPACK_IMPORTED_MODULE_17__["default"])();
-(0,_blocks_image_list_image_list_block_jsx__WEBPACK_IMPORTED_MODULE_18__["default"])(); // Logo Blocks
+(0,_blocks_image_list_image_list_container_jsx__WEBPACK_IMPORTED_MODULE_16__["default"])();
+(0,_blocks_image_list_image_list_block_jsx__WEBPACK_IMPORTED_MODULE_17__["default"])(); // Logo Blocks
 
-(0,_blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_19__["default"])();
-(0,_blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_20__["default"])(); // Slide Blocks
+(0,_blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_18__["default"])();
+(0,_blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_19__["default"])(); // Publications
 
-(0,_blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_23__["default"])();
-(0,_blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_24__["default"])(); // Stat Blocks
+(0,_blocks_publications_publications_container_jsx__WEBPACK_IMPORTED_MODULE_22__["default"])();
+(0,_blocks_publications_select_posts_blocks_jsx__WEBPACK_IMPORTED_MODULE_23__["default"])(); // Slide Blocks
 
-(0,_blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_25__["default"])();
-(0,_blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_26__["default"])(); // Greenhouse Blocks
+(0,_blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_24__["default"])();
+(0,_blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_25__["default"])(); // Stat Blocks
 
-(0,_blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_27__["default"])(); // Sidebar Table Of Contents Blocks
+(0,_blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_26__["default"])();
+(0,_blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_27__["default"])(); // Greenhouse Blocks
 
-(0,_blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_28__["default"])();
-(0,_blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_29__["default"])(); // Tabbed Content Blocks
+(0,_blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_28__["default"])(); // Sidebar Table Of Contents Blocks
 
-(0,_blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_30__["default"])();
-(0,_blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_31__["default"])();
+(0,_blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_29__["default"])();
+(0,_blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_30__["default"])(); // Tabbed Content Blocks
+
+(0,_blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_31__["default"])();
+(0,_blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_32__["default"])(); // Tag Cloud Content Blocks
+
+(0,_blocks_tag_cloud_tag_cloud_container_block_jsx__WEBPACK_IMPORTED_MODULE_33__["default"])();
+(0,_blocks_tag_cloud_tag_cloud_item_block_jsx__WEBPACK_IMPORTED_MODULE_34__["default"])();
 }();
 /******/ })()
 ;

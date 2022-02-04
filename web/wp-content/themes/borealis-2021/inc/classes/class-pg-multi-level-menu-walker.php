@@ -20,9 +20,17 @@ class PG_Multi_Level_Menu_Walker extends Walker_Nav_Menu {
      * @param array   $args - Optional aruguments.
      */
     public function start_lvl( &$output, $depth = 0, $args = null ) {
-        $indent  = str_repeat( "\t", $depth );
-        $output .= "\n$indent<div role=\"region\" class=\"submenu mb-xs-2 mb-md-5\">\n";
-        $output .= "\n$indent<ul class=\"mv-xs-0\" role=\"menu\">\n";
+        $submenu = wp_list_pages(
+            array(
+                'child_of' => $post->ID,
+                'echo'     => false,
+            )
+        );
+        if($submenu) {
+            $indent  = str_repeat( "\t", $depth );
+            $output .= "\n$indent<div role=\"region\" class=\"submenu  bg-shade-white-400 py-3 rounded-b-nav w-full flex flex-row-reverse text-primary-navy-400 absolute top-16 right-0 mb-xs-2 mb-md-5\">\n";
+            $output .= "\n$indent<ul class=\"mv-xs-0 w-8/12 flex container flex-row-reverse\" role=\"menu\">\n";
+        }
 
     }
     /**
@@ -32,7 +40,7 @@ class PG_Multi_Level_Menu_Walker extends Walker_Nav_Menu {
      * @param integer $depth - The menu depth.
      * @param array   $args - Optional aruguments.
      */
-    public function end_lvl( &$output, $depth = 0, $args = null ) {
+     public function end_lvl( &$output, $depth = 0, $args = null ) {
         $indent  = str_repeat( "\t", $depth );
         $output .= "\n$indent</ul>\n";
         $output .= "\n$indent</div>\n";
@@ -57,24 +65,24 @@ class PG_Multi_Level_Menu_Walker extends Walker_Nav_Menu {
 
         if ( intval( $item->menu_item_parent ) === 0 ) {
             if ( $parent ) {
-                $output .= '<li role="menuitem" class="' . $classes . ' pr-xs-2 fc-xs-100 fc-lg fc-md-50 ">';
-                $output .= '<p class="caption copy--bold mb-xs-3">';
+                $output .= '<li role="menuitem" class=" ' . $classes . ' hyperlink pr-xs-2 fc-xs-100 fc-lg fc-md-50">';
+                $output .= '<a class="py-1 px-5 block group ' . $link_classes . '" href="' . $permalink . '">';
                 $output .= $title;
-                $output .= '</p>';
+                $output .= '<span class="group-hover:bg-tint-teal-400 nav-underline block"></span></a>';
+                $output .= '</li>';
                 return $output;
             }
-            $output .= '<li role="menuitem" class="' . $classes . ' pr-xs-2 fc-xs-100 fc-lg fc-md-50 ">';
-            $output .= '<a class="' . $link_classes . '" href="' . $permalink . '">';
+            $output .= '<li role="menuitem" class=" ' . $classes . ' hyperlink pr-xs-2 fc-xs-100 fc-lg fc-md-50 ">';
+            $output .= '<a class="py-1 px-5 block group ' . $link_classes . '" href="' . $permalink . '">';
             $output .= $title;
-            $output .= '<svg class="menu-item__open-icon" width="10" height="17" viewBox="0 0 10 17"><use xlink:href="#icon-open"></use></svg>';
-            $output .= '</a>';
+            $output .= '<span class="group-hover:bg-tint-teal-400 nav-underline block"></span></a>';
             $output .= '</li>';
             return $output;
         }
-        $output .= '<li role="menuitem" class="' . $classes . '">';
-        $output .= '<a class="' . $link_classes . '" href="' . $permalink . '">';
+        $output .= '<li role="menuitem" class="' . $classes . ' hyperlink">';
+        $output .= '<a class="py-1 px-5 block group ' . $link_classes . '" href="' . $permalink . '">';
         $output .= $title;
-        $output .= '</a>';
+        $output .= '<span class="group-hover:bg-tint-teal-400 nav-underline block"></span></a>';
 
     }
 }

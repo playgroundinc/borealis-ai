@@ -32,7 +32,7 @@ module.exports = plugin(function({ addUtilities }) {
             maxWidth: '100%',
             [`@media (min-width: ${breakpoints.xl}px)`]: {
                 width: 'calc(100% - 150px)',
-                maxWidth: '1770px',
+                maxWidth: '1300px',
             }
         },
         '.container--single': {
@@ -46,7 +46,14 @@ module.exports = plugin(function({ addUtilities }) {
         '.container--full': {
             maxWidth: `${breakpoints.xl}px`,
             margin: '0 auto'
-        }
+        },
+        '.nav-container': {
+            maxWidth: '1400px',
+            margin: '18px auto',
+        },
+        '.nav-underline': {
+            height: '2px'
+        },
     }
     addUtilities([newUtility, ...mediaQueries], ['responsive']);
 })

@@ -2,6 +2,7 @@
 
 require get_template_directory() . '/inc/classes/class-pg-single-level-menu-walker.php';
 require get_template_directory() . '/inc/classes/class-pg-multi-level-menu-walker.php';
+require get_template_directory() . '/inc/classes/class-pg-multi-level-menu-walker-footer.php';
 require get_template_directory() . '/inc/classes/class-pg-dropdown-menu-walker.php';
 require get_template_directory() . '/inc/classes/class-pg-custom-menus.php';
 
@@ -15,6 +16,7 @@ if (!function_exists('pg_register_menus')) {
                 'footer-main' => __('Footer Main Menu', $namespace),
                 'footer-legal' => __('Footer Legal Menu', $namespace),
                 'footer-secondary' => __('Footer Secondary Menu', $namespace),
+                'navigation-main' => __('Navigation Main Menu', $namespace),
             )
         );
     }

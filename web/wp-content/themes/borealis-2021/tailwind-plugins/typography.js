@@ -92,10 +92,34 @@ module.exports = plugin(function({ addBase }) {
             lineHeight: '1.50',
         },
         {
+            className: 'icon--2xl',
+            max: '92',
+            min: '92',
+            fontFamily: 'Inter, sans-serif',
+        },
+        {
+            className: 'icon--xl',
+            max: '66',
+            min: '66',
+            fontFamily: 'Inter, sans-serif',
+        },
+        {
             className: 'icon--lg',
             max: '24',
             min: '24',
-            fontFamily: 'Source Sans Pro, sans-serif',
+            fontFamily: 'Inter, sans-serif',
+        },
+        {
+            className: 'icon-md',
+            max: '12',
+            min: '12',
+            fontFamily: 'Inter, sans-serif',
+        },
+        {
+            className: 'icon-sm',
+            max: '10',
+            min: '10',
+            fontFamily: 'Inter, sans-serif',
         },
     ]
     const fontClasses = fluidFonts.map((font) => {
@@ -107,6 +131,8 @@ module.exports = plugin(function({ addBase }) {
                 letterSpacing: font.letterSpacing ? font.letterSpacing : 'normal',
                 textTransform: font.textTransform ? font.textTransform : 'none',
                 fontWeight: font.fontWeight ? font.fontWeight : 'normal',
+                wordBreak: 'break-word',
+                hyphens: 'auto',
                 [`@media (min-width: ${breakpoints.sm}px)`]: {
                     fontSize: `calc(${font.min}px + ((${font.max} - ${font.min}) * ((100vw - ${breakpoints.sm}px) / (${breakpoints.xl} - ${breakpoints.sm}))))`,
                 },

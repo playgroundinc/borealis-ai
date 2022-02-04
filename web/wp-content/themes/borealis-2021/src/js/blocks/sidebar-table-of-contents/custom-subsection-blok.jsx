@@ -5,6 +5,9 @@ import CustomRichText from '../reusable/custom-richtext-component.jsx';
 export default function customSubsectionBlock() {
     const { registerBlockType, createBlock } = wp.blocks;
     const { i18n } = wp;
+    const {
+		InnerBlocks,
+    } = wp.blockEditor;
 
     const blockSlug = "custom-subsection-block"; // slug for the block
 	const blockTitle = "Create custom subsection block";
@@ -48,11 +51,19 @@ export default function customSubsectionBlock() {
                             },
                         ]}
                     />
+                    { save ? (
+                        <InnerBlocks.Content />
+                    ) : (
+                        <InnerBlocks
+                            allowedBlocks={['core/paragraph']}
+                        />
+                    )}
                 </div>,
 			];
 		},
 		save: ({ attributes }) => {
 			const { title } = attributes;
+            return <InnerBlocks.Content />;
 		},
 	});
 } 

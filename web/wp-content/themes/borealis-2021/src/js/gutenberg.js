@@ -4,14 +4,12 @@ import customVideoPoster from './blocks/core-extends/video-embed-poster.jsx';
 // Meta
 import pageMetaBlock from "./blocks/meta/page-meta.jsx"
 import researchBlogMetaBlock from "./blocks/meta/research-blogs-meta.jsx";
-import newsMetaBlock from "./blocks/meta/news-meta.jsx";
 import teamMemberMetaBlock from "./blocks/meta/team-member-meta.jsx";
 import authorMetaBlock from './blocks/meta/author-meta.jsx';
+import publicationMetaBlock from './blocks/meta/publications-meta.jsx';
 
 import textColumnBlock from "../js/blocks/text-column.jsx";
 import imageTextBlock from "./blocks/image-text.jsx";
-
-import customSelects from './blocks/meta/custom-selects.jsx';
 
 // Page Strips
 import imageBlock from "./blocks/image-block.jsx";
@@ -43,6 +41,10 @@ import logoBlock from "./blocks/logos/logo.jsx";
 import pageStripBlock from "./blocks/page-strips/page-strip.jsx";
 import pageStripGraphic from "./blocks/page-strips/page-strip-graphic.jsx";
 
+// Publications
+import publicationsContainerBlock from './blocks/publications/publications-container.jsx';
+import selectPostsBlocks from './blocks/publications/select-posts-blocks.jsx';
+
 // Slider Blocks
 import sliderBlock from "./blocks/slider/slider-container.jsx";
 import imageSlideBlock from "./blocks/slider/image-slide.jsx";
@@ -62,6 +64,9 @@ import customSubsectionBlock from './blocks/sidebar-table-of-contents/custom-sub
 import tabbedContentContainerBlock from "./blocks/tabbed-content/tabbed-content-container.jsx";
 import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-panel.jsx";
 
+// Tag Cloud Content Blocks
+import tagCloudContainerBlock from "./blocks/tag-cloud/tag-cloud-container-block.jsx";
+import tagCloudItemBlock from "./blocks/tag-cloud/tag-cloud-item-block.jsx";
 
 // Core Extends Blocks
 customVideoPoster();
@@ -69,11 +74,9 @@ customVideoPoster();
 // Init meta blocks
 pageMetaBlock();
 researchBlogMetaBlock();
-newsMetaBlock();
 teamMemberMetaBlock();
 authorMetaBlock();
-
-customSelects();
+publicationMetaBlock();
 
 // Init blocks here
 textColumnBlock(); 
@@ -107,6 +110,10 @@ imageListBlock();
 logosContainer();
 logoBlock();
 
+// Publications
+publicationsContainerBlock();
+selectPostsBlocks();
+
 // Slide Blocks
 sliderBlock();
 imageSlideBlock();
@@ -125,3 +132,7 @@ customSubsectionBlock();
 // Tabbed Content Blocks
 tabbedContentContainerBlock();
 tabbedContentPanelBlock();
+
+// Tag Cloud Content Blocks
+tagCloudContainerBlock();
+tagCloudItemBlock();
