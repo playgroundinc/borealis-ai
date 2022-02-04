@@ -840,6 +840,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-3{
   margin-top: 12px;
 }
+.mt-5{
+  margin-top: 20px;
+}
 .block{
   display: block;
 }
@@ -1088,6 +1091,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 24px;
   padding-bottom: 24px;
 }
+.py-8{
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
 .px-4{
   padding-left: 16px;
   padding-right: 16px;
@@ -1095,10 +1102,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-18{
   padding-left: 72px;
   padding-right: 72px;
-}
-.py-8{
-  padding-top: 32px;
-  padding-bottom: 32px;
 }
 .px-12{
   padding-left: 48px;
@@ -1287,6 +1290,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .slide-toggle--active{
   opacity: 1;
   visibility: visible;
+  border-color: #656892;
 }
 .\[https\:\/\/pantheon\.io\/docs\/guides\/multisite\/workflows\/\#deploying-across-environments\]{
   https: //pantheon.io/docs/guides/multisite/workflows/#deploying-across-environments;
@@ -1347,8 +1351,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:mt-0{
     margin-top: 0px;
   }
+  .md\:mt-3{
+    margin-top: 12px;
+  }
   .md\:flex{
     display: flex;
+  }
+  .md\:w-full{
+    width: 100%;
+  }
+  .md\:w-auto{
+    width: auto;
   }
   .md\:w-4\/12{
     width: 33.333333%;
@@ -1356,11 +1369,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:w-8\/12{
     width: 66.666667%;
   }
-  .md\:w-full{
-    width: 100%;
+  .md\:border-b-0{
+    border-bottom-width: 0px;
   }
   .md\:border-l{
     border-left-width: 1px;
+  }
+  .md\:py-0{
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
   .md\:px-5{
     padding-left: 20px;
