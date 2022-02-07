@@ -718,6 +718,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .right-4{
   right: 16px;
 }
+.-top-4{
+  top: -16px;
+}
+.-top-2{
+  top: -8px;
+}
 .m-auto{
   margin: auto;
 }
@@ -858,6 +864,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-22{
   width: 88px;
+}
+.w-3{
+  width: 12px;
+}
+.w-3\/12{
+  width: 25%;
 }
 .grow{
   flex-grow: 1;
@@ -1099,6 +1111,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-8{
   padding-top: 32px;
+}
+.pr-96{
+  padding-right: 384px;
+}
+.pr-80{
+  padding-right: 320px;
 }
 .text-center{
   text-align: center;

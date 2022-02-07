@@ -16,8 +16,8 @@ $options = pg_get_options($option_names);
 ?>
 </main>
 <footer class="bg-shade-white-400">
-	<div class="flex pt-13 container mt-20 border-solid border-b border-shade-grey-500 border-opacity-40">
-		<div class="w-5/12">
+	<div class="flex pt-13 container w-full mt-20 border-solid border-b border-shade-grey-500 border-opacity-40">
+		<div class="pr-80">
 			<div class="mb-4">
 				<svg class="icon-rbc h-16 w-12" aria-labelledby="icon-rbc">
 					<title id="icon-rbc">rbc logo</title>
@@ -30,18 +30,18 @@ $options = pg_get_options($option_names);
 				</p>
 			</div>
 		</div>
-		<div class="w-7/12 mb-10">
+		<div class="mb-10 grow">
 			<?php
 			$Menu->generate_menu('footer-main');
 			?>
 		</div>
 	</div>
-	<div class="container flex justify-between">
-		<div class="w-6/12 flex mt-7 mb-8">
+	<div class="container flex justify-end">
+		<div class="flex mt-7 mb-8">
 			<p class="cursor-default legal text-shade-grey-700 mr-10">&copy; <?php esc_html_e(date('Y')); ?> <?php esc_html_e('Borealis AI', 'pg') ?></p>
 			<?php $Menu->generate_menu('footer-legal', false); ?>
 		</div>
-		<div class="w-2/12 flex mt-7 justify-end">
+		<div class="flex mt-7 justify-end">
 			<?php
 			$icons = array(
 				'linkedin' => __('Link to LinkedIn', 'pg'),
