@@ -71,7 +71,7 @@
                         ?>
                     </div>
                 </div>
-                <a href="/search" class="p-2 absolute top-7 right-6 text-3xl">
+                <a href="/search" class="p-2 absolute top-7 right-6 legal text-shade-white-400">
                     <?php echo pg_render_icon('search') ?>
                 </a>
             </nav>

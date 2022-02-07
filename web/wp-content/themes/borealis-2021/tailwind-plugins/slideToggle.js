@@ -11,7 +11,8 @@ module.exports = plugin(function({ addUtilities }) {
         },
         '.slide-toggle--active': {
             opacity: '1',
-            visibility: 'visible'
+            visibility: 'visible',
+            borderColor: '#656892',
         }
     }
     addUtilities(newUtility);
