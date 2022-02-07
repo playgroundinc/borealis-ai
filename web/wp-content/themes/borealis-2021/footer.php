@@ -36,7 +36,7 @@ $options = pg_get_options($option_names);
 			?>
 		</div>
 	</div>
-	<div class="container flex justify-end">
+	<div class="container flex justify-between">
 		<div class="flex mt-7 mb-8">
 			<p class="cursor-default legal text-shade-grey-700 mr-10">&copy; <?php esc_html_e(date('Y')); ?> <?php esc_html_e('Borealis AI', 'pg') ?></p>
 			<?php $Menu->generate_menu('footer-legal', false); ?>

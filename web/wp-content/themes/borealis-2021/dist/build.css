@@ -749,11 +749,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .right-6{
   right: 24px;
 }
-.-top-3{
-  top: -12px;
-}
-.right-5{
-  right: 20px;
+.-top-2{
+  top: -8px;
 }
 .top-16{
   top: 64px;
@@ -775,12 +772,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .right-4{
   right: 16px;
-}
-.-top-4{
-  top: -16px;
-}
-.-top-2{
-  top: -8px;
 }
 .m-auto{
   margin: auto;
@@ -846,6 +837,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-3{
   margin-top: 12px;
 }
+.mr-8{
+  margin-right: 32px;
+}
 .block{
   display: block;
 }
@@ -875,29 +869,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-4{
   height: 16px;
 }
-.w-5\/12{
-  width: 41.666667%;
+.w-full{
+  width: 100%;
 }
 .w-12{
   width: 48px;
-}
-.w-7\/12{
-  width: 58.333333%;
-}
-.w-6\/12{
-  width: 50%;
-}
-.w-2\/12{
-  width: 16.666667%;
-}
-.w-full{
-  width: 100%;
 }
 .w-1\/6{
   width: 16.666667%;
 }
 .w-5\/6{
   width: 83.333333%;
+}
+.w-2\/12{
+  width: 16.666667%;
 }
 .w-18{
   width: 72px;
@@ -928,12 +913,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-22{
   width: 88px;
-}
-.w-3{
-  width: 12px;
-}
-.w-3\/12{
-  width: 25%;
 }
 .grow{
   flex-grow: 1;
@@ -1076,6 +1055,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-5{
   padding: 20px;
 }
+.p-8{
+  padding: 32px;
+}
+.p-4{
+  padding: 16px;
+}
 .py-4{
   padding-top: 16px;
   padding-bottom: 16px;
@@ -1122,6 +1107,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-13{
   padding-top: 52px;
+}
+.pr-80{
+  padding-right: 320px;
 }
 .pl-8{
   padding-left: 32px;
@@ -1182,12 +1170,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-8{
   padding-top: 32px;
-}
-.pr-96{
-  padding-right: 384px;
-}
-.pr-80{
-  padding-right: 320px;
 }
 .text-center{
   text-align: center;
