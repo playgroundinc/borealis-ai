@@ -6,6 +6,9 @@ module.exports = {
 	content: ["./*", "./src/**/*", "./src/**/**/*", "./src/**/**/**/*", "./inc/*", "./inc/**/*"],
   	darkMode: false, // or 'media' or 'class'
   	theme: {
+		  minHeight: {
+			'header': '280px',
+		  },
 		screens: {
 			sm: `${breakpoints.sm}px`, // => @media (min-width: ${sm}) { ... }
 			md: `${breakpoints.md}px`, // => @media (min-width: ${md}) { ... }

@@ -1988,11 +1988,8 @@ function pageMetaBlock() {
       ToggleControl = _wp$components.ToggleControl,
       Button = _wp$components.Button;
   var Inserter = wp.blockEditor.Inserter;
-  var meta_fields = ['hero_style', 'hero_background_color', 'headline', 'hero_cta_one_link', 'hero_cta_one_text', 'hero_cta_two_link', 'hero_cta_two_text', 'hero_video_id', 'hero_video_url', 'hero_video_alt', 'gradient_background'];
+  var meta_fields = ['headline'];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
-  attributes['hero_style']['default'] = 'square';
-  attributes['hero_background_color']['default'] = 'grey';
-  attributes['gradient_background']['default'] = 'false';
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/page-meta-block"), {
     title: 'Page Meta',
     icon: 'align-full-width',
@@ -2005,130 +2002,22 @@ function pageMetaBlock() {
       var className = "".concat(props.className, " meta-block");
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var gradient_background = attributes.gradient_background,
-          hero_style = attributes.hero_style,
-          hero_background_color = attributes.hero_background_color,
-          headline = attributes.headline,
-          hero_cta_one_link = attributes.hero_cta_one_link,
-          hero_cta_one_text = attributes.hero_cta_one_text,
-          hero_cta_two_link = attributes.hero_cta_two_link,
-          hero_cta_two_text = attributes.hero_cta_two_text,
-          hero_video_url = attributes.hero_video_url,
-          hero_video_id = attributes.hero_video_id,
-          hero_video_alt = attributes.hero_video_alt;
+      var headline = attributes.headline;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
-      function getImageButton(openEvent, label) {
-        {
-          return /*#__PURE__*/React.createElement("div", {
-            className: "components-base-control"
-          }, /*#__PURE__*/React.createElement(Button, {
-            onClick: openEvent,
-            className: "button button-large"
-          }, label));
-        }
-      }
-
-      ;
       return [null, /*#__PURE__*/React.createElement("div", {
         className: className
       }, /*#__PURE__*/React.createElement("div", {
         className: "page-settings__controls"
-      }, /*#__PURE__*/React.createElement("h4", null, "Header Settings"), hero_style === 'slanted' ? /*#__PURE__*/React.createElement("p", {
-        class: "paragraph--core copy--italic"
-      }, "Image needs to be added as \"Featured Image\" in sidebar.") : null, /*#__PURE__*/React.createElement("p", {
-        class: "paragraph--core copy--italic mb-xs-3"
-      }, "An excerpt can be added in the sidebar (optional)."), /*#__PURE__*/React.createElement(RadioControl, {
-        value: hero_style,
-        onChange: function onChange(value) {
-          updateAttributeValue('hero_style', value);
-        },
-        label: "Header Style:",
-        selected: hero_style ? hero_style : 'square',
-        options: [{
-          label: "Square",
-          value: "square"
-        }, {
-          label: "Slanted",
-          value: "slanted"
-        }, {
-          label: "Video",
-          value: "video"
-        }]
-      }), /*#__PURE__*/React.createElement("div", {
-        className: "mt-xs-3"
-      }, /*#__PURE__*/React.createElement(SelectControl, {
-        value: hero_background_color,
-        onChange: function onChange(value) {
-          updateAttributeValue('hero_background_color', value);
-        },
-        label: "Background Color:",
-        options: [{
-          label: 'Grey',
-          value: 'grey'
-        }, {
-          label: 'Red',
-          value: 'red'
-        }, {
-          label: 'Black',
-          value: 'black'
-        }]
-      })), hero_style === 'video' ? /*#__PURE__*/React.createElement("div", {
-        className: "mt-xs-3"
-      }, /*#__PURE__*/React.createElement(_reusable_custom_video_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        components: [{
-          value: hero_video_url,
-          reference: 'hero_video_url',
-          altValue: hero_video_alt,
-          altReference: 'hero_video_alt',
-          idValue: hero_video_id,
-          idReference: 'hero_video_id',
-          buttonText: 'Add a video'
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      })) : null, /*#__PURE__*/React.createElement("div", {
-        className: "mv-xs-2"
-      }, /*#__PURE__*/React.createElement(ToggleControl, {
-        label: "Add gradient grey background to page?",
-        checked: gradient_background === 'true',
-        onChange: function onChange(change) {
-          return updateAttributeValue('gradient_background', "".concat(change === true));
-        }
-      })), /*#__PURE__*/React.createElement(TextareaControl, {
+      }, /*#__PURE__*/React.createElement("h4", null, "Header Settings"), /*#__PURE__*/React.createElement(TextareaControl, {
         value: headline,
         onChange: function onChange(value) {
           updateAttributeValue('headline', value);
         },
         label: "Headline:"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: hero_cta_one_text,
-        onChange: function onChange(value) {
-          updateAttributeValue('hero_cta_one_text', value);
-        },
-        label: "First Button Text (optional):"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: hero_cta_one_link,
-        onChange: function onChange(value) {
-          updateAttributeValue('hero_cta_one_link', value);
-        },
-        label: "First Button Link (optional):"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: hero_cta_two_text,
-        onChange: function onChange(value) {
-          updateAttributeValue('hero_cta_two_text', value);
-        },
-        label: "Second Button Text (optional):"
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: hero_cta_two_link,
-        onChange: function onChange(value) {
-          updateAttributeValue('hero_cta_two_link', value);
-        },
-        label: "Second Button Link (optional):"
       })))];
     },
     // No information saved to the block

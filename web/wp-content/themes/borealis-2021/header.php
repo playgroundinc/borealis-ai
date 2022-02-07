@@ -48,46 +48,62 @@
         $imgPath= parse_url($image)['path'];
         $url = get_home_url();
         $logoUrl = $url . $imgPath;
-
+        $hero_image = get_the_post_thumbnail_url($post->ID, 'full');
+        if (empty($hero_image)) {
+            $hero_image = get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg';
+        }
+        $headline = get_post_meta($post->ID, 'headline', true);
         $hasSubnav = false;
         if(is_page('research') or is_page('products')) {
             $hasSubnav = true;
         }
+        $no_header = is_page_template('page-search.php') || is_singular();
     ?>
     <div id="page" class="site">
         <!-- Skip to Content link -->
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pg-wp-starter' ); ?></a>
-        <header id="masthead">
-            <nav id="main-navigation" class="<?php echo ($hasSubnav)? 'rounded-t-large': 'rounded-large';?> relative mt-4 top-2 pb-2 pt-4 nav-container <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-primary-navy-400'; ?> ">
-                <div class="relative flex container">
-                    <div class="pt-2 logo h-fit">
-                        <a href="<?php echo get_home_url(); ?>">
-                            <img src="<?php echo $logoUrl ?>" alt="">
-                        </a>
+        <header 
+            id="masthead"
+            class="<?php echo $no_header ? 'min-h-[99px]' : esc_attr('bg-cover bg-bottom min-h-header flex flex-col justify-end') ?>"
+            style="background-image: url(<?php echo $no_header ? '' : esc_attr($hero_image) ?> )"
+        >
+            <nav id="main-navigation" class="fixed left-0 right-0 top-3">
+                <div class="<?php echo ($hasSubnav)? 'rounded-t-large': 'rounded-large';?> relative mt-4 top-2 pb-2 pt-4 nav-container <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-primary-navy-400'; ?>">
+                    <div class="relative flex container">
+                        <div class="pt-2 logo h-fit">
+                            <a href="<?php echo get_home_url(); ?>">
+                                <img src="<?php echo $logoUrl ?>" alt="">
+                            </a>
+                        </div>
+                        <div class="nav-items grow flex text-shade-white-400 py-4">
+                            <?php 
+                                $Menu->generate_menu('navigation-main', 'multi-level');
+                            ?>
+                        </div>
                     </div>
-                    <div class="nav-items grow flex text-shade-white-400 py-4">
-                        <?php 
-                            $Menu->generate_menu('navigation-main', 'multi-level');
-                        ?>
-                    </div>
+                    <a href="/search" class="p-2 absolute top-7 right-6 legal text-shade-white-400">
+                        <?php echo pg_render_icon('search') ?>
+                    </a>
                 </div>
-                <a href="/search" class="p-2 absolute top-7 right-6 legal text-shade-white-400">
-                    <?php echo pg_render_icon('search') ?>
-                </a>
             </nav>
-        </div>
-        <?php 
-            if (is_singular(['research-blogs', 'news'])) {
-                $header = pg_generate_blog_header($post->ID);
-                if (isset($header) && !empty($header)) {
-                    ?>
+            <?php if (is_singular(['research-blogs', 'news'])): // Start of check for singular News or Blog ?>
+                <?php $header = pg_generate_blog_header($post->ID); ?>
+                <?php if (isset($header) && !empty($header)): // Start of Check for empty Blog header ?>
                     <div class="container">
                         <?php echo $header; ?>
                     </div>
-                <?php 
-                }
-            } 
-        ?>
+                <?php endif; // End of check for empty blog header. ?>
+            <?php elseif ($no_header): ?>
+                <h1 class="sr-only"><?php echo esc_html(the_title()); ?></h1>
+            <?php else: ?>
+                <div class="container">
+                    <?php if (!empty($headline)): ?> 
+                        <h1 class="h1 text-shade-white-400 pb-8 pt-42"><?php echo esc_html($headline) ?></h1>
+                    <?php else: ?>
+                        <h1 class="sr-only"><?php echo the_title(); ?></h1>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
         </header><!-- #masthead -->
         <main id="content">
     
