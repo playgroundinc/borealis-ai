@@ -28,9 +28,9 @@ class PG_Single_Level_Menu_Walker extends Walker_Nav_Menu {
         $permalink = $item->url;
         $output .= "<li class='" . join( ' ', $item->classes ) . " menu-item--single' role=\"menuitem\">";
         if (intval($item->menu_order) > 1) {
-            $output .= '<a class="hover:text-primary-electric-blue-400 mr-10 legal" href="' . $permalink . '">';
+            $output .= '<a class="hover:text-primary-electric-blue-400 mr-8 p-2 legal" href="' . $permalink . '">';
         } else {
-            $output .= '<a class="hover:text-primary-electric-blue-400 mr-10 legal" href="' . $permalink . '">';
+            $output .= '<a class="hover:text-primary-electric-blue-400 mr-8 p-2 legal" href="' . $permalink . '">';
         }
         $output .= $title;
         $output .= '</a>';
