@@ -35,11 +35,21 @@ export default function selectPostBlock(postObject) {
 			};
 		})(({ posts, attributes, setAttributes }) => {
 			if (!posts) {
-				return "Loading...";
+				return (
+					<div className={`custom-component`}>
+						<p className="block-title">{`Select ${single}`}</p>
+						<p>Loading...</p>
+					</div>
+				)
 			}
 
 			if (posts && posts.length === 0) {
-				return "No posts";
+				return (
+					<div className={`custom-component`}>
+						<p className="block-title">{`Select ${single}`}</p>
+						<p>No Posts</p>
+					</div>
+				)
 			}
 			const options = posts.map((post) => {
 				return {
@@ -51,7 +61,8 @@ export default function selectPostBlock(postObject) {
       options.unshift({ value: 0, label: "Select"});
 
 			return (
-				<div className={`custom-container ${editor ? "content-column--editor" : "content-column--fe"}`}>
+				<div className={`custom-component`}>
+					<p className="block-title">{`Select ${single}`}</p>
 					<MySelectControl
 						setAttributes={setAttributes}
 						options={options}

@@ -323,7 +323,6 @@ class Slider {
       this.getCount();
       this.setTotal();
       this.addListeners();
-      console.log(this);
       return;
     } // this.hideCarousel();
 

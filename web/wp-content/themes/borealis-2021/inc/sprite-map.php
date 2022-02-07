@@ -176,10 +176,15 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
                 </g>
             </symbol>
 
+            <!-- Publication Search -->
+            <symbol id="icon-search-publication" viewBox="0 0 22 22">
+                <g transform="translate(3 3)" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="6.417" cy="6.354" rx="6.417" ry="6.354"/><path d="M16.5 16.339 11 10.893"/></g>
+            </symbol>
+            
+
             <!-- Search Icon -->
-            <symbol id="icon-search" viewBox="0 0 22 22">
-                <ellipse cx="5.83331" cy="5.77634" rx="4.08331" ry="4.04343" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12.25 12.1303L8.75 8.66455" stroke="white" fill="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <symbol id="icon-search" viewBox="0 0 14 14">
+                <g transform="translate(2 2)" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="4.083" cy="4.043" rx="4.083" ry="4.043"/><path d="M10.5 10.397 7 6.932"/></g>
             </symbol>
 
             <!-- Large Search Icon -->

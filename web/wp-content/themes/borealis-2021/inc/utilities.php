@@ -173,7 +173,7 @@ if (!function_exists('pg_render_icon')) {
         ob_start();
         ?>
             <svg 
-                class="icon <?php  echo esc_attr('icon-' . $id ); ?>" 
+                class="icon rotate-0 transition duration-300 <?php  echo esc_attr('icon-' . $id ); ?>" 
                 focusable="false" 
                 <?php echo $decorative ? esc_html('aria-hidden=true') : null ?>
             > 
