@@ -44,8 +44,27 @@ get_header();
     ?>
     <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
     <div class="container pt-8 text-shade-black-400">
-        <?php if (!empty($search_query)) : ?>
+        <?php
+        $has_results = [];
+        foreach ($tab_array as $inner_block => $element) {
+            reset($tab_array);
+            $title = $element['title'];
+            $id = $element['id'];
+
+            $research_areas = pg_get_query_values($_GET, 'research-areas');
+            $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 5);
+            $Query = new WP_Query($args);
+            if (!empty($Query->posts)) {
+                array_push($has_results, true);
+            } else {
+                array_push($has_results, false);
+            }
+        }
+        ?>
+        <?php if (!empty($search_query) and in_array(true, $has_results)) : ?>
             <p class="h3 py-10">Results for <?php echo esc_html($search_query) ?></p>
+        <?php else : ?>
+            <p class="h3 py-10">No results found for <?php echo esc_html($search_query) ?></p>
         <?php endif; ?>
     </div>
     <section id="search-nav" class="tab-container">
@@ -60,7 +79,11 @@ get_header();
                 $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 5);
                 $Query = new WP_Query($args);
 
-                if(!empty($Query->posts)) {
+                if (empty($Query->posts)) {
+                    unset($tab_array[$id]);
+                };
+
+                if (!empty($Query->posts)) {
                     if ($inner_block === key($tab_array)) {
                         echo '<button class="paragraph text-primary-navy-400 mr-10 md-mr-20 pb-5 border-b border-b-4 border-primary-electric-purple-400" role="tab" aria-selected="true" id="' . $id . '-tab" aria-controls="' . $id . '-content-panel">' . $title . '</button>';
                     } else {
@@ -80,6 +103,7 @@ get_header();
             $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 5);
             $Query = new WP_Query($args);
 
+
             if ($inner_block === key($tab_array)) { ?>
                 <div class="block" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
                     <?php
@@ -98,9 +122,9 @@ get_header();
                         <div class="container">
                             <button class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> block h4 pt-10 pb-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
                         </div>
-                    <?php elseif(!empty($search_query)) : ?>
-                        <div class="pt-8 text-shade-black-400">
-                            <p class="h3 py-10">No results found for <?php echo esc_html($search_query) ?></p>
+                    <?php elseif (!empty($search_query)) : ?>
+                        <div class="pt-8 text-shade-black-400 container">
+                            <!-- <p class="h3 py-10">No results found for <?php echo esc_html($search_query) ?></p> -->
                         </div>
                     <?php endif; ?>
                     <?php wp_reset_query(); ?>
@@ -123,9 +147,9 @@ get_header();
                         <div class="container">
                             <button class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> block h4 pt-10 pb-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
                         </div>
-                    <?php elseif(!empty($search_query)) : ?>
-                        <div class="pt-8 text-shade-black-400">
-                            <p class="h3 py-10">No results found for <?php echo esc_html($search_query) ?></p>
+                    <?php elseif (!empty($search_query)) : ?>
+                        <div class="pt-8 text-shade-black-400 container">
+                            <!-- <p class="h3 py-10">No results found for <?php echo esc_html($search_query) ?></p> -->
                         </div>
                     <?php endif; ?>
                     <?php wp_reset_query(); ?>
