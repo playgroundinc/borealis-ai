@@ -7,9 +7,12 @@
 
 @layer components {
     .pill {
-        @apply border border-shade-black-400 px-4 py-1 rounded-pill inline-block paragraph-sm;
+        @apply border border-shade-black-400 px-4 py-1 rounded-pill inline-block text-center paragraph-sm;
     }
     .pill-active {
         @apply border-primary-electric-blue-400 bg-primary-electric-blue-400 text-shade-white-400;
+    }
+    .text-link {
+        @apply text-primary-electric-blue-400 visited:text-primary-electric-purple-400 block hover:underline;
     }
 }

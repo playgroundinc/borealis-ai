@@ -76,6 +76,18 @@
                 </a>
             </nav>
         </div>
+        <?php 
+            if (is_singular(['research-blogs', 'news'])) {
+                $header = pg_generate_blog_header($post->ID);
+                if (isset($header) && !empty($header)) {
+                    ?>
+                    <div class="container">
+                        <?php echo $header; ?>
+                    </div>
+                <?php 
+                }
+            } 
+        ?>
         </header><!-- #masthead -->
         <main id="content">
     

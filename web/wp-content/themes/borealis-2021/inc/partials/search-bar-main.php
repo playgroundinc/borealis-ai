@@ -1,15 +1,14 @@
 <?php
-if (!function_exists('pg_generate_search_bar')) {
-    function pg_generate_search_bar($query, $taxonomies = array())
+if (!function_exists('pg_generate_search_bar_main')) {
+    function pg_generate_search_bar_main($query, $taxonomies = array())
     {
         ob_start();
 ?> 
-    <div class="border-b border-shade-grey-500">
+    <div class="border-t border-shade-grey-500 mt-8">
         <div class="container flex">
             <form class="search-form relative grow">
                 <label class="sr-only" for="search">Search</label>
-                <span class="icon icon--lg absolute left-0 top-6"><?php echo pg_render_icon('search')?></span>
-                <input class="border block w-full border-0 py-6 pl-10 pr-4" id="search" name="q" type="search" placeholder="<?php echo esc_attr('Search our Publications')?>" value="<?php echo isset($query) && !empty($query) ? esc_attr($query) : null; ?>">
+                <input class="h2 border block w-full border-0 text-shade-grey-700 py-10" id="search" name="q" type="text" role="search" placeholder="<?php echo esc_attr('Type Here')?>" value="<?php echo isset($query) && !empty($query) ? esc_attr($query) : null; ?>">
                 <button class="sr-only" type="submit">
                     <span ><?php echo esc_html('Search') ?></span>
                 </button>
@@ -17,13 +16,17 @@ if (!function_exists('pg_generate_search_bar')) {
                     <p id="helper-text" class="sr-only"><?php echo esc_html('Press enter to search') ?></p>
                 </div>
             </form>
-            <div class="flex items-center accordion-block">
-                <button class="text-shade-grey-700 flex items-center accordion-row__header" id="search-topics" aria-controls="search-filters" aria-label="<?php esc_attr('Expand or collapse topic filters'); ?>" aria-expanded="false"> <span class="paragraph-sm h-4 w-4 bg-tint-lightBlue-400 icon text-center rounded-full mr-2 "><span class="icon-sm topics opacity-0 transition-opacity duration-300"><?php echo esc_html('0') ?></span></span><?php echo esc_html('Topics') ?><span class="icon icon-md ml-2"><?php echo pg_render_icon('chevron')?></span></button>
+            <div class="cursor-pointer flex items-center accordion-block">
+                <span id="open-search" class="icon icon--xl"><?php echo pg_render_icon('large-search')?></span>
+                <span id="close-search" class="icon icon--xl hidden"><?php echo pg_render_icon('large-search-close')?></span>
             </div>
+        </div>
+        <div class="hidden">
+            <button id="search-topics"> <span class="topics"><?php echo esc_html('0') ?></span></button>
         </div>
     </div>
     <div class="bg-shade-grey-100">
-        <div id="search-filters" class="container slide-toggle" role="region" aria-labelledby="search-topics">
+        <div id="search-filters" class="container" role="region" aria-labelledby="search-topics">
             <div class="pt-12 pb-6">
                 <form method="post">
                 <?php

@@ -92,6 +92,18 @@ module.exports = plugin(function({ addBase }) {
             lineHeight: '1.50',
         },
         {
+            className: 'icon--2xl',
+            max: '92',
+            min: '92',
+            fontFamily: 'Inter, sans-serif',
+        },
+        {
+            className: 'icon--xl',
+            max: '66',
+            min: '66',
+            fontFamily: 'Inter, sans-serif',
+        },
+        {
             className: 'icon--lg',
             max: '24',
             min: '24',

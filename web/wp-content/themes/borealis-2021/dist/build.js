@@ -595,6 +595,7 @@ class SearchBar {
   handleSubmit(e) {
     e.preventDefault();
     this.QueryParams.setParam(this.searchTerm);
+    location.reload();
   }
 
   handleChange(e) {
