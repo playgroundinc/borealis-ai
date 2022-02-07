@@ -41,8 +41,8 @@ export default function publicationsContainerBlock() {
             }
 
 			return [
-                <div class="block-container">
-                    <p class="block-title">Tag Cloud Container</p>
+                <div class="custom-container">
+                    <p class="block-title">Publications List Container</p>
                     <CustomRichText 
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
                         components={[

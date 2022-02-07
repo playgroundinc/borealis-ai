@@ -774,6 +774,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-19{
   margin-left: 76px;
 }
+.mr-8{
+  margin-right: 32px;
+}
 .mt-15{
   margin-top: 60px;
 }
@@ -794,9 +797,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-5{
   margin-top: 20px;
-}
-.mr-8{
-  margin-right: 32px;
 }
 .block{
   display: block;
@@ -1017,12 +1017,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .p-5{
   padding: 20px;
-}
-.p-8{
-  padding: 32px;
-}
-.p-4{
-  padding: 16px;
 }
 .py-4{
   padding-top: 16px;
