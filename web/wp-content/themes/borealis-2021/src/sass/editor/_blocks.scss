@@ -1,6 +1,7 @@
 .custom-container,
 .custom-child,
-.custom-component {
+.custom-component,
+.custom-section {
     padding: 10px;
     position: relative;
     .block-title {
@@ -19,9 +20,7 @@
     .block-title {
         color: darken(lightcoral, 20);
     }
-    .custom-child,
-    &__input-row,
-    &__component {
+    .custom-child {
         border: 1px solid mediumpurple;
         .block-title {
             color: mediumpurple;
@@ -33,18 +32,48 @@
             color: #3CB371;
         }
     }
-    &__input,
-    &__column {
-        border: 1px solid lightseagreen;
-        .block-title {
-            color: darken(lightseagreen, 20);
-        }
-    }
 }
 .custom-component {
     border: 1px solid mediumpurple;
     padding: 20px 10px 10px;
     .block-title {
         color: mediumpurple;
+    }
+}
+
+.custom-section {
+    padding: 20px 10px 10px;
+    border: 1px solid lightseagreen;
+    .block-title {
+        color: darken(lightseagreen, 20);
+    }
+}
+
+.custom-subsection {
+    padding: 20px 10px 10px;
+    border: 1px solid palevioletred;
+    .block-title {
+        color: darken(palevioletred, 20);
+    }
+}
+.custom-section, 
+.custom-subsection {
+    .custom-container {
+        border: 1px solid lightcoral;
+        .block-title {
+            color: darken(lightcoral, 20);
+        }
+        .custom-child {
+            border: 1px solid mediumpurple;
+            .block-title {
+                color: mediumpurple;
+            }
+        }
+        .custom-child .custom-child {
+            border: 1px solid #3CB371;
+            .block-title {
+                color: #3CB371;
+            }
+        }
     }
 }

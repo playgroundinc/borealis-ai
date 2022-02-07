@@ -6,6 +6,13 @@ module.exports = {
 	content: ["./*", "./src/**/*", "./src/**/**/*", "./src/**/**/**/*", "./inc/*", "./inc/**/*"],
   	darkMode: false, // or 'media' or 'class'
   	theme: {
+		screens: {
+			sm: `${breakpoints.sm}px`, // => @media (min-width: ${sm}) { ... }
+			md: `${breakpoints.md}px`, // => @media (min-width: ${md}) { ... }
+			tb: `${breakpoints.tb}px`, // => @media (min-width: ${tb}) { ... }
+			lg: `${breakpoints.lg}px`, // => @media (min-width: ${lg}) { ... }
+			xl: `${breakpoints.xl}px`, // => @media (min-width: ${xl}) { ... }
+		},
 		borderRadius: {
 			full: "50%",
 			pill: "30px",

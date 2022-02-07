@@ -38,12 +38,13 @@ export default function customSubsectionBlock() {
             }
 
 			return [
-                <div class="custom-child custom-subsection__block">
+                <div class="custom-subsection custom-subsection__block">
                     <p className="block-title">Custom Subsection Block</p>
                     <CustomRichText 
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
                         components={[
                             {
+                                label: 'Title',
                                 value: title,
                                 reference: "title", 
                                 tagName: "p",

@@ -40,7 +40,7 @@ export default function researchBlogMetaBlock() {
                             <TextControl
                                 value={publication_date}
                                 onChange={(value) => { updateAttributeValue('publication_date', value) }}
-                                label="Publication Date (YYYY/MM/DD):"
+                                label="Publication Date (MM/DD/YYYY):"
                             />
                             <TextControl
                                 value={time_to_read}

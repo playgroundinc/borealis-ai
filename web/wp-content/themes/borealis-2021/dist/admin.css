@@ -3,12 +3,14 @@
   \************************************************************************************************************************************************************************************/
 .custom-container,
 .custom-child,
-.custom-component {
+.custom-component,
+.custom-section {
   padding: 10px;
   position: relative; }
   .custom-container .block-title,
   .custom-child .block-title,
-  .custom-component .block-title {
+  .custom-component .block-title,
+  .custom-section .block-title {
     position: absolute;
     top: 0;
     transform: translateY(-50%);
@@ -21,24 +23,51 @@
   border: 1px solid lightcoral; }
   .custom-container .block-title {
     color: #e52525; }
-  .custom-container .custom-child, .custom-container__input-row, .custom-container__component {
+  .custom-container .custom-child {
     border: 1px solid mediumpurple; }
-    .custom-container .custom-child .block-title, .custom-container__input-row .block-title, .custom-container__component .block-title {
+    .custom-container .custom-child .block-title {
       color: mediumpurple; }
   .custom-container .custom-child .custom-child {
     border: 1px solid #3CB371; }
     .custom-container .custom-child .custom-child .block-title {
       color: #3CB371; }
-  .custom-container__input, .custom-container__column {
-    border: 1px solid lightseagreen; }
-    .custom-container__input .block-title, .custom-container__column .block-title {
-      color: #105c57; }
 
 .custom-component {
   border: 1px solid mediumpurple;
   padding: 20px 10px 10px; }
   .custom-component .block-title {
     color: mediumpurple; }
+
+.custom-section {
+  padding: 20px 10px 10px;
+  border: 1px solid lightseagreen; }
+  .custom-section .block-title {
+    color: #105c57; }
+
+.custom-subsection {
+  padding: 20px 10px 10px;
+  border: 1px solid palevioletred; }
+  .custom-subsection .block-title {
+    color: #b72e5b; }
+
+.custom-section .custom-container,
+.custom-subsection .custom-container {
+  border: 1px solid lightcoral; }
+  .custom-section .custom-container .block-title,
+  .custom-subsection .custom-container .block-title {
+    color: #e52525; }
+  .custom-section .custom-container .custom-child,
+  .custom-subsection .custom-container .custom-child {
+    border: 1px solid mediumpurple; }
+    .custom-section .custom-container .custom-child .block-title,
+    .custom-subsection .custom-container .custom-child .block-title {
+      color: mediumpurple; }
+  .custom-section .custom-container .custom-child .custom-child,
+  .custom-subsection .custom-container .custom-child .custom-child {
+    border: 1px solid #3CB371; }
+    .custom-section .custom-container .custom-child .custom-child .block-title,
+    .custom-subsection .custom-container .custom-child .custom-child .block-title {
+      color: #3CB371; }
 
 
 /*# sourceMappingURL=admin.css.map*/

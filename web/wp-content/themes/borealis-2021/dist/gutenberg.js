@@ -2315,7 +2315,7 @@ function researchBlogMetaBlock() {
         onChange: function onChange(value) {
           updateAttributeValue('publication_date', value);
         },
-        label: "Publication Date (YYYY/MM/DD):"
+        label: "Publication Date (MM/DD/YYYY):"
       }), /*#__PURE__*/React.createElement(TextControl, {
         value: time_to_read,
         type: "number",
@@ -3733,7 +3733,7 @@ function customSectionBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "custom-container custom-section__block"
+        class: "custom-section custom-section__block"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
       }, "Custom Section Block"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -3747,7 +3747,7 @@ function customSectionBlock() {
           placeholder: "Please provide a title"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-subsection-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-subsection-block"), "core/paragraph", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block")]
       }))];
     },
     save: function save(_ref) {
@@ -3815,7 +3815,7 @@ function customSubsectionBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "custom-child custom-subsection__block"
+        class: "custom-subsection custom-subsection__block"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
       }, "Custom Subsection Block"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -3823,6 +3823,7 @@ function customSubsectionBlock() {
           updateAttributeValue(attribute, change);
         },
         components: [{
+          label: 'Title',
           value: title,
           reference: "title",
           tagName: "p",
