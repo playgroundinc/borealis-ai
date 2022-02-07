@@ -5,7 +5,13 @@ if (!function_exists('pg_generate_main_search_result')) {
         $allowed_html = pg_allowed_html();
         $url = get_permalink($post->ID);
         $terms = get_the_terms($post->ID, 'research-areas');
-        var_dump($id);
+        
+        if (str_contains($id, '-')) {
+            $label = substr($id, 0, strpos($id, "-"));
+        } else {
+            $label = $id;
+        }
+
         if (!empty($terms)) {
             $terms = array_map(
                 function($term) use ($research_areas) {
@@ -25,7 +31,7 @@ if (!function_exists('pg_generate_main_search_result')) {
     ?>
         <a href="<?php echo esc_attr($url)?>" class="py-5 block bg-shade-white-400 hover:bg-shade-grey-50 transition-background-color duration-300">
             <div class="container">
-                <div class="flex items-center">
+                <div class="flex items-start md:items-center flex-col md:flex-row">
                     <div class="grow">
                         <p class="paragraph"><?php echo esc_html($post->post_title) ?></p>
                         <?php if (isset($terms_string) && $terms_string !== ''): // Start of Terms String check ?>
@@ -34,7 +40,7 @@ if (!function_exists('pg_generate_main_search_result')) {
                             </p>
                         <?php endif; // End of Terms String check ?>
                     </div>
-                    <p class="paragraph-sm text-shade-grey-700"><?php echo esc_html('Publication'); ?></p>
+                    <p class="paragraph-sm text-shade-grey-700"><?php echo ucfirst($label); ?></p>
                 </div>
             </div>
         </a>

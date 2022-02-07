@@ -1307,6 +1307,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
 }
+.last\:border-b-0:last-child{
+  border-bottom-width: 0px;
+}
 .visited\:text-primary-electric-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
@@ -1371,6 +1374,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:w-full{
     width: 100%;
+  }
+  .md\:flex-row{
+    flex-direction: row;
+  }
+  .md\:items-center{
+    align-items: center;
   }
   .md\:border-l{
     border-left-width: 1px;
