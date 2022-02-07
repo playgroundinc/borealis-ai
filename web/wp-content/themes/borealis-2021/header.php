@@ -57,14 +57,14 @@
         if(is_page('research') or is_page('products')) {
             $hasSubnav = true;
         }
-        $no_header = is_page_template('page-search.php') || is_singular();
+        $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications']) ;
     ?>
     <div id="page" class="site">
         <!-- Skip to Content link -->
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pg-wp-starter' ); ?></a>
         <header 
             id="masthead"
-            class="<?php echo $no_header ? 'min-h-[99px]' : esc_attr('bg-cover bg-bottom min-h-header flex flex-col justify-end') ?>"
+            class="<?php echo $no_header ? 'min-h-[125px]' : esc_attr('bg-cover bg-bottom min-h-[400px] md:min-h-[280px] flex flex-col justify-end') ?>"
             style="background-image: url(<?php echo $no_header ? '' : esc_attr($hero_image) ?> )"
         >
             <nav id="main-navigation" class="fixed left-0 right-0 top-3">
@@ -98,7 +98,7 @@
             <?php else: ?>
                 <div class="container">
                     <?php if (!empty($headline)): ?> 
-                        <h1 class="h1 text-shade-white-400 pb-8 pt-42"><?php echo esc_html($headline) ?></h1>
+                        <h1 class="h1 text-shade-white-400 pb-10 md:pb-8 pt-42"><?php echo esc_html($headline) ?></h1>
                     <?php else: ?>
                         <h1 class="sr-only"><?php echo the_title(); ?></h1>
                     <?php endif; ?>

@@ -8,21 +8,24 @@ module.exports = plugin(function({ addBase }) {
             max: '70',
             min: '70',
             lineHeight: '1.10',
-            fontFamily: 'Metrophobic, sans-serif'
+            fontFamily: 'Metrophobic, sans-serif',
+            letterSpacing: '-0.04em'
         },
         {
             className: 'h2',
             max: '60',
             min: '60',
             lineHeight: '1.10',
-            fontFamily: 'Metrophobic, sans-serif'
+            fontFamily: 'Metrophobic, sans-serif',
+            letterSpacing: '-0.04em'
         },
         {
             className: 'h3',
             max: '30',
             min: '30',
             lineHeight: '1.10',
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'Inter, sans-serif',
+            letterSpacing: '-0.02em'
         },
         {
             className: 'h4',
@@ -30,7 +33,8 @@ module.exports = plugin(function({ addBase }) {
             min: '18',
             lineHeight: '1.5',
             fontWeight: '700',
-            fontFamily: 'Inter, sans-serif'
+            fontFamily: 'Inter, sans-serif',
+            letterSpacing: '-0.02em'
         },
         {
             className: 'paragraph-lg',
