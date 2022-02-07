@@ -132,7 +132,6 @@ module.exports = plugin(function({ addBase }) {
                 textTransform: font.textTransform ? font.textTransform : 'none',
                 fontWeight: font.fontWeight ? font.fontWeight : 'normal',
                 wordBreak: 'break-word',
-                hyphens: 'auto',
                 [`@media (min-width: ${breakpoints.sm}px)`]: {
                     fontSize: `calc(${font.min}px + ((${font.max} - ${font.min}) * ((100vw - ${breakpoints.sm}px) / (${breakpoints.xl} - ${breakpoints.sm}))))`,
                 },

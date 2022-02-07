@@ -37,8 +37,8 @@ if (!function_exists('pg_handle_research_blog_save')) {
      */
     function pg_handle_research_blog_save($post_id) {
         $date = get_post_meta($post_id, 'publication_date');
-        if (empty($date)) {
-            $date = date('Y/m/d');
+        if (empty($date) || $date === '') {
+            $date = date('m/d/Y');
             update_post_meta($post_id, 'publication_date', $date);
         }
     }
