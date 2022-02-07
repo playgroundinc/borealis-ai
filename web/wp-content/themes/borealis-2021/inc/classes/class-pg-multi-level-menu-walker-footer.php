@@ -73,17 +73,18 @@ class PG_Multi_Level_Menu_Walker_Footer extends Walker_Nav_Menu {
             return $output;
         }
         if($title === 'Careers') {
-            $output .= '<li role="menuitem" class="' . $classes . ' relative pb-7 paragraph-sm text-shade-grey-700 hover:text-primary-electric-blue-400">';
-            $output .= '<a class="' . $link_classes . '" href="' . $permalink . '">';
+            $output .= '<li role="menuitem" class="' . $classes . '">';
+            $output .= '<a class="' . $link_classes . ' flex pb-7 paragraph-sm text-shade-grey-700 hover:text-primary-electric-blue-400" href="' . $permalink . '">';
             $output .= $title;
-            $output .= '</a>';
-            $output .= '<svg class="-top-3 right-5 absolute icon-careers h-6 w-18" aria-labelledby="icon-careers">
+            $output .= '<svg class="relative -top-2 icon-careers h-6 w-18" aria-labelledby="icon-careers">
                 <title id="icon-careers">careers</title>
                 <use xlink:href="#icon-careers"></use>
                 </svg>';
+            $output .= '</a>';
+            
         } else {
-            $output .= '<li role="menuitem" class="' . $classes . ' pb-7 paragraph-sm text-shade-grey-700 hover:text-primary-electric-blue-400">';
-            $output .= '<a class="' . $link_classes . '" href="' . $permalink . '">';
+            $output .= '<li role="menuitem" class="' . $classes . '">';
+            $output .= '<a class="' . $link_classes . ' block pb-7 paragraph-sm text-shade-grey-700 hover:text-primary-electric-blue-400" href="' . $permalink . '">';
             $output .= $title;
             $output .= '</a>';
         }
