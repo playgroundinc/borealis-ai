@@ -2315,7 +2315,7 @@ function researchBlogMetaBlock() {
         onChange: function onChange(value) {
           updateAttributeValue('publication_date', value);
         },
-        label: "Publication Date (YYYY/MM/DD):"
+        label: "Publication Date (MM/DD/YYYY):"
       }), /*#__PURE__*/React.createElement(TextControl, {
         value: time_to_read,
         type: "number",

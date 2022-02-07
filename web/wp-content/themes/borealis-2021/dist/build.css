@@ -327,9 +327,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .h1{
@@ -349,9 +346,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .h2{
@@ -371,9 +365,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .h3{
@@ -393,9 +384,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: 700;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .h4{
@@ -415,9 +403,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .paragraph{
@@ -437,9 +422,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .paragraph-sm{
@@ -459,9 +441,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .hyperlink{
@@ -481,9 +460,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .legal{
@@ -503,9 +479,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .text-link{
@@ -525,9 +498,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .icon--xl{
@@ -547,9 +517,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .icon--lg{
@@ -569,9 +536,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .icon-md{
@@ -591,9 +555,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .icon-sm{
@@ -666,9 +627,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-transform: none;
   font-weight: normal;
   word-break: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
 }
 @media (min-width: 375px){
   .pill{
@@ -1171,6 +1129,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-8{
   padding-top: 32px;
 }
+.pt-6{
+  padding-top: 24px;
+}
 .text-center{
   text-align: center;
 }
@@ -1340,12 +1301,55 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+@media (min-width: 375px){
+  .sm\:h1{
+    font-size: 70px;
+    font-family: Metrophobic, sans-serif;
+    line-height: 1.10;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .sm\:h1{
+      font-size: calc(70px + ((70 - 70) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .sm\:h1{
+      font-size: 70px;
+    }
+  }
+}
 @media (min-width: 768px){
+  .md\:h1{
+    font-size: 70px;
+    font-family: Metrophobic, sans-serif;
+    line-height: 1.10;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:h1{
+      font-size: calc(70px + ((70 - 70) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:h1{
+      font-size: 70px;
+    }
+  }
   .md\:m-0{
     margin: 0px;
   }
   .md\:mt-0{
     margin-top: 0px;
+  }
+  .md\:block{
+    display: block;
   }
   .md\:flex{
     display: flex;
@@ -1358,6 +1362,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:w-full{
     width: 100%;
+  }
+  .md\:w-5\/8{
+    width: calc((100% /8) * 5);
   }
   .md\:border-l{
     border-left-width: 1px;
@@ -1375,6 +1382,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:pl-4{
     padding-left: 16px;
+  }
+  .md\:pt-8{
+    padding-top: 32px;
+  }
+  .md\:pt-0{
+    padding-top: 0px;
   }
   .md\:container{
     margin: 0 28px;
@@ -1400,6 +1413,11 @@ Ensure the default browser behavior of the `hidden` attribute.
     .md\:container{
       margin: 0 auto;
     }
+  }
+}
+@media (min-width: 1000px){
+  .tb\:w-8\/12{
+    width: 66.666667%;
   }
 }
 
