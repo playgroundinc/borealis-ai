@@ -63,7 +63,7 @@ get_header();
         ?>
         <?php if (!empty($search_query) and in_array(true, $has_results)) : ?>
             <p class="h3 py-10">Results for <?php echo esc_html($search_query) ?></p>
-        <?php else : ?>
+        <?php elseif (!empty($search_query)) : ?>
             <p class="h3 py-10">No results found for <?php echo esc_html($search_query) ?></p>
         <?php endif; ?>
     </div>
