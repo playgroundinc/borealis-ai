@@ -5,8 +5,8 @@ if (!function_exists('pg_generate_main_search_result')) {
         $allowed_html = pg_allowed_html();
         $url = get_permalink($post->ID);
         $terms = get_the_terms($post->ID, 'research-areas');
-        
-        if (str_contains($id, '-')) {
+
+        if (strpos($id, '-') !== false) {     
             $label = substr($id, 0, strpos($id, "-"));
         } else {
             $label = $id;
