@@ -18,8 +18,7 @@ $url = get_permalink($post->ID);
 <?php if (isset($hero_image_url) && !empty($hero_image_url)) : ?>
     <div aria-hidden="true" class="pt-100 mt-19 bg-cover bg-no-repeat bg-center" style="background-image: url(<?php echo esc_url_raw($hero_image_url) ?>)"></div>
 <?php endif; ?>
-<main class="main-content container research-blog">
-   asdasds
+<main class="main-content container single-publication">
 </main>
 
 <?php
