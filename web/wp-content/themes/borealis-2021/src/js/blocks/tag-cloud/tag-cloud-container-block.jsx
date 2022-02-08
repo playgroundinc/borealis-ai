@@ -37,7 +37,7 @@ export default function tagCloudContainerBlock() {
             }
 
 			return [
-                <div class="tag-cloud-container__block">
+                <div class="tag-cloud-container__block custom-container">
                     <p class="block-title">Tag Cloud Container</p>
                     <CustomRichText 
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
