@@ -390,7 +390,7 @@ if (!function_exists('pg_get_query_values')) {
 }
 
 
-function pg_generate_query($post_type, $query, $taxonomies, $page = 1, $posts_per_page = 12) {
+function pg_generate_query($post_type, $query, $taxonomies, $page = 1, $posts_per_page = 12, $current_post_id = null) {
     $offset = intval($page - 1) * $posts_per_page;
     $args = array(
         'post_type' => $post_type,
@@ -404,38 +404,8 @@ function pg_generate_query($post_type, $query, $taxonomies, $page = 1, $posts_pe
     if ($query) {
         $args['s'] = $query;
     }
-    if (!empty($taxonomies)) {
-        $args['tax_query'] = array(
-            'relation' => 'OR'
-        );
-        foreach($taxonomies as $key => $terms) {
-            if (!empty($terms)) {
-                $arg = array(
-                    'taxonomy' => $key,
-                    'field'    => 'id',
-                    'terms'    => $terms,
-                );
-                array_push($args['tax_query'], $arg);
-            }
-        }
-    }
-    return $args;
-}
-
-function pg_generate_publication_query($post_type, $query, $taxonomies, $page = 1, $posts_per_page = 12, $current_post_id) {
-    $offset = intval($page - 1) * $posts_per_page;
-    $args = array(
-        'post_type' => $post_type,
-        'post__not_in' => array($current_post_id),
-        'posts_per_page' => $posts_per_page,
-        'page' => $page,
-        'offset' => $offset,
-        'meta_key' => 'publication_date',
-        'orderby' => 'publication_date',
-        'order' => 'DESC'
-    );
-    if ($query) {
-        $args['s'] = $query;
+    if($current_post_id !== null) {
+        $args['post__not_in'] = array($current_post_id);
     }
     if (!empty($taxonomies)) {
         $args['tax_query'] = array(

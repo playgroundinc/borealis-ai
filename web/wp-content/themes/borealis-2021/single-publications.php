@@ -33,7 +33,7 @@ $current_post_id = $post->ID;
                 $research_areas = array_map(function ($term) {
                     return strval($term->term_id);
                 }, $research_areas);
-                $args = pg_generate_publication_query(array('publications', 'research-blogs'), '', array('research-areas' => $research_areas), 1, 3, $current_post_id);
+                $args = pg_generate_query(array('publications', 'research-blogs'), '', array('research-areas' => $research_areas), 1, 3, $current_post_id);
                 $Query = new WP_Query($args);
                 if (!empty($Query->posts)) : // Empty Query check. 
                 ?>
