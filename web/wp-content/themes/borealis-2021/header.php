@@ -86,7 +86,16 @@
                     </div>
                 <?php 
                 }
-            } 
+            } elseif(is_singular(['publications'])) {
+                $header = pg_generate_publication_header($post->ID);
+                if (isset($header) && !empty($header)) {
+                    ?>
+                    <div class="container">
+                        <?php echo $header; ?>
+                    </div>
+                <?php 
+                }
+            }
         ?>
         </header><!-- #masthead -->
         <main id="content">
