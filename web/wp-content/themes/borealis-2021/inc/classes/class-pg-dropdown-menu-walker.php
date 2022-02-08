@@ -21,8 +21,8 @@ class PG_Dropdown_Menu_Walker extends Walker_Nav_Menu {
      */
     public function start_lvl( &$output, $depth = 0, $args = null ) {
         $indent  = str_repeat( "\t", $depth );
-        $output .= "\n$indent<div role=\"region\" class=\"dropdown submenu slide-toggle\">\n";
-        $output .= "\n$indent<ul class=\"mb-xl-0 mb-xs-2\" role=\"menu\">\n";
+        $output .= "\n$indent<div role=\"region\" class=\"submenu bg-shade-white-400 md:rounded-b-large w-full md:hidden md:flex-row-reverse text-primary-navy-400 md:absolute top-full right-0 mb-xs-2 mb-md-5\">\n";
+        $output .= "\n$indent<ul class=\"md:flex md:container justify-end\" role=\"menu\">\n";
 
     }
     /**
@@ -51,27 +51,26 @@ class PG_Dropdown_Menu_Walker extends Walker_Nav_Menu {
         $type                  = $item->type;
         $title                 = $item->title;
         $permalink             = $item->url;
+        $active = in_array('current-menu-item', $item->classes);
         $classes               = join( ' ', $item->classes );
-        $parent                = $args->walker->has_children;
-        $link_classes = ' menu-item__link block-link caption caption--menu flex between-xs';
-        $icon = pg_render_icon('chevron', true);
-        if ( $parent ) {
-            $link_classes .= ' menu-item__parent';
+        $link_classes = 'px-5 block group';
+        if ( $active ) {
+            $link_classes .= ' menu-item--active';
         }
         if ( intval( $item->menu_item_parent ) === 0 ) {
-            $parent_link_classes = $link_classes .= " ph-xl-2 pv-xs-4 pv-xl-2 menu-link";
-            $output .= '<li role="menuitem" class="' . $classes . ' fc-xs-100 fc-xl bb-xs-grey-lt bb-xl">';
-            $output .= '<a role="button" aria-haspopup="true" aria-expanded="false" class="' . $link_classes . '" href="' . $permalink . '">';
-            $output .= '<span class="block-link">' . $title . '</span>';
-            if ( $parent ) {
-                $output .= $icon;
-            }
+            $parent_link_classes = $link_classes .= " ";
+            $output .= '<li role="menuitem" class="' . $classes . '">';
+            $output .= '<a class="' . $link_classes . ' py-2 paragraph md:hyperlink" href="' . $permalink . '">';
+            $output .= $title;
+            $output .= '<span class="nav-underline bg-transparent transition duration-300 hidden md:block ';
+            $output .= $active ? 'bg-tint-teal-400' : 'group-hover:bg-tint-teal-400'; 
+            $output .= '"></span>';
             $output .= '</a>';
             return $output;
         }
-        $menu_item_classes = $link_classes . ' pv-xs-2 ph-xl-3';
+        $menu_item_classes = $link_classes;
         $output .= '<li role="menuitem"  class="' . $classes . '">';
-        $output .= '<a aria-haspopup="false" class="' . $menu_item_classes . '" href="' . $permalink . '">';
+        $output .= '<a class="' . $menu_item_classes . ' py-3 hyperlink" href="' . $permalink . '">';
         $output .= $title;
         $output .= '</a>';
 

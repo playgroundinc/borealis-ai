@@ -35,7 +35,7 @@ class PG_Custom_Menus {
                 // %1$s  - $wrap_id (the id for the wrapping ul)
                 // %2$s - $wrap_class (the usual classes used for the wrapping ul)
                 // %3$s - $items (the menu items as li's)
-                'items_wrap'        => '<ul id="%1$s" role="menu" class="%2$s flex col-xs row-xl middle-md mv-xs-0 between-md dropdown-menu">%3$s</ul>',  
+                'items_wrap'        => '<ul id="%1$s" role="menu" class="%2$s w-full justify-end between-md md:flex grow">%3$s</ul>',  
                 'depth'             => 0,                              // Limit the depth of the nav.
                 'fallback_cb'       => '',                             // Fallback function.
                 'walker'            => new PG_Dropdown_Menu_Walker(),

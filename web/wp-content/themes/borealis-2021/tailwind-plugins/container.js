@@ -49,7 +49,8 @@ module.exports = plugin(function({ addUtilities }) {
         },
         '.nav-container': {
             maxWidth: '1400px',
-            margin: '18px auto',
+            width: 'calc(100% - 24px)',
+            margin: '0 auto',
         },
         '.nav-underline': {
             height: '2px'

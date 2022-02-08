@@ -43,6 +43,7 @@
     <?php
         pg_svg_spritemap(); 
         $Menu = new PG_Custom_Menus();  
+        $has_subnav = pg_check_for_submenu('navigation-main', $post->ID);
         $custom_logo_id = get_theme_mod( 'custom_logo' );        
         $image = wp_get_attachment_image_src( $custom_logo_id , 'full' )[0];
         $imgPath= parse_url($image)['path'];
@@ -53,10 +54,6 @@
             $hero_image = get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg';
         }
         $headline = get_post_meta($post->ID, 'headline', true);
-        $hasSubnav = false;
-        if(is_page('research') or is_page('products')) {
-            $hasSubnav = true;
-        }
         $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications']) ;
     ?>
     <div id="page" class="site">
@@ -67,23 +64,28 @@
             class="<?php echo $no_header ? 'min-h-[125px]' : esc_attr('bg-cover bg-bottom min-h-[400px] md:min-h-[280px] flex flex-col justify-end') ?>"
             style="background-image: url(<?php echo $no_header ? '' : esc_attr($hero_image) ?> )"
         >
-            <nav id="main-navigation" class="fixed left-0 right-0 top-3">
-                <div class="<?php echo ($hasSubnav)? 'rounded-t-large': 'rounded-large';?> relative mt-4 top-2 pb-2 pt-4 nav-container <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-primary-navy-400'; ?>">
-                    <div class="relative flex container">
-                        <div class="pt-2 logo h-fit">
+            <nav id="main-navigation" class="fixed z-10 left-0 right-0 top-3">
+                <div class="<?php echo ($has_subnav)? 'rounded-b-large md:rounded-b-none rounded-t-large': 'rounded-large';?> relative mt-4 top-2 py-4 nav-container <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-shade-white-400 md:bg-primary-navy-400'; ?>">
+                    <div class="flex md:flex-row flex-col items-center container">
+                        <div class="logo h-fit flex md:w-auto w-full justify-between align-center">
                             <a href="<?php echo get_home_url(); ?>">
                                 <img src="<?php echo $logoUrl ?>" alt="">
                             </a>
+                            <button role="button" class="text-shade-white-400 icon--lg md:hidden" aria-expanded="false" aria-label="Open Main Menu">
+                                <?php echo pg_render_icon('hamburger') ?>
+                            </button>
                         </div>
-                        <div class="nav-items grow flex text-shade-white-400 py-4">
+                        <div class="nav-items grow flex fixed md:static inset-0 w-screen h-screen md:h-auto bg-shade-white-400 md:bg-transparent md:flex-row flex-col z-50 md:justify-end items-center md:text-shade-white-400 pb-25 md:pb-0">
                             <?php 
-                                $Menu->generate_menu('navigation-main', 'multi-level');
+                                $Menu->generate_menu('navigation-main', 'dropdown');
                             ?>
+                            <a href="/search" class="px-6 md:px-0 pt-4 border-t md:border-t-0 w-full md:w-auto text-primary-navy-400 md:text-shade-white-400 text-shade-grey-700 p-2 md:absolute top-1/2 -translate-y-1/2 right-4 legal flex items-center md:block">
+                                <span class="md:hidden paragraph grow"><?php echo esc_html('Search') ?></span>
+                                <?php echo pg_render_icon('search') ?>
+                            </a>
                         </div>
                     </div>
-                    <a href="/search" class="p-2 absolute top-7 right-6 legal text-shade-white-400">
-                        <?php echo pg_render_icon('search') ?>
-                    </a>
+                    
                 </div>
             </nav>
             <?php if (is_singular(['research-blogs', 'news'])): // Start of check for singular News or Blog ?>
@@ -98,7 +100,7 @@
             <?php else: ?>
                 <div class="container">
                     <?php if (!empty($headline)): ?> 
-                        <h1 class="h1 text-shade-white-400 pb-10 md:pb-8 pt-42"><?php echo esc_html($headline) ?></h1>
+                        <h1 class="h1 text-shade-white-400 pb-10 md:pb-8 <?php echo $has_subnav ? esc_attr('pt-55') : esc_attr('pt-42') ?>"><?php echo esc_html($headline) ?></h1>
                     <?php else: ?>
                         <h1 class="sr-only"><?php echo the_title(); ?></h1>
                     <?php endif; ?>

@@ -14,6 +14,7 @@ module.exports = {
 			xl: `${breakpoints.xl}px`, // => @media (min-width: ${xl}) { ... }
 		},
 		borderRadius: {
+			none: '0',
 			full: "50%",
 			pill: "30px",
 			large: "10px"
@@ -145,6 +146,7 @@ module.exports = {
 			],
 			textColor: ["responsive", "hover", "visited", "focus", "group-hover", "disabled"],
 			transform: ["motion-safe"],
+			borderRadius: ["responsive"],
 		},
 	plugins: [
 		// //  Allows you to add the class of container to any element and it will set the max-width and outside margins

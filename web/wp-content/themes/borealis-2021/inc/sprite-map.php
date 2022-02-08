@@ -59,10 +59,8 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
             </symbol>
 
             <!-- Hamburger Icon -->
-            <symbol id="icon-hamburger" viewBox="0 0 22 22">
-                <g transform="translate(1 5)" fill="currentColor" fill-rule="nonzero">
-                    <rect width="20" height="1.5" rx=".75"/><rect y="5.25" width="20" height="1.5" rx=".75"/><rect y="10.5" width="20" height="1.5" rx=".75"/>
-                </g>
+            <symbol id="icon-hamburger" viewBox="0 0 24 24">
+                <g transform="translate(1 5.5)" fill="currentColor" fill-rule="nonzero"><rect width="22" height="2.364" rx="1"/><rect y="5.318" width="22" height="2.364" rx="1"/><rect y="10.636" width="22" height="2.364" rx="1"/></g>
             </symbol>
 
             <!-- RBC Icon -->
