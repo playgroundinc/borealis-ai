@@ -2614,10 +2614,10 @@ function publicationsContainerBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "block-container"
+        class: "custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
-      }, "Tag Cloud Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Publications List Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         },
@@ -2640,7 +2640,7 @@ function publicationsContainerBlock() {
           settings: []
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-publications"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-research-blogs")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-publications"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-research-blogs"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-news")]
       }))];
     },
     save: function save(_ref) {
@@ -2669,11 +2669,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function selectPostsBlocks() {
-  var parent = ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-container")];
+  var parent = ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/carousel")];
   var icon = 'open-folder';
   var selectBlocks = [{
     icon: icon,
-    parent: parent,
+    parent: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-container")],
     slug: 'publications',
     single: 'Publication'
   }, {
@@ -3102,11 +3102,19 @@ function selectPostBlock(postObject) {
           setAttributes = _ref2.setAttributes;
 
       if (!posts) {
-        return "Loading...";
+        return /*#__PURE__*/React.createElement("div", {
+          className: "custom-component"
+        }, /*#__PURE__*/React.createElement("p", {
+          className: "block-title"
+        }, "Select ".concat(single)), /*#__PURE__*/React.createElement("p", null, "Loading..."));
       }
 
       if (posts && posts.length === 0) {
-        return "No posts";
+        return /*#__PURE__*/React.createElement("div", {
+          className: "custom-component"
+        }, /*#__PURE__*/React.createElement("p", {
+          className: "block-title"
+        }, "Select ".concat(single)), /*#__PURE__*/React.createElement("p", null, "No Posts"));
       }
 
       var options = posts.map(function (post) {
@@ -3120,8 +3128,10 @@ function selectPostBlock(postObject) {
         label: "Select"
       });
       return /*#__PURE__*/React.createElement("div", {
-        className: "custom-container ".concat(editor ? "content-column--editor" : "content-column--fe")
-      }, /*#__PURE__*/React.createElement(MySelectControl, {
+        className: "custom-component"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "block-title"
+      }, "Select ".concat(single)), /*#__PURE__*/React.createElement(MySelectControl, {
         setAttributes: setAttributes,
         options: options,
         post: attributes.post
@@ -3586,7 +3596,7 @@ function customSectionBlock() {
   var blockTitle = "Create custom section block";
   var blockDescription = "Component to create custom section block";
   var blockCategory = "common";
-  var blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  var blockIcon = "welcome-add-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
@@ -3612,7 +3622,7 @@ function customSectionBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "custom-section__block"
+        class: "custom-section custom-section__block"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
       }, "Custom Section Block"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -3626,7 +3636,7 @@ function customSectionBlock() {
           placeholder: "Please provide a title"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-subsection-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-subsection-block"), "core/paragraph", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block")]
       }))];
     },
     save: function save(_ref) {
@@ -3667,7 +3677,7 @@ function customSubsectionBlock() {
   var blockTitle = "Create custom subsection block";
   var blockDescription = "Component to create custom subsection block";
   var blockCategory = "common";
-  var blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  var blockIcon = "admin-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
@@ -3694,7 +3704,7 @@ function customSubsectionBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "custom-subsection__block"
+        class: "custom-subsection custom-subsection__block"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
       }, "Custom Subsection Block"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -3702,6 +3712,7 @@ function customSubsectionBlock() {
           updateAttributeValue(attribute, change);
         },
         components: [{
+          label: 'Title',
           value: title,
           reference: "title",
           tagName: "p",
@@ -3721,43 +3732,37 @@ function customSubsectionBlock() {
 
 /***/ }),
 
-/***/ "./src/js/blocks/slider/image-slide.jsx":
-/*!**********************************************!*\
-  !*** ./src/js/blocks/slider/image-slide.jsx ***!
-  \**********************************************/
+/***/ "./src/js/blocks/slider/news-slide.jsx":
+/*!*********************************************!*\
+  !*** ./src/js/blocks/slider/news-slide.jsx ***!
+  \*********************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ trmcImageSlideBlock; }
+/* harmony export */   "default": function() { return /* binding */ pgNewsSlideBlock; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
-/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
-/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
+/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
 
-
-function trmcImageSlideBlock() {
+function pgNewsSlideBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
   var _wp = wp,
       i18n = _wp.i18n;
-  var blockSlug = "image-slide";
-  var blockTitle = "Image Slide";
-  var blockDescription = "Creates an image slide with a caption.";
-  var blockCategory = "common";
-  var blockIcon = "feedback"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  var blockSlug = "news-slide";
+  var blockTitle = "News Slide";
+  var blockDescription = "Creates a slide for an external news source.";
+  var blockCategory = "carousels";
+  var blockIcon = "external"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ['caption', 'image_alt', 'image_url'];
-  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_3__["default"])(stringAttrs);
-  attributes['image_id'] = {
-    type: 'Number',
-    default: 0
-  };
+  var stringAttrs = ['link', 'title', 'source'];
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
@@ -3770,44 +3775,40 @@ function trmcImageSlideBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var caption = attributes.caption,
-          image_id = attributes.image_id,
-          image_alt = attributes.image_alt,
-          image_url = attributes.image_url;
+      var link = attributes.link,
+          title = attributes.title,
+          source = attributes.source;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        className: "custom-child"
+        className: "custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Image Slide"), /*#__PURE__*/React.createElement("p", {
-        style: {
-          fontSize: '14px',
-          fontStyle: 'italic'
-        }
-      }, "Images should be at least 1590px x 550px. Larger images will be cropped with a central focal point."), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, "News Slide"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
-          value: image_url,
-          reference: 'image_url',
-          altValue: image_alt,
-          altReference: 'image_alt',
-          idValue: image_id,
-          idReference: 'image_id',
-          buttonText: 'Add an Image'
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        components: [{
-          reference: 'caption',
-          value: caption,
+          reference: 'title',
+          value: title,
+          tagName: 'h3',
+          classes: ['h3'],
+          settings: [],
+          placeholder: 'Provide the title for the news item (required)'
+        }, {
+          reference: 'link',
+          value: link,
           tagName: 'p',
-          classes: ['capstion'],
-          placeholder: 'Provide a caption for this slide'
+          classes: ['paragraph'],
+          settings: [],
+          placeholder: 'Provide a link to the news item (required)'
+        }, {
+          reference: 'source',
+          value: source,
+          tagName: 'p',
+          classes: ['paragraph'],
+          settings: [],
+          placeholder: 'Provide the name for the news source (optional)'
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -3815,10 +3816,9 @@ function trmcImageSlideBlock() {
       }))];
     },
     save: function save() {
-      var caption = attributes.caption,
-          image_alt = attributes.image_alt,
-          image_id = attributes.image_id,
-          image_url = attributes.image_url;
+      var link = attributes.link,
+          title = attributes.title,
+          source = attributes.source;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -3834,7 +3834,7 @@ function trmcImageSlideBlock() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ trmcSliderBlock; }
+/* harmony export */   "default": function() { return /* binding */ pgCarouselBlock; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
@@ -3844,20 +3844,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-function trmcSliderBlock() {
+function pgCarouselBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "carousel";
-  var blockTitle = "Media - Slider";
+  var blockTitle = "News Carousel";
   var blockDescription = "Creates a carousel.";
   var blockCategory = "carousels";
   var blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ['alignment', 'title'];
+  var stringAttrs = ['link', 'title'];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
-  attributes['alignment']['default'] = 'center';
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
@@ -3869,7 +3868,7 @@ function trmcSliderBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var alignment = attributes.alignment,
+      var link = attributes.link,
           title = attributes.title;
 
       function updateAttributeValue(attribute, value) {
@@ -3885,22 +3884,27 @@ function trmcSliderBlock() {
           reference: 'title',
           value: title,
           tagName: 'h2',
-          classes: ['heading_two'],
-          placeholder: 'Provide a Carousel title (optional)',
-          align: {
-            value: alignment,
-            reference: 'alignment'
-          }
+          classes: ['h2'],
+          settings: [],
+          placeholder: 'Provide a Carousel title (optional)'
+        }, {
+          reference: 'link',
+          value: link,
+          tagName: 'p',
+          classes: ['paragraph'],
+          settings: [],
+          placeholder: 'Provide a Carousel View All link (optional)'
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-slide"), 'core/video']
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-research-blogs"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-news"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/news-slide")]
       }))];
     },
     save: function save() {
-      var title = attributes.title;
+      var link = attributes.link,
+          title = attributes.title;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -4334,7 +4338,7 @@ function tagCloudContainerBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "tag-cloud-container__block"
+        class: "tag-cloud-container__block custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
       }, "Tag Cloud Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -4421,7 +4425,7 @@ function tagCloudItemBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "tag-cloud-item__block"
+        class: "tag-cloud-item__block custom-child"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
       }, "Tag Cloud Item"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -4627,7 +4631,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_publications_publications_container_jsx__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./blocks/publications/publications-container.jsx */ "./src/js/blocks/publications/publications-container.jsx");
 /* harmony import */ var _blocks_publications_select_posts_blocks_jsx__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./blocks/publications/select-posts-blocks.jsx */ "./src/js/blocks/publications/select-posts-blocks.jsx");
 /* harmony import */ var _blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./blocks/slider/slider-container.jsx */ "./src/js/blocks/slider/slider-container.jsx");
-/* harmony import */ var _blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./blocks/slider/image-slide.jsx */ "./src/js/blocks/slider/image-slide.jsx");
+/* harmony import */ var _blocks_slider_news_slide_jsx__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./blocks/slider/news-slide.jsx */ "./src/js/blocks/slider/news-slide.jsx");
 /* harmony import */ var _blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./blocks/stats/stats-container.jsx */ "./src/js/blocks/stats/stats-container.jsx");
 /* harmony import */ var _blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./blocks/stats/stats-column.jsx */ "./src/js/blocks/stats/stats-column.jsx");
 /* harmony import */ var _blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./blocks/greenhouse/jobs-block.jsx */ "./src/js/blocks/greenhouse/jobs-block.jsx");
@@ -4726,7 +4730,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_blocks_publications_select_posts_blocks_jsx__WEBPACK_IMPORTED_MODULE_23__["default"])(); // Slide Blocks
 
 (0,_blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_24__["default"])();
-(0,_blocks_slider_image_slide_jsx__WEBPACK_IMPORTED_MODULE_25__["default"])(); // Stat Blocks
+(0,_blocks_slider_news_slide_jsx__WEBPACK_IMPORTED_MODULE_25__["default"])(); // Stat Blocks
 
 (0,_blocks_stats_stats_container_jsx__WEBPACK_IMPORTED_MODULE_26__["default"])();
 (0,_blocks_stats_stats_column_jsx__WEBPACK_IMPORTED_MODULE_27__["default"])(); // Greenhouse Blocks

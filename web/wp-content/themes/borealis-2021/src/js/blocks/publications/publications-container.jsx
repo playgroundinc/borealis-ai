@@ -41,8 +41,8 @@ export default function publicationsContainerBlock() {
             }
 
 			return [
-                <div class="block-container">
-                    <p class="block-title">Tag Cloud Container</p>
+                <div class="custom-container">
+                    <p class="block-title">Publications List Container</p>
                     <CustomRichText 
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
                         components={[
@@ -71,7 +71,7 @@ export default function publicationsContainerBlock() {
                         <InnerBlocks.Content />
                     ) : (
                         <InnerBlocks
-                            allowedBlocks={[`${namespace}/select-publications`, `${namespace}/select-research-blogs`]}
+                            allowedBlocks={[`${namespace}/select-publications`, `${namespace}/select-research-blogs`, `${namespace}/select-news`]}
                         />
                     )}
                 </div>,

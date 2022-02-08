@@ -47,7 +47,7 @@ import selectPostsBlocks from './blocks/publications/select-posts-blocks.jsx';
 
 // Slider Blocks
 import sliderBlock from "./blocks/slider/slider-container.jsx";
-import imageSlideBlock from "./blocks/slider/image-slide.jsx";
+import newsSlideBlock from './blocks/slider/news-slide.jsx';
 
 // Stat Blocks
 import stateContainerBlock from "./blocks/stats/stats-container.jsx";
@@ -116,7 +116,8 @@ selectPostsBlocks();
 
 // Slide Blocks
 sliderBlock();
-imageSlideBlock();
+newsSlideBlock();
+
 
 // Stat Blocks
 stateContainerBlock();

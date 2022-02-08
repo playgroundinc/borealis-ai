@@ -421,3 +421,19 @@ function pg_generate_query($post_type, $query, $taxonomies, $page = 1, $posts_pe
     }
     return $args;
 }
+
+if (!function_exists('pg_get_content_type')) {
+    function pg_get_content_type($content_types, $post_type) {
+        if (!empty($content_types)) {
+            return $content_types[0]->name;
+        }
+        switch($post_type) {
+            case 'research-blogs':
+                return 'Research';
+            case 'news':
+                return 'News';
+            default:
+                return 'Publication';
+        }
+    }
+}
