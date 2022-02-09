@@ -11,7 +11,7 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html class="scroll-smooth" <?php language_attributes(); ?>>
 <head>
     <?php 
         $setting_names = array('gtm_container_id');
@@ -65,24 +65,30 @@
             style="background-image: url(<?php echo $no_header ? '' : esc_attr($hero_image) ?> )"
         >
             <nav id="main-navigation" class="fixed z-10 left-0 right-0 top-3">
-                <div class="<?php echo ($has_subnav)? 'rounded-b-large md:rounded-b-none rounded-t-large': 'rounded-large';?> relative mt-4 top-2 py-4 nav-container <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-shade-white-400 md:bg-primary-navy-400'; ?>">
-                    <div class="flex md:flex-row flex-col items-center container">
-                        <div class="logo h-fit flex md:w-auto w-full justify-between align-center">
+                <div class="<?php echo ($has_subnav)? 'rounded-b-large md:rounded-b-none rounded-t-large': 'rounded-large';?> relative mt-4 top-2 py-4 nav-container <?php echo (is_home() || is_front_page())? 'bg-transparent': 'bg-primary-navy-400'; ?>">
+                    <div class="flex md:flex-row flex-col items-center px-4 md:px-5 lg:px-0 lg:container">
+                        <div class="logo shrink-0 h-fit flex md:w-auto w-full justify-between align-center">
                             <a href="<?php echo get_home_url(); ?>">
                                 <img src="<?php echo $logoUrl ?>" alt="">
                             </a>
-                            <button role="button" class="text-shade-white-400 icon--lg md:hidden" aria-expanded="false" aria-label="Open Main Menu">
+                            <button role="button" class="text-shade-white-400 icon--lg md:hidden menu-toggle" data-toggle="main-nav-items" aria-expanded="false" aria-label="Open Main Menu">
                                 <?php echo pg_render_icon('hamburger') ?>
                             </button>
                         </div>
-                        <div class="nav-items grow flex fixed md:static inset-0 w-screen h-screen md:h-auto bg-shade-white-400 md:bg-transparent md:flex-row flex-col z-50 md:justify-end items-center md:text-shade-white-400 pb-25 md:pb-0">
-                            <?php 
-                                $Menu->generate_menu('navigation-main', 'dropdown');
-                            ?>
-                            <a href="/search" class="px-6 md:px-0 pt-4 border-t md:border-t-0 w-full md:w-auto text-primary-navy-400 md:text-shade-white-400 text-shade-grey-700 p-2 md:absolute top-1/2 -translate-y-1/2 right-4 legal flex items-center md:block">
-                                <span class="md:hidden paragraph grow"><?php echo esc_html('Search') ?></span>
-                                <?php echo pg_render_icon('search') ?>
-                            </a>
+                        <div id="main-nav-items" class="nav-items grow flex fixed md:static inset-0 -left-full w-screen h-screen md:h-auto z-50 md:justify-end items-center md:text-shade-white-400 opacity-0 md:opacity-100 transition-opacity motion-safe:transition-left duration-300 bg-shade-black-30 md:bg-transparent max-h-screen">
+                            <div class="w-3/4 md:w-auto bg-shade-white-400 md:bg-transparent h-full md:flex-row flex-col flex pb-14 md:pb-0 md:items-center overflow-scroll">
+                                <button role="button" class="icon-sm px-6 py-5 block w-full text-shade-black-400 md:hidden" aria-label="Close Main Menu">
+                                    <?php echo pg_render_icon('menu-close') ?>
+                                </button>
+                                <?php 
+                                    $Menu->generate_menu('navigation-main', 'dropdown');
+                                ?>
+                                
+                                <a href="/search" class="mt-6 md:mt-0 px-6 md:px-5 border-t md:border-t-0 w-full md:w-auto text-primary-navy-400 md:text-shade-white-400 text-shade-grey-700 py-4 md:py-2 legal flex items-center md:block">
+                                    <span class="md:hidden paragraph grow"><?php echo esc_html('Search') ?></span>
+                                    <?php echo pg_render_icon('search') ?>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     

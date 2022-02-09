@@ -15,7 +15,7 @@ $option_names = array('footer_banner_copy', 'linkedin', 'github', 'youtube', 'tw
 $options = pg_get_options($option_names);
 ?>
 </main>
-<footer class="bg-shade-white-400">
+<footer class="bg-shade-white-400 hidden md:block">
 	<div class="flex pt-13 container w-full mt-20 border-solid border-b border-shade-grey-500 border-opacity-40">
 		<div class="pr-80">
 			<div class="mb-4">

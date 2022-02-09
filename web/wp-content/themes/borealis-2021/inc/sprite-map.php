@@ -196,6 +196,10 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
                 <path d="M67.2301 24.7695L24.7686 67.2311" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M24.7686 24.7695L67.2301 67.2311" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
+            
+            <symbol id="icon-menu-close" viewBox="0 0 14 14" fill="none">
+                <g stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path stroke="currentColor" d="M11.972 2 2.028 12"/><path stroke="currentColor" d="m2 2 10 10"/></g>
+            </symbol>
 
             <!--  Cookie Close -->
             <symbol id="icon-cookie-close" viewBox="0 0 8 8">

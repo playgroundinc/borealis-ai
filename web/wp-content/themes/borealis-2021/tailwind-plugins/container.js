@@ -5,22 +5,18 @@ module.exports = plugin(function({ addUtilities }) {
     const margins = [
         {
             width: `${breakpoints.md}px`,
-            margin: '25px',
-        },
-        {
-            width: `${breakpoints.lg}px`,
-            margin: '75px',
+            margin: '56px',
         },
         {
             width: `${breakpoints.xl}px`,
-            margin: 'auto'
+            margin: '0'
         }
     ]
     const mediaQueries = margins.map((rule) => {
         return {
             [`@media (min-width: ${rule.width})`]: {
                 '.container': {
-                    'margin': `0 ${rule.margin}`
+                    'width': `calc(100% - ${rule.margin})`
                 }
             }
         }
@@ -28,12 +24,9 @@ module.exports = plugin(function({ addUtilities }) {
     })
     const newUtility = {
         '.container': {
-            margin: '0 28px',
-            maxWidth: '100%',
-            [`@media (min-width: ${breakpoints.xl}px)`]: {
-                width: 'calc(100% - 150px)',
-                maxWidth: '1300px',
-            }
+            margin: '0 auto',
+            maxWidth: '1440px',
+            width: 'calc(100% - 48px)'
         },
         '.container--single': {
             margin: '0 28px',
@@ -48,8 +41,8 @@ module.exports = plugin(function({ addUtilities }) {
             margin: '0 auto'
         },
         '.nav-container': {
-            maxWidth: '1400px',
-            width: 'calc(100% - 24px)',
+            maxWidth: '1560px',
+            width: 'calc(100% - 16px)',
             margin: '0 auto',
         },
         '.nav-underline': {

@@ -74,6 +74,7 @@ module.exports = {
 				},
 				shade: {
 					black: {
+						30: 'rgba(34, 39, 49, 0.3)',
 						400: "#222731" // Cool Black
 					},
 					grey: {
