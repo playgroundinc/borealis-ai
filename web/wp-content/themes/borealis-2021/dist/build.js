@@ -166,8 +166,7 @@ function checkboxSearchForm(container, setCount) {
 
     for (let key in selections) {
       results.push(selections[key].value);
-    } // params.UrlParams = new URLSearchParams(window.location.search);
-
+    }
 
     params.setParam(results.join(","));
   }
@@ -366,8 +365,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ Loader; }
 /* harmony export */ });
 class Loader {
-  constructor(trigger, list, params) {
-    this.resetTrigger = document.querySelector('.refresh-results');
+  constructor(container, trigger, list, params) {
+    this.container = container;
+    this.resetTrigger = container.querySelector('.refresh-results');
     this.trigger = trigger;
     this.list = list;
     this.page = this.list.dataset?.page ? Number(this.list.dataset.page) + 1 : 2;
@@ -499,8 +499,8 @@ __webpack_require__.r(__webpack_exports__);
 class QueryParams {
   constructor(param) {
     this.param = param;
-    this.list = document.querySelector('.posts-listing');
-    this.refresh = document.querySelector('.refresh-results');
+    this.list = document.querySelectorAll('.posts-listing');
+    this.refresh = document.querySelectorAll('.refresh-results');
     this.UrlParams = new URLSearchParams(window.location.search);
     this.setListData = this.setListData.bind(this);
     this.setParam = this.setParam.bind(this);
@@ -512,13 +512,15 @@ class QueryParams {
   setListData(action = 'populate') {
     if (action === 'clear') {
       this.UrlParams.forEach((value, key) => {
-        this.list.setAttribute(`data-${key}`, ``);
+        this.list.forEach(list => list.setAttribute(`data-${key}`, ``));
+        location.reload();
       });
       return;
     }
 
     this.UrlParams.forEach((value, key) => {
-      this.list.setAttribute(`data-${key}`, `${value}`);
+      this.list.forEach(list => list.setAttribute(`data-${key}`, `${value}`));
+      location.reload();
     });
   }
 
@@ -531,7 +533,7 @@ class QueryParams {
       this.setListData();
 
       if (this.refresh) {
-        this.refresh.click();
+        this.refresh.forEach(refresh => refresh.click());
       }
     }
   }
@@ -552,7 +554,7 @@ class QueryParams {
       this.setListData('clear');
 
       if (this.refresh) {
-        this.refresh.click();
+        this.refresh.forEach(refresh => refresh.click());
       }
     }
   }
@@ -670,12 +672,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _classes_class_loader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/class-loader */ "./src/js/scripts/classes/class-loader.js");
 
 function loadMore() {
-  const loadMoreButton = document.querySelector('.load-more');
-  const list = document.querySelector('.posts-listing');
+  const loadMoreContainers = document.querySelectorAll('.load-more-results');
 
-  if (loadMoreButton && list) {
-    const PostLoader = new _classes_class_loader__WEBPACK_IMPORTED_MODULE_0__["default"](loadMoreButton, list, ['research-areas']);
-    PostLoader.init();
+  if (loadMoreContainers && loadMoreContainers.length > 0) {
+    loadMoreContainers.forEach(container => {
+      const loadMoreButton = container.querySelector('.load-more');
+      const list = container.querySelector('.posts-listing');
+
+      if (loadMoreButton && list) {
+        const PostLoader = new _classes_class_loader__WEBPACK_IMPORTED_MODULE_0__["default"](container, loadMoreButton, list, ['research-areas']);
+        PostLoader.init();
+      }
+    });
   }
 }
 

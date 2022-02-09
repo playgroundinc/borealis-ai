@@ -1,6 +1,7 @@
 export default class Loader {
-    constructor(trigger, list, params) {
-        this.resetTrigger = document.querySelector('.refresh-results');
+    constructor(container, trigger, list, params) {
+        this.container = container
+        this.resetTrigger = container.querySelector('.refresh-results');
         this.trigger = trigger;
         this.list = list;
         this.page = this.list.dataset?.page ? Number(this.list.dataset.page) + 1 : 2;

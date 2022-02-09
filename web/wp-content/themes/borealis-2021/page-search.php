@@ -25,6 +25,10 @@ get_header();
     ?>
     <?php
     $tab_array = [
+        "page" => array(
+            'title' => 'Page',
+            'id' => 'page',
+        ),
         "publications" => array(
             'title' => 'Publications',
             'id' => 'publications',
@@ -76,7 +80,7 @@ get_header();
                 $id = $element['id'];
 
                 $research_areas = pg_get_query_values($_GET, 'research-areas');
-                $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 5);
+                $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 9);
                 $Query = new WP_Query($args);
 
                 if (empty($Query->posts)) {
@@ -100,17 +104,17 @@ get_header();
             $id = $element['id'];
 
             $research_areas = pg_get_query_values($_GET, 'research-areas');
-            $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 5);
+            $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 9);
             $Query = new WP_Query($args);
 
 
             if ($inner_block === key($tab_array)) { ?>
-                <div class="block" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
+                <div class="block load-more-results" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
                     <?php
                     if (!empty($Query->posts)) : // Empty Query check. 
                     ?>
                         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
-                        <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="publications">
+                        <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="<?php echo esc_attr($id) ?>">
                             <?php foreach ($Query->posts as $post) : // Start of Query loop 
                             ?>
                                 <li class="last:border-b-0 border-b border-shade-grey-500">
@@ -121,16 +125,12 @@ get_header();
                         </ul>
                         <div class="container">
                             <button class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> block h4 pt-10 pb-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
-                        </div>
-                    <?php elseif (!empty($search_query)) : ?>
-                        <div class="pt-8 text-shade-black-400 container">
-                            <!-- <p class="h3 py-10">No results found for <?php echo esc_html($search_query) ?></p> -->
                         </div>
                     <?php endif; ?>
                     <?php wp_reset_query(); ?>
                 </div>
             <?php } else { ?>
-                <div class="hidden" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
+                <div class="hidden load-more-results" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
                     <?php
                     if (!empty($Query->posts)) : // Empty Query check. 
                     ?>
@@ -146,10 +146,6 @@ get_header();
                         </ul>
                         <div class="container">
                             <button class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> block h4 pt-10 pb-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
-                        </div>
-                    <?php elseif (!empty($search_query)) : ?>
-                        <div class="pt-8 text-shade-black-400 container">
-                            <!-- <p class="h3 py-10">No results found for <?php echo esc_html($search_query) ?></p> -->
                         </div>
                     <?php endif; ?>
                     <?php wp_reset_query(); ?>
@@ -160,21 +156,7 @@ get_header();
         }
         ?>
     </section>
-
-
-
-
-
-
-
     <div class="border-b border-shade-grey-500"></div>
-
-
-
-
-
-
-
 </div>
 <?php
 get_footer();
