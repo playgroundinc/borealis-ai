@@ -142,6 +142,7 @@ require get_template_directory() . '/inc/gutenberg/publications/render-publicati
 
 // Slider Blocks
 require get_template_directory() . '/inc/gutenberg/slider/render-slider-container-block.php';
+require get_template_directory() . '/inc/gutenberg/slider/render-news-slide.php';
 require get_template_directory() . '/inc/gutenberg/slider/render-image-slide-block.php';
 
 // Stat Blocks
