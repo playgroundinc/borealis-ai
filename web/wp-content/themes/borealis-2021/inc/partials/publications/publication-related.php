@@ -15,13 +15,7 @@ if (!function_exists('pg_generate_publication_related')) {
 
         if (!empty($terms)) {
             $terms = array_map(
-                function ($term) use ($research_areas) {
-                    if (!empty($research_areas)) {
-                        $match = array_search(strval($term->term_id), $research_areas);
-                        if ($match !== false) {
-                            return '<span class="text-primary-electric-blue-400">' . $term->name . '</span>';
-                        }
-                    }
+                function ($term) {
                     return $term->name;
                 },
                 $terms
@@ -31,7 +25,7 @@ if (!function_exists('pg_generate_publication_related')) {
         ob_start();
 ?>
         <a href="<?php echo esc_attr($url) ?>" class="py-5 block hover:bg-shade-white-400 bg-shade-grey-100 transition-background-color duration-300">
-            <div class="container">
+            <div class="container md:w-full md:m-0 md:px-5">
                 <div class="md:flex items-center">
                     <div class="grow pr-3">
                         <p class="paragraph"><?php echo esc_html($post->post_title) ?></p>

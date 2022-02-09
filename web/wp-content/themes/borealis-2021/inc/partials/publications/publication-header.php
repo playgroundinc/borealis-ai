@@ -47,7 +47,7 @@ if (!function_exists('pg_generate_publication_header')) {
                     </div>
                 </div>
                 <div class="md:flex pt-8">
-                    <div class="w-3/8">
+                    <div class="md:w-3/8">
                         <p class="h4"><?php echo esc_attr($date); ?></p>
                         <?php if (isset($time_to_read) && $time_to_read !== ''): ?>
                             <p class="paragraph-sm mt-4"><?php echo esc_html($time_to_read . ' minute read'); ?></p>
