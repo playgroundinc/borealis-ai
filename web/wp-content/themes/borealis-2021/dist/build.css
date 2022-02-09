@@ -723,6 +723,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   bottom: 0px;
   left: 0px;
 }
+.-left-4{
+  left: -16px;
+}
 .left-0{
   left: 0px;
 }
@@ -778,15 +781,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-10{
   margin-bottom: 40px;
 }
-.mt-7{
-  margin-top: 28px;
-}
-.mb-8{
-  margin-bottom: 32px;
-}
-.mr-10{
-  margin-right: 40px;
-}
 .mt-4{
   margin-top: 16px;
 }
@@ -804,9 +798,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .ml-19{
   margin-left: 76px;
-}
-.mr-8{
-  margin-right: 32px;
 }
 .mt-15{
   margin-top: 60px;
@@ -847,9 +838,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hidden{
   display: none;
 }
-.h-16{
-  height: 64px;
-}
 .h-fit{
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -879,9 +867,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-full{
   width: 100%;
 }
-.w-12{
-  width: 48px;
-}
 .w-screen{
   width: 100vw;
 }
@@ -893,9 +878,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-5\/6{
   width: 83.333333%;
-}
-.w-2\/12{
-  width: 16.666667%;
 }
 .w-18{
   width: 72px;
@@ -929,6 +911,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .grow{
   flex-grow: 1;
+}
+.basis-1\/2{
+  flex-basis: 50%;
 }
 .rotate-0{
   --tw-rotate: 0deg;
@@ -1102,16 +1087,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-5{
   padding: 20px;
 }
-.p-2{
-  padding: 8px;
+.px-4{
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .py-4{
   padding-top: 16px;
   padding-bottom: 16px;
-}
-.px-4{
-  padding-left: 16px;
-  padding-right: 16px;
 }
 .px-6{
   padding-left: 24px;
@@ -1164,11 +1146,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-13{
   padding-top: 52px;
 }
-.pr-80{
-  padding-right: 320px;
+.pr-14{
+  padding-right: 56px;
 }
-.pl-8{
-  padding-left: 32px;
+.pt-12{
+  padding-top: 48px;
+}
+.pb-5{
+  padding-bottom: 20px;
+}
+.pt-3{
+  padding-top: 12px;
+}
+.pb-8{
+  padding-bottom: 32px;
 }
 .pb-14{
   padding-bottom: 56px;
@@ -1185,9 +1176,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-10{
   padding-top: 40px;
 }
-.pb-8{
-  padding-bottom: 32px;
-}
 .pt-100{
   padding-top: 400px;
 }
@@ -1197,20 +1185,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-4{
   padding-bottom: 16px;
 }
-.pb-5{
-  padding-bottom: 20px;
-}
 .pl-5{
   padding-left: 20px;
 }
 .pl-4{
   padding-left: 16px;
 }
-.pb-7{
-  padding-bottom: 28px;
+.pl-0{
+  padding-left: 0px;
 }
-.pt-12{
-  padding-top: 48px;
+.pt-5{
+  padding-top: 20px;
 }
 .pb-6{
   padding-bottom: 24px;
@@ -1220,9 +1205,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-4{
   padding-right: 16px;
-}
-.pt-5{
-  padding-top: 20px;
 }
 .pb-13{
   padding-bottom: 52px;
@@ -1325,15 +1307,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
-.transition-opacity{
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
 .transition{
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-opacity{
+  transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1393,6 +1375,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
+}
+.last\:basis-auto:last-child{
+  flex-basis: auto;
 }
 .visited\:text-primary-electric-purple-400:visited{
   --tw-text-opacity: 1;
@@ -1455,6 +1440,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.nth-child-3\:pt-12:nth-child(n + 3){
+  padding-top: 48px;
+}
 @media (min-width: 375px){
   .sm\:w-1\/2{
     width: 50%;
@@ -1505,6 +1493,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:absolute{
     position: absolute;
   }
+  .md\:left-0{
+    left: 0px;
+  }
+  .md\:-right-4{
+    right: -16px;
+  }
   .md\:m-0{
     margin: 0px;
   }
@@ -1543,6 +1537,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:w-5\/8{
     width: calc((100% /8) * 5);
+  }
+  .md\:basis-1\/4{
+    flex-basis: 25%;
   }
   .md\:flex-row{
     flex-direction: row;
@@ -1591,6 +1588,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:py-5{
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+  .md\:pr-5{
+    padding-right: 20px;
+  }
+  .md\:pt-7{
+    padding-top: 28px;
   }
   .md\:pb-0{
     padding-bottom: 0px;
@@ -1648,19 +1651,46 @@ Ensure the default browser behavior of the `hidden` attribute.
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
+  .md\:nth-child-3\:pt-0:nth-child(n + 3){
+    padding-top: 0px;
+  }
 }
 @media (min-width: 1000px){
+  .tb\:flex{
+    display: flex;
+  }
   .tb\:w-1\/4{
     width: 25%;
   }
   .tb\:w-8\/12{
     width: 66.666667%;
   }
+  .tb\:justify-end{
+    justify-content: flex-end;
+  }
+  .tb\:pt-6{
+    padding-top: 24px;
+  }
+  .tb\:pb-8{
+    padding-bottom: 32px;
+  }
+  .tb\:pt-0{
+    padding-top: 0px;
+  }
+  .tb\:pl-5{
+    padding-left: 20px;
+  }
 }
 @media (min-width: 1440px){
+  .lg\:basis-1\/5{
+    flex-basis: 20%;
+  }
   .lg\:px-0{
     padding-left: 0px;
     padding-right: 0px;
+  }
+  .lg\:pt-7{
+    padding-top: 28px;
   }
   .lg\:container{
     margin: 0 auto;
