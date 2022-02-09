@@ -30,18 +30,20 @@ $current_post_id = $post->ID;
             <div class="w-full md:w-4/6">
                 <?php
                 $research_areas = get_the_terms($post->ID, 'research-areas');
-                $research_areas_updated = array_map(function ($term) {
-                    return strval($term->term_id);
-                }, $research_areas);
-                $args = pg_generate_query(array('publications', 'research-blogs'), '', array('research-areas' => $research_areas_updated), 1, 3, $current_post_id);
+                if(!empty($research_areas)) {
+                    $research_areas = array_map(function ($term) {
+                        return strval($term->term_id);
+                    }, $research_areas);
+                }
+                $args = pg_generate_query(array('publications', 'research-blogs'), '', array('research-areas' => $research_areas), 1, 3, $current_post_id);
                 $Query = new WP_Query($args);
                 if (!empty($Query->posts)) : // Empty Query check. 
                 ?>
-                    <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas_updated)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="publications">
+                    <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="publications">
                         <?php foreach ($Query->posts as $post) :
                         ?>
                         <li class="border-b border-shade-grey-500">
-                                <?php echo pg_generate_publication_related($post, $research_areas_updated) ?>
+                                <?php echo pg_generate_publication_related($post, $research_areas) ?>
                             </li>
                         <?php endforeach; ?>
                     </ul>
