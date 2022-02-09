@@ -1140,14 +1140,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-42{
   padding-top: 168px;
 }
+.pt-8{
+  padding-top: 32px;
+}
 .pt-10{
   padding-top: 40px;
 }
 .pb-8{
   padding-bottom: 32px;
-}
-.pt-8{
-  padding-top: 32px;
 }
 .pb-5{
   padding-bottom: 20px;
