@@ -23,19 +23,21 @@ get_header();
     }
     echo pg_generate_search_bar($query, $taxonomies_array);
     ?>
-    <div class="container pt-8 text-shade-black-400">
-        <?php
-        $query = sanitize_text_field(wp_unslash($_GET['q'])) ?? null;
-        $research_areas = pg_get_query_values($_GET, 'research-areas');
-        $args = pg_generate_query('publications', $query, array('research-areas' => $research_areas));
-        $Query = new WP_Query($args);
-        ?>
-        <?php if (!empty($query) and !empty($Query->posts)) : ?>
+    <?php
+    $query = sanitize_text_field(wp_unslash($_GET['q'])) ?? null;
+    $research_areas = pg_get_query_values($_GET, 'research-areas');
+    $args = pg_generate_query('publications', $query, array('research-areas' => $research_areas));
+    $Query = new WP_Query($args);
+    ?>
+    <?php if (!empty($query) and !empty($Query->posts)) : ?>
+        <div class="container pt-8 text-shade-black-400">
             <p class="h3 py-10">Results for <?php echo esc_html($query) ?></p>
-        <?php elseif (!empty($query) and empty($Query->posts)) : ?>
+        </div>
+    <?php elseif (!empty($query) and empty($Query->posts)) : ?>
+        <div class="container pt-8 text-shade-black-400">
             <p class="h3 py-10">No results found for <?php echo esc_html($query) ?></p>
-        <?php endif; ?>
-    </div>
+        </div>
+    <?php endif; ?>
     <?php
     $research_areas = pg_get_query_values($_GET, 'research-areas');
 

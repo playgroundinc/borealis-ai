@@ -14,13 +14,11 @@ export default class QueryParams {
         if (action === 'clear') {
             this.UrlParams.forEach((value, key) => {
                 this.list.forEach(list => list.setAttribute(`data-${key}`, ``));
-                location.reload();
             })
             return;
         }
         this.UrlParams.forEach((value, key) => {
             this.list.forEach(list => list.setAttribute(`data-${key}`, `${value}`));
-            location.reload();
         })
     }
     setParam(value) {
