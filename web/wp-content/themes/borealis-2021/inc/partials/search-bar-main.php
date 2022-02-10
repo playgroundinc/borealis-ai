@@ -25,7 +25,7 @@ if (!function_exists('pg_generate_search_bar_main')) {
             <button id="search-topics"> <span class="topics"><?php echo esc_html('0') ?></span></button>
         </div>
     </div>
-    <div class="bg-shade-grey-100">
+    <div class="bg-shade-white-400 border-b border-shade-grey-500">
         <div id="search-filters" class="container" role="region" aria-labelledby="search-topics">
             <div class="pt-12 pb-6">
                 <form method="post">

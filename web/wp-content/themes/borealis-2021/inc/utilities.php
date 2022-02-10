@@ -440,3 +440,18 @@ if (!function_exists('pg_get_content_type')) {
         }
     }
 }
+
+if (!function_exists('pg_check_for_submenu')) {
+    function pg_check_for_submenu($theme_location, $post_id) {
+        $theme_locations = get_nav_menu_locations();
+        $menu_obj = get_term( $theme_locations[$theme_location], 'nav_menu' );
+        $menu_items = wp_get_nav_menu_items($menu_obj->slug);
+        $active_item = array_filter($menu_items, function($item) use ($post_id) { return intval($item->object_id) === $post_id && intval($item->menu_item_parent) === 0;});
+        if (!empty($active_item)) {
+            $active_menu_item = reset($active_item);
+            $children = array_filter($menu_items, function($item) use ($active_menu_item) { return intval($item->menu_item_parent) === intval($active_menu_item->ID); });
+            return !empty($children);
+        }
+        return false;
+    }
+}

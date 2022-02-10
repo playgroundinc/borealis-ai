@@ -166,8 +166,7 @@ function checkboxSearchForm(container, setCount) {
 
     for (let key in selections) {
       results.push(selections[key].value);
-    } // params.UrlParams = new URLSearchParams(window.location.search);
-
+    }
 
     params.setParam(results.join(","));
   }
@@ -366,8 +365,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ Loader; }
 /* harmony export */ });
 class Loader {
-  constructor(trigger, list, params) {
-    this.resetTrigger = document.querySelector('.refresh-results');
+  constructor(container, trigger, list, params) {
+    this.container = container;
+    this.resetTrigger = container.querySelector('.refresh-results');
     this.trigger = trigger;
     this.list = list;
     this.page = this.list.dataset?.page ? Number(this.list.dataset.page) + 1 : 2;
@@ -485,6 +485,126 @@ class Loader {
 
 /***/ }),
 
+/***/ "./src/js/scripts/classes/class-nav-scroll.js":
+/*!****************************************************!*\
+  !*** ./src/js/scripts/classes/class-nav-scroll.js ***!
+  \****************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ NavScroll; }
+/* harmony export */ });
+class NavScroll {
+  constructor(nav, hero, alertBar) {
+    this.nav = nav;
+    this.hero = hero;
+    this.alertBar = alertBar ? alertBar : false;
+    this.heroHeight = this.hero.offsetHeight;
+    this.scroll = pageYOffset;
+    this.hidden = false;
+    this.top = 0;
+    this.defaultTop = window.innerWidth >= 1440 ? 30 : 0;
+    this.children = [];
+    this.handleScroll = this.handleScroll.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleResize = this.handleResize.bind(this);
+  }
+
+  setState(name, value) {
+    this[name] = value;
+  }
+
+  setScroll(currentScroll) {
+    this.setState('scroll', currentScroll);
+  }
+
+  getChildren() {
+    const childLinks = [...this.nav.querySelectorAll('button, a')];
+
+    if (childLinks.length) {
+      this.setState('children', childLinks);
+      return;
+    }
+  }
+
+  setTop() {
+    const top = this.alertBar && !this.alertBar.classList.contains('alert--hidden') ? this.alertBar.offsetHeight + this.defaultTop : this.defaultTop;
+    this.setState('top', top);
+  }
+
+  setNavTop() {
+    this.nav.style.top = `${this.top}px`;
+  }
+
+  showNav() {
+    if (this.hidden) {
+      this.setTop();
+      this.setState('hidden', false);
+      this.nav.classList.remove('scroll--hidden');
+      this.setNavTop();
+    }
+  }
+
+  hideNav() {
+    this.setState('hidden', true);
+    this.nav.classList.add('scroll--hidden');
+    this.nav.style.top = `${-1 * this.nav.offsetHeight}px`;
+  }
+
+  handleFocus() {
+    if (this.hidden) {
+      this.showNav();
+    }
+  }
+
+  handleChildren() {
+    this.getChildren();
+
+    if (this.children.length) {
+      this.children.forEach(child => {
+        child.addEventListener('focus', this.handleFocus);
+      });
+    }
+  }
+
+  handleResize() {
+    if (window.innerWidth >= 1440) {
+      this.setState('defaultTop', 30);
+      this.setTop();
+      this.setNavTop();
+      return;
+    }
+
+    this.setState('defaultTop', 0);
+    this.setTop();
+    this.setNavTop();
+  }
+
+  handleScroll() {
+    const currentScroll = pageYOffset;
+
+    if (currentScroll < this.heroHeight || currentScroll < this.scroll) {
+      this.setScroll(currentScroll);
+      this.showNav();
+      return;
+    }
+
+    if (!this.hidden) {
+      const navStyles = window.getComputedStyle(this.nav);
+      this.setTop();
+      this.hideNav();
+      this.setScroll(currentScroll);
+    }
+
+    this.setScroll(currentScroll);
+  }
+
+}
+
+/***/ }),
+
 /***/ "./src/js/scripts/classes/class-query-params.js":
 /*!******************************************************!*\
   !*** ./src/js/scripts/classes/class-query-params.js ***!
@@ -499,8 +619,8 @@ __webpack_require__.r(__webpack_exports__);
 class QueryParams {
   constructor(param) {
     this.param = param;
-    this.list = document.querySelector('.posts-listing');
-    this.refresh = document.querySelector('.refresh-results');
+    this.list = document.querySelectorAll('.posts-listing');
+    this.refresh = document.querySelectorAll('.refresh-results');
     this.UrlParams = new URLSearchParams(window.location.search);
     this.setListData = this.setListData.bind(this);
     this.setParam = this.setParam.bind(this);
@@ -512,13 +632,13 @@ class QueryParams {
   setListData(action = 'populate') {
     if (action === 'clear') {
       this.UrlParams.forEach((value, key) => {
-        this.list.setAttribute(`data-${key}`, ``);
+        this.list.forEach(list => list.setAttribute(`data-${key}`, ``));
       });
       return;
     }
 
     this.UrlParams.forEach((value, key) => {
-      this.list.setAttribute(`data-${key}`, `${value}`);
+      this.list.forEach(list => list.setAttribute(`data-${key}`, `${value}`));
     });
   }
 
@@ -531,7 +651,7 @@ class QueryParams {
       this.setListData();
 
       if (this.refresh) {
-        this.refresh.click();
+        this.refresh.forEach(refresh => refresh.click());
       }
     }
   }
@@ -552,7 +672,7 @@ class QueryParams {
       this.setListData('clear');
 
       if (this.refresh) {
-        this.refresh.click();
+        this.refresh.forEach(refresh => refresh.click());
       }
     }
   }
@@ -627,6 +747,201 @@ class SearchBar {
 
 /***/ }),
 
+/***/ "./src/js/scripts/classes/menu-toggle.js":
+/*!***********************************************!*\
+  !*** ./src/js/scripts/classes/menu-toggle.js ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ MenuToggle; }
+/* harmony export */ });
+/* harmony import */ var _slide_toggle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slide-toggle */ "./src/js/scripts/classes/slide-toggle.js");
+
+class MenuToggle {
+  constructor(button, id) {
+    this.button = button;
+    this.breakpoint = 768;
+    this.id = id;
+    this.active = false;
+    this.header = null;
+    this.focusable = null;
+    this.mobile = true;
+    this.firstElement = null;
+    this.lastElement = null;
+    this.headerTop = null;
+    this.handleEsc = this.handleEsc.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleResize = this.handleResize.bind(this);
+    this.handleFirstElement = this.handleFirstElement.bind(this);
+    this.handleLastElement = this.handleLastElement.bind(this);
+    this.getElements = this.getElements.bind(this);
+    this.toggleActive = this.toggleActive.bind(this);
+  }
+
+  setState(name, value) {
+    this[name] = value;
+  }
+
+  toggleBodyClass() {
+    if (this.active) {
+      this.body.classList.add('overflow-hidden');
+      return;
+    }
+
+    this.body.classList.remove('overflow-hidden');
+  }
+
+  toggleMenu() {
+    if (this.active) {
+      this.header.classList.remove('-left-full');
+      this.header.classList.add('left-0');
+      this.header.classList.remove('opacity-0');
+      this.header.classList.add('opacity-100');
+      const firstMenuItem = this.header.querySelector('a');
+      firstMenuItem.focus();
+      return;
+    }
+
+    this.header.classList.add('-left-full');
+    this.header.classList.remove('left-0');
+    this.header.classList.add('opacity-0');
+    this.header.classList.remove('opacity-100');
+  }
+
+  toggleActive() {
+    const status = !this.active;
+    this.button.setAttribute('aria-expanded', `${status}`);
+    this.setState('active', status);
+    this.toggleBodyClass();
+    this.toggleMenu();
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.toggleActive();
+  }
+
+  setMobile() {
+    const width = window.innerWidth;
+    let mobile = true;
+
+    if (width >= this.breakpoint) {
+      mobile = false;
+    }
+
+    this.setState('mobile', mobile);
+  }
+
+  handleResize() {
+    this.setMobile();
+
+    if (!this.mobile) {
+      if (this.active) {
+        this.toggleActive();
+      }
+    }
+  }
+
+  getFirstElement() {
+    const closeBtn = this.header.querySelector('button');
+
+    if (closeBtn) {
+      this.setState('firstElement', closeBtn);
+      this.firstElement.addEventListener('click', this.handleClick);
+      return;
+    }
+
+    this.setState('firstElement', this.button);
+  }
+
+  getElements() {
+    const elements = [...this.header.querySelectorAll('a')];
+    elements.forEach(element => {
+      element.addEventListener('click', this.toggleActive);
+    });
+  }
+
+  getLastElement() {
+    const allBtns = [...this.header.querySelectorAll('a')];
+    const lastBtn = allBtns[allBtns.length - 1];
+    this.setState('lastElement', lastBtn);
+  }
+
+  getKeyCombination(keyCode, shiftKey) {
+    if (keyCode !== 9) {
+      return null;
+    }
+
+    if (shiftKey) {
+      return false;
+    }
+
+    return true;
+  }
+
+  handleLastElement(e) {
+    if (!this.mobile) {
+      return;
+    }
+
+    const forwards = this.getKeyCombination(e.keyCode, e.shiftKey);
+
+    if (forwards) {
+      e.preventDefault();
+      this.firstElement.focus();
+    }
+  }
+
+  handleFirstElement(e) {
+    if (!this.active || !this.mobile) {
+      return;
+    }
+
+    const forwards = this.getKeyCombination(e.keyCode, e.shiftKey);
+
+    if (forwards === false) {
+      e.preventDefault();
+      this.lastElement.focus();
+    }
+  }
+
+  trapFocus() {
+    this.getFirstElement();
+    this.getLastElement();
+    this.lastElement.addEventListener('keydown', this.handleLastElement);
+    this.firstElement.addEventListener('keydown', this.handleFirstElement);
+  }
+
+  getTargets() {
+    const body = document.body;
+    this.setState('body', body);
+    const header = document.querySelector(`#${this.id}`);
+    this.setState('header', header);
+  }
+
+  handleEsc(e) {
+    if (this.active && this.mobile && e.keyCode === 27) {
+      this.toggleActive();
+    }
+  }
+
+  init() {
+    this.getTargets();
+    this.setMobile();
+    this.trapFocus();
+    this.getElements();
+    this.header.addEventListener('keydown', this.handleEsc);
+    this.button.addEventListener('click', this.handleClick);
+    window.addEventListener('resize', this.handleResize);
+  }
+
+}
+
+/***/ }),
+
 /***/ "./src/js/scripts/classes/slide-toggle.js":
 /*!************************************************!*\
   !*** ./src/js/scripts/classes/slide-toggle.js ***!
@@ -670,14 +985,85 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _classes_class_loader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/class-loader */ "./src/js/scripts/classes/class-loader.js");
 
 function loadMore() {
-  const loadMoreButton = document.querySelector('.load-more');
-  const list = document.querySelector('.posts-listing');
+  const loadMoreContainers = document.querySelectorAll('.load-more-results');
 
-  if (loadMoreButton && list) {
-    const PostLoader = new _classes_class_loader__WEBPACK_IMPORTED_MODULE_0__["default"](loadMoreButton, list, ['research-areas']);
-    PostLoader.init();
+  if (loadMoreContainers && loadMoreContainers.length > 0) {
+    loadMoreContainers.forEach(container => {
+      const loadMoreButton = container.querySelector('.load-more');
+      const list = container.querySelector('.posts-listing');
+
+      if (loadMoreButton && list) {
+        const PostLoader = new _classes_class_loader__WEBPACK_IMPORTED_MODULE_0__["default"](container, loadMoreButton, list, ['research-areas']);
+        PostLoader.init();
+      }
+    });
   }
 }
+
+/***/ }),
+
+/***/ "./src/js/scripts/navigation.js":
+/*!**************************************!*\
+  !*** ./src/js/scripts/navigation.js ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ navigation; }
+/* harmony export */ });
+/* harmony import */ var _classes_menu_toggle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/menu-toggle */ "./src/js/scripts/classes/menu-toggle.js");
+/* harmony import */ var _classes_class_nav_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/class-nav-scroll */ "./src/js/scripts/classes/class-nav-scroll.js");
+/**
+ * File navigation.js.
+ *
+ * Handles toggling the navigation menu for small screens and enables TAB key
+ * navigation support for dropdown menus.
+ */
+
+
+function navigation() {
+  const addToggle = () => {
+    const button = document.querySelector('.menu-toggle');
+    const id = button.dataset.toggle;
+    const Toggle = new _classes_menu_toggle__WEBPACK_IMPORTED_MODULE_0__["default"](button, id);
+    Toggle.init();
+  };
+
+  const addNavHandlers = () => {
+    const nav = getNav();
+
+    if (hero && nav) {
+      const NavScrollClass = new _classes_class_nav_scroll__WEBPACK_IMPORTED_MODULE_1__["default"](nav, hero, alertBar);
+      NavScrollClass.handleChildren();
+      window.addEventListener('scroll', NavScrollClass.handleScroll);
+      window.addEventListener('resize', NavScrollClass.handleResize);
+    }
+  };
+
+  const addMenuHandlers = () => {
+    const menus = getMenus();
+
+    if (menus.length) {
+      menus.forEach(menu => {
+        const parents = getParents(menu);
+
+        if (parents && parents.length) {
+          addDropdowns(parents);
+        }
+      });
+    }
+  };
+
+  const init = () => {
+    // addMenuHandlers();
+    addToggle(); // addNavHandlers();
+  };
+
+  init();
+}
+;
 
 /***/ }),
 
@@ -10657,24 +11043,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/style.scss */ "./src/sass/style.scss");
 /* harmony import */ var _scripts_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/search */ "./src/js/scripts/search.js");
 /* harmony import */ var _scripts_load_more__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/load-more */ "./src/js/scripts/load-more.js");
-/* harmony import */ var _scripts_accordion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/accordion */ "./src/js/scripts/accordion.js");
+/* harmony import */ var _scripts_navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/navigation */ "./src/js/scripts/navigation.js");
+/* harmony import */ var _scripts_accordion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scripts/accordion */ "./src/js/scripts/accordion.js");
 // require('./scripts/polyfills/closest-polyfill');
 
 
- // import alertBar from './scripts/alert-bar';
-// import animate from './scripts/animate';
+ // import animate from './scripts/animate';
 // import fixSkipLinkFocus from './scripts/skip-link-focus-fix';
-// import navigation from './scripts/navigation';
+
 
  // import videoBlocks from './scripts/video-block';
-// import heroVideo from './scripts/hero-video';
 // // Import JS Modules here
-// alertBar();
 // animate();
 // fixSkipLinkFocus();
-// navigation();
 
-(0,_scripts_accordion__WEBPACK_IMPORTED_MODULE_3__["default"])();
+(0,_scripts_navigation__WEBPACK_IMPORTED_MODULE_3__["default"])();
+(0,_scripts_accordion__WEBPACK_IMPORTED_MODULE_4__["default"])();
 (0,_scripts_load_more__WEBPACK_IMPORTED_MODULE_2__["default"])(); // videoBlocks();
 // heroVideo();
 
