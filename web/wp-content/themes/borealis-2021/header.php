@@ -76,7 +76,7 @@
                             </button>
                         </div>
                         <div id="main-nav-items" class="nav-items grow flex fixed md:static inset-0 -left-full w-screen h-screen md:h-auto z-50 md:justify-end items-center md:text-shade-white-400 opacity-0 md:opacity-100 transition-opacity transition-left duration-500 bg-shade-black-30 md:bg-transparent max-h-screen">
-                            <div class="w-3/4 md:w-auto bg-shade-white-400 md:bg-transparent h-full md:flex-row flex-col flex pb-14 md:pb-0 md:items-center overflow-scroll">
+                            <div class="w-3/4 md:w-auto bg-shade-white-400 md:bg-transparent h-full md:flex-row flex-col flex pb-14 md:pb-0 md:items-center overflow-scroll md:overflow-auto">
                                 <button role="button" class="icon-sm px-6 py-5 block w-full text-shade-black-400 md:hidden" aria-label="Close Main Menu">
                                     <?php echo pg_render_icon('menu-close') ?>
                                 </button>
@@ -101,6 +101,13 @@
                         <?php echo $header; ?>
                     </div>
                 <?php endif; // End of check for empty blog header. ?>
+                <?php elseif (is_singular(['publications'])): // Start of check for singular News or Blog ?>
+                <?php $header = pg_generate_publication_header($post->ID); ?>
+                <?php if (isset($header) && !empty($header)): // Start of Check for empty Blog header ?>
+                    <div class="container">
+                        <?php echo $header; ?>
+                    </div>
+                <?php endif; // End of check for empty blog header. ?>
             <?php elseif ($no_header): ?>
                 <h1 class="sr-only"><?php echo esc_html(the_title()); ?></h1>
             <?php else: ?>
@@ -115,3 +122,4 @@
         </header><!-- #masthead -->
         <main id="content">
     
+

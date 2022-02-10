@@ -13,6 +13,7 @@ module.exports.breakpoints = {
   // Genereates a spacing object from a base value up to a max
   const generateSpacing = (base = 4, max = 200) => {
     const spacing = {};
+    spacing['1/12'] = 'calc(100% / 12)';
     for (let i = 0; i <= max; i = i + 1) {
       spacing[i] = `${i * base}px`;
     }

@@ -71,7 +71,7 @@ class PG_Custom_Menus {
                 // %1$s  - $wrap_id (the id for the wrapping ul)
                 // %2$s - $wrap_class (the usual classes used for the wrapping ul)
                 // %3$s - $items (the menu items as li's)
-                'items_wrap'        => '<ul id="%1$s" role="menu" class="%2$s flex justify-between">%3$s</ul>',  
+                'items_wrap'        => '<ul id="%1$s" role="menu" class="%2$s pt-12 tb:pt-0 flex flex-wrap tb:justify-end">%3$s</ul>',  
                 'depth'             => 0,                              // Limit the depth of the nav.
                 'fallback_cb'       => '',                             // Fallback function.
                 'walker'            => new PG_Multi_Level_Menu_Walker_Footer(),
@@ -82,7 +82,7 @@ class PG_Custom_Menus {
         wp_nav_menu(
             array(
                 'container'         => false,                          // Remove nav container.
-                'items_wrap'        => '<ul id="%1$s" role="menu" class="%2$s flex legal text-shade-grey-700">%3$s</ul>',  
+                'items_wrap'        => '<ul id="%1$s" role="menu" class="%2$s md:flex legal text-shade-grey-700 items-center">%3$s</ul>',  
                 'theme_location'    => $theme_location,               // Where it's located in the theme.
                 'depth'             => 1,                              // Limit the depth of the nav.
                 'fallback_cb'       => '',                             // Fallback function.
