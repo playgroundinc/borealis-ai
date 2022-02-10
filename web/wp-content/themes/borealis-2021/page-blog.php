@@ -24,13 +24,13 @@ get_header();
             array_push($taxonomies_array, $taxonomy);
         }
         $tab_array = [
-            "research" => array(
-                'title' => 'Research',
-                'id' => 'research-blogs',
-            ),
             "news" => array(
                 'title' => 'News',
                 'id' => 'news',
+            ),
+            "research" => array(
+                'title' => 'Research',
+                'id' => 'research-blogs',
             ),
         ];
         echo pg_generate_search_bar($query, $taxonomies_array, $tab_array, $post_type);

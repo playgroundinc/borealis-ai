@@ -100,6 +100,9 @@ require get_template_directory() . '/inc/partials/blog/blog-result.php';
 
 // Partials - Publications
 require get_template_directory() . '/inc/partials/publications/publication-result.php';
+require get_template_directory() . '/inc/partials/publications/publication-header.php';
+require get_template_directory() . '/inc/partials/publications/publication-sidebar.php';
+require get_template_directory() . '/inc/partials/publications/publication-related.php';
 
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';

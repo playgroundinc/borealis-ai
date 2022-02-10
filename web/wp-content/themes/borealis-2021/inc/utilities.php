@@ -390,7 +390,7 @@ if (!function_exists('pg_get_query_values')) {
 }
 
 
-function pg_generate_query($post_type, $query, $taxonomies, $page = 1, $posts_per_page = 12) {
+function pg_generate_query($post_type, $query, $taxonomies, $page = 1, $posts_per_page = 12, $current_post_id = null) {
     $offset = intval($page - 1) * $posts_per_page;
     $args = array(
         'post_type' => $post_type,
@@ -403,6 +403,9 @@ function pg_generate_query($post_type, $query, $taxonomies, $page = 1, $posts_pe
     );
     if ($query) {
         $args['s'] = $query;
+    }
+    if($current_post_id !== null) {
+        $args['post__not_in'] = array($current_post_id);
     }
     if (!empty($taxonomies)) {
         $args['tax_query'] = array(
