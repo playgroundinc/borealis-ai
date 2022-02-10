@@ -395,6 +395,25 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 18px;
   }
 }
+.paragraph-lg{
+  font-size: 27px;
+  font-family: Inter, sans-serif;
+  line-height: 1.80;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: 300;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .paragraph-lg{
+    font-size: calc(27px + ((27 - 27) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .paragraph-lg{
+    font-size: 27px;
+  }
+}
 .paragraph{
   font-size: 18px;
   font-family: Inter, sans-serif;
@@ -924,6 +943,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .basis-1\/2{
   flex-basis: 50%;
 }
+.basis-full{
+  flex-basis: 100%;
+}
 .rotate-0{
   --tw-rotate: 0deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1276,6 +1298,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-3{
   padding-right: 12px;
+}
+.pt-featured-image{
+  padding-top: 450px;
 }
 .text-center{
   text-align: center;

@@ -2,7 +2,7 @@ import { namespace } from "../helper-functions/constants";
 import selectPostBlock from "../reusable/custom-post-column.jsx";
 
 export default function selectPostsBlocks() {
-    const parent = [`${namespace}/publications-container`, `${namespace}/carousel`];
+    const parent = [`${namespace}/publications-container`, `${namespace}/carousel`, `${namespace}/featured-posts-container`];
     const icon = 'open-folder';
     const selectBlocks = [
         {

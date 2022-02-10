@@ -38,8 +38,8 @@ module.exports = plugin(function({ addBase }) {
         },
         {
             className: 'paragraph-lg',
-            max: '30',
-            min: '30',
+            max: '27',
+            min: '27',
             fontFamily: 'Inter, sans-serif',
             lineHeight: '1.80',
             fontWeight: '300',
