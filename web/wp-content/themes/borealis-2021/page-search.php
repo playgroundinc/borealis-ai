@@ -56,7 +56,7 @@ get_header();
             $id = $element['id'];
 
             $research_areas = pg_get_query_values($_GET, 'research-areas');
-            $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 5);
+            $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1);
             $Query = new WP_Query($args);
             if (!empty($Query->posts)) {
                 array_push($has_results, true);
@@ -80,7 +80,7 @@ get_header();
                 $id = $element['id'];
 
                 $research_areas = pg_get_query_values($_GET, 'research-areas');
-                $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 9);
+                $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1);
                 $Query = new WP_Query($args);
 
                 if (empty($Query->posts)) {
@@ -104,7 +104,7 @@ get_header();
             $id = $element['id'];
 
             $research_areas = pg_get_query_values($_GET, 'research-areas');
-            $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 9);
+            $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1);
             $Query = new WP_Query($args);
 
 
@@ -135,7 +135,7 @@ get_header();
                     if (!empty($Query->posts)) : // Empty Query check. 
                     ?>
                         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
-                        <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="publications">
+                        <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="<?php echo esc_attr($id) ?>">
                             <?php foreach ($Query->posts as $post) : // Start of Query loop 
                             ?>
                                 <li class="last:border-b-0 border-b border-shade-grey-500">
