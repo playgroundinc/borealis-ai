@@ -101,6 +101,13 @@
                         <?php echo $header; ?>
                     </div>
                 <?php endif; // End of check for empty blog header. ?>
+                <?php elseif (is_singular(['publications'])): // Start of check for singular News or Blog ?>
+                <?php $header = pg_generate_publication_header($post->ID); ?>
+                <?php if (isset($header) && !empty($header)): // Start of Check for empty Blog header ?>
+                    <div class="container">
+                        <?php echo $header; ?>
+                    </div>
+                <?php endif; // End of check for empty blog header. ?>
             <?php elseif ($no_header): ?>
                 <h1 class="sr-only"><?php echo esc_html(the_title()); ?></h1>
             <?php else: ?>
@@ -115,3 +122,4 @@
         </header><!-- #masthead -->
         <main id="content">
     
+

@@ -1,24 +1,57 @@
 <?php
-
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package pg-wp-starter
- */
-
 get_header();
-$hero_image_url = get_the_post_thumbnail_url($post->ID, 'full');
-$title = get_the_title($post->ID);
-$publication_date = get_post_meta($post->ID, 'publication_date', true);
-$authors = get_post_meta($post->ID, 'authors', true);
-$url = get_permalink($post->ID);
+$current_post_id = $post->ID;
 ?>
-<?php if (isset($hero_image_url) && !empty($hero_image_url)) : ?>
-    <div aria-hidden="true" class="pt-100 mt-19 bg-cover bg-no-repeat bg-center" style="background-image: url(<?php echo esc_url_raw($hero_image_url) ?>)"></div>
-<?php endif; ?>
-<main class="main-content container single-publication">
+<main class="border-t border-shade-grey-500 pb-15">
+    <div class="pt-14 flex justify-start container flex-col md:flex-row">
+        <aside class="w-full md:w-3/12 mb-10 md:mb-0">
+            <ul class="flex flex-wrap md:flex-col flex-row">
+                <?php echo pg_generate_publication_sidebar($post->ID); ?>
+            </ul>
+        </aside>
+        <div class="md:w-8/12 w-full">
+            <?php
+            if (have_posts()) :
+                while (have_posts()) :
+                    the_post();
+            ?>
+            <?php
+                    the_content();
+                endwhile;
+            endif;
+            ?>
+        </div>
+    </div>
+    <div class="bg-shade-grey-100 md:mt-20 mt-10 py-18">
+        <div class="md:container flex flex-col md:flex-row">
+            <div class="w-full mb-10 md:mb-0 md:w-2/6">
+                <h3 class="h3 container md:w-full md:m-0">Related Research</h3>
+            </div>
+            <div class="w-full md:w-4/6">
+                <?php
+                $research_areas = get_the_terms($post->ID, 'research-areas');
+                if(!empty($research_areas)) {
+                    $research_areas = array_map(function ($term) {
+                        return strval($term->term_id);
+                    }, $research_areas);
+                }
+                $args = pg_generate_query(array('publications', 'research-blogs'), '', array('research-areas' => $research_areas), 1, 3, $current_post_id);
+                $Query = new WP_Query($args);
+                if (!empty($Query->posts)) : // Empty Query check. 
+                ?>
+                    <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="publications">
+                        <?php foreach ($Query->posts as $post) :
+                        ?>
+                        <li class="border-b border-shade-grey-500">
+                                <?php echo pg_generate_publication_related($post, $research_areas) ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+                <?php wp_reset_query(); ?>
+            </div>
+        </div>
+    </div>
 </main>
 
 <?php
