@@ -87,6 +87,8 @@ require get_template_directory() . '/inc/gutenberg/render-icon-btn.php';
 // Partials
 require get_template_directory() . '/inc/partials/search-bar.php';
 require get_template_directory() . '/inc/partials/search-bar-main.php';
+require get_template_directory() . '/inc/partials/search-bar-main-result.php';
+
 
 // Partials - Blogs
 require get_template_directory() . '/inc/partials/blog/blog-sidebar.php';
@@ -96,6 +98,9 @@ require get_template_directory() . '/inc/partials/blog/blog-share.php';
 
 // Partials - Publications
 require get_template_directory() . '/inc/partials/publications/publication-result.php';
+require get_template_directory() . '/inc/partials/publications/publication-header.php';
+require get_template_directory() . '/inc/partials/publications/publication-sidebar.php';
+require get_template_directory() . '/inc/partials/publications/publication-related.php';
 
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';

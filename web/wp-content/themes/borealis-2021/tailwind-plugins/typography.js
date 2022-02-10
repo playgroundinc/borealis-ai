@@ -52,6 +52,13 @@ module.exports = plugin(function({ addBase }) {
             lineHeight: '1.80'
         },
         {
+            className: 'paragraph-md',
+            max: '16',
+            min: '16',
+            fontFamily: 'Inter, sans-serif',
+            lineHeight: '1.80'
+        },
+        {
             className: 'paragraph-sm',
             max: '14',
             min: '14',

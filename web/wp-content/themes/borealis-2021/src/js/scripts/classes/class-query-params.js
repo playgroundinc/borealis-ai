@@ -1,8 +1,8 @@
 export default class QueryParams {
     constructor(param) {
         this.param = param;
-        this.list = document.querySelector('.posts-listing');
-        this.refresh = document.querySelector('.refresh-results');
+        this.list = document.querySelectorAll('.posts-listing');
+        this.refresh = document.querySelectorAll('.refresh-results');
         this.UrlParams = new URLSearchParams(window.location.search);
         this.setListData = this.setListData.bind(this);
         this.setParam = this.setParam.bind(this);
@@ -13,12 +13,12 @@ export default class QueryParams {
     setListData(action = 'populate') {
         if (action === 'clear') {
             this.UrlParams.forEach((value, key) => {
-                this.list.setAttribute(`data-${key}`, ``);
+                this.list.forEach(list => list.setAttribute(`data-${key}`, ``));
             })
             return;
         }
         this.UrlParams.forEach((value, key) => {
-            this.list.setAttribute(`data-${key}`, `${value}`);
+            this.list.forEach(list => list.setAttribute(`data-${key}`, `${value}`));
         })
     }
     setParam(value) {
@@ -28,7 +28,7 @@ export default class QueryParams {
         if (this.list) {
             this.setListData();
             if (this.refresh) {
-                this.refresh.click();
+                this.refresh.forEach(refresh => refresh.click());
             }
         }
     }
@@ -44,7 +44,7 @@ export default class QueryParams {
         if (this.list) {
             this.setListData('clear');
             if (this.refresh) {
-                this.refresh.click();
+                this.refresh.forEach(refresh => refresh.click());
             }
         }
     }

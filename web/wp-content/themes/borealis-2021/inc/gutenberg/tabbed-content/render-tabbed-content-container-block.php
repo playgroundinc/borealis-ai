@@ -55,7 +55,7 @@ if ( ! function_exists( 'pg_render_tabbed_content_container_block' ) ) {
                             reset($block['innerBlocks']);
                             $titleSlug = pg_slugify($element['attrs']['title']);
                             $title = $element['attrs']['title'];
-
+                            
                             if ($inner_block === key($block['innerBlocks'])) {                                       
                                 echo '<button class="font-bold" role="tab" aria-selected="true" id="'.$titleSlug.'-tab" aria-controls="'.$titleSlug.'-content-panel">'.$title.'</button>';
                             } else {

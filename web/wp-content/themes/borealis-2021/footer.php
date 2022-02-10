@@ -16,32 +16,25 @@ $options = pg_get_options($option_names);
 ?>
 </main>
 <footer class="bg-shade-white-400">
-	<div class="flex pt-13 container w-full mt-20 border-solid border-b border-shade-grey-500 border-opacity-40">
-		<div class="pr-80">
-			<div class="mb-4">
-				<svg class="icon-rbc h-16 w-12" aria-labelledby="icon-rbc">
-					<title id="icon-rbc">rbc logo</title>
-					<use xlink:href="#icon-rbc"></use>
-				</svg>
+	<div class="tb:flex pt-13 container w-full mt-20 border-solid border-b border-shade-grey-500 border-opacity-40">
+		<div class="pr-14">
+			<div class="mb-4 h1">
+				<?php echo pg_render_icon('rbc'); ?>
 			</div>
-			<div>
-				<p class="legal text-shade-grey-700">
-					<?php echo wp_kses($options['footer_banner_copy'], $allowed_html); ?>
-				</p>
+			<div class="legal text-shade-grey-700">
+				<?php echo wp_kses(wpautop($options['footer_banner_copy']), $allowed_html); ?>
 			</div>
 		</div>
 		<div class="mb-10 grow">
 			<?php
-			$Menu->generate_menu('footer-main');
+				$Menu->generate_menu('footer-main');
 			?>
 		</div>
 	</div>
-	<div class="container flex justify-between">
-		<div class="flex mt-7 mb-8">
-			<p class="cursor-default legal text-shade-grey-700 mr-10">&copy; <?php esc_html_e(date('Y')); ?> <?php esc_html_e('Borealis AI', 'pg') ?></p>
+	<div class="container tb:flex items-center">
+		<p class="cursor-default legal text-shade-grey-700 pt-12 md:pr-5 pb-5 md:pt-7 md:pb-0 tb:pt-6 lg:pt-7 tb:pb-8">&copy; <?php esc_html_e(date('Y')); ?> <?php esc_html_e('Borealis AI', 'pg') ?></p>
+		<div class="md:flex justify-between grow">
 			<?php $Menu->generate_menu('footer-legal', false); ?>
-		</div>
-		<div class="flex mt-7 justify-end">
 			<?php
 			$icons = array(
 				'linkedin' => __('Link to LinkedIn', 'pg'),
@@ -49,19 +42,21 @@ $options = pg_get_options($option_names);
 				'youtube' => __('Link to YouTube', 'pg'),
 				'twitter' => __('Link to Twitter', 'pg'),
 			);
-			foreach ($icons as $id => $title) {
-				if (!empty($options[$id])) {
 			?>
-					<a class="pl-8 icon--lg" aria-label="<?php esc_attr_e($title); ?>" href="<?php echo esc_url_raw($options[$id]) ?>">
-						<?php
-						$icon = pg_render_icon($id);
-						echo wp_kses($icon, $allowed_html);
-						?>
-					</a>
-			<?php
-				}
-			}
-			?>
+			<ul class="flex relative -left-4 md:left-0 md:-right-4">
+				<?php foreach ($icons as $id => $title): ?>
+					<?php if (!empty($options[$id])): ?>
+						<li>
+							<a class="px-4 pt-3 md:pt-7 pb-8 icon--lg block text-shade-grey-700 hover:text-primary-electric-blue-400 transition duration-300" aria-label="<?php esc_attr_e($title); ?>" href="<?php echo esc_url_raw($options[$id]) ?>">
+								<?php
+								$icon = pg_render_icon($id);
+								echo wp_kses($icon, $allowed_html);
+								?>
+							</a>
+						</li>
+					<?php endif; ?>
+				<?php endforeach; ?>
+			</ul>
 		</div>
 	</div>
 </footer>

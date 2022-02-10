@@ -2,7 +2,7 @@
 
 if (!function_exists('pg_tabbed_content_script')) {
     function pg_tabbed_content_script() {
-        wp_register_script('tabbedContent', get_template_directory_uri() . '/dist/tabbedContent.js', array(), '20151215', true);
+        wp_enqueue_script('tabbedContent', get_template_directory_uri() . '/dist/tabbedContent.js', array(), '20151215', true);
     }
 }
 

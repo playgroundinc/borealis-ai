@@ -17,7 +17,7 @@ if ( ! function_exists( 'pg_load_more_results' ) ) {
         $query = sanitize_text_field(wp_unslash($_POST['query']));
         $page = intval(wp_unslash($_POST['page']));
         $taxonomies = json_decode(wp_unslash($_POST['params']));
-        $args = pg_generate_query($post_type, $query, $taxonomies, $page);
+        $args = pg_generate_query($post_type, $query, $taxonomies, $page, 5);
         $posts = new WP_Query($args);
         $taxonomies_array = get_object_vars($taxonomies);
         $markup = array_map(
