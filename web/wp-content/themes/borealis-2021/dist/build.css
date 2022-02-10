@@ -878,9 +878,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-4{
   width: 16px;
 }
-.w-6\/12{
-  width: 50%;
-}
 .w-4\/12{
   width: 33.333333%;
 }
@@ -924,9 +921,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .resize{
   resize: both;
-}
-.flex-row{
-  flex-direction: row;
 }
 .flex-row-reverse{
   flex-direction: row-reverse;
@@ -1098,9 +1092,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 16px;
   padding-right: 16px;
 }
-.py-18{
-  padding-top: 72px;
-  padding-bottom: 72px;
+.py-23{
+  padding-top: 92px;
+  padding-bottom: 92px;
 }
 .py-2{
   padding-top: 8px;
@@ -1121,22 +1115,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-5{
   padding-top: 20px;
   padding-bottom: 20px;
-}
-.py-20{
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-.py-24{
-  padding-top: 96px;
-  padding-bottom: 96px;
-}
-.py-22{
-  padding-top: 88px;
-  padding-bottom: 88px;
-}
-.py-23{
-  padding-top: 92px;
-  padding-bottom: 92px;
 }
 .pt-13{
   padding-top: 52px;
@@ -1466,9 +1444,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:m-0{
     margin: 0px;
   }
-  .md\:mt-20{
-    margin-top: 80px;
-  }
   .md\:mb-0{
     margin-bottom: 0px;
   }
@@ -1499,6 +1474,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:w-4\/6{
     width: 66.666667%;
   }
+  .md\:w-6\/12{
+    width: 50%;
+  }
   .md\:w-4\/12{
     width: 33.333333%;
   }
@@ -1507,9 +1485,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:w-5\/8{
     width: calc((100% /8) * 5);
-  }
-  .md\:w-6\/12{
-    width: 50%;
   }
   .md\:flex-row{
     flex-direction: row;
@@ -1583,15 +1558,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 1000px){
+  .tb\:mb-0{
+    margin-bottom: 0px;
+  }
   .tb\:w-1\/4{
     width: 25%;
   }
   .tb\:w-8\/12{
     width: 66.666667%;
   }
-}
-@media (min-width: 1440px){
-  .lg\:flex-row{
+  .tb\:w-2\/6{
+    width: 33.333333%;
+  }
+  .tb\:w-4\/6{
+    width: 66.666667%;
+  }
+  .tb\:flex-row{
     flex-direction: row;
   }
 }

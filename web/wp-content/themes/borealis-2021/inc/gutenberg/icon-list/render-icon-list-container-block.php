@@ -46,13 +46,13 @@ if (!function_exists('pg_render_icon_list_container_block')) {
 ?>
         <section aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
             <div class="py-23">
-                <div class="container flex flex-col md:flex-row">
+                <div class="container flex flex-col tb:flex-row">
                     <?php if (!empty($attributes->title)) : ?>
-                        <div class="w-full mb-10 md:mb-0 md:w-2/6">
+                        <div class="w-full mb-10 tb:mb-0 tb:w-2/6">
                             <h3 class="h3"><?php echo esc_html($attributes->title) ?></h3>
                         </div>
                     <?php endif; ?>
-                    <div class="w-full md:w-4/6">
+                    <div class="w-full tb:w-4/6">
                         <?php if (!empty($attributes->description)) : ?>
                             <div>
                                 <p class="paragraph"><?php echo esc_html($attributes->description) ?></p>

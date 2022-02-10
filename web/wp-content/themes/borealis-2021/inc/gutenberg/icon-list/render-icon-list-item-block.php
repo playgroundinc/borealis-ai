@@ -48,14 +48,12 @@ if (!function_exists('pg_render_icon_list_item_block')) {
             <?php if (!empty($attributes->image_url) and $block["icon"]) : ?>
                 <img class="mr-10 h-13" src="<?php echo esc_html($attributes->image_url) ?>" alt="<?php echo esc_html($attributes->image_alt) ?>">
             <?php endif; ?>
-            <div>
-                <?php if (!empty($attributes->subtitle)) : ?>
-                    <p class="paragraph" id="<?php echo esc_html($attributes->subtitle) ?>" class=""><?php echo $attributes->subtitle ?></p>
-                <?php endif; ?>
-                <?php if (!empty($attributes->copy)) : ?>
-                    <p class="paragraph" id="<?php echo esc_html($attributes->copy) ?>" class=""><?php echo esc_html($attributes->copy) ?></p>
-                <?php endif; ?>
-            </div>
+            <?php if (!empty($attributes->subtitle)) : ?>
+                <p class="paragraph" id="<?php echo esc_html($attributes->subtitle) ?>" class=""><?php echo $attributes->subtitle ?></p>
+            <?php endif; ?>
+            <?php if (!empty($attributes->copy)) : ?>
+                <p class="paragraph" id="<?php echo esc_html($attributes->copy) ?>" class=""><?php echo esc_html($attributes->copy) ?></p>
+            <?php endif; ?>
         </li>
 <?php
         return ob_get_clean();
