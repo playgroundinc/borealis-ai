@@ -787,6 +787,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-6{
   margin-top: 24px;
 }
+.mr-10{
+  margin-right: 40px;
+}
 .mt-19{
   margin-top: 76px;
 }
@@ -801,6 +804,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-15{
   margin-top: 60px;
+}
+.mt-3{
+  margin-top: 12px;
 }
 .mt-8{
   margin-top: 32px;
@@ -1004,6 +1010,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-t{
   border-top-width: 1px;
 }
+.border-b-4{
+  border-bottom-width: 4px;
+}
+.border-b-0{
+  border-bottom-width: 0px;
+}
 .border-l{
   border-left-width: 1px;
 }
@@ -1016,6 +1028,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-shade-grey-500{
   --tw-border-opacity: 1;
   border-color: rgb(101 104 146 / var(--tw-border-opacity));
+}
+.border-primary-electric-purple-400{
+  --tw-border-opacity: 1;
+  border-color: rgb(96 55 215 / var(--tw-border-opacity));
 }
 .border-black{
   --tw-border-opacity: 1;
@@ -1103,6 +1119,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.py-10{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 .py-3{
   padding-top: 12px;
   padding-bottom: 12px;
@@ -1114,10 +1134,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-5{
   padding-left: 20px;
   padding-right: 20px;
-}
-.py-10{
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 .py-6{
   padding-top: 24px;
@@ -1172,6 +1188,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-42{
   padding-top: 168px;
+}
+.pt-8{
+  padding-top: 32px;
 }
 .pt-10{
   padding-top: 40px;
@@ -1235,9 +1254,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-4{
   padding-top: 16px;
-}
-.pt-8{
-  padding-top: 32px;
 }
 .pt-6{
   padding-top: 24px;
@@ -1379,6 +1395,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .last\:basis-auto:last-child{
   flex-basis: auto;
 }
+.last\:border-b-0:last-child{
+  border-bottom-width: 0px;
+}
 .visited\:text-primary-electric-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
@@ -1390,12 +1409,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:cursor-pointer:hover{
   cursor: pointer;
 }
+.hover\:bg-shade-grey-50:hover{
+  background-color: rgba(244,244,251,0.5);
+}
 .hover\:bg-shade-grey-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
-}
-.hover\:bg-shade-grey-50:hover{
-  background-color: rgba(244,244,251,0.5);
 }
 .hover\:text-primary-electric-blue-400:hover{
   --tw-text-opacity: 1;
