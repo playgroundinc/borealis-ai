@@ -5,7 +5,7 @@ $current_post_id = $post->ID;
 <main class="border-t border-shade-grey-500 pb-15">
     <div class="pt-14 flex justify-start container flex-col md:flex-row">
         <aside class="w-full md:w-3/12 mb-10 md:mb-0">
-            <ul class="flex md:flex-col flex-row">
+            <ul class="flex flex-wrap md:flex-col flex-row">
                 <?php echo pg_generate_publication_sidebar($post->ID); ?>
             </ul>
         </aside>
@@ -23,7 +23,7 @@ $current_post_id = $post->ID;
         </div>
     </div>
     <div class="bg-shade-grey-100 md:mt-20 mt-10 py-18">
-        <div class="container flex flex-col md:flex-row">
+        <div class="md:container flex flex-col md:flex-row">
             <div class="w-full mb-10 md:mb-0 md:w-2/6">
                 <h3 class="h3 container md:w-full md:m-0">Related Research</h3>
             </div>
