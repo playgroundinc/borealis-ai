@@ -3,10 +3,9 @@ import { slideToggle }  from "./slide-toggle";
 export default class MenuToggle {
     constructor(button, id) {
         this.button = button;
-        this.breakpoint = 1440;
+        this.breakpoint = 768;
         this.id = id;
         this.active = false;
-        this.elements = [];
         this.header = null;
         this.focusable = null;
         this.mobile = true;
@@ -16,48 +15,40 @@ export default class MenuToggle {
         this.handleEsc = this.handleEsc.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.handleResize = this.handleResize.bind(this);
-        this.handleBodyClick = this.handleBodyClick.bind(this);
         this.handleFirstElement = this.handleFirstElement.bind(this);
         this.handleLastElement = this.handleLastElement.bind(this);
+        this.getElements = this.getElements.bind(this);
+        this.toggleActive = this.toggleActive.bind(this);
     }
 
     setState(name, value) {
         this[name] = value;
     }
 
-    getElements() {
-        const elements = [...document.querySelectorAll(`.toggle-${this.id}`)];
-        this.setState('elements', elements);
-        return;
-    }
-
-    clearActive() {
-        const active = document.querySelector('.submenu--active');
-        if (active) {
-            slideToggle(active);
-            const trigger = active.parentElement.querySelector('.menu-item__link');
-            if (trigger) {
-                trigger.setAttribute('aria-expanded', false);
-            }
-            active.classList.remove('submenu--active');
-        }
-    }
-
     toggleBodyClass() {
         if (this.active) {
-            this.body.classList.add('noscroll');
+            this.body.classList.add('overflow-hidden');
             return;
         }
-        this.body.classList.remove('noscroll');
+        this.body.classList.remove('overflow-hidden');
     }
 
 
     toggleMenu() {
         if (this.active) {
-            this.header.classList.add('menu--active');
+            this.header.classList.remove('-left-full');
+            this.header.classList.add('left-0');
+            this.header.classList.remove('opacity-0');
+            this.header.classList.add('opacity-100');
+            const firstMenuItem = this.header.querySelector('a');
+            firstMenuItem.focus();
             return;
         }
-        this.header.classList.remove('menu--active')
+        this.header.classList.add('-left-full');
+        this.header.classList.remove('left-0')
+        this.header.classList.add('opacity-0');
+        this.header.classList.remove('opacity-100');
+
     }
 
     toggleActive() {
@@ -68,11 +59,9 @@ export default class MenuToggle {
         this.toggleMenu();
     }
 
-    handleClick() {
-        this.getElements();
-        if (this.elements && this.elements.length) {
-            this.toggleActive();
-        }
+    handleClick(e) {
+        e.preventDefault()
+        this.toggleActive();
     }
 
     setMobile() {
@@ -94,17 +83,25 @@ export default class MenuToggle {
     }
 
     getFirstElement() {
-        const logo = this.header.querySelector('.show-xs .custom-logo-link');
-        if (logo) {
-            this.setState('firstElement', logo);
+        const closeBtn = this.header.querySelector('button');
+        if (closeBtn) {
+            this.setState('firstElement', closeBtn);
+            this.firstElement.addEventListener('click', this.handleClick);
             return;
         }
         this.setState('firstElement', this.button);
     }
 
+    getElements() {
+        const elements = [...this.header.querySelectorAll('a')];
+        elements.forEach((element) => {
+            element.addEventListener('click', this.toggleActive);
+        })
+    }
+
 
     getLastElement() {
-        const allBtns = [...this.header.querySelectorAll('.btn')];
+        const allBtns = [...this.header.querySelectorAll('a')];
         const lastBtn = allBtns[allBtns.length - 1];
         this.setState('lastElement', lastBtn);
     }
@@ -146,25 +143,19 @@ export default class MenuToggle {
         this.getFirstElement();
         this.getLastElement();
         this.lastElement.addEventListener('keydown', this.handleLastElement);
-        this.firstElement.addEventListener('keydonw', this.handleFirstElement);
+        this.firstElement.addEventListener('keydown', this.handleFirstElement);
     }
 
     getTargets() {
         const body = document.body;
         this.setState('body', body);
-        const header = document.querySelector('.header .header__container');
+        const header = document.querySelector(`#${this.id}`);
         this.setState('header', header);
     }
 
     handleEsc(e) {
         if (this.active && this.mobile && e.keyCode === 27) {
-            this.handleClick();
-        }
-    }
-
-    handleBodyClick(e) {
-        if (!e.target.closest('.header')) {
-            this.clearActive();
+            this.toggleActive();
         }
     }
 
@@ -172,7 +163,7 @@ export default class MenuToggle {
         this.getTargets();
         this.setMobile();
         this.trapFocus();
-        document.addEventListener('click', this.handleBodyClick);
+        this.getElements();
         this.header.addEventListener('keydown', this.handleEsc);
         this.button.addEventListener('click', this.handleClick);
         window.addEventListener('resize', this.handleResize);

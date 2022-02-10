@@ -27,11 +27,7 @@ class PG_Single_Level_Menu_Walker extends Walker_Nav_Menu {
         $title     = $item->title;
         $permalink = $item->url;
         $output .= "<li class='" . join( ' ', $item->classes ) . " menu-item--single' role=\"menuitem\">";
-        if (intval($item->menu_order) > 1) {
-            $output .= '<a class="hover:text-primary-electric-blue-400 mr-8 p-2 legal" href="' . $permalink . '">';
-        } else {
-            $output .= '<a class="hover:text-primary-electric-blue-400 mr-8 p-2 legal" href="' . $permalink . '">';
-        }
+        $output .= '<a class="pl-0 tb:pl-5 hover:text-primary-electric-blue-400 transition duration-300 px-5 pt-5 pb-5 md:pt-7 md:pb-8 legal block" href="' . $permalink . '">';
         $output .= $title;
         $output .= '</a>';
 
