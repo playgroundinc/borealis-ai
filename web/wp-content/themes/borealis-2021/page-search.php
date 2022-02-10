@@ -135,7 +135,7 @@ get_header();
                     if (!empty($Query->posts)) : // Empty Query check. 
                     ?>
                         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
-                        <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="publications">
+                        <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="<?php echo esc_attr($id) ?>">
                             <?php foreach ($Query->posts as $post) : // Start of Query loop 
                             ?>
                                 <li class="last:border-b-0 border-b border-shade-grey-500">
