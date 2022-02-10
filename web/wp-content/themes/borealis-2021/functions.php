@@ -94,7 +94,6 @@ require get_template_directory() . '/inc/partials/blog/blog-header.php';
 require get_template_directory() . '/inc/partials/blog/blog-cite.php';
 require get_template_directory() . '/inc/partials/blog/blog-share.php';
 
-
 // Partials - Publications
 require get_template_directory() . '/inc/partials/publications/publication-result.php';
 
@@ -153,6 +152,10 @@ require get_template_directory() . '/inc/gutenberg/greenhouse/render-jobs-block.
 // Sidebar Table Of Contents Blocks
 require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-section-block.php';
 require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-subsection-block.php';
+
+// Icon List Blocks
+require get_template_directory() . '/inc/gutenberg/icon-list/render-icon-list-container-block.php';
+require get_template_directory() . '/inc/gutenberg/icon-list/render-icon-list-item-block.php';
 
 // Tabbed Content Blocks
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-container-block.php';
