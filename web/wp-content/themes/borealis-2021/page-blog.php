@@ -40,7 +40,17 @@ get_header();
         $args = $post_type !== 'all' ? pg_generate_query($post_type, $query, array('research-areas' => $research_areas)) : pg_generate_query(array('news', 'research-blogs'), $query, array('research-areas' => $research_areas));
         $Query = new WP_Query($args);
     ?>
-    <div class="load-more-results">
+    <?php 
+        if ( have_posts() ) : 
+            while ( have_posts() ) : 
+                the_post();
+            ?>
+            <?php
+                the_content();
+            endwhile;
+        endif;
+        ?>
+    <div class="load-more-results pt-16">
         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
         <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="<?php echo esc_attr($post_type) ?>">
             <?php foreach ($Query->posts as $post) : // Start of Query loop 
