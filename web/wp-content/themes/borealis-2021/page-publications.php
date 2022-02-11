@@ -45,18 +45,20 @@ get_header();
     $Query = new WP_Query($args);
     if (!empty($Query->posts)) : // Empty Query check. 
     ?>
-        <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
-        <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="publications">
-            <?php foreach ($Query->posts as $post) : // Start of Query loop 
-            ?>
-                <li class="border-b border-shade-grey-500">
-                    <?php echo pg_generate_publication_result($post, $research_areas); ?>
-                </li>
-            <?php endforeach;  // End of Query Loop 
-            ?>
-        </ul>
-        <div class="container">
-            <button class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> block h4 pt-10 pb-8 text-center w-full load-more"><?php echo esc_html('Load More Publications') ?></button>
+        <div class="load-more-results">
+            <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
+            <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="publications">
+                <?php foreach ($Query->posts as $post) : // Start of Query loop 
+                ?>
+                    <li class="border-b border-shade-grey-500">
+                        <?php echo pg_generate_publication_result($post, $research_areas); ?>
+                    </li>
+                <?php endforeach;  // End of Query Loop 
+                ?>
+            </ul>
+            <div class="container">
+                <button class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> block h4 pt-10 pb-8 text-center w-full load-more"><?php echo esc_html('Load More Publications') ?></button>
+            </div>
         </div>
     <?php endif; ?>
     <?php wp_reset_query(); ?>

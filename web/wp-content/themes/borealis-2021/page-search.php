@@ -56,7 +56,7 @@ get_header();
             $id = $element['id'];
 
             $research_areas = pg_get_query_values($_GET, 'research-areas');
-            $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 5);
+            $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1);
             $Query = new WP_Query($args);
             if (!empty($Query->posts)) {
                 array_push($has_results, true);
@@ -80,7 +80,7 @@ get_header();
                 $id = $element['id'];
 
                 $research_areas = pg_get_query_values($_GET, 'research-areas');
-                $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 9);
+                $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1);
                 $Query = new WP_Query($args);
 
                 if (empty($Query->posts)) {
@@ -104,7 +104,7 @@ get_header();
             $id = $element['id'];
 
             $research_areas = pg_get_query_values($_GET, 'research-areas');
-            $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1, 9);
+            $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1);
             $Query = new WP_Query($args);
 
 

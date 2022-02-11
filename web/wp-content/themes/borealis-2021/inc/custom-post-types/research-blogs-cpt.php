@@ -15,7 +15,7 @@ if (!function_exists('pg_register_research_blog_cpt')) {
         // Register Series as a custom taxonomy.
         $Research_Blogs_CPT->register_tags('series', 'Series', 'Series');
         $Research_Blogs_CPT->register();
-        $Research_Blogs_CPT->register_tags('content-type', 'Content Type', 'Content Types');
+        
 
         // Register Meta.
         // Slug will automatically be pulled from when it's registered.
