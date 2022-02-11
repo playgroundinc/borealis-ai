@@ -6,6 +6,7 @@ var __webpack_exports__ = {};
 function tabbedContent(tabContainer) {
   const tabs = tabContainer.querySelectorAll('[role=tab]');
   const tabList = tabContainer.querySelector('[role=tablist]');
+  const isSearchNav = tabContainer.id === 'search-nav';
 
   const classToggle = (el, classToRemove, classToAdd) => {
     el.classList.remove(classToRemove);
@@ -19,11 +20,22 @@ function tabbedContent(tabContainer) {
   function showTabPanel(el) {
     for (i = 0; i < tabs.length; i++) {
       tabs[i].setAttribute('aria-selected', 'false');
-      classToggle(tabs[i], 'font-bold', 'font-normal');
+
+      if (isSearchNav) {
+        classToggle(tabs[i], 'border-b-4', 'border-b-0');
+      } else {
+        classToggle(tabs[i], 'font-bold', 'font-normal');
+      }
     }
 
     el.target.setAttribute('aria-selected', 'true');
-    classToggle(el.target, 'font-normal', 'font-bold');
+
+    if (isSearchNav) {
+      classToggle(el.target, 'border-b-0', 'border-b-4');
+    } else {
+      classToggle(el.target, 'font-normal', 'font-bold');
+    }
+
     const tabPanelToOpen = el.target.getAttribute('aria-controls');
     const tabPanels = tabContainer.querySelectorAll('[role=tabpanel]');
 
