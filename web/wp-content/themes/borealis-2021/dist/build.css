@@ -1629,6 +1629,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:justify-end{
     justify-content: flex-end;
   }
+  .md\:overflow-auto{
+    overflow: auto;
+  }
   .md\:rounded-b-none{
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
