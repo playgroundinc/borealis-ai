@@ -37,7 +37,7 @@ if (!function_exists('pg_render_featured_post')) {
             <p class="w-5/6 pt-8 hidden md:block"><?php echo esc_html($post_obj->post_excerpt) ?></p>
         <?php endif; ?>
         <div class="flex mt-10 text-shade-grey-700 md:w-5/6">
-            <p class="paragraph-sm pr-10 shrink-0"><?php echo esc_html('Blog') ?></p>
+            <p class="paragraph-sm pr-10 shrink-0"><?php echo $post_obj->post_type === 'news' ? esc_html('News') : esc_html('Blog') ?></p>
             <?php if (strlen($terms_string) > 0): ?>
                 <p class="paragraph-sm border-l border-l-shade-black-400 pl-4"><?php echo esc_html($terms_string) ?></p>
             <?php endif; ?>

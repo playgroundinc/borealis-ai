@@ -1088,13 +1088,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-shade-transparent-400{
   border-color: transparent;
 }
-.border-l-shade-black-400{
-  --tw-border-opacity: 1;
-  border-left-color: rgb(34 39 49 / var(--tw-border-opacity));
-}
 .border-b-shade-grey-700{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(92 93 118 / var(--tw-border-opacity));
+}
+.border-l-shade-black-400{
+  --tw-border-opacity: 1;
+  border-left-color: rgb(34 39 49 / var(--tw-border-opacity));
 }
 .border-opacity-40{
   --tw-border-opacity: 0.4;
