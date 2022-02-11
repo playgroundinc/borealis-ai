@@ -1161,10 +1161,10 @@ function iconListContainerBlock() {
       i18n = _wp.i18n;
   var blockSlug = "icon-list-container-block"; // slug for the block
 
-  var blockTitle = "Create icon list container block";
+  var blockTitle = "Icon list container block";
   var blockDescription = "Component to create icon list container block";
   var blockCategory = "common";
-  var blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  var blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
@@ -1200,7 +1200,7 @@ function iconListContainerBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "custom-section__block"
+        className: "custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
       }, "Icon List Container Block"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -1272,10 +1272,10 @@ function iconListItemBlock() {
   var InnerBlocks = wp.blockEditor.InnerBlocks;
   var blockSlug = "icon-list-item-block"; // slug for the block
 
-  var blockTitle = "Create icon list item block";
+  var blockTitle = "Icon list item block";
   var blockDescription = "Component to create icon list item block";
   var blockCategory = "common";
-  var blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  var blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     image_id: {
@@ -1325,7 +1325,7 @@ function iconListItemBlock() {
         className: "custom-child"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "List"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, "Icon List Item"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
           value: image_url,
           reference: "image_url",

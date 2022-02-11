@@ -12,10 +12,10 @@ export default function iconListItemBlock() {
 } = wp.blockEditor;
 
   const blockSlug = "icon-list-item-block"; // slug for the block
-  const blockTitle = "Create icon list item block";
+  const blockTitle = "Icon list item block";
   const blockDescription = "Component to create icon list item block";
   const blockCategory = "common";
-  const blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  const blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {
     image_id: {
@@ -57,7 +57,7 @@ export default function iconListItemBlock() {
 
       return [
         <div className={`custom-child`}>
-          <p className="block-title">List</p>
+          <p className="block-title">Icon List Item</p>
           <div>
             <CustomImageUpload
               components={[

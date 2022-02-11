@@ -9,10 +9,10 @@ export default function iconListContainerBlock() {
   const { i18n } = wp;
 
   const blockSlug = "icon-list-container-block"; // slug for the block
-  const blockTitle = "Create icon list container block";
+  const blockTitle = "Icon list container block";
   const blockDescription = "Component to create icon list container block";
   const blockCategory = "common";
-  const blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  const blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {
     title: {
@@ -44,7 +44,7 @@ export default function iconListContainerBlock() {
       }
 
       return [
-        <div class="custom-section__block">
+        <div className={`custom-container`}>
           <p className="block-title">Icon List Container Block</p>
           <CustomRichText
             onChange={(attribute, change) => {
