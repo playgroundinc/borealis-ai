@@ -88,6 +88,7 @@ export default function trmcPageStripGraphicBlock() {
         },
       ],
     },
+    parent: [`${namespace}/page-strip-graphic-container`],
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
       const {
@@ -105,6 +106,7 @@ export default function trmcPageStripGraphicBlock() {
       } = attributes;
 
       function updateAttributeValue(attribute, value) {
+        console.log(attribute, value);
         setAttributes({ [attribute]: value });
       }
       return [

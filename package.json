@@ -23,5 +23,7 @@
   },
   "homepage": "https://github.com/playgroundinc/borealis-ai#readme",
   "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "@wordpress/data": "^6.2.1"
+  }
 }
