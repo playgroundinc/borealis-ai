@@ -1320,6 +1320,24 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pr-3{
   padding-right: 12px;
 }
+.pt-15{
+  padding-top: 60px;
+}
+.pb-80{
+  padding-bottom: 320px;
+}
+.pb-60{
+  padding-bottom: 240px;
+}
+.pb-64{
+  padding-bottom: 256px;
+}
+.pb-54{
+  padding-bottom: 216px;
+}
+.pb-56{
+  padding-bottom: 224px;
+}
 .text-center{
   text-align: center;
 }

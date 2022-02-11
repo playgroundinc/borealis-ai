@@ -74,14 +74,14 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
                 </div>
             </section>
             <section class="w-full md:hidden block">
-                <div class="w-full bg-cover pb-100 bg-no-repeat pt-10 px-6 <?php echo $attributes->icon === true ? 'text-shade-white-400' : 'text-shade-black-400' ?>" style="background-image: url(<?php echo $image_mobile ?>)">
+                <div class="w-full bg-cover pb-56 bg-no-repeat pt-15 px-6 <?php echo $attributes->icon === true ? 'text-shade-white-400' : 'text-shade-black-400' ?>" style="background-image: url(<?php echo $image_mobile ?>)">
                     <?php if (!empty($attributes->title)) : ?>
                         <h3 class="h3 mb-6">
                             <?php echo $attributes->title ?>
                         </h3>
                     <?php endif ?>
                     <?php if (!empty($attributes->copy)) : ?>
-                        <p class="paragraph mb-8 w-full tb:w-7/12 lg:w-6/12">
+                        <p class="paragraph mb-6 w-full tb:w-7/12 lg:w-6/12">
                             <?php echo $attributes->copy ?>
                         </p>
                     <?php endif ?>
