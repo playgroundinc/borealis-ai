@@ -1188,10 +1188,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 20px;
   padding-right: 20px;
 }
-.py-23{
-  padding-top: 92px;
-  padding-bottom: 92px;
-}
 .py-6{
   padding-top: 24px;
   padding-bottom: 24px;
@@ -1775,17 +1771,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tb\:w-7\/12{
     width: 58.333333%;
   }
-  .tb\:w-4\/6{
-    width: 66.666667%;
-  }
   .tb\:w-1\/4{
     width: 25%;
   }
   .tb\:w-8\/12{
     width: 66.666667%;
-  }
-  .tb\:flex-row{
-    flex-direction: row;
   }
   .tb\:justify-end{
     justify-content: flex-end;
