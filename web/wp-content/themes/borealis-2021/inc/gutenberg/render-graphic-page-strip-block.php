@@ -1,5 +1,4 @@
 <?php
-
 /**
  *
  * Render Graphic Page Strip
