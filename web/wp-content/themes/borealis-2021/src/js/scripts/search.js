@@ -1,4 +1,5 @@
 import SearchBarClass from "./classes/class-search";
+import RadioControlsClass from "./classes/class-radio-controls";
 import checkboxSearchForm from "./checkbox-searchform";
 
 export default function search() {
@@ -31,5 +32,13 @@ export default function search() {
   checkboxContainers.forEach((checkboxContainer) => {
     checkboxSearchForm(checkboxContainer, setCount);
   });
+
+  const radioForms = [...document.querySelectorAll('.radio-form')];
+  if (radioForms.length > 0) {
+    radioForms.forEach((form) => {
+      const RadioControls = new RadioControlsClass(form);
+      RadioControls.init();
+    })
+  }
 };
 

@@ -402,6 +402,11 @@ class Loader {
 
     if (markup && markup.length > 0) {
       this.generateMarkup(markup);
+    } else {
+      const listItem = document.createElement('li');
+      listItem.classList = 'container paragraph py-7';
+      listItem.innerText = 'No results found';
+      this.list.append(listItem);
     }
 
     this.toggleTrigger(this.page + 1 > data.total);
@@ -466,9 +471,17 @@ class Loader {
       this.data.set('query', this.query);
     }
   };
+  setPostType = () => {
+    this.postType = this.list.dataset.posttype;
+
+    if (this.postType) {
+      this.data.set('post_type', this.postType);
+    }
+  };
   updateData = () => {
     this.setQueryParams();
     this.setQuery();
+    this.setPostType();
     this.data.set('page', this.page);
   };
   populateData = () => {
@@ -677,6 +690,49 @@ class QueryParams {
     }
   }
 
+}
+
+/***/ }),
+
+/***/ "./src/js/scripts/classes/class-radio-controls.js":
+/*!********************************************************!*\
+  !*** ./src/js/scripts/classes/class-radio-controls.js ***!
+  \********************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ RadioControlsClass; }
+/* harmony export */ });
+/* harmony import */ var _class_query_params__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./class-query-params */ "./src/js/scripts/classes/class-query-params.js");
+
+class RadioControlsClass {
+  constructor(container) {
+    this.id = container.id;
+    this.inputs = container.querySelectorAll("input[type='radio']");
+  }
+
+  handleChange = e => {
+    this.params.setParam(e.target.value);
+  };
+  addListeners = () => {
+    if (this.inputs.length) {
+      this.inputs.forEach(input => {
+        input.addEventListener('change', this.handleChange);
+      });
+    }
+  };
+  init = () => {
+    this.params = new _class_query_params__WEBPACK_IMPORTED_MODULE_0__["default"](this.id);
+    const currentValue = this.params.getParam(this.id);
+
+    if (!currentValue) {
+      this.params.setParam('all');
+    }
+
+    this.addListeners();
+  };
 }
 
 /***/ }),
@@ -1079,7 +1135,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ search; }
 /* harmony export */ });
 /* harmony import */ var _classes_class_search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/class-search */ "./src/js/scripts/classes/class-search.js");
-/* harmony import */ var _checkbox_searchform__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./checkbox-searchform */ "./src/js/scripts/checkbox-searchform.js");
+/* harmony import */ var _classes_class_radio_controls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./classes/class-radio-controls */ "./src/js/scripts/classes/class-radio-controls.js");
+/* harmony import */ var _checkbox_searchform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./checkbox-searchform */ "./src/js/scripts/checkbox-searchform.js");
+
 
 
 function search() {
@@ -1116,8 +1174,16 @@ function search() {
   };
 
   checkboxContainers.forEach(checkboxContainer => {
-    (0,_checkbox_searchform__WEBPACK_IMPORTED_MODULE_1__["default"])(checkboxContainer, setCount);
+    (0,_checkbox_searchform__WEBPACK_IMPORTED_MODULE_2__["default"])(checkboxContainer, setCount);
   });
+  const radioForms = [...document.querySelectorAll('.radio-form')];
+
+  if (radioForms.length > 0) {
+    radioForms.forEach(form => {
+      const RadioControls = new _classes_class_radio_controls__WEBPACK_IMPORTED_MODULE_1__["default"](form);
+      RadioControls.init();
+    });
+  }
 }
 ;
 
