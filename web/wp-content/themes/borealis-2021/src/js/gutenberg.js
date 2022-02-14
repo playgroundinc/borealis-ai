@@ -44,6 +44,7 @@ import pageStripGraphic from "./blocks/page-strips/page-strip-graphic.jsx";
 // Publications
 import publicationsContainerBlock from './blocks/publications/publications-container.jsx';
 import selectPostsBlocks from './blocks/publications/select-posts-blocks.jsx';
+import bibtexBlock from './blocks/publications/bibtex-block.jsx';
 
 // Posts
 import featuredPostsContainerBlock from './blocks/posts/featured-posts-container.jsx';
@@ -116,6 +117,7 @@ logoBlock();
 // Publications
 publicationsContainerBlock();
 selectPostsBlocks();
+bibtexBlock();
 
 // Posts
 featuredPostsContainerBlock();

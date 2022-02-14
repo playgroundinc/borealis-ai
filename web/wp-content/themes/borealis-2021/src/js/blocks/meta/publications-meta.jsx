@@ -1,4 +1,5 @@
 import { namespace } from '../helper-functions/constants';
+import CustomRichText from '../reusable/custom-richtext-component.jsx';
 
 import SelectAuthors from '../reusable/select-authors.jsx';
 
@@ -32,17 +33,17 @@ export default function publicationMetaBlock() {
         edit: (props) => {
 			const { setAttributes, attributes } = props;
 			const { 
-                authors,
                 abstract,
+                authors,
+                blog,
+                citation, 
+                citation_link,
                 code,            
                 paper,
-                blog,
                 publication_date,            
                 time_to_read,            
-                citation, 
-                citation_link 
             } = attributes;
-            
+
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
             }
@@ -98,6 +99,7 @@ export default function publicationMetaBlock() {
                                 authors={authors}
                                 updateAttributeValue={updateAttributeValue}
                             />
+                
                         </div>
                     </div> 
                 </div>
