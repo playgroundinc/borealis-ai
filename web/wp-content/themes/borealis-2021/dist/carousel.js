@@ -354,6 +354,9 @@ module.exports.breakpoints = {
   const generateSpacing = (base = 4, max = 200) => {
     const spacing = {};
     spacing['1/12'] = 'calc(100% / 12)';
+    spacing['featured-image-sm'] = '268px';
+    spacing['featured-image'] = '360px';
+    spacing['featured-image-md'] = '450px';
     for (let i = 0; i <= max; i = i + 1) {
       spacing[i] = `${i * base}px`;
     }

@@ -95,6 +95,7 @@ require get_template_directory() . '/inc/partials/blog/blog-sidebar.php';
 require get_template_directory() . '/inc/partials/blog/blog-header.php';
 require get_template_directory() . '/inc/partials/blog/blog-cite.php';
 require get_template_directory() . '/inc/partials/blog/blog-share.php';
+require get_template_directory() . '/inc/partials/blog/blog-result.php';
 
 // Partials - Publications
 require get_template_directory() . '/inc/partials/publications/publication-result.php';
@@ -141,6 +142,10 @@ require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-blo
 // Publications 
 require get_template_directory() . '/inc/gutenberg/publications/render-publications-container.php';
 require get_template_directory() . '/inc/gutenberg/publications/render-publications-item.php';
+
+// Posts 
+require get_template_directory() . '/inc/gutenberg/posts/render-featured-post.php';
+require get_template_directory() . '/inc/gutenberg/posts/render-featured-posts-block.php';
 
 // Slider Blocks
 require get_template_directory() . '/inc/gutenberg/slider/render-slider-container-block.php';
