@@ -842,6 +842,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-2{
   margin-right: 8px;
 }
+.mb-12{
+  margin-bottom: 48px;
+}
 .mt-18{
   margin-top: 72px;
 }
@@ -885,6 +888,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-4{
   height: 16px;
+}
+.h-13{
+  height: 52px;
 }
 .max-h-screen{
   max-height: 100vh;
@@ -1195,6 +1201,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 32px;
   padding-bottom: 32px;
 }
+.py-23{
+  padding-top: 92px;
+  padding-bottom: 92px;
+}
 .px-12{
   padding-left: 48px;
   padding-right: 48px;
@@ -1286,6 +1296,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-4{
   padding-right: 16px;
+}
+.pr-8{
+  padding-right: 32px;
 }
 .pt-6{
   padding-top: 24px;
@@ -1644,6 +1657,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:w-4\/6{
     width: 66.666667%;
   }
+  .md\:w-6\/12{
+    width: 50%;
+  }
   .md\:w-5\/12{
     width: 41.666667%;
   }
@@ -1807,14 +1823,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 1000px){
+  .tb\:mb-0{
+    margin-bottom: 0px;
+  }
   .tb\:flex{
     display: flex;
+  }
+  .tb\:w-2\/6{
+    width: 33.333333%;
+  }
+  .tb\:w-4\/6{
+    width: 66.666667%;
   }
   .tb\:w-1\/4{
     width: 25%;
   }
   .tb\:w-8\/12{
     width: 66.666667%;
+  }
+  .tb\:flex-row{
+    flex-direction: row;
   }
   .tb\:justify-end{
     justify-content: flex-end;
