@@ -137,6 +137,7 @@ require get_template_directory() . '/inc/gutenberg/logos/render-logo-block.php';
 
 // Page Strips
 require get_template_directory() . '/inc/gutenberg/render-page-strip-block.php';
+require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-container-block.php';
 require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-block.php';
 
 // Publications 
@@ -175,6 +176,7 @@ require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-
 // Tag Cloud Blocks
 require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-container-block.php';
 require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-item-block.php';
+
 
 // add hook for subnav
 add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );

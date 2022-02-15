@@ -509,6 +509,25 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 14px;
   }
 }
+.primary-button{
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  line-height: auto;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: 700;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .primary-button{
+    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .primary-button{
+    font-size: 18px;
+  }
+}
 .text-link{
   font-size: 18px;
   font-family: Inter, sans-serif;
@@ -766,6 +785,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-top-2{
   top: -8px;
 }
+.top-0{
+  top: 0px;
+}
 .top-6{
   top: 24px;
 }
@@ -823,6 +845,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .ml-19{
   margin-left: 76px;
+}
+.mb-11{
+  margin-bottom: 44px;
+}
+.mb-8{
+  margin-bottom: 32px;
+}
+.ml-7{
+  margin-left: 28px;
 }
 .mt-15{
   margin-top: 60px;
@@ -922,6 +953,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-8\/12{
   width: 66.666667%;
 }
+.w-6\/12{
+  width: 50%;
+}
 .w-4{
   width: 16px;
 }
@@ -998,6 +1032,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .items-start{
   align-items: flex-start;
+}
+.items-end{
+  align-items: flex-end;
 }
 .items-center{
   align-items: center;
@@ -1157,6 +1194,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-5{
   padding: 20px;
 }
+.p-20{
+  padding: 80px;
+}
 .px-4{
   padding-left: 16px;
   padding-right: 16px;
@@ -1287,6 +1327,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-5{
   padding-top: 20px;
+}
+.pb-56{
+  padding-bottom: 224px;
+}
+.pt-15{
+  padding-top: 60px;
 }
 .pb-6{
   padding-bottom: 24px;
@@ -1829,6 +1875,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tb\:flex{
     display: flex;
   }
+  .tb\:w-7\/12{
+    width: 58.333333%;
+  }
   .tb\:w-2\/6{
     width: 33.333333%;
   }
@@ -1861,6 +1910,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 1440px){
+  .lg\:w-6\/12{
+    width: 50%;
+  }
   .lg\:basis-1\/5{
     flex-basis: 20%;
   }

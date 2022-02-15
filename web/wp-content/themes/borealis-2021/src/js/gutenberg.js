@@ -40,6 +40,7 @@ import logoBlock from "./blocks/logos/logo.jsx";
 // Page Strips
 import pageStripBlock from "./blocks/page-strips/page-strip.jsx";
 import pageStripGraphic from "./blocks/page-strips/page-strip-graphic.jsx";
+import pageStripGraphicContainer from "./blocks/page-strips/page-strip-graphic-container.jsx";
 
 // Publications
 import publicationsContainerBlock from './blocks/publications/publications-container.jsx';
@@ -94,6 +95,7 @@ imageTextBlock();
 pageStripBlock();
 imageBlock();
 pageStripGraphic();
+pageStripGraphicContainer();
 
 // Accordion Blocks
 accordionContainerBlock();
