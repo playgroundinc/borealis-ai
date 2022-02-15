@@ -1,6 +1,7 @@
 <?php
 get_header();
 $current_post_id = $post->ID;
+$bibtex = get_post_meta($post->ID, 'bibtex', true);
 ?>
 <main class="border-t border-shade-grey-500 pb-15">
     <div class="pt-14 flex justify-start container flex-col md:flex-row">

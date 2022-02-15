@@ -67,6 +67,7 @@ class PG_Allowed_Blocks {
             // Page Strips
             'feature-strip',
             'page-strip-graphic',
+            'page-strip-graphic-container',
             'page-strip',
 
             // Image

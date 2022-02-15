@@ -27,6 +27,7 @@ const autoprefixer = require('autoprefixer')
 	mainSearch: JS_DIR + '/scripts/main-search.js',
 	blogModal: JS_DIR + '/scripts/blogModal.js',
 	blogShare: JS_DIR + '/scripts/blogShare.js',
+	mathjax: JS_DIR + '/scripts/mathjax.js',
  }
  
  const output = {
