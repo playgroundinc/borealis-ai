@@ -201,6 +201,20 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
                 <g stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path stroke="currentColor" d="M11.972 2 2.028 12"/><path stroke="currentColor" d="m2 2 10 10"/></g>
             </symbol>
 
+             <!-- CTA Arrow White -->
+             <symbol id="icon-arrow-white" viewBox="0 0 24 25" fill="none">
+                <path d="M5 12.25H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 16.25L19 12.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 8.25L19 12.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
+            <!-- CTA Arrow Black -->
+            <symbol id="icon-arrow-black" viewBox="0 0 24 25" fill="none">
+                <path d="M5 12.25H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 16.25L19 12.25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 8.25L19 12.25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
             <!--  Cookie Close -->
             <symbol id="icon-cookie-close" viewBox="0 0 8 8">
                 <path d="M6.3536 2.35355c.1952-.19526.1952-.51184 0-.7071-.1953-.19527-.51189-.19527-.70715 0L3.9999975 3.29289 2.35355 1.64645c-.19526-.19527-.51184-.19527-.7071 0-.19527.19526-.19527.51184 0 .7071l1.64644 1.6464475L1.64645 5.64645c-.19527.19526-.19527.51185 0 .70715.19526.1952.51184.1952.7071 0l1.6464475-1.64649L5.64645 6.3536c.19526.1952.51185.1952.70715 0 .1952-.1953.1952-.51189 0-.70715L4.70711 3.9999975 6.3536 2.35355z" fill="currentColor" fill-rule="evenodd"/>
