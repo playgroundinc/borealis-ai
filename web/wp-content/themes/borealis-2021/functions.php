@@ -87,16 +87,21 @@ require get_template_directory() . '/inc/gutenberg/render-icon-btn.php';
 // Partials
 require get_template_directory() . '/inc/partials/search-bar.php';
 require get_template_directory() . '/inc/partials/search-bar-main.php';
+require get_template_directory() . '/inc/partials/search-bar-main-result.php';
+
 
 // Partials - Blogs
 require get_template_directory() . '/inc/partials/blog/blog-sidebar.php';
 require get_template_directory() . '/inc/partials/blog/blog-header.php';
 require get_template_directory() . '/inc/partials/blog/blog-cite.php';
 require get_template_directory() . '/inc/partials/blog/blog-share.php';
-
+require get_template_directory() . '/inc/partials/blog/blog-result.php';
 
 // Partials - Publications
 require get_template_directory() . '/inc/partials/publications/publication-result.php';
+require get_template_directory() . '/inc/partials/publications/publication-header.php';
+require get_template_directory() . '/inc/partials/publications/publication-sidebar.php';
+require get_template_directory() . '/inc/partials/publications/publication-related.php';
 
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';
@@ -137,9 +142,15 @@ require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-blo
 // Publications 
 require get_template_directory() . '/inc/gutenberg/publications/render-publications-container.php';
 require get_template_directory() . '/inc/gutenberg/publications/render-publications-item.php';
+require get_template_directory() . '/inc/gutenberg/publications/render-bibtex.php';
+
+// Posts 
+require get_template_directory() . '/inc/gutenberg/posts/render-featured-post.php';
+require get_template_directory() . '/inc/gutenberg/posts/render-featured-posts-block.php';
 
 // Slider Blocks
 require get_template_directory() . '/inc/gutenberg/slider/render-slider-container-block.php';
+require get_template_directory() . '/inc/gutenberg/slider/render-news-slide.php';
 require get_template_directory() . '/inc/gutenberg/slider/render-image-slide-block.php';
 
 // Stat Blocks
@@ -152,6 +163,10 @@ require get_template_directory() . '/inc/gutenberg/greenhouse/render-jobs-block.
 // Sidebar Table Of Contents Blocks
 require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-section-block.php';
 require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-subsection-block.php';
+
+// Icon List Blocks
+require get_template_directory() . '/inc/gutenberg/icon-list/render-icon-list-container-block.php';
+require get_template_directory() . '/inc/gutenberg/icon-list/render-icon-list-item-block.php';
 
 // Tabbed Content Blocks
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-container-block.php';

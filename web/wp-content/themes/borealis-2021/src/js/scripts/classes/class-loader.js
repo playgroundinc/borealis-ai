@@ -1,6 +1,7 @@
 export default class Loader {
-    constructor(trigger, list, params) {
-        this.resetTrigger = document.querySelector('.refresh-results');
+    constructor(container, trigger, list, params) {
+        this.container = container
+        this.resetTrigger = container.querySelector('.refresh-results');
         this.trigger = trigger;
         this.list = list;
         this.page = this.list.dataset?.page ? Number(this.list.dataset.page) + 1 : 2;
@@ -30,8 +31,14 @@ export default class Loader {
     handleSuccess = (data) => {
         this.total = data.total;
         const markup = JSON.parse(data.markup)
-        if (markup && markup.length >0) {
+        if (markup && markup.length > 0) {
             this.generateMarkup(markup);
+        } else {
+            const listItem = document.createElement('li');
+            listItem.classList = 'container paragraph py-7';
+            listItem.innerText = 'No results found';
+            this.list.append(listItem);
+            
         }
         this.toggleTrigger(this.page + 1 > data.total);
         this.data.set('page', this.page + 1);
@@ -90,9 +97,16 @@ export default class Loader {
             this.data.set('query', this.query);
         }
     }
+    setPostType = () => {
+        this.postType = this.list.dataset.posttype;
+        if (this.postType) {
+            this.data.set('post_type', this.postType);
+        }
+    }
     updateData = () => {
         this.setQueryParams();
         this.setQuery();
+        this.setPostType();
         this.data.set('page', this.page);
     }
     populateData = () => {

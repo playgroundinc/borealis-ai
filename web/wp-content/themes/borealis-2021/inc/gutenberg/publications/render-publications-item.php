@@ -1,21 +1,5 @@
 <?php 
 
-if (!function_exists('pg_get_content_type')) {
-    function pg_get_content_type($content_types, $post_type) {
-        if (!empty($content_types)) {
-            return $content_types[0]->name;
-        }
-        switch($post_type) {
-            case 'research-blogs':
-                return 'Research';
-            case 'news':
-                return 'News';
-            default:
-                return 'Publication';
-        }
-    }
-}
-
 if (!function_exists('pg_render_publications_item')) {
     function pg_render_publications_item($block, $link) {
         $fields     = array(

@@ -64,7 +64,6 @@ $url = get_permalink($post->ID);
                     </li>
                 </ul>
             </div>
-        </aside>
         <div class="page__content w-5/6">
             <div class="mx-auto w-5/6">
                 <?php

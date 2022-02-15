@@ -77,7 +77,6 @@ export default function checkboxSearchForm(container, setCount) {
     for (let key in selections) {
       results.push(selections[key].value);
     }
-    // params.UrlParams = new URLSearchParams(window.location.search);
     params.setParam(results.join(","));
   }
 }

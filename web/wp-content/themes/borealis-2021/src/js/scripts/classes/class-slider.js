@@ -1,26 +1,39 @@
+import { breakpoints } from "../../../../utils/constants";
+
+
 export default class Slider {
     constructor(slider) {
         this.slider = slider;
         this.slides = [];
-        this.activeSlide = null;
-        this.caption = null;
+        this.container = null;
+        this.activeSlide = 1;
         this.prev = null;
         this.next = null;
-        this.count = null;
-        this.percentage = 0;
+        this.count = 0;
+        this.left = 0;
+        this.right = 0;
+        this.slideCount = 1;
+        this.slideCounts = {
+            sm: 2,
+            md: 2,
+            tb: 4,
+            lg: 4,
+            xl: 4,
+        };
+        this.breakpoints = breakpoints;
+        this.breakpoint = null;
         this.current = null;
         this.pageXStart = null;
         this.pageXEnd = null;
         this.button = null;
+        this.getSlides = this.getSlides.bind(this);
+        this.getBreakpoint = this.getBreakpoint.bind(this);
         this.handleMouseMove = this.handleMouseMove.bind(this);
         this.handleMouseUp = this.handleMouseUp.bind(this);
         this.handleDrag = this.handleDrag.bind(this);
         this.handleNext = this.handleNext.bind(this);
         this.handlePrev = this.handlePrev.bind(this);
-        this.handleSingleNext = this.handleSingleNext.bind(this);
-        this.handleSinglePrev = this.handleSinglePrev.bind(this);
-        this.singlePrev = this.singlePrev.bind(this);
-        this.singleNext = this.singleNext.bind(this);
+        this.handleResize = this.handleResize.bind(this);
     }
     setState(name, value) {
         this[name] = value;
@@ -32,89 +45,58 @@ export default class Slider {
             slide.setAttribute('aria-label', `${current} of ${count}`);
         });
     }
-    setPrevSlide() {
-        const previousSlide = this.slider.querySelector('.slide--prev');
-        if (previousSlide) {
-            previousSlide.classList.remove('slide--prev');
-        }
-        if (Number(this.activeSlide) > 0) {
-            this.slides[this.activeSlide - 1].classList.add('slide--prev');
-            return;
-        } 
-        this.slides[this.slides.length - 1].classList.add('slide--prev');
-    }
-
-    setNextSlide() {
-        const nextSlide = this.slider.querySelector('.slide--next');
-        if (nextSlide) {
-            nextSlide.classList.remove('slide--next');
-        }
-        if (Number(this.activeSlide) === Number(this.slides.length - 1)) {
-            this.slides[0].classList.add('slide--next');
-            return;
-        } 
-        const nextIndex = Number(this.activeSlide + 1);
-        this.slides[nextIndex].classList.add('slide--next');
-    }
-    setActiveSlide() {
-        if (this.slides.length > 2) {
-            this.setNextSlide();
-            this.setPrevSlide();
-        }
-        this.slides[this.activeSlide].classList.add('slide--active');
-    }
     getButtons() {
         const nextBtn = this.slider.querySelector('.slider-block__next');
         this.setState('next', nextBtn);
         const prevBtn = this.slider.querySelector('.slider-block__prev');
         this.setState('prev', prevBtn);
     }
+    getContainer() {
+        const container = this.slider.querySelector('.slider-block');
+        this.setState('container', container);
+    }
     getCounters() {
         const total = this.slider.querySelector('.slider-block__count__total');
         const current = this.slider.querySelector('.slider-block__count__current');
-        const percentage = this.slider.querySelector('.slider-block__count__percentage--active');
         this.setState('total', total);
         this.setState('current', current);
-        this.setState('percentage', percentage);
-    }
-    getCaption() {
-        const caption = this.slider.querySelector('.slider-block__caption');
-        this.setState('caption', caption);
     }
 
     getElements() {
         this.getButtons();
+        this.getContainer();
         this.getCounters();
-        this.getCaption();
     }
-    setTotal() {
-        this.total.innerText = this.slides.length < 10 ? '0' + `${this.slides.length}` : this.slides.length;
-    }
-    setCount() {
-        this.current.innerText = Number(this.activeSlide + 1) < 10 ? '0' + `${Number(this.activeSlide + 1)}` : Number(this.activeSlide);
-        const currentPercentage =  100 *((Number(this.activeSlide) + 1) / Number(this.slides.length));
-        this.percentage.style.width = `${currentPercentage}%`;
-    }
-    setCaption() {
-        if (this.slides[this.activeSlide].dataset.caption) {
-            this.caption.innerText = this.slides[this.activeSlide].dataset.caption;
+    getBreakpoint() {
+        if (window.innerWidth < this.breakpoints.sm) {
+            this.setState('breakpoint', false);
             return;
         }
-        this.caption.innerText = '';
+        for (let breakpoint in this.breakpoints) {
+            if (window.innerWidth >= this.breakpoints[breakpoint]) {
+                this.setState('breakpoint', breakpoint);
+            }
+        }
     }
-    setActive() {
-        this.setState('activeSlide', 0);
-        this.setActiveSlide();
-        this.setAriaLabel();
-        if (this.caption) {
-            this.setCaption();
+    getCount() {
+        if (this.breakpoint && this.slideCounts[this.breakpoint]) {
+            this.setState('slideCount', this.slideCounts[this.breakpoint]);
+            return;
         }
-        if (this.total) {
-            this.setTotal();
+        this.setState('slideCount', 1);
+    }
+    setTotal() {
+        const totalSlides = Math.ceil(this.slides.length / this.slideCount);
+        if (totalSlides > 1) {
+            this.total.innerText = totalSlides;
+            return;
         }
-        if (this.current) {
-            this.setCount();
-        }
+        this.total.innerText = '1';
+        this.next.setAttribute('disabled', true);
+        this.prev.setAttribute('disabled', true);
+    }
+    setCounter() {
+        this.current.innerText = this.activeSlide;
     }
     getSlides() {
         const slides = [...this.slider.querySelectorAll('.slide')];
@@ -124,117 +106,88 @@ export default class Slider {
         this.slider.classList.add('hide-xs');
     }
     conditionalEvents() {
-        if (this.caption) {
-            this.setCaption();
-        }
         if (this.current) {
             this.setCount();
         }
+    }
+    setSliderPosition() {
+        this.container.style.left = `${this.left}%`;
+        this.container.style.right = `${this.right}%`;
     }
     handleNext(e) {
         if (e) {
             e.preventDefault();
         }
-        this.handleVideo();
-        this.slides[this.activeSlide].classList.remove('slide--active');
-        const nextSlide = Number(this.activeSlide) !== Number(this.slides.length - 1) ? Number(this.activeSlide + 1) : 0;
-        this.setState('activeSlide', nextSlide);
-        this.setActiveSlide();
-        this.conditionalEvents();
+        const nextPage = Number(this.slideCount) * Number(this.activeSlide + 1);
+        const currentPage = Number(this.activeSlide * this.slideCount);
+        let offset = 100;
+        if (nextPage - this.slides.length > this.slideCount) {
+            return;
+        }
+        if (nextPage >= this.slides.length) {
+            const strays = Number(this.slides.length - currentPage);
+            offset = Number(offset / this.slideCount) * strays;
+            this.next.setAttribute('disabled', true);
+        } 
+        this.prev.removeAttribute('disabled');
+        this.setState('left', Number(this.left - offset));
+        this.setState('right', Number(this.right + offset));
+        this.setState('activeSlide', this.activeSlide + 1);
+        this.setCounter();
+        this.setSliderPosition();
     } 
     handlePrev(e) {
         if (e) {
             e.preventDefault();
         }
-        this.handleVideo();
-        this.slides[this.activeSlide].classList.remove('slide--active');
-        const activeSlide = Number(this.activeSlide) > 0 ? Number(this.activeSlide - 1) : Number(this.slides.length - 1);
-        this.setState('activeSlide', activeSlide);
-        this.setActiveSlide();
-        this.conditionalEvents();
-    }
-    singlePrev() {
-        this.slides[this.activeSlide].classList.add('slide--active');
-        this.slides[this.activeSlide].classList.remove('slide--prev');
-        this.setCount();
-    }
-    singleNext() {
-        this.slides[this.activeSlide].classList.add('slide--active');
-        this.slides[this.activeSlide].classList.remove('slide--next');
-        this.setCount();
-    }
-    setSingleNextSlide() {
-        if (this.slides[this.activeSlide].classList.contains('slide--prev')) {
-            this.slides[this.activeSlide].classList.remove('slide--prev');
-        }
-        this.slides[this.activeSlide].classList.add('slide--next');
-        setTimeout(this.singleNext, 300);
-        this.conditionalEvents();
-        return;
-    }
-    setSinglePrevSlide() {
-        if (this.slides[this.activeSlide].classList.contains('slide--next')) {
-            this.slides[this.activeSlide].classList.remove('slide--next');
-        }
-        this.slides[this.activeSlide].classList.add('slide--prev');
-        setTimeout(this.singlePrev, 300);
-        this.conditionalEvents();
-        return;
-    }
-    handleVideo() {
-        const video = this.slides[this.activeSlide].querySelector('video');
-        if (video) {
-            video.pause();
-        }
-    }
-    handleSingleNext(e) {
-        if (e) {
-            e.preventDefault();
-        }
-        this.handleVideo();
-        this.slides[this.activeSlide].classList.remove('slide--active');
-        this.slides[this.activeSlide].classList.add('slide--prev');
-        if (this.activeSlide === 0) {
-            this.setState('activeSlide', 1);
-            this.setSingleNextSlide();
+        const prevPage = Number(this.activeSlide - 1);
+        let offset = 100;
+        if (prevPage === 0) {
             return;
         }
-        this.setState('activeSlide', 0);
-        this.setSingleNextSlide();
+        if (prevPage <= 1) {
+            this.setState('left', 0);
+            this.setState('right', 0);
+            this.prev.setAttribute('disabled', true);
+            this.next.removeAttribute('disabled');
+            this.setState('activeSlide', this.activeSlide - 1);
+            this.setSliderPosition();
+            this.setCounter();
+            return;
+        } 
+        this.next.removeAttribute('disabled');
+        this.setState('left', Number(this.left + offset));
+        this.setState('right', Number(this.right - offset));
+        this.setState('activeSlide', this.activeSlide - 1);
+        this.setSliderPosition();
+        this.setCounter();
     }
 
-    handleSinglePrev(e) {
-        if (e) {
-            e.preventDefault();
+    handleResize() {
+        this.setState('left', 0);
+        this.setState('right', 0);
+        this.setState('activeSlide', 1);
+        this.setSliderPosition();
+        this.getBreakpoint();
+        this.getCount();
+        this.setTotal();
+        this.setCounter();
+        if (this.slides.length > this.slideCount) {
+            this.next.removeAttribute('disabled');
         }
-        this.handleVideo();
-        this.slides[this.activeSlide].classList.remove('slide--active');
-        this.slides[this.activeSlide].classList.add('slide--next');
-        if (this.activeSlide === 0) {
-            this.setState('activeSlide', 1);
-            this.setSinglePrevSlide();
-            return;
-        }
-        this.setState('activeSlide', 0);
-        this.setSinglePrevSlide();
+        this.prev.setAttribute('disabled', true);
+
     }
+
+
     addListeners() {
         this.slides.forEach((slide) => {
             slide.addEventListener('mousedown', this.handleDrag);
             slide.addEventListener('touchstart', this.handleDrag);
         })
-        if (this.slides.length > 2) {
-            this.next.addEventListener('click', this.handleNext);
-            this.prev.addEventListener('click', this.handlePrev);
-            return;
-        } 
-        if (this.slides.length > 1) {
-            this.next.addEventListener('click', this.handleSingleNext);
-            this.prev.addEventListener('click', this.handleSinglePrev);
-            return;
-        } 
-        this.prev.setAttribute('disabled', true);
-        this.next.setAttribute('disabled', true);
+        window.addEventListener('resize', this.handleResize);
+        this.next.addEventListener('click', this.handleNext);
+        this.prev.addEventListener('click', this.handlePrev); 
     }
 
     handleMouseMove(e) {
@@ -312,10 +265,12 @@ export default class Slider {
         this.getSlides();
         if (this.slides.length) {
             this.getElements();
-            this.setActive();
+            this.getBreakpoint();
+            this.getCount()
+            this.setTotal();
             this.addListeners();
             return;
         }
-        this.hideCarousel();
+        // this.hideCarousel();
     }
 }

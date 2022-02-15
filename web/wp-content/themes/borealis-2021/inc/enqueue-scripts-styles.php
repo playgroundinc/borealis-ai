@@ -2,7 +2,7 @@
 
 if (!function_exists('pg_tabbed_content_script')) {
     function pg_tabbed_content_script() {
-        wp_register_script('tabbedContent', get_template_directory_uri() . '/dist/tabbedContent.js', array(), '20151215', true);
+        wp_enqueue_script('tabbedContent', get_template_directory_uri() . '/dist/tabbedContent.js', array(), '20151215', true);
     }
 }
 
@@ -23,6 +23,15 @@ if (!function_exists('pg_blog_share_script')) {
         wp_enqueue_script('blogShare', get_template_directory_uri() . '/dist/blogShare.js', array(), '20151215', true);
     }
 }
+
+if (!function_exists('pg_mathjax_scripts')) {
+    function pg_mathjax_scripts() {
+        wp_register_script('mathjax-polyfill', 'https://polyfill.io/v3/polyfill.min.js?features=es6', array(), '20151215', true);
+        wp_register_script('mathjax-config', get_template_directory_uri() . '/dist/mathjax.js', array(), '20151215', true);
+        wp_enqueue_script('mathjax', 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js', array('mathjax-polyfill', 'mathjax-config'), '20151215', true);
+    }
+}
+
 
 if (!function_exists('pg_threejs_scripts')) {
     /**
@@ -51,7 +60,8 @@ if (!function_exists('pg_borealis_script')) {
  * Enqueue scripts and styles.
  */
 function pg_wp_starter_scripts() {
-    wp_enqueue_script( 'focus-visible', 'https://unpkg.com/focus-visible@latest/dist/focus-visible.min.js', array(), '20151215', true );
+    pg_mathjax_scripts();
+    wp_enqueue_script( 'focus-visible', 'https://unpkg.com/focus-visible@latest/dist/focus-visible.min.js', array(), '20151215');
 
 	wp_enqueue_style( 'pg-wp-starter-style', get_template_directory_uri() . '/dist/build.css' );
 
