@@ -1205,6 +1205,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 92px;
   padding-bottom: 92px;
 }
+.px-12{
+  padding-left: 48px;
+  padding-right: 48px;
+}
 .py-2{
   padding-top: 8px;
   padding-bottom: 8px;
@@ -1216,10 +1220,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-18{
   padding-left: 72px;
   padding-right: 72px;
-}
-.px-12{
-  padding-left: 48px;
-  padding-right: 48px;
 }
 .py-7{
   padding-top: 28px;
