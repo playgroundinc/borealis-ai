@@ -110,7 +110,7 @@ export default function trmcPageStripGraphicBlock() {
         setAttributes({ [attribute]: value });
       }
       return [
-        <section>
+        <section class="custom-child">
           <p className="block-title">Graphic Page Strip</p>
           <CustomImageUpload
             components={[

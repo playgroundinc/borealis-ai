@@ -38,7 +38,7 @@ export default function pageStripGraphicContainer() {
       );
 
       return [
-        <div class="custom-section__block">
+        <div class="custom-component">
           <p className="block-title">Page Strip Graphic Container Block</p>
           <InnerBlocks
             allowedBlocks={[`${namespace}/page-strip-graphic`]}

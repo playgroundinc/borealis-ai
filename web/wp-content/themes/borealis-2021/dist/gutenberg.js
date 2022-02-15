@@ -2350,7 +2350,7 @@ function pageStripGraphicContainer() {
         return select("core/block-editor").getBlock(props.clientId).innerBlocks;
       });
       return [/*#__PURE__*/React.createElement("div", {
-        class: "custom-section__block"
+        class: "custom-component"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
       }, "Page Strip Graphic Container Block"), /*#__PURE__*/React.createElement(InnerBlocks, {
@@ -2493,7 +2493,9 @@ function trmcPageStripGraphicBlock() {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
-      return [/*#__PURE__*/React.createElement("section", null, /*#__PURE__*/React.createElement("p", {
+      return [/*#__PURE__*/React.createElement("section", {
+        class: "custom-child"
+      }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
       }, "Graphic Page Strip"), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
