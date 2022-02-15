@@ -19,3 +19,16 @@
         @apply block;
     }
 }
+
+
+.greenhouse h2 {
+    @apply h4 md:h3 mb-8 mt-18 w-8/12 tb:w-6/12;
+}
+
+.greenhouse p, .greenhouse li {
+    @apply md:paragraph paragraph-sm;
+}
+
+.greenhouse ul {
+    @apply list-disc list-inside;
+}
