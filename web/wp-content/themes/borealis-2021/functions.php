@@ -64,13 +64,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Custom Images
- */
-require get_template_directory() . '/inc/custom-images/custom-images.php';
-require get_template_directory() . '/inc/custom-images/mobile-image-sizes.php';
-require get_template_directory() . '/inc/custom-images/register-image-sizes.php';
-
-/**
  * Actions
  */
 require get_template_directory() . '/inc/actions/load-more.php';

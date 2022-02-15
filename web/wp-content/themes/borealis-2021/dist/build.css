@@ -882,14 +882,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-7{
   margin-left: 28px;
 }
+.mt-8{
+  margin-top: 32px;
+}
 .mt-15{
   margin-top: 60px;
 }
 .mt-3{
   margin-top: 12px;
-}
-.mt-8{
-  margin-top: 32px;
 }
 .mr-7{
   margin-right: 28px;
@@ -988,6 +988,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-6\/12{
   width: 50%;
+}
+.w-auto{
+  width: auto;
 }
 .w-4{
   width: 16px;
