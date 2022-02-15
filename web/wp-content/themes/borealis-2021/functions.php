@@ -122,6 +122,7 @@ require get_template_directory() . '/inc/gutenberg/callouts/render-callout-colum
 // Body Copy
 require get_template_directory() . '/inc/gutenberg/render-body-copy-block.php';
 require get_template_directory() . '/inc/gutenberg/render-body-copy-image-block.php';
+require get_template_directory() . '/inc/gutenberg/copy/render-copy-blocks.php';
 
 // Content Blocks
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-container.php';
