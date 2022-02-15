@@ -46,6 +46,9 @@ import pageStripGraphicContainer from "./blocks/page-strips/page-strip-graphic-c
 import publicationsContainerBlock from './blocks/publications/publications-container.jsx';
 import selectPostsBlocks from './blocks/publications/select-posts-blocks.jsx';
 
+// Posts
+import featuredPostsContainerBlock from './blocks/posts/featured-posts-container.jsx';
+
 // Slider Blocks
 import sliderBlock from "./blocks/slider/slider-container.jsx";
 import newsSlideBlock from './blocks/slider/news-slide.jsx';
@@ -60,6 +63,10 @@ import jobBlock from "./blocks/greenhouse/jobs-block.jsx";
 // Sidebar Table Of Contents Blocks
 import customSectionBlock from './blocks/sidebar-table-of-contents/custom-section-blok.jsx';
 import customSubsectionBlock from './blocks/sidebar-table-of-contents/custom-subsection-blok.jsx';
+
+// Icon List Contents Blocks
+import iconListContainerBlock from './blocks/icon-list/icon-list-container-block.jsx';
+import iconListItemBlock from './blocks/icon-list/icon-list-item-block.jsx';
 
 // Tabbed Content Blocks
 import tabbedContentContainerBlock from "./blocks/tabbed-content/tabbed-content-container.jsx";
@@ -116,6 +123,9 @@ logoBlock();
 publicationsContainerBlock();
 selectPostsBlocks();
 
+// Posts
+featuredPostsContainerBlock();
+
 // Slide Blocks
 sliderBlock();
 newsSlideBlock();
@@ -131,6 +141,10 @@ jobBlock();
 // Sidebar Table Of Contents Blocks
 customSectionBlock();
 customSubsectionBlock();
+
+// Icon List Blocks
+iconListContainerBlock();
+iconListItemBlock();
 
 // Tabbed Content Blocks
 tabbedContentContainerBlock();
