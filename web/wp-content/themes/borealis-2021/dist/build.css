@@ -846,14 +846,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-19{
   margin-left: 76px;
 }
+.mb-11{
+  margin-bottom: 44px;
+}
 .mb-8{
   margin-bottom: 32px;
 }
-.mb-18{
-  margin-bottom: 72px;
-}
 .ml-7{
   margin-left: 28px;
+}
+.mb-18{
+  margin-bottom: 72px;
 }
 .mt-15{
   margin-top: 60px;
@@ -952,6 +955,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-8\/12{
   width: 66.666667%;
+}
+.w-6\/12{
+  width: 50%;
 }
 .w-11\/12{
   width: 91.666667%;
@@ -1194,6 +1200,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-5{
   padding: 20px;
 }
+.p-20{
+  padding: 80px;
+}
 .px-4{
   padding-left: 16px;
   padding-right: 16px;
@@ -1324,6 +1333,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-5{
   padding-top: 20px;
+}
+.pb-56{
+  padding-bottom: 224px;
+}
+.pt-15{
+  padding-top: 60px;
 }
 .pb-6{
   padding-bottom: 24px;
@@ -1910,6 +1925,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 1440px){
+  .lg\:w-6\/12{
+    width: 50%;
+  }
   .lg\:basis-1\/5{
     flex-basis: 20%;
   }
