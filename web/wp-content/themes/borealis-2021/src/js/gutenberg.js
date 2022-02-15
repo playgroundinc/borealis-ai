@@ -18,6 +18,9 @@ import imageBlock from "./blocks/image-block.jsx";
 import accordionContainerBlock from "./blocks/accordion/accordion.jsx";
 import accordionRowBlock from "./blocks/accordion/accordion-row.jsx";
 
+// Block Quote
+import blockquoteBlock from './blocks/blockquote/blockquote.jsx';
+
 // Body Copy
 import bodyCopyBlock from "./blocks/body-copy.jsx";
 
@@ -98,6 +101,9 @@ pageStripGraphic();
 // Accordion Blocks
 accordionContainerBlock();
 accordionRowBlock();
+
+// Block Quote
+blockquoteBlock();
 
 // Body Copy
 bodyCopyBlock();
