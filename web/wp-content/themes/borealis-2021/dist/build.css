@@ -471,6 +471,25 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 14px;
   }
 }
+.paragraph-blog{
+  font-size: 18px;
+  font-family: Martel, serif;
+  line-height: 2.2;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .paragraph-blog{
+    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .paragraph-blog{
+    font-size: 18px;
+  }
+}
 .hyperlink{
   font-size: 14px;
   font-family: Inter, sans-serif;
@@ -712,6 +731,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .current_page_item .submenu{
   display: block;
 }
+.h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
+  margin-top: 12px;
+}
+@media (min-width: 768px){
+  .h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
+    margin-top: 32px;
+  }
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -841,6 +868,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mr-2{
   margin-right: 8px;
+}
+.mt-11{
+  margin-top: 44px;
+}
+.mt-9{
+  margin-top: 36px;
 }
 .mb-12{
   margin-bottom: 48px;
@@ -1621,8 +1654,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:mt-20{
     margin-top: 80px;
   }
+  .md\:mt-13{
+    margin-top: 52px;
+  }
+  .md\:mt-10{
+    margin-top: 40px;
+  }
   .md\:mt-3{
     margin-top: 12px;
+  }
+  .md\:mt-15{
+    margin-top: 60px;
   }
   .md\:block{
     display: block;

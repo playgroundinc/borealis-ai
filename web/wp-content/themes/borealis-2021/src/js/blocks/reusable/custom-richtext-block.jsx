@@ -63,7 +63,8 @@ export default function customRichTextBlock(blockObject) {
         }
 
 			return [
-                <div class={alignment ? `text-${alignment}` : null }>
+                <div class={alignment ? `text-${alignment} custom-component` : 'custom-component' }>
+                    <p className="block-title">{title}</p>
                     {
                         alignment ?          
                         <BlockControls>

@@ -13,8 +13,6 @@ const blocks = [
             `heading-two`,
             `heading-three`,
             `heading-four`,
-            `heading-five`,
-            `heading-six`,
             `legal`,
         ]
     },
@@ -29,8 +27,6 @@ const blocks = [
             `paragraph`,
             `heading-three`,
             `heading-four`,
-            `heading-five`,
-            `heading-six`,
             `legal`,
         ]
     },
@@ -45,8 +41,6 @@ const blocks = [
             `paragraph`,
             `heading-two`,
             `heading-four`,
-            `heading-five`,
-            `heading-six`,
             `legal`,
         ]
     },
@@ -61,40 +55,6 @@ const blocks = [
             `paragraph`,
             `heading-two`,
             `heading-three`,
-            `heading-five`,
-            `heading-six`,
-            `legal`,
-        ]
-    },
-    {
-        slug: 'heading-five',
-        title: "Heading Five",
-        description: "Add a fifth level header",
-        category: "common",
-        icon: "heading",
-        tagName: "h5",
-        transforms: [
-            `paragraph`,
-            `heading-two`,
-            `heading-three`,
-            `heading-four`,
-            `heading-six`,
-            `legal`,
-        ]
-    },
-    {
-        slug: 'heading-six',
-        title: "Heading Six",
-        description: "Add a sixth level header",
-        category: "common",
-        icon: "heading",
-        tagName: "h6",
-        transforms: [
-            `paragraph`,
-            `heading-two`,
-            `heading-three`,
-            `heading-four`,
-            `heading-five`,
             `legal`,
         ]
     },
@@ -110,8 +70,6 @@ const blocks = [
             `heading-two`,
             `heading-three`,
             `heading-four`,
-            `heading-five`,
-            `heading-six`,
         ]
     },
 ]
