@@ -119,6 +119,9 @@ require get_template_directory() . '/inc/gutenberg/accordion/render-accordion-ro
 require get_template_directory() . '/inc/gutenberg/callouts/render-callout-container-block.php';
 require get_template_directory() . '/inc/gutenberg/callouts/render-callout-column-block.php';
 
+// Blockquote
+require get_template_directory() . '/inc/gutenberg/blockquote/render-blockquote-block.php';
+
 // Body Copy
 require get_template_directory() . '/inc/gutenberg/render-body-copy-block.php';
 require get_template_directory() . '/inc/gutenberg/render-body-copy-image-block.php';
