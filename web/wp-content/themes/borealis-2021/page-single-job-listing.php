@@ -27,7 +27,7 @@ if (!empty($settings['greenhouse_api_key'])) : ?>
                 'Authorization' => 'Basic' . esc_attr($settings['greenhouse_api_key'])
             )
         );
-
+        // TODO: borealisai instead of borealisaitest, migration to real borealis job board.
         $url = 'https://boards-api.greenhouse.io/v1/boards/borealisai/jobs/' . $jobIdQuery;
         $response = wp_remote_get($url, $args);
 
