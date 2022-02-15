@@ -75,6 +75,9 @@ import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-pane
 import tagCloudContainerBlock from "./blocks/tag-cloud/tag-cloud-container-block.jsx";
 import tagCloudItemBlock from "./blocks/tag-cloud/tag-cloud-item-block.jsx";
 
+// Image & Text Strip Block
+import imageTextStripBlock from "./blocks/image-text-strip-block.jsx";
+
 // Core Extends Blocks
 customVideoPoster();
 
@@ -151,3 +154,6 @@ tabbedContentPanelBlock();
 // Tag Cloud Content Blocks
 tagCloudContainerBlock();
 tagCloudItemBlock();
+
+// Image & Text Strip Block
+imageTextStripBlock(); 
