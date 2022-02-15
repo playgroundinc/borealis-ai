@@ -9,7 +9,6 @@ if (!function_exists('pg_generate_publication_header')) {
         $date = date('m/d/Y', $date_string);
         $time_to_read = get_post_meta($id, 'time_to_read', true);
         $authors = get_post_meta($id, 'authors', true);
-        // var_dump($authors);
         if (isset($authors) && $authors !== '') {
             $authors = json_decode($authors);
             $authors_mapped = array_map(
