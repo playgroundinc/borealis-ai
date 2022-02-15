@@ -20,8 +20,8 @@ $url = get_permalink($post->ID);
 <?php endif; ?>
 <main class="main-content container research-blog">
     <?php echo pg_generate_blog_sidebar_cite($post->ID); ?>
-    <div class="pt-14 md:flex">
-        <aside class="md:w-1/6">
+    <div class="pt-14 lg:flex">
+        <aside class="lg:w-1/6">
             <ul class="research-blog-sidebar pb-4 border-solid border-b border-black max-w-sidebar mb-6">
                 <?php echo pg_generate_blog_sidebar($post->ID); ?>
             </ul>
@@ -37,8 +37,8 @@ $url = get_permalink($post->ID);
                 </div>
             <?php endif; ?>
         </aside>
-        <div class="page__content md:w-5/6">
-            <div class="mx-auto md:w-5/6">
+        <div class="page__content lg:w-5/6">
+            <div class="mx-auto lg:w-5/6">
                 <?php
                 if (have_posts()) :
                     while (have_posts()) :

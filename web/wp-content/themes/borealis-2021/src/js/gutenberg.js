@@ -1,5 +1,6 @@
 // import customButtonIcons from './blocks/core-extends/button-icons';
 import customVideoPoster from './blocks/core-extends/video-embed-poster.jsx';
+import registerRichTextBlocks from "./blocks/copy/copy-blocks.jsx";
 
 // Meta
 import pageMetaBlock from "./blocks/meta/page-meta.jsx"
@@ -17,6 +18,9 @@ import imageBlock from "./blocks/image-block.jsx";
 // Accordion Blocks
 import accordionContainerBlock from "./blocks/accordion/accordion.jsx";
 import accordionRowBlock from "./blocks/accordion/accordion-row.jsx";
+
+// Block Quote
+import blockquoteBlock from './blocks/blockquote/blockquote.jsx';
 
 // Body Copy
 import bodyCopyBlock from "./blocks/body-copy.jsx";
@@ -40,6 +44,7 @@ import logoBlock from "./blocks/logos/logo.jsx";
 // Page Strips
 import pageStripBlock from "./blocks/page-strips/page-strip.jsx";
 import pageStripGraphic from "./blocks/page-strips/page-strip-graphic.jsx";
+import pageStripGraphicContainer from "./blocks/page-strips/page-strip-graphic-container.jsx";
 
 // Publications
 import publicationsContainerBlock from './blocks/publications/publications-container.jsx';
@@ -78,6 +83,7 @@ import tagCloudItemBlock from "./blocks/tag-cloud/tag-cloud-item-block.jsx";
 
 // Core Extends Blocks
 customVideoPoster();
+registerRichTextBlocks();
 
 // Init meta blocks
 pageMetaBlock();
@@ -94,10 +100,14 @@ imageTextBlock();
 pageStripBlock();
 imageBlock();
 pageStripGraphic();
+pageStripGraphicContainer();
 
 // Accordion Blocks
 accordionContainerBlock();
 accordionRowBlock();
+
+// Block Quote
+blockquoteBlock();
 
 // Body Copy
 bodyCopyBlock();

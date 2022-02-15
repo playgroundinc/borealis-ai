@@ -112,9 +112,13 @@ require get_template_directory() . '/inc/gutenberg/accordion/render-accordion-ro
 require get_template_directory() . '/inc/gutenberg/callouts/render-callout-container-block.php';
 require get_template_directory() . '/inc/gutenberg/callouts/render-callout-column-block.php';
 
+// Blockquote
+require get_template_directory() . '/inc/gutenberg/blockquote/render-blockquote-block.php';
+
 // Body Copy
 require get_template_directory() . '/inc/gutenberg/render-body-copy-block.php';
 require get_template_directory() . '/inc/gutenberg/render-body-copy-image-block.php';
+require get_template_directory() . '/inc/gutenberg/copy/render-copy-blocks.php';
 
 // Content Blocks
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-container.php';
@@ -130,6 +134,7 @@ require get_template_directory() . '/inc/gutenberg/logos/render-logo-block.php';
 
 // Page Strips
 require get_template_directory() . '/inc/gutenberg/render-page-strip-block.php';
+require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-container-block.php';
 require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-block.php';
 
 // Publications 
@@ -168,6 +173,7 @@ require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-
 // Tag Cloud Blocks
 require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-container-block.php';
 require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-item-block.php';
+
 
 // add hook for subnav
 add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
