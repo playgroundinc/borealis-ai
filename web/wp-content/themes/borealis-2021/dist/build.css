@@ -750,14 +750,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .current_page_item .submenu{
   display: block;
 }
-.h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
-  margin-top: 12px;
-}
-@media (min-width: 768px){
-  .h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
-    margin-top: 32px;
-  }
-}
 .sr-only{
   position: absolute;
   width: 1px;
