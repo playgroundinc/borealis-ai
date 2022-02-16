@@ -1221,6 +1221,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(34 39 49 / var(--tw-bg-opacity));
 }
+.bg-primary-electric-purple-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 55 215 / var(--tw-bg-opacity));
+}
 .bg-opacity-70{
   --tw-bg-opacity: 0.7;
 }
@@ -1278,10 +1282,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 20px;
   padding-right: 20px;
 }
-.py-20{
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
 .py-6{
   padding-top: 24px;
   padding-bottom: 24px;
@@ -1317,10 +1317,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-7{
   padding-top: 28px;
   padding-bottom: 28px;
-}
-.py-16{
-  padding-top: 64px;
-  padding-bottom: 64px;
 }
 .pt-13{
   padding-top: 52px;
@@ -1391,9 +1387,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-15{
   padding-top: 60px;
 }
-.pr-10{
-  padding-right: 40px;
-}
 .pb-6{
   padding-bottom: 24px;
 }
@@ -1402,6 +1395,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-4{
   padding-right: 16px;
+}
+.pr-10{
+  padding-right: 40px;
 }
 .pt-full{
   padding-top: 100%;
@@ -1453,15 +1449,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-3{
   padding-right: 12px;
-}
-.pb-20{
-  padding-bottom: 80px;
-}
-.pr-12{
-  padding-right: 48px;
-}
-.pr-20{
-  padding-right: 80px;
 }
 .text-center{
   text-align: center;
@@ -1762,6 +1749,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:mt-20{
     margin-top: 80px;
   }
+  .md\:mb-12{
+    margin-bottom: 48px;
+  }
   .md\:mt-15{
     margin-top: 60px;
   }
@@ -1773,9 +1763,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:mt-3{
     margin-top: 12px;
-  }
-  .md\:mb-12{
-    margin-bottom: 48px;
   }
   .md\:block{
     display: block;
@@ -1917,6 +1904,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:pl-0{
     padding-left: 0px;
   }
+  .md\:pr-20{
+    padding-right: 80px;
+  }
+  .md\:pt-16{
+    padding-top: 64px;
+  }
+  .md\:pb-20{
+    padding-bottom: 80px;
+  }
   .md\:pt-0{
     padding-top: 0px;
   }
@@ -1952,15 +1948,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:pb-4{
     padding-bottom: 16px;
-  }
-  .md\:pt-16{
-    padding-top: 64px;
-  }
-  .md\:pb-20{
-    padding-bottom: 80px;
-  }
-  .md\:pr-20{
-    padding-right: 80px;
   }
   .md\:text-center{
     text-align: center;
@@ -2020,9 +2007,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tb\:w-4\/12{
     width: 33.333333%;
   }
-  .tb\:w-8\/12{
-    width: 66.666667%;
-  }
   .tb\:w-2\/6{
     width: 33.333333%;
   }
@@ -2031,6 +2015,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .tb\:w-1\/4{
     width: 25%;
+  }
+  .tb\:w-8\/12{
+    width: 66.666667%;
   }
   .tb\:flex-row{
     flex-direction: row;

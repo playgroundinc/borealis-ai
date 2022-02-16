@@ -38,11 +38,12 @@ if (!function_exists('pg_render_statistics_container_block')) {
         $fields     = array(
             'title' => '',
             'description' => '',
+            'bgColour' => 'default'
         );
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <section class="bg-primary-navy-400 text-shade-white-400">
+        <section class="<?php echo $attributes->bgColour === 'purple' ? 'bg-primary-electric-purple-400' : 'bg-primary-navy-400'  ?> text-shade-white-400">
             <div class="container flex md:pt-16 md:pb-20 py-10 tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>
@@ -52,7 +53,7 @@ if (!function_exists('pg_render_statistics_container_block')) {
                         <h4 class="h4 mb-8"><?php echo esc_html($attributes->description) ?></h4>
                     <?php endif; ?>
                 </div>
-                <div class="w-full tb:w-7/12 flex md:flex-row flex-col">
+                <div class="w-full tb:w-8/12 flex md:flex-row flex-col">
                     <?php
                     foreach ($block['innerBlocks'] as $inner_block) {
                         echo wp_kses(render_block($inner_block), 'post');

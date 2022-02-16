@@ -1,5 +1,7 @@
 import { namespace } from "./helper-functions/constants";
 import CustomRichText from "./reusable/custom-richtext-component.jsx";
+import BlockSettings from "./reusable/block-custom-settings.jsx";
+
 
 export default function statisticsContainerBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
@@ -22,6 +24,10 @@ export default function statisticsContainerBlock() {
       type: "String",
       default: "",
     },
+    bgColour: {
+      type: "String",
+      default: "default",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -32,11 +38,16 @@ export default function statisticsContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title, description } = attributes;
+      const { title, description, bgColour } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
       }
+
+      const bgStyles = [
+        { label: "Default", value: "default" },
+        { label: "Purple", value: "purple" },
+      ];
 
       const innerBlockCount = useSelect(
         (select) =>
@@ -80,6 +91,21 @@ export default function statisticsContainerBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+           <BlockSettings
+            title="Block Settings"
+            controls={[
+              {
+                type: "select",
+                label: "Background Colour",
+                options: bgStyles,
+                reference: "bgColour",
+                value: bgColour,
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
           <InnerBlocks
             allowedBlocks={[`${namespace}/statistics`]}
             renderAppender={() => {
@@ -94,7 +120,7 @@ export default function statisticsContainerBlock() {
       ];
     },
     save: () => {
-      const { title, description } = attributes;
+      const { title, description, bgColour } = attributes;
       return <InnerBlocks.Content />;
     },
   });

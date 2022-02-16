@@ -4953,7 +4953,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -4980,6 +4982,10 @@ function statisticsContainerBlock() {
     description: {
       type: "String",
       default: ""
+    },
+    bgColour: {
+      type: "String",
+      default: "default"
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -4994,12 +5000,20 @@ function statisticsContainerBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var title = attributes.title,
-          description = attributes.description;
+          description = attributes.description,
+          bgColour = attributes.bgColour;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
+      var bgStyles = [{
+        label: "Default",
+        value: "default"
+      }, {
+        label: "Purple",
+        value: "purple"
+      }];
       var innerBlockCount = useSelect(function (select) {
         return select("core/block-editor").getBlock(props.clientId).innerBlocks;
       });
@@ -5030,6 +5044,18 @@ function statisticsContainerBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Background Colour",
+          options: bgStyles,
+          reference: "bgColour",
+          value: bgColour
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
       }), /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/statistics")],
         renderAppender: function renderAppender() {
@@ -5043,7 +5069,8 @@ function statisticsContainerBlock() {
     },
     save: function save() {
       var title = attributes.title,
-          description = attributes.description;
+          description = attributes.description,
+          bgColour = attributes.bgColour;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
