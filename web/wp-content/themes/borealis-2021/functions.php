@@ -175,6 +175,7 @@ require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-co
 require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-item-block.php';
 
 
+
 // add hook for subnav
 add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
 
