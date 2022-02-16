@@ -5,6 +5,7 @@ import registerRichTextBlocks from "./blocks/copy/copy-blocks.jsx";
 // Meta
 import pageMetaBlock from "./blocks/meta/page-meta.jsx"
 import researchBlogMetaBlock from "./blocks/meta/research-blogs-meta.jsx";
+import newsMetaBlock from "./blocks/meta/news-meta.jsx"
 import teamMemberMetaBlock from "./blocks/meta/team-member-meta.jsx";
 import authorMetaBlock from './blocks/meta/author-meta.jsx';
 import publicationMetaBlock from './blocks/meta/publications-meta.jsx';
@@ -88,6 +89,7 @@ registerRichTextBlocks();
 // Init meta blocks
 pageMetaBlock();
 researchBlogMetaBlock();
+newsMetaBlock();
 teamMemberMetaBlock();
 authorMetaBlock();
 publicationMetaBlock();

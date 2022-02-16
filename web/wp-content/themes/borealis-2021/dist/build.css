@@ -750,6 +750,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .current_page_item .submenu{
   display: block;
 }
+.h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
+  margin-top: 12px;
+}
+@media (min-width: 768px){
+  .h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
+    margin-top: 32px;
+  }
+}
+.custom-component + .load-more-results{
+  margin-top: 64px;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(101 104 146 / var(--tw-border-opacity));
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -850,9 +864,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-10{
   margin-right: 40px;
 }
-.mt-10{
-  margin-top: 40px;
-}
 .mt-19{
   margin-top: 76px;
 }
@@ -864,6 +875,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .ml-19{
   margin-left: 76px;
+}
+.mt-10{
+  margin-top: 40px;
 }
 .mb-11{
   margin-bottom: 44px;
@@ -892,6 +906,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-2{
   margin-right: 8px;
 }
+.mt-16{
+  margin-top: 64px;
+}
 .mt-25{
   margin-top: 100px;
 }
@@ -906,9 +923,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-18{
   margin-top: 72px;
-}
-.mt-16{
-  margin-top: 64px;
 }
 .ml-15{
   margin-left: 60px;
@@ -1157,6 +1171,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
+.border-shade-grey-700{
+  --tw-border-opacity: 1;
+  border-color: rgb(92 93 118 / var(--tw-border-opacity));
+}
 .border-shade-black-400{
   --tw-border-opacity: 1;
   border-color: rgb(34 39 49 / var(--tw-border-opacity));
@@ -1167,10 +1185,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-shade-transparent-400{
   border-color: transparent;
-}
-.border-b-shade-grey-700{
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(92 93 118 / var(--tw-border-opacity));
 }
 .border-l-shade-black-400{
   --tw-border-opacity: 1;
@@ -1336,29 +1350,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-42{
   padding-top: 168px;
 }
-.pt-16{
-  padding-top: 64px;
-}
 .pt-10{
   padding-top: 40px;
 }
 .pt-8{
   padding-top: 32px;
 }
-.pb-15{
-  padding-bottom: 60px;
+.pt-100{
+  padding-top: 400px;
 }
 .pt-14{
   padding-top: 56px;
-}
-.pt-100{
-  padding-top: 400px;
 }
 .pb-4{
   padding-bottom: 16px;
 }
 .pl-5{
   padding-left: 20px;
+}
+.pb-15{
+  padding-bottom: 60px;
 }
 .pl-4{
   padding-left: 16px;
@@ -1568,6 +1579,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
+}
+.first\:mt-0:first-child{
+  margin-top: 0px;
 }
 .last\:basis-auto:last-child{
   flex-basis: auto;

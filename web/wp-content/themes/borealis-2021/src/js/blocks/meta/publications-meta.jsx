@@ -51,7 +51,7 @@ export default function publicationMetaBlock() {
 			return ([
 				null,
 				<div className="custom-component">
-                    <p className="block-title">Research Blog Meta</p>
+                    <p className="block-title">Publications Meta</p>
                     <div className="page-settings__controls">
                         <div className="mt-xs-3">
                             <TextControl

@@ -40,6 +40,8 @@ export default function customRichTextBlock(blockObject) {
     }
     const stringAttrs = ['content'];
     const attributes = defaultAttrs(stringAttrs);
+    attributes['content']['source'] = 'html';
+    attributes['content']['selector'] = tagName;
     attributes['alignment'] = blockObject.alignment === false ? { type: 'Boolean', default: false } : { type: 'String', default: 'left' };
     attributes['custom_settings'] = {
         type: 'boolean',
@@ -78,7 +80,7 @@ export default function customRichTextBlock(blockObject) {
                     }
         
                     <RichText
-                        className={classes && classes.length ?  classes.join(' ') : null}
+                        className={classes ?  classes : null}
                         tagName={tagName}
                         placeholder={placeholder }
                         keepPlaceholderOnFocus={true}
@@ -94,7 +96,7 @@ export default function customRichTextBlock(blockObject) {
 		save: ({ attributes }) => {
             const { alignment, content, custom_settings } = attributes;
             return (
-                <RichText.Content tagName={tagName} value={ content } />
+                <RichText.Content tagName={tagName} className={classes} value={ content } />
             )
         },
     });
