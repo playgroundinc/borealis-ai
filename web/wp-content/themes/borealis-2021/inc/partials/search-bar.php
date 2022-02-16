@@ -4,7 +4,7 @@ if (!function_exists('pg_generate_search_bar')) {
     {
         ob_start();
 ?> 
-    <div class="border-b <?php echo $post_type ? esc_attr('border-b-shade-grey-700') : '' ?>">
+    <div class="border-b border-shade-grey-500">
         <div class="md:container md:flex">
             <div class="md:flex grow items-center">
                 <form class="search-form grow border-b md:border-b-0 border-shade-grey-500">
@@ -50,7 +50,7 @@ if (!function_exists('pg_generate_search_bar')) {
             </div>
         </div>
     </div>
-    <div id="search-filters" class="border-t border-shade-grey-500 bg-shade-grey-100 slide-toggle" role="region" aria-labelledby="search-topics">
+    <div id="search-filters" class="border-b border-shade-grey-700 bg-shade-grey-100 slide-toggle" role="region" aria-labelledby="search-topics">
         <div class="container">
             <div class="pt-12 pb-6">
                 <form method="post">
