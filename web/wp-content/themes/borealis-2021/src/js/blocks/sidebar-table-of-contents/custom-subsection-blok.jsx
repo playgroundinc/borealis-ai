@@ -10,7 +10,7 @@ export default function customSubsectionBlock() {
     } = wp.blockEditor;
 
     const blockSlug = "custom-subsection-block"; // slug for the block
-	const blockTitle = "Create custom subsection block";
+	const blockTitle = "Custom Subsection";
 	const blockDescription = "Component to create custom subsection block";
 	const blockCategory = "common";
     const blockIcon = "admin-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -47,7 +47,8 @@ export default function customSubsectionBlock() {
                                 label: 'Title',
                                 value: title,
                                 reference: "title", 
-                                tagName: "p",
+                                tagName: "h3",
+                                settings: ['core/bold', 'core/link', 'core/italic', 'core/code'],
                                 placeholder: "Please provide a title"
                             },
                         ]}
@@ -56,7 +57,7 @@ export default function customSubsectionBlock() {
                         <InnerBlocks.Content />
                     ) : (
                         <InnerBlocks
-                            allowedBlocks={['core/paragraph']}
+                            allowedBlocks={[`${namespace}/custom-subsection-block`, `core/paragraph`, `${namespace}/tag-cloud-container-block`, `${namespace}/paragraph`, `${namespace}/heading-two`, `${namespace}/heading-three`, `${namespace}/heading-four`, `${namespace}/custom-image`, `core/list`, `core/quote`]}
                         />
                     )}
                 </div>,

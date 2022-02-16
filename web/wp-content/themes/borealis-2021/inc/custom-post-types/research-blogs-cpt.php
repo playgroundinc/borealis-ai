@@ -87,7 +87,7 @@ if (!function_exists('pg_handle_research_blog_sidebar_save')) {
             foreach ($sections as $section_block) {
                 $info = array();
                 // Pulls the title off of the block attributes.
-                $info['title'] = $section_block['attrs']['title'];
+                $info['title'] = preg_replace("/\s+/u", " ", $section_block['attrs']['title']);
                 // Sets up an empty array for subsections.
                 $info['subsections'] = array();
                 // If the block has innerBlocks, check if any are subsections.
@@ -97,7 +97,7 @@ if (!function_exists('pg_handle_research_blog_sidebar_save')) {
                     // If we have any subsections, add their titles to the array.
                     if (!empty($subsections)) {
                         foreach ( $subsections as $inner_block) {
-                            array_push($info['subsections'], $inner_block['attrs']['title']);
+                            array_push($info['subsections'], preg_replace("/\s+/u", " ", $inner_block['attrs']['title']));
                         }
                     }
                     

@@ -38,22 +38,16 @@ if ( ! function_exists( 'pg_render_custom_section_block' ) ) {
             'title' => '',
         );
         $attributes = pg_get_attributes( $attrs, $fields );
+        $attributes->title = sanitize_text_field(preg_replace("/\s+/u", " ", $attributes->title));
         ob_start();
         ?>
-            <section class="pt-10" id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="custom-component">
-                <div class="container container-fluid animated-element">
-                    <div class="page-strip flex middle-xs center-xs ph-md-5 ph-lg-3 pv-md-12 pv-xs-7 ph-xs-3 br-xs-lg">
-                        <div class="fc-md-100 fc-lg-70 fc-xl-50 ph-md-5 ph-lg-0 copy--center">
-                            <?php if (!empty($attributes->title)): ?>
-                                <h2 class="heading_two heading-one-lg mb-xs-0 text-2xl"><?php echo esc_html($attributes->title) ?></h2>
-                            <?php endif; ?>
-                            <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
-                                <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-
-                </div>
+            <section class="pt-10" id="<?php echo esc_attr(pg_slugify($attributes->title)) ?>" aria-labelledby="<?php echo esc_attr(pg_slugify($attributes->title . '-title')) ?>" class="custom-component">    
+                <?php if (!empty($attributes->title)): ?>
+                    <h2 id=<?php echo esc_attr(pg_slugify($attributes->title . '-title')) ?> class="h2"><?php echo wp_kses($attributes->title, $allowed_html) ?></h2>
+                <?php endif; ?>
+                <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
+                    <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
+                <?php endforeach; ?>
             </section>
         <?php
         return ob_get_clean();

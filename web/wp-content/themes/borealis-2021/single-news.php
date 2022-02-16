@@ -64,19 +64,6 @@ $url = get_permalink($post->ID);
                     </li>
                 </ul>
             </div>
-        <div class="page__content w-5/6">
-            <div class="mx-auto w-5/6">
-                <?php
-                if (have_posts()) :
-                    while (have_posts()) :
-                        the_post();
-                ?>
-                <?php
-                        the_content();
-                    endwhile;
-                endif;
-                ?>
-            </div>
         </div>
     </div>
 </main>
