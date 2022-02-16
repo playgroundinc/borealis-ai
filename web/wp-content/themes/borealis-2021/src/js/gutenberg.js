@@ -1,5 +1,6 @@
 // import customButtonIcons from './blocks/core-extends/button-icons';
 import customVideoPoster from './blocks/core-extends/video-embed-poster.jsx';
+import registerRichTextBlocks from "./blocks/copy/copy-blocks.jsx";
 
 // Meta
 import pageMetaBlock from "./blocks/meta/page-meta.jsx"
@@ -17,6 +18,9 @@ import imageBlock from "./blocks/image-block.jsx";
 // Accordion Blocks
 import accordionContainerBlock from "./blocks/accordion/accordion.jsx";
 import accordionRowBlock from "./blocks/accordion/accordion-row.jsx";
+
+// Block Quote
+import blockquoteBlock from './blocks/blockquote/blockquote.jsx';
 
 // Body Copy
 import bodyCopyBlock from "./blocks/body-copy.jsx";
@@ -40,14 +44,19 @@ import logoBlock from "./blocks/logos/logo.jsx";
 // Page Strips
 import pageStripBlock from "./blocks/page-strips/page-strip.jsx";
 import pageStripGraphic from "./blocks/page-strips/page-strip-graphic.jsx";
+import pageStripGraphicContainer from "./blocks/page-strips/page-strip-graphic-container.jsx";
 
 // Publications
 import publicationsContainerBlock from './blocks/publications/publications-container.jsx';
 import selectPostsBlocks from './blocks/publications/select-posts-blocks.jsx';
+import bibtexBlock from './blocks/publications/bibtex-block.jsx';
+
+// Posts
+import featuredPostsContainerBlock from './blocks/posts/featured-posts-container.jsx';
 
 // Slider Blocks
 import sliderBlock from "./blocks/slider/slider-container.jsx";
-import imageSlideBlock from "./blocks/slider/image-slide.jsx";
+import newsSlideBlock from './blocks/slider/news-slide.jsx';
 
 // Stat Blocks
 import stateContainerBlock from "./blocks/stats/stats-container.jsx";
@@ -60,6 +69,10 @@ import jobBlock from "./blocks/greenhouse/jobs-block.jsx";
 import customSectionBlock from './blocks/sidebar-table-of-contents/custom-section-blok.jsx';
 import customSubsectionBlock from './blocks/sidebar-table-of-contents/custom-subsection-blok.jsx';
 
+// Icon List Contents Blocks
+import iconListContainerBlock from './blocks/icon-list/icon-list-container-block.jsx';
+import iconListItemBlock from './blocks/icon-list/icon-list-item-block.jsx';
+
 // Tabbed Content Blocks
 import tabbedContentContainerBlock from "./blocks/tabbed-content/tabbed-content-container.jsx";
 import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-panel.jsx";
@@ -70,6 +83,7 @@ import tagCloudItemBlock from "./blocks/tag-cloud/tag-cloud-item-block.jsx";
 
 // Core Extends Blocks
 customVideoPoster();
+registerRichTextBlocks();
 
 // Init meta blocks
 pageMetaBlock();
@@ -86,10 +100,14 @@ imageTextBlock();
 pageStripBlock();
 imageBlock();
 pageStripGraphic();
+pageStripGraphicContainer();
 
 // Accordion Blocks
 accordionContainerBlock();
 accordionRowBlock();
+
+// Block Quote
+blockquoteBlock();
 
 // Body Copy
 bodyCopyBlock();
@@ -113,10 +131,15 @@ logoBlock();
 // Publications
 publicationsContainerBlock();
 selectPostsBlocks();
+bibtexBlock();
+
+// Posts
+featuredPostsContainerBlock();
 
 // Slide Blocks
 sliderBlock();
-imageSlideBlock();
+newsSlideBlock();
+
 
 // Stat Blocks
 stateContainerBlock();
@@ -128,6 +151,10 @@ jobBlock();
 // Sidebar Table Of Contents Blocks
 customSectionBlock();
 customSubsectionBlock();
+
+// Icon List Blocks
+iconListContainerBlock();
+iconListItemBlock();
 
 // Tabbed Content Blocks
 tabbedContentContainerBlock();

@@ -5,52 +5,10 @@
  * navigation support for dropdown menus.
  */
 
-import DropdownMenu from "./classes/dropdown-menu";
 import MenuToggle from "./classes/menu-toggle";
 import NavScroll from "./classes/class-nav-scroll";
 
 export default function navigation() {
-
-    const getMenus = () => {
-        const menus = [...document.querySelectorAll('.dropdown-menu')];
-        return menus;
-    };
-    
-    const getParents = (menu) => {
-        const parentItems = [...menu.querySelectorAll('.menu-item-has-children')];
-        return parentItems;
-    };
-
-    const getNav = () => {
-        const nav = document.querySelector('.header');
-        if (nav) {
-            return nav;
-        }
-        return false;
-    }
-
-    const getAlertBar = () => {
-        const alertBar = document.querySelector('.alert-bar');
-        if (alertBar) {
-            return alertBar;
-        }
-        return false;
-    }
-
-    const getHero = () => {
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            return hero;
-        }
-        return false;
-    }
-
-    const addDropdowns = (parents) => {
-        parents.forEach((item) => {
-            const Menu = new DropdownMenu(item);
-            Menu.addDropdowns();
-        });
-    }  
 
     const addToggle = () => {
         const button = document.querySelector('.menu-toggle');
@@ -61,8 +19,6 @@ export default function navigation() {
 
     const addNavHandlers = () => {
         const nav = getNav();
-        const hero = getHero();
-        const alertBar = getAlertBar();
         if (hero && nav) {
             const NavScrollClass = new NavScroll(nav, hero, alertBar);
             NavScrollClass.handleChildren();
@@ -84,9 +40,9 @@ export default function navigation() {
     }
 
     const init = () => {
-        addMenuHandlers();
+        // addMenuHandlers();
         addToggle();
-        addNavHandlers();
+        // addNavHandlers();
     }
 
     init();

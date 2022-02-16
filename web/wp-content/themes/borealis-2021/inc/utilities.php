@@ -390,7 +390,7 @@ if (!function_exists('pg_get_query_values')) {
 }
 
 
-function pg_generate_query($post_type, $query, $taxonomies, $page = 1, $posts_per_page = 12) {
+function pg_generate_query($post_type, $query, $taxonomies, $page = 1, $posts_per_page = 12, $current_post_id = null) {
     $offset = intval($page - 1) * $posts_per_page;
     $args = array(
         'post_type' => $post_type,
@@ -403,6 +403,9 @@ function pg_generate_query($post_type, $query, $taxonomies, $page = 1, $posts_pe
     );
     if ($query) {
         $args['s'] = $query;
+    }
+    if($current_post_id !== null) {
+        $args['post__not_in'] = array($current_post_id);
     }
     if (!empty($taxonomies)) {
         $args['tax_query'] = array(
@@ -420,4 +423,35 @@ function pg_generate_query($post_type, $query, $taxonomies, $page = 1, $posts_pe
         }
     }
     return $args;
+}
+
+if (!function_exists('pg_get_content_type')) {
+    function pg_get_content_type($content_types, $post_type) {
+        if (!empty($content_types)) {
+            return $content_types[0]->name;
+        }
+        switch($post_type) {
+            case 'research-blogs':
+                return 'Research';
+            case 'news':
+                return 'News';
+            default:
+                return 'Publication';
+        }
+    }
+}
+
+if (!function_exists('pg_check_for_submenu')) {
+    function pg_check_for_submenu($theme_location, $post_id) {
+        $theme_locations = get_nav_menu_locations();
+        $menu_obj = get_term( $theme_locations[$theme_location], 'nav_menu' );
+        $menu_items = wp_get_nav_menu_items($menu_obj->slug);
+        $active_item = array_filter($menu_items, function($item) use ($post_id) { return intval($item->object_id) === $post_id && intval($item->menu_item_parent) === 0;});
+        if (!empty($active_item)) {
+            $active_menu_item = reset($active_item);
+            $children = array_filter($menu_items, function($item) use ($active_menu_item) { return intval($item->menu_item_parent) === intval($active_menu_item->ID); });
+            return !empty($children);
+        }
+        return false;
+    }
 }

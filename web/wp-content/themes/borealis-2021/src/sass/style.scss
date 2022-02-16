@@ -15,4 +15,12 @@
     .text-link {
         @apply text-primary-electric-blue-400 visited:text-primary-electric-purple-400 block hover:underline;
     }
+    .current_page_item .submenu {
+        @apply block;
+    }
+    .h2 + .paragraph-blog,
+    .h3 + .paragraph-blog,
+    .h4 + .paragraph-blog {
+        @apply mt-3 md:mt-8;
+    }
 }

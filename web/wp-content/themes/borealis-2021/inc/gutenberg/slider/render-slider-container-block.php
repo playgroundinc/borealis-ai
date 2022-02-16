@@ -36,6 +36,7 @@ if ( ! function_exists( 'pg_render_slider_container_block' ) ) {
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
             'title'        => '',
+            'link' => '',
         );
         $attributes = pg_get_attributes( $attrs, $fields );
         $allowed_html = pg_allowed_html();
@@ -43,26 +44,48 @@ if ( ! function_exists( 'pg_render_slider_container_block' ) ) {
         ob_start();
             if (!empty($block['innerBlocks'])):
             ?>
-                <div>
-                    <?php if (!empty($attributes->title)): ?>
-                        <h2><?php echo esc_html($attributes->title) ?></h2>
-                    <?php endif; ?>
-                    <div 
-                        id="<?php echo esc_attr($id); ?>"
-                        class="slider" 
-                        aria-roledescription="carousel"
-                        <?php echo !empty($attributes->title) ? esc_html('aria-label="' .$attributes->title .'"') : null ?>
-                    >
-                            <div class="slider-block" aria-live="polite">
-                                <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
-                                    <?php if ($inner_block['blockName'] === 'core/video'): ?>
-                                        <div class="slide" data-caption="<?php echo !empty($inner_block['attrs']['caption']) ? esc_attr($inner_block['attrs']['caption']) : null ?>">
-                                            <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
-                                        </div>
-                                    <?php else: ?>
-                                        <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
+                <div class="container">
+                    <div class="md:flex slider">
+                        <div class="md:w-4/12 md:pr-4 flex flex-col">
+                            <div class="flex flex-col grow justify-between">
+                                <div>
+                                    <?php if (!empty($attributes->title)): ?>
+                                        <h2 class="h3"><?php echo esc_html($attributes->title) ?></h2>
                                     <?php endif; ?>
-                                <?php endforeach; ?>
+                                    <?php if (!empty($attributes->link)): // Start of Link check ?>
+                                        <a href="<?php echo esc_attr($attributes->link) ?>" class="text-link py-2">View All</a>
+                                    <?php endif; // End of Link check ?>
+                                </div>
+                                <div class="slider-block__controls py-14 md:py-0">
+                                    <div class="flex">
+                                        <div class="">
+                                            <?php $prev_icon = pg_render_icon('arrow-left')?>
+                                            <button class="slider-block__button pr-2 slider-block__prev icon--lg disabled:text-shade-grey-400" disabled="true" aria-label="<?php esc_attr_e('Previous slide', 'trmc') ?>" aria-controls="<?php echo esc_attr($id)?>"><?php echo wp_kses($prev_icon, $allowed_html); ?></button>
+                                            <?php $next_icon = pg_render_icon('arrow')?>
+                                            <button class="slider-block__button pl-2 slider-block__next icon--lg disabled:text-shade-grey-400" aria-label="<?php esc_attr_e('Next slide', 'trmc') ?>" aria-controls="<?php echo esc_attr($id)?>"><?php echo wp_kses($next_icon, $allowed_html); ?></button>
+                                        </div>    
+                                        <div class="ml-15 slider-block__count middle-xs flex">
+                                            <p class="h4 text-shade-grey-500">
+                                                <span class="slider-block__count__current">1</span>
+                                                <?php echo esc_html('/'); ?>
+                                                <span class="slider-block__count__total"></span>
+                                            </p>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div 
+                            id="<?php echo esc_attr($id); ?>"
+                            class="relative w-full pt-72 overflow-hidden border-r border-color-shade-grey-500" 
+                            aria-roledescription="carousel"
+                            <?php echo !empty($attributes->title) ? esc_html('aria-label="' .$attributes->title .'"') : null ?>
+                        >
+                                <ul class="slider-block flex absolute inset-0 transition-slider duration-500" aria-live="polite">
+                                    <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
+                                        <?php echo pg_render_news_slide($inner_block) ?>
+                                    <?php endforeach; ?>
+                                </ul>
                             </div>
                         </div>
                     </div>

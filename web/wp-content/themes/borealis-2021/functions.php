@@ -64,13 +64,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Custom Images
- */
-require get_template_directory() . '/inc/custom-images/custom-images.php';
-require get_template_directory() . '/inc/custom-images/mobile-image-sizes.php';
-require get_template_directory() . '/inc/custom-images/register-image-sizes.php';
-
-/**
  * Actions
  */
 require get_template_directory() . '/inc/actions/load-more.php';
@@ -87,16 +80,21 @@ require get_template_directory() . '/inc/gutenberg/render-icon-btn.php';
 // Partials
 require get_template_directory() . '/inc/partials/search-bar.php';
 require get_template_directory() . '/inc/partials/search-bar-main.php';
+require get_template_directory() . '/inc/partials/search-bar-main-result.php';
+
 
 // Partials - Blogs
 require get_template_directory() . '/inc/partials/blog/blog-sidebar.php';
 require get_template_directory() . '/inc/partials/blog/blog-header.php';
 require get_template_directory() . '/inc/partials/blog/blog-cite.php';
 require get_template_directory() . '/inc/partials/blog/blog-share.php';
-
+require get_template_directory() . '/inc/partials/blog/blog-result.php';
 
 // Partials - Publications
 require get_template_directory() . '/inc/partials/publications/publication-result.php';
+require get_template_directory() . '/inc/partials/publications/publication-header.php';
+require get_template_directory() . '/inc/partials/publications/publication-sidebar.php';
+require get_template_directory() . '/inc/partials/publications/publication-related.php';
 
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';
@@ -114,9 +112,13 @@ require get_template_directory() . '/inc/gutenberg/accordion/render-accordion-ro
 require get_template_directory() . '/inc/gutenberg/callouts/render-callout-container-block.php';
 require get_template_directory() . '/inc/gutenberg/callouts/render-callout-column-block.php';
 
+// Blockquote
+require get_template_directory() . '/inc/gutenberg/blockquote/render-blockquote-block.php';
+
 // Body Copy
 require get_template_directory() . '/inc/gutenberg/render-body-copy-block.php';
 require get_template_directory() . '/inc/gutenberg/render-body-copy-image-block.php';
+require get_template_directory() . '/inc/gutenberg/copy/render-copy-blocks.php';
 
 // Content Blocks
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-container.php';
@@ -132,14 +134,21 @@ require get_template_directory() . '/inc/gutenberg/logos/render-logo-block.php';
 
 // Page Strips
 require get_template_directory() . '/inc/gutenberg/render-page-strip-block.php';
+require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-container-block.php';
 require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-block.php';
 
 // Publications 
 require get_template_directory() . '/inc/gutenberg/publications/render-publications-container.php';
 require get_template_directory() . '/inc/gutenberg/publications/render-publications-item.php';
+require get_template_directory() . '/inc/gutenberg/publications/render-bibtex.php';
+
+// Posts 
+require get_template_directory() . '/inc/gutenberg/posts/render-featured-post.php';
+require get_template_directory() . '/inc/gutenberg/posts/render-featured-posts-block.php';
 
 // Slider Blocks
 require get_template_directory() . '/inc/gutenberg/slider/render-slider-container-block.php';
+require get_template_directory() . '/inc/gutenberg/slider/render-news-slide.php';
 require get_template_directory() . '/inc/gutenberg/slider/render-image-slide-block.php';
 
 // Stat Blocks
@@ -153,6 +162,10 @@ require get_template_directory() . '/inc/gutenberg/greenhouse/render-jobs-block.
 require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-section-block.php';
 require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-subsection-block.php';
 
+// Icon List Blocks
+require get_template_directory() . '/inc/gutenberg/icon-list/render-icon-list-container-block.php';
+require get_template_directory() . '/inc/gutenberg/icon-list/render-icon-list-item-block.php';
+
 // Tabbed Content Blocks
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-container-block.php';
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-panel-block.php';
@@ -160,6 +173,7 @@ require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-
 // Tag Cloud Blocks
 require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-container-block.php';
 require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-item-block.php';
+
 
 // add hook for subnav
 add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );

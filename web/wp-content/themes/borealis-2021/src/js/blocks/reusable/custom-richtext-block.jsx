@@ -21,7 +21,7 @@ export default function customRichTextBlock(blockObject) {
         tagName,
         placeholder,
     } = blockObject;
-    const settings = blockObject.settings && Array.isArray(blockObject.settings) ? blockObject.settings : [];
+    const settings = blockObject.settings && Array.isArray(blockObject.settings) ? blockObject.settings : ['core/italic', 'core/bold', 'core/link'];
     const parent = blockObject.parent && Array.isArray(blockObject.parent) ? blockObject.parent : null; 
     const blockSettings = blockObject.blockSettings ? true : false; 
     let transforms = {};
@@ -63,7 +63,8 @@ export default function customRichTextBlock(blockObject) {
         }
 
 			return [
-                <div class={alignment ? `text-${alignment}` : null }>
+                <div class={alignment ? `text-${alignment} custom-component` : 'custom-component' }>
+                    <p className="block-title">{title}</p>
                     {
                         alignment ?          
                         <BlockControls>
