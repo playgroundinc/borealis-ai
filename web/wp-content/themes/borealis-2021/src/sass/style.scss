@@ -18,4 +18,9 @@
     .current_page_item .submenu {
         @apply block;
     }
+    .h2 + .paragraph-blog,
+    .h3 + .paragraph-blog,
+    .h4 + .paragraph-blog {
+        @apply mt-3 md:mt-8;
+    }
 }

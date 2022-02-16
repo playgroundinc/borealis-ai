@@ -64,13 +64,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Custom Images
- */
-require get_template_directory() . '/inc/custom-images/custom-images.php';
-require get_template_directory() . '/inc/custom-images/mobile-image-sizes.php';
-require get_template_directory() . '/inc/custom-images/register-image-sizes.php';
-
-/**
  * Actions
  */
 require get_template_directory() . '/inc/actions/load-more.php';
@@ -119,9 +112,13 @@ require get_template_directory() . '/inc/gutenberg/accordion/render-accordion-ro
 require get_template_directory() . '/inc/gutenberg/callouts/render-callout-container-block.php';
 require get_template_directory() . '/inc/gutenberg/callouts/render-callout-column-block.php';
 
+// Blockquote
+require get_template_directory() . '/inc/gutenberg/blockquote/render-blockquote-block.php';
+
 // Body Copy
 require get_template_directory() . '/inc/gutenberg/render-body-copy-block.php';
 require get_template_directory() . '/inc/gutenberg/render-body-copy-image-block.php';
+require get_template_directory() . '/inc/gutenberg/copy/render-copy-blocks.php';
 
 // Content Blocks
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-container.php';

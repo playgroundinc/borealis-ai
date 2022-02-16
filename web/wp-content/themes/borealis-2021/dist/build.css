@@ -471,6 +471,25 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 14px;
   }
 }
+.paragraph-blog{
+  font-size: 18px;
+  font-family: Martel, serif;
+  line-height: 2.2;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .paragraph-blog{
+    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .paragraph-blog{
+    font-size: 18px;
+  }
+}
 .hyperlink{
   font-size: 14px;
   font-family: Inter, sans-serif;
@@ -731,6 +750,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .current_page_item .submenu{
   display: block;
 }
+.h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
+  margin-top: 12px;
+}
+@media (min-width: 768px){
+  .h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
+    margin-top: 32px;
+  }
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -855,6 +882,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-7{
   margin-left: 28px;
 }
+.mt-8{
+  margin-top: 32px;
+}
 .mb-18{
   margin-bottom: 72px;
 }
@@ -864,9 +894,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-3{
   margin-top: 12px;
 }
-.mt-8{
-  margin-top: 32px;
-}
 .mr-7{
   margin-right: 28px;
 }
@@ -875,6 +902,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mr-2{
   margin-right: 8px;
+}
+.mt-25{
+  margin-top: 100px;
+}
+.mt-11{
+  margin-top: 44px;
+}
+.mt-9{
+  margin-top: 36px;
 }
 .mb-12{
   margin-bottom: 48px;
@@ -944,9 +980,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-3\/4{
   width: 75%;
 }
-.w-1\/6{
-  width: 16.666667%;
-}
 .w-5\/6{
   width: 83.333333%;
 }
@@ -959,11 +992,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-6\/12{
   width: 50%;
 }
+.w-auto{
+  width: auto;
+}
 .w-11\/12{
   width: 91.666667%;
 }
 .w-4{
   width: 16px;
+}
+.w-2\/3{
+  width: 66.666667%;
+}
+.w-23{
+  width: 92px;
 }
 .w-4\/12{
   width: 33.333333%;
@@ -982,6 +1024,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-22{
   width: 88px;
+}
+.max-w-\[200px\]{
+  max-width: 200px;
 }
 .shrink-0{
   flex-shrink: 0;
@@ -1247,6 +1292,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 32px;
   padding-bottom: 32px;
 }
+.px-8{
+  padding-left: 32px;
+  padding-right: 32px;
+}
 .py-23{
   padding-top: 92px;
   padding-bottom: 92px;
@@ -1349,8 +1398,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pr-4{
   padding-right: 16px;
 }
+.pr-10{
+  padding-right: 40px;
+}
+.pt-full{
+  padding-top: 100%;
+}
 .pr-8{
   padding-right: 32px;
+}
+.pt-23{
+  padding-top: 92px;
 }
 .pt-6{
   padding-top: 24px;
@@ -1360,9 +1418,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-featured-image-sm{
   padding-top: 268px;
-}
-.pr-10{
-  padding-right: 40px;
 }
 .pb-13{
   padding-bottom: 52px;
@@ -1630,6 +1685,25 @@ Ensure the default browser behavior of the `hidden` attribute.
       font-size: 70px;
     }
   }
+  .md\:paragraph-lg{
+    font-size: 27px;
+    font-family: Inter, sans-serif;
+    line-height: 1.80;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: 300;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:paragraph-lg{
+      font-size: calc(27px + ((27 - 27) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:paragraph-lg{
+      font-size: 27px;
+    }
+  }
   .md\:hyperlink{
     font-size: 14px;
     font-family: Inter, sans-serif;
@@ -1664,6 +1738,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:m-0{
     margin: 0px;
   }
+  .md\:mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+  }
   .md\:mt-0{
     margin-top: 0px;
   }
@@ -1675,6 +1753,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:mb-5{
     margin-bottom: 20px;
+  }
+  .md\:mt-15{
+    margin-top: 60px;
+  }
+  .md\:mt-13{
+    margin-top: 52px;
+  }
+  .md\:mt-10{
+    margin-top: 40px;
   }
   .md\:mt-3{
     margin-top: 12px;
@@ -1715,6 +1802,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:w-6\/12{
     width: 50%;
   }
+  .md\:w-1\/4{
+    width: 25%;
+  }
+  .md\:w-3\/4{
+    width: 75%;
+  }
   .md\:w-5\/12{
     width: 41.666667%;
   }
@@ -1747,6 +1840,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:justify-end{
     justify-content: flex-end;
+  }
+  .md\:justify-between{
+    justify-content: space-between;
   }
   .md\:overflow-auto{
     overflow: auto;
@@ -1783,6 +1879,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-top: 0px;
     padding-bottom: 0px;
   }
+  .md\:py-10{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .md\:px-15{
+    padding-left: 60px;
+    padding-right: 60px;
+  }
   .md\:py-5{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -1804,6 +1908,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:pt-0{
     padding-top: 0px;
+  }
+  .md\:pt-11{
+    padding-top: 44px;
   }
   .md\:pt-featured-image-md{
     padding-top: 450px;
@@ -1834,6 +1941,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:pb-4{
     padding-bottom: 16px;
+  }
+  .md\:text-center{
+    text-align: center;
   }
   .md\:text-right{
     text-align: right;
@@ -1925,6 +2035,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 1440px){
+  .lg\:flex{
+    display: flex;
+  }
+  .lg\:w-1\/6{
+    width: 16.666667%;
+  }
+  .lg\:w-5\/6{
+    width: 83.333333%;
+  }
   .lg\:w-6\/12{
     width: 50%;
   }

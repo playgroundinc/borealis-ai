@@ -76,6 +76,81 @@ function accordion() {
 
 /***/ }),
 
+/***/ "./src/js/scripts/animate.js":
+/*!***********************************!*\
+  !*** ./src/js/scripts/animate.js ***!
+  \***********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ animate; }
+/* harmony export */ });
+/* harmony import */ var _classes_class_lazy_images__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/class-lazy-images */ "./src/js/scripts/classes/class-lazy-images.js");
+
+function animate() {
+  /* All animated elements must have the class animated-element
+  *
+  * @data-animate {string} fade-in | slide-in | spin-in -- values of animations present in _animate.scss
+  * @data-animate-delay {num} sets the delay in seconds
+  * @data-animate-duration {num} sets the duration of the animation in seconds
+  *
+  */
+  let animatedElements = [...document.querySelectorAll('.animated-element')];
+  const bodyCopyChildren = [...document.querySelectorAll('.body-copy > *')];
+
+  if (bodyCopyChildren.length) {
+    animatedElements = animatedElements.concat(bodyCopyChildren);
+  } // First check if it exists so we don't error out in IE
+
+
+  if (typeof IntersectionObserver !== "undefined") {
+    let observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        // every animated element needs to start transparent
+        const LazyImageLoad = new _classes_class_lazy_images__WEBPACK_IMPORTED_MODULE_0__["default"](entry.target);
+
+        if (entry.intersectionRatio > 0) {
+          // when on screen
+          LazyImageLoad.loadImages();
+
+          if (entry.target.offsetHeight >= window.innerHeight) {
+            entry.target.style.opacity = '1';
+            entry.target.style.top = '0px';
+          } else if (entry.intersectionRect.bottom >= window.innerHeight && entry.intersectionRect.height < entry.target.offsetHeight / 2) {
+            entry.target.style.opacity = `${entry.intersectionRatio}`;
+            entry.target.style.top = `${30 - 30 * Number(entry.intersectionRatio)}px`;
+          } else {
+            entry.target.style.opacity = '1';
+            entry.target.style.top = '0px';
+          }
+        } else {
+          //when off screen
+          entry.target.style.opacity = "0";
+        }
+      });
+    }, {
+      rootMargin: '0px',
+      threshold: [0, 0.25, 0.5, 0.75, 1]
+    }); // Only run observer when window has loaded : images etc
+
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+  } else {
+    // We have JS but not the intersection observer, turn opacity for all data-animate elements back to 1
+    animatedElements.forEach(item => {
+      item.style.opacity = '1';
+      item.style.top = '0';
+      const LazyImageLoad = new _classes_class_lazy_images__WEBPACK_IMPORTED_MODULE_0__["default"](item);
+      LazyImageLoad.loadImages();
+    });
+  }
+}
+
+/***/ }),
+
 /***/ "./src/js/scripts/checkbox-searchform.js":
 /*!***********************************************!*\
   !*** ./src/js/scripts/checkbox-searchform.js ***!
@@ -347,6 +422,103 @@ class Accordion {
     this.trigger.addEventListener('click', this.handleTriggerClick);
     this.trigger.addEventListener('keydown', this.handleArrowControls);
     window.addEventListener('resize', this.handleWindowResize);
+  }
+
+}
+
+/***/ }),
+
+/***/ "./src/js/scripts/classes/class-lazy-images.js":
+/*!*****************************************************!*\
+  !*** ./src/js/scripts/classes/class-lazy-images.js ***!
+  \*****************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ LazyImages; }
+/* harmony export */ });
+class LazyImages {
+  constructor(element) {
+    this.element = element;
+    this.imgs = [];
+    this.pictures = [];
+    this.handleImageLoad = this.handleImageLoad.bind(this);
+  }
+
+  setState(name, value) {
+    this[name] = value;
+  }
+
+  getPictures() {
+    const pictures = [...this.element.querySelectorAll('[data-srcset]')];
+    this.setState('pictures', pictures);
+  }
+
+  getImages() {
+    const imgs = [...this.element.querySelectorAll('[data-src]')];
+    this.setState('imgs', imgs);
+  }
+
+  loadPicture(picture) {
+    const {
+      srcset
+    } = picture.dataset;
+
+    if (srcset) {
+      picture.setAttribute('srcset', srcset);
+    }
+
+    picture.removeAttribute('data-srcset');
+    picture.parentElement.classList.add('img-loaded');
+  }
+
+  handleImageLoad(e) {
+    e.target.classList.add('img-loaded');
+    e.target.removeAttribute('data-src');
+  }
+
+  loadImage(img) {
+    const {
+      src
+    } = img.dataset;
+
+    if (src && img.tagName !== 'DIV') {
+      img.setAttribute('src', src);
+      img.addEventListener('load', this.handleImageLoad);
+      return;
+    }
+  }
+
+  handleImages() {
+    this.getImages();
+
+    if (this.imgs.length && !this.element.classList.contains('img-loaded')) {
+      this.imgs.forEach(img => {
+        this.loadImage(img);
+      });
+    }
+  }
+
+  handlePictures() {
+    this.getPictures();
+
+    if (this.pictures.length) {
+      this.pictures.forEach(picture => {
+        this.loadPicture(picture);
+      });
+    }
+  }
+
+  loadImages() {
+    if (this.hero) {
+      this.loadHero();
+      return;
+    }
+
+    this.handleImages();
+    this.handlePictures();
   }
 
 }
@@ -11109,22 +11281,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/style.scss */ "./src/sass/style.scss");
 /* harmony import */ var _scripts_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/search */ "./src/js/scripts/search.js");
 /* harmony import */ var _scripts_load_more__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/load-more */ "./src/js/scripts/load-more.js");
-/* harmony import */ var _scripts_navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/navigation */ "./src/js/scripts/navigation.js");
-/* harmony import */ var _scripts_accordion__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scripts/accordion */ "./src/js/scripts/accordion.js");
+/* harmony import */ var _scripts_animate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/animate */ "./src/js/scripts/animate.js");
+/* harmony import */ var _scripts_navigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scripts/navigation */ "./src/js/scripts/navigation.js");
+/* harmony import */ var _scripts_accordion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scripts/accordion */ "./src/js/scripts/accordion.js");
 // require('./scripts/polyfills/closest-polyfill');
 
 
- // import animate from './scripts/animate';
-// import fixSkipLinkFocus from './scripts/skip-link-focus-fix';
+
+ // import fixSkipLinkFocus from './scripts/skip-link-focus-fix';
 
 
  // import videoBlocks from './scripts/video-block';
 // // Import JS Modules here
-// animate();
-// fixSkipLinkFocus();
 
-(0,_scripts_navigation__WEBPACK_IMPORTED_MODULE_3__["default"])();
-(0,_scripts_accordion__WEBPACK_IMPORTED_MODULE_4__["default"])();
+(0,_scripts_animate__WEBPACK_IMPORTED_MODULE_3__["default"])(); // fixSkipLinkFocus();
+
+(0,_scripts_navigation__WEBPACK_IMPORTED_MODULE_4__["default"])();
+(0,_scripts_accordion__WEBPACK_IMPORTED_MODULE_5__["default"])();
 (0,_scripts_load_more__WEBPACK_IMPORTED_MODULE_2__["default"])(); // videoBlocks();
 // heroVideo();
 
