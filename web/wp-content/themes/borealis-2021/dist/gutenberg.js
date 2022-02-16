@@ -4062,7 +4062,7 @@ function customRichTextBlock(blockObject) {
       icon = blockObject.icon,
       tagName = blockObject.tagName,
       placeholder = blockObject.placeholder;
-  var settings = blockObject.settings && Array.isArray(blockObject.settings) ? blockObject.settings : ['core/italic', 'core/bold', 'core/link'];
+  var settings = blockObject.settings && Array.isArray(blockObject.settings) ? blockObject.settings : ['core/italic', 'core/bold', 'core/link', 'core/code'];
   var parent = blockObject.parent && Array.isArray(blockObject.parent) ? blockObject.parent : null;
   var blockSettings = blockObject.blockSettings ? true : false;
   var transforms = {};
@@ -4603,7 +4603,7 @@ function customSectionBlock() {
       i18n = _wp.i18n;
   var blockSlug = "custom-section-block"; // slug for the block
 
-  var blockTitle = "Create custom section block";
+  var blockTitle = "Custom Section";
   var blockDescription = "Component to create custom section block";
   var blockCategory = "common";
   var blockIcon = "welcome-add-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -4642,11 +4642,12 @@ function customSectionBlock() {
         components: [{
           value: title,
           reference: "title",
-          tagName: "p",
+          tagName: "h2",
+          settings: ['core/bold', 'core/link', 'core/italic', 'core/code'],
           placeholder: "Please provide a title"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-subsection-block"), "core/paragraph", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-subsection-block"), "core/paragraph", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-two"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-three"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image"), "core/list", "core/quote"]
       }))];
     },
     save: function save(_ref) {
@@ -4684,7 +4685,7 @@ function customSubsectionBlock() {
   var InnerBlocks = wp.blockEditor.InnerBlocks;
   var blockSlug = "custom-subsection-block"; // slug for the block
 
-  var blockTitle = "Create custom subsection block";
+  var blockTitle = "Custom Subsection";
   var blockDescription = "Component to create custom subsection block";
   var blockCategory = "common";
   var blockIcon = "admin-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -4725,11 +4726,12 @@ function customSubsectionBlock() {
           label: 'Title',
           value: title,
           reference: "title",
-          tagName: "p",
+          tagName: "h3",
+          settings: ['core/bold', 'core/link', 'core/italic', 'core/code'],
           placeholder: "Please provide a title"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ['core/paragraph']
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-subsection-block"), "core/paragraph", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-two"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-three"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image"), "core/list", "core/quote"]
       }))];
     },
     save: function save(_ref) {
