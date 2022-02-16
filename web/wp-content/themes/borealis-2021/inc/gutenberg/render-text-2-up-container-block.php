@@ -45,7 +45,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
         ob_start();
 ?>
         <section class="<?php echo $attributes->bgColour === 'purple' ? 'bg-primary-purple-400 text-shade-white-400' : 'bg-shade-white-400 text-shade-black-400' ?>">
-            <div class="container flex py-20 tb:flex-row flex-col">
+            <div class="container flex md:py-20 py-10 tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>
                         <h3 class="h3 mb-8"><?php echo esc_html($attributes->title) ?></h3>
@@ -54,7 +54,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
                         <h4 class="h4 mb-8"><?php echo esc_html($attributes->title) ?></h4>
                     <?php endif; ?>
                 </div>
-                <div class="w-full tb:w-8/12 <?php echo $attributes->colAmount === 'two' ? 'flex' : ''?>">
+                <div class="w-full md:flex-row flex-col tb:w-8/12 <?php echo $attributes->colAmount === 'two' ? 'flex' : ''?>">
                     <?php
                     if ($attributes->colAmount === 'two') {
                         foreach ($block['innerBlocks'] as $inner_block) {

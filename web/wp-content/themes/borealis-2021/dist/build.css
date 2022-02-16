@@ -888,15 +888,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-15{
   margin-top: 60px;
 }
-.ml-30{
-  margin-left: 120px;
-}
-.ml-4{
-  margin-left: 16px;
-}
-.mb-18{
-  margin-bottom: 72px;
-}
 .mt-3{
   margin-top: 12px;
 }
@@ -1000,9 +991,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-auto{
   width: auto;
-}
-.w-11\/12{
-  width: 91.666667%;
 }
 .w-4{
   width: 16px;
@@ -1221,6 +1209,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
+.bg-primary-purple-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(85 0 155 / var(--tw-bg-opacity));
+}
 .bg-tint-lightBlue-400{
   --tw-bg-opacity: 1;
   background-color: rgb(111 222 250 / var(--tw-bg-opacity));
@@ -1232,14 +1224,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-shade-black-400{
   --tw-bg-opacity: 1;
   background-color: rgb(34 39 49 / var(--tw-bg-opacity));
-}
-.bg-primary-electric-purple-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 55 215 / var(--tw-bg-opacity));
-}
-.bg-primary-purple-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(85 0 155 / var(--tw-bg-opacity));
 }
 .bg-opacity-70{
   --tw-bg-opacity: 0.7;
@@ -1298,6 +1282,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 20px;
   padding-right: 20px;
 }
+.py-20{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
 .py-6{
   padding-top: 24px;
   padding-bottom: 24px;
@@ -1333,10 +1321,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-7{
   padding-top: 28px;
   padding-bottom: 28px;
-}
-.py-20{
-  padding-top: 80px;
-  padding-bottom: 80px;
 }
 .pt-13{
   padding-top: 52px;
@@ -1407,6 +1391,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-15{
   padding-top: 60px;
 }
+.pr-10{
+  padding-right: 40px;
+}
 .pb-6{
   padding-bottom: 24px;
 }
@@ -1415,9 +1402,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-4{
   padding-right: 16px;
-}
-.pr-10{
-  padding-right: 40px;
 }
 .pt-full{
   padding-top: 100%;
@@ -1469,12 +1453,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-3{
   padding-right: 12px;
-}
-.pr-20{
-  padding-right: 80px;
-}
-.pr-5{
-  padding-right: 20px;
 }
 .text-center{
   text-align: center;
@@ -1775,9 +1753,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:mt-20{
     margin-top: 80px;
   }
-  .md\:mb-5{
-    margin-bottom: 20px;
-  }
   .md\:mt-15{
     margin-top: 60px;
   }
@@ -1823,14 +1798,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:w-4\/6{
     width: 66.666667%;
   }
-  .md\:w-6\/12{
-    width: 50%;
-  }
   .md\:w-1\/4{
     width: 25%;
   }
   .md\:w-3\/4{
     width: 75%;
+  }
+  .md\:w-6\/12{
+    width: 50%;
   }
   .md\:w-5\/12{
     width: 41.666667%;
@@ -1915,6 +1890,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-top: 20px;
     padding-bottom: 20px;
   }
+  .md\:py-20{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   .md\:pr-5{
     padding-right: 20px;
   }
@@ -1966,6 +1945,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:pb-4{
     padding-bottom: 16px;
   }
+  .md\:pr-10{
+    padding-right: 40px;
+  }
   .md\:text-center{
     text-align: center;
   }
@@ -2012,12 +1994,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 1000px){
-  .tb\:mb-11{
-    margin-bottom: 44px;
-  }
-  .tb\:mb-8{
-    margin-bottom: 32px;
-  }
   .tb\:mb-0{
     margin-bottom: 0px;
   }
@@ -2026,6 +2002,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .tb\:w-7\/12{
     width: 58.333333%;
+  }
+  .tb\:w-4\/12{
+    width: 33.333333%;
+  }
+  .tb\:w-8\/12{
+    width: 66.666667%;
   }
   .tb\:w-2\/6{
     width: 33.333333%;
@@ -2036,20 +2018,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tb\:w-1\/4{
     width: 25%;
   }
-  .tb\:w-8\/12{
-    width: 66.666667%;
-  }
-  .tb\:w-4\/12{
-    width: 33.333333%;
-  }
-  .tb\:w-9\/12{
-    width: 75%;
-  }
   .tb\:flex-row{
     flex-direction: row;
-  }
-  .tb\:flex-col{
-    flex-direction: column;
   }
   .tb\:justify-end{
     justify-content: flex-end;

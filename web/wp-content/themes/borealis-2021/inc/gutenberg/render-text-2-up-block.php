@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * Render Graphic Page Strip
@@ -42,9 +43,11 @@ if (!function_exists('pg_render_text_2_up_block')) {
 
         if (!empty($attributes->copy)) :
 ?>
-            <p class="paragraph pr-10">
-                <?php echo $attributes->copy ?>
-            </p>
+            <div class="mb-10 md:mb-0">
+                <p class="paragraph md:pr-10">
+                    <?php echo $attributes->copy ?>
+                </p>
+            </div>
 <?php
         endif;
         return ob_get_clean();
