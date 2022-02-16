@@ -12,6 +12,10 @@ import publicationMetaBlock from './blocks/meta/publications-meta.jsx';
 import textColumnBlock from "../js/blocks/text-column.jsx";
 import imageTextBlock from "./blocks/image-text.jsx";
 
+// Text 2 Up Blocks
+import text2UpBlock from "./blocks/text-2-up-block.jsx";
+import text2UpContainerBlock from "./blocks/text-2-up-container-block.jsx";
+
 // Page Strips
 import imageBlock from "./blocks/image-block.jsx";
 
@@ -163,3 +167,7 @@ tabbedContentPanelBlock();
 // Tag Cloud Content Blocks
 tagCloudContainerBlock();
 tagCloudItemBlock();
+
+// Text 2 Up Blocks
+text2UpContainerBlock();
+text2UpBlock();
