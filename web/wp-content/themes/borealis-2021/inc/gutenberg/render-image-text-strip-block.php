@@ -51,9 +51,9 @@ if (!function_exists('pg_render_image_text_strip_block')) {
         if (!empty($image)) :
 ?>
             <section class="w-full">
-                <div class="flex text-shade-black-400 <?php echo $attributes->reverse === true ? 'flex-col-reverse' : 'flex-col' ?> <?php echo $attributes->reverse === true ? 'md:flex-row-reverse' : 'md:flex-row' ?>">
+                <div class="flex container text-shade-black-400 <?php echo $attributes->reverse === true ? 'flex-col-reverse' : 'flex-col' ?> <?php echo $attributes->reverse === true ? 'md:flex-row-reverse' : 'md:flex-row' ?>">
                     <div class="w-full md:w-6/12 flex justify-center flex-col">
-                        <div class="w-11/12 tb:w-7/12 m-auto">
+                        <div class="w-11/12 tb:w-7/12 <?php echo $attributes->reverse === true ? 'ml-30' : 'ml-4'?> ">
                             <?php if (!empty($attributes->title)) : ?>
                                 <h3 class="h3 md:mt-0 mt-10 mb-6 tb:mb-11">
                                     <?php echo $attributes->title ?>
@@ -74,8 +74,8 @@ if (!function_exists('pg_render_image_text_strip_block')) {
                             <?php endif ?>
                         </div>
                     </div>
-                    <div class="w-full md:w-6/12">
-                        <img class="w-full" src="<?php echo $image ?>" alt="<?php echo $attributes->image_alt ?>">
+                    <div class="w-full md:w-6/12 flex items-center">
+                        <div class="w-full bg-cover bg-no-repeat pt-100 bg-center" style="background-image: url(<?php echo $image ?>);"></div>
                     </div>
                 </div>
             </section>
