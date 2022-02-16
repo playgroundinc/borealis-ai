@@ -81,6 +81,10 @@ import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-pane
 import tagCloudContainerBlock from "./blocks/tag-cloud/tag-cloud-container-block.jsx";
 import tagCloudItemBlock from "./blocks/tag-cloud/tag-cloud-item-block.jsx";
 
+// Statisitcs Blocks
+import statisticsBlock from "./blocks/statistics-block.jsx";
+import statisticsContainerBlock from "./blocks/statistics-container-block.jsx";
+
 // Core Extends Blocks
 customVideoPoster();
 registerRichTextBlocks();
@@ -163,3 +167,7 @@ tabbedContentPanelBlock();
 // Tag Cloud Content Blocks
 tagCloudContainerBlock();
 tagCloudItemBlock();
+
+// Statistics Content Blocks
+statisticsContainerBlock();
+statisticsBlock();

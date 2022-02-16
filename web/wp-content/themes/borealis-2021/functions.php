@@ -174,6 +174,9 @@ require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-
 require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-container-block.php';
 require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-item-block.php';
 
+// Statistics Blocks
+require get_template_directory() . '/inc/gutenberg/render-statistics-container-block.php';
+require get_template_directory() . '/inc/gutenberg/render-statistics-block.php';
 
 // add hook for subnav
 add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
