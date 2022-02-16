@@ -15,8 +15,8 @@ export default function researchBlogMetaBlock() {
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
-	registerBlockType(`${namespace}/research-blogs-meta-block`, {
-		title: 'Research Blogs Meta',
+	registerBlockType(`${namespace}/news-meta-block`, {
+		title: 'News Meta',
 		icon: 'align-full-width',
         category: 'common',
         supports: {
@@ -34,7 +34,7 @@ export default function researchBlogMetaBlock() {
 			return ([
 				null,
 				<div className="custom-component">
-                    <p className="block-title">Research Blog Meta</p>
+                    <p className="block-title">News Meta</p>
                     <div className="page-settings__controls">
                         <div className="mt-xs-3">
                             <TextControl
