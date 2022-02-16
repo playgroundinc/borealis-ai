@@ -2959,7 +2959,6 @@ function trmcPageStripGraphicBlock() {
           icon = attributes.icon;
 
       function updateAttributeValue(attribute, value) {
-        console.log(attribute, value);
         setAttributes(_defineProperty({}, attribute, value));
       }
 
