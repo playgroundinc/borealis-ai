@@ -1209,6 +1209,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
+.bg-primary-electric-purple-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 55 215 / var(--tw-bg-opacity));
+}
 .bg-tint-lightBlue-400{
   --tw-bg-opacity: 1;
   background-color: rgb(111 222 250 / var(--tw-bg-opacity));
@@ -1769,6 +1773,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:mt-20{
     margin-top: 80px;
   }
+  .md\:mb-12{
+    margin-bottom: 48px;
+  }
   .md\:mt-15{
     margin-top: 60px;
   }
@@ -1930,6 +1937,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:pl-0{
     padding-left: 0px;
+  }
+  .md\:pr-20{
+    padding-right: 80px;
+  }
+  .md\:pt-16{
+    padding-top: 64px;
+  }
+  .md\:pb-20{
+    padding-bottom: 80px;
   }
   .md\:pr-10{
     padding-right: 40px;
