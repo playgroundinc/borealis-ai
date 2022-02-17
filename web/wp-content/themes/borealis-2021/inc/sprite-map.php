@@ -215,6 +215,10 @@ if ( ! function_exists( 'pg_svg_spritemap' ) ) {
                 <path d="M15 8.25L19 12.25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
 
+            <symbol id="icon-chevron" viewBox="0 0 24 25" fill="none">
+                <path d="M6 9.5L12 15.5L18 9.5" stroke="#5C5D76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
             <!--  Cookie Close -->
             <symbol id="icon-cookie-close" viewBox="0 0 8 8">
                 <path d="M6.3536 2.35355c.1952-.19526.1952-.51184 0-.7071-.1953-.19527-.51189-.19527-.70715 0L3.9999975 3.29289 2.35355 1.64645c-.19526-.19527-.51184-.19527-.7071 0-.19527.19526-.19527.51184 0 .7071l1.64644 1.6464475L1.64645 5.64645c-.19527.19526-.19527.51185 0 .70715.19526.1952.51184.1952.7071 0l1.6464475-1.64649L5.64645 6.3536c.19526.1952.51185.1952.70715 0 .1952-.1953.1952-.51189 0-.70715L4.70711 3.9999975 6.3536 2.35355z" fill="currentColor" fill-rule="evenodd"/>
