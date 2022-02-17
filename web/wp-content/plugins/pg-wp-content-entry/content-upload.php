@@ -61,6 +61,11 @@
       'callback' => 'pg_add_taxonomy',
       'permission_callback' => 'pg_authenticate_user',
     ) );
+    register_rest_route( 'pg/v1', '/add-authors', array(
+      'methods' => 'POST',
+      'callback' => 'pg_add_authors',
+      'permission_callback' => 'pg_authenticate_user',
+    ) );
   } );
   /**
    * Performs basic authentication of base64 encoded header.
@@ -220,6 +225,9 @@
       $page_name = sanitize_text_field(wp_unslash($request['name']));
       $post_type = sanitize_text_field(wp_unslash($request['post_type']));
       $page = get_page_by_title($page_name, 'OBJECT', $post_type);
+      if (empty($page)) {
+        $page = get_page_by_title($page_name, 'OBJECT', 'news');
+      }
       // If page doesn't currently exist, creates it.
       // Else just pulls ID from current page to check for translation.
       if (empty($page)) {
@@ -269,12 +277,13 @@
       if (!empty($request['post_id'])) {
         $post = get_post($request['post_id']);
         $blocks = $request['content'];
+        $post_type = get_post_type($post);
         $content = pg_generate_blocks($blocks);
        
         if (!empty($content)) {
           $resp = wp_update_post(array(
             'ID' => $request['post_id'],
-            'post_content' => $content,
+            'post_content' => "<!-- wp:pg/" . $post_type . "-meta-block /-->" . $content,
           ));
 
           $response = new WP_REST_Response( $resp );
@@ -342,11 +351,15 @@
       }
 
       $image_url = $request['src'];
+      $alt = sanitize_text_field(wp_unslash(urldecode($request['alt'])));
       $upload_dir = wp_upload_dir();
       $image_data = file_get_contents( $image_url );
       $filename = basename( $image_url );
       $id = pg_get_image_by_name($filename);
       if ($id) {
+        if ($alt && strlen($alt) > 0) { 
+          update_post_meta($id, '_wp_attachment_image_alt', $alt);
+        }
         // Create the response object
         $response = new WP_REST_Response(  $id );
         // Add a custom status codes
@@ -372,6 +385,9 @@
       require_once( ABSPATH . 'wp-admin/includes/image.php' );
       $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
       wp_update_attachment_metadata( $attach_id, $attach_data );
+      if ($alt && strlen($alt) > 0) { 
+        update_post_meta($attach_id, '_wp_attachment_image_alt', $alt);
+      }
       // Create the response object
       $response = new WP_REST_Response(  $attach_id );
       // Add a custom status codes
@@ -413,6 +429,37 @@
       }
       $success = set_post_thumbnail($post_id, $image_id);
       $response = new WP_REST_Response(array( 'success' => $success ) );
+      // Add a custom status codes
+      $response->set_status( 201 ); 
+      return $response;
+    }
+  }
+
+  if (!function_exists('pg_add_authors')) {
+    function pg_add_authors(WP_REST_Request $request) {
+      $post_id = wp_unslash($request['post_id']);
+      $authors = wp_unslash($request['authors']);
+      if (!isset($post_id) || !isset($authors)) {
+        $response = new WP_REST_Response( array('error' => 'Missing id or author'));
+        $response->set_status(400);
+        return $response;
+      }
+      $authors_array = explode(',', $authors);
+      if (!empty($authors_array)) {
+        $authors_meta = array();
+        foreach($authors_array as $author) {
+          $author_name = trim($author, '*');
+          if (!strlen($author_name) > 0) {
+            continue;
+          }
+          $author_post = get_page_by_title($author_name, 'OBJECT', 'author');
+          array_push($authors_meta, array('value' => $author_post->ID, 'label' => $author_name, 'equal' => strpos($author, '*') && strpos($author, '*') >= 0));
+        }
+      }
+      if (!empty($authors_meta)) {
+        update_post_meta($post_id, 'authors', json_encode($authors_meta));
+      }
+      $response = new WP_REST_Response(array( 'success' => true ) );
       // Add a custom status codes
       $response->set_status( 201 ); 
       return $response;

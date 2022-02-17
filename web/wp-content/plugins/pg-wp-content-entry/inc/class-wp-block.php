@@ -16,6 +16,7 @@ class PG_WP_Block {
     $this->type = $block['type'];
     $this->attributes = $block['attributes'];
     $this->tag = $block['tag'];
+    $this->classes = $block['classes'] ?? "wp-block-". $this->type . "-" . $this->name;
     $this->content = $block['content'];
   }
 
@@ -58,7 +59,7 @@ class PG_WP_Block {
    * Based on the current anatomy of a Gutenberg comment.
    */
   public function pg_generate_core_comment() {
-    $comment = "<!-- wp:" . $this->name . " ";
+    $comment = isset($this->type) && 'core' === $this->type ? "<!-- wp:" . $this->name . " " : "<!-- wp:". $this->type . '/' . $this->name . " ";
     $comment .= isset($this->attributes) && !empty($this->attributes) ? $this->attributes : null;
     $comment .= " -->";
     if (isset($this->type) && 'core' === $this->type) {
@@ -71,8 +72,10 @@ class PG_WP_Block {
       } else {
         $comment .= "<" . $this->tag . ">" . $this->content . "</" . $this->tag . ">";
       }
+    } else if ($this->name !== 'bibtex') {
+      $comment .= "<" . $this->tag . ' class="' . $this->classes . '">' . addslashes($this->content) . "</" . $this->tag . ">"; 
     }
-    $comment .= "<!-- /wp:" . $this->name . " -->";
+    $comment .= isset($this->type) && 'core' === $this->type ? "<!-- /wp:" . $this->name . " -->" : "<!-- /wp:" . $this->type . "/" . $this->name . " -->";
     return $comment;
   }
 
@@ -110,10 +113,6 @@ class PG_WP_Block {
           case 'pg/custom-image':
             $comment = $this->pg_generate_custom_image();
             return $comment;
-          break;
-          case 'katex/display-block':
-            $comment = $this->pg_generate_equation_comment();
-            return $comment;  
           break;
           default:
             $comment = $this->pg_generate_core_comment();
