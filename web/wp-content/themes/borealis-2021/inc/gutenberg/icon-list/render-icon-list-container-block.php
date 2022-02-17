@@ -45,7 +45,7 @@ if (!function_exists('pg_render_icon_list_container_block')) {
         ob_start();
 ?>
         <section aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
-            <div class="py-23">
+            <div class="custom-component">
                 <div class="container flex flex-col tb:flex-row">
                     <?php if (!empty($attributes->title)) : ?>
                         <div class="w-full mb-10 tb:mb-0 tb:w-2/6">
