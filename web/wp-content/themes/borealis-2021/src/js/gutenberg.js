@@ -34,6 +34,9 @@ import calloutColumnBlock from "./blocks/callouts/callout-column.jsx";
 import contentCardContainerBlock from "./blocks/content-cards/content-card-container.jsx";
 import contentCardBlock from "./blocks/content-cards/content-card.jsx";
 
+// Gallery
+import galleryContainerBlock from './blocks/gallery/gallery-container-block.jsx';
+
 // Image List Blocks
 import imageListContainerBlock from "./blocks/image-list/image-list-container.jsx";
 import imageListBlock from "./blocks/image-list/image-list-block.jsx";
@@ -121,6 +124,9 @@ calloutColumnBlock();
 // Content Cards
 contentCardContainerBlock();
 contentCardBlock();
+
+// Gallery
+galleryContainerBlock();
 
 // Image List Blocks
 imageListContainerBlock();

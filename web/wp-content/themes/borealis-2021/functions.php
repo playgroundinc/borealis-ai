@@ -124,6 +124,9 @@ require get_template_directory() . '/inc/gutenberg/copy/render-copy-blocks.php';
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-container.php';
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-block.php';
 
+// Gallery
+require get_template_directory() . '/inc/gutenberg/gallery/render-gallery-container-block.php';
+
 // Image List Blocks
 require get_template_directory() . '/inc/gutenberg/image-list/render-image-list-container-block.php';
 require get_template_directory() . '/inc/gutenberg/image-list/render-image-list-block.php';
