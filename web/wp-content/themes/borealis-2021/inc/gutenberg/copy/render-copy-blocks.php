@@ -52,15 +52,9 @@ if (!function_exists('pg_render_copy_block')) {
      * @param array $block_obj array of the block features.
      */
     function pg_render_copy_block($attrs, $content, $block_obj) {
-        $fields = array(
-            'content' => ''
-        );
-        $block = $block_obj->parsed_block;
-        $blocks = pg_get_copy_blocks();
-        $copy_block =$blocks[$block['blockName']];
-        $attributes = pg_get_attributes($attrs, $fields);
+        $allowed_html = pg_allowed_html();
         ob_start();
-        echo '<' . $copy_block['tag'] . ' class="' . $copy_block['class'] . '">' . $attributes->content . '</' . $copy_block['tag'] . '>'; 
+        echo wp_kses($content, $allowed_html); 
         return ob_get_clean();
     }
 }

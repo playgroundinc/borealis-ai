@@ -10,7 +10,7 @@ export default function customSectionBlock() {
     const { i18n } = wp;
 
     const blockSlug = "custom-section-block"; // slug for the block
-	const blockTitle = "Create custom section block";
+	const blockTitle = "Custom Section";
 	const blockDescription = "Component to create custom section block";
 	const blockCategory = "common";
     const blockIcon = "welcome-add-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -45,16 +45,35 @@ export default function customSectionBlock() {
                             {
                                 value: title,
                                 reference: "title", 
-                                tagName: "p",
+                                tagName: "h2",
+                                settings: ['core/bold', 'core/link', 'core/italic', 'core/code'],
                                 placeholder: "Please provide a title"
                             },
                         ]}
                     />
                     { save ? (
-                        <InnerBlocks.Content />
+                        <InnerBlocks.Content /> 
                     ) : (
                         <InnerBlocks
-                            allowedBlocks={[`${namespace}/custom-subsection-block`, `core/paragraph`, `${namespace}/tag-cloud-container-block`]}
+                            allowedBlocks={[
+                                `${namespace}/custom-subsection-block`, 
+                                `core/code`, 
+                                `core/table`, 
+                                `core/podcast`, 
+                                `core/video`, 
+                                `core/list`, 
+                                `core/quote`,
+                                `${namespace}/tag-cloud-container-block`, 
+                                `${namespace}/paragraph`, 
+                                `${namespace}/heading-two`, 
+                                `${namespace}/heading-three`, 
+                                `${namespace}/heading-four`, 
+                                `${namespace}/custom-image`,
+                                `${namespace}/blockquote`,
+                                `${namespace}/publications-container`,
+                                `${namespace}/image-text`,
+                                `${namespace}/icon-list-container-block`
+                            ]}
                         />
                     )}
                 </div>,
