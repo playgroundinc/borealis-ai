@@ -55,7 +55,7 @@ export default function customSectionBlock() {
                         <InnerBlocks.Content />
                     ) : (
                         <InnerBlocks
-                            allowedBlocks={[`${namespace}/custom-subsection-block`, `core/paragraph`, `${namespace}/tag-cloud-container-block`, `${namespace}/paragraph`, `${namespace}/heading-two`, `${namespace}/heading-three`, `${namespace}/heading-four`, `${namespace}/custom-image`, `core/list`, `core/quote`]}
+                            allowedBlocks={[`${namespace}/custom-subsection-block`, `core/paragraph`, `core/code`, `${namespace}/tag-cloud-container-block`, `${namespace}/paragraph`, `${namespace}/heading-two`, `${namespace}/heading-three`, `${namespace}/heading-four`, `${namespace}/custom-image`, `core/list`, `core/quote`]}
                         />
                     )}
                 </div>,
