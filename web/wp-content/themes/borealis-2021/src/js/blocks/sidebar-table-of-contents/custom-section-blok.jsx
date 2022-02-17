@@ -55,7 +55,25 @@ export default function customSectionBlock() {
                         <InnerBlocks.Content />
                     ) : (
                         <InnerBlocks
-                            allowedBlocks={[`${namespace}/custom-subsection-block`, `core/paragraph`, `core/code`, `${namespace}/tag-cloud-container-block`, `${namespace}/paragraph`, `${namespace}/heading-two`, `${namespace}/heading-three`, `${namespace}/heading-four`, `${namespace}/custom-image`, `core/list`, `core/quote`]}
+                            allowedBlocks={[
+                                `${namespace}/custom-subsection-block`, 
+                                `core/code`, 
+                                `core/table`, 
+                                `core/podcast`, 
+                                `core/video`, 
+                                `core/list`, 
+                                `core/quote`,
+                                `${namespace}/tag-cloud-container-block`, 
+                                `${namespace}/paragraph`, 
+                                `${namespace}/heading-two`, 
+                                `${namespace}/heading-three`, 
+                                `${namespace}/heading-four`, 
+                                `${namespace}/custom-image`,
+                                `${namespace}/blockquote`,
+                                `${namespace}/publications-container`,
+                                `${namespace}/image-text`,
+                                `${namespace}/icon-list-container-block`
+                            ]}
                         />
                     )}
                 </div>,
