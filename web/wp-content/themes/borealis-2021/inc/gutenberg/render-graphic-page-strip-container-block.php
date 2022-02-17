@@ -42,11 +42,13 @@ if (!function_exists('pg_render_graphic_page_strip_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
+    <div class="custom-component">
         <section aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="flex flex-col md:flex-row container">
             <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
                 <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
             <?php endforeach; ?>
         </section>
+    </div>
 <?php
         return ob_get_clean();
     }

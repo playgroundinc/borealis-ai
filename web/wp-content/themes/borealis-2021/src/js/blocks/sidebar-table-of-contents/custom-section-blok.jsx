@@ -52,7 +52,7 @@ export default function customSectionBlock() {
                         ]}
                     />
                     { save ? (
-                        <InnerBlocks.Content />
+                        <InnerBlocks.Content /> 
                     ) : (
                         <InnerBlocks
                             allowedBlocks={[
