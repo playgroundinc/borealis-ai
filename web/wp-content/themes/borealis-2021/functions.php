@@ -28,6 +28,9 @@ require get_template_directory() . '/inc/classes/class-pg-custom-meta.php';
 // Responsive Images - Comment out if you do need to render responsive images.
 require get_template_directory() . '/inc/classes/class-pg-responsive-images.php';
 
+// Register Custom Image Sizes
+require get_template_directory() . '/inc/custom-images/register-image-sizes.php';
+
 // Register Custom Post Types
 require get_template_directory() . '/inc/classes/class-pg-register-cpt.php';
 
