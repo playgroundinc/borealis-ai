@@ -3589,7 +3589,11 @@ function BlockSettings(props) {
   var requiredFields;
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(InspectorControls, null, /*#__PURE__*/React.createElement(PanelBody, {
     title: i18n.__(title)
-  }, /*#__PURE__*/React.createElement(PanelRow, null, controls.map(function (control) {
+  }, /*#__PURE__*/React.createElement(PanelRow, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex'
+    }
+  }, controls.map(function (control) {
     switch (control.type) {
       case 'radio':
         requiredFields = ['label', 'value', 'options', 'reference'];
@@ -3703,7 +3707,7 @@ function BlockSettings(props) {
       default:
         return "Control type either not set or invalid for ".concat(control.label);
     }
-  })))));
+  }))))));
 }
 
 /***/ }),
@@ -5541,10 +5545,19 @@ function text2UpContainerBlock() {
           colAmount = attributes.colAmount;
       var bgStyles = [{
         label: "Default",
-        value: "default"
+        value: "bg-shade-white-400 text-shade-black-400"
       }, {
         label: "Purple",
-        value: "purple"
+        value: "bg-primary-purple-400 text-shade-white-400"
+      }, {
+        label: "Navy",
+        value: "bg-primary-navy-400 text-shade-white-400"
+      }, {
+        label: "Light Blue",
+        value: "bg-tint-lightBlue-400 text-shade-white-400"
+      }, {
+        label: "Light Purple",
+        value: "bg-tint-purple-400 text-shade-white-400"
       }];
       var colStyles = [{
         label: "Default",
@@ -5595,13 +5608,7 @@ function text2UpContainerBlock() {
           options: bgStyles,
           reference: "bgColour",
           value: bgColour
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        title: "Block Settings",
-        controls: [{
+        }, {
           type: "select",
           label: "1 or 2 Columns of Copy",
           options: colStyles,

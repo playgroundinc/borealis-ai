@@ -44,8 +44,11 @@ export default function text2UpContainerBlock() {
       const { title, subtitle, bgColour, colAmount } = attributes;
 
       const bgStyles = [
-        { label: "Default", value: "default" },
-        { label: "Purple", value: "purple" },
+        { label: "Default", value: "bg-shade-white-400 text-shade-black-400" },
+        { label: "Purple", value: "bg-primary-purple-400 text-shade-white-400" },
+        { label: "Navy", value: "bg-primary-navy-400 text-shade-white-400" },
+        { label: "Light Blue", value: "bg-tint-lightBlue-400 text-shade-white-400" },
+        { label: "Light Purple", value: "bg-tint-purple-400 text-shade-white-400" },
       ];
 
       const colStyles = [
@@ -103,14 +106,6 @@ export default function text2UpContainerBlock() {
                 reference: "bgColour",
                 value: bgColour,
               },
-            ]}
-            onChange={(attribute, change) => {
-              updateAttributeValue(attribute, change);
-            }}
-          />
-          <BlockSettings
-            title="Block Settings"
-            controls={[
               {
                 type: "select",
                 label: "1 or 2 Columns of Copy",
