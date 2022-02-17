@@ -1685,6 +1685,25 @@ Ensure the default browser behavior of the `hidden` attribute.
       font-size: 70px;
     }
   }
+  .md\:h2{
+    font-size: 60px;
+    font-family: Metrophobic, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.04em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:h2{
+      font-size: calc(60px + ((60 - 60) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:h2{
+      font-size: 60px;
+    }
+  }
   .md\:paragraph-lg{
     font-size: 27px;
     font-family: Inter, sans-serif;
@@ -1721,6 +1740,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   @media (min-width: 1920px){
     .md\:hyperlink{
       font-size: 14px;
+    }
+  }
+  .md\:h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
+    margin-top: 12px;
+  }
+  @media (min-width: 768px){
+    .md\:h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
+      margin-top: 32px;
     }
   }
   .md\:static{

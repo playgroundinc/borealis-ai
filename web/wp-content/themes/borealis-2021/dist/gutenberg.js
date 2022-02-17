@@ -1096,7 +1096,7 @@ var blocks = [{
   slug: 'heading-two',
   title: "Heading Two",
   description: "Add a second level header",
-  classes: "wp-block-pg-heading-two h2 mt-11 md:mt-13 first:mt-0",
+  classes: "wp-block-pg-heading-two h3 md:h2 mt-11 md:mt-13 first:mt-0",
   category: "common",
   icon: "heading",
   tagName: "h2",
