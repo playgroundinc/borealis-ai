@@ -58,9 +58,22 @@ if ( ! function_exists( 'pg_render_gallery_container_block' ) ) {
                     <?php if (!empty($attributes->link) && strlen($attributes->link_text) > 0): ?>
                         <a class="py-4 text-link paragraph" href="<?php echo esc_attr($attributes->link)?>"><?php echo esc_html($attributes->link_text); ?></a>
                     <?php endif; ?>
-                    <ul class="border-t border-color-shade-grey-700">
+                    <ul>
                         <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
-                            <?php echo pg_render_publications_item($inner_block, $attributes->link) ?>
+                            <?php if ($inner_block['blockName'] === 'pg/custom-image'): ?>
+                                <?php 
+                                    $fields = array(
+                                        'image_id' => 0,
+                                        'image_alt' => '',
+                                    );    
+                                    $attributes = pg_get_attributes($inner_block['attrs'], $fields);
+                                    $image = wp_get_attachment_image_url($attributes->image_id, 'full');
+                                    $placholder = wp_get_attachment_image_url($attributes->image_id);
+                                ?>
+                                <picture>
+                                    <img class="lazy max-h-[450px] max-w-[450px] rounded-large overflow-hidden block " data-src="<?php echo esc_url_raw($image)?>" src="<?php echo esc_url_raw($placholder)?>" alt="<?php echo !empty($attributes->image_alt) ? esc_attr($attributes->image_alt) : null ?>">
+                                </picture>
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     </ul>
                 </div>                
