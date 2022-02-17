@@ -885,6 +885,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-8{
   margin-top: 32px;
 }
+.ml-30{
+  margin-left: 120px;
+}
+.ml-4{
+  margin-left: 16px;
+}
 .mb-18{
   margin-bottom: 72px;
 }
@@ -927,18 +933,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-5{
   margin-top: 20px;
 }
-.ml-20{
-  margin-left: 80px;
-}
-.ml-28{
-  margin-left: 112px;
-}
-.ml-30{
-  margin-left: 120px;
-}
-.ml-4{
-  margin-left: 16px;
-}
 .block{
   display: block;
 }
@@ -973,9 +967,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-13{
   height: 52px;
-}
-.h-30{
-  height: 120px;
 }
 .max-h-screen{
   max-height: 100vh;
@@ -1263,15 +1254,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-20{
   padding: 80px;
 }
-.p-120{
-  padding: 480px;
-}
-.p-100{
-  padding: 400px;
-}
-.p-50{
-  padding: 200px;
-}
 .px-4{
   padding-left: 16px;
   padding-right: 16px;
@@ -1475,9 +1457,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-3{
   padding-right: 12px;
-}
-.pt-120{
-  padding-top: 480px;
 }
 .text-center{
   text-align: center;
@@ -1792,6 +1771,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:mt-3{
     margin-top: 12px;
+  }
+  .md\:ml-30{
+    margin-left: 120px;
   }
   .md\:block{
     display: block;
