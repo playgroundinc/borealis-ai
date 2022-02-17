@@ -351,11 +351,15 @@
       }
 
       $image_url = $request['src'];
+      $alt = sanitize_text_field(wp_unslash(urldecode($request['alt'])));
       $upload_dir = wp_upload_dir();
       $image_data = file_get_contents( $image_url );
       $filename = basename( $image_url );
       $id = pg_get_image_by_name($filename);
       if ($id) {
+        if ($alt && strlen($alt) > 0) { 
+          update_post_meta($id, '_wp_attachment_image_alt', $alt);
+        }
         // Create the response object
         $response = new WP_REST_Response(  $id );
         // Add a custom status codes
@@ -381,6 +385,9 @@
       require_once( ABSPATH . 'wp-admin/includes/image.php' );
       $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
       wp_update_attachment_metadata( $attach_id, $attach_data );
+      if ($alt && strlen($alt) > 0) { 
+        update_post_meta($attach_id, '_wp_attachment_image_alt', $alt);
+      }
       // Create the response object
       $response = new WP_REST_Response(  $attach_id );
       // Add a custom status codes
