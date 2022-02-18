@@ -734,6 +734,66 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.pill-secondary{
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .pill-secondary{
+    font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .pill-secondary{
+    font-size: 14px;
+  }
+}
+.pill-secondary{
+  display: block;
+  border-radius: 30px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-align: center;
+}
+.pill-secondary:nth-child(n + 2){
+  margin-left: 20px;
+}
+.pill-secondary-active{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(34 39 49 / var(--tw-text-opacity));
+}
+.default-tabs .pill-secondary{
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-left-width: 0px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+}
+.default-tabs .pill-secondary:nth-child(n + 2){
+  margin-left: 0px;
+}
+.default-tabs .pill-secondary.pill-secondary-active{
+  border-radius: 0;
+  border-bottom-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(96 55 215 / var(--tw-border-opacity));
+}
 .text-link{
   display: block;
   --tw-text-opacity: 1;
@@ -1034,6 +1094,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .basis-full{
   flex-basis: 100%;
 }
+.basis-7\/12{
+  flex-basis: 58.333333%;
+}
+.basis-8\/12{
+  flex-basis: 66.666667%;
+}
 .basis-5\/12{
   flex-basis: 41.666667%;
 }
@@ -1144,6 +1210,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-b-0{
   border-bottom-width: 0px;
 }
+.border-t-0{
+  border-top-width: 0px;
+}
+.border-r-0{
+  border-right-width: 0px;
+}
+.border-l-0{
+  border-left-width: 0px;
+}
 .border-l{
   border-left-width: 1px;
 }
@@ -1176,6 +1251,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-primary-electric-blue-400{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
+}
+.border-shade-white-400{
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 .border-shade-transparent-400{
   border-color: transparent;
@@ -1306,6 +1385,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 56px;
   padding-bottom: 56px;
 }
+.py-20{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
 .py-7{
   padding-top: 28px;
   padding-bottom: 28px;
@@ -1427,6 +1510,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-72{
   padding-top: 288px;
 }
+.pt-11{
+  padding-top: 44px;
+}
+.pl-8{
+  padding-left: 32px;
+}
 .pl-12{
   padding-left: 48px;
 }
@@ -1439,6 +1528,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pr-3{
   padding-right: 12px;
 }
+.pb-11{
+  padding-bottom: 44px;
+}
 .text-center{
   text-align: center;
 }
@@ -1449,12 +1541,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
-}
-.font-bold{
-  font-weight: 700;
-}
-.font-normal{
-  font-weight: 400;
 }
 .text-shade-grey-700{
   --tw-text-opacity: 1;
@@ -1643,6 +1729,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(0 68 255 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.nth-child-2\:ml-5:nth-child(n + 2){
+  margin-left: 20px;
+}
+.nth-child-2\:ml-0:nth-child(n + 2){
+  margin-left: 0px;
 }
 .nth-child-3\:pt-12:nth-child(n + 3){
   padding-top: 48px;
@@ -1842,6 +1934,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:basis-1\/4{
     flex-basis: 25%;
+  }
+  .md\:basis-4\/12{
+    flex-basis: 33.333333%;
   }
   .md\:flex-row{
     flex-direction: row;
@@ -2073,12 +2168,37 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:basis-1\/5{
     flex-basis: 20%;
   }
+  .lg\:basis-7\/12{
+    flex-basis: 58.333333%;
+  }
+  .lg\:basis-4\/12{
+    flex-basis: 33.333333%;
+  }
+  .lg\:justify-center{
+    justify-content: center;
+  }
+  .lg\:justify-between{
+    justify-content: space-between;
+  }
   .lg\:px-0{
     padding-left: 0px;
     padding-right: 0px;
   }
+  .lg\:py-20{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   .lg\:pt-7{
     padding-top: 28px;
+  }
+  .lg\:pb-0{
+    padding-bottom: 0px;
+  }
+  .lg\:pt-0{
+    padding-top: 0px;
+  }
+  .lg\:pt-8{
+    padding-top: 32px;
   }
   .lg\:container{
     margin: 0 auto;

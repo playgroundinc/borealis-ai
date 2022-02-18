@@ -5358,7 +5358,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
+/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -5377,11 +5381,43 @@ function tabbedContentContainerBlock() {
   var blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
-    title: {
+    copy: {
       type: 'String',
       default: ''
     },
-    copy: {
+    cta_one_text: {
+      type: "String",
+      default: ""
+    },
+    cta_one_link: {
+      type: "String",
+      default: ""
+    },
+    cta_two_text: {
+      type: "String",
+      default: ""
+    },
+    cta_two_link: {
+      type: "String",
+      default: ""
+    },
+    display_style: {
+      type: "String",
+      default: "default"
+    },
+    image_url: {
+      type: 'String',
+      default: ''
+    },
+    image_id: {
+      type: 'Number',
+      default: 0
+    },
+    image_alt: {
+      type: "String",
+      default: ""
+    },
+    title: {
       type: 'String',
       default: ''
     }
@@ -5397,36 +5433,90 @@ function tabbedContentContainerBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var attributes = props.attributes,
           setAttributes = props.setAttributes;
-      var title = attributes.title,
-          copy = attributes.copy;
+      var copy = attributes.copy,
+          cta_one_text = attributes.cta_one_text,
+          cta_one_link = attributes.cta_one_link,
+          cta_two_text = attributes.cta_two_text,
+          cta_two_link = attributes.cta_two_link,
+          display_style = attributes.display_style,
+          image_id = attributes.image_id,
+          image_url = attributes.image_url,
+          image_alt = attributes.image_alt,
+          title = attributes.title;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "tabbed-content-container__block"
+        class: "tabbed-content-container__block custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
-      }, "Tabbed Content Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Tabbed Content Container"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: 'radio',
+          label: 'Display Style',
+          value: display_style,
+          reference: 'display_style',
+          options: [{
+            label: "Default",
+            value: "default"
+          }, {
+            label: "Background Image",
+            value: "background-image"
+          }]
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), display_style === "background-image" ? /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        components: [{
+          value: image_url,
+          reference: 'image_url',
+          altValue: image_alt,
+          altReference: 'image_alt',
+          idValue: image_id,
+          idReference: 'image_id',
+          buttonText: 'Add a background image (optional)'
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }) : null, /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         },
         components: [{
           value: title,
           reference: "title",
-          tagName: "p",
+          tagName: "h2",
           placeholder: "Please provide a title (optional)"
-        }]
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        },
-        components: [{
+        }, {
           value: copy,
           reference: "copy",
           tagName: "p",
           placeholder: "Please provide copy (optional)"
+        }, {
+          value: cta_one_text,
+          reference: "cta_one_text",
+          tagName: "p",
+          placeholder: "Please provide text for the first CTA (optional)"
+        }, {
+          value: cta_one_link,
+          reference: "cta_one_link",
+          tagName: "p",
+          placeholder: "Please provide a link for the first CTA (optional)"
+        }, {
+          value: cta_two_text,
+          reference: "cta_two_text",
+          tagName: "p",
+          placeholder: "Please provide text for the second CTA (optional)"
+        }, {
+          value: cta_two_link,
+          reference: "cta_two_link",
+          tagName: "p",
+          placeholder: "Please provide a link for the second CTA (optional)"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tabbed-content-panel-block")]
@@ -5465,6 +5555,7 @@ function tabbedContentPanelBlock() {
       createBlock = _wp$blocks.createBlock;
   var _wp = wp,
       i18n = _wp.i18n;
+  var InnerBlocks = wp.blockEditor.InnerBlocks;
   var blockSlug = "tabbed-content-panel-block"; // slug for the block
 
   var blockTitle = "Tabbed content panel block";
@@ -5502,7 +5593,7 @@ function tabbedContentPanelBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "tabbed-content-panel__block"
+        class: "tabbed-content-panel__block custom-child"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
       }, "Tabbed Content Panel"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -5512,25 +5603,17 @@ function tabbedContentPanelBlock() {
         components: [{
           value: title,
           reference: "title",
-          tagName: "p",
+          tagName: "h3",
           placeholder: "Please provide a title"
         }]
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        },
-        components: [{
-          value: content,
-          reference: "content",
-          tagName: "p",
-          placeholder: "Please provide content"
-        }]
+      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph")]
       }))];
     },
     save: function save(_ref) {
       var attributes = _ref.attributes;
-      var title = attributes.title,
-          content = attributes.content;
+      var title = attributes.title;
+      return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
 }

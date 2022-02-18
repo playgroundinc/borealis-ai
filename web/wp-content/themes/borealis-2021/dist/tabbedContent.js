@@ -9,8 +9,13 @@ function tabbedContent(tabContainer) {
   const isSearchNav = tabContainer.id === 'search-nav';
 
   const classToggle = (el, classToRemove, classToAdd) => {
-    el.classList.remove(classToRemove);
-    el.classList.add(classToAdd);
+    if (classToAdd) {
+      el.classList.add(classToAdd);
+    }
+
+    if (classToRemove) {
+      el.classList.remove(classToRemove);
+    }
   };
 
   for (i = 0; i < tabs.length; i++) {
@@ -18,13 +23,15 @@ function tabbedContent(tabContainer) {
   }
 
   function showTabPanel(el) {
+    el.preventDefault();
+
     for (i = 0; i < tabs.length; i++) {
       tabs[i].setAttribute('aria-selected', 'false');
 
       if (isSearchNav) {
         classToggle(tabs[i], 'border-b-4', 'border-b-0');
       } else {
-        classToggle(tabs[i], 'font-bold', 'font-normal');
+        classToggle(tabs[i], 'pill-secondary-active', null);
       }
     }
 
@@ -33,7 +40,7 @@ function tabbedContent(tabContainer) {
     if (isSearchNav) {
       classToggle(el.target, 'border-b-0', 'border-b-4');
     } else {
-      classToggle(el.target, 'font-normal', 'font-bold');
+      classToggle(el.target, null, 'pill-secondary-active');
     }
 
     const tabPanelToOpen = el.target.getAttribute('aria-controls');
