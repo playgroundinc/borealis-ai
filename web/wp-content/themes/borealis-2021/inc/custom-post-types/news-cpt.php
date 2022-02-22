@@ -39,6 +39,10 @@ if (!function_exists('pg_handle_news_save')) {
             $date = date('Y/m/d');
             update_post_meta($post_id, 'publication_date', $date);
         }
+        $series_order = get_post_meta($post_id, 'series_order', true);
+        if (empty($series_order) || intval($series_order) < 0) {
+            update_post_meta($post_id, 'series_order', 0);
+        }
     }
 }
 
