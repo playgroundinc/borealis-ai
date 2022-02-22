@@ -34,25 +34,32 @@ if ( ! function_exists( 'pg_render_logos_container_block' ) ) {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
-            'bg_color' => 'white',
-            'description' => '',
+            'copy' => '',
             'title' => '',
         );
         $attributes = pg_get_attributes( $attrs, $fields );
         $allowed_html = pg_allowed_html();
         ob_start();
         ?>
-            <div>
-                <?php if (!empty($attributes->title)): ?>
-                    <h2><?php echo wp_kses($attributes->title, $allowed_html); ?></h2>
-                <?php endif; ?>
-                <?php if (!empty($attributes->description)): ?>
-                    <?php echo wp_kses(wpautop($attributes->description), $allowed_html); ?>
-                <?php endif; ?>
-                <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
-                    <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
-                <?php endforeach; ?>
+        <div class="bg-shade-grey-100 w-full">
+            <div class="container flex justify-between py-20">
+                <div class="w-3/12">
+                    <?php if (!empty($attributes->title)): ?>
+                        <h2 class="h3 mb-8 pr-10"><?php echo wp_kses($attributes->title, $allowed_html); ?></h2>
+                    <?php endif; ?>
+                    <?php if (!empty($attributes->copy)): ?>
+                        <p class="paragraph">
+                            <?php echo wp_kses(wpautop($attributes->copy), $allowed_html); ?>
+                        </p>
+                    <?php endif; ?>
+                </div>
+                <div class="w-8/12">
+                    <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
+                        <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
+        </div>
         <?php
         return ob_get_clean();
     }

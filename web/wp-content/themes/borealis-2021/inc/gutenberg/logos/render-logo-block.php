@@ -47,9 +47,9 @@ if ( ! function_exists( 'pg_render_logo_block' ) ) {
         if (!empty($image)):
             ?>
                 <?php if (!empty($attributes->link)): ?>
-                    <a href="<?php echo esc_url_raw($attributes->link); ?>" <?php echo !empty($attributes->image_alt) ? esc_html('aria-label=' . $attributes->image_alt) : null; ?>>
+                    <a class="mb-6 pr-16" href="<?php echo esc_url_raw($attributes->link); ?>" <?php echo !empty($attributes->image_alt) ? esc_html('aria-label=' . $attributes->image_alt) : null; ?>>
                         <img 
-                            class="lazy"
+                            class="lazy w-42"
                             data-src="<?php echo esc_url_raw($image)?>"
                             src="<?php echo esc_url_raw($placeholder) ?>"
                             <?php echo !empty($attributes->image_alt) ? esc_html('alt=' . $attributes->image_alt) : null; ?>

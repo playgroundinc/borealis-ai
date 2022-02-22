@@ -3,24 +3,20 @@ import { namespace } from '../helper-functions/constants';
 import CustomRichText from '../reusable/custom-richtext-component.jsx';
 import BlockSettings from "../reusable/block-custom-settings.jsx";
 
-export default function pgLogoContainerBlock() {
+export default function pgLogoSubsectionBlock() {
 	const { registerBlockType } = wp.blocks;
 	const {
 		InnerBlocks,
     } = wp.blockEditor;
     const { i18n } = wp;
 
-	const blockSlug = "logos-container";
-	const blockTitle = "Logo Parade";
-	const blockDescription = "Creates a container for logos parade.";
+	const blockSlug = "logos-subsection";
+	const blockTitle = "Logo Parade Subsection";
+	const blockDescription = "Creates a subsection for logos parade.";
 	const blockCategory = "containers";
     const blockIcon = "awards"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
-        copy: {
-            type: 'String',
-            default: '',
-        },
         title: {
             type: 'String',
             default: '',
@@ -33,34 +29,27 @@ export default function pgLogoContainerBlock() {
 		category: blockCategory,
         icon: blockIcon,
         attributes,
+        parent: [`${namespace}/logos-container`],
 		edit: (props, editor = false, save = false ) => {
         const { setAttributes, attributes } = props;
-        const { copy, title } = attributes;
+        const { title } = attributes;
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
 			}
 
 			return [
-                <div className={`custom-container`}>
-                    <p className="block-title">Logo Parade</p>
+                <div className="custom-child">
+                    <p className="block-title">Logo Parade Subsection</p>
                     <CustomRichText 
                         components={[
                             {
                                 reference: 'title',
                                 value: title,
-                                tagName: 'h2',
-                                classes: ['heading_one'],
-                                placeholder: 'Logo parade title here (optional)',
-                            },
-                            {
-                                reference: 'copy',
-                                value: copy,
                                 tagName: 'p',
                                 classes: ['paragraph'],
-                                settings: ['core/bold', 'core/link', 'core/italic', 'core/list'],
-                                placeholder: 'Logo parade copy here (optional)',
-                            }
+                                placeholder: 'Logo parade subsection title here (optional)',
+                            },
                         ]}
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
                     />
@@ -69,13 +58,9 @@ export default function pgLogoContainerBlock() {
                             <InnerBlocks.Content />
                         ) : (
                             <InnerBlocks
-                            allowedBlocks={[`${namespace}/logo-subsection`]}
-                            // template={[[`${namespace}/logo`]]}
-                        />
-                            // <InnerBlocks
-                            //     allowedBlocks={[`${namespace}/logo`]}
-                            //     template={[[`${namespace}/logo`]]}
-                            // />
+                                allowedBlocks={[`${namespace}/logo`]}
+                                template={[[`${namespace}/logo`]]}
+                            />
                         )}
                     </div>
                 </div>, 
