@@ -815,6 +815,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-36{
   margin-bottom: 144px;
 }
+.mt-36{
+  margin-top: 144px;
+}
 .mt-10{
   margin-top: 40px;
 }
@@ -1279,17 +1282,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-5{
   padding-top: 20px;
 }
-.pb-15{
-  padding-bottom: 60px;
-}
 .pt-14{
   padding-top: 56px;
 }
-.pt-100{
-  padding-top: 400px;
-}
 .pb-4{
   padding-bottom: 16px;
+}
+.pb-15{
+  padding-bottom: 60px;
+}
+.pt-100{
+  padding-top: 400px;
 }
 .pl-5{
   padding-left: 20px;
@@ -1721,6 +1724,25 @@ Ensure the default browser behavior of the `hidden` attribute.
       font-size: 70px;
     }
   }
+  .md\:h2{
+    font-size: 60px;
+    font-family: Metrophobic, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.04em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:h2{
+      font-size: calc(60px + ((60 - 60) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:h2{
+      font-size: 60px;
+    }
+  }
   .md\:h3{
     font-size: 30px;
     font-family: Inter, sans-serif;
@@ -1804,6 +1826,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:mt-3{
     margin-top: 12px;
+  }
+  .md\:mt-36{
+    margin-top: 144px;
   }
   .md\:block{
     display: block;
@@ -1927,6 +1952,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:pt-12{
     padding-top: 48px;
+  }
+  .md\:pt-20{
+    padding-top: 80px;
+  }
+  .md\:pb-6{
+    padding-bottom: 24px;
   }
   .md\:pl-0{
     padding-left: 0px;

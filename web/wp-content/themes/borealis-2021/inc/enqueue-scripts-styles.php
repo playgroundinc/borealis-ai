@@ -52,7 +52,7 @@ if (!function_exists('pg_borealis_script')) {
     function pg_borealis_script() {
         if (is_page_template( 'page-single-job-listing.php' )) {
             // TODO: borealisai instead of borealisaitest, migration to real borealis job board.
-            wp_enqueue_script( 'borealis', 'https://boards.greenhouse.io/embed/job_board/js?for=borealisai', array(), '20151215', true );
+            wp_enqueue_script( 'borealis', 'https://boards.greenhouse.io/embed/job_board/js?for=borealisaitest', array(), '20151215', true );
         }
     }
 }

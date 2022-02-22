@@ -28,7 +28,7 @@ if (!empty($settings['greenhouse_api_key'])) : ?>
             )
         );
         // TODO: borealisai instead of borealisaitest, migration to real borealis job board.
-        $url = 'https://boards-api.greenhouse.io/v1/boards/borealisai/jobs/' . $jobIdQuery;
+        $url = 'https://boards-api.greenhouse.io/v1/boards/borealisaitest/jobs/' . $jobIdQuery;
         $response = wp_remote_get($url, $args);
 
         if (is_wp_error($response) || !is_array($response) || empty($response)) {
@@ -56,6 +56,9 @@ if (!empty($settings['greenhouse_api_key'])) : ?>
             </div>
             <div class="border-b border-shade-grey-500 mb-19"></div>
             <div class="container w-full tb:w-8/12 m-auto greenhouse mb-36"><?php echo  htmlspecialchars_decode($data['content']); ?></div>
+            <div class="w-full bg-shade-grey-100 mt-20 md:mt-36">
+                <h1 class="w-full tb:w-8/12 container md:h2 h3 text-shade-black-400 pt-14 md:pt-20 pb-4 md:pb-6 bg-shade-grey-100">Ready to Apply?</h1>
+            </div>
         </div>
         <div id="grnhse_app"></div>
     </div>
