@@ -1094,9 +1094,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .basis-full{
   flex-basis: 100%;
 }
-.basis-7\/12{
-  flex-basis: 58.333333%;
-}
 .basis-8\/12{
   flex-basis: 66.666667%;
 }
@@ -1385,10 +1382,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 56px;
   padding-bottom: 56px;
 }
-.py-20{
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
 .py-7{
   padding-top: 28px;
   padding-bottom: 28px;
@@ -1513,8 +1506,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-11{
   padding-top: 44px;
 }
-.pl-8{
-  padding-left: 32px;
+.pb-11{
+  padding-bottom: 44px;
 }
 .pl-12{
   padding-left: 48px;
@@ -1527,9 +1520,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-3{
   padding-right: 12px;
-}
-.pb-11{
-  padding-bottom: 44px;
 }
 .text-center{
   text-align: center;
@@ -2168,11 +2158,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:basis-1\/5{
     flex-basis: 20%;
   }
-  .lg\:basis-7\/12{
-    flex-basis: 58.333333%;
-  }
   .lg\:basis-4\/12{
     flex-basis: 33.333333%;
+  }
+  .lg\:basis-7\/12{
+    flex-basis: 58.333333%;
   }
   .lg\:justify-center{
     justify-content: center;
@@ -2191,14 +2181,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:pt-7{
     padding-top: 28px;
   }
-  .lg\:pb-0{
-    padding-bottom: 0px;
-  }
   .lg\:pt-0{
     padding-top: 0px;
   }
   .lg\:pt-8{
     padding-top: 32px;
+  }
+  .lg\:pb-0{
+    padding-bottom: 0px;
   }
   .lg\:container{
     margin: 0 auto;

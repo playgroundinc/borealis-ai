@@ -47,10 +47,10 @@ function tabbedContent(tabContainer) {
     const tabPanels = tabContainer.querySelectorAll('[role=tabpanel]');
 
     for (i = 0; i < tabPanels.length; i++) {
-      classToggle(tabPanels[i], 'block', 'hidden');
+      classToggle(tabPanels[i], 'flex', 'hidden');
     }
 
-    classToggle(tabContainer.querySelector(`#${tabPanelToOpen}`), 'hidden', 'block');
+    classToggle(tabContainer.querySelector(`#${tabPanelToOpen}`), 'hidden', 'flex');
   }
 
   tabList.addEventListener('keydown', e => {
