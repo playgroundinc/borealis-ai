@@ -96,6 +96,7 @@ export default function BlockSettings(props) {
                     title = {i18n.__(title)} 
                 >
                     <PanelRow>
+                        <div style={{display: 'flex'}}>
                         {controls.map((control) => {
                             switch(control.type) {
                                 case 'radio': 
@@ -191,6 +192,7 @@ export default function BlockSettings(props) {
                                 return `Control type either not set or invalid for ${control.label}`;
                             } 
                         })}
+                        </div>
                     </PanelRow>
                 </PanelBody>    
             </InspectorControls>
