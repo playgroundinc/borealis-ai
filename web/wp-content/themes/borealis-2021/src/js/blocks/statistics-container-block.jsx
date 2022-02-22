@@ -2,7 +2,6 @@ import { namespace } from "./helper-functions/constants";
 import CustomRichText from "./reusable/custom-richtext-component.jsx";
 import BlockSettings from "./reusable/block-custom-settings.jsx";
 
-
 export default function statisticsContainerBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
@@ -13,6 +12,7 @@ export default function statisticsContainerBlock() {
   const blockTitle = "Create statistics container block";
   const blockDescription = "Component to create a statistics container block";
   const blockCategory = "common";
+
   const blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {
@@ -91,7 +91,7 @@ export default function statisticsContainerBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
-           <BlockSettings
+          <BlockSettings
             title="Block Settings"
             controls={[
               {

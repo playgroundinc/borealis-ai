@@ -43,7 +43,7 @@ if (!function_exists('pg_render_text_2_up_block')) {
 
         if (!empty($attributes->copy)) :
 ?>
-            <div class="mb-10 md:mb-0">
+            <div class="mb-10 md:mb-0 w-full md:w-6/12">
                 <p class="paragraph md:pr-10">
                     <?php echo $attributes->copy ?>
                 </p>
