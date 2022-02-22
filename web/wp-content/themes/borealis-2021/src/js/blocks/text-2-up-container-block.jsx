@@ -2,29 +2,32 @@ import { namespace } from "./helper-functions/constants";
 import CustomRichText from "./reusable/custom-richtext-component.jsx";
 import BlockSettings from "./reusable/block-custom-settings.jsx";
 
-export default function statisticsContainerBlock() {
+export default function text2UpContainerBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
   const { useSelect } = wp.data;
   const { i18n } = wp;
 
-  const blockSlug = "statistics-container"; // slug for the block
-  const blockTitle = "Create statistics container block";
-  const blockDescription = "Component to create a statistics container block";
+  const blockSlug = "text-2-up-container"; // slug for the block
+  const blockTitle = "Create text 2 up container block";
+  const blockDescription = "Component to create a text 2 up container block";
   const blockCategory = "common";
-
-  const blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  const blockIcon = "align-left"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {
     title: {
       type: "String",
       default: "",
     },
-    description: {
+    subtitle: {
       type: "String",
       default: "",
     },
     bgColour: {
+      type: "String",
+      default: "default",
+    },
+    colAmount: {
       type: "String",
       default: "default",
     },
@@ -38,16 +41,24 @@ export default function statisticsContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title, description, bgColour } = attributes;
+      const { title, subtitle, bgColour, colAmount } = attributes;
+
+      const bgStyles = [
+        { label: "Default", value: "bg-shade-white-400 text-shade-black-400" },
+        { label: "Purple", value: "bg-primary-purple-400 text-shade-white-400" },
+        { label: "Navy", value: "bg-primary-navy-400 text-shade-white-400" },
+        { label: "Light Blue", value: "bg-tint-lightBlue-400 text-shade-white-400" },
+        { label: "Light Purple", value: "bg-tint-purple-400 text-shade-white-400" },
+      ];
+
+      const colStyles = [
+        { label: "Default", value: "default" },
+        { label: "Two", value: "two" },
+      ];
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
       }
-
-      const bgStyles = [
-        { label: "Default", value: "default" },
-        { label: "Purple", value: "purple" },
-      ];
 
       const innerBlockCount = useSelect(
         (select) =>
@@ -56,7 +67,7 @@ export default function statisticsContainerBlock() {
 
       return [
         <div class="custom-component">
-          <p className="block-title">Statistics Container Block</p>
+          <p className="block-title">Text 2 Up Container Block</p>
           <CustomRichText
             components={[
               {
@@ -74,17 +85,11 @@ export default function statisticsContainerBlock() {
           <CustomRichText
             components={[
               {
-                value: description,
-                reference: "description",
+                value: subtitle,
+                reference: "subtitle",
                 tagName: "h3",
                 classes: ["heading_two"],
-                placeholder: "Please provide a description (optional)",
-                settings: [
-                  "core/bold",
-                  "core/link",
-                  "core/italic",
-                  "core/list",
-                ],
+                placeholder: "Please provide a subtitle (optional)",
               },
             ]}
             onChange={(attribute, change) => {
@@ -101,13 +106,20 @@ export default function statisticsContainerBlock() {
                 reference: "bgColour",
                 value: bgColour,
               },
+              {
+                type: "select",
+                label: "1 or 2 Columns of Copy",
+                options: colStyles,
+                reference: "colAmount",
+                value: colAmount,
+              },
             ]}
             onChange={(attribute, change) => {
               updateAttributeValue(attribute, change);
             }}
           />
           <InnerBlocks
-            allowedBlocks={[`${namespace}/statistics`]}
+            allowedBlocks={[`${namespace}/text-2-up`]}
             renderAppender={() => {
               if (innerBlockCount.length < 2) {
                 return <InnerBlocks.ButtonBlockAppender />;
@@ -120,7 +132,7 @@ export default function statisticsContainerBlock() {
       ];
     },
     save: () => {
-      const { title, description, bgColour } = attributes;
+      const { title, subtite, bgColour, colAmount } = attributes;
       return <InnerBlocks.Content />;
     },
   });
