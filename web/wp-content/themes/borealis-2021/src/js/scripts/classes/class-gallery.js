@@ -70,7 +70,8 @@ export default class GalleryClass {
         if (drag > 5 || drag < -5) {
             this.setState('dragged', true);
         }
-        this.selector.scrollLeft = Number(this.selector.scrollLeft) - Number(drag * 0.2);
+        this.selector.scrollLeft = Number(this.selector.scrollLeft) - Number(drag);
+        this.setState('pageXStart', this.pageXEnd);
     }
     handleClick(e) {
         let link = null;
