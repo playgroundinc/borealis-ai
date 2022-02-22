@@ -767,6 +767,55 @@ Ensure the default browser behavior of the `hidden` attribute.
 .custom-component{
   margin-top: 92px;
 }
+.footnote-link.footnote-identifier-link{
+  scroll-margin-top: 120px;
+}
+.footnote-link.footnote-back-link{
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .footnote-link.footnote-back-link{
+    font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .footnote-link.footnote-back-link{
+    font-size: 14px;
+  }
+}
+ol.footnotes{
+  margin-top: 120px;
+  list-style-position: inside;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(101 104 146 / var(--tw-border-opacity));
+  padding-top: 24px;
+}
+ol.footnotes li small{
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  ol.footnotes li small{
+    font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  ol.footnotes li small{
+    font-size: 14px;
+  }
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1065,6 +1114,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .resize{
   resize: both;
+}
+.list-inside{
+  list-style-position: inside;
 }
 .flex-row{
   flex-direction: row;
@@ -1399,6 +1451,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pr-4{
   padding-right: 16px;
 }
+.pt-6{
+  padding-top: 24px;
+}
 .pr-10{
   padding-right: 40px;
 }
@@ -1410,9 +1465,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-23{
   padding-top: 92px;
-}
-.pt-6{
-  padding-top: 24px;
 }
 .pt-featured-image{
   padding-top: 360px;
