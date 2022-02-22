@@ -2067,9 +2067,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:overflow-auto{
     overflow: auto;
   }
-  .md\:overflow-hidden{
-    overflow: hidden;
-  }
   .md\:rounded-b-none{
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -2309,9 +2306,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .lg\:justify-between{
     justify-content: space-between;
-  }
-  .lg\:overflow-hidden{
-    overflow: hidden;
   }
   .lg\:px-0{
     padding-left: 0px;
