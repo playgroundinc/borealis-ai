@@ -894,6 +894,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-8{
   margin-top: 32px;
 }
+.mb-18{
+  margin-bottom: 72px;
+}
 .mt-15{
   margin-top: 60px;
 }
@@ -994,6 +997,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-auto{
   width: auto;
+}
+.w-11\/12{
+  width: 91.666667%;
 }
 .w-4{
   width: 16px;
@@ -1773,6 +1779,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:mt-20{
     margin-top: 80px;
   }
+  .md\:ml-30{
+    margin-left: 120px;
+  }
+  .md\:mb-5{
+    margin-bottom: 20px;
+  }
   .md\:mb-12{
     margin-bottom: 48px;
   }
@@ -1821,14 +1833,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:w-4\/6{
     width: 66.666667%;
   }
+  .md\:w-6\/12{
+    width: 50%;
+  }
   .md\:w-1\/4{
     width: 25%;
   }
   .md\:w-3\/4{
     width: 75%;
-  }
-  .md\:w-6\/12{
-    width: 50%;
   }
   .md\:w-5\/12{
     width: 41.666667%;
@@ -2029,6 +2041,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 1000px){
+  .tb\:mb-11{
+    margin-bottom: 44px;
+  }
+  .tb\:mb-8{
+    margin-bottom: 32px;
+  }
   .tb\:mb-0{
     margin-bottom: 0px;
   }

@@ -178,6 +178,9 @@ require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-it
 require get_template_directory() . '/inc/gutenberg/render-text-2-up-container-block.php';
 require get_template_directory() . '/inc/gutenberg/render-text-2-up-block.php';
 
+// Image & Text Block
+require get_template_directory() . '/inc/gutenberg/render-image-text-strip-block.php';
+
 // Statistics Blocks
 require get_template_directory() . '/inc/gutenberg/render-statistics-container-block.php';
 require get_template_directory() . '/inc/gutenberg/render-statistics-block.php';
