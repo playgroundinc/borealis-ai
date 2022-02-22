@@ -348,6 +348,9 @@ class Accordion {
     (0,_slide_toggle__WEBPACK_IMPORTED_MODULE_0__.slideToggle)(this.panel);
     element.classList.remove('accordion-row--active');
     element.setAttribute('aria-expanded', false);
+    const chevron = document.getElementById(element.id).getElementsByClassName("icon")[0];
+    chevron.classList.remove('rotate-180');
+    chevron.classList.add('rotate-0');
     this.getPanel(this.trigger);
   }
 

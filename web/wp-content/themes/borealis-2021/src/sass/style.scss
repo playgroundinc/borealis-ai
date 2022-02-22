@@ -12,6 +12,18 @@
     .pill-active {
         @apply border-primary-electric-blue-400 bg-primary-electric-blue-400 text-shade-white-400;
     }
+    .pill-secondary {
+        @apply border border-shade-white-400 px-4 py-1 rounded-pill block text-center paragraph-sm nth-child-2:ml-5 block;
+    }
+    .pill-secondary-active {
+        @apply border-shade-white-400 bg-shade-white-400 text-shade-black-400;
+    }
+    .default-tabs .pill-secondary {
+        @apply border-t-0 border-b-0 border-r-0 border-l-0 nth-child-2:ml-0 pb-6 px-8;
+    }
+    .default-tabs .pill-secondary.pill-secondary-active {
+        @apply border-b-4 border-primary-electric-purple-400 rounded-none;
+    }
     .text-link {
         @apply text-primary-electric-blue-400 visited:text-primary-electric-purple-400 block hover:underline;
     }

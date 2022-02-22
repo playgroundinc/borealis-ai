@@ -43,20 +43,25 @@ if ( ! function_exists( 'pg_render_accordion_row_block' ) ) {
             $id         = pg_slugify( $attributes->title );
             $heading_id = $id . '-title';
     ?>
-        <div>
-            <h3>
-                <button class="accordion-row__header" id="<?php echo esc_attr( $heading_id ); ?>" aria-controls="<?php echo esc_attr( $id ); ?>" aria-label="<?php esc_attr_e('Expand or collapse item', 'pg'); ?>" aria-expanded="false">
-                    <span>
-                        <?php echo esc_html( $attributes->title ); ?>
-                    </span>                
-               </button>
-            </h3>
-            <div id="<?php echo esc_attr( $id ); ?>" class="slide-toggle" role="region" aria-labelledby="<?php echo esc_attr( $heading_id ); ?>">
-                <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
-                    <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
-                <?php endforeach; ?>
+        <li class="border-shade-grey-500 border-t">
+            <div>
+                <h3>
+                    <button class="accordion-row__header text-shade-black-400 h4 w-full flex justify-between items-center px-6 py-7 md:py-7 md:px-5" id="<?php echo esc_attr( $heading_id ); ?>" aria-controls="<?php echo esc_attr( $id ); ?>" aria-label="<?php esc_attr_e('Expand or collapse item', 'pg'); ?>" aria-expanded="false">
+                        <span>
+                            <?php echo esc_html( $attributes->title ); ?>
+                        </span>  
+                        <?php echo pg_render_icon('chevron') ?>              
+                   </button>
+                </h3>
+                <div aria-hidden="true" id="<?php echo esc_attr( $id ); ?>" class="slide-toggle paragraph" role="region" aria-labelledby="<?php echo esc_attr( $heading_id ); ?>">
+                    <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
+                        <div class="pb-4 pl-6">
+                            <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
-        </div>
+        </li>
     <?php
         endif;
         return ob_get_clean();
