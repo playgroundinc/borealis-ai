@@ -36,49 +36,169 @@ if ( ! function_exists( 'pg_render_tabbed_content_container_block' ) ) {
         $allowed_html = pg_allowed_html();
         // Need to set the name of the attribute and the default as a safeguard.
         $fields = array(
-            'title' => '',
+            'cta_one_text' => '',
+            'cta_one_link' => '',
+            'cta_two_text' => '',
+            'cta_two_link' => '',
+            'display_style' => 'default',
             'copy' => '',
+            'image_id' => 0,
+            'title' => '',
         );
         $attributes = pg_get_attributes( $attrs, $fields );
+        $image = wp_get_attachment_image_url($attributes->image_id, 'full');
+        $dark = $image && strlen($image) > 0; 
         ob_start();
         ?>
-            <section class="tab-container" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
-                <?php if (!empty($attributes->title)): ?>
-                    <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class=""><?php echo esc_html($attributes->title) ?></h2>
-                <?php endif; ?>
-                <?php if (!empty($attributes->copy)): ?>
-                    <h2 id="<?php echo esc_html(pg_slugify($attributes->copy)) ?>" class=""><?php echo esc_html($attributes->copy) ?></h2>
-                <?php endif; ?>
-                <div role="tablist" aria-orientation="horizontal">
-                    <?php 
-                        foreach ($block['innerBlocks'] as $inner_block => $element) {
-                            reset($block['innerBlocks']);
-                            $titleSlug = pg_slugify($element['attrs']['title']);
-                            $title = $element['attrs']['title'];
-                            
-                            if ($inner_block === key($block['innerBlocks'])) {                                       
-                                echo '<button class="font-bold" role="tab" aria-selected="true" id="'.$titleSlug.'-tab" aria-controls="'.$titleSlug.'-content-panel">'.$title.'</button>';
-                            } else {
-                                echo '<button class="font-normal" role="tab" aria-selected="false" id="'.$titleSlug.'-tab" aria-controls="'.$titleSlug.'-content-panel">'.$title.'</button>';
-                            }
-                        }
-                    ?>
+            <div class="custom-component animated-element">
+                <div class="bg-center bg-cover <?php echo $dark && $attributes->display_style === 'background-image' ? esc_attr('text-shade-white-400 pt-11 lg:py-20') : '' ?>" style="<?php echo $dark && $attributes->display_style === 'background-image' ? 'background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('. esc_url_raw($image) . ')' : '' ?>">
+                    <section class="tab-container container" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
+                        <?php if ($dark && $attributes->display_style === 'background-image'): ?>
+                            <div class="lg:flex justify-between">
+                                <div class="lg:basis-4/12 shrink-0 flex flex-col">
+                                    <div class="grow flex flex-col justify-end">
+                                        <?php if (!empty($attributes->title)): ?>
+                                            <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3"><?php echo esc_html($attributes->title) ?></h2>
+                                        <?php endif; ?>
+                                        <?php if (!empty($attributes->copy)): ?>
+                                            <p class="paragraph pt-11"><?php echo esc_html($attributes->copy) ?></p>
+                                        <?php endif; ?>
+                                        <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0):?>
+                                            <div class="md:flex lg:justify-between flex-wrap">
+                                                <a class="primary-button flex items-center pt-11 pb-4" href="<?php echo esc_url_raw($attributes->cta_one_link)?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                                <?php if (!empty($attributes->cta_two_text) && !empty($attributes->cta_two_link) && strlen($attributes->cta_two_text) > 0 && strlen($attributes->cta_two_link) > 0):?>
+                                                    <a class="primary-button flex items-center pt-5 md:pt-11 md:pl-4 pb-4" href="<?php echo esc_url_raw($attributes->cta_two_link)?>"><?php echo esc_html($attributes->cta_two_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                                <?php endif; ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <div class="lg:basis-7/12 shrink-0 pt-14 lg:pt-0 flex flex-col">
+                                    <?php foreach ($block['innerBlocks'] as $inner_block => $element): ?>
+                                        <?php
+                                            $fields = array(
+                                                'title' => '',
+                                            );
+                                            $attributes = pg_get_attributes($element['attrs'], $fields);
+                                            if (!strlen($attributes->title) > 0 || empty($element['innerBlocks'])) {
+                                                continue;
+                                            }
+                                            $titleSlug = pg_slugify($attributes->title);
+                                            ?>
+                                            <?php if ($inner_block === key($block['innerBlocks'])): ?>                                      
+                                                <div class="flex justify-center flex-col grow" id="<?php echo esc_attr($titleSlug .'-content-panel')?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug.'-tab') ?>">
+                                                    <?php 
+                                                        foreach($element['innerBlocks'] as $panel) {
+                                                            echo wp_kses(render_block($panel), $allowed_html);
+                                                        }
+                                                    ?>
+                                                </div>
+                                            <?php else: ?>
+                                                <div class="hidden justify-center flex-col grow" id="<?php echo esc_attr($titleSlug .'-content-panel')?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug.'-tab') ?>">
+                                                    <?php 
+                                                        foreach($element['innerBlocks'] as $panel) {
+                                                            echo wp_kses(render_block($panel), $allowed_html);
+                                                        }
+                                                    ?>
+                                                </div>
+                                            <?php endif;?>
+                                    <?php endforeach; ?>
+                                    <div class="flex lg:justify-center lg:pt-8 overflow-scroll pb-11 pt-11 lg:pb-0" role="tablist" aria-orientation="horizontal">
+                                        <?php foreach ($block['innerBlocks'] as $inner_block => $element): ?>
+                                            <?php
+                                                $fields = array(
+                                                    'title' => '',
+                                                );
+                                                $attributes = pg_get_attributes($element['attrs'], $fields);
+                                                if (!strlen($attributes->title) > 0 || empty($element['innerBlocks'])) {
+                                                    continue;
+                                                }
+                                                $titleSlug = pg_slugify($element['attrs']['title']);
+                                                $title = $element['attrs']['title'];
+                                            ?> 
+                                                <?php if ($inner_block === key($block['innerBlocks'])): ?>   
+                                                    <button class="pill-secondary pill-secondary-active shrink-0" role="tab" aria-selected="true" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
+                                                <?php else: ?>
+                                                    <button class="pill-secondary shrink-0" role="tab" aria-selected="false" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
+                                                <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else: ?>
+                            <div class="md:flex justify-between default-tabs">
+                                <div class="md:basis-4/12 shrink-0">
+                                    <?php if (!empty($attributes->title)): ?>
+                                        <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3"><?php echo esc_html($attributes->title) ?></h2>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="basis-8/12 shrink-0 pt-5 md:pt-0">
+                                    <?php if (!empty($attributes->copy)): ?>
+                                        <p class="paragraph"><?php echo esc_html($attributes->copy) ?></p>
+                                    <?php endif; ?>
+                                    <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0):?>
+                                        <div class="md:flex flex-wrap">
+                                            <a class="primary-button flex items-center pt-11 pb-4" href="<?php echo esc_url_raw($attributes->cta_one_link)?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                            <?php if (!empty($attributes->cta_two_text) && !empty($attributes->cta_two_link) && strlen($attributes->cta_two_text) > 0 && strlen($attributes->cta_two_link) > 0):?>
+                                                <a class="primary-button flex items-center pt-11 md:pl-8 pb-4" href="<?php echo esc_url_raw($attributes->cta_two_link)?>"><?php echo esc_html($attributes->cta_two_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="flex pt-8 border-b border-shade-grey-700 overflow-scroll" role="tablist" aria-orientation="horizontal">
+                                        <?php foreach ($block['innerBlocks'] as $inner_block => $element): ?>
+                                            <?php
+                                                $fields = array(
+                                                    'title' => '',
+                                                );
+                                                $attributes = pg_get_attributes($element['attrs'], $fields);
+                                                if (!strlen($attributes->title) > 0 || empty($element['innerBlocks'])) {
+                                                    continue;
+                                                }
+                                                $titleSlug = pg_slugify($element['attrs']['title']);
+                                                $title = $element['attrs']['title'];
+                                            ?> 
+                                                <?php if ($inner_block === key($block['innerBlocks'])): ?>   
+                                                    <button class="pill-secondary pill-secondary-active shrink-0" role="tab" aria-selected="true" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
+                                                <?php else: ?>
+                                                    <button class="pill-secondary shrink-0" role="tab" aria-selected="false" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
+                                                <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <?php foreach ($block['innerBlocks'] as $inner_block => $element): ?>
+                                        <?php
+                                            $fields = array(
+                                                'title' => '',
+                                            );
+                                            $attributes = pg_get_attributes($element['attrs'], $fields);
+                                            if (!strlen($attributes->title) > 0 || empty($element['innerBlocks'])) {
+                                                continue;
+                                            }
+                                            $titleSlug = pg_slugify($attributes->title);
+                                            ?>
+                                            <?php if ($inner_block === key($block['innerBlocks'])): ?>                                      
+                                                <div class="flex flex-col pt-12" id="<?php echo esc_attr($titleSlug .'-content-panel')?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug.'-tab') ?>">
+                                                    <?php 
+                                                        foreach($element['innerBlocks'] as $panel) {
+                                                            echo wp_kses(render_block($panel), $allowed_html);
+                                                        }
+                                                    ?>
+                                                </div>
+                                            <?php else: ?>
+                                                <div class="hidden flex-col pt-12" id="<?php echo esc_attr($titleSlug .'-content-panel')?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug.'-tab') ?>">
+                                                    <?php 
+                                                        foreach($element['innerBlocks'] as $panel) {
+                                                            echo wp_kses(render_block($panel), $allowed_html);
+                                                        }
+                                                    ?>
+                                                </div>
+                                            <?php endif;?>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </section>
                 </div>
-                <?php 
-                    foreach ($block['innerBlocks'] as $inner_block => $element) {
-                        reset($block['innerBlocks']);
-                        $titleSlug = pg_slugify($element['attrs']['title']);
-                        $title = $element['attrs']['title'];
-                        $content = $element['attrs']['content'];
-
-                        if ($inner_block === key($block['innerBlocks'])) {                                       
-                            echo '<div class="block" id="'.$titleSlug.'-content-panel" role="tabpanel" aria-labelledby="'.$titleSlug.'-tab"><h2>'.$title.'</h2><p>'.$content.'</p></div>';
-                        } else {
-                            echo '<div class="hidden" id="'.$titleSlug.'-content-panel" role="tabpanel" aria-labelledby="'.$titleSlug.'-tab"><h2>'.$title.'</h2><p>'.$content.'</p></div>';
-                        }
-                    }
-                ?>
-            </section>
+            </div>
         <?php
         return ob_get_clean();
     }

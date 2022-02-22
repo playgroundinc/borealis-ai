@@ -223,11 +223,9 @@ if (!function_exists('pg_svg_spritemap')) {
                 </g>
             </symbol>
 
-             <!-- CTA Arrow White -->
-             <symbol id="icon-arrow-white" viewBox="0 0 24 25" fill="none">
-                <path d="M5 12.25H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M15 16.25L19 12.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M15 8.25L19 12.25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- CTA Arrow White -->
+            <symbol id="icon-arrow-white" viewBox="0 0 18 18" fill="none">
+                <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9h14M12 13l4-4M12 5l4 4"/></g>
             </symbol>
 
             <!-- CTA Arrow Black -->

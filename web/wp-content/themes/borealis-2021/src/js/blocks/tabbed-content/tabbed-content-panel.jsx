@@ -5,7 +5,9 @@ import CustomRichText from '../reusable/custom-richtext-component.jsx';
 export default function tabbedContentPanelBlock() {
     const { registerBlockType, createBlock } = wp.blocks;
     const { i18n } = wp;
-
+    const {
+		InnerBlocks,
+    } = wp.blockEditor;
     const blockSlug = "tabbed-content-panel-block"; // slug for the block
 	const blockTitle = "Tabbed content panel block";
 	const blockDescription = "Component to create tabbed content panel block";
@@ -39,7 +41,7 @@ export default function tabbedContentPanelBlock() {
             }
 
 			return [
-                <div class="tabbed-content-panel__block">
+                <div class="tabbed-content-panel__block custom-child">
                     <p class="block-title">Tabbed Content Panel</p>
                     <CustomRichText 
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
@@ -47,27 +49,24 @@ export default function tabbedContentPanelBlock() {
                             {
                                 value: title,
                                 reference: "title", 
-                                tagName: "p",
+                                tagName: "h3",
                                 placeholder: "Please provide a title"
                             },
                         ]}
                     />
-                    <CustomRichText 
-                        onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
-                        components={[
-                            {
-                                value: content,
-                                reference: "content", 
-                                tagName: "p",
-                                placeholder: "Please provide content"
-                            },
-                        ]}
-                    />
+                    { save ? (
+                        <InnerBlocks.Content />
+                    ) : (
+                        <InnerBlocks
+                            allowedBlocks={[`${namespace}/paragraph`]}
+                        />
+                    )}
                 </div>,
 			];
 		},
 		save: ({ attributes }) => {
-			const { title, content } = attributes;
+			const { title } = attributes;
+            return <InnerBlocks.Content />;
 		},
 	});
 }  
