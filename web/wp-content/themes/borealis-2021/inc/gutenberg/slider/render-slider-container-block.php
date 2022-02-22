@@ -44,9 +44,10 @@ if ( ! function_exists( 'pg_render_slider_container_block' ) ) {
         ob_start();
             if (!empty($block['innerBlocks'])):
             ?>
+            <div class="custom-component animated-element">
                 <div class="container">
                     <div class="md:flex slider">
-                        <div class="md:w-4/12 md:pr-4 flex flex-col">
+                        <div class="md:w-4/12 shrink-0 md:pr-4 flex flex-col">
                             <div class="flex flex-col grow justify-between">
                                 <div>
                                     <?php if (!empty($attributes->title)): ?>
@@ -90,6 +91,7 @@ if ( ! function_exists( 'pg_render_slider_container_block' ) ) {
                         </div>
                     </div>
                 </div>
+            </div>
             <?php
             endif;
         return ob_get_clean();

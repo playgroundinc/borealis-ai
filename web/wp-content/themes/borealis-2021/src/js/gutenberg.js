@@ -5,6 +5,7 @@ import registerRichTextBlocks from "./blocks/copy/copy-blocks.jsx";
 // Meta
 import pageMetaBlock from "./blocks/meta/page-meta.jsx"
 import researchBlogMetaBlock from "./blocks/meta/research-blogs-meta.jsx";
+import newsMetaBlock from "./blocks/meta/news-meta.jsx"
 import teamMemberMetaBlock from "./blocks/meta/team-member-meta.jsx";
 import authorMetaBlock from './blocks/meta/author-meta.jsx';
 import publicationMetaBlock from './blocks/meta/publications-meta.jsx';
@@ -81,6 +82,13 @@ import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-pane
 import tagCloudContainerBlock from "./blocks/tag-cloud/tag-cloud-container-block.jsx";
 import tagCloudItemBlock from "./blocks/tag-cloud/tag-cloud-item-block.jsx";
 
+// Image & Text Strip Block
+import imageTextStripBlock from "./blocks/image-text-strip-block.jsx";
+
+// Statisitcs Blocks
+import statisticsBlock from "./blocks/statistics-block.jsx";
+import statisticsContainerBlock from "./blocks/statistics-container-block.jsx";
+
 // Core Extends Blocks
 customVideoPoster();
 registerRichTextBlocks();
@@ -88,6 +96,7 @@ registerRichTextBlocks();
 // Init meta blocks
 pageMetaBlock();
 researchBlogMetaBlock();
+newsMetaBlock();
 teamMemberMetaBlock();
 authorMetaBlock();
 publicationMetaBlock();
@@ -163,3 +172,10 @@ tabbedContentPanelBlock();
 // Tag Cloud Content Blocks
 tagCloudContainerBlock();
 tagCloudItemBlock();
+
+// Image & Text Strip Block
+imageTextStripBlock();
+
+// Statistics Content Blocks
+statisticsContainerBlock();
+statisticsBlock();

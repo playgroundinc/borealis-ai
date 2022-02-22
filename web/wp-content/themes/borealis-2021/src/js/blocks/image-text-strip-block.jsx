@@ -1,13 +1,13 @@
 // Helpers
-import { namespace } from "../helper-functions/constants.js";
+import { namespace } from "./helper-functions/constants.js";
 
 // Reusable
-import CustomRichText from "../reusable/custom-richtext-component.jsx";
-import CustomImageUpload from "../reusable/custom-image-upload.jsx";
+import CustomRichText from "./reusable/custom-richtext-component.jsx";
+import CustomImageUpload from "./reusable/custom-image-upload.jsx";
 
-export default function trmcPageStripGraphicBlock() {
+export default function imageTextStripBlock() {
   /**
-   * GUTENBERG BLOCK - Page Strip Graphic
+   * GUTENBERG BLOCK -Image Text Strip
    */
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
@@ -15,9 +15,9 @@ export default function trmcPageStripGraphicBlock() {
 
   const { i18n } = wp;
 
-  const slug = "page-strip-graphic";
-  const title = "Page Strip - Image  BG";
-  const description = "A page strip with a background image.";
+  const slug = "image-text-strip";
+  const title = "Image Text Strip";
+  const description = "A page strip with an image and text.";
   const category = "page-strips";
   const icon = "format-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
@@ -62,10 +62,10 @@ export default function trmcPageStripGraphicBlock() {
       type: "String",
       default: "",
     },
-    icon: {
-      type: "String",
-      default: "",
-    },
+    reverse: {
+        type: "String",
+        default: "",
+      },
   };
   registerBlockType(`${namespace}/${slug}`, {
     title: i18n.__(title, `${namespace}`),
@@ -73,22 +73,6 @@ export default function trmcPageStripGraphicBlock() {
     category,
     icon,
     attributes,
-    transforms: {
-      to: [
-        {
-          type: "block",
-          blocks: [`${namespace}/page-strip`],
-          transform: (attributes, innerBlocks) => {
-            return wp.blocks.createBlock(
-              `${namespace}/page-strip`,
-              attributes,
-              innerBlocks
-            );
-          },
-        },
-      ],
-    },
-    parent: [`${namespace}/page-strip-graphic-container`],
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
       const {
@@ -99,17 +83,15 @@ export default function trmcPageStripGraphicBlock() {
         image_alt,
         image_id,
         image_url,
-        image_url_mobile,
-        image_id_mobile,
-        image_alt_mobile,
-        icon,
+        reverse,
       } = attributes;
 
       function updateAttributeValue(attribute, value) {
+        console.log(attribute, value);
         setAttributes({ [attribute]: value });
       }
       return [
-        <section class="custom-child">
+        <section class="custom-component">
           <p className="block-title">Graphic Page Strip</p>
           <CustomImageUpload
             components={[
@@ -121,22 +103,6 @@ export default function trmcPageStripGraphicBlock() {
                 idValue: image_id,
                 idReference: "image_id",
                 buttonText: "Add an image",
-              },
-            ]}
-            onChange={(attribute, change) => {
-              updateAttributeValue(attribute, change);
-            }}
-          />
-           <CustomImageUpload
-            components={[
-              {
-                value: image_url_mobile,
-                reference: "image_url_mobile",
-                altValue: image_alt_mobile,
-                altReference: "image_alt_mobile",
-                idValue: image_id_mobile,
-                idReference: "image_id_mobile",
-                buttonText: "Add a mobile image",
               },
             ]}
             onChange={(attribute, change) => {
@@ -164,6 +130,7 @@ export default function trmcPageStripGraphicBlock() {
                 reference: "copy",
                 tagName: "p",
                 classes: ["paragraph"],
+                settings: ['core/bold', 'core/link', 'core/italic', 'core/list'],
                 placeholder: "Please provide copy (optional)",
               },
             ]}
@@ -201,18 +168,18 @@ export default function trmcPageStripGraphicBlock() {
           />
           <ToggleControl
             label={
-              "Style: check for white arrow or leave unchecked for black arrow"
+              "Style: check for image and text to reverse positions"
             }
-            checked={icon}
+            checked={reverse}
             onChange={(change) => {
-              updateAttributeValue("icon", change);
+              updateAttributeValue("reverse", change);
             }}
           />
         </section>,
       ];
     },
     save: ({ attributes }) => {
-      const { title, copy, btn_url, btn_text, image_url, icon, image_url_mobile } = attributes;
+      const { title, copy, btn_url, btn_text, image_url, reverse, image_url_mobile } = attributes;
       return <InnerBlocks.Content />;
     },
   });
