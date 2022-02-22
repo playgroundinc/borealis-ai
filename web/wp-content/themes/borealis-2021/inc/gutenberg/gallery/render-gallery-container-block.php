@@ -82,7 +82,7 @@ if ( ! function_exists( 'pg_render_gallery_container_block' ) ) {
                                     ?>
                                     <li class="nth-child-2:ml-5">
                                         <picture>
-                                            <img class="lazy max-h-[450px] max-w-[450px] rounded-large overflow-hidden block " data-src="<?php echo esc_url_raw($image)?>" src="<?php echo esc_url_raw($placholder)?>" alt="<?php echo !empty($attributes->image_alt) ? esc_attr($attributes->image_alt) : null ?>">
+                                            <img class="max-h-[450px] max-w-[450px] rounded-large overflow-hidden block " src="<?php echo esc_url_raw($image)?>" alt="<?php echo !empty($attributes->image_alt) ? esc_attr($attributes->image_alt) : null ?>">
                                         </picture>
                                     </li>
                             <?php elseif ($inner_block['blockName'] === $namespace . '/select-team-member'): ?>
