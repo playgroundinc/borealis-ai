@@ -42,3 +42,16 @@
         @apply mt-23;
     }
 }
+
+.visible-scroll {
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: rgba(34,39,49,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+    }
+}

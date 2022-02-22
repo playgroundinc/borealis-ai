@@ -20,7 +20,8 @@ if (!function_exists('pg_register_news_cpt')) {
             'publication_date' => 'text',
             'post_info' => 'text',
             'time_to_read' => 'text',
-            'authors' => 'text'
+            'authors' => 'text',
+            'series_order' => 'number' 
         );
         $News_CPT->register_meta($meta_values);
     }

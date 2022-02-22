@@ -1096,7 +1096,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 24px;
 }
 .w-3\/8{
-  width: calc((100% /8) * 3);
+  width: calc((100% / 8) * 3);
 }
 .w-22{
   width: 88px;
@@ -1573,6 +1573,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-41{
   padding-top: 164px;
 }
+.pr-6{
+  padding-right: 24px;
+}
+.pb-16{
+  padding-bottom: 64px;
+}
 .pr-3{
   padding-right: 12px;
 }
@@ -1706,72 +1712,100 @@ Ensure the default browser behavior of the `hidden` attribute.
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
 }
+
+.visible-scroll::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px; }
+
+.visible-scroll::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: rgba(34, 39, 49, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+
 .first\:mt-0:first-child{
   margin-top: 0px;
 }
+
 .last\:basis-auto:last-child{
   flex-basis: auto;
 }
+
 .last\:border-b-0:last-child{
   border-bottom-width: 0px;
 }
+
 .visited\:text-primary-electric-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
+
 .visited\:text-primary-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(85 0 155 / var(--tw-text-opacity));
 }
+
 .hover\:cursor-pointer:hover{
   cursor: pointer;
 }
+
 .hover\:bg-shade-grey-50:hover{
   background-color: rgba(244,244,251,0.5);
 }
+
 .hover\:bg-shade-grey-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
 }
+
 .hover\:bg-shade-white-400:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+
 .hover\:text-primary-electric-blue-400:hover{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
 }
+
 .hover\:text-primary-electric-purple-400:hover{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
+
 .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
+
 .focus\:border-primary-electric-blue-400:focus{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
 }
+
 .focus\:text-primary-electric-purple-400:focus{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
+
 .focus\:outline-0:focus{
   outline-width: 0px;
 }
+
 .disabled\:text-shade-grey-400:disabled{
   --tw-text-opacity: 1;
   color: rgb(216 216 228 / var(--tw-text-opacity));
 }
+
 .group:hover .group-hover\:bg-tint-teal-400{
   --tw-bg-opacity: 1;
   background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
+
 .group:hover .group-hover\:underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
+
 .peer:checked ~ .peer-checked\:pill-active{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
@@ -1780,20 +1814,25 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+
 .nth-child-2\:ml-5:nth-child(n + 2){
   margin-left: 20px;
 }
+
 .nth-child-2\:ml-0:nth-child(n + 2){
   margin-left: 0px;
 }
+
 .nth-child-3\:pt-12:nth-child(n + 3){
   padding-top: 48px;
 }
+
 @media (min-width: 375px){
   .sm\:w-1\/2{
     width: 50%;
   }
 }
+
 @media (min-width: 768px){
   .md\:h1{
     font-size: 70px;
@@ -1987,15 +2026,21 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 33.333333%;
   }
   .md\:w-5\/8{
-    width: calc((100% /8) * 5);
+    width: calc((100% / 8) * 5);
   }
   .md\:w-3\/8{
-    width: calc((100% /8) * 3);
+    width: calc((100% / 8) * 3);
   }
   .md\:basis-1\/4{
     flex-basis: 25%;
   }
   .md\:basis-4\/12{
+    flex-basis: 33.333333%;
+  }
+  .md\:basis-3\/12{
+    flex-basis: 25%;
+  }
+  .md\:basis-1\/3{
     flex-basis: 33.333333%;
   }
   .md\:flex-row{
@@ -2021,6 +2066,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:overflow-auto{
     overflow: auto;
+  }
+  .md\:overflow-hidden{
+    overflow: hidden;
   }
   .md\:rounded-b-none{
     border-bottom-right-radius: 0;
@@ -2179,6 +2227,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-top: 0px;
   }
 }
+
 @media (min-width: 1000px){
   .tb\:mb-11{
     margin-bottom: 44px;
@@ -2229,6 +2278,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 20px;
   }
 }
+
 @media (min-width: 1440px){
   .lg\:flex{
     display: flex;
@@ -2251,11 +2301,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:basis-7\/12{
     flex-basis: 58.333333%;
   }
+  .lg\:basis-1\/4{
+    flex-basis: 25%;
+  }
   .lg\:justify-center{
     justify-content: center;
   }
   .lg\:justify-between{
     justify-content: space-between;
+  }
+  .lg\:overflow-hidden{
+    overflow: hidden;
   }
   .lg\:px-0{
     padding-left: 0px;
