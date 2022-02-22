@@ -15,7 +15,7 @@ export default function researchBlogMetaBlock() {
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
-	registerBlockType(`${namespace}/research-blog-meta-block`, {
+	registerBlockType(`${namespace}/research-blogs-meta-block`, {
 		title: 'Research Blogs Meta',
 		icon: 'align-full-width',
         category: 'common',

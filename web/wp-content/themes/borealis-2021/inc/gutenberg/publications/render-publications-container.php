@@ -42,6 +42,7 @@ if ( ! function_exists( 'pg_render_publications_container_block' ) ) {
 
         ob_start();
         ?>
+        <div class="custom-component animated-element">
             <div class="md:flex md:container">
                 <div class="md:w-4/12 container md:m-0">
                     <?php if (!empty($attributes->title)): ?>                   
@@ -59,6 +60,7 @@ if ( ! function_exists( 'pg_render_publications_container_block' ) ) {
                     </ul>
                 </div>                
             </div>
+        </div>
         <?php
         return ob_get_clean();
     }

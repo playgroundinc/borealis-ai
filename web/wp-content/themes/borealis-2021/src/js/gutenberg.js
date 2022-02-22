@@ -1,9 +1,11 @@
 // import customButtonIcons from './blocks/core-extends/button-icons';
 import customVideoPoster from './blocks/core-extends/video-embed-poster.jsx';
+import registerRichTextBlocks from "./blocks/copy/copy-blocks.jsx";
 
 // Meta
 import pageMetaBlock from "./blocks/meta/page-meta.jsx"
 import researchBlogMetaBlock from "./blocks/meta/research-blogs-meta.jsx";
+import newsMetaBlock from "./blocks/meta/news-meta.jsx"
 import teamMemberMetaBlock from "./blocks/meta/team-member-meta.jsx";
 import authorMetaBlock from './blocks/meta/author-meta.jsx';
 import publicationMetaBlock from './blocks/meta/publications-meta.jsx';
@@ -17,6 +19,9 @@ import imageBlock from "./blocks/image-block.jsx";
 // Accordion Blocks
 import accordionContainerBlock from "./blocks/accordion/accordion.jsx";
 import accordionRowBlock from "./blocks/accordion/accordion-row.jsx";
+
+// Block Quote
+import blockquoteBlock from './blocks/blockquote/blockquote.jsx';
 
 // Body Copy
 import bodyCopyBlock from "./blocks/body-copy.jsx";
@@ -40,6 +45,7 @@ import logoBlock from "./blocks/logos/logo.jsx";
 // Page Strips
 import pageStripBlock from "./blocks/page-strips/page-strip.jsx";
 import pageStripGraphic from "./blocks/page-strips/page-strip-graphic.jsx";
+import pageStripGraphicContainer from "./blocks/page-strips/page-strip-graphic-container.jsx";
 
 // Publications
 import publicationsContainerBlock from './blocks/publications/publications-container.jsx';
@@ -76,12 +82,18 @@ import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-pane
 import tagCloudContainerBlock from "./blocks/tag-cloud/tag-cloud-container-block.jsx";
 import tagCloudItemBlock from "./blocks/tag-cloud/tag-cloud-item-block.jsx";
 
+// Statisitcs Blocks
+import statisticsBlock from "./blocks/statistics-block.jsx";
+import statisticsContainerBlock from "./blocks/statistics-container-block.jsx";
+
 // Core Extends Blocks
 customVideoPoster();
+registerRichTextBlocks();
 
 // Init meta blocks
 pageMetaBlock();
 researchBlogMetaBlock();
+newsMetaBlock();
 teamMemberMetaBlock();
 authorMetaBlock();
 publicationMetaBlock();
@@ -94,10 +106,14 @@ imageTextBlock();
 pageStripBlock();
 imageBlock();
 pageStripGraphic();
+pageStripGraphicContainer();
 
 // Accordion Blocks
 accordionContainerBlock();
 accordionRowBlock();
+
+// Block Quote
+blockquoteBlock();
 
 // Body Copy
 bodyCopyBlock();
@@ -153,3 +169,7 @@ tabbedContentPanelBlock();
 // Tag Cloud Content Blocks
 tagCloudContainerBlock();
 tagCloudItemBlock();
+
+// Statistics Content Blocks
+statisticsContainerBlock();
+statisticsBlock();
