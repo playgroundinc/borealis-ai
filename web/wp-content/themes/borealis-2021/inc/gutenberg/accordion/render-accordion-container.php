@@ -43,7 +43,7 @@ if (!function_exists('pg_render_accordion_block')) {
         $allowed_html = pg_allowed_html();
         ob_start();
 ?>
-        <div class="container flex flex-col md:flex-row">
+        <div class="container flex flex-col md:flex-row custom-component">
             <div class="w-full md:w-4/12">
                 <?php if (!empty($attributes->title)) : ?>
                     <h3 class="h3 my-5 md:my-12">
