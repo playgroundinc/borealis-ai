@@ -16,12 +16,12 @@
     .current_page_item .submenu {
         @apply block;
     }
-    .h2+.paragraph-blog,
-    .h3+.paragraph-blog,
-    .h4+.paragraph-blog {
+    .h2 + .paragraph-blog,
+    .h3 + .paragraph-blog,
+    .h4 + .paragraph-blog {
         @apply mt-3 md:mt-8;
     }
-    .custom-component+.load-more-results {
+    .custom-component + .load-more-results {
         @apply mt-16 border-t border-shade-grey-500;
     }
     .custom-component {
