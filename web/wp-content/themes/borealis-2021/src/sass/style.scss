@@ -41,4 +41,19 @@
     .custom-component {
         @apply mt-23;
     }
+
+    .custom-component .custom-component {
+        @apply mt-0;
+    }
+
+    .container .container {
+        @apply w-full m-0;
+        .icon-list {
+            @apply w-full;
+        }
+        .icon-list-title {
+            @apply hidden;
+        }
+    }
+
 }
