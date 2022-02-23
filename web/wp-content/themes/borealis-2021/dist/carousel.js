@@ -361,6 +361,7 @@ module.exports.breakpoints = {
     spacing['gallery'] = '600px';
     spacing['team-member'] = '310px';
     spacing['gallery-offset'] = 'calc((100vw - 1300px) / 2)';
+    spacing['card'] = 'calc((100% - 64px) / 3)';
     for (let i = 0; i <= max; i = i + 1) {
       spacing[i] = `${i * base}px`;
     }

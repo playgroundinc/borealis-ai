@@ -499,19 +499,17 @@ function bodyCopyBlock() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ imageTextBlock; }
+/* harmony export */   "default": function() { return /* binding */ calloutColumnBlock; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants.js */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
-/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 // Helpers
  // Reusable
 
 
-
-function imageTextBlock() {
+function calloutColumnBlock() {
   /**
    * GUTENBERG BLOCK - Custom Column
    */
@@ -528,25 +526,13 @@ function imageTextBlock() {
   var icon = "table-col-after"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
-    image_alt: {
-      type: "String",
-      default: ""
-    },
-    image_id: {
-      type: "Number",
-      default: 0
-    },
-    image_url: {
-      type: "String",
-      default: ""
-    },
     link: {
       type: "String",
       default: ""
     },
-    link_text: {
+    subtitle: {
       type: "String",
-      default: "read more"
+      default: ""
     },
     title: {
       type: "String",
@@ -565,11 +551,8 @@ function imageTextBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var image_alt = attributes.image_alt,
-          image_id = attributes.image_id,
-          image_url = attributes.image_url,
-          link = attributes.link,
-          link_text = attributes.link_text,
+      var link = attributes.link,
+          subtitle = attributes.subtitle,
           title = attributes.title;
 
       function updateAttributeValue(attribute, value) {
@@ -580,46 +563,25 @@ function imageTextBlock() {
         className: "custom-child"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Card"), /*#__PURE__*/React.createElement("section", null, /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        components: [{
-          value: image_url,
-          reference: 'image_url',
-          altValue: image_alt,
-          altReference: 'image_alt',
-          idValue: image_id,
-          idReference: 'image_id',
-          buttonText: 'Add Image',
-          imageClasses: ['image-text__image']
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Callout Card"), /*#__PURE__*/React.createElement("section", null, /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
           value: title,
           reference: 'title',
           tagName: 'h2',
           classes: ['heading-one'],
+          settings: [],
           placeholder: "Add a title for this card"
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: []
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        components: [{
+        }, {
+          value: subtitle,
+          reference: 'subtitle',
+          tagName: 'p',
+          placeholder: "Add a subtitle for this card"
+        }, {
           value: link,
           reference: 'link',
+          settings: [],
           tagName: 'p',
-          placeholder: "Add a link for this card",
-          classes: []
-        }, {
-          value: link_text,
-          reference: 'link_text',
-          placeholder: "Add link text for this card",
-          tagName: 'p',
-          classes: []
+          placeholder: "Add a link (required)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -628,12 +590,10 @@ function imageTextBlock() {
     },
     save: function save(_ref) {
       var attributes = _ref.attributes;
-      var image_url = attributes.image_url,
-          image_alt = attributes.image_alt,
-          image_id = attributes.image_id,
-          reverse = attributes.reverse,
+      var link = attributes.link,
+          subtitle = attributes.subtitle,
           title = attributes.title;
-      return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
+      return;
     }
   });
 }
@@ -652,7 +612,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
-/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
+/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
@@ -664,17 +624,12 @@ function trmcAccordionBlock() {
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "callout-container";
-  var blockTitle = "Cards - Image";
+  var blockTitle = "Callout Cards Container";
   var blockDescription = "Creates a container for single callout cards.";
   var blockCategory = "containers";
   var blockIcon = "layout"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ['alignment', 'columns', 'title'];
   var attributes = {
-    columns: {
-      type: 'String',
-      default: '3'
-    },
     description: {
       type: 'String',
       default: ''
@@ -682,6 +637,18 @@ function trmcAccordionBlock() {
     title: {
       type: 'String',
       default: ''
+    },
+    image_alt: {
+      type: 'String',
+      default: ''
+    },
+    image_url: {
+      type: 'String',
+      default: ''
+    },
+    image_id: {
+      type: 'Number',
+      default: 0
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -696,7 +663,9 @@ function trmcAccordionBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var description = attributes.description,
-          columns = attributes.columns,
+          image_alt = attributes.image_alt,
+          image_id = attributes.image_id,
+          image_url = attributes.image_url,
           title = attributes.title;
 
       function updateAttributeValue(attribute, value) {
@@ -707,23 +676,15 @@ function trmcAccordionBlock() {
         className: "custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Cards - Image (set number of columns in block settings)"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        controls: [{
-          type: 'select',
-          label: '# of Columns',
-          reference: 'columns',
-          value: columns,
-          options: [// Value is the 12 / number of columns.
-          {
-            label: "Four",
-            value: "3"
-          }, {
-            label: "Three",
-            value: "4"
-          }, {
-            label: "Two",
-            value: "6"
-          }]
+      }, "Callout Cards Container"), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        components: [{
+          value: image_url,
+          reference: 'image_url',
+          altValue: image_alt,
+          altReference: 'image_alt',
+          idValue: image_id,
+          idReference: 'image_id',
+          buttonText: 'Add background image'
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
