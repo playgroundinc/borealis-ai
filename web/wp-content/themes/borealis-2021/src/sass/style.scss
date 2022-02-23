@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Martel&family=Metrophobic&display=swap');
-
 // Tailwinds
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-
 @layer components {
     .pill {
         @apply border border-shade-black-400 px-4 py-1 rounded-pill inline-block text-center paragraph-sm;
@@ -55,5 +53,31 @@
             @apply hidden;
         }
     }
+    .footnote-link.footnote-identifier-link {
+        @apply scroll-mt-30;
+    }
+    .footnote-link.footnote-back-link {
+        @apply paragraph-sm;
+    }
+    ol.footnotes {
+        @apply list-inside  border-t border-shade-grey-500 pt-6 mt-30;	
+    }
+    ol.footnotes li small {
+        @apply paragraph-sm;
+    }
+    
+    .greenhouse h2 {
+        @apply h4 md:h3 mb-8 mt-18 w-8/12 tb:w-6/12;
+    }
+    
+    .greenhouse p,
+    .greenhouse li {
+        @apply md:paragraph paragraph-sm;
+    }
+    
+    .greenhouse ul {
+        @apply list-disc list-inside;
+    }
+    
 
 }

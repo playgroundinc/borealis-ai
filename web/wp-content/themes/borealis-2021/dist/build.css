@@ -840,6 +840,165 @@ Ensure the default browser behavior of the `hidden` attribute.
 .container .container .icon-list-title{
   display: none;
 }
+.footnote-link.footnote-identifier-link{
+  scroll-margin-top: 120px;
+}
+.footnote-link.footnote-back-link{
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .footnote-link.footnote-back-link{
+    font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .footnote-link.footnote-back-link{
+    font-size: 14px;
+  }
+}
+ol.footnotes{
+  margin-top: 120px;
+  list-style-position: inside;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(101 104 146 / var(--tw-border-opacity));
+  padding-top: 24px;
+}
+ol.footnotes li small{
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  ol.footnotes li small{
+    font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  ol.footnotes li small{
+    font-size: 14px;
+  }
+}
+.greenhouse h2{
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  font-weight: 700;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .greenhouse h2{
+    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .greenhouse h2{
+    font-size: 18px;
+  }
+}
+.greenhouse h2 + .paragraph-blog{
+  margin-top: 12px;
+}
+@media (min-width: 768px){
+  .greenhouse h2 + .paragraph-blog{
+    margin-top: 32px;
+  }
+}
+.greenhouse h2{
+  margin-bottom: 32px;
+  margin-top: 72px;
+  width: 66.666667%;
+}
+@media (min-width: 768px){
+  .greenhouse h2{
+    font-size: 30px;
+    font-family: Inter, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .greenhouse h2{
+      font-size: calc(30px + ((30 - 30) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .greenhouse h2{
+      font-size: 30px;
+    }
+  }
+  .greenhouse h2 + .paragraph-blog{
+    margin-top: 12px;
+  }
+  @media (min-width: 768px){
+    .greenhouse h2 + .paragraph-blog{
+      margin-top: 32px;
+    }
+  }
+}
+@media (min-width: 1000px){
+  .greenhouse h2{
+    width: 50%;
+  }
+}
+.greenhouse p, .greenhouse li{
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .greenhouse p, .greenhouse li{
+    font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .greenhouse p, .greenhouse li{
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px){
+  .greenhouse p, .greenhouse li{
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    line-height: 1.80;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .greenhouse p, .greenhouse li{
+      font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .greenhouse p, .greenhouse li{
+      font-size: 18px;
+    }
+  }
+}
+.greenhouse ul{
+  list-style-position: inside;
+  list-style-type: disc;
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -947,6 +1106,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-10{
   margin-right: 40px;
 }
+.mb-19{
+  margin-bottom: 76px;
+}
+.mb-36{
+  margin-bottom: 144px;
+}
 .mt-19{
   margin-top: 76px;
 }
@@ -995,6 +1160,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-16{
   margin-top: 64px;
 }
+.mt-18{
+  margin-top: 72px;
+}
 .mt-0{
   margin-top: 0px;
 }
@@ -1009,9 +1177,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mb-12{
   margin-bottom: 48px;
-}
-.mt-18{
-  margin-top: 72px;
 }
 .ml-15{
   margin-left: 60px;
@@ -1173,6 +1338,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .resize{
   resize: both;
+}
+.list-inside{
+  list-style-position: inside;
+}
+.list-disc{
+  list-style-type: disc;
 }
 .flex-row{
   flex-direction: row;
@@ -1481,14 +1652,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-8{
   padding-top: 32px;
 }
-.pt-100{
-  padding-top: 400px;
+.pt-5{
+  padding-top: 20px;
 }
 .pt-14{
   padding-top: 56px;
 }
 .pb-4{
   padding-bottom: 16px;
+}
+.pt-100{
+  padding-top: 400px;
 }
 .pl-5{
   padding-left: 20px;
@@ -1501,9 +1675,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pl-0{
   padding-left: 0px;
-}
-.pt-5{
-  padding-top: 20px;
 }
 .pb-56{
   padding-bottom: 224px;
@@ -1519,6 +1690,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-4{
   padding-right: 16px;
+}
+.pt-6{
+  padding-top: 24px;
 }
 .pl-6{
   padding-left: 24px;
@@ -1546,9 +1720,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-4{
   padding-top: 16px;
-}
-.pt-6{
-  padding-top: 24px;
 }
 .pt-featured-image{
   padding-top: 360px;
@@ -1580,6 +1751,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-11{
   padding-bottom: 44px;
 }
+.pr-6{
+  padding-right: 24px;
+}
 .pl-12{
   padding-left: 48px;
 }
@@ -1588,9 +1762,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-3{
   padding-right: 12px;
-}
-.pr-6{
-  padding-right: 24px;
 }
 .text-center{
   text-align: center;
@@ -1618,6 +1789,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-primary-navy-400{
   --tw-text-opacity: 1;
   color: rgb(0 15 120 / var(--tw-text-opacity));
+}
+.text-primary-electric-purple-400{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
 }
 .text-primary-electric-blue-400{
   --tw-text-opacity: 1;
@@ -1849,6 +2024,25 @@ Ensure the default browser behavior of the `hidden` attribute.
       font-size: 60px;
     }
   }
+  .md\:h3{
+    font-size: 30px;
+    font-family: Inter, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:h3{
+      font-size: calc(30px + ((30 - 30) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:h3{
+      font-size: 30px;
+    }
+  }
   .md\:paragraph-lg{
     font-size: 27px;
     font-family: Inter, sans-serif;
@@ -1866,6 +2060,25 @@ Ensure the default browser behavior of the `hidden` attribute.
   @media (min-width: 1920px){
     .md\:paragraph-lg{
       font-size: 27px;
+    }
+  }
+  .md\:paragraph{
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    line-height: 1.80;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:paragraph{
+      font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:paragraph{
+      font-size: 18px;
     }
   }
   .md\:hyperlink{
@@ -1892,6 +2105,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   @media (min-width: 768px){
     .md\:h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
+      margin-top: 32px;
+    }
+  }
+  .h2 + .paragraph-blog, .md\:h3 + .paragraph-blog, .h4 + .paragraph-blog{
+    margin-top: 12px;
+  }
+  @media (min-width: 768px){
+    .h2 + .paragraph-blog, .md\:h3 + .paragraph-blog, .h4 + .paragraph-blog{
       margin-top: 32px;
     }
   }
@@ -1944,6 +2165,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
     .md\:mt-0{
     margin-top: 0px;
+  }
+    .md\:mt-36{
+    margin-top: 144px;
   }
     .md\:mb-0{
     margin-bottom: 0px;
@@ -2035,9 +2259,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     .md\:basis-1\/4{
     flex-basis: 25%;
   }
-    .md\:basis-4\/12{
-    flex-basis: 33.333333%;
-  }
     .md\:flex-row{
     flex-direction: row;
   }
@@ -2125,6 +2346,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
     .md\:pb-8{
     padding-bottom: 32px;
+  }
+    .md\:pt-12{
+    padding-top: 48px;
+  }
+    .md\:pt-20{
+    padding-top: 80px;
+  }
+    .md\:pb-6{
+    padding-bottom: 24px;
   }
     .md\:pl-0{
     padding-left: 0px;
@@ -2220,26 +2450,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 @media (min-width: 1000px){
+  .tb\:mb-0{
+    margin-bottom: 0px;
+  }
   .tb\:mb-11{
     margin-bottom: 44px;
   }
   .tb\:mb-8{
     margin-bottom: 32px;
   }
-  .tb\:mb-0{
-    margin-bottom: 0px;
-  }
   .tb\:flex{
     display: flex;
+  }
+  .tb\:w-8\/12{
+    width: 66.666667%;
   }
   .tb\:w-7\/12{
     width: 58.333333%;
   }
   .tb\:w-4\/12{
     width: 33.333333%;
-  }
-  .tb\:w-8\/12{
-    width: 66.666667%;
   }
   .tb\:w-2\/6{
     width: 33.333333%;
@@ -2252,6 +2482,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .tb\:flex-row{
     flex-direction: row;
+  }
+  .tb\:items-end{
+    align-items: flex-end;
   }
   .tb\:justify-end{
     justify-content: flex-end;
