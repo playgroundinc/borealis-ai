@@ -42,3 +42,15 @@
         @apply mt-23;
     }
 }
+
+.wp-block-video,
+.wp-block-embed, 
+.wp-block-embed__wrapper {
+    margin: 0;
+    max-height: 100%;
+    display: block;
+    video,
+    iframe {
+        max-height: 100%;
+    }
+}

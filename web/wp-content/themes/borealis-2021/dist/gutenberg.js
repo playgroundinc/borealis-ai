@@ -1166,8 +1166,7 @@ function extendCoreVideo() {
       MediaUpload = _wp$blockEditor.MediaUpload;
   var _wp$components = wp.components,
       PanelBody = _wp$components.PanelBody,
-      Button = _wp$components.Button,
-      TextControl = _wp$components.TextControl;
+      Button = _wp$components.Button;
 
   function customAttributes(props, name) {
     if ('core/video' !== name && 'core/embed' !== name && 'core-embed/youtube' !== name && 'core-embed/vimeo' !== name) {
@@ -1184,10 +1183,6 @@ function extendCoreVideo() {
         default: ''
       },
       image_alt: {
-        type: 'String',
-        default: ''
-      },
-      caption: {
         type: 'String',
         default: ''
       }
@@ -1221,8 +1216,7 @@ function extendCoreVideo() {
           setAttributes = props.setAttributes;
       var image_id = attributes.image_id,
           image_alt = attributes.image_alt,
-          image_url = attributes.image_url,
-          caption = attributes.caption;
+          image_url = attributes.image_url;
       var label = image_url !== '' ? 'Update Placeholder Image' : 'Add Placeholder Image';
 
       function updateAttributeValue(attribute, value) {
@@ -1259,12 +1253,6 @@ function extendCoreVideo() {
           var open = _ref.open;
           return getImageButton(open, label);
         }
-      }), /*#__PURE__*/React.createElement(TextControl, {
-        value: caption,
-        onChange: function onChange(value) {
-          updateAttributeValue('caption', value);
-        },
-        label: "Caption (Optional):"
       }))), /*#__PURE__*/React.createElement(BlockEdit, props)), null];
     };
   }, 'withInspectorControl'); // Add attribute to core block
@@ -2219,7 +2207,6 @@ function imageTextStripBlock() {
           reverse = attributes.reverse;
 
       function updateAttributeValue(attribute, value) {
-        console.log(attribute, value);
         setAttributes(_defineProperty({}, attribute, value));
       }
 
