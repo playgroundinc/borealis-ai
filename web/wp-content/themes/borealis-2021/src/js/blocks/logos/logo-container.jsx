@@ -70,12 +70,7 @@ export default function pgLogoContainerBlock() {
                         ) : (
                             <InnerBlocks
                             allowedBlocks={[`${namespace}/logo-subsection`]}
-                            // template={[[`${namespace}/logo`]]}
                         />
-                            // <InnerBlocks
-                            //     allowedBlocks={[`${namespace}/logo`]}
-                            //     template={[[`${namespace}/logo`]]}
-                            // />
                         )}
                     </div>
                 </div>, 
