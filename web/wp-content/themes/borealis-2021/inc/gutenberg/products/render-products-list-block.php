@@ -42,7 +42,7 @@ if ( ! function_exists( 'pg_render_products_container_block' ) ) {
         ob_start();
         ?>
         <div class="custom-component animated-element">
-            <div class="container pb-15">
+            <div class="container pb-10">
                 <?php if (!empty($attributes->title)): ?>                   
                     <h2 class="h3 text-shade-grey-700"><?php echo esc_html($attributes->title) ?></h2>
                 <?php endif; ?>
