@@ -23,6 +23,12 @@ export default function selectPostsBlocks() {
             slug: 'news',
             single: 'News',
         },
+        {
+            icon,
+            parent: [`${namespace}/gallery-container`],
+            slug: 'team-member',
+            single: 'Team Members',
+        }
     ]
     selectBlocks.forEach((block) => selectPostBlock(block));
 }

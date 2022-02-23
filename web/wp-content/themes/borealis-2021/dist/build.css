@@ -887,6 +887,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .top-6{
   top: 24px;
 }
+.bottom-0{
+  bottom: 0px;
+}
 .top-96{
   top: 384px;
 }
@@ -998,8 +1001,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-12{
   margin-bottom: 48px;
 }
-.mb-16{
-  margin-bottom: 64px;
+.mb-15{
+  margin-bottom: 60px;
+}
+.mb-0{
+  margin-bottom: 0px;
 }
 .mt-18{
   margin-top: 72px;
@@ -1009,15 +1015,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mt-5{
   margin-top: 20px;
-}
-.mb-15{
-  margin-bottom: 60px;
-}
-.mb-0{
-  margin-bottom: 0px;
-}
-.mb-7{
-  margin-bottom: 28px;
 }
 .block{
   display: block;
@@ -1060,6 +1057,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-h-screen{
   max-height: 100vh;
 }
+.max-h-\[450px\]{
+  max-height: 450px;
+}
 .min-h-\[125px\]{
   min-height: 125px;
 }
@@ -1099,8 +1099,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-23{
   width: 92px;
 }
-.w-3\/12{
-  width: 25%;
+.w-42{
+  width: 168px;
 }
 .w-1\/2{
   width: 50%;
@@ -1117,11 +1117,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-22{
   width: 88px;
 }
-.w-42{
-  width: 168px;
-}
 .max-w-\[200px\]{
   max-width: 200px;
+}
+.max-w-full{
+  max-width: 100%;
+}
+.max-w-\[450px\]{
+  max-width: 450px;
 }
 .shrink-0{
   flex-shrink: 0;
@@ -1129,8 +1132,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .grow{
   flex-grow: 1;
 }
+.grow-0{
+  flex-grow: 0;
+}
 .basis-1\/2{
   flex-basis: 50%;
+}
+.basis-team-member{
+  flex-basis: 310px;
 }
 .basis-full{
   flex-basis: 100%;
@@ -1150,6 +1159,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .rotate-180{
   --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.rotate-90{
+  --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .transform{
@@ -1423,10 +1436,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 32px;
   padding-right: 32px;
 }
-.py-20{
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
 .px-12{
   padding-left: 48px;
   padding-right: 48px;
@@ -1438,14 +1447,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-14{
   padding-top: 56px;
   padding-bottom: 56px;
-}
-.py-15{
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-.py-12{
-  padding-top: 48px;
-  padding-bottom: 48px;
 }
 .pt-13{
   padding-top: 52px;
@@ -1537,6 +1538,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-23{
   padding-top: 92px;
 }
+.pt-gallery{
+  padding-top: 600px;
+}
+.pl-16{
+  padding-left: 64px;
+}
+.pr-25{
+  padding-right: 100px;
+}
+.pt-4{
+  padding-top: 16px;
+}
 .pt-6{
   padding-top: 24px;
 }
@@ -1575,9 +1588,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-41{
   padding-top: 164px;
-}
-.pt-4{
-  padding-top: 16px;
 }
 .pr-3{
   padding-right: 12px;
@@ -1652,6 +1662,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .transition-background-color{
   transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-all{
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1930,14 +1945,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:mt-10{
     margin-top: 40px;
   }
-  .md\:mt-3{
-    margin-top: 12px;
+  .md\:mb-15{
+    margin-bottom: 60px;
   }
   .md\:mb-8{
     margin-bottom: 32px;
   }
-  .md\:mb-15{
-    margin-bottom: 60px;
+  .md\:mt-3{
+    margin-top: 12px;
   }
   .md\:block{
     display: block;
@@ -2080,13 +2095,13 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-left: 60px;
     padding-right: 60px;
   }
-  .md\:py-5{
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
   .md\:py-15{
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+  .md\:py-5{
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .md\:pr-5{
     padding-right: 20px;
@@ -2233,9 +2248,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tb\:flex-row{
     flex-direction: row;
   }
-  .tb\:justify-start{
-    justify-content: flex-start;
-  }
   .tb\:justify-end{
     justify-content: flex-end;
   }
@@ -2291,6 +2303,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:pt-7{
     padding-top: 28px;
   }
+  .lg\:pl-gallery-offset{
+    padding-left: calc((100vw - 1300px) / 2);
+  }
+  .lg\:pr-gallery-offset{
+    padding-right: calc((100vw - 1300px) / 2);
+  }
+  .lg\:pr-16{
+    padding-right: 64px;
+  }
   .lg\:pt-0{
     padding-top: 0px;
   }
@@ -2299,9 +2320,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .lg\:pb-0{
     padding-bottom: 0px;
-  }
-  .lg\:pr-16{
-    padding-right: 64px;
   }
   .lg\:container{
     margin: 0 auto;

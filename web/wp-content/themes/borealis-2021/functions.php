@@ -28,6 +28,9 @@ require get_template_directory() . '/inc/classes/class-pg-custom-meta.php';
 // Responsive Images - Comment out if you do need to render responsive images.
 require get_template_directory() . '/inc/classes/class-pg-responsive-images.php';
 
+// Register Custom Image Sizes
+require get_template_directory() . '/inc/custom-images/register-image-sizes.php';
+
 // Register Custom Post Types
 require get_template_directory() . '/inc/classes/class-pg-register-cpt.php';
 
@@ -123,6 +126,9 @@ require get_template_directory() . '/inc/gutenberg/copy/render-copy-blocks.php';
 // Content Blocks
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-container.php';
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-block.php';
+
+// Gallery
+require get_template_directory() . '/inc/gutenberg/gallery/render-gallery-container-block.php';
 
 // Image List Blocks
 require get_template_directory() . '/inc/gutenberg/image-list/render-image-list-container-block.php';
