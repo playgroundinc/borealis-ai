@@ -42,8 +42,8 @@ if ( ! function_exists( 'pg_render_logos_container_block' ) ) {
         ob_start();
         ?>
         <div class="bg-shade-grey-100 w-full">
-            <div class="container flex justify-between py-20">
-                <div class="w-3/12">
+            <div class="container flex justify-between py-10 md:py-15 tb:flex-row flex-col">
+                <div class="w-full tb:w-3/12">
                     <?php if (!empty($attributes->title)): ?>
                         <h2 class="h3 mb-8 pr-10"><?php echo wp_kses($attributes->title, $allowed_html); ?></h2>
                     <?php endif; ?>
@@ -53,7 +53,7 @@ if ( ! function_exists( 'pg_render_logos_container_block' ) ) {
                         </p>
                     <?php endif; ?>
                 </div>
-                <div class="w-8/12">
+                <div class="w-full tb:w-8/12">
                     <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
                         <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
                     <?php endforeach; ?>
