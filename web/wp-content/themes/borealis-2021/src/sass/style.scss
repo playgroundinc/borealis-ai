@@ -30,6 +30,18 @@
     }
 }
 
+.h2 + .paragraph-blog,
+.h3 + .paragraph-blog,
+.h4 + .paragraph-blog {
+    @apply mt-3 md:mt-8;
+}
+.custom-component + .load-more-results {
+    @apply mt-16 border-t border-shade-grey-500;
+}
+.custom-component {
+    @apply mt-23;
+}
+
 .greenhouse h2 {
     @apply h4 md:h3 mb-8 mt-18 w-8/12 tb:w-6/12;
 }
@@ -41,28 +53,4 @@
 
 .greenhouse ul {
     @apply list-disc list-inside;
-}
-
-.h2+.paragraph-blog,
-.h3+.paragraph-blog,
-.h4+.paragraph-blog {
-    @apply mt-3 md:mt-8;
-}
-
-.custom-component+.load-more-results {
-    @apply mt-16 border-t border-shade-grey-500;
-}
-
-.custom-component {
-    @apply mt-23;
-}
-
-.h2+.paragraph-blog,
-.h3+.paragraph-blog,
-.h4+.paragraph-blog {
-    @apply mt-3 md:mt-8;
-}
-
-.custom-component+.load-more-results {
-    @apply mt-16 border-t border-shade-grey-500;
 }
