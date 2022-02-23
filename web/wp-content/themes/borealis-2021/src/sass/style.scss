@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Martel&family=Metrophobic&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Martel&family=Metrophobic&display=swap');
 // Tailwinds
 @import "tailwindcss/base";
 @import "tailwindcss/components";
@@ -42,6 +42,19 @@
 
 .custom-component {
     @apply mt-23;
+}
+
+.footnote-link.footnote-identifier-link {
+    @apply scroll-mt-30;
+}
+.footnote-link.footnote-back-link {
+    @apply paragraph-sm;
+}
+ol.footnotes {
+    @apply list-inside  border-t border-shade-grey-500 pt-6 mt-30;	
+}
+ol.footnotes li small {
+    @apply paragraph-sm;
 }
 
 .greenhouse h2 {

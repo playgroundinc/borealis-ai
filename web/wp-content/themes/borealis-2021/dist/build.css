@@ -968,11 +968,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mr-2{
   margin-right: 8px;
 }
-.mt-18{
-  margin-top: 72px;
-}
 .mt-16{
   margin-top: 64px;
+}
+.mt-18{
+  margin-top: 72px;
 }
 .mt-0{
   margin-top: 0px;
@@ -1149,6 +1149,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .resize{
   resize: both;
+}
+.list-inside{
+  list-style-position: inside;
 }
 .list-disc{
   list-style-type: disc;
@@ -1499,6 +1502,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pr-4{
   padding-right: 16px;
 }
+.pt-6{
+  padding-top: 24px;
+}
 .pl-6{
   padding-left: 24px;
 }
@@ -1525,9 +1531,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-4{
   padding-top: 16px;
-}
-.pt-6{
-  padding-top: 24px;
 }
 .pt-featured-image{
   padding-top: 360px;
@@ -1703,6 +1706,84 @@ Ensure the default browser behavior of the `hidden` attribute.
   https: //pantheon.io/docs/ssh-keys;
 }
 
+.h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
+  margin-top: 12px;
+}
+
+@media (min-width: 768px){
+  .h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
+    margin-top: 32px;
+  }
+}
+
+.custom-component + .load-more-results{
+  margin-top: 64px;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(101 104 146 / var(--tw-border-opacity));
+}
+
+.custom-component{
+  margin-top: 92px;
+}
+
+.footnote-link.footnote-identifier-link{
+  scroll-margin-top: 120px;
+}
+
+.footnote-link.footnote-back-link{
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+
+@media (min-width: 375px){
+  .footnote-link.footnote-back-link{
+    font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+
+@media (min-width: 1920px){
+  .footnote-link.footnote-back-link{
+    font-size: 14px;
+  }
+}
+
+ol.footnotes{
+  margin-top: 120px;
+  list-style-position: inside;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(101 104 146 / var(--tw-border-opacity));
+  padding-top: 24px;
+}
+
+ol.footnotes li small{
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+
+@media (min-width: 375px){
+  ol.footnotes li small{
+    font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+
+@media (min-width: 1920px){
+  ol.footnotes li small{
+    font-size: 14px;
+  }
+}
+
 .greenhouse h2{
   font-size: 18px;
   font-family: Inter, sans-serif;
@@ -1729,16 +1810,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 32px;
   margin-top: 72px;
   width: 66.666667%;
-}
-
-.greenhouse h2 + .paragraph-blog{
-  margin-top: 12px;
-}
-
-@media (min-width: 768px){
-  .greenhouse h2 + .paragraph-blog{
-    margin-top: 32px;
-  }
 }
 
 .greenhouse h2 + .paragraph-blog{
@@ -1823,44 +1894,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .greenhouse ul{
   list-style-position: inside;
   list-style-type: disc;
-}
-
-.h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
-  margin-top: 12px;
-}
-
-@media (min-width: 768px){
-  .h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
-    margin-top: 32px;
-  }
-}
-
-.custom-component + .load-more-results{
-  margin-top: 64px;
-  border-top-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(101 104 146 / var(--tw-border-opacity));
-}
-
-.custom-component{
-  margin-top: 92px;
-}
-
-.h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
-  margin-top: 12px;
-}
-
-@media (min-width: 768px){
-  .h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
-    margin-top: 32px;
-  }
-}
-
-.custom-component + .load-more-results{
-  margin-top: 64px;
-  border-top-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(101 104 146 / var(--tw-border-opacity));
 }
 
 .first\:mt-0:first-child{
