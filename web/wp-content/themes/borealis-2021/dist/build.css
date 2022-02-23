@@ -1732,6 +1732,9 @@ ol.footnotes li small{
 .pt-23{
   padding-top: 92px;
 }
+.pt-4{
+  padding-top: 16px;
+}
 .pt-gallery{
   padding-top: 600px;
 }
@@ -1740,9 +1743,6 @@ ol.footnotes li small{
 }
 .pr-25{
   padding-right: 100px;
-}
-.pt-4{
-  padding-top: 16px;
 }
 .pt-featured-image{
   padding-top: 360px;
