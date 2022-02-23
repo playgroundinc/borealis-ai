@@ -13,6 +13,10 @@ import publicationMetaBlock from './blocks/meta/publications-meta.jsx';
 import textColumnBlock from "../js/blocks/text-column.jsx";
 import imageTextBlock from "./blocks/image-text.jsx";
 
+// Text 2 Up Blocks
+import text2UpBlock from "./blocks/text-2-up-block.jsx";
+import text2UpContainerBlock from "./blocks/text-2-up-container-block.jsx";
+
 // Page Strips
 import imageBlock from "./blocks/image-block.jsx";
 
@@ -33,6 +37,9 @@ import calloutColumnBlock from "./blocks/callouts/callout-column.jsx";
 // Content Columns
 import contentCardContainerBlock from "./blocks/content-cards/content-card-container.jsx";
 import contentCardBlock from "./blocks/content-cards/content-card.jsx";
+
+// Gallery
+import galleryContainerBlock from './blocks/gallery/gallery-container-block.jsx';
 
 // Image List Blocks
 import imageListContainerBlock from "./blocks/image-list/image-list-container.jsx";
@@ -82,6 +89,9 @@ import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-pane
 import tagCloudContainerBlock from "./blocks/tag-cloud/tag-cloud-container-block.jsx";
 import tagCloudItemBlock from "./blocks/tag-cloud/tag-cloud-item-block.jsx";
 
+// Image & Text Strip Block
+import imageTextStripBlock from "./blocks/image-text-strip-block.jsx";
+
 // Statisitcs Blocks
 import statisticsBlock from "./blocks/statistics-block.jsx";
 import statisticsContainerBlock from "./blocks/statistics-container-block.jsx";
@@ -99,7 +109,7 @@ authorMetaBlock();
 publicationMetaBlock();
 
 // Init blocks here
-textColumnBlock(); 
+textColumnBlock();
 imageTextBlock();
 
 // Page Strips
@@ -125,6 +135,9 @@ calloutColumnBlock();
 // Content Cards
 contentCardContainerBlock();
 contentCardBlock();
+
+// Gallery
+galleryContainerBlock();
 
 // Image List Blocks
 imageListContainerBlock();
@@ -169,6 +182,12 @@ tabbedContentPanelBlock();
 // Tag Cloud Content Blocks
 tagCloudContainerBlock();
 tagCloudItemBlock();
+
+// Text 2 Up Blocks
+text2UpContainerBlock();
+text2UpBlock();
+// Image & Text Strip Block
+imageTextStripBlock();
 
 // Statistics Content Blocks
 statisticsContainerBlock();

@@ -28,6 +28,9 @@ require get_template_directory() . '/inc/classes/class-pg-custom-meta.php';
 // Responsive Images - Comment out if you do need to render responsive images.
 require get_template_directory() . '/inc/classes/class-pg-responsive-images.php';
 
+// Register Custom Image Sizes
+require get_template_directory() . '/inc/custom-images/register-image-sizes.php';
+
 // Register Custom Post Types
 require get_template_directory() . '/inc/classes/class-pg-register-cpt.php';
 
@@ -124,6 +127,9 @@ require get_template_directory() . '/inc/gutenberg/copy/render-copy-blocks.php';
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-container.php';
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-block.php';
 
+// Gallery
+require get_template_directory() . '/inc/gutenberg/gallery/render-gallery-container-block.php';
+
 // Image List Blocks
 require get_template_directory() . '/inc/gutenberg/image-list/render-image-list-container-block.php';
 require get_template_directory() . '/inc/gutenberg/image-list/render-image-list-block.php';
@@ -173,6 +179,13 @@ require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-
 // Tag Cloud Blocks
 require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-container-block.php';
 require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-item-block.php';
+
+// Text 2 Up Block
+require get_template_directory() . '/inc/gutenberg/render-text-2-up-container-block.php';
+require get_template_directory() . '/inc/gutenberg/render-text-2-up-block.php';
+
+// Image & Text Block
+require get_template_directory() . '/inc/gutenberg/render-image-text-strip-block.php';
 
 // Statistics Blocks
 require get_template_directory() . '/inc/gutenberg/render-statistics-container-block.php';
