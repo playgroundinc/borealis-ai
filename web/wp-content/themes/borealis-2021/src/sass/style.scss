@@ -36,6 +36,11 @@
     .custom-component + .load-more-results {
         @apply mt-16 border-t border-shade-grey-500;
     }
+    .single {
+        .custom-component:first-child {
+            @apply lg:mt-0;
+        }
+    }
     .custom-component {
         @apply mt-23;
     }
@@ -79,5 +84,13 @@
         @apply list-disc list-inside;
     }
     
+    .single .nestable {
+        .nested-flex {
+            @apply block w-full md:w-full;
+            .nested-block {
+                @apply mt-10
+            }
+        }
+    }
 
 }
