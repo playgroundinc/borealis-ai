@@ -13,7 +13,6 @@ if (!function_exists('pg_register_research_blog_cpt')) {
         $namespace = pg_get_namespace();
         $Research_Blogs_CPT = new PG_Custom_Post_Type('research-blogs', 'Research Blog', 'Research Blogs', array('icon' => 'dashicons-category', 'has_archive' => 'false', 'template' => [ [$namespace . '/research-blog-meta-block'], [ $namespace . '/custom-section-block']]));
         // Register Series as a custom taxonomy.
-        $Research_Blogs_CPT->register_tags('series', 'Series', 'Series');
         $Research_Blogs_CPT->register();
         
 
@@ -23,7 +22,8 @@ if (!function_exists('pg_register_research_blog_cpt')) {
             'authors' => 'text',
             'publication_date' => 'text',
             'post_info' => 'text',
-            'time_to_read' => 'text',  
+            'time_to_read' => 'text', 
+            'series_order' => 'number' 
         );
         $Research_Blogs_CPT->register_meta($meta_values);
     }
@@ -40,6 +40,10 @@ if (!function_exists('pg_handle_research_blog_save')) {
         if (empty($date) || $date === '') {
             $date = date('m/d/Y');
             update_post_meta($post_id, 'publication_date', $date);
+        }
+        $series_order = get_post_meta($post_id, 'series_order', true);
+        if (empty($series_order) || intval($series_order) < 0) {
+            update_post_meta($post_id, 'series_order', 0);
         }
     }
 }

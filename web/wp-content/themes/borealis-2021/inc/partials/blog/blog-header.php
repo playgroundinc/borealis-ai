@@ -9,6 +9,25 @@ if (!function_exists('pg_generate_blog_header')) {
         $date = date('m/d/Y', $date_string);
         $time_to_read = get_post_meta($id, 'time_to_read', true);
         $authors = get_post_meta($id, 'authors', true);
+        $series = get_the_terms($id, 'series');
+        if (!empty($series)) {
+            $series_query = array(
+                'post_type' => array(
+                    'news',
+                    'research-blogs'
+                ),
+                'tax_query' => array(
+                    'taxonomy' => 'series',
+                    'field' => 'slug',
+                    'terms' => $series[0]->slug,
+                ),
+                'orderby' => 'meta_value_num',
+                'meta_key' => 'series_order',
+                'order' => 'ASC'
+            );
+            $series_posts = new WP_Query($series_query);
+            wp_reset_query();
+        }
         if (isset($authors) && $authors !== '') {
             $authors = json_decode($authors);
             $authors_mapped = array_map(
@@ -60,7 +79,26 @@ if (!function_exists('pg_generate_blog_header')) {
                     <?php endif; ?>
                 </div> 
             </div>
-            <!-- TODO: Add series -->
+            <?php if (isset($series_posts) && !empty($series_posts->posts)): ?>
+                <div class="hidden md:flex mt-11">
+                    <div class="md:basis-3/12 shrink-0">
+                        <p class="h4"><?php echo esc_html($series[0]->name); ?></p>
+                    </div>
+                    <div class="grow overflow-scroll visible-scroll">
+                        <ul class="flex paragraph-sm text-shade-grey-700">
+                            <?php foreach ($series_posts->posts as $index => $series_post): ?>
+                                <?php $url = get_post_permalink($series_post->ID); ?>
+                                <li class="md:basis-1/3 lg:basis-1/4 shrink-0 grow-0 flex flex-col">
+                                    <a class="pr-6 pb-16 block grow pt-2" href="<?php echo esc_url_raw($url); ?>">
+                                        <p><?php echo intval($index) < 9 ? esc_html(0 . intval($index + 1)) : esc_html($index) ?></p> 
+                                        <p class="pt-3"><?php echo esc_html($series_post->post_title) ?></p>
+                                    </a>       
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
         <?php
         return ob_get_clean();
