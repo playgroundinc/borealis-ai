@@ -115,17 +115,6 @@ if ( ! function_exists( 'pg_render_gallery_container_block' ) ) {
                 </div>
             </div>
         </div>
-        <style>
-            .custom-gallery:hover {
-                cursor: url(<?php echo get_bloginfo('stylesheet_directory') . '/src/images/dragCursor.png' ?>), auto;
-            }
-            .custom-gallery li:hover {
-                cursor: url(<?php echo get_bloginfo('stylesheet_directory') . '/src/images/dragCursor.png' ?>), auto;
-            }
-            .custom-gallery a:hover {
-                cursor: url(<?php echo get_bloginfo('stylesheet_directory') . '/src/images/dragCursor.png' ?>), auto;
-            }
-        </style>
         <?php
         return ob_get_clean();
     }

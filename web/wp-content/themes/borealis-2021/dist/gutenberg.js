@@ -2753,7 +2753,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function researchBlogMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
-  var meta_fields = ['publication_date', 'time_to_read', 'authors'];
+  var meta_fields = ['publication_date', 'time_to_read', 'authors', 'series_order'];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(meta_fields, 'meta');
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/news-meta-block"), {
     title: 'News Meta',
@@ -2768,6 +2768,7 @@ function researchBlogMetaBlock() {
           attributes = props.attributes;
       var authors = attributes.authors,
           publication_date = attributes.publication_date,
+          series_order = attributes.series_order,
           time_to_read = attributes.time_to_read;
 
       function updateAttributeValue(attribute, value) {
@@ -2795,6 +2796,13 @@ function researchBlogMetaBlock() {
           updateAttributeValue('time_to_read', value);
         },
         label: "Time to Read:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: series_order,
+        type: "number",
+        onChange: function onChange(value) {
+          updateAttributeValue('series_order', value);
+        },
+        label: "Series Order:"
       }), /*#__PURE__*/React.createElement(_reusable_select_authors_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         authors: authors,
         updateAttributeValue: updateAttributeValue
@@ -3022,7 +3030,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function researchBlogMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
-  var meta_fields = ['publication_date', 'time_to_read', 'authors'];
+  var meta_fields = ['publication_date', 'time_to_read', 'authors', 'series_order'];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(meta_fields, 'meta');
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/research-blogs-meta-block"), {
     title: 'Research Blogs Meta',
@@ -3037,6 +3045,7 @@ function researchBlogMetaBlock() {
           attributes = props.attributes;
       var authors = attributes.authors,
           publication_date = attributes.publication_date,
+          series_order = attributes.series_order,
           time_to_read = attributes.time_to_read;
 
       function updateAttributeValue(attribute, value) {
@@ -3064,6 +3073,13 @@ function researchBlogMetaBlock() {
           updateAttributeValue('time_to_read', value);
         },
         label: "Time to Read:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: series_order,
+        type: "number",
+        onChange: function onChange(value) {
+          updateAttributeValue('series_order', value);
+        },
+        label: "Series Order:"
       }), /*#__PURE__*/React.createElement(_reusable_select_authors_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         authors: authors,
         updateAttributeValue: updateAttributeValue
@@ -5915,7 +5931,7 @@ function tabbedContentPanelBlock() {
           placeholder: "Please provide a title"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block")]
       }))];
     },
     save: function save(_ref) {
