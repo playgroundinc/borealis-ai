@@ -9,7 +9,7 @@ export default function extendCoreVideo() {
     const { __ } = wp.i18n;
     const { createHigherOrderComponent } = wp.compose;
     const { InspectorControls, MediaUpload } = wp.blockEditor;
-    const { PanelBody, Button, TextControl } = wp.components;
+    const { PanelBody, Button } = wp.components;
 
     function customAttributes(props, name) {
         if ('core/video' !== name && 'core/embed' !== name && 'core-embed/youtube' !== name && 'core-embed/vimeo' !== name ) {
@@ -29,10 +29,6 @@ export default function extendCoreVideo() {
                 type: 'String',
                 default: '',
             },
-            caption: {
-                type: 'String',
-                default: '',
-            }
         }
 
         const attributes = {
@@ -70,7 +66,7 @@ export default function extendCoreVideo() {
             }
 
             const { attributes, setAttributes } = props;
-            const { image_id, image_alt, image_url, caption } = attributes;
+            const { image_id, image_alt, image_url } = attributes;
             const label = image_url !== '' ? 'Update Placeholder Image' : 'Add Placeholder Image';  
             function updateAttributeValue(attribute, value) {
                 setAttributes({ [attribute]: value });
@@ -101,11 +97,6 @@ export default function extendCoreVideo() {
                                 type="image"
                                 value={ image_id }
                                 render={ ({ open }) => getImageButton(open, label ) }
-                            />
-                            <TextControl 
-                                value={caption}
-                                onChange={(value) => { updateAttributeValue('caption', value) }}
-                                label="Caption (Optional):"
                             />
                         </PanelBody>
                     </InspectorControls>

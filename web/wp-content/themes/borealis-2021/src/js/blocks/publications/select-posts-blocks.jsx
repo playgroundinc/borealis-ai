@@ -28,6 +28,12 @@ export default function selectPostsBlocks() {
             parent: [`${namespace}/gallery-container`],
             slug: 'team-member',
             single: 'Team Members',
+        },
+        {
+            icon: 'admin-tools',
+            parent: [`${namespace}/product-container`],
+            slug: 'product',
+            single: 'Product'
         }
     ]
     selectBlocks.forEach((block) => selectPostBlock(block));
