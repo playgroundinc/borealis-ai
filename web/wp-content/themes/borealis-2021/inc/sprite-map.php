@@ -166,8 +166,8 @@ if (!function_exists('pg_svg_spritemap')) {
             </symbol>
 
             <!-- Play Button -->
-            <symbol id="icon-play" viewBox="0 0 22 22">
-                <path d="M6 21l13-10L6 1z" fill="currentColor" fill-rule="nonzero" stroke="currentColor" stroke-width="1.06667" stroke-linecap="round" stroke-linejoin="round" />
+            <symbol id="icon-play" viewBox="0 0 30 30">
+                <path d="M5.5 3v24l19.322-12z" stroke="currentColor" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
 
             <!--  Smart Quote -->

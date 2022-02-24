@@ -1010,6 +1010,9 @@ ol.footnotes li small{
   white-space: nowrap;
   border-width: 0;
 }
+.invisible{
+  visibility: hidden;
+}
 .fixed{
   position: fixed;
 }
@@ -1062,6 +1065,12 @@ ol.footnotes li small{
 .bottom-0{
   bottom: 0px;
 }
+.right-6{
+  right: 24px;
+}
+.-top-20{
+  top: -80px;
+}
 .top-96{
   top: 384px;
 }
@@ -1076,6 +1085,9 @@ ol.footnotes li small{
 }
 .z-50{
   z-index: 50;
+}
+.z-0{
+  z-index: 0;
 }
 .m-auto{
   margin: auto;
@@ -1280,7 +1292,7 @@ ol.footnotes li small{
   width: 24px;
 }
 .w-3\/8{
-  width: calc((100% /8) * 3);
+  width: calc((100% / 8) * 3);
 }
 .w-22{
   width: 88px;
@@ -1320,6 +1332,9 @@ ol.footnotes li small{
 }
 .basis-full{
   flex-basis: 100%;
+}
+.basis-1\/6{
+  flex-basis: 16.666667%;
 }
 .basis-8\/12{
   flex-basis: 66.666667%;
@@ -1705,6 +1720,9 @@ ol.footnotes li small{
 .pt-15{
   padding-top: 60px;
 }
+.pt-video{
+  padding-top: 70.17%;
+}
 .pb-6{
   padding-bottom: 24px;
 }
@@ -1750,6 +1768,9 @@ ol.footnotes li small{
 .pt-featured-image-sm{
   padding-top: 268px;
 }
+.pl-8{
+  padding-left: 32px;
+}
 .pb-13{
   padding-bottom: 52px;
 }
@@ -1782,6 +1803,9 @@ ol.footnotes li small{
 }
 .pt-41{
   padding-top: 164px;
+}
+.pb-16{
+  padding-bottom: 64px;
 }
 .pr-3{
   padding-right: 12px;
@@ -1861,13 +1885,13 @@ ol.footnotes li small{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.transition-background-color{
-  transition-property: background-color;
+.transition-all{
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.transition-all{
-  transition-property: all;
+.transition-background-color{
+  transition-property: background-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1923,73 +1947,98 @@ ol.footnotes li small{
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
 }
-.first\:mt-0:first-child{
+
+.visible-scroll::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px; }
+
+.visible-scroll::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: rgba(34, 39, 49, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+
+.wp-block-video,
+.wp-block-embed,
+.wp-block-embed__wrapper {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .wp-block-video video,
+  .wp-block-video iframe,
+  .wp-block-embed video,
+  .wp-block-embed iframe,
+  .wp-block-embed__wrapper video,
+  .wp-block-embed__wrapper iframe {
+    max-height: 100%; }
+  .first\:mt-0:first-child{
   margin-top: 0px;
 }
-.last\:basis-auto:last-child{
+  .last\:basis-auto:last-child{
   flex-basis: auto;
 }
-.last\:border-b-0:last-child{
+  .last\:border-b-0:last-child{
   border-bottom-width: 0px;
 }
-.visited\:text-primary-electric-purple-400:visited{
+  .visited\:text-primary-electric-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-.visited\:text-primary-purple-400:visited{
+  .visited\:text-primary-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(85 0 155 / var(--tw-text-opacity));
 }
-.hover\:cursor-pointer:hover{
+  .hover\:cursor-pointer:hover{
   cursor: pointer;
 }
-.hover\:bg-shade-grey-50:hover{
+  .hover\:bg-shade-grey-50:hover{
   background-color: rgba(244,244,251,0.5);
 }
-.hover\:bg-shade-grey-100:hover{
+  .hover\:bg-shade-grey-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
 }
-.hover\:bg-shade-white-400:hover{
+  .hover\:bg-shade-white-400:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.hover\:text-primary-electric-blue-400:hover{
+  .hover\:text-primary-electric-blue-400:hover{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
 }
-.hover\:text-primary-electric-purple-400:hover{
+  .hover\:text-primary-electric-purple-400:hover{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-.hover\:underline:hover{
+  .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-.focus\:border-primary-electric-blue-400:focus{
+  .focus\:border-primary-electric-blue-400:focus{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
 }
-.focus\:text-primary-electric-purple-400:focus{
+  .focus\:text-primary-electric-purple-400:focus{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-.focus\:outline-0:focus{
+  .focus\:outline-0:focus{
   outline-width: 0px;
 }
-.disabled\:text-shade-grey-400:disabled{
+  .disabled\:text-shade-grey-400:disabled{
   --tw-text-opacity: 1;
   color: rgb(216 216 228 / var(--tw-text-opacity));
 }
-.group:hover .group-hover\:bg-tint-teal-400{
+  .group:hover .group-hover\:bg-tint-teal-400{
   --tw-bg-opacity: 1;
   background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
-.group:hover .group-hover\:underline{
+  .group:hover .group-hover\:underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-.peer:checked ~ .peer-checked\:pill-active{
+  .peer:checked ~ .peer-checked\:pill-active{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
@@ -1997,24 +2046,24 @@ ol.footnotes li small{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.nth-child-2\:ml-5:nth-child(n + 2){
+  .nth-child-2\:ml-5:nth-child(n + 2){
   margin-left: 20px;
 }
-.nth-child-2\:ml-0:nth-child(n + 2){
+  .nth-child-2\:ml-0:nth-child(n + 2){
   margin-left: 0px;
 }
-.nth-child-2\:mt-5:nth-child(n + 2){
+  .nth-child-2\:mt-5:nth-child(n + 2){
   margin-top: 20px;
 }
-.nth-child-3\:pt-12:nth-child(n + 3){
+  .nth-child-3\:pt-12:nth-child(n + 3){
   padding-top: 48px;
 }
-@media (min-width: 375px){
+  @media (min-width: 375px){
   .sm\:w-1\/2{
     width: 50%;
   }
 }
-@media (min-width: 768px){
+  @media (min-width: 768px){
   .md\:h1{
     font-size: 70px;
     font-family: Metrophobic, sans-serif;
@@ -2286,13 +2335,19 @@ ol.footnotes li small{
     width: 33.333333%;
   }
     .md\:w-5\/8{
-    width: calc((100% /8) * 5);
+    width: calc((100% / 8) * 5);
   }
     .md\:w-3\/8{
-    width: calc((100% /8) * 3);
+    width: calc((100% / 8) * 3);
   }
     .md\:basis-1\/4{
     flex-basis: 25%;
+  }
+    .md\:basis-3\/12{
+    flex-basis: 25%;
+  }
+    .md\:basis-1\/3{
+    flex-basis: 33.333333%;
   }
     .md\:flex-row{
     flex-direction: row;
@@ -2366,6 +2421,10 @@ ol.footnotes li small{
     padding-left: 60px;
     padding-right: 60px;
   }
+    .md\:py-15{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
     .md\:py-5{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -2406,6 +2465,9 @@ ol.footnotes li small{
     .md\:pr-10{
     padding-right: 40px;
   }
+    .md\:pt-video-md{
+    padding-top: 34.59%;
+  }
     .md\:pt-0{
     padding-top: 0px;
   }
@@ -2417,6 +2479,12 @@ ol.footnotes li small{
   }
     .md\:pr-3{
     padding-right: 12px;
+  }
+    .md\:pr-12{
+    padding-right: 48px;
+  }
+    .md\:pr-6{
+    padding-right: 24px;
   }
     .md\:pt-2{
     padding-top: 8px;
@@ -2496,7 +2564,7 @@ ol.footnotes li small{
     margin-top: 32px;
   }
 }
-@media (min-width: 1000px){
+  @media (min-width: 1000px){
   .tb\:mb-0{
     margin-bottom: 0px;
   }
@@ -2505,6 +2573,9 @@ ol.footnotes li small{
   }
   .tb\:mb-8{
     margin-bottom: 32px;
+  }
+  .tb\:block{
+    display: block;
   }
   .tb\:flex{
     display: flex;
@@ -2548,8 +2619,17 @@ ol.footnotes li small{
   .tb\:pl-5{
     padding-left: 20px;
   }
+  .tb\:pl-4{
+    padding-left: 16px;
+  }
+  .group:hover .tb\:group-hover\:visible{
+    visibility: visible;
+  }
+  .group:hover .tb\:group-hover\:opacity-100{
+    opacity: 1;
+  }
 }
-@media (min-width: 1440px){
+  @media (min-width: 1440px){
   .lg\:container .container{
     margin: 0px;
   }
@@ -2595,6 +2675,9 @@ ol.footnotes li small{
     .lg\:basis-7\/12{
     flex-basis: 58.333333%;
   }
+    .lg\:basis-1\/4{
+    flex-basis: 25%;
+  }
     .lg\:justify-center{
     justify-content: center;
   }
@@ -2612,11 +2695,17 @@ ol.footnotes li small{
     .lg\:pt-7{
     padding-top: 28px;
   }
+    .lg\:pt-video-lg{
+    padding-top: 30%;
+  }
     .lg\:pl-gallery-offset{
     padding-left: calc((100vw - 1300px) / 2);
   }
     .lg\:pr-gallery-offset{
     padding-right: calc((100vw - 1300px) / 2);
+  }
+    .lg\:pl-8{
+    padding-left: 32px;
   }
     .lg\:pt-0{
     padding-top: 0px;
