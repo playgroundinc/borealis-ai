@@ -361,6 +361,7 @@ module.exports.breakpoints = {
     spacing['gallery'] = '600px';
     spacing['team-member'] = '310px';
     spacing['gallery-offset'] = 'calc((100vw - 1300px) / 2)';
+    spacing['card'] = 'calc((100% - 64px) / 3)';
     spacing['video-lg'] = '30%';
     spacing['video-md'] = '34.59%';
     spacing['video'] = '70.17%';

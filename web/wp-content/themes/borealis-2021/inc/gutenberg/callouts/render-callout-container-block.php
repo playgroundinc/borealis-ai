@@ -35,36 +35,37 @@ if ( ! function_exists( 'pg_render_callout_container_block' ) ) {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
-            'columns' => '3',
             'description' => '',
             'title' => '',
+            'image_id' => 0,
         );
         $attributes = pg_get_attributes( $attrs, $fields );
         $allowed_html = pg_allowed_html();
-        $id = !empty($attributes->title) ? pg_slugify($attributes->title) : 'callout-column-slider';
+        $image = $attributes->image_id && intval($attributes->image_id) > 0 ? wp_get_attachment_image_url($attributes->image_id, 'full') : get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg';
+        $allowed_html = pg_allowed_html();
         ob_start();
         ?>
-            <div>
-                <?php if (!empty($attributes->title)): ?>            
-                    <h2 class="heading_one mb-xs-2"><?php echo esc_html($attributes->title) ?></h2>
-                    <?php if (!empty($attributes->description)): ?>
-                        <?php echo wpautop($attributes->description); ?>
-                    <?php endif; ?>
-                <?php endif; ?>
-                <div>
-                    <div class="row">
-                        <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
-                            <?php 
-                                $classes = 'col-lg-' . $attributes->columns;
-                                $classes .= intval($index) + 1 > 12 / intval($attributes->columns) ?  ' mt-lg-10' : '';
-                            ?>
-                            <div class="<?php echo esc_attr($classes) ?>">
-                                <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
-                            </div>
-                        <?php endforeach; ?>
+            <div class="custom-component py-19 bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<?php echo esc_url_raw($image)?>)">
+                <div class="container">
+                    <div class="text-shade-white-400 md:flex justify-between">
+                        <div class="basis-1/3 shrink-0 pr-8">
+                            <h2 class="h3"><?php echo ($attributes->title) ?></h2>
+                        </div>
+                        <div class="basis-7/12 shrink-0 mt-8 md:mt-0">
+                            <?php if ($attributes->description && strlen($attributes->description) > 0): ?>
+                                <p class="paragraph"><?php echo wp_kses($attributes->description, $allowed_html) ?></p>
+                            <?php endif; ?>
+                        </div>
                     </div>
+                    <ul class="mt-25 md:mt-24 md:flex flex-wrap">
+                        <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
+                            <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
+                        <?php endforeach; ?>
+                    </ul>
                 </div>
             </div>
+                        
+            
         <?php
         return ob_get_clean();
     }
