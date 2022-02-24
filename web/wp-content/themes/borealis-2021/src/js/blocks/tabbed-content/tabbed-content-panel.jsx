@@ -58,7 +58,7 @@ export default function tabbedContentPanelBlock() {
                         <InnerBlocks.Content />
                     ) : (
                         <InnerBlocks
-                            allowedBlocks={[`${namespace}/paragraph`]}
+                            allowedBlocks={[`${namespace}/paragraph`, `${namespace}/icon-list-container-block`]}
                         />
                     )}
                 </div>,
