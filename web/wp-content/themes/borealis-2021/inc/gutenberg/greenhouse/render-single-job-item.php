@@ -1,7 +1,7 @@
 <?php  
 
 if (!function_exists('pg_render_single_job_item')) {
-    function pg_render_single_job_item($attrs, $api_key) {
+    function pg_render_single_job_item($attrs, $api_key, $url) {
         $fields = array(
             'job_id' => 0,
         );
@@ -15,7 +15,7 @@ if (!function_exists('pg_render_single_job_item')) {
             return null;
         }
         // TODO: borealisai instead of borealisaitest, migration to real borealis job board.
-        $url = 'https://boards-api.greenhouse.io/v1/boards/borealisai/jobs/' . $attributes->job_id;
+        $url = $url . '/jobs/' . $attributes->job_id;
         $response = wp_remote_get($url, $args);
         $body = wp_remote_retrieve_body($response);
         $data = json_decode($body, true);

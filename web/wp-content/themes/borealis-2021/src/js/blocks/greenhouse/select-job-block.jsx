@@ -31,30 +31,36 @@ export default function selectJobBlock() {
                 super(props);
                 this.state = {
                     jobs: [], 
+                    error: false,
                 }
             }
             async componentDidMount() {
-                try {
-                    const resp = await fetch('https://boards-api.greenhouse.io/v1/boards/borealisai/jobs?content=true', {
-                        method: 'GET',
-                        headers: {
-                            'Authorization': `Basic ${ajaxInfo.greenhouseAPIKey}`
-                        }
-                    })
-                    const data = await resp.json();
-                    if (data.jobs && data.jobs.length > 0) {
-                        const options = data.jobs.map((job) => {
-                            return {
-                                label: job.title,
-                                value: job.id
+                if (ajaxInfo.greenhouseAPIKey !== '' && ajaxInfo.greenhouseURL !== '') {
+                    try {
+                        const resp = await fetch(`${ajaxInfo.greenhouseURL}/jobs?content=true`, {
+                            method: 'GET',
+                            headers: {
+                                'Authorization': `Basic ${ajaxInfo.greenhouseAPIKey}`
                             }
                         })
-                        options.unshift({ label: "Select", value: 0 })
-                        this.setState({ jobs: options });
+                        const data = await resp.json();
+                        if (data.jobs && data.jobs.length > 0) {
+                            const options = data.jobs.map((job) => {
+                                return {
+                                    label: job.title,
+                                    value: job.id
+                                }
+                            })
+                            options.unshift({ label: "Select", value: 0 })
+                            this.setState({ jobs: options });
+                        }
+                    } catch(err) {
+                        this.setState({ error: true });
                     }
-                } catch(err) {
-
+                } else {
+                    this.setState({ error: true })
                 }
+                
             }
             render() {
                 const { attributes, setAttributes } = this.props;
@@ -63,7 +69,7 @@ export default function selectJobBlock() {
                     <div class="custom-component">
                         <p className="block-title">Select A Job</p>
                         {
-                        this.state.jobs && this.state.jobs.length > 0 ?
+                        this.state.jobs && this.state.jobs.length > 0 && !this.state.error ?
                             <SelectControl
                                 label={'Select Job'}
                                 value={ Number(job_id) > 0 ? job_id : 0 }
@@ -75,6 +81,10 @@ export default function selectJobBlock() {
                             : 
                             <p>No jobs found</p>
                         }    
+                        { 
+                            this.state.error &&
+                            <p>Something's gone wrong. Check Theme Settings to make sure both URL and API Key are correct</p>
+                        }
                     </div>
                 )
             }

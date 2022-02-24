@@ -1591,7 +1591,8 @@ function selectJobBlock() {
 
         _this = _super.call(this, props);
         _this.state = {
-          jobs: []
+          jobs: [],
+          error: false
         };
         return _this;
       }
@@ -1605,21 +1606,26 @@ function selectJobBlock() {
               while (1) {
                 switch (_context.prev = _context.next) {
                   case 0:
-                    _context.prev = 0;
-                    _context.next = 3;
-                    return fetch('https://boards-api.greenhouse.io/v1/boards/borealisai/jobs?content=true', {
+                    if (!(ajaxInfo.greenhouseAPIKey !== '' && ajaxInfo.greenhouseURL !== '')) {
+                      _context.next = 16;
+                      break;
+                    }
+
+                    _context.prev = 1;
+                    _context.next = 4;
+                    return fetch("".concat(ajaxInfo.greenhouseURL, "/jobs?content=true"), {
                       method: 'GET',
                       headers: {
                         'Authorization': "Basic ".concat(ajaxInfo.greenhouseAPIKey)
                       }
                     });
 
-                  case 3:
+                  case 4:
                     resp = _context.sent;
-                    _context.next = 6;
+                    _context.next = 7;
                     return resp.json();
 
-                  case 6:
+                  case 7:
                     data = _context.sent;
 
                     if (data.jobs && data.jobs.length > 0) {
@@ -1638,19 +1644,31 @@ function selectJobBlock() {
                       });
                     }
 
-                    _context.next = 12;
+                    _context.next = 14;
                     break;
 
-                  case 10:
-                    _context.prev = 10;
-                    _context.t0 = _context["catch"](0);
+                  case 11:
+                    _context.prev = 11;
+                    _context.t0 = _context["catch"](1);
+                    this.setState({
+                      error: true
+                    });
 
-                  case 12:
+                  case 14:
+                    _context.next = 17;
+                    break;
+
+                  case 16:
+                    this.setState({
+                      error: true
+                    });
+
+                  case 17:
                   case "end":
                     return _context.stop();
                 }
               }
-            }, _callee, this, [[0, 10]]);
+            }, _callee, this, [[1, 11]]);
           }));
 
           function componentDidMount() {
@@ -1670,7 +1688,7 @@ function selectJobBlock() {
             class: "custom-component"
           }, /*#__PURE__*/React.createElement("p", {
             className: "block-title"
-          }, "Select A Job"), this.state.jobs && this.state.jobs.length > 0 ? /*#__PURE__*/React.createElement(SelectControl, {
+          }, "Select A Job"), this.state.jobs && this.state.jobs.length > 0 && !this.state.error ? /*#__PURE__*/React.createElement(SelectControl, {
             label: 'Select Job',
             value: Number(job_id) > 0 ? job_id : 0,
             options: this.state.jobs,
@@ -1679,7 +1697,7 @@ function selectJobBlock() {
                 job_id: id
               });
             }
-          }) : /*#__PURE__*/React.createElement("p", null, "No jobs found"));
+          }) : /*#__PURE__*/React.createElement("p", null, "No jobs found"), this.state.error && /*#__PURE__*/React.createElement("p", null, "Something's gone wrong. Check Theme Settings to make sure both URL and API Key are correct"));
         }
       }]);
 

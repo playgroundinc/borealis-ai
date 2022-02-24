@@ -38,9 +38,9 @@ if ( ! function_exists( 'pg_render_featured_jobs_block' )) {
         );
         $attributes = pg_get_attributes( $attrs, $fields );
 
-        $setting_names = array('greenhouse_api_key');
+        $setting_names = array('greenhouse_api_key', 'greenhouse_url');
         $settings = pg_get_settings($setting_names);
-        if (!$settings['greenhouse_api_key'] || !strlen($settings['greenhouse_api_key']) > 0) {
+        if (!$settings['greenhouse_api_key'] || !strlen($settings['greenhouse_api_key']) > 0 || !$settings['greenhouse_url'] || !strlen($settings['greenhouse_url']) > 0) {
             return null;
         }
         ob_start();
@@ -57,7 +57,7 @@ if ( ! function_exists( 'pg_render_featured_jobs_block' )) {
                         <ul class="grow pt-7 md:pt-0 nested-block">
                             <?php foreach ($block['innerBlocks'] as $inner_block): ?>
                                 <?php 
-                                    $output = pg_render_single_job_item($inner_block['attrs'], $settings['greenhouse_api_key']);
+                                    $output = pg_render_single_job_item($inner_block['attrs'], $settings['greenhouse_api_key'], $settings['greenhouse_url']);
                                     if ($output) {
                                         echo $output;
                                     }
