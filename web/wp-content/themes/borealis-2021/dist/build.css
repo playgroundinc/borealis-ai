@@ -1482,6 +1482,10 @@ ol.footnotes li small{
   --tw-border-opacity: 1;
   border-left-color: rgb(34 39 49 / var(--tw-border-opacity));
 }
+.border-t-shade-grey-700{
+  --tw-border-opacity: 1;
+  border-top-color: rgb(92 93 118 / var(--tw-border-opacity));
+}
 .border-opacity-40{
   --tw-border-opacity: 0.4;
 }
@@ -1899,6 +1903,9 @@ ol.footnotes li small{
 }
 .first\:mt-0:first-child{
   margin-top: 0px;
+}
+.first\:border-t:first-child{
+  border-top-width: 1px;
 }
 .last\:basis-auto:last-child{
   flex-basis: auto;

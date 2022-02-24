@@ -1,0 +1,57 @@
+<?php  
+
+if (!function_exists('pg_render_single_job_item')) {
+    function pg_render_single_job_item($attrs, $api_key) {
+        $fields = array(
+            'job_id' => 0,
+        );
+        $attributes = pg_get_attributes($attrs, $fields);
+        $args = array(
+            'headers' => array(
+                'Authorization' => 'Basic' . esc_attr($api_key)
+            )
+        );
+        if (!$attributes->job_id || !intval($attributes->job_id) > 0) {
+            return null;
+        }
+        // TODO: borealisai instead of borealisaitest, migration to real borealis job board.
+        $url = 'https://boards-api.greenhouse.io/v1/boards/borealisai/jobs/' . $attributes->job_id;
+        $response = wp_remote_get($url, $args);
+        $body = wp_remote_retrieve_body($response);
+        $data = json_decode($body, true);
+        if (is_wp_error($response) || !is_array($response) || empty($response)) {
+            return null;
+        }
+        $jobs_page = get_pages( array( 'meta_key' => '_wp_page_template', 'meta_value' => 'page-single-job-listing.php' ) );
+        if (empty($jobs_page)) {
+            return null;
+        }
+        $single_url = get_permalink($jobs_page[0]->ID);
+        $url = add_query_arg('gh_jid', $attributes->job_id, $single_url);
+
+        function sanitize_output($text) {
+            return esc_html(sanitize_text_field(wp_unslash($text)));
+        }
+        ob_start();
+        ?>
+            <li>
+                <a class="block" href="<?php echo esc_url_raw($url); ?>">
+                    <div class="container">
+                        <div class="flex items-center first:border-t border-b border-shade-grey-700 px-5 py-4">
+                            <div class="grow">
+                                <p class="paragraph"><?php echo sanitize_output($data['title']) ?></p>
+                                <?php if ($data['location'] && !empty($data['location']) && $data['location']['name'] && strlen($data['location']['name']) > 0): ?>
+                                    <p class="paragraph-sm text-shade-grey-700"><?php echo sanitize_output($data['location']['name']); ?></p>
+                                <?php endif;?>
+                            </div>
+                            <span>
+                                <?php echo pg_render_icon('arrow'); ?>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        <?php  
+        return ob_get_clean();
+    }
+}
