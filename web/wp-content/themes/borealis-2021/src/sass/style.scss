@@ -103,6 +103,10 @@
             @apply mt-4;
         }
     }
+
+    .row-item {
+        @apply bg-shade-white-400 hover:bg-shade-grey-100 transition-background-color duration-300;
+    }
 }
 
 .visible-scroll {
