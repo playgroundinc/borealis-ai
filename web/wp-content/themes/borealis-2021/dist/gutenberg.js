@@ -148,7 +148,7 @@ function accordionBlock() {
           updateAttributeValue(attribute, change);
         }
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ['core/paragraph', "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/document-row"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four")]
       }))];
     },
     save: function save() {
@@ -6045,7 +6045,7 @@ function tabbedContentPanelBlock() {
           placeholder: "Please provide a title"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/accordion")]
       }))];
     },
     save: function save(_ref) {

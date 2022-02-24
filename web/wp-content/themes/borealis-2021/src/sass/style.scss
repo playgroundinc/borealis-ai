@@ -50,14 +50,16 @@
     }
 
     .container .container {
-        @apply w-auto m-0;
-        .icon-list {
+        @apply w-full m-0;
+        .icon-list, 
+        .accordion-list {
             @apply w-full;
         }
     }
     .page {
         .container .container {
-            .icon-list-title {
+            .icon-list-title,
+            .accordion-title {
                 @apply hidden;
             }
         }
