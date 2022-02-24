@@ -46,20 +46,26 @@ if ( ! function_exists( 'pg_render_featured_jobs_block' )) {
         ob_start();
 
         ?>
-            <div class="custom-component">
-                <?php if (!empty($attributes->title)): ?>
-                    <h2 class="h3"><?php echo esc_html($attributes->title) ?></h2>
-                <?php endif; ?>
-                <ul>
-                    <?php foreach ($block['innerBlocks'] as $inner_block): ?>
-                        <?php 
-                            $output = pg_render_single_job_item($inner_block['attrs'], $settings['greenhouse_api_key']);
-                            if ($output) {
-                                echo $output;
-                            }
-                        ?>
-                    <?php endforeach; ?>
-                </ul>
+            <div class="custom-component nestable">
+                <div class="md:container">
+                    <div class="md:flex nested-flex">
+                        <div class="container md:w-full md:m-0 md:basis-1/3 shrink-0 md:pr-10">
+                            <?php if (!empty($attributes->title)): ?>
+                                <h2 class="h3"><?php echo esc_html($attributes->title) ?></h2>
+                            <?php endif; ?>
+                        </div>
+                        <ul class="grow pt-7 md:pt-0 nested-block">
+                            <?php foreach ($block['innerBlocks'] as $inner_block): ?>
+                                <?php 
+                                    $output = pg_render_single_job_item($inner_block['attrs'], $settings['greenhouse_api_key']);
+                                    if ($output) {
+                                        echo $output;
+                                    }
+                                ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
             </div>
         <?php
         return ob_get_clean();

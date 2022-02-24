@@ -10,6 +10,9 @@ if ( ! function_exists( 'pg_server_side_block_render') ) {
             case 'core/video':
                 $block_content = pg_render_video_block($block_content, $block);
             break;
+            case 'core/embed':
+                $block_content = pg_render_video_block($block_content, $block);
+            break;
         }
         return $block_content;
     }

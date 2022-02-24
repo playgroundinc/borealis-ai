@@ -9,6 +9,7 @@ import newsMetaBlock from "./blocks/meta/news-meta.jsx"
 import teamMemberMetaBlock from "./blocks/meta/team-member-meta.jsx";
 import authorMetaBlock from './blocks/meta/author-meta.jsx';
 import publicationMetaBlock from './blocks/meta/publications-meta.jsx';
+import productMetaBlock from './blocks/meta/product-meta.jsx';
 
 import textColumnBlock from "../js/blocks/text-column.jsx";
 import imageTextBlock from "./blocks/image-text.jsx";
@@ -62,6 +63,9 @@ import bibtexBlock from './blocks/publications/bibtex-block.jsx';
 // Posts
 import featuredPostsContainerBlock from './blocks/posts/featured-posts-container.jsx';
 
+// Products
+import productContainerBlock from './blocks/products/product-container.jsx';
+
 // Slider Blocks
 import sliderBlock from "./blocks/slider/slider-container.jsx";
 import newsSlideBlock from './blocks/slider/news-slide.jsx';
@@ -109,6 +113,7 @@ newsMetaBlock();
 teamMemberMetaBlock();
 authorMetaBlock();
 publicationMetaBlock();
+productMetaBlock();
 
 // Init blocks here
 textColumnBlock();
@@ -156,6 +161,9 @@ bibtexBlock();
 
 // Posts
 featuredPostsContainerBlock();
+
+// Products
+productContainerBlock();
 
 // Slide Blocks
 sliderBlock();

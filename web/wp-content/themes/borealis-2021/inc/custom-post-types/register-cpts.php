@@ -17,6 +17,7 @@ require get_template_directory() . '/inc/custom-post-types/publications-cpt.php'
 require get_template_directory() . '/inc/custom-post-types/news-cpt.php';
 require get_template_directory() . '/inc/custom-post-types/team-member-cpt.php';
 require get_template_directory() . '/inc/custom-post-types/author-cpt.php';
+require get_template_directory() . '/inc/custom-post-types/product-cpt.php';
 
 
 if (!function_exists( 'pg_register_custom_post_types' )) {
@@ -29,6 +30,7 @@ if (!function_exists( 'pg_register_custom_post_types' )) {
 		pg_register_news_cpt();
 		pg_register_team_member_cpt();
 		pg_register_author_cpt();
+		pg_register_product_cpt();
 	}
 }
 

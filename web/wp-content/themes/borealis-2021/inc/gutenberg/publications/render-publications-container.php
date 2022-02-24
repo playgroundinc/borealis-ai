@@ -42,9 +42,9 @@ if ( ! function_exists( 'pg_render_publications_container_block' ) ) {
 
         ob_start();
         ?>
-        <div class="custom-component animated-element">
-            <div class="md:flex md:container">
-                <div class="md:w-4/12 container md:m-0">
+        <div class="custom-component animated-element nestable">
+            <div class="md:flex nested-flex md:container">
+                <div class="md:basis-4/12 container md:m-0 shrink-0">
                     <?php if (!empty($attributes->title)): ?>                   
                         <h2 class="h3"><?php echo esc_html($attributes->title) ?></h2>
                         <?php if (!empty($attributes->link)): ?>
@@ -52,7 +52,7 @@ if ( ! function_exists( 'pg_render_publications_container_block' ) ) {
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>
-                <div class="md:w-8/12 mt-18 md:mt-0">
+                <div class="md:basis-8/12 shrink-0 mt-18 md:mt-0 nested-block">
                     <ul class="border-t border-color-shade-grey-700">
                         <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
                             <?php echo pg_render_publications_item($inner_block, $attributes->link) ?>
