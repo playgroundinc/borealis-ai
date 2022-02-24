@@ -824,6 +824,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(101 104 146 / var(--tw-border-opacity));
 }
+@media (min-width: 1440px){
+  .single .custom-component:first-child{
+    margin-top: 0px;
+  }
+}
 .custom-component{
   margin-top: 92px;
 }
@@ -998,6 +1003,18 @@ ol.footnotes li small{
 .greenhouse ul{
   list-style-position: inside;
   list-style-type: disc;
+}
+.single .nestable .nested-flex{
+  display: block;
+  width: 100%;
+}
+@media (min-width: 768px){
+  .single .nestable .nested-flex{
+    width: 100%;
+  }
+}
+.single .nestable .nested-flex .nested-block{
+  margin-top: 40px;
 }
 .sr-only{
   position: absolute;
@@ -2342,6 +2359,12 @@ ol.footnotes li small{
   }
     .md\:basis-1\/4{
     flex-basis: 25%;
+  }
+    .md\:basis-4\/12{
+    flex-basis: 33.333333%;
+  }
+    .md\:basis-8\/12{
+    flex-basis: 66.666667%;
   }
     .md\:basis-3\/12{
     flex-basis: 25%;
