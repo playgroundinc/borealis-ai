@@ -45,8 +45,8 @@ if (!function_exists('pg_render_icon_list_container_block')) {
         ob_start();
 ?>
         <section aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
-            <div class="custom-component">
-                <div class="container flex flex-col tb:flex-row">
+            <div class="custom-component nestable">
+                <div class="container flex flex-col tb:flex-row nested-flex">
                     <div class="w-full mb-10 tb:mb-0 tb:w-2/6 icon-list-title">
                         <?php if (!empty($attributes->title)) : ?>
                                 <h3 class="h3"><?php echo esc_html($attributes->title) ?></h3>
@@ -55,10 +55,10 @@ if (!function_exists('pg_render_icon_list_container_block')) {
                     <div class="w-full tb:w-4/6 icon-list">
                         <?php if (!empty($attributes->description)) : ?>
                             <div>
-                                <p class="paragraph"><?php echo esc_html($attributes->description) ?></p>
+                                <p class="paragraph nested-description"><?php echo esc_html($attributes->description) ?></p>
                             </div>
                         <?php endif; ?>
-                        <ul class="flex flex-wrap mt-10 flex-col md:flex-row">
+                        <ul class="flex flex-wrap mt-10 flex-col md:flex-row nested-block">
                             <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
                                 <?php $inner_block['icon'] = $attributes->icon; ?>
 

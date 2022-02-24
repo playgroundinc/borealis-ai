@@ -54,8 +54,12 @@
         .icon-list {
             @apply w-full;
         }
-        .icon-list-title {
-            @apply hidden;
+    }
+    .page {
+        .container .container {
+            .icon-list-title {
+                @apply hidden;
+            }
         }
     }
     .footnote-link.footnote-identifier-link {
@@ -90,6 +94,9 @@
             .nested-block {
                 @apply mt-10
             }
+        }
+        .nested-description {
+            @apply mt-4;
         }
     }
 
