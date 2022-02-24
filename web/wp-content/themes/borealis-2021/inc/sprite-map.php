@@ -166,13 +166,8 @@ if (!function_exists('pg_svg_spritemap')) {
             </symbol>
 
             <!-- Play Button -->
-            <symbol id="icon-play" viewBox="0 0 22 22">
-                <path d="M6 21l13-10L6 1z" fill="currentColor" fill-rule="nonzero" stroke="currentColor" stroke-width="1.06667" stroke-linecap="round" stroke-linejoin="round" />
-            </symbol>
-
-            <!-- Map Marker -->
-            <symbol id="icon-marker" viewBox="0 0 22 22">
-                <path d="M11 1C7.57778167 1 4.00583858 3.9116625 4 8.0833125c-.00699475 4.992125 7 12.5 7 12.5s7.0074083-7.4975 7-12.5C17.9937583 3.9179125 14.4222417 1 11 1zm0 10.4166875c-1.71810917 0-3.11110917-1.4925-3.11110917-3.333375C7.88889083 6.24249375 9.28189083 4.75 11 4.75c1.71809167 0 3.1110917 1.49249375 3.1110917 3.3333125 0 1.840875-1.39300003 3.333375-3.1110917 3.333375z" fill="currentColor" fill-rule="nonzero" />
+            <symbol id="icon-play" viewBox="0 0 30 30">
+                <path d="M5.5 3v24l19.322-12z" stroke="currentColor" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
 
             <!--  Smart Quote -->
@@ -243,6 +238,12 @@ if (!function_exists('pg_svg_spritemap')) {
             <symbol id="icon-cookie-close" viewBox="0 0 8 8">
                 <path d="M6.3536 2.35355c.1952-.19526.1952-.51184 0-.7071-.1953-.19527-.51189-.19527-.70715 0L3.9999975 3.29289 2.35355 1.64645c-.19526-.19527-.51184-.19527-.7071 0-.19527.19526-.19527.51184 0 .7071l1.64644 1.6464475L1.64645 5.64645c-.19527.19526-.19527.51185 0 .70715.19526.1952.51184.1952.7071 0l1.6464475-1.64649L5.64645 6.3536c.19526.1952.51185.1952.70715 0 .1952-.1953.1952-.51189 0-.70715L4.70711 3.9999975 6.3536 2.35355z" fill="currentColor" fill-rule="evenodd" />
             </symbol>
+
+            <!-- Callout -->
+            <symbol id="icon-callout" viewBox="0 0 26 26">
+                <g transform="translate(2 1.5)" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><circle cx="11.097" cy="11.369" r="1.208"/><circle cx="11.097" cy="11.369" r="6.042"/><path d="M15.81 21.168v.013M19.604 18.148v.012M21.694 13.786v.012M21.694 8.952v.012M19.604 4.59v.012M15.81 1.569v.012M11.097.494v.012M6.385 1.569v.012M2.59 4.59v.012M.5 8.952v.012M.5 13.786v.012M2.59 18.148v.012M6.385 21.168v.013M11.097 22.244v.012"/></g>
+            </symbol>
+
         </svg>
 
 <?php

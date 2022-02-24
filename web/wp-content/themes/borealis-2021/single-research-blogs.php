@@ -15,9 +15,7 @@ $publication_date = get_post_meta($post->ID, 'publication_date', true);
 $authors = get_post_meta($post->ID, 'authors', true);
 $url = get_permalink($post->ID);
 ?>
-<?php if (isset($hero_image_url) && !empty($hero_image_url)) : ?>
-    <div aria-hidden="true" class="pt-100 mt-19 bg-cover bg-no-repeat bg-center" style="background-image: url(<?php echo esc_url_raw($hero_image_url) ?>)"></div>
-<?php endif; ?>
+<div aria-hidden="true" class="pt-100 mt-19 bg-cover bg-no-repeat bg-center" style="background-image: url(<?php echo isset($hero_image_url) && !empty($hero_image_url) ? esc_url_raw($hero_image_url) : get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg'; ?>)"></div>
 <main class="main-content container research-blog">
     <?php echo pg_generate_blog_sidebar_cite($post->ID); ?>
     <div class="pt-14 lg:flex">

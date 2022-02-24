@@ -91,7 +91,6 @@ export default class GalleryClass {
 
     handleMouseUp(e) {
         e.preventDefault();
-        console.log('mouse up')
         if (!this.pageXEnd) {
             this.setState('pageXEnd', this.pageXStart);
         }
