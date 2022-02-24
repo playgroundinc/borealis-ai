@@ -839,10 +839,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 0px;
   width: 100%;
 }
-.container .container .icon-list{
+.container .container .icon-list, .container .container .accordion-list{
   width: 100%;
 }
-.page .container .container .icon-list-title{
+.page .container .container .icon-list-title, .page .container .container .accordion-title{
   display: none;
 }
 .footnote-link.footnote-identifier-link{
@@ -2148,16 +2148,28 @@ ol.footnotes li small{
   .md\:container .container{
     width: 100%;
   }
-    .md\:container .container .icon-list{
+    .md\:container .container .icon-list, .container .container .accordion-list{
     width: 100%;
   }
-    .md\:container .container .icon-list{
+    .md\:container .container .icon-list, .container .container .accordion-list{
     width: 100%;
   }
-  .page .md\:container .container .icon-list-title{
+    .md\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+    .md\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+  .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
     display: none;
   }
-  .page .md\:container .container .icon-list-title{
+  .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
     display: none;
   }
   .md\:static{
@@ -2541,16 +2553,28 @@ ol.footnotes li small{
   .lg\:container .container{
     width: 100%;
   }
-    .lg\:container .container .icon-list{
+    .lg\:container .container .icon-list, .container .container .accordion-list{
     width: 100%;
   }
-    .lg\:container .container .icon-list{
+    .lg\:container .container .icon-list, .container .container .accordion-list{
     width: 100%;
   }
-  .page .lg\:container .container .icon-list-title{
+    .lg\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+    .lg\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+  .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
     display: none;
   }
-  .page .lg\:container .container .icon-list-title{
+  .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
     display: none;
   }
   .lg\:flex{

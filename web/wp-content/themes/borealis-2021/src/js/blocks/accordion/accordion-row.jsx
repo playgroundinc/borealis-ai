@@ -55,7 +55,7 @@ export default function accordionBlock() {
                         <InnerBlocks.Content />
                     ) : (
                         <InnerBlocks
-                            allowedBlocks={['core/paragraph', `${namespace}/document-row`, `${namespace}/heading-four`]}
+                            allowedBlocks={[`${namespace}/paragraph`, `${namespace}/heading-four`]}
                         />
                     )}
                 </div>, 

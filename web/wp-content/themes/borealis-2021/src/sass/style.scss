@@ -51,13 +51,15 @@
 
     .container .container {
         @apply w-full m-0;
-        .icon-list {
+        .icon-list, 
+        .accordion-list {
             @apply w-full;
         }
     }
     .page {
         .container .container {
-            .icon-list-title {
+            .icon-list-title,
+            .accordion-title {
                 @apply hidden;
             }
         }
