@@ -1010,6 +1010,9 @@ ol.footnotes li small{
   white-space: nowrap;
   border-width: 0;
 }
+.invisible{
+  visibility: hidden;
+}
 .fixed{
   position: fixed;
 }
@@ -1061,6 +1064,12 @@ ol.footnotes li small{
 }
 .bottom-0{
   bottom: 0px;
+}
+.right-6{
+  right: 24px;
+}
+.-top-20{
+  top: -80px;
 }
 .top-96{
   top: 384px;
@@ -1308,6 +1317,12 @@ ol.footnotes li small{
 }
 .basis-full{
   flex-basis: 100%;
+}
+.basis-1\/3{
+  flex-basis: 33.333333%;
+}
+.basis-1\/6{
+  flex-basis: 16.666667%;
 }
 .basis-8\/12{
   flex-basis: 66.666667%;
@@ -1732,6 +1747,9 @@ ol.footnotes li small{
 }
 .pt-featured-image-sm{
   padding-top: 268px;
+}
+.pl-8{
+  padding-left: 32px;
 }
 .pb-13{
   padding-bottom: 52px;
@@ -2371,6 +2389,10 @@ ol.footnotes li small{
     padding-left: 60px;
     padding-right: 60px;
   }
+    .md\:py-15{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
     .md\:py-5{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -2425,6 +2447,12 @@ ol.footnotes li small{
   }
     .md\:pr-3{
     padding-right: 12px;
+  }
+    .md\:pr-12{
+    padding-right: 48px;
+  }
+    .md\:pr-6{
+    padding-right: 24px;
   }
     .md\:pt-2{
     padding-top: 8px;
@@ -2502,6 +2530,9 @@ ol.footnotes li small{
   .tb\:mb-8{
     margin-bottom: 32px;
   }
+  .tb\:block{
+    display: block;
+  }
   .tb\:flex{
     display: flex;
   }
@@ -2543,6 +2574,15 @@ ol.footnotes li small{
   }
   .tb\:pl-5{
     padding-left: 20px;
+  }
+  .tb\:pl-4{
+    padding-left: 16px;
+  }
+  .group:hover .tb\:group-hover\:visible{
+    visibility: visible;
+  }
+  .group:hover .tb\:group-hover\:opacity-100{
+    opacity: 1;
   }
 }
   @media (min-width: 1440px){
@@ -2611,11 +2651,17 @@ ol.footnotes li small{
     .lg\:pt-7{
     padding-top: 28px;
   }
+    .lg\:pt-video-lg{
+    padding-top: 30%;
+  }
     .lg\:pl-gallery-offset{
     padding-left: calc((100vw - 1300px) / 2);
   }
     .lg\:pr-gallery-offset{
     padding-right: calc((100vw - 1300px) / 2);
+  }
+    .lg\:pl-8{
+    padding-left: 32px;
   }
     .lg\:pt-0{
     padding-top: 0px;
@@ -2625,9 +2671,6 @@ ol.footnotes li small{
   }
     .lg\:pb-0{
     padding-bottom: 0px;
-  }
-    .lg\:pt-video-lg{
-    padding-top: 30%;
   }
     .lg\:container{
     margin: 0 auto;
