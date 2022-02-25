@@ -2731,6 +2731,9 @@ ol.footnotes li small{
   .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
     display: none;
   }
+  .lg\:mr-16{
+    margin-right: 64px;
+  }
   .lg\:flex{
     display: flex;
   }
@@ -2780,9 +2783,6 @@ ol.footnotes li small{
   }
   .lg\:pr-gallery-offset{
     padding-right: calc((100vw - 1300px) / 2);
-  }
-  .lg\:pr-16{
-    padding-right: 64px;
   }
   .lg\:pl-8{
     padding-left: 32px;
