@@ -10,25 +10,24 @@
 get_header();
 ?>
 <?php
-$setting_names = array('greenhouse_api_key');
+$setting_names = array('greenhouse_api_key', 'greenhouse_url');
 $settings = pg_get_settings($setting_names);
-if (!empty($settings['greenhouse_api_key'])) : ?>
+
+if (!empty($settings['greenhouse_api_key']) && strlen($settings['greenhouse_url']) > 0) : ?>
     <div>
         <?php
         $jobIdQuery = "";
         if (isset($_GET['gh_jid'])) {
             $jobIdQuery = sanitize_text_field(wp_unslash($_GET['gh_jid']));
         }
-
-        $setting_names = array('greenhouse_api_key');
-        $settings = pg_get_settings($setting_names);
+        
         $args = array(
             'headers' => array(
                 'Authorization' => 'Basic' . esc_attr($settings['greenhouse_api_key'])
             )
         );
         // TODO: borealisai instead of borealisaitest, migration to real borealis job board.
-        $url = 'https://boards-api.greenhouse.io/v1/boards/borealisaitest/jobs/' . $jobIdQuery;
+        $url = $settings['greenhouse_url'] . '/jobs/' . $jobIdQuery;
         $response = wp_remote_get($url, $args);
 
         if (is_wp_error($response) || !is_array($response) || empty($response)) {
