@@ -1233,6 +1233,9 @@ ol.footnotes li small{
 .mt-5{
   margin-top: 20px;
 }
+.mt-14{
+  margin-top: 56px;
+}
 .block{
   display: block;
 }
@@ -1316,6 +1319,9 @@ ol.footnotes li small{
 .w-23{
   width: 92px;
 }
+.w-3\/8{
+  width: calc((100% / 8) * 3);
+}
 .w-1\/2{
   width: 50%;
 }
@@ -1324,9 +1330,6 @@ ol.footnotes li small{
 }
 .w-6{
   width: 24px;
-}
-.w-3\/8{
-  width: calc((100% / 8) * 3);
 }
 .w-22{
   width: 88px;
@@ -2717,6 +2720,9 @@ ol.footnotes li small{
   .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
     display: none;
   }
+  .lg\:mt-0{
+    margin-top: 0px;
+  }
   .lg\:flex{
     display: flex;
   }
@@ -2778,6 +2784,9 @@ ol.footnotes li small{
   }
   .lg\:pb-0{
     padding-bottom: 0px;
+  }
+  .lg\:pl-6{
+    padding-left: 24px;
   }
   .lg\:container{
     margin: 0 auto;
