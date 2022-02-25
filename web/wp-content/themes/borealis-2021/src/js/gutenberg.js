@@ -35,6 +35,10 @@ import bodyCopyBlock from "./blocks/body-copy.jsx";
 import calloutContainerBlock from "./blocks/callouts/callout-container.jsx";
 import calloutColumnBlock from "./blocks/callouts/callout-column.jsx";
 
+// Code
+import compareCodeBlock from './blocks/code/compare-code-block.jsx';
+import codeBlock from './blocks/code/code-block.jsx';
+
 // Content Columns
 import contentCardContainerBlock from "./blocks/content-cards/content-card-container.jsx";
 import contentCardBlock from "./blocks/content-cards/content-card.jsx";
@@ -142,6 +146,10 @@ calloutColumnBlock();
 // Content Cards
 contentCardContainerBlock();
 contentCardBlock();
+
+// Code
+compareCodeBlock();
+codeBlock();
 
 // Gallery
 galleryContainerBlock();

@@ -1034,6 +1034,13 @@ ol.footnotes li small{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
 }
+.wp-block-code{
+  flex-grow: 1;
+  border-radius: 10px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 244 251 / var(--tw-bg-opacity));
+  padding: 48px;
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1615,6 +1622,9 @@ ol.footnotes li small{
 }
 .p-20{
   padding: 80px;
+}
+.p-12{
+  padding: 48px;
 }
 .px-4{
   padding-left: 16px;
