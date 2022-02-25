@@ -39,6 +39,9 @@ import calloutColumnBlock from "./blocks/callouts/callout-column.jsx";
 import contentCardContainerBlock from "./blocks/content-cards/content-card-container.jsx";
 import contentCardBlock from "./blocks/content-cards/content-card.jsx";
 
+// Figures
+import compareFiguresBlock from './blocks/figures/compare-figures-block.jsx';
+
 // Gallery
 import galleryContainerBlock from './blocks/gallery/gallery-container-block.jsx';
 
@@ -142,6 +145,9 @@ calloutColumnBlock();
 // Content Cards
 contentCardContainerBlock();
 contentCardBlock();
+
+// Figures
+compareFiguresBlock();
 
 // Gallery
 galleryContainerBlock();

@@ -1379,6 +1379,15 @@ ol.footnotes li small{
 .basis-2\/12{
   flex-basis: 16.666667%;
 }
+.basis-col-3{
+  flex-basis: calc((100% - 60px) / 4);
+}
+.basis-col-6{
+  flex-basis: calc((100% - 20px) / 2);
+}
+.basis-col-4{
+  flex-basis: calc((100% - 40px) / 3);
+}
 .rotate-0{
   --tw-rotate: 0deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1594,6 +1603,9 @@ ol.footnotes li small{
 .bg-shade-black-400{
   --tw-bg-opacity: 1;
   background-color: rgb(34 39 49 / var(--tw-bg-opacity));
+}
+.bg-shade-grey-50{
+  background-color: rgba(244,244,251,0.5);
 }
 .bg-opacity-70{
   --tw-bg-opacity: 0.7;
@@ -2092,8 +2104,35 @@ ol.footnotes li small{
   .nth-child-2\:mt-5:nth-child(n + 2){
   margin-top: 20px;
 }
+  .nth-child-2\:mt-6:nth-child(n + 2){
+  margin-top: 24px;
+}
+  .nth-child-2\:mt-10:nth-child(n + 2){
+  margin-top: 40px;
+}
+  .nth-child-2n\:ml-0:nth-child(2n + 1){
+  margin-left: 0px;
+}
+  .nth-child-3\:mt-6:nth-child(n + 3){
+  margin-top: 24px;
+}
   .nth-child-3\:pt-12:nth-child(n + 3){
   padding-top: 48px;
+}
+  .nth-child-3n\:ml-0:nth-child(3n + 1){
+  margin-left: 0px;
+}
+  .nth-child-4\:mt-6:nth-child(n + 4){
+  margin-top: 24px;
+}
+  .nth-child-4\:ml-0:nth-child(n + 4){
+  margin-left: 0px;
+}
+  .nth-child-4n\:ml-0:nth-child(4n + 1){
+  margin-left: 0px;
+}
+  .nth-child-5\:mt-6:nth-child(n + 5){
+  margin-top: 24px;
 }
   @media (min-width: 375px){
   .sm\:w-1\/2{
@@ -2400,6 +2439,9 @@ ol.footnotes li small{
   .md\:basis-3\/12{
     flex-basis: 25%;
   }
+  .md\:basis-col-6{
+    flex-basis: calc((100% - 20px) / 2);
+  }
   .md\:flex-row{
     flex-direction: row;
   }
@@ -2599,11 +2641,23 @@ ol.footnotes li small{
   .md\:nth-child-2\:mt-0:nth-child(n + 2){
     margin-top: 0px;
   }
+  .md\:nth-child-2\:ml-5:nth-child(n + 2){
+    margin-left: 20px;
+  }
   .md\:nth-child-2\:pl-3:nth-child(n + 2){
     padding-left: 12px;
   }
   .md\:nth-child-2\:pr-0:nth-child(n + 2){
     padding-right: 0px;
+  }
+  .md\:nth-child-2n\:ml-0:nth-child(2n + 1){
+    margin-left: 0px;
+  }
+  .md\:nth-child-2n\:ml-5:nth-child(2n + 1){
+    margin-left: 20px;
+  }
+  .md\:nth-child-3\:mt-6:nth-child(n + 3){
+    margin-top: 24px;
   }
   .md\:nth-child-3\:pt-0:nth-child(n + 3){
     padding-top: 0px;
@@ -2741,6 +2795,12 @@ ol.footnotes li small{
   .lg\:basis-1\/4{
     flex-basis: 25%;
   }
+  .lg\:basis-col-4{
+    flex-basis: calc((100% - 40px) / 3);
+  }
+  .lg\:basis-col-3{
+    flex-basis: calc((100% - 60px) / 4);
+  }
   .lg\:justify-center{
     justify-content: center;
   }
@@ -2793,6 +2853,24 @@ ol.footnotes li small{
     .lg\:container{
       width: calc(100% - 0);
     }
+  }
+  .lg\:nth-child-2n\:ml-5:nth-child(2n + 1){
+    margin-left: 20px;
+  }
+  .lg\:nth-child-3\:mt-0:nth-child(n + 3){
+    margin-top: 0px;
+  }
+  .lg\:nth-child-3n\:ml-0:nth-child(3n + 1){
+    margin-left: 0px;
+  }
+  .lg\:nth-child-4\:mt-6:nth-child(n + 4){
+    margin-top: 24px;
+  }
+  .lg\:nth-child-4n\:ml-0:nth-child(4n + 1){
+    margin-left: 0px;
+  }
+  .lg\:nth-child-5\:mt-6:nth-child(n + 5){
+    margin-top: 24px;
   }
 }
 

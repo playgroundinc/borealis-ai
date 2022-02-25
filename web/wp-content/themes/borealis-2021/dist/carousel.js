@@ -367,6 +367,10 @@ module.exports.breakpoints = {
     spacing['video'] = '70.17%';
     spacing['2/7'] = 'calc((100% / 7) * 2)';
     spacing['3/7'] = 'calc((100% / 7) * 3)';
+
+    spacing['col-6'] = 'calc((100% - 20px) / 2)';
+    spacing['col-4'] = 'calc((100% - 40px) / 3)';
+    spacing['col-3'] = 'calc((100% - 60px) / 4)';
     for (let i = 0; i <= max; i = i + 1) {
       spacing[i] = `${i * base}px`;
     }
