@@ -47,7 +47,7 @@ if ( ! function_exists( 'pg_render_video_block' ) ) {
                         </a>
                     </div>
                 <?php endif; ?>
-                <div class="flex w-full h-full justify-center items-center absolute inset-0 bg-shade-grey-100">
+                <div class="flex w-full h-full justify-center items-center absolute inset-0 bg-shade-grey-50">
                     <?php echo $block['innerContent'][0] ?>
                 </div>
                 <?php if ( ! empty( $attributes->caption ) ) : ?>
