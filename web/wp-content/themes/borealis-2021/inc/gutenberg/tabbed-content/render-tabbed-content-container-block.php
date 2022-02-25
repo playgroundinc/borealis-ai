@@ -51,11 +51,11 @@ if ( ! function_exists( 'pg_render_tabbed_content_container_block' ) ) {
         ob_start();
         ?>
             <div class="custom-component animated-element">
-                <div class="bg-center bg-cover <?php echo $dark && $attributes->display_style === 'background-image' ? esc_attr('text-shade-white-400 pt-11 lg:py-20') : '' ?>" style="<?php echo $dark && $attributes->display_style === 'background-image' ? 'background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('. esc_url_raw($image) . ')' : '' ?>">
+                <div class="bg-center bg-cover <?php echo $dark && $attributes->display_style === 'background-image' ? esc_attr('text-shade-white-400 pt-11 lg:pt-20 pb-9') : '' ?>" style="<?php echo $dark && $attributes->display_style === 'background-image' ? 'background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('. esc_url_raw($image) . ')' : '' ?>">
                     <section class="tab-container container" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                         <?php if ($dark && $attributes->display_style === 'background-image'): ?>
                             <div class="lg:flex justify-between">
-                                <div class="lg:basis-4/12 shrink-0 flex flex-col">
+                                <div class="lg:basis-4/12 shrink-0 flex flex-col lg:pb-11">
                                     <div class="grow flex flex-col justify-end">
                                         <?php if (!empty($attributes->title)): ?>
                                             <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3"><?php echo esc_html($attributes->title) ?></h2>
@@ -103,7 +103,7 @@ if ( ! function_exists( 'pg_render_tabbed_content_container_block' ) ) {
                                                 </div>
                                             <?php endif;?>
                                     <?php endforeach; ?>
-                                    <div class="flex lg:justify-center lg:pt-8 overflow-scroll pb-11 pt-11 lg:pb-0" role="tablist" aria-orientation="horizontal">
+                                    <div class="flex lg:justify-center lg:pt-8 overflow-scroll pb-11 pt-11 pl-4" role="tablist" aria-orientation="horizontal">
                                         <?php foreach ($block['innerBlocks'] as $inner_block => $element): ?>
                                             <?php
                                                 $fields = array(
@@ -117,7 +117,7 @@ if ( ! function_exists( 'pg_render_tabbed_content_container_block' ) ) {
                                                 $title = $element['attrs']['title'];
                                             ?> 
                                                 <?php if ($inner_block === key($block['innerBlocks'])): ?>   
-                                                    <button class="pill-secondary pill-secondary-active shrink-0" role="tab" aria-selected="true" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
+                                                    <button class="pill-secondary pill-secondary-active shrink-0 first:ml-4" role="tab" aria-selected="true" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
                                                 <?php else: ?>
                                                     <button class="pill-secondary shrink-0" role="tab" aria-selected="false" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
                                                 <?php endif; ?>

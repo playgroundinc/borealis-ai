@@ -1688,6 +1688,10 @@ ol.footnotes li small{
   padding-top: 56px;
   padding-bottom: 56px;
 }
+.px-2{
+  padding-left: 8px;
+  padding-right: 8px;
+}
 .pt-13{
   padding-top: 52px;
 }
@@ -1843,6 +1847,9 @@ ol.footnotes li small{
 }
 .pr-3{
   padding-right: 12px;
+}
+.pb-9{
+  padding-bottom: 36px;
 }
 .text-center{
   text-align: center;
@@ -2008,6 +2015,15 @@ ol.footnotes li small{
     max-height: 100%; }
   .first\:mt-0:first-child{
   margin-top: 0px;
+}
+  .first\:ml-4:first-child{
+  margin-left: 16px;
+}
+  .first\:pr-4:first-child{
+  padding-right: 16px;
+}
+  .first\:pl-4:first-child{
+  padding-left: 16px;
 }
   .last\:basis-auto:last-child{
   flex-basis: auto;
@@ -2720,6 +2736,9 @@ ol.footnotes li small{
   .lg\:flex{
     display: flex;
   }
+  .lg\:min-h-\[435px\]{
+    min-height: 435px;
+  }
   .lg\:w-1\/6{
     width: 16.666667%;
   }
@@ -2778,6 +2797,15 @@ ol.footnotes li small{
   }
   .lg\:pb-0{
     padding-bottom: 0px;
+  }
+  .lg\:pt-20{
+    padding-top: 80px;
+  }
+  .lg\:pb-9{
+    padding-bottom: 36px;
+  }
+  .lg\:pb-11{
+    padding-bottom: 44px;
   }
   .lg\:container{
     margin: 0 auto;

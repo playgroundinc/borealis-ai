@@ -57,7 +57,7 @@ if (!function_exists('pg_svg_spritemap')) {
 
             <!-- Down Chevron -->
             <symbol id="icon-chevron" viewBox="0 0 10 10">
-                <path d="m2 3.5 3 3.066L8 3.5" stroke="#5C5D76" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="m2 3.5 3 3.066L8 3.5" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" />
             </symbol>
 
             <!-- Hamburger Icon -->
@@ -231,7 +231,7 @@ if (!function_exists('pg_svg_spritemap')) {
             </symbol>
 
             <symbol id="icon-chevron" viewBox="0 0 24 25" fill="none">
-                <path d="M6 9.5L12 15.5L18 9.5" stroke="#5C5D76" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 9.5L12 15.5L18 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </symbol>
 
             <!--  Cookie Close -->
