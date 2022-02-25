@@ -1378,6 +1378,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-no-repeat{
   background-repeat: no-repeat;
 }
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .p-5{
   padding: 20px;
 }

@@ -2539,13 +2539,8 @@ function pgLogoContainerBlock() {
       }), /*#__PURE__*/React.createElement("div", {
         className: "col--4"
       }, save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/logo-subsection")] // template={[[`${namespace}/logo`]]}
-
-      }) // <InnerBlocks
-      //     allowedBlocks={[`${namespace}/logo`]}
-      //     template={[[`${namespace}/logo`]]}
-      // />
-      ))];
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/logo-subsection")]
+      })))];
     },
     save: function save() {
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);

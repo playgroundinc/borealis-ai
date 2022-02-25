@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * Render Logo Block
@@ -12,7 +13,7 @@
 
 // Check if `register_block_type` exists before calling
 // If Gutenberg isn't enabled it wont exist and error.
-if ( function_exists( 'register_block_type' ) ) {
+if (function_exists('register_block_type')) {
     $namespace = pg_get_namespace();
     register_block_type(
         $namespace . '/logo',
@@ -22,7 +23,7 @@ if ( function_exists( 'register_block_type' ) ) {
     );
 }
 
-if ( ! function_exists( 'pg_render_logo_block' ) ) {
+if (!function_exists('pg_render_logo_block')) {
     /**
      * Render out logo block.
      *
@@ -30,7 +31,8 @@ if ( ! function_exists( 'pg_render_logo_block' ) ) {
      * @param mixed $content the content of the block.
      * @param array $block_obj array of the block features.
      */
-    function pg_render_logo_block( $attrs, $content, $block_obj ) {
+    function pg_render_logo_block($attrs, $content, $block_obj)
+    {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
@@ -39,33 +41,23 @@ if ( ! function_exists( 'pg_render_logo_block' ) ) {
             'image_url' => '',
             'link' => '',
         );
-        $attributes = pg_get_attributes( $attrs, $fields );
+        $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         $placeholder = wp_get_attachment_image_url($attributes->image_id, 'thumbnail');
         ob_start();
-        if (!empty($image)):
-            ?>
-                <?php if (!empty($attributes->link)): ?>
-                    <a class="mb-8 md:mb-15 pr-10 lg:pr-16" href="<?php echo esc_url_raw($attributes->link); ?>" <?php echo !empty($attributes->image_alt) ? esc_html('aria-label=' . $attributes->image_alt) : null; ?>>
-                        <img 
-                            class="lazy w-42 h-18"
-                            data-src="<?php echo esc_url_raw($image)?>"
-                            src="<?php echo esc_url_raw($placeholder) ?>"
-                            <?php echo !empty($attributes->image_alt) ? esc_html('alt=' . $attributes->image_alt) : null; ?>
-                        >
-                    </a>
-                <?php else: ?>
-                    <div class="mb-15 pr-10 lg:pr-16">
-                        <img 
-                            class="lazy w-42 h-18"
-                            data-src="<?php echo esc_url_raw($image)?>"
-                            src="<?php echo esc_url_raw($placeholder) ?>"
-                            <?php echo !empty($attributes->image_alt) ? esc_html('alt=' . $attributes->image_alt) : null; ?>
-                        >
-                    </div>
-                <?php endif?>
-            <?php
+        if (!empty($image)) :
+?>
+            <?php if (!empty($attributes->link)) : ?>
+                <a class="mb-8 md:mb-15 pr-10 lg:pr-16 w-42 h-18" href="<?php echo esc_url_raw($attributes->link); ?>" <?php echo !empty($attributes->image_alt) ? esc_html('aria-label=' . $attributes->image_alt) : null; ?>>
+                    <img class="lazy h-full w-full object-contain" data-src="<?php echo esc_url_raw($image) ?>" src="<?php echo esc_url_raw($image) ?>" <?php echo !empty($attributes->image_alt) ? esc_html('alt=' . $attributes->image_alt) : null; ?>>
+                </a>
+            <?php else : ?>
+                <div class="mb-15 pr-10 lg:pr-16 w-42 h-18">
+                    <img class="lazy h-full w-full object-contain" data-src="<?php echo esc_url_raw($image) ?>" src="<?php echo esc_url_raw($image) ?>" <?php echo !empty($attributes->image_alt) ? esc_html('alt=' . $attributes->image_alt) : null; ?>>
+                </div>
+            <?php endif ?>
+<?php
         endif;
         return ob_get_clean();
     }

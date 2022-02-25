@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * Render Logos Container
@@ -12,7 +13,7 @@
 
 // Check if `register_block_type` exists before calling
 // If Gutenberg isn't enabled it wont exist and error.
-if ( function_exists( 'register_block_type' ) ) {
+if (function_exists('register_block_type')) {
     $namespace = pg_get_namespace();
     register_block_type(
         $namespace . '/logos-container',
@@ -22,7 +23,7 @@ if ( function_exists( 'register_block_type' ) ) {
     );
 }
 
-if ( ! function_exists( 'pg_render_logos_container_block' ) ) {
+if (!function_exists('pg_render_logos_container_block')) {
     /**
      * Render out logos container block.
      *
@@ -30,37 +31,38 @@ if ( ! function_exists( 'pg_render_logos_container_block' ) ) {
      * @param mixed $content the content of the block.
      * @param array $block_obj array of the block features.
      */
-    function pg_render_logos_container_block( $attrs, $content, $block_obj ) {
+    function pg_render_logos_container_block($attrs, $content, $block_obj)
+    {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
             'copy' => '',
             'title' => '',
         );
-        $attributes = pg_get_attributes( $attrs, $fields );
+        $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
         ob_start();
-        ?>
+?>
         <div class="bg-shade-grey-100 w-full">
             <div class="container flex justify-between py-10 md:py-15 tb:flex-row flex-col">
                 <div class="w-full tb:w-3/12">
-                    <?php if (!empty($attributes->title)): ?>
+                    <?php if (!empty($attributes->title)) : ?>
                         <h2 class="h3 mb-8 pr-10"><?php echo wp_kses($attributes->title, $allowed_html); ?></h2>
                     <?php endif; ?>
-                    <?php if (!empty($attributes->copy)): ?>
-                        <p class="paragraph">
-                            <?php echo wp_kses(wpautop($attributes->copy), $allowed_html); ?>
+                    <?php if (!empty($attributes->copy)) : ?>
+                        <p class="paragraph mb-8">
+                            <?php echo ($attributes->copy); ?>
                         </p>
                     <?php endif; ?>
                 </div>
                 <div class="w-full tb:w-8/12">
-                    <?php foreach ( $block['innerBlocks'] as $index => $inner_block ) : ?>
-                        <?php echo wp_kses( render_block( $inner_block ), $allowed_html ); ?>
+                    <?php foreach ($block['innerBlocks'] as $index => $inner_block) : ?>
+                        <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
                     <?php endforeach; ?>
                 </div>
             </div>
         </div>
-        <?php
+<?php
         return ob_get_clean();
     }
 }
