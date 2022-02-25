@@ -42,9 +42,7 @@ if (!function_exists('pg_render_logo_block')) {
             'link' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
-        $allowed_html = pg_allowed_html();
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
-        $placeholder = wp_get_attachment_image_url($attributes->image_id, 'thumbnail');
         ob_start();
         if (!empty($image)) :
 ?>

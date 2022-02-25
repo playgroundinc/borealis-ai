@@ -43,17 +43,18 @@ if (!function_exists('pg_render_accordion_block')) {
         $allowed_html = pg_allowed_html();
         ob_start();
 ?>
-        <div class="container flex flex-col md:flex-row custom-component">
-            <div class="w-full md:w-4/12">
+    <div class="custom-component nestable">
+        <div class="container flex flex-col md:flex-row custom-component nested-flex">
+            <div class="w-full mb-5 md:mb-0 md:w-4/12 accordion-title">
                 <?php if (!empty($attributes->title)) : ?>
-                    <h3 class="h3 my-5 md:my-12">
+                    <h3 class="h3">
                         <?php echo wp_kses($attributes->title, $allowed_html); ?>
                     </h3>
                 <?php endif; ?>
             </div>
-            <div class="paragraph w-full md:w-8/12">
+            <div class="paragraph w-full md:w-8/12 accordion-list">
                 <?php if (!empty($attributes->description)) : ?>
-                    <div class="mt-0 mb-5 md:my-12"><?php echo wp_kses(wpautop($attributes->description), $allowed_html); ?></div>
+                    <div class="mt-0 mb-5 md:mb-12"><?php echo wp_kses(wpautop($attributes->description), $allowed_html); ?></div>
                 <?php endif; ?>
                 <ul class="accordion-block border-b border-shade-grey-500">
                     <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
@@ -62,6 +63,7 @@ if (!function_exists('pg_render_accordion_block')) {
                 </ul>
             </div>
         </div>
+    </div>
 <?php
         return ob_get_clean();
     }

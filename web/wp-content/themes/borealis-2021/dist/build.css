@@ -824,8 +824,200 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(101 104 146 / var(--tw-border-opacity));
 }
+@media (min-width: 1440px){
+  .single .custom-component:first-child{
+    margin-top: 0px;
+  }
+}
 .custom-component{
   margin-top: 92px;
+}
+.custom-component .custom-component{
+  margin-top: 0px;
+}
+.container .container{
+  margin: 0px;
+  width: 100%;
+}
+.container .container .icon-list, .container .container .accordion-list{
+  width: 100%;
+}
+.page .container .container .icon-list-title, .page .container .container .accordion-title{
+  display: none;
+}
+.footnote-link.footnote-identifier-link{
+  scroll-margin-top: 120px;
+}
+.footnote-link.footnote-back-link{
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .footnote-link.footnote-back-link{
+    font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .footnote-link.footnote-back-link{
+    font-size: 14px;
+  }
+}
+ol.footnotes{
+  margin-top: 120px;
+  list-style-position: inside;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(101 104 146 / var(--tw-border-opacity));
+  padding-top: 24px;
+}
+ol.footnotes li small{
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  ol.footnotes li small{
+    font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  ol.footnotes li small{
+    font-size: 14px;
+  }
+}
+.greenhouse h2{
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  font-weight: 700;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .greenhouse h2{
+    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .greenhouse h2{
+    font-size: 18px;
+  }
+}
+.greenhouse h2 + .paragraph-blog{
+  margin-top: 12px;
+}
+@media (min-width: 768px){
+  .greenhouse h2 + .paragraph-blog{
+    margin-top: 32px;
+  }
+}
+.greenhouse h2{
+  margin-bottom: 32px;
+  margin-top: 72px;
+  width: 66.666667%;
+}
+@media (min-width: 768px){
+  .greenhouse h2{
+    font-size: 30px;
+    font-family: Inter, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .greenhouse h2{
+      font-size: calc(30px + ((30 - 30) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .greenhouse h2{
+      font-size: 30px;
+    }
+  }
+  .greenhouse h2 + .paragraph-blog{
+    margin-top: 12px;
+  }
+  @media (min-width: 768px){
+    .greenhouse h2 + .paragraph-blog{
+      margin-top: 32px;
+    }
+  }
+}
+@media (min-width: 1000px){
+  .greenhouse h2{
+    width: 50%;
+  }
+}
+.greenhouse p, .greenhouse li{
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  line-height: 1.50;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .greenhouse p, .greenhouse li{
+    font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .greenhouse p, .greenhouse li{
+    font-size: 14px;
+  }
+}
+@media (min-width: 768px){
+  .greenhouse p, .greenhouse li{
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    line-height: 1.80;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .greenhouse p, .greenhouse li{
+      font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .greenhouse p, .greenhouse li{
+      font-size: 18px;
+    }
+  }
+}
+.greenhouse ul{
+  list-style-position: inside;
+  list-style-type: disc;
+}
+.single .nestable .nested-flex{
+  display: block;
+  width: 100%;
+}
+@media (min-width: 768px){
+  .single .nestable .nested-flex{
+    width: 100%;
+  }
+}
+.single .nestable .nested-flex .nested-block{
+  margin-top: 40px;
+}
+.single .nestable .nested-description{
+  margin-top: 16px;
 }
 .sr-only{
   position: absolute;
@@ -837,6 +1029,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+.invisible{
+  visibility: hidden;
 }
 .fixed{
   position: fixed;
@@ -890,6 +1085,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bottom-0{
   bottom: 0px;
 }
+.right-6{
+  right: 24px;
+}
+.-top-20{
+  top: -80px;
+}
 .top-96{
   top: 384px;
 }
@@ -905,16 +1106,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .z-50{
   z-index: 50;
 }
+.z-0{
+  z-index: 0;
+}
 .m-auto{
   margin: auto;
 }
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
-}
-.my-5{
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 .my-8{
   margin-top: 32px;
@@ -937,6 +1137,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mr-10{
   margin-right: 40px;
+}
+.mb-19{
+  margin-bottom: 76px;
+}
+.mb-36{
+  margin-bottom: 144px;
 }
 .mt-19{
   margin-top: 76px;
@@ -986,11 +1192,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-16{
   margin-top: 64px;
 }
-.mt-0{
-  margin-top: 0px;
+.mt-18{
+  margin-top: 72px;
 }
 .mb-5{
   margin-bottom: 20px;
+}
+.mt-0{
+  margin-top: 0px;
+}
+.mt-25{
+  margin-top: 100px;
 }
 .mt-11{
   margin-top: 44px;
@@ -1006,9 +1218,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mb-0{
   margin-bottom: 0px;
-}
-.mt-18{
-  margin-top: 72px;
 }
 .ml-15{
   margin-left: 60px;
@@ -1066,6 +1275,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .min-h-\[400px\]{
   min-height: 400px;
 }
+.min-h-\[224px\]{
+  min-height: 224px;
+}
 .w-full{
   width: 100%;
 }
@@ -1112,7 +1324,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 24px;
 }
 .w-3\/8{
-  width: calc((100% /8) * 3);
+  width: calc((100% / 8) * 3);
 }
 .w-22{
   width: 88px;
@@ -1138,11 +1350,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .basis-1\/2{
   flex-basis: 50%;
 }
+.basis-card{
+  flex-basis: calc((100% - 64px) / 3);
+}
+.basis-1\/3{
+  flex-basis: 33.333333%;
+}
+.basis-7\/12{
+  flex-basis: 58.333333%;
+}
 .basis-team-member{
   flex-basis: 310px;
 }
 .basis-full{
   flex-basis: 100%;
+}
+.basis-1\/6{
+  flex-basis: 16.666667%;
 }
 .basis-8\/12{
   flex-basis: 66.666667%;
@@ -1176,6 +1400,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .resize{
   resize: both;
+}
+.list-inside{
+  list-style-position: inside;
+}
+.list-disc{
+  list-style-type: disc;
 }
 .flex-row{
   flex-direction: row;
@@ -1440,6 +1670,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 32px;
   padding-right: 32px;
 }
+.px-9{
+  padding-left: 36px;
+  padding-right: 36px;
+}
+.py-19{
+  padding-top: 76px;
+  padding-bottom: 76px;
+}
 .px-12{
   padding-left: 48px;
   padding-right: 48px;
@@ -1488,14 +1726,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-8{
   padding-top: 32px;
 }
-.pt-100{
-  padding-top: 400px;
+.pt-5{
+  padding-top: 20px;
 }
 .pt-14{
   padding-top: 56px;
 }
 .pb-4{
   padding-bottom: 16px;
+}
+.pt-100{
+  padding-top: 400px;
 }
 .pl-5{
   padding-left: 20px;
@@ -1509,14 +1750,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pl-0{
   padding-left: 0px;
 }
-.pt-5{
-  padding-top: 20px;
-}
 .pb-56{
   padding-bottom: 224px;
 }
 .pt-15{
   padding-top: 60px;
+}
+.pt-video{
+  padding-top: 70.17%;
 }
 .pb-6{
   padding-bottom: 24px;
@@ -1526,6 +1767,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pr-4{
   padding-right: 16px;
+}
+.pt-6{
+  padding-top: 24px;
 }
 .pl-6{
   padding-left: 24px;
@@ -1542,6 +1786,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-23{
   padding-top: 92px;
 }
+.pt-4{
+  padding-top: 16px;
+}
 .pt-gallery{
   padding-top: 600px;
 }
@@ -1551,17 +1798,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pr-25{
   padding-right: 100px;
 }
-.pt-4{
-  padding-top: 16px;
-}
-.pt-6{
-  padding-top: 24px;
-}
 .pt-featured-image{
   padding-top: 360px;
 }
 .pt-featured-image-sm{
   padding-top: 268px;
+}
+.pl-8{
+  padding-left: 32px;
 }
 .pb-13{
   padding-bottom: 52px;
@@ -1587,17 +1831,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-11{
   padding-bottom: 44px;
 }
+.pr-6{
+  padding-right: 24px;
+}
 .pl-12{
   padding-left: 48px;
 }
 .pt-41{
   padding-top: 164px;
 }
+.pb-16{
+  padding-bottom: 64px;
+}
 .pr-3{
   padding-right: 12px;
 }
 .text-center{
   text-align: center;
+}
+.text-right{
+  text-align: right;
 }
 .text-3xl{
   font-size: 1.875rem;
@@ -1622,6 +1875,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-primary-navy-400{
   --tw-text-opacity: 1;
   color: rgb(0 15 120 / var(--tw-text-opacity));
+}
+.text-primary-electric-purple-400{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
 }
 .text-primary-electric-blue-400{
   --tw-text-opacity: 1;
@@ -1664,13 +1921,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.transition-background-color{
-  transition-property: background-color;
+.transition-all{
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.transition-all{
-  transition-property: all;
+.transition-background-color{
+  transition-property: background-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -1726,73 +1983,98 @@ Ensure the default browser behavior of the `hidden` attribute.
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
 }
-.first\:mt-0:first-child{
+
+.visible-scroll::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px; }
+
+.visible-scroll::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: rgba(34, 39, 49, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+
+.wp-block-video,
+.wp-block-embed,
+.wp-block-embed__wrapper {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .wp-block-video video,
+  .wp-block-video iframe,
+  .wp-block-embed video,
+  .wp-block-embed iframe,
+  .wp-block-embed__wrapper video,
+  .wp-block-embed__wrapper iframe {
+    max-height: 100%; }
+  .first\:mt-0:first-child{
   margin-top: 0px;
 }
-.last\:basis-auto:last-child{
+  .last\:basis-auto:last-child{
   flex-basis: auto;
 }
-.last\:border-b-0:last-child{
+  .last\:border-b-0:last-child{
   border-bottom-width: 0px;
 }
-.visited\:text-primary-electric-purple-400:visited{
+  .visited\:text-primary-electric-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-.visited\:text-primary-purple-400:visited{
+  .visited\:text-primary-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(85 0 155 / var(--tw-text-opacity));
 }
-.hover\:cursor-pointer:hover{
+  .hover\:cursor-pointer:hover{
   cursor: pointer;
 }
-.hover\:bg-shade-grey-50:hover{
+  .hover\:bg-shade-grey-50:hover{
   background-color: rgba(244,244,251,0.5);
 }
-.hover\:bg-shade-grey-100:hover{
+  .hover\:bg-shade-grey-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
 }
-.hover\:bg-shade-white-400:hover{
+  .hover\:bg-shade-white-400:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.hover\:text-primary-electric-blue-400:hover{
+  .hover\:text-primary-electric-blue-400:hover{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
 }
-.hover\:text-primary-electric-purple-400:hover{
+  .hover\:text-primary-electric-purple-400:hover{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-.hover\:underline:hover{
+  .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-.focus\:border-primary-electric-blue-400:focus{
+  .focus\:border-primary-electric-blue-400:focus{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
 }
-.focus\:text-primary-electric-purple-400:focus{
+  .focus\:text-primary-electric-purple-400:focus{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-.focus\:outline-0:focus{
+  .focus\:outline-0:focus{
   outline-width: 0px;
 }
-.disabled\:text-shade-grey-400:disabled{
+  .disabled\:text-shade-grey-400:disabled{
   --tw-text-opacity: 1;
   color: rgb(216 216 228 / var(--tw-text-opacity));
 }
-.group:hover .group-hover\:bg-tint-teal-400{
+  .group:hover .group-hover\:bg-tint-teal-400{
   --tw-bg-opacity: 1;
   background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
-.group:hover .group-hover\:underline{
+  .group:hover .group-hover\:underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-.peer:checked ~ .peer-checked\:pill-active{
+  .peer:checked ~ .peer-checked\:pill-active{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
@@ -1800,21 +2082,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.nth-child-2\:ml-5:nth-child(n + 2){
+  .nth-child-2\:ml-5:nth-child(n + 2){
   margin-left: 20px;
 }
-.nth-child-2\:ml-0:nth-child(n + 2){
+  .nth-child-2\:ml-0:nth-child(n + 2){
   margin-left: 0px;
 }
-.nth-child-3\:pt-12:nth-child(n + 3){
+  .nth-child-2\:mt-5:nth-child(n + 2){
+  margin-top: 20px;
+}
+  .nth-child-3\:pt-12:nth-child(n + 3){
   padding-top: 48px;
 }
-@media (min-width: 375px){
+  @media (min-width: 375px){
   .sm\:w-1\/2{
     width: 50%;
   }
 }
-@media (min-width: 768px){
+  @media (min-width: 768px){
   .md\:h1{
     font-size: 70px;
     font-family: Metrophobic, sans-serif;
@@ -1853,6 +2138,25 @@ Ensure the default browser behavior of the `hidden` attribute.
       font-size: 60px;
     }
   }
+  .md\:h3{
+    font-size: 30px;
+    font-family: Inter, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:h3{
+      font-size: calc(30px + ((30 - 30) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:h3{
+      font-size: 30px;
+    }
+  }
   .md\:paragraph-lg{
     font-size: 27px;
     font-family: Inter, sans-serif;
@@ -1870,6 +2174,25 @@ Ensure the default browser behavior of the `hidden` attribute.
   @media (min-width: 1920px){
     .md\:paragraph-lg{
       font-size: 27px;
+    }
+  }
+  .md\:paragraph{
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    line-height: 1.80;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:paragraph{
+      font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:paragraph{
+      font-size: 18px;
     }
   }
   .md\:hyperlink{
@@ -1899,6 +2222,50 @@ Ensure the default browser behavior of the `hidden` attribute.
       margin-top: 32px;
     }
   }
+  .h2 + .paragraph-blog, .md\:h3 + .paragraph-blog, .h4 + .paragraph-blog{
+    margin-top: 12px;
+  }
+  @media (min-width: 768px){
+    .h2 + .paragraph-blog, .md\:h3 + .paragraph-blog, .h4 + .paragraph-blog{
+      margin-top: 32px;
+    }
+  }
+  .md\:container .container{
+    margin: 0px;
+  }
+  .md\:container .container{
+    width: 100%;
+  }
+  .md\:container .container{
+    margin: 0px;
+  }
+  .md\:container .container{
+    width: 100%;
+  }
+    .md\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+    .md\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+    .md\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+    .md\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+  .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
   .md\:static{
     position: static;
   }
@@ -1914,16 +2281,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:m-0{
     margin: 0px;
   }
-  .md\:my-12{
-    margin-top: 48px;
-    margin-bottom: 48px;
-  }
   .md\:mx-auto{
     margin-left: auto;
     margin-right: auto;
   }
   .md\:mt-0{
     margin-top: 0px;
+  }
+  .md\:mt-36{
+    margin-top: 144px;
   }
   .md\:mb-0{
     margin-bottom: 0px;
@@ -1939,6 +2305,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:mb-12{
     margin-bottom: 48px;
+  }
+  .md\:mt-24{
+    margin-top: 96px;
   }
   .md\:mt-15{
     margin-top: 60px;
@@ -1972,6 +2341,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:min-h-\[280px\]{
     min-height: 280px;
+  }
+  .md\:min-h-\[244px\]{
+    min-height: 244px;
   }
   .md\:w-auto{
     width: auto;
@@ -2013,15 +2385,24 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 33.333333%;
   }
   .md\:w-5\/8{
-    width: calc((100% /8) * 5);
+    width: calc((100% / 8) * 5);
   }
   .md\:w-3\/8{
-    width: calc((100% /8) * 3);
+    width: calc((100% / 8) * 3);
   }
   .md\:basis-1\/4{
     flex-basis: 25%;
   }
   .md\:basis-4\/12{
+    flex-basis: 33.333333%;
+  }
+  .md\:basis-8\/12{
+    flex-basis: 66.666667%;
+  }
+  .md\:basis-3\/12{
+    flex-basis: 25%;
+  }
+  .md\:basis-1\/3{
     flex-basis: 33.333333%;
   }
   .md\:flex-row{
@@ -2119,6 +2500,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:pb-8{
     padding-bottom: 32px;
   }
+  .md\:pt-12{
+    padding-top: 48px;
+  }
+  .md\:pt-20{
+    padding-top: 80px;
+  }
+  .md\:pb-6{
+    padding-bottom: 24px;
+  }
   .md\:pl-0{
     padding-left: 0px;
   }
@@ -2134,6 +2524,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:pr-10{
     padding-right: 40px;
   }
+  .md\:pt-video-md{
+    padding-top: 34.59%;
+  }
   .md\:pt-0{
     padding-top: 0px;
   }
@@ -2145,6 +2538,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .md\:pr-3{
     padding-right: 12px;
+  }
+  .md\:pr-12{
+    padding-right: 48px;
+  }
+  .md\:pr-6{
+    padding-right: 24px;
   }
   .md\:pt-2{
     padding-top: 8px;
@@ -2202,6 +2601,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
+  .md\:nth-child-2\:ml-8:nth-child(n + 2){
+    margin-left: 32px;
+  }
+  .md\:nth-child-2\:mt-0:nth-child(n + 2){
+    margin-top: 0px;
+  }
   .md\:nth-child-2\:pl-3:nth-child(n + 2){
     padding-left: 12px;
   }
@@ -2211,31 +2616,40 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:nth-child-3\:pt-0:nth-child(n + 3){
     padding-top: 0px;
   }
+  .md\:nth-child-3n\:ml-0:nth-child(3n + 1){
+    margin-left: 0px;
+  }
+  .md\:nth-child-4\:mt-8:nth-child(n + 4){
+    margin-top: 32px;
+  }
 }
-@media (min-width: 1000px){
+  @media (min-width: 1000px){
+  .tb\:mb-0{
+    margin-bottom: 0px;
+  }
   .tb\:mb-11{
     margin-bottom: 44px;
   }
   .tb\:mb-8{
     margin-bottom: 32px;
   }
-  .tb\:mb-0{
-    margin-bottom: 0px;
-  }
   .tb\:mt-0{
     margin-top: 0px;
   }
+  .tb\:block{
+    display: block;
+  }
   .tb\:flex{
     display: flex;
+  }
+  .tb\:w-8\/12{
+    width: 66.666667%;
   }
   .tb\:w-7\/12{
     width: 58.333333%;
   }
   .tb\:w-4\/12{
     width: 33.333333%;
-  }
-  .tb\:w-8\/12{
-    width: 66.666667%;
   }
   .tb\:w-2\/6{
     width: 33.333333%;
@@ -2252,6 +2666,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tb\:flex-row{
     flex-direction: row;
   }
+  .tb\:items-end{
+    align-items: flex-end;
+  }
   .tb\:justify-end{
     justify-content: flex-end;
   }
@@ -2267,8 +2684,53 @@ Ensure the default browser behavior of the `hidden` attribute.
   .tb\:pl-5{
     padding-left: 20px;
   }
+  .tb\:pl-4{
+    padding-left: 16px;
+  }
+  .group:hover .tb\:group-hover\:visible{
+    visibility: visible;
+  }
+  .group:hover .tb\:group-hover\:opacity-100{
+    opacity: 1;
+  }
 }
-@media (min-width: 1440px){
+  @media (min-width: 1440px){
+  .lg\:container .container{
+    margin: 0px;
+  }
+  .lg\:container .container{
+    width: 100%;
+  }
+  .lg\:container .container{
+    margin: 0px;
+  }
+  .lg\:container .container{
+    width: 100%;
+  }
+    .lg\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+    .lg\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+    .lg\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+    .lg\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+  .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
   .lg\:flex{
     display: flex;
   }
@@ -2290,6 +2752,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:basis-7\/12{
     flex-basis: 58.333333%;
   }
+  .lg\:basis-1\/4{
+    flex-basis: 25%;
+  }
   .lg\:justify-center{
     justify-content: center;
   }
@@ -2307,6 +2772,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:pt-7{
     padding-top: 28px;
   }
+  .lg\:pt-video-lg{
+    padding-top: 30%;
+  }
   .lg\:pl-gallery-offset{
     padding-left: calc((100vw - 1300px) / 2);
   }
@@ -2315,6 +2783,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   .lg\:pr-16{
     padding-right: 64px;
+  }
+  .lg\:pl-8{
+    padding-left: 32px;
   }
   .lg\:pt-0{
     padding-top: 0px;

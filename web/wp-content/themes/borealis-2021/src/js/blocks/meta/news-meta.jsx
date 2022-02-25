@@ -11,7 +11,8 @@ export default function researchBlogMetaBlock() {
     const meta_fields = [
         'publication_date', 
         'time_to_read',
-        'authors'
+        'authors',
+        'series_order'
     ];
     const attributes = defaultAttrs(meta_fields, 'meta');
 
@@ -25,7 +26,7 @@ export default function researchBlogMetaBlock() {
         attributes,
         edit: (props) => {
 			const { setAttributes, attributes } = props;
-			const { authors, publication_date, time_to_read } = attributes;
+			const { authors, publication_date, series_order, time_to_read } = attributes;
             
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
@@ -47,6 +48,12 @@ export default function researchBlogMetaBlock() {
                                 type="number"
                                 onChange={(value) => { updateAttributeValue('time_to_read', value) }}
                                 label="Time to Read:"
+                            />
+                            <TextControl
+                                value={series_order}
+                                type="number"
+                                onChange={(value) => { updateAttributeValue('series_order', value) }}
+                                label="Series Order:"
                             />
                             <SelectAuthors 
                                 authors={authors}

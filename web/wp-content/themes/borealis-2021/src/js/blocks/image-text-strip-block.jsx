@@ -87,7 +87,6 @@ export default function imageTextStripBlock() {
       } = attributes;
 
       function updateAttributeValue(attribute, value) {
-        console.log(attribute, value);
         setAttributes({ [attribute]: value });
       }
       return [

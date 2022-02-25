@@ -126,13 +126,13 @@ if ( ! function_exists( 'pg_render_tabbed_content_container_block' ) ) {
                                 </div>
                             </div>
                         <?php else: ?>
-                            <div class="md:flex justify-between default-tabs">
-                                <div class="md:basis-4/12 shrink-0">
+                            <div class="lg:flex justify-between default-tabs">
+                                <div class="lg:basis-4/12 shrink-0">
                                     <?php if (!empty($attributes->title)): ?>
-                                        <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3"><?php echo esc_html($attributes->title) ?></h2>
+                                        <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3 pr-6"><?php echo esc_html($attributes->title) ?></h2>
                                     <?php endif; ?>
                                 </div>
-                                <div class="basis-8/12 shrink-0 pt-5 md:pt-0">
+                                <div class="basis-8/12 shrink-0 pt-5 lg:pt-0">
                                     <?php if (!empty($attributes->copy)): ?>
                                         <p class="paragraph"><?php echo esc_html($attributes->copy) ?></p>
                                     <?php endif; ?>

@@ -1,7 +1,7 @@
 import { namespace } from '../helper-functions/constants';
 
 import CustomRichText from '../reusable/custom-richtext-component.jsx';
-import BlockSettings from "../reusable/block-custom-settings.jsx";
+import CustomImageUpload from "../reusable/custom-image-upload.jsx";
 
 export default function trmcAccordionBlock() {
 	const { registerBlockType } = wp.blocks;
@@ -11,21 +11,12 @@ export default function trmcAccordionBlock() {
     const { i18n } = wp;
 
 	const blockSlug = "callout-container";
-	const blockTitle = "Cards - Image";
+	const blockTitle = "Callout Cards Container";
 	const blockDescription = "Creates a container for single callout cards.";
 	const blockCategory = "containers";
     const blockIcon = "layout"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-    const stringAttrs = [
-        'alignment',
-        'columns',
-        'title',
-    ];
     const attributes = {
-        columns: {
-            type: 'String',
-            default: '3',
-        },
         description: {
             type: 'String',
             default: '',
@@ -33,6 +24,18 @@ export default function trmcAccordionBlock() {
         title: {
             type: 'String',
             default: '',
+        },
+        image_alt: {
+            type: 'String',
+            default: '',
+        },
+        image_url: {
+            type: 'String',
+            default: '',
+        },
+        image_id: {
+            type: 'Number',
+            default: 0,
         }
     }
 
@@ -44,7 +47,7 @@ export default function trmcAccordionBlock() {
         attributes,
 		edit: (props, editor = false, save = false ) => {
         const { setAttributes, attributes } = props;
-        const { description, columns, title } = attributes;
+        const { description, image_alt, image_id, image_url, title } = attributes;
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
@@ -52,20 +55,17 @@ export default function trmcAccordionBlock() {
 
 			return [
                 <div className="custom-container">
-                    <p className="block-title">Cards - Image (set number of columns in block settings)</p>
-                    <BlockSettings 
-                        controls={[   
+                    <p className="block-title">Callout Cards Container</p>
+                    <CustomImageUpload
+                        components={[
                             {
-                                type: 'select',
-                                label: '# of Columns',
-                                reference: 'columns',
-                                value: columns,
-                                options: [
-                                    // Value is the 12 / number of columns.
-                                    { label: "Four", value: "3" },
-                                    { label: "Three", value: "4" },
-                                    { label: "Two", value: "6" }
-                                ]
+                                value: image_url,
+                                reference: 'image_url',
+                                altValue: image_alt,
+                                altReference: 'image_alt',
+                                idValue: image_id,
+                                idReference: 'image_id',
+                                buttonText: 'Add background image'
                             },
                         ]}
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }

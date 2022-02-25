@@ -56,6 +56,20 @@
         $headline = get_post_meta($post->ID, 'headline', true);
         $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications']) ;
     ?>
+    <style>
+        .custom-gallery:hover,
+        .blog-series:hover {
+            cursor: url(<?php echo get_bloginfo('stylesheet_directory') . '/src/images/dragCursor.png' ?>), auto;
+        }
+        .custom-gallery li:hover,
+        .blog-series li:hover {
+            cursor: url(<?php echo get_bloginfo('stylesheet_directory') . '/src/images/dragCursor.png' ?>), auto;
+        }
+        .custom-gallery a:hover,
+        .blog-series a:hover {
+            cursor: url(<?php echo get_bloginfo('stylesheet_directory') . '/src/images/dragCursor.png' ?>), auto;
+        }
+    </style>
     <div id="page" class="site">
         <!-- Skip to Content link -->
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'pg-wp-starter' ); ?></a>

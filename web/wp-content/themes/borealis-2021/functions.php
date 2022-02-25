@@ -153,6 +153,10 @@ require get_template_directory() . '/inc/gutenberg/publications/render-bibtex.ph
 require get_template_directory() . '/inc/gutenberg/posts/render-featured-post.php';
 require get_template_directory() . '/inc/gutenberg/posts/render-featured-posts-block.php';
 
+// Products
+require get_template_directory() . '/inc/gutenberg/products/render-products-list-block.php';
+require get_template_directory() . '/inc/gutenberg/products/render-products-item.php';
+
 // Slider Blocks
 require get_template_directory() . '/inc/gutenberg/slider/render-slider-container-block.php';
 require get_template_directory() . '/inc/gutenberg/slider/render-news-slide.php';

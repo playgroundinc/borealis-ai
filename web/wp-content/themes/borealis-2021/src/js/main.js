@@ -7,7 +7,7 @@ import animate from './scripts/animate';
 // import fixSkipLinkFocus from './scripts/skip-link-focus-fix';
 import navigation from './scripts/navigation';
 import accordion from './scripts/accordion';
-// import videoBlocks from './scripts/video-block';
+import videoBlocks from './scripts/video-block';
 
 // // Import JS Modules here
 animate();
@@ -15,7 +15,7 @@ animate();
 navigation();
 accordion();
 loadMore();
-// videoBlocks();
+videoBlocks();
 // heroVideo();
 
 search();
