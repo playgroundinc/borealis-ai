@@ -139,11 +139,6 @@
                     </div>
                 <?php endif; // End of check for empty blog header. 
                 ?>
-
-
-
-
-
             <?php elseif (is_front_page()) : // Start of check for singular News or Blog 
             ?>
                 <?php $header = pg_generate_hero_header($post->ID); ?>
@@ -154,15 +149,6 @@
                     </div>
                 <?php endif; // End of check for empty blog header. 
                 ?>
-
-
-
-
-
-
-
-
-
             <?php elseif ($no_header) : ?>
                 <h1 class="sr-only"><?php echo esc_html(the_title()); ?></h1>
             <?php else : ?>
