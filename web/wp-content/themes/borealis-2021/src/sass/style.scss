@@ -90,6 +90,9 @@
         @apply list-disc list-inside;
     }
     .single .nestable {
+        .md\:container {
+            @apply m-0 w-full;
+        }
         .nested-flex {
             @apply block w-full md:w-full;
             .nested-block {
@@ -99,6 +102,10 @@
         .nested-description {
             @apply mt-4;
         }
+    }
+
+    .row-item {
+        @apply bg-shade-white-400 hover:bg-shade-grey-100 transition-background-color duration-300;
     }
 }
 

@@ -2,6 +2,16 @@
 
 function pg_blocks() {
     wp_enqueue_script('footer-banner', get_template_directory_uri() . '/dist/gutenberg.js', array('wp-blocks', 'wp-element', 'wp-editor', 'wp-i18n'));
+	$setting_names = array('greenhouse_api_key', 'greenhouse_url');
+	$settings = pg_get_settings($setting_names);
+	wp_localize_script(
+        'footer-banner',
+        'ajaxInfo',
+        array(
+            'greenhouseAPIKey'            => $settings['greenhouse_api_key'],
+			'greenhouseURL' => $settings['greenhouse_url']
+        )
+    );
 }
 
 add_action('enqueue_block_editor_assets', 'pg_blocks', 10, 1);
