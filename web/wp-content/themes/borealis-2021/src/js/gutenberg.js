@@ -48,6 +48,7 @@ import imageListBlock from "./blocks/image-list/image-list-block.jsx";
 
 // Logo Blocks
 import logosContainer from "./blocks/logos/logo-container.jsx";
+import logosSubsection from "./blocks/logos/logos-subsection.jsx";
 import logoBlock from "./blocks/logos/logo.jsx";
 
 // Page Strips
@@ -152,6 +153,7 @@ imageListBlock();
 
 // Logo Blocks
 logosContainer();
+logosSubsection();
 logoBlock();
 
 // Publications

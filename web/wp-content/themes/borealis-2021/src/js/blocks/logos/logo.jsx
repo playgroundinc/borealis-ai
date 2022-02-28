@@ -37,7 +37,7 @@ export default function logoBlock() {
                 default: '',
             }
         },
-        parent: [`${namespace}/logos-container`],
+        parent: [`${namespace}/logos-subsection`],
 		edit: (props, editor = false, save = false) => {
 			const { setAttributes, attributes } = props;
             const { image_id, image_url, image_alt, link } = attributes;
