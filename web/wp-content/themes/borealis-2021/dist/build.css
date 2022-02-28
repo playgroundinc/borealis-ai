@@ -1876,6 +1876,9 @@ ol.footnotes li small{
 .pr-3{
   padding-right: 12px;
 }
+.pb-12{
+  padding-bottom: 48px;
+}
 .text-center{
   text-align: center;
 }
@@ -2049,6 +2052,9 @@ ol.footnotes li small{
 }
   .last\:border-b-0:last-child{
   border-bottom-width: 0px;
+}
+  .last\:pb-0:last-child{
+  padding-bottom: 0px;
 }
   .visited\:text-primary-electric-purple-400:visited{
   --tw-text-opacity: 1;
@@ -2634,6 +2640,9 @@ ol.footnotes li small{
   }
   .md\:pb-4{
     padding-bottom: 16px;
+  }
+  .md\:pb-12{
+    padding-bottom: 48px;
   }
   .md\:text-center{
     text-align: center;
