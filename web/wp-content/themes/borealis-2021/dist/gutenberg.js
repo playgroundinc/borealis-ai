@@ -245,6 +245,7 @@ function accordionBlock() {
           value: title,
           tagName: 'h2',
           classes: ['heading_two'],
+          settings: [],
           placeholder: 'Add title (optional)'
         }, {
           reference: 'description',
@@ -2188,7 +2189,7 @@ function iconListContainerBlock() {
       i18n = _wp.i18n;
   var blockSlug = "icon-list-container-block"; // slug for the block
 
-  var blockTitle = "Icon list container block";
+  var blockTitle = "Icon List Container";
   var blockDescription = "Component to create icon list container block";
   var blockCategory = "common";
   var blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -2237,7 +2238,8 @@ function iconListContainerBlock() {
         components: [{
           value: title,
           reference: "title",
-          tagName: "p",
+          tagName: "h2",
+          settings: [],
           placeholder: "Please provide a title (optional)"
         }]
       }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -3199,7 +3201,7 @@ function pgLogoContainerBlock() {
           reference: 'title',
           value: title,
           tagName: 'h2',
-          classes: ['heading_one'],
+          settings: [],
           placeholder: 'Logo parade title here (optional)'
         }, {
           reference: 'copy',
@@ -3396,7 +3398,8 @@ function pgLogoSubsectionBlock() {
         components: [{
           reference: 'title',
           value: title,
-          tagName: 'p',
+          tagName: 'h3',
+          settings: [],
           classes: ['paragraph'],
           placeholder: 'Logo parade subsection title here (optional)'
         }],

@@ -9,7 +9,7 @@ export default function iconListContainerBlock() {
   const { i18n } = wp;
 
   const blockSlug = "icon-list-container-block"; // slug for the block
-  const blockTitle = "Icon list container block";
+  const blockTitle = "Icon List Container";
   const blockDescription = "Component to create icon list container block";
   const blockCategory = "common";
   const blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -54,7 +54,8 @@ export default function iconListContainerBlock() {
               {
                 value: title,
                 reference: "title",
-                tagName: "p",
+                tagName: "h2",
+                settings: [],
                 placeholder: "Please provide a title (optional)",
               },
             ]}

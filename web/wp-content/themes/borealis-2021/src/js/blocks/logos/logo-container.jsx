@@ -50,7 +50,7 @@ export default function pgLogoContainerBlock() {
                                 reference: 'title',
                                 value: title,
                                 tagName: 'h2',
-                                classes: ['heading_one'],
+                                settings: [],
                                 placeholder: 'Logo parade title here (optional)',
                             },
                             {
