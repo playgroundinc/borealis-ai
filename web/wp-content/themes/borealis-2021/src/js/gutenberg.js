@@ -79,6 +79,7 @@ import statColumnBlock from "./blocks/stats/stats-column.jsx";
 import jobBlock from "./blocks/greenhouse/jobs-block.jsx";
 import selectJobBlock from './blocks/greenhouse/select-job-block.jsx';
 import featuredJobsBlock from './blocks/greenhouse/jobs-list.jsx';
+import jobHighlightBlock from './blocks/greenhouse/job-highlight-block.jsx';
 
 // Sidebar Table Of Contents Blocks
 import customSectionBlock from './blocks/sidebar-table-of-contents/custom-section-blok.jsx';
@@ -180,6 +181,7 @@ statColumnBlock();
 jobBlock();
 selectJobBlock();
 featuredJobsBlock();
+jobHighlightBlock();
 
 // Sidebar Table Of Contents Blocks
 customSectionBlock();
