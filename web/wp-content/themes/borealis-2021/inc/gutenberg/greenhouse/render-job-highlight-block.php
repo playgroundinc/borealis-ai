@@ -12,7 +12,7 @@ if (!function_exists('pg_render_job_highlight_block')) {
         $image = wp_get_attachment_image_url($attributes->image_id, 'job-highlight');
         ob_start();
         ?>
-        <div class="justify-between container md:container pt-7 <?php echo is_single() ? 'tb:flex' : 'hidden'?>">
+        <div class="justify-between <?php echo !is_single() ? esc_attr('container') : '' ?> pt-7 <?php echo is_single() ? 'tb:flex' : 'hidden'?>">
             <div class="basis-3/8 lg:w-3/8 shrink-0 grow-0 flex justify-center items-center">
                 <div class="rounded-large overflow-hidden inline-block object-contain">
                     <img class="block max-w-full" src="<?php echo esc_url_raw($image) ?>" alt="<?php echo esc_attr($attributes->image_alt) ?>">
