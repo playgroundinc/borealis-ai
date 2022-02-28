@@ -46,7 +46,7 @@ if ( ! function_exists( 'pg_render_accordion_row_block' ) ) {
         <li class="border-shade-grey-500 border-t">
             <div>
                 <h3>
-                    <button class="accordion-row__header text-shade-black-400 h4 w-full flex justify-between items-center px-6 py-7 md:py-7 md:px-5" id="<?php echo esc_attr( $heading_id ); ?>" aria-controls="<?php echo esc_attr( $id ); ?>" aria-label="<?php esc_attr_e('Expand or collapse item', 'pg'); ?>" aria-expanded="false">
+                    <button class="accordion-row__header h4 w-full flex justify-between items-center px-6 py-7 md:py-7 md:px-5" id="<?php echo esc_attr( $heading_id ); ?>" aria-controls="<?php echo esc_attr( $id ); ?>" aria-label="<?php esc_attr_e('Expand or collapse item', 'pg'); ?>" aria-expanded="false">
                         <span>
                             <?php echo esc_html( $attributes->title ); ?>
                         </span>  

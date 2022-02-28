@@ -140,6 +140,7 @@ require get_template_directory() . '/inc/gutenberg/image-list/render-image-list-
 
 // Logo Blocks
 require get_template_directory() . '/inc/gutenberg/logos/render-logos-container.php';
+require get_template_directory() . '/inc/gutenberg/logos/render-logos-subsection.php';
 require get_template_directory() . '/inc/gutenberg/logos/render-logo-block.php';
 
 // Page Strips
@@ -173,6 +174,7 @@ require get_template_directory() . '/inc/gutenberg/stats/render-stat-column-bloc
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-jobs-block.php';
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-featured-jobs-block.php';
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-single-job-item.php';
+require get_template_directory() . '/inc/gutenberg/greenhouse/render-job-highlight-block.php';
 
 // Sidebar Table Of Contents Blocks
 require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-section-block.php';
