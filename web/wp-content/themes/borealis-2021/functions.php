@@ -131,6 +131,9 @@ require get_template_directory() . '/inc/gutenberg/code/render-code-block.php';
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-container.php';
 require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-block.php';
 
+// Figures 
+require get_template_directory() . '/inc/gutenberg/figures/render-compare-figures.php';
+
 // Gallery
 require get_template_directory() . '/inc/gutenberg/gallery/render-gallery-container-block.php';
 

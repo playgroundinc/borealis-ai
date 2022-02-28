@@ -43,6 +43,9 @@ import codeBlock from './blocks/code/code-block.jsx';
 import contentCardContainerBlock from "./blocks/content-cards/content-card-container.jsx";
 import contentCardBlock from "./blocks/content-cards/content-card.jsx";
 
+// Figures
+import compareFiguresBlock from './blocks/figures/compare-figures-block.jsx';
+
 // Gallery
 import galleryContainerBlock from './blocks/gallery/gallery-container-block.jsx';
 
@@ -152,6 +155,9 @@ contentCardBlock();
 // Code
 compareCodeBlock();
 codeBlock();
+
+// Figures
+compareFiguresBlock();
 
 // Gallery
 galleryContainerBlock();
