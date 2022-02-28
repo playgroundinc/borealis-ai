@@ -36,6 +36,7 @@ if ( ! function_exists( 'pg_render_featured_jobs_block' )) {
         $fields     = array(
             'title'        => '',
         );
+        $namespace = pg_get_namespace();
         $attributes = pg_get_attributes( $attrs, $fields );
 
         $setting_names = array('greenhouse_api_key', 'greenhouse_url');
@@ -57,10 +58,18 @@ if ( ! function_exists( 'pg_render_featured_jobs_block' )) {
                         <ul class="grow pt-7 md:pt-0 nested-block">
                             <?php foreach ($block['innerBlocks'] as $inner_block): ?>
                                 <?php 
-                                    $output = pg_render_single_job_item($inner_block['attrs'], $settings['greenhouse_api_key'], $settings['greenhouse_url']);
-                                    if ($output) {
-                                        echo $output;
+                                    if ($inner_block['blockName'] === $namespace . '/select-job') {
+                                        $output = pg_render_single_job_item($inner_block['attrs'], $settings['greenhouse_api_key'], $settings['greenhouse_url']);
+                                        if ($output) {
+                                            echo $output;
+                                        }
+                                    } else {
+                                        $output = pg_render_job_highlight_block($inner_block['attrs']);
+                                        if ($output) {
+                                            echo $output;
+                                        }
                                     }
+                                   
                                 ?>
                             <?php endforeach; ?>
                         </ul>

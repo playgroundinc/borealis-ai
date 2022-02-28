@@ -35,6 +35,10 @@ import bodyCopyBlock from "./blocks/body-copy.jsx";
 import calloutContainerBlock from "./blocks/callouts/callout-container.jsx";
 import calloutColumnBlock from "./blocks/callouts/callout-column.jsx";
 
+// Code
+import compareCodeBlock from './blocks/code/compare-code-block.jsx';
+import codeBlock from './blocks/code/code-block.jsx';
+
 // Content Columns
 import contentCardContainerBlock from "./blocks/content-cards/content-card-container.jsx";
 import contentCardBlock from "./blocks/content-cards/content-card.jsx";
@@ -51,6 +55,7 @@ import imageListBlock from "./blocks/image-list/image-list-block.jsx";
 
 // Logo Blocks
 import logosContainer from "./blocks/logos/logo-container.jsx";
+import logosSubsection from "./blocks/logos/logos-subsection.jsx";
 import logoBlock from "./blocks/logos/logo.jsx";
 
 // Page Strips
@@ -81,6 +86,7 @@ import statColumnBlock from "./blocks/stats/stats-column.jsx";
 import jobBlock from "./blocks/greenhouse/jobs-block.jsx";
 import selectJobBlock from './blocks/greenhouse/select-job-block.jsx';
 import featuredJobsBlock from './blocks/greenhouse/jobs-list.jsx';
+import jobHighlightBlock from './blocks/greenhouse/job-highlight-block.jsx';
 
 // Sidebar Table Of Contents Blocks
 import customSectionBlock from './blocks/sidebar-table-of-contents/custom-section-blok.jsx';
@@ -146,6 +152,10 @@ calloutColumnBlock();
 contentCardContainerBlock();
 contentCardBlock();
 
+// Code
+compareCodeBlock();
+codeBlock();
+
 // Figures
 compareFiguresBlock();
 
@@ -158,6 +168,7 @@ imageListBlock();
 
 // Logo Blocks
 logosContainer();
+logosSubsection();
 logoBlock();
 
 // Publications
@@ -184,6 +195,7 @@ statColumnBlock();
 jobBlock();
 selectJobBlock();
 featuredJobsBlock();
+jobHighlightBlock();
 
 // Sidebar Table Of Contents Blocks
 customSectionBlock();

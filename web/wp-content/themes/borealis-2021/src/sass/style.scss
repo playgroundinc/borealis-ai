@@ -107,6 +107,10 @@
     .row-item {
         @apply bg-shade-white-400 hover:bg-shade-grey-100 transition-background-color duration-300;
     }
+
+    .wp-block-code {
+        @apply bg-shade-grey-100 rounded-large p-12 grow;
+    }
 }
 
 .visible-scroll {

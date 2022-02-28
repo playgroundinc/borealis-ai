@@ -1034,6 +1034,13 @@ ol.footnotes li small{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
 }
+.wp-block-code{
+  flex-grow: 1;
+  border-radius: 10px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 244 251 / var(--tw-bg-opacity));
+  padding: 48px;
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1134,6 +1141,10 @@ ol.footnotes li small{
   margin-left: auto;
   margin-right: auto;
 }
+.my-8{
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
 .mt-20{
   margin-top: 80px;
 }
@@ -1224,8 +1235,17 @@ ol.footnotes li small{
 .mt-9{
   margin-top: 36px;
 }
+.mt-14{
+  margin-top: 56px;
+}
 .mb-12{
   margin-bottom: 48px;
+}
+.mb-15{
+  margin-bottom: 60px;
+}
+.mb-0{
+  margin-bottom: 0px;
 }
 .ml-15{
   margin-left: 60px;
@@ -1267,6 +1287,9 @@ ol.footnotes li small{
 }
 .h-13{
   height: 52px;
+}
+.h-18{
+  height: 72px;
 }
 .max-h-screen{
   max-height: 100vh;
@@ -1315,6 +1338,9 @@ ol.footnotes li small{
 }
 .w-23{
   width: 92px;
+}
+.w-42{
+  width: 168px;
 }
 .w-1\/2{
   width: 50%;
@@ -1378,15 +1404,6 @@ ol.footnotes li small{
 }
 .basis-2\/12{
   flex-basis: 16.666667%;
-}
-.basis-col-3{
-  flex-basis: calc((100% - 60px) / 4);
-}
-.basis-col-6{
-  flex-basis: calc((100% - 20px) / 2);
-}
-.basis-col-4{
-  flex-basis: calc((100% - 40px) / 3);
 }
 .rotate-0{
   --tw-rotate: 0deg;
@@ -1584,6 +1601,9 @@ ol.footnotes li small{
   --tw-bg-opacity: 1;
   background-color: rgb(96 55 215 / var(--tw-bg-opacity));
 }
+.bg-shade-grey-50{
+  background-color: rgba(244,244,251,0.5);
+}
 .bg-tint-lightBlue-400{
   --tw-bg-opacity: 1;
   background-color: rgb(111 222 250 / var(--tw-bg-opacity));
@@ -1604,9 +1624,6 @@ ol.footnotes li small{
   --tw-bg-opacity: 1;
   background-color: rgb(34 39 49 / var(--tw-bg-opacity));
 }
-.bg-shade-grey-50{
-  background-color: rgba(244,244,251,0.5);
-}
 .bg-opacity-70{
   --tw-bg-opacity: 0.7;
 }
@@ -1622,11 +1639,18 @@ ol.footnotes li small{
 .bg-no-repeat{
   background-repeat: no-repeat;
 }
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .p-5{
   padding: 20px;
 }
 .p-20{
   padding: 80px;
+}
+.p-12{
+  padding: 48px;
 }
 .px-4{
   padding-left: 16px;
@@ -1838,6 +1862,9 @@ ol.footnotes li small{
 .pt-11{
   padding-top: 44px;
 }
+.pb-9{
+  padding-bottom: 36px;
+}
 .pb-11{
   padding-bottom: 44px;
 }
@@ -2018,6 +2045,9 @@ ol.footnotes li small{
   .wp-block-embed__wrapper video,
   .wp-block-embed__wrapper iframe {
     max-height: 100%; }
+  .first\:ml-4:first-child{
+  margin-left: 16px;
+}
   .first\:mt-0:first-child{
   margin-top: 0px;
 }
@@ -2104,35 +2134,11 @@ ol.footnotes li small{
   .nth-child-2\:mt-5:nth-child(n + 2){
   margin-top: 20px;
 }
-  .nth-child-2\:mt-6:nth-child(n + 2){
-  margin-top: 24px;
-}
   .nth-child-2\:mt-10:nth-child(n + 2){
   margin-top: 40px;
 }
-  .nth-child-2n\:ml-0:nth-child(2n + 1){
-  margin-left: 0px;
-}
-  .nth-child-3\:mt-6:nth-child(n + 3){
-  margin-top: 24px;
-}
   .nth-child-3\:pt-12:nth-child(n + 3){
   padding-top: 48px;
-}
-  .nth-child-3n\:ml-0:nth-child(3n + 1){
-  margin-left: 0px;
-}
-  .nth-child-4\:mt-6:nth-child(n + 4){
-  margin-top: 24px;
-}
-  .nth-child-4\:ml-0:nth-child(n + 4){
-  margin-left: 0px;
-}
-  .nth-child-4n\:ml-0:nth-child(4n + 1){
-  margin-left: 0px;
-}
-  .nth-child-5\:mt-6:nth-child(n + 5){
-  margin-top: 24px;
 }
   @media (min-width: 375px){
   .sm\:w-1\/2{
@@ -2358,6 +2364,12 @@ ol.footnotes li small{
   .md\:mt-10{
     margin-top: 40px;
   }
+  .md\:mb-15{
+    margin-bottom: 60px;
+  }
+  .md\:mb-8{
+    margin-bottom: 32px;
+  }
   .md\:mt-3{
     margin-top: 12px;
   }
@@ -2427,6 +2439,9 @@ ol.footnotes li small{
   .md\:basis-1\/4{
     flex-basis: 25%;
   }
+  .md\:basis-col-6{
+    flex-basis: calc((100% - 20px) / 2);
+  }
   .md\:basis-1\/3{
     flex-basis: 33.333333%;
   }
@@ -2438,9 +2453,6 @@ ol.footnotes li small{
   }
   .md\:basis-3\/12{
     flex-basis: 25%;
-  }
-  .md\:basis-col-6{
-    flex-basis: calc((100% - 20px) / 2);
   }
   .md\:flex-row{
     flex-direction: row;
@@ -2456,6 +2468,9 @@ ol.footnotes li small{
   }
   .md\:items-center{
     align-items: center;
+  }
+  .md\:justify-start{
+    justify-content: flex-start;
   }
   .md\:justify-end{
     justify-content: flex-end;
@@ -2653,9 +2668,6 @@ ol.footnotes li small{
   .md\:nth-child-2n\:ml-0:nth-child(2n + 1){
     margin-left: 0px;
   }
-  .md\:nth-child-2n\:ml-5:nth-child(2n + 1){
-    margin-left: 20px;
-  }
   .md\:nth-child-3\:mt-6:nth-child(n + 3){
     margin-top: 24px;
   }
@@ -2679,6 +2691,9 @@ ol.footnotes li small{
   .tb\:mb-8{
     margin-bottom: 32px;
   }
+  .tb\:mt-0{
+    margin-top: 0px;
+  }
   .tb\:block{
     display: block;
   }
@@ -2699,6 +2714,9 @@ ol.footnotes li small{
   }
   .tb\:w-4\/6{
     width: 66.666667%;
+  }
+  .tb\:w-3\/12{
+    width: 25%;
   }
   .tb\:w-1\/4{
     width: 25%;
@@ -2723,6 +2741,9 @@ ol.footnotes li small{
   }
   .tb\:pl-5{
     padding-left: 20px;
+  }
+  .tb\:pl-6{
+    padding-left: 24px;
   }
   .tb\:pl-4{
     padding-left: 16px;
@@ -2771,8 +2792,14 @@ ol.footnotes li small{
   .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
     display: none;
   }
+  .lg\:mr-16{
+    margin-right: 64px;
+  }
   .lg\:flex{
     display: flex;
+  }
+  .lg\:min-h-\[435px\]{
+    min-height: 435px;
   }
   .lg\:w-1\/6{
     width: 16.666667%;
@@ -2783,8 +2810,17 @@ ol.footnotes li small{
   .lg\:w-6\/12{
     width: 50%;
   }
+  .lg\:w-3\/8{
+    width: calc((100% / 8) * 3);
+  }
   .lg\:basis-1\/5{
     flex-basis: 20%;
+  }
+  .lg\:basis-col-3{
+    flex-basis: calc((100% - 60px) / 4);
+  }
+  .lg\:basis-col-4{
+    flex-basis: calc((100% - 40px) / 3);
   }
   .lg\:basis-4\/12{
     flex-basis: 33.333333%;
@@ -2795,12 +2831,6 @@ ol.footnotes li small{
   .lg\:basis-1\/4{
     flex-basis: 25%;
   }
-  .lg\:basis-col-4{
-    flex-basis: calc((100% - 40px) / 3);
-  }
-  .lg\:basis-col-3{
-    flex-basis: calc((100% - 60px) / 4);
-  }
   .lg\:justify-center{
     justify-content: center;
   }
@@ -2810,10 +2840,6 @@ ol.footnotes li small{
   .lg\:px-0{
     padding-left: 0px;
     padding-right: 0px;
-  }
-  .lg\:py-20{
-    padding-top: 80px;
-    padding-bottom: 80px;
   }
   .lg\:pt-7{
     padding-top: 28px;
@@ -2830,14 +2856,17 @@ ol.footnotes li small{
   .lg\:pl-8{
     padding-left: 32px;
   }
+  .lg\:pt-20{
+    padding-top: 80px;
+  }
+  .lg\:pb-11{
+    padding-bottom: 44px;
+  }
   .lg\:pt-0{
     padding-top: 0px;
   }
   .lg\:pt-8{
     padding-top: 32px;
-  }
-  .lg\:pb-0{
-    padding-bottom: 0px;
   }
   .lg\:container{
     margin: 0 auto;
