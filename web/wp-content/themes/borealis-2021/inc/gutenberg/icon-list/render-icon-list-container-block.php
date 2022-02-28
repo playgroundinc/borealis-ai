@@ -45,11 +45,11 @@ if (!function_exists('pg_render_icon_list_container_block')) {
         ob_start();
 ?>
         <section class="custom-component" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
-            <div class="nestable">
-                <div class="container flex flex-col tb:flex-row nested-flex">
+            <div>
+                <div class="flex flex-col <?php echo !is_single() ? esc_attr('container tb:flex-row') : '' ?>">
                     <div class="w-full mb-10 tb:mb-0 tb:w-2/6 icon-list-title">
                         <?php if (!empty($attributes->title)) : ?>
-                                <h3 class="h3"><?php echo esc_html($attributes->title) ?></h3>
+                                <h3 class="h3 <?php echo is_single() ? esc_attr('pb-4') : '' ?>"><?php echo esc_html($attributes->title) ?></h3>
                         <?php endif; ?>
                     </div>
                     <div class="w-full <?php echo is_single() ? '' : esc_attr('tb:w-4/6'); ?> icon-list">
@@ -59,10 +59,10 @@ if (!function_exists('pg_render_icon_list_container_block')) {
                             </div>
                         <?php endif; ?>
                         <ul class="flex flex-wrap mt-10 flex-col md:flex-row nested-block">
-                            <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
-                                <?php $inner_block['icon'] = $attributes->icon; ?>
+                            <?php foreach ($block['innerBlocks'] as $tabbed_inner_block) : ?>
+                                <?php $tabbed_inner_block['icon'] = $attributes->icon; ?>
 
-                                <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
+                                <?php echo wp_kses(render_block($tabbed_inner_block), $allowed_html); ?>
                             <?php endforeach; ?>
                         </ul>
                     </div>
