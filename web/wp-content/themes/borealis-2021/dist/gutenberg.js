@@ -2899,7 +2899,7 @@ function imageTextStripBlock() {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
-      return [/*#__PURE__*/React.createElement("section", {
+      return [/*#__PURE__*/React.createElement("div", {
         class: "custom-component"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
@@ -6676,7 +6676,7 @@ function tabbedContentContainerBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "tabbed-content-container__block custom-container"
+        class: "tabbed-content-container__block custom-section"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
       }, "Tabbed Content Container"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -6820,7 +6820,7 @@ function tabbedContentPanelBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        class: "tabbed-content-panel__block custom-child"
+        class: "tabbed-content-panel__block custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
       }, "Tabbed Content Panel"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {

@@ -49,18 +49,17 @@
         @apply mt-0;
     }
 
-    .nestable.container,
-    .nestable .container {
-        .container {
-            @apply w-full m-0;
-            .icon-list, 
-            .accordion-list {
-                @apply w-full;
-            }
+    .tab-container {
+        .accordion-list {
+            @apply w-full;
         }
     } 
     .page {
         .container .container {
+            @apply w-full;
+            .icon-list {
+                @apply w-full;
+            }
             .icon-list-title,
             .accordion-title {
                 @apply hidden;
@@ -95,12 +94,9 @@
     .single .nestable {
         .nested-flex {
             @apply block w-full md:w-full;
-            .nested-block {
+            .accordion-title + .accordion-list {
                 @apply mt-10
             }
-        }
-        .nested-description {
-            @apply mt-4;
         }
     }
 

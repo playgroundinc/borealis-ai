@@ -41,7 +41,7 @@ export default function tabbedContentPanelBlock() {
             }
 
 			return [
-                <div class="tabbed-content-panel__block custom-child">
+                <div class="tabbed-content-panel__block custom-container">
                     <p class="block-title">Tabbed Content Panel</p>
                     <CustomRichText 
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }

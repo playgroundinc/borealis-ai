@@ -86,7 +86,7 @@ export default function tabbedContentContainerBlock() {
             }
 
 			return [
-                <div class="tabbed-content-container__block custom-container">
+                <div class="tabbed-content-container__block custom-section">
                     <p class="block-title">Tabbed Content Container</p>
                     <BlockSettings 
                         title="Block Settings"

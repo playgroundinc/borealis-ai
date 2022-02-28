@@ -44,17 +44,18 @@ if (!function_exists('pg_render_accordion_block')) {
         ob_start();
 ?>
     <div class="custom-component nestable">
-        <div class="container flex flex-col md:flex-row custom-component nested-flex">
-            <div class="w-full mb-5 md:mb-0 md:w-4/12 accordion-title">
-                <?php if (!empty($attributes->title)) : ?>
+        <div class="container flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('tb:flex-row') : ''; ?> custom-component nested-flex">
+            <?php if (!empty($attributes->title)) : ?>
+                <div class="w-full mb-5 tb:mb-0 md:w-4/12 accordion-title">
                     <h3 class="h3">
                         <?php echo wp_kses($attributes->title, $allowed_html); ?>
                     </h3>
-                <?php endif; ?>
-            </div>
-            <div class="paragraph w-full md:w-8/12 accordion-list">
+                </div>
+            <?php endif; ?>
+
+            <div class="paragraph w-full <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('tb:w-8/12') : ''; ?> accordion-list">
                 <?php if (!empty($attributes->description)) : ?>
-                    <div class="mt-0 mb-5 md:mb-12"><?php echo wp_kses(wpautop($attributes->description), $allowed_html); ?></div>
+                    <div class="mt-0 mb-5 tb:mb-12"><?php echo wp_kses(wpautop($attributes->description), $allowed_html); ?></div>
                 <?php endif; ?>
                 <ul class="accordion-block border-b border-shade-grey-500">
                     <?php foreach ($block['innerBlocks'] as $inner_block) : ?>

@@ -40,7 +40,7 @@ if ( ! function_exists( 'pg_render_tabbed_content_panel_block' ) ) {
         $allowed_html = pg_allowed_html();
         ob_start();
         ?>
-            <section aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
+            <div aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
                 <?php if (!empty($attributes->title)): ?>
                     <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class=""><?php echo esc_html($attributes->title) ?></h2>
                 <?php endif; ?>
@@ -49,7 +49,7 @@ if ( ! function_exists( 'pg_render_tabbed_content_panel_block' ) ) {
                         <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
                     <?php endforeach; ?>
                 <?php endif; ?>
-            </section>
+            </div>
         <?php
         return ob_get_clean();
     }
