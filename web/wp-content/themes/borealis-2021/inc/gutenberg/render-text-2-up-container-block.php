@@ -44,7 +44,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <section class="<?php echo $attributes->bgColour ?>">
+        <div class="<?php echo $attributes->bgColour ?>">
             <div class="container flex md:py-20 py-10 tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>
@@ -66,7 +66,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
                     ?>
                 </div>
             </div>
-        </section>
+        </div>
 <?php
         return ob_get_clean();
     }

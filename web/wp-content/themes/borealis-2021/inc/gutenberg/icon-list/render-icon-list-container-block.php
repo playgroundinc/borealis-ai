@@ -44,15 +44,15 @@ if (!function_exists('pg_render_icon_list_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <section class="custom-component" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
+        <div class="custom-component" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
             <div>
-                <div class="flex flex-col <?php echo !is_single() ? esc_attr('container tb:flex-row') : '' ?>">
+                <div class="flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container tb:flex-row') : '' ?>">
                     <div class="w-full mb-10 tb:mb-0 tb:w-2/6 icon-list-title">
                         <?php if (!empty($attributes->title)) : ?>
-                                <h3 class="h3 <?php echo is_single() ? esc_attr('pb-4') : '' ?>"><?php echo esc_html($attributes->title) ?></h3>
+                                <h3 class="h3 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('tb:pb-4') : '' ?>"><?php echo esc_html($attributes->title) ?></h3>
                         <?php endif; ?>
                     </div>
-                    <div class="w-full <?php echo is_single() ? '' : esc_attr('tb:w-4/6'); ?> icon-list">
+                    <div class="w-full <?php echo is_singular(array('news', 'research-blogs')) ? '' : esc_attr('tb:w-4/6'); ?> icon-list">
                         <?php if (!empty($attributes->description)) : ?>
                             <div>
                                 <p class="<?php echo is_singular(array('news', 'research-blogs')) ? 'paragraph-blog' : 'paragraph' ?>  nested-description"><?php echo esc_html($attributes->description) ?></p>
@@ -68,7 +68,7 @@ if (!function_exists('pg_render_icon_list_container_block')) {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 <?php
         return ob_get_clean();
     }
