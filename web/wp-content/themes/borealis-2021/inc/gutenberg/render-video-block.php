@@ -27,31 +27,33 @@ if ( ! function_exists( 'pg_render_video_block' ) ) {
         );
         $attributes   = pg_get_attributes( $block, $fields );
         $allowed_html = pg_allowed_html();
-        $image = wp_get_attachment_image_url($attributes->image_id, 'custom-img');
+        $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
         ?>
-        <div>
-            <?php if ( ! empty( $image ) ) : ?>
-                <div style="background-image: url(<?php echo esc_url_raw($image) ?>)">
-                    <a href="#" aria-label="<?php esc_attr('Play video')?>">
-                        <div>
-                            <span>
-                                <?php 
-                                    $icon = pg_render_icon('play'); 
-                                    echo wp_kses($icon, $allowed_html);
-                                ?>
-                            </span>
-                            <p><?php esc_html('Play video') ?></p>                            
-                        </div>
-                    </a>
+        <div class="custom-component">
+            <div class="<?php echo !is_single() ? esc_attr('container') : '' ?> relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg lg:min-h-[435px]">
+                <?php if ( ! empty( $image ) ) : ?>
+                    <div class="bg-cover bg-center absolute inset-0 z-10 video-block__overlay transition-all duration-400" style="background-image: url(<?php echo esc_url_raw($image) ?>)">
+                        <a class="block w-full h-full video-block__overlay__button" href="#" aria-label="<?php echo esc_attr('Play video')?>">
+                            <div class="flex w-full h-full items-center justify-center">
+                                <span class="text-shade-white-400 paragraph-lg md:h2">
+                                    <?php 
+                                        $icon = pg_render_icon('play'); 
+                                        echo wp_kses($icon, $allowed_html);
+                                    ?>
+                                </span>
+                                <p class="sr-only"><?php echo esc_html('Play video') ?></p>                            
+                            </div>
+                        </a>
+                    </div>
+                <?php endif; ?>
+                <div class="flex w-full h-full justify-center items-center absolute inset-0 bg-shade-grey-50">
+                    <?php echo $block['innerContent'][0] ?>
                 </div>
-            <?php endif; ?>
-            <div>
-                <?php echo wp_kses( $block_content, $allowed_html ); ?>
+                <?php if ( ! empty( $attributes->caption ) ) : ?>
+                    <p><?php echo esc_html( $attributes->caption ); ?></p>
+                <?php endif; ?>
             </div>
-            <?php if ( ! empty( $attributes->caption ) ) : ?>
-                <p><?php echo esc_html( $attributes->caption ); ?></p>
-            <?php endif; ?>
         </div>
         <?php
         return ob_get_clean();

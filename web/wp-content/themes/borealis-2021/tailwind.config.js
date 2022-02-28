@@ -105,8 +105,9 @@ module.exports = {
 				'slider': 'left right',
 			},
 			width: {
-				'3/8': 'calc((100% /8) * 3)',
-				'5/8': 'calc((100% /8) * 5)',
+				'3/8': 'calc((100% / 8) * 3)',
+				'5/8': 'calc((100% / 8) * 5)',
+				'gallery': '450px',
 			}
 		},
   	},

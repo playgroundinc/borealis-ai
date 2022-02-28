@@ -455,3 +455,9 @@ if (!function_exists('pg_check_for_submenu')) {
         return false;
     }
 }
+
+if (!function_exists('pg_sanitize_output')) {
+    function pg_sanitize_output($text) {
+        return sanitize_text_field(wp_unslash($text));
+    }
+}

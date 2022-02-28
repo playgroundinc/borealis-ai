@@ -34,43 +34,24 @@ if ( ! function_exists( 'pg_render_callout_column_block' ) ) {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
-            'image_alt' => '',
-            'image_id' => '',
-            'image_url' => '',
-            'title' => '',
             'link' => '',
-            'link_text' => 'read more',
+            'subtitle' => '',
+            'title' => ''
         );
         $attributes = pg_get_attributes( $attrs, $fields );
-        if (!empty($attributes->image_id)) {
-            $image = wp_get_attachment_image_url($attributes->image_id, 'full');
-        }
         ob_start();
         ?>
-            <?php if (!empty($attributes->link)): ?>
-                <?php $label = 'aria-label="' . esc_attr($attributes->title) . '"'; ?>
-                <a  
-                    href="<?php echo esc_attr($attributes->link)?>" 
-                    <?php echo !empty($attributes->title) ? $label : null; ?>
-                >
-            <?php endif; ?>
-        
-                <div>
-                    <div style="background-image: url(<?php echo esc_url_raw($image)?>)">
+            <li class="basis-card grow-0 md:nth-child-3n:ml-0 md:nth-child-4:mt-8 md:nth-child-2:ml-8 nth-child-2:mt-5 md:nth-child-2:mt-0">
+                <a href="<?php echo esc_url_raw($attributes->link)?>" class="block rounded-large bg-shade-white-400 min-h-[224px] md:min-h-[244px] flex flex-col">
+                    <div class="text-primary-electric-blue-400 h3 py-4 px-5" aria-hidden="true">
+                        <?php echo pg_render_icon('callout'); ?>
                     </div>
-                    <div>
-                        <?php if (!empty($attributes->title)): ?>
-                            <h3><?php echo esc_html($attributes->title) ?></h3>
-                        <?php endif; ?>
-                        <?php if (!empty($attributes->link_text)): ?>
-                            <p><?php echo esc_attr($attributes->link_text); ?></p>
-                        <?php endif; ?>
+                    <div class="grow flex flex-col justify-end text-right px-9 py-7">
+                        <p class="h4"><?php echo esc_html($attributes->title); ?></p>
+                        <p class="paragraph text-shade-grey-700 pt-4"><?php echo esc_html($attributes->subtitle); ?></p>
                     </div>
-                    
-                </div>
-            <?php if (!empty($attributes->link)): ?>
                 </a>
-            <?php endif; ?>
+            </li>
         <?php
         return ob_get_clean();
     }

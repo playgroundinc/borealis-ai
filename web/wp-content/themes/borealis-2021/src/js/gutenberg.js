@@ -9,9 +9,14 @@ import newsMetaBlock from "./blocks/meta/news-meta.jsx"
 import teamMemberMetaBlock from "./blocks/meta/team-member-meta.jsx";
 import authorMetaBlock from './blocks/meta/author-meta.jsx';
 import publicationMetaBlock from './blocks/meta/publications-meta.jsx';
+import productMetaBlock from './blocks/meta/product-meta.jsx';
 
 import textColumnBlock from "../js/blocks/text-column.jsx";
 import imageTextBlock from "./blocks/image-text.jsx";
+
+// Text 2 Up Blocks
+import text2UpBlock from "./blocks/text-2-up-block.jsx";
+import text2UpContainerBlock from "./blocks/text-2-up-container-block.jsx";
 
 // Page Strips
 import imageBlock from "./blocks/image-block.jsx";
@@ -30,9 +35,19 @@ import bodyCopyBlock from "./blocks/body-copy.jsx";
 import calloutContainerBlock from "./blocks/callouts/callout-container.jsx";
 import calloutColumnBlock from "./blocks/callouts/callout-column.jsx";
 
+// Code
+import compareCodeBlock from './blocks/code/compare-code-block.jsx';
+import codeBlock from './blocks/code/code-block.jsx';
+
 // Content Columns
 import contentCardContainerBlock from "./blocks/content-cards/content-card-container.jsx";
 import contentCardBlock from "./blocks/content-cards/content-card.jsx";
+
+// Figures
+import compareFiguresBlock from './blocks/figures/compare-figures-block.jsx';
+
+// Gallery
+import galleryContainerBlock from './blocks/gallery/gallery-container-block.jsx';
 
 // Image List Blocks
 import imageListContainerBlock from "./blocks/image-list/image-list-container.jsx";
@@ -40,6 +55,7 @@ import imageListBlock from "./blocks/image-list/image-list-block.jsx";
 
 // Logo Blocks
 import logosContainer from "./blocks/logos/logo-container.jsx";
+import logosSubsection from "./blocks/logos/logos-subsection.jsx";
 import logoBlock from "./blocks/logos/logo.jsx";
 
 // Page Strips
@@ -55,6 +71,9 @@ import bibtexBlock from './blocks/publications/bibtex-block.jsx';
 // Posts
 import featuredPostsContainerBlock from './blocks/posts/featured-posts-container.jsx';
 
+// Products
+import productContainerBlock from './blocks/products/product-container.jsx';
+
 // Slider Blocks
 import sliderBlock from "./blocks/slider/slider-container.jsx";
 import newsSlideBlock from './blocks/slider/news-slide.jsx';
@@ -65,6 +84,9 @@ import statColumnBlock from "./blocks/stats/stats-column.jsx";
 
 // Greenhouse Blocks
 import jobBlock from "./blocks/greenhouse/jobs-block.jsx";
+import selectJobBlock from './blocks/greenhouse/select-job-block.jsx';
+import featuredJobsBlock from './blocks/greenhouse/jobs-list.jsx';
+import jobHighlightBlock from './blocks/greenhouse/job-highlight-block.jsx';
 
 // Sidebar Table Of Contents Blocks
 import customSectionBlock from './blocks/sidebar-table-of-contents/custom-section-blok.jsx';
@@ -82,6 +104,13 @@ import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-pane
 import tagCloudContainerBlock from "./blocks/tag-cloud/tag-cloud-container-block.jsx";
 import tagCloudItemBlock from "./blocks/tag-cloud/tag-cloud-item-block.jsx";
 
+// Image & Text Strip Block
+import imageTextStripBlock from "./blocks/image-text-strip-block.jsx";
+
+// Statisitcs Blocks
+import statisticsBlock from "./blocks/statistics-block.jsx";
+import statisticsContainerBlock from "./blocks/statistics-container-block.jsx";
+
 // Core Extends Blocks
 customVideoPoster();
 registerRichTextBlocks();
@@ -93,9 +122,10 @@ newsMetaBlock();
 teamMemberMetaBlock();
 authorMetaBlock();
 publicationMetaBlock();
+productMetaBlock();
 
 // Init blocks here
-textColumnBlock(); 
+textColumnBlock();
 imageTextBlock();
 
 // Page Strips
@@ -122,12 +152,23 @@ calloutColumnBlock();
 contentCardContainerBlock();
 contentCardBlock();
 
+// Code
+compareCodeBlock();
+codeBlock();
+
+// Figures
+compareFiguresBlock();
+
+// Gallery
+galleryContainerBlock();
+
 // Image List Blocks
 imageListContainerBlock();
 imageListBlock();
 
 // Logo Blocks
 logosContainer();
+logosSubsection();
 logoBlock();
 
 // Publications
@@ -137,6 +178,9 @@ bibtexBlock();
 
 // Posts
 featuredPostsContainerBlock();
+
+// Products
+productContainerBlock();
 
 // Slide Blocks
 sliderBlock();
@@ -149,6 +193,9 @@ statColumnBlock();
 
 // Greenhouse Blocks
 jobBlock();
+selectJobBlock();
+featuredJobsBlock();
+jobHighlightBlock();
 
 // Sidebar Table Of Contents Blocks
 customSectionBlock();
@@ -165,3 +212,13 @@ tabbedContentPanelBlock();
 // Tag Cloud Content Blocks
 tagCloudContainerBlock();
 tagCloudItemBlock();
+
+// Text 2 Up Blocks
+text2UpContainerBlock();
+text2UpBlock();
+// Image & Text Strip Block
+imageTextStripBlock();
+
+// Statistics Content Blocks
+statisticsContainerBlock();
+statisticsBlock();

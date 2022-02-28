@@ -81,6 +81,9 @@ export default class Accordion {
         slideToggle(this.panel);
         element.classList.remove('accordion-row--active');
         element.setAttribute('aria-expanded', false);
+        const chevron = document.getElementById(element.id).getElementsByClassName("icon")[0];
+        chevron.classList.remove('rotate-180');
+        chevron.classList.add('rotate-0');
         this.getPanel(this.trigger);
     }
 
@@ -108,10 +111,11 @@ export default class Accordion {
                 this.chevron.classList.add('rotate-0');
                 this.chevron.classList.remove('rotate-180');
             }
+
             this.trigger.classList.remove('accordion-row--active');
             this.trigger.setAttribute('aria-expanded', false);
             return;
-        }
+        } 
         this.handleActiveElements();
         if (this.chevron) {
             this.chevron.classList.add('rotate-180');

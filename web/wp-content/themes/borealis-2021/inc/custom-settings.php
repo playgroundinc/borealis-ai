@@ -48,6 +48,7 @@ function pg_init_menus()
                     'id' => $namespace . '-integrations-greenhouse',
                     'fields' => array(
                         'greenhouse_api_key' => 'text',
+                        'greenhouse_url' => 'text'
                     )
                 ),
             )

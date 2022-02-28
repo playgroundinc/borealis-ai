@@ -18,6 +18,19 @@ module.exports.breakpoints = {
     spacing['featured-image'] = '360px';
     spacing['featured-image-md'] = '450px';
     spacing['full'] = '100%';
+    spacing['gallery'] = '600px';
+    spacing['team-member'] = '310px';
+    spacing['gallery-offset'] = 'calc((100vw - 1300px) / 2)';
+    spacing['card'] = 'calc((100% - 64px) / 3)';
+    spacing['video-lg'] = '30%';
+    spacing['video-md'] = '34.59%';
+    spacing['video'] = '70.17%';
+    spacing['2/7'] = 'calc((100% / 7) * 2)';
+    spacing['3/7'] = 'calc((100% / 7) * 3)';
+
+    spacing['col-6'] = 'calc((100% - 20px) / 2)';
+    spacing['col-4'] = 'calc((100% - 40px) / 3)';
+    spacing['col-3'] = 'calc((100% - 60px) / 4)';
     for (let i = 0; i <= max; i = i + 1) {
       spacing[i] = `${i * base}px`;
     }

@@ -32,6 +32,12 @@ if (!function_exists('pg_mathjax_scripts')) {
     }
 }
 
+if (!function_exists('pg_gallery_script')) {
+    function pg_gallery_script() {
+        wp_register_script('custom-gallery', get_template_directory_uri() . '/dist/gallery.js', array(), '20151215', true);
+    }
+}
+
 
 if (!function_exists('pg_threejs_scripts')) {
     /**
@@ -51,7 +57,8 @@ if (!function_exists('pg_borealis_script')) {
      */
     function pg_borealis_script() {
         if (is_page_template( 'page-single-job-listing.php' )) {
-            wp_enqueue_script( 'borealis', 'https://boards.greenhouse.io/embed/job_board/js?for=borealisai', array(), '20151215', true );
+            // TODO: borealisai instead of borealisaitest, migration to real borealis job board.
+            wp_enqueue_script( 'borealis', 'https://boards.greenhouse.io/embed/job_board/js?for=borealisaitest', array(), '20151215', true );
         }
     }
 }
@@ -91,6 +98,7 @@ function pg_wp_starter_scripts() {
     pg_tabbed_content_script();
     pg_main_search_script();
     pg_blog_modal_script();
+    pg_gallery_script();
 }
 add_action( 'wp_enqueue_scripts', 'pg_wp_starter_scripts' );
 

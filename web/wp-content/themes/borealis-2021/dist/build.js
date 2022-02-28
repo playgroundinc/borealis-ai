@@ -348,6 +348,9 @@ class Accordion {
     (0,_slide_toggle__WEBPACK_IMPORTED_MODULE_0__.slideToggle)(this.panel);
     element.classList.remove('accordion-row--active');
     element.setAttribute('aria-expanded', false);
+    const chevron = document.getElementById(element.id).getElementsByClassName("icon")[0];
+    chevron.classList.remove('rotate-180');
+    chevron.classList.add('rotate-0');
     this.getPanel(this.trigger);
   }
 
@@ -975,6 +978,95 @@ class SearchBar {
 
 /***/ }),
 
+/***/ "./src/js/scripts/classes/class-video-block.js":
+/*!*****************************************************!*\
+  !*** ./src/js/scripts/classes/class-video-block.js ***!
+  \*****************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ VideoBlock; }
+/* harmony export */ });
+class VideoBlock {
+  constructor(video) {
+    this.video = video;
+    this.trigger = null;
+    this.overlay = null;
+    this.media = null;
+    this.handleClick = this.handleClick.bind(this);
+    this.setEmbedSize = this.setEmbedSize.bind(this);
+  }
+
+  setState(name, value) {
+    this[name] = value;
+  }
+
+  getElements() {
+    const trigger = this.video.querySelector('.video-block__overlay__button');
+    const overlay = this.video.querySelector('.video-block__overlay');
+    let player = this.video.querySelector('video');
+
+    if (!player) {
+      player = this.video.querySelector('iframe');
+      this.setState('media', 'youtube');
+    }
+
+    this.setState('overlay', overlay);
+    this.setState('trigger', trigger);
+    this.setState('player', player);
+  }
+
+  setEmbedSize() {
+    this.player.setAttribute('height', `${this.video.offsetHeight}px`);
+    this.player.setAttribute('width', `${this.video.offsetWidth}px`);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.overlay.classList.add('opacity-0');
+    this.overlay.classList.add('visibility-hidden');
+    this.overlay.addEventListener('transitionend', e => {
+      e.target.classList.add('z-0');
+    });
+
+    if (this.media === 'youtube') {
+      const src = this.player.getAttribute('src');
+
+      if (/autoplay/gi.test(src)) {
+        return;
+      }
+
+      this.setEmbedSize();
+      this.player.setAttribute('src', `${src}&autoplay=1&mute=1`);
+    } else {
+      this.player.play();
+    }
+
+    this.player.setAttribute('tabindex', 0);
+  }
+
+  addClickListener() {
+    this.getElements();
+
+    if (this.trigger) {
+      if (this.player) {
+        this.player.setAttribute('tabindex', -1);
+      }
+
+      this.trigger.addEventListener('click', this.handleClick);
+    }
+
+    if (this.media === 'youtube') {
+      window.addEventListener('resize', this.setEmbedSize);
+    }
+  }
+
+}
+
+/***/ }),
+
 /***/ "./src/js/scripts/classes/menu-toggle.js":
 /*!***********************************************!*\
   !*** ./src/js/scripts/classes/menu-toggle.js ***!
@@ -1358,6 +1450,32 @@ function search() {
   }
 }
 ;
+
+/***/ }),
+
+/***/ "./src/js/scripts/video-block.js":
+/*!***************************************!*\
+  !*** ./src/js/scripts/video-block.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* export default binding */ __WEBPACK_DEFAULT_EXPORT__; }
+/* harmony export */ });
+/* harmony import */ var _classes_class_video_block__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/class-video-block */ "./src/js/scripts/classes/class-video-block.js");
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
+  const videoBlocks = [...document.querySelectorAll('.video-block')];
+
+  if (videoBlocks.length) {
+    videoBlocks.forEach(video => {
+      const VideoBlockClass = new _classes_class_video_block__WEBPACK_IMPORTED_MODULE_0__["default"](video);
+      VideoBlockClass.addClickListener();
+    });
+  }
+}
 
 /***/ }),
 
@@ -11284,6 +11402,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scripts_animate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/animate */ "./src/js/scripts/animate.js");
 /* harmony import */ var _scripts_navigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./scripts/navigation */ "./src/js/scripts/navigation.js");
 /* harmony import */ var _scripts_accordion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./scripts/accordion */ "./src/js/scripts/accordion.js");
+/* harmony import */ var _scripts_video_block__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./scripts/video-block */ "./src/js/scripts/video-block.js");
 // require('./scripts/polyfills/closest-polyfill');
 
 
@@ -11291,15 +11410,15 @@ __webpack_require__.r(__webpack_exports__);
  // import fixSkipLinkFocus from './scripts/skip-link-focus-fix';
 
 
- // import videoBlocks from './scripts/video-block';
-// // Import JS Modules here
+
+ // // Import JS Modules here
 
 (0,_scripts_animate__WEBPACK_IMPORTED_MODULE_3__["default"])(); // fixSkipLinkFocus();
 
 (0,_scripts_navigation__WEBPACK_IMPORTED_MODULE_4__["default"])();
 (0,_scripts_accordion__WEBPACK_IMPORTED_MODULE_5__["default"])();
-(0,_scripts_load_more__WEBPACK_IMPORTED_MODULE_2__["default"])(); // videoBlocks();
-// heroVideo();
+(0,_scripts_load_more__WEBPACK_IMPORTED_MODULE_2__["default"])();
+(0,_scripts_video_block__WEBPACK_IMPORTED_MODULE_6__["default"])(); // heroVideo();
 
 (0,_scripts_search__WEBPACK_IMPORTED_MODULE_1__["default"])();
 }();
