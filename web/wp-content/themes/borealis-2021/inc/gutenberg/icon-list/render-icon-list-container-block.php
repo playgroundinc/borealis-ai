@@ -55,7 +55,7 @@ if (!function_exists('pg_render_icon_list_container_block')) {
                     <div class="w-full <?php echo is_singular(array('news', 'research-blogs')) ? '' : esc_attr('tb:w-4/6'); ?> icon-list">
                         <?php if (!empty($attributes->description)) : ?>
                             <div>
-                                <p class="<?php echo is_singular(array('news', 'research-blogs')) ? 'paragraph-blog' : 'paragraph' ?>  nested-description"><?php echo esc_html($attributes->description) ?></p>
+                                <p class="<?php echo is_singular(array('news', 'research-blogs')) ? 'paragraph-blog' : 'paragraph' ?>  nested-description"><?php echo wp_kses($attributes->description, $allowed_html) ?></p>
                             </div>
                         <?php endif; ?>
                         <ul class="flex flex-wrap mt-10 flex-col <?php echo is_singular(array('news', 'research-blogs')) ? '' : 'md:flex-row' ?> nested-block">

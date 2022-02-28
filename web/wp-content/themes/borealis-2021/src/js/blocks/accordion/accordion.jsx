@@ -72,6 +72,7 @@ export default function accordionBlock() {
                                 value: title,
                                 tagName: 'h2',
                                 classes: ['heading_two'],
+                                settings: [],
                                 placeholder: 'Add title (optional)',
                             },
                             {
