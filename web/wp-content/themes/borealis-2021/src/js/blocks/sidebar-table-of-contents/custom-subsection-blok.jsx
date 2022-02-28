@@ -57,13 +57,13 @@ export default function customSubsectionBlock() {
                         <InnerBlocks.Content />
                     ) : (
                         <InnerBlocks
-                            allowedBlocks={[
-                                `core/code`, 
+                            allowedBlocks={[ 
                                 `core/table`, 
                                 `core/podcast`, 
                                 `core/video`, 
                                 `core/list`, 
                                 `core/quote`,
+
                                 `${namespace}/tag-cloud-container-block`, 
                                 `${namespace}/paragraph`, 
                                 `${namespace}/heading-two`, 
@@ -73,7 +73,13 @@ export default function customSubsectionBlock() {
                                 `${namespace}/blockquote`,
                                 `${namespace}/publications-container`,
                                 `${namespace}/image-text`,
-                                `${namespace}/icon-list-container-block`
+                                `${namespace}/icon-list-container-block`,
+                                `${namespace}/compare-code`,
+                                `${namespace}/code`,
+                                `${namespace}/jobs-container`,
+                                `${namespace}/compare-figures`,
+                                `${namespace}/tabbed-content-container-block`
+
                             ]}
                         />
                     )}
