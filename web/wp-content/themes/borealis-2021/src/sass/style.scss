@@ -49,13 +49,16 @@
         @apply mt-0;
     }
 
-    .container .container {
-        @apply w-full m-0;
-        .icon-list, 
-        .accordion-list {
-            @apply w-full;
+    .nestable.container,
+    .nestable .container {
+        .container {
+            @apply w-full m-0;
+            .icon-list, 
+            .accordion-list {
+                @apply w-full;
+            }
         }
-    }
+    } 
     .page {
         .container .container {
             .icon-list-title,

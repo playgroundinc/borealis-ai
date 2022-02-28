@@ -835,11 +835,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .custom-component .custom-component{
   margin-top: 0px;
 }
-.container .container{
+.nestable.container .container, .nestable .container .container{
   margin: 0px;
   width: 100%;
 }
-.container .container .icon-list, .container .container .accordion-list{
+.nestable.container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
   width: 100%;
 }
 .page .container .container .icon-list-title, .page .container .container .accordion-title{
@@ -2276,28 +2276,52 @@ ol.footnotes li small{
       margin-top: 32px;
     }
   }
-  .md\:container .container{
+  .nestable.md\:container .container, .nestable .container .container{
     margin: 0px;
   }
-  .md\:container .container{
+  .nestable.md\:container .container, .nestable .container .container{
     width: 100%;
   }
-  .md\:container .container{
+  .nestable.md\:container .container, .nestable .container .container{
     margin: 0px;
   }
-  .md\:container .container{
+  .nestable.md\:container .container, .nestable .container .container{
     width: 100%;
   }
-    .md\:container .container .icon-list, .container .container .accordion-list{
+  .nestable.md\:container .container, .nestable .container .container{
+    margin: 0px;
+  }
+  .nestable.md\:container .container, .nestable .container .container{
     width: 100%;
   }
-    .md\:container .container .icon-list, .container .container .accordion-list{
+  .nestable.md\:container .container, .nestable .container .container{
+    margin: 0px;
+  }
+  .nestable.md\:container .container, .nestable .container .container{
     width: 100%;
   }
-    .md\:container .container .icon-list, .container .container .accordion-list{
+    .nestable.md\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
     width: 100%;
   }
-    .md\:container .container .icon-list, .container .container .accordion-list{
+    .nestable.md\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
+    width: 100%;
+  }
+    .nestable.md\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
+    width: 100%;
+  }
+    .nestable.md\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
+    width: 100%;
+  }
+    .nestable.md\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
+    width: 100%;
+  }
+    .nestable.md\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
+    width: 100%;
+  }
+    .nestable.md\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
+    width: 100%;
+  }
+    .nestable.md\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
     width: 100%;
   }
   .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
@@ -2756,28 +2780,52 @@ ol.footnotes li small{
   }
 }
   @media (min-width: 1440px){
-  .lg\:container .container{
+  .nestable.lg\:container .container, .nestable .container .container{
     margin: 0px;
   }
-  .lg\:container .container{
+  .nestable.lg\:container .container, .nestable .container .container{
     width: 100%;
   }
-  .lg\:container .container{
+  .nestable.lg\:container .container, .nestable .container .container{
     margin: 0px;
   }
-  .lg\:container .container{
+  .nestable.lg\:container .container, .nestable .container .container{
     width: 100%;
   }
-    .lg\:container .container .icon-list, .container .container .accordion-list{
+  .nestable.lg\:container .container, .nestable .container .container{
+    margin: 0px;
+  }
+  .nestable.lg\:container .container, .nestable .container .container{
     width: 100%;
   }
-    .lg\:container .container .icon-list, .container .container .accordion-list{
+  .nestable.lg\:container .container, .nestable .container .container{
+    margin: 0px;
+  }
+  .nestable.lg\:container .container, .nestable .container .container{
     width: 100%;
   }
-    .lg\:container .container .icon-list, .container .container .accordion-list{
+    .nestable.lg\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
     width: 100%;
   }
-    .lg\:container .container .icon-list, .container .container .accordion-list{
+    .nestable.lg\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
+    width: 100%;
+  }
+    .nestable.lg\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
+    width: 100%;
+  }
+    .nestable.lg\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
+    width: 100%;
+  }
+    .nestable.lg\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
+    width: 100%;
+  }
+    .nestable.lg\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
+    width: 100%;
+  }
+    .nestable.lg\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
+    width: 100%;
+  }
+    .nestable.lg\:container .container .icon-list, .nestable.container .container .accordion-list, .nestable .container .container .icon-list, .nestable .container .container .accordion-list{
     width: 100%;
   }
   .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{

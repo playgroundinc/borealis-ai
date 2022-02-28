@@ -44,15 +44,15 @@ if (!function_exists('pg_render_icon_list_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <section aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
-            <div class="custom-component nestable">
+        <section class="custom-component" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
+            <div class="nestable">
                 <div class="container flex flex-col tb:flex-row nested-flex">
                     <div class="w-full mb-10 tb:mb-0 tb:w-2/6 icon-list-title">
                         <?php if (!empty($attributes->title)) : ?>
                                 <h3 class="h3"><?php echo esc_html($attributes->title) ?></h3>
                         <?php endif; ?>
                     </div>
-                    <div class="w-full tb:w-4/6 icon-list">
+                    <div class="w-full <?php echo is_single() ? '' : esc_attr('tb:w-4/6'); ?> icon-list">
                         <?php if (!empty($attributes->description)) : ?>
                             <div>
                                 <p class="paragraph nested-description"><?php echo esc_html($attributes->description) ?></p>
