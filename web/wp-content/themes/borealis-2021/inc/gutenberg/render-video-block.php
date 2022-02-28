@@ -31,7 +31,7 @@ if ( ! function_exists( 'pg_render_video_block' ) ) {
         ob_start();
         ?>
         <div class="custom-component">
-            <div class="container relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg">
+            <div class="container relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg lg:min-h-[435px]">
                 <?php if ( ! empty( $image ) ) : ?>
                     <div class="bg-cover bg-center absolute inset-0 z-10 video-block__overlay transition-all duration-400" style="background-image: url(<?php echo esc_url_raw($image) ?>)">
                         <a class="block w-full h-full video-block__overlay__button" href="#" aria-label="<?php echo esc_attr('Play video')?>">
@@ -47,7 +47,7 @@ if ( ! function_exists( 'pg_render_video_block' ) ) {
                         </a>
                     </div>
                 <?php endif; ?>
-                <div class="flex w-full h-full justify-center items-center absolute inset-0 bg-shade-grey-100">
+                <div class="flex w-full h-full justify-center items-center absolute inset-0 bg-shade-grey-50">
                     <?php echo $block['innerContent'][0] ?>
                 </div>
                 <?php if ( ! empty( $attributes->caption ) ) : ?>

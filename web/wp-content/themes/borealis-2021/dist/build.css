@@ -1594,6 +1594,9 @@ ol.footnotes li small{
   --tw-bg-opacity: 1;
   background-color: rgb(96 55 215 / var(--tw-bg-opacity));
 }
+.bg-shade-grey-50{
+  background-color: rgba(244,244,251,0.5);
+}
 .bg-tint-lightBlue-400{
   --tw-bg-opacity: 1;
   background-color: rgb(111 222 250 / var(--tw-bg-opacity));
@@ -1849,6 +1852,9 @@ ol.footnotes li small{
 .pt-11{
   padding-top: 44px;
 }
+.pb-9{
+  padding-bottom: 36px;
+}
 .pb-11{
   padding-bottom: 44px;
 }
@@ -2029,6 +2035,9 @@ ol.footnotes li small{
   .wp-block-embed__wrapper video,
   .wp-block-embed__wrapper iframe {
     max-height: 100%; }
+  .first\:ml-4:first-child{
+  margin-left: 16px;
+}
   .first\:mt-0:first-child{
   margin-top: 0px;
 }
@@ -2764,6 +2773,9 @@ ol.footnotes li small{
   .lg\:flex{
     display: flex;
   }
+  .lg\:min-h-\[435px\]{
+    min-height: 435px;
+  }
   .lg\:w-1\/6{
     width: 16.666667%;
   }
@@ -2798,10 +2810,6 @@ ol.footnotes li small{
     padding-left: 0px;
     padding-right: 0px;
   }
-  .lg\:py-20{
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
   .lg\:pt-7{
     padding-top: 28px;
   }
@@ -2817,14 +2825,17 @@ ol.footnotes li small{
   .lg\:pl-8{
     padding-left: 32px;
   }
+  .lg\:pt-20{
+    padding-top: 80px;
+  }
+  .lg\:pb-11{
+    padding-bottom: 44px;
+  }
   .lg\:pt-0{
     padding-top: 0px;
   }
   .lg\:pt-8{
     padding-top: 32px;
-  }
-  .lg\:pb-0{
-    padding-bottom: 0px;
   }
   .lg\:container{
     margin: 0 auto;
