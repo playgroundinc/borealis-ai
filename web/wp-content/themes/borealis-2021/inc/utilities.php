@@ -88,6 +88,7 @@ if (!function_exists('pg_allowed_html')) {
                 'data-caption' => array(),
                 'style' => array(),
                 'data-src' => array(),
+                'role' => array(),
             ),
             'span' => array(
                 'class' => array(),
@@ -114,6 +115,7 @@ if (!function_exists('pg_allowed_html')) {
                 'aria-controls' => array(),
                 'aria-expanded' => array(),
                 'aria-label' => array(),
+                'role' => array(),
             ),
             'picture' => array(
                 'class' => array(),

@@ -93,9 +93,6 @@
         @apply list-disc list-inside;
     }
     .single .nestable {
-        .md\:container {
-            @apply m-0 w-full;
-        }
         .nested-flex {
             @apply block w-full md:w-full;
             .nested-block {
