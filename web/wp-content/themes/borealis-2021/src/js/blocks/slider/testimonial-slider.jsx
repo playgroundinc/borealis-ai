@@ -20,7 +20,6 @@ export default function testimonialSliderBlock() {
 
     const stringAttrs = [
         'title',
-        'display_style'
     ];
     const attributes = defaultAttrs(stringAttrs);
 
@@ -29,7 +28,16 @@ export default function testimonialSliderBlock() {
 		description: i18n.__(blockDescription),
 		category: blockCategory,
         icon: blockIcon,
-        attributes,
+        attributes: {
+            title: {
+                type: 'String',
+                default: ''
+            },
+            display_style: {
+                type: 'String',
+                default: 'light'
+            }
+        },
 		edit: (props, editor = false, save = false ) => {
         const { setAttributes, attributes } = props;
         const { display_style, title } = attributes;
@@ -74,7 +82,7 @@ export default function testimonialSliderBlock() {
                         <InnerBlocks.Content />
                     ) : (
                         <InnerBlocks
-                            allowedBlocks={[]}
+                            allowedBlocks={[`${namespace}/testimonial`]}
                         />
                     )}
                 </div>, 

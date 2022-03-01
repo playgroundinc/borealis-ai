@@ -19,6 +19,7 @@ export default function testimonialSlideBlock() {
 		description: i18n.__(blockDescription),
 		category: blockCategory,
         icon: blockIcon,
+        parent: [`${namespace}/testimonial-carousel`],
         attributes: {
             image_alt: {
                 type: 'String',

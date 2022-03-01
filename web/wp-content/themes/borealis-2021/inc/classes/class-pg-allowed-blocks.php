@@ -90,6 +90,7 @@ class PG_Allowed_Blocks {
             'news-slide',
             'carousel',
             'testimonial-carousel',
+            'testimonial',
 
             // Stats
             'stat-column',
