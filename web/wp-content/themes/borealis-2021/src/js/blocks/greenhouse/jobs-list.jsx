@@ -12,7 +12,7 @@ export default function featuredJobsBlock() {
     const blockSlug = "jobs-container"; // slug for the block
 	const blockTitle = "Featured Jobs container";
 	const blockDescription = "Component to create highlighted jobs container block";
-	const blockCategory = "common";
+	const blockCategory = "jobs";
     const blockIcon = "archive"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

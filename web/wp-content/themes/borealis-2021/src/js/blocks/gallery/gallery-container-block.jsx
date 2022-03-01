@@ -13,7 +13,7 @@ export default function galleryContainerBlock() {
     const blockSlug = "gallery-container"; // slug for the block
 	const blockTitle = "Gallery Container";
 	const blockDescription = "Creates a Gallery Container block";
-	const blockCategory = "common";
+	const blockCategory = "containers";
     const blockIcon = "format-gallery"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

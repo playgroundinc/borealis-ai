@@ -42,7 +42,7 @@ if ( ! function_exists( 'pg_render_tag_cloud_container_block' ) ) {
         ob_start();
         ?>
             <div class="custom-component animated-element">
-                <section class="container md:flex" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
+                <div class="container md:flex" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                     <div class="md:w-4/12 md:pr-4">
                         <?php if (!empty($attributes->title)): ?>
                             <h3 class="h3 text-shade-black-400"><?php echo esc_html($attributes->title) ?></h3>
@@ -55,7 +55,7 @@ if ( ! function_exists( 'pg_render_tag_cloud_container_block' ) ) {
                             <?php endforeach; ?>
                         <?php endif; ?>
                     </div>
-                </section>
+                </div>
             </div>
         <?php
         return ob_get_clean();

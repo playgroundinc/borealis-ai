@@ -11,7 +11,7 @@ export default function tabbedContentPanelBlock() {
     const blockSlug = "tabbed-content-panel-block"; // slug for the block
 	const blockTitle = "Tabbed content panel block";
 	const blockDescription = "Component to create tabbed content panel block";
-	const blockCategory = "common";
+	const blockCategory = "rows";
     const blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
@@ -41,7 +41,7 @@ export default function tabbedContentPanelBlock() {
             }
 
 			return [
-                <div class="tabbed-content-panel__block custom-child">
+                <div class="tabbed-content-panel__block custom-container">
                     <p class="block-title">Tabbed Content Panel</p>
                     <CustomRichText 
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }

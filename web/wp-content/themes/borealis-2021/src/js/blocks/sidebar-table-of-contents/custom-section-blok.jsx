@@ -12,7 +12,7 @@ export default function customSectionBlock() {
     const blockSlug = "custom-section-block"; // slug for the block
 	const blockTitle = "Custom Section";
 	const blockDescription = "Component to create custom section block";
-	const blockCategory = "common";
+	const blockCategory = "sections";
     const blockIcon = "welcome-add-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

@@ -15,7 +15,7 @@ export default function productMetaBlock() {
 	registerBlockType(`${namespace}/product-meta-block`, {
 		title: 'Product Meta',
 		icon: 'align-full-width',
-        category: 'common',
+        category: 'meta',
         supports: {
             multiple: false,
         },

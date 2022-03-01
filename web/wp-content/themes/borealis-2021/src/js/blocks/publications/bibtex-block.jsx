@@ -12,7 +12,7 @@ export default function bibtexBlock() {
     const blockSlug = "bibtex"; // slug for the block
 	const blockTitle = "Bibtex";
 	const blockDescription = "Component to add bibtex to a publication";
-	const blockCategory = "common";
+	const blockCategory = "copy";
     const blockIcon = "archive"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

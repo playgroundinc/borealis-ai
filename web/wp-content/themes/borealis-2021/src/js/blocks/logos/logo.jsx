@@ -11,7 +11,7 @@ export default function logoBlock() {
 	const blockSlug = "logo";
 	const blockTitle = "Logo";
 	const blockDescription = "A single logo.";
-	const blockCategory = "common";
+	const blockCategory = "rows";
     const blockIcon = "format-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
 	registerBlockType(`${namespace}/${blockSlug}`, {

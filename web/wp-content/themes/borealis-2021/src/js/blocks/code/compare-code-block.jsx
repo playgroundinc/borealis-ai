@@ -9,7 +9,7 @@ export default function compareCodeBlock() {
   const blockSlug = "compare-code"; // slug for the block
   const blockTitle = "Compare Code";
   const blockDescription = "Component to compare two code blocks";
-  const blockCategory = "common";
+  const blockCategory = "containers";
   const blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {

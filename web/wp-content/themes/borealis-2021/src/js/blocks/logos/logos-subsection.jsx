@@ -46,7 +46,8 @@ export default function pgLogoSubsectionBlock() {
                             {
                                 reference: 'title',
                                 value: title,
-                                tagName: 'p',
+                                tagName: 'h3',
+                                settings: [],
                                 classes: ['paragraph'],
                                 placeholder: 'Logo parade subsection title here (optional)',
                             },

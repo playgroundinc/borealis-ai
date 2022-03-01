@@ -13,7 +13,7 @@ export default function compareFiguresBlock() {
     const blockSlug = "compare-figures"; // slug for the block
 	const blockTitle = "Compare Figures";
 	const blockDescription = "Component to compare multiple figures";
-	const blockCategory = "common";
+	const blockCategory = "containers";
     const blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

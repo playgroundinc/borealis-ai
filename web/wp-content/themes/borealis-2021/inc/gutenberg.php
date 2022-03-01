@@ -28,25 +28,40 @@ function pg_custom_block_categories( $categories, $post ) {
 		array(
             array(
 				'slug' => 'carousels',
-				'title' => __( 'Carousels', 'trmc' ),
+				'title' => 'Carousels',
 			),
             array(
 				'slug' => 'containers',
-				'title' => __( 'Containers', 'trmc' ),
+				'title' => 'Containers',
 			),
 			array(
-				'slug' => 'forms',
-				'title' => __( 'Forms', 'trmc' ),
+				'slug' => 'copy',
+				'title' => 'Copy',
+			),
+			array(
+				'slug' => 'jobs',
+				'title' => 'Jobs'
+			),
+			array(
+				'slug' => 'meta',
+				'title' => 'Meta'
 			),
             array(
 				'slug' => 'page-strips',
-				'title' => __( 'Page Strips', 'trmc' ),
+				'title' => 'Page Strips',
 			),
-            array(
-				'slug' => 'specialty',
-				'title' => __( 'Specialty Blocks', 'trmc' ),
+			array(
+				'slug' => 'rows',
+				'title' => 'Rows',
 			),
-        
+			array(
+				'slug' => 'selects',
+				'title' => 'Select Posts'
+			),
+			array(
+				'slug' => 'sections',
+				'title' => 'Sections'
+			),
 		)
 	);
 }

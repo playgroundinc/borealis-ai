@@ -1,6 +1,6 @@
-import { namespace } from "./helper-functions/constants";
-import CustomRichText from "./reusable/custom-richtext-component.jsx";
-import BlockSettings from "./reusable/block-custom-settings.jsx";
+import { namespace } from "../helper-functions/constants";
+import CustomRichText from "../reusable/custom-richtext-component.jsx";
+import BlockSettings from "../reusable/block-custom-settings.jsx";
 
 export default function statisticsContainerBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
@@ -11,7 +11,7 @@ export default function statisticsContainerBlock() {
   const blockSlug = "statistics-container"; // slug for the block
   const blockTitle = "Create statistics container block";
   const blockDescription = "Component to create a statistics container block";
-  const blockCategory = "common";
+  const blockCategory = "containers";
 
   const blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 

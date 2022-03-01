@@ -14,7 +14,7 @@ if (!function_exists('pg_render_publications_item')) {
             $content_type = pg_get_content_type($content_types, $post->post_type);
             
         ?> 
-            <li class="block border-b border-color-shade-grey-500">
+            <li class="block border-b border-shade-grey-700">
                 <a class="block py-6 md:px-5 md:py-5 hover:bg-shade-grey-100 bg-shade-white-400 transition-background-color duration-300" href="<?php echo esc_attr(get_permalink($post->ID))?>">
                     <div class="container md:w-full md:m-0 md:flex justify-between items-center">
                         <div>

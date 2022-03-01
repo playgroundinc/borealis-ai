@@ -10,7 +10,7 @@ export default function jobHighlightBlock() {
     const blockSlug = "job-highlight";
 	const blockTitle = "Job Highlight";
 	const blockDescription = "Add an image and text to a job list block";
-	const blockCategory = "common";
+	const blockCategory = "jobs";
     const blockIcon = "id"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
