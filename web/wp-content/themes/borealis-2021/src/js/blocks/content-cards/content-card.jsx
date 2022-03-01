@@ -16,7 +16,7 @@ export default function imageTextBlock() {
     const slug = "content-card";
 	const title = "Card";
 	const description = "A single content card.";
-	const category = "common";
+	const category = "rows";
     const icon = "table-col-after"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

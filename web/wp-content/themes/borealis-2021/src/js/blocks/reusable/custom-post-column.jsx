@@ -24,7 +24,7 @@ export default function selectPostBlock(postObject) {
 		title: `Select ${single}`,
 		description: "Allows user to select a post",
 		icon,
-		category: "common",
+		category: "selects",
 		attributes,
 		parent,
 		edit: withSelect((select) => {

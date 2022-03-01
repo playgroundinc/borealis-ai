@@ -15,7 +15,7 @@ export default function leadershipMetaBlock() {
 	registerBlockType(`${namespace}/team-member-meta-block`, {
 		title: 'Team Member Meta',
 		icon: 'align-full-width',
-        category: 'common',
+        category: 'meta',
         supports: {
             multiple: false,
         },

@@ -9,7 +9,7 @@ export default function codeBlock() {
   const blockSlug = "code"; // slug for the block
   const blockTitle = "Code";
   const blockDescription = "Single code block";
-  const blockCategory = "common";
+  const blockCategory = "copy";
   const blockIcon = "editor-code"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {

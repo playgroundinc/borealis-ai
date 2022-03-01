@@ -15,7 +15,7 @@ export default function calloutColumnBlock() {
     const slug = "callout-column";
 	const title = "Card";
 	const description = "A single card.";
-	const category = "common";
+	const category = "rows";
     const icon = "table-col-after"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

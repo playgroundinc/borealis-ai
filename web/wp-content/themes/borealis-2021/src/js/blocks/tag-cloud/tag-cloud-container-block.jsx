@@ -12,7 +12,7 @@ export default function tagCloudContainerBlock() {
     const blockSlug = "tag-cloud-container-block"; // slug for the block
 	const blockTitle = "Tag cloud container block";
 	const blockDescription = "Component to create tag cloud container block";
-	const blockCategory = "common";
+	const blockCategory = "containers";
     const blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

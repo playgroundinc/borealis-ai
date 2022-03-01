@@ -16,7 +16,7 @@ export default function text2UpBlock() {
   const slug = "text-2-up";
   const title = "Text 2 Up";
   const description = "A Text 2 Up Page Strip";
-  const category = "page-strips";
+  const category = "rows";
   const icon = "align-left"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {

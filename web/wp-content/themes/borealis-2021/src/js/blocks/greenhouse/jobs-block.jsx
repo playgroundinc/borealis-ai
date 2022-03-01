@@ -9,7 +9,7 @@ export default function jobBlock() {
     const blockSlug = "job-block";
 	const blockTitle = "Create job block";
 	const blockDescription = "Component to create job block";
-	const blockCategory = "common";
+	const blockCategory = "jobs";
     const blockIcon = "users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

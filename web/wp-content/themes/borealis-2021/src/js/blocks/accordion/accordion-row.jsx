@@ -14,7 +14,7 @@ export default function accordionBlock() {
 	const blockSlug = "accordion-row";
 	const blockTitle = "Accordion Row";
 	const blockDescription = "Creates a single expandable accordion item.";
-	const blockCategory = "common";
+	const blockCategory = "rows";
     const blockIcon = "table-row-after"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const stringAttrs = ['title'];
