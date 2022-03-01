@@ -193,7 +193,7 @@ class PG_Allowed_Blocks {
 
         // Research Blogs
         if ($this->post_type === 'research-blogs') {
-            $research_blog_blocks = array_merge($body_copy_blocks, $this->research_blog_blocks);
+            $research_blog_blocks = array_merge($body_copy_blocks, $this->research_blogs_blocks);
             return $research_blog_blocks;
         } 
         // Team Members
