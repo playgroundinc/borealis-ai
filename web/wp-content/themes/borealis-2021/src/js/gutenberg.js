@@ -86,6 +86,7 @@ import customSubsectionBlock from './blocks/sidebar-table-of-contents/custom-sub
 // Slider Blocks
 import sliderBlock from "./blocks/slider/slider-container.jsx";
 import newsSlideBlock from './blocks/slider/news-slide.jsx';
+import testimonialSliderBlock from './blocks/slider/testimonial-slider.jsx';
 
 // Statisitcs Blocks
 import statisticsBlock from "./blocks/stats/statistics-block.jsx";
@@ -165,7 +166,7 @@ productContainerBlock();
 // Slide Blocks
 sliderBlock();
 newsSlideBlock();
-
+testimonialSliderBlock();
 
 // Greenhouse Blocks
 jobBlock();
