@@ -8,11 +8,11 @@ export default function pageStripGraphicContainer() {
   const { i18n } = wp;
 
   const blockSlug = "page-strip-graphic-container"; // slug for the block
-  const blockTitle = "Create page strip graphic container block";
+  const blockTitle = "Graphic Page Strip Container";
   const blockDescription =
     "Component to create page strip graphic container block";
-  const blockCategory = "common";
-  const blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  const blockCategory = "containers";
+  const blockIcon = "cover-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {
     title: {

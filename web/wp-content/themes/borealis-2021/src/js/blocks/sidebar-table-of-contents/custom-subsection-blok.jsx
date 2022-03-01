@@ -12,7 +12,7 @@ export default function customSubsectionBlock() {
     const blockSlug = "custom-subsection-block"; // slug for the block
 	const blockTitle = "Custom Subsection";
 	const blockDescription = "Component to create custom subsection block";
-	const blockCategory = "common";
+	const blockCategory = "sections";
     const blockIcon = "admin-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

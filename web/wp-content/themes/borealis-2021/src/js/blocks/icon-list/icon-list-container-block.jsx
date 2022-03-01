@@ -11,7 +11,7 @@ export default function iconListContainerBlock() {
   const blockSlug = "icon-list-container-block"; // slug for the block
   const blockTitle = "Icon List Container";
   const blockDescription = "Component to create icon list container block";
-  const blockCategory = "common";
+  const blockCategory = "containers";
   const blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {

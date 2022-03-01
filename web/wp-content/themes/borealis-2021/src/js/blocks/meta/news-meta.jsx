@@ -19,7 +19,7 @@ export default function researchBlogMetaBlock() {
 	registerBlockType(`${namespace}/news-meta-block`, {
 		title: 'News Meta',
 		icon: 'align-full-width',
-        category: 'common',
+        category: 'meta',
         supports: {
             multiple: false,
         },
