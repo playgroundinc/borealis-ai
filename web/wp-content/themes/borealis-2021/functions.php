@@ -83,6 +83,7 @@ require get_template_directory() . '/inc/gutenberg/render-icon-btn.php';
 
 // Partials
 require get_template_directory() . '/inc/partials/search-bar.php';
+require get_template_directory() . '/inc/partials/search-bar-jobs.php';
 require get_template_directory() . '/inc/partials/search-bar-main.php';
 require get_template_directory() . '/inc/partials/search-bar-main-result.php';
 
@@ -195,6 +196,7 @@ require get_template_directory() . '/inc/gutenberg/stats/render-stat-column-bloc
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-jobs-block.php';
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-featured-jobs-block.php';
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-single-job-item.php';
+require get_template_directory() . '/inc/gutenberg/greenhouse/render-filter-jobs.php';
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-job-highlight-block.php';
 
 // Sidebar Table Of Contents Blocks
