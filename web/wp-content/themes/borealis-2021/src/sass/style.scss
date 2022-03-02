@@ -4,6 +4,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @layer components {
+  .canvas {
+    height: 615px !important;
+  }
   .pill {
     @apply border border-shade-black-400 px-4 py-1 rounded-pill inline-block text-center paragraph-sm;
   }

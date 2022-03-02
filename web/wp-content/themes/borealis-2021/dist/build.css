@@ -695,6 +695,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.canvas {
+    height: 615px !important; }
 .pill{
   font-size: 14px;
   font-family: Inter, sans-serif;
