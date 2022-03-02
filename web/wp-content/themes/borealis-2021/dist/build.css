@@ -1071,11 +1071,14 @@ ol.footnotes li small{
   bottom: 0px;
   left: 0px;
 }
-.-left-4{
-  left: -16px;
+.top-0{
+  top: 0px;
 }
 .left-0{
   left: 0px;
+}
+.-left-4{
+  left: -16px;
 }
 .right-0{
   right: 0px;
@@ -1094,9 +1097,6 @@ ol.footnotes li small{
 }
 .-top-2{
   top: -8px;
-}
-.top-0{
-  top: 0px;
 }
 .top-6{
   top: 24px;
@@ -1130,6 +1130,9 @@ ol.footnotes li small{
 }
 .m-auto{
   margin: auto;
+}
+.m-0{
+  margin: 0px;
 }
 .mx-auto{
   margin-left: auto;
@@ -1247,6 +1250,9 @@ ol.footnotes li small{
 .mt-5{
   margin-top: 20px;
 }
+.mb-72{
+  margin-bottom: 288px;
+}
 .block{
   display: block;
 }
@@ -1262,6 +1268,12 @@ ol.footnotes li small{
 .hidden{
   display: none;
 }
+.h-40{
+  height: 160px;
+}
+.h-full{
+  height: 100%;
+}
 .h-fit{
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -1269,9 +1281,6 @@ ol.footnotes li small{
 }
 .h-screen{
   height: 100vh;
-}
-.h-full{
-  height: 100%;
 }
 .h-6{
   height: 24px;
@@ -1473,6 +1482,9 @@ ol.footnotes li small{
 }
 .scroll-smooth{
   scroll-behavior: smooth;
+}
+.whitespace-nowrap{
+  white-space: nowrap;
 }
 .break-normal{
   overflow-wrap: normal;
@@ -1971,6 +1983,9 @@ ol.footnotes li small{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.duration-100{
+  transition-duration: 100ms;
+}
 .duration-300{
   transition-duration: 300ms;
 }
@@ -2044,27 +2059,6 @@ ol.footnotes li small{
   .wp-block-embed__wrapper iframe {
     max-height: 100%; }
 
-.m-scroll {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 160px;
-  margin: auto;
-  overflow: hidden;
-  z-index: 1; }
-
-.m-scroll__title {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  white-space: nowrap;
-  transition: all 1s ease; }
-
 .m-scroll__title > div.scroll1 {
   display: flex;
   -webkit-animation: scrollText 34s infinite linear;
@@ -2079,14 +2073,6 @@ ol.footnotes li small{
   display: flex;
   -webkit-animation: scrollText 38s infinite linear;
           animation: scrollText 38s infinite linear; }
-
-.m-scroll__title h1 {
-  margin: 0;
-  color: #ffffff;
-  transition: all 2s ease; }
-
-.m-scroll__title a {
-  transition: all 0.3s ease; }
 
 .m-scroll__title a:hover {
   -webkit-text-stroke: 1px blue;

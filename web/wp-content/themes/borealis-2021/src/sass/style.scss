@@ -139,28 +139,6 @@
   }
 }
 
-.m-scroll {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 160px;
-  margin: auto;
-  overflow: hidden;
-  z-index: 1;
-}
-.m-scroll__title {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  white-space: nowrap;
-  // transform: scale(2);
-  transition: all 1s ease;
-}
 .m-scroll__title > div.scroll1 {
   display: flex;
   animation: scrollText 34s infinite linear;
@@ -175,20 +153,12 @@
   display: flex;
   animation: scrollText 38s infinite linear;
 }
-.m-scroll__title h1 {
-  margin: 0;
-  color: #ffffff;
-  transition: all 2s ease;
-}
-
-.m-scroll__title a {
-  transition: all 0.3s ease;
-}
 
 .m-scroll__title a:hover {
   -webkit-text-stroke: 1px blue;
   color: transparent;
 }
+
 @keyframes scrollText {
   from {
     transform: translateX(0%);
