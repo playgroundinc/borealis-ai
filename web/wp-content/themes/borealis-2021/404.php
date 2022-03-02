@@ -18,7 +18,6 @@ $allowed_html = pg_allowed_html();
 ?>
 
 <div id="content">
-    <canvas id="canvas"></canvas>
     <div class="m-scroll">
         <div class="m-scroll__title border-b border-shade-black-400">
             <div class="scroll1">
