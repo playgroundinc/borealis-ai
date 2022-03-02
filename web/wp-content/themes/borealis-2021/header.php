@@ -54,7 +54,7 @@
             $hero_image = get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg';
         }
         $headline = get_post_meta($post->ID, 'headline', true);
-        $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications']) ;
+        $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications', 'product', 'program']);
     ?>
     <style>
         .custom-gallery:hover,
@@ -115,13 +115,37 @@
                         <?php echo $header; ?>
                     </div>
                 <?php endif; // End of check for empty blog header. ?>
-                <?php elseif (is_singular(['publications'])): // Start of check for singular News or Blog ?>
+            <?php elseif (is_singular(['publications'])): // Start of check for singular News or Blog ?>
                 <?php $header = pg_generate_publication_header($post->ID); ?>
                 <?php if (isset($header) && !empty($header)): // Start of Check for empty Blog header ?>
                     <div class="container">
                         <?php echo $header; ?>
                     </div>
                 <?php endif; // End of check for empty blog header. ?>
+            <?php elseif (is_singular('team-member')): ?>
+                <div class="border-b border-shade-grey-700">
+                    <div class="container">
+                        <?php $header = pg_generate_team_member_header($post->ID); ?>
+                        <?php if (isset($header) && !empty($header)): ?>
+                            <?php echo $header ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php elseif (is_singular('product')): ?>
+                <div class="container">
+                    <?php $header = pg_generate_product_header($post->ID); ?>
+                    <?php if (isset($header) && !empty($header)): ?>
+                        <?php echo $header ?>
+                    <?php endif; ?>
+                </div>
+
+            <?php elseif (is_singular('program')): ?>
+                <div class="container">
+                    <?php $header = pg_generate_program_header($post->ID); ?>
+                    <?php if (isset($header) && !empty($header)): ?>
+                        <?php echo $header ?>
+                    <?php endif; ?>
+                </div>
             <?php elseif ($no_header): ?>
                 <h1 class="sr-only"><?php echo esc_html(the_title()); ?></h1>
             <?php else: ?>
