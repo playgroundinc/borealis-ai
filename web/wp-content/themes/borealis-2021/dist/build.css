@@ -695,6 +695,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.canvas {
+    height: 615px !important; }
 .pill{
   font-size: 14px;
   font-family: Inter, sans-serif;
@@ -1145,6 +1147,9 @@ ol.footnotes li small{
 .z-50{
   z-index: 50;
 }
+.-z-10{
+  z-index: -10;
+}
 .z-0{
   z-index: 0;
 }
@@ -1328,6 +1333,9 @@ ol.footnotes li small{
 }
 .max-h-15{
   max-height: 60px;
+}
+.min-h-\[615px\]{
+  min-height: 615px;
 }
 .min-h-\[125px\]{
   min-height: 125px;
@@ -2724,6 +2732,9 @@ ol.footnotes li small{
   }
     .md\:pl-1\/12{
     padding-left: calc(100% / 12);
+  }
+    .md\:pb-19{
+    padding-bottom: 76px;
   }
     .md\:pb-15{
     padding-bottom: 60px;
