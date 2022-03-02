@@ -10,6 +10,7 @@ import teamMemberMetaBlock from "./blocks/meta/team-member-meta.jsx";
 import authorMetaBlock from './blocks/meta/author-meta.jsx';
 import publicationMetaBlock from './blocks/meta/publications-meta.jsx';
 import productMetaBlock from './blocks/meta/product-meta.jsx';
+import programMetaBlock from './blocks/meta/program-meta.jsx';
 
 import imageTextBlock from "./blocks/image-text.jsx";
 
@@ -38,6 +39,10 @@ import codeBlock from './blocks/code/code-block.jsx';
 // Content Columns
 import contentCardContainerBlock from "./blocks/content-cards/content-card-container.jsx";
 import contentCardBlock from "./blocks/content-cards/content-card.jsx";
+
+// Fellowships
+import fellowshipContainerBlock from './blocks/fellowships/fellowship-container-block.jsx';
+import fellowshipBlock from './blocks/fellowships/fellowship-block.jsx';
 
 // Figures
 import compareFiguresBlock from './blocks/figures/compare-figures-block.jsx';
@@ -86,6 +91,8 @@ import customSubsectionBlock from './blocks/sidebar-table-of-contents/custom-sub
 // Slider Blocks
 import sliderBlock from "./blocks/slider/slider-container.jsx";
 import newsSlideBlock from './blocks/slider/news-slide.jsx';
+import testimonialSliderBlock from './blocks/slider/testimonial-slider.jsx';
+import testimonialSlideBlock from './blocks/slider/testimonial-slide.jsx';
 
 // Statisitcs Blocks
 import statisticsBlock from "./blocks/stats/statistics-block.jsx";
@@ -111,6 +118,7 @@ teamMemberMetaBlock();
 authorMetaBlock();
 publicationMetaBlock();
 productMetaBlock();
+programMetaBlock();
 
 // Init blocks here
 imageTextBlock();
@@ -140,6 +148,10 @@ contentCardBlock();
 compareCodeBlock();
 codeBlock();
 
+// Fellowship
+fellowshipBlock();
+fellowshipContainerBlock();
+
 // Figures
 compareFiguresBlock();
 
@@ -165,7 +177,8 @@ productContainerBlock();
 // Slide Blocks
 sliderBlock();
 newsSlideBlock();
-
+testimonialSliderBlock();
+testimonialSlideBlock();
 
 // Greenhouse Blocks
 jobBlock();

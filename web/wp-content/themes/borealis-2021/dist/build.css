@@ -695,6 +695,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.canvas {
+    height: 615px !important; }
 .pill{
   font-size: 14px;
   font-family: Inter, sans-serif;
@@ -1036,6 +1038,25 @@ ol.footnotes li small{
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
   padding: 48px;
 }
+.paragraph-style .paragraph-blog{
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  line-height: 1.80;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .paragraph-style .paragraph-blog{
+    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .paragraph-style .paragraph-blog{
+    font-size: 18px;
+  }
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1108,6 +1129,9 @@ ol.footnotes li small{
 .-top-20{
   top: -80px;
 }
+.bottom-12{
+  bottom: 48px;
+}
 .top-96{
   top: 384px;
 }
@@ -1122,6 +1146,9 @@ ol.footnotes li small{
 }
 .z-50{
   z-index: 50;
+}
+.-z-10{
+  z-index: -10;
 }
 .z-0{
   z-index: 0;
@@ -1233,6 +1260,9 @@ ol.footnotes li small{
 .mt-9{
   margin-top: 36px;
 }
+.mb-13{
+  margin-bottom: 52px;
+}
 .mt-14{
   margin-top: 56px;
 }
@@ -1247,6 +1277,9 @@ ol.footnotes li small{
 }
 .ml-15{
   margin-left: 60px;
+}
+.mt-22{
+  margin-top: 88px;
 }
 .mt-5{
   margin-top: 20px;
@@ -1283,6 +1316,9 @@ ol.footnotes li small{
 .h-4{
   height: 16px;
 }
+.h-35{
+  height: 140px;
+}
 .h-13{
   height: 52px;
 }
@@ -1292,8 +1328,20 @@ ol.footnotes li small{
 .max-h-screen{
   max-height: 100vh;
 }
+.max-h-full{
+  max-height: 100%;
+}
+.max-h-18{
+  max-height: 72px;
+}
 .max-h-\[450px\]{
   max-height: 450px;
+}
+.max-h-15{
+  max-height: 60px;
+}
+.min-h-\[615px\]{
+  min-height: 615px;
 }
 .min-h-\[125px\]{
   min-height: 125px;
@@ -1337,8 +1385,17 @@ ol.footnotes li small{
 .w-23{
   width: 92px;
 }
+.w-35{
+  width: 140px;
+}
+.w-36{
+  width: 144px;
+}
 .w-42{
   width: 168px;
+}
+.w-7\/12{
+  width: 58.333333%;
 }
 .w-1\/2{
   width: 50%;
@@ -1373,6 +1430,12 @@ ol.footnotes li small{
 .grow-0{
   flex-grow: 0;
 }
+.basis-1\/4{
+  flex-basis: 25%;
+}
+.basis-8\/12{
+  flex-basis: 66.666667%;
+}
 .basis-1\/2{
   flex-basis: 50%;
 }
@@ -1385,6 +1448,9 @@ ol.footnotes li small{
 .basis-7\/12{
   flex-basis: 58.333333%;
 }
+.basis-fellowship{
+  flex-basis: calc((100% - 28px) / 2);
+}
 .basis-team-member{
   flex-basis: 310px;
 }
@@ -1394,14 +1460,17 @@ ol.footnotes li small{
 .basis-1\/6{
   flex-basis: 16.666667%;
 }
-.basis-8\/12{
-  flex-basis: 66.666667%;
-}
 .basis-5\/12{
   flex-basis: 41.666667%;
 }
 .basis-2\/12{
   flex-basis: 16.666667%;
+}
+.basis-4\/12{
+  flex-basis: 33.333333%;
+}
+.basis-3\/12{
+  flex-basis: 25%;
 }
 .rotate-0{
   --tw-rotate: 0deg;
@@ -1539,6 +1608,10 @@ ol.footnotes li small{
   --tw-border-opacity: 1;
   border-color: rgb(101 104 146 / var(--tw-border-opacity));
 }
+.border-shade-grey-700{
+  --tw-border-opacity: 1;
+  border-color: rgb(92 93 118 / var(--tw-border-opacity));
+}
 .border-primary-electric-purple-400{
   --tw-border-opacity: 1;
   border-color: rgb(96 55 215 / var(--tw-border-opacity));
@@ -1546,10 +1619,6 @@ ol.footnotes li small{
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-.border-shade-grey-700{
-  --tw-border-opacity: 1;
-  border-color: rgb(92 93 118 / var(--tw-border-opacity));
 }
 .border-shade-black-400{
   --tw-border-opacity: 1;
@@ -1591,6 +1660,13 @@ ol.footnotes li small{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
 }
+.bg-shade-grey-50{
+  background-color: rgba(244,244,251,0.5);
+}
+.bg-alert-error-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 2 15 / var(--tw-bg-opacity));
+}
 .bg-tint-teal-400{
   --tw-bg-opacity: 1;
   background-color: rgb(141 250 201 / var(--tw-bg-opacity));
@@ -1598,9 +1674,6 @@ ol.footnotes li small{
 .bg-primary-electric-purple-400{
   --tw-bg-opacity: 1;
   background-color: rgb(96 55 215 / var(--tw-bg-opacity));
-}
-.bg-shade-grey-50{
-  background-color: rgba(244,244,251,0.5);
 }
 .bg-tint-lightBlue-400{
   --tw-bg-opacity: 1;
@@ -1670,6 +1743,10 @@ ol.footnotes li small{
   padding-top: 40px;
   padding-bottom: 40px;
 }
+.py-9{
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
 .py-18{
   padding-top: 72px;
   padding-bottom: 72px;
@@ -1722,6 +1799,10 @@ ol.footnotes li small{
   padding-top: 56px;
   padding-bottom: 56px;
 }
+.py-12{
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
 .pt-13{
   padding-top: 52px;
 }
@@ -1773,6 +1854,21 @@ ol.footnotes li small{
 .pl-5{
   padding-left: 20px;
 }
+.pt-115{
+  padding-top: 460px;
+}
+.pt-25{
+  padding-top: 100px;
+}
+.pt-video{
+  padding-top: 70.17%;
+}
+.pb-25{
+  padding-bottom: 100px;
+}
+.pl-8{
+  padding-left: 32px;
+}
 .pb-15{
   padding-bottom: 60px;
 }
@@ -1787,9 +1883,6 @@ ol.footnotes li small{
 }
 .pt-15{
   padding-top: 60px;
-}
-.pt-video{
-  padding-top: 70.17%;
 }
 .pt-6{
   padding-top: 24px;
@@ -1821,6 +1914,9 @@ ol.footnotes li small{
 .pt-4{
   padding-top: 16px;
 }
+.pb-1{
+  padding-bottom: 4px;
+}
 .pt-gallery{
   padding-top: 600px;
 }
@@ -1839,9 +1935,6 @@ ol.footnotes li small{
 .pt-featured-image-sm{
   padding-top: 268px;
 }
-.pl-8{
-  padding-left: 32px;
-}
 .pb-13{
   padding-bottom: 52px;
 }
@@ -1856,6 +1949,12 @@ ol.footnotes li small{
 }
 .pt-72{
   padding-top: 288px;
+}
+.pb-29{
+  padding-bottom: 116px;
+}
+.pt-180{
+  padding-top: 720px;
 }
 .pt-11{
   padding-top: 44px;
@@ -1972,6 +2071,9 @@ ol.footnotes li small{
 }
 .duration-500{
   transition-duration: 500ms;
+}
+.duration-700{
+  transition-duration: 700ms;
 }
 .container{
   margin: 0 auto;
@@ -2128,6 +2230,9 @@ ol.footnotes li small{
   .nth-child-2\:mt-5:nth-child(n + 2){
   margin-top: 20px;
 }
+  .nth-child-2\:mt-17:nth-child(n + 2){
+  margin-top: 68px;
+}
   .nth-child-2\:mt-10:nth-child(n + 2){
   margin-top: 40px;
 }
@@ -2135,8 +2240,20 @@ ol.footnotes li small{
   padding-top: 48px;
 }
   @media (min-width: 375px){
+  .sm\:flex{
+    display: flex;
+  }
   .sm\:w-1\/2{
     width: 50%;
+  }
+  .sm\:nth-child-2\:mt-0:nth-child(n + 2){
+    margin-top: 0px;
+  }
+  .sm\:nth-child-2n\:mr-7:nth-child(2n + 1){
+    margin-right: 28px;
+  }
+  .sm\:nth-child-3\:mt-17:nth-child(n + 3){
+    margin-top: 68px;
   }
 }
   @media (min-width: 768px){
@@ -2346,6 +2463,9 @@ ol.footnotes li small{
     .md\:mt-10{
     margin-top: 40px;
   }
+    .md\:mb-10{
+    margin-bottom: 40px;
+  }
     .md\:mb-15{
     margin-bottom: 60px;
   }
@@ -2403,11 +2523,17 @@ ol.footnotes li small{
     .md\:w-3\/4{
     width: 75%;
   }
+    .md\:w-36{
+    width: 144px;
+  }
     .md\:w-5\/12{
     width: 41.666667%;
   }
     .md\:w-5\/6{
     width: 83.333333%;
+  }
+    .md\:w-7\/12{
+    width: 58.333333%;
   }
     .md\:w-1\/3{
     width: 33.333333%;
@@ -2417,6 +2543,9 @@ ol.footnotes li small{
   }
     .md\:w-3\/8{
     width: calc((100% / 8) * 3);
+  }
+    .md\:basis-3\/4{
+    flex-basis: 75%;
   }
     .md\:basis-1\/4{
     flex-basis: 25%;
@@ -2456,6 +2585,9 @@ ol.footnotes li small{
   }
     .md\:justify-end{
     justify-content: flex-end;
+  }
+    .md\:justify-center{
+    justify-content: center;
   }
     .md\:justify-between{
     justify-content: space-between;
@@ -2540,6 +2672,12 @@ ol.footnotes li small{
     .md\:pb-6{
     padding-bottom: 24px;
   }
+    .md\:pt-video-md{
+    padding-top: 34.59%;
+  }
+    .md\:pt-0{
+    padding-top: 0px;
+  }
     .md\:pl-0{
     padding-left: 0px;
   }
@@ -2555,14 +2693,11 @@ ol.footnotes li small{
     .md\:pr-10{
     padding-right: 40px;
   }
-    .md\:pt-video-md{
-    padding-top: 34.59%;
-  }
-    .md\:pt-0{
-    padding-top: 0px;
-  }
     .md\:pt-11{
     padding-top: 44px;
+  }
+    .md\:pl-10{
+    padding-left: 40px;
   }
     .md\:pb-12{
     padding-bottom: 48px;
@@ -2600,8 +2735,17 @@ ol.footnotes li small{
     .md\:pl-1\/12{
     padding-left: calc(100% / 12);
   }
+    .md\:pb-19{
+    padding-bottom: 76px;
+  }
+    .md\:pb-15{
+    padding-bottom: 60px;
+  }
     .md\:pb-4{
     padding-bottom: 16px;
+  }
+    .md\:text-left{
+    text-align: left;
   }
     .md\:text-center{
     text-align: center;
@@ -2769,6 +2913,9 @@ ol.footnotes li small{
     .tb\:pl-4{
     padding-left: 16px;
   }
+    .tb\:pt-130{
+    padding-top: 520px;
+  }
     .tb\:container{
     margin: 0 auto;
     max-width: 1440px;
@@ -2837,6 +2984,9 @@ ol.footnotes li small{
     .lg\:w-3\/8{
     width: calc((100% / 8) * 3);
   }
+    .lg\:w-full-bleed{
+    width: calc(((1440px / 12) * 4) + ((100vw - 1440px) / 2));
+  }
     .lg\:basis-1\/5{
     flex-basis: 20%;
   }
@@ -2879,6 +3029,9 @@ ol.footnotes li small{
   }
     .lg\:pl-8{
     padding-left: 32px;
+  }
+    .lg\:pt-125{
+    padding-top: 500px;
   }
     .lg\:pt-20{
     padding-top: 80px;

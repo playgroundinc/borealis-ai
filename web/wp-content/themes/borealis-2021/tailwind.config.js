@@ -93,7 +93,7 @@ module.exports = {
 				},
 				alert: {
 					error: {
-						400: "#F05C5C",
+						400: "#CA020F",
 					},
 					success: {
 						400: "#3ECD80"

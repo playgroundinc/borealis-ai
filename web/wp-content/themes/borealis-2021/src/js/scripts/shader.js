@@ -89,7 +89,7 @@ function perlinNoise() {
             return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1),
                                             dot(p2,x2), dot(p3,x3) ) );
         }
-    `
+    `;
 }
 
 function fragmentShader() {
@@ -110,82 +110,83 @@ function fragmentShader() {
             float offset = (1.0 / length(vec2(p.x - p_mouse.x, p.y + p_mouse.y))) * noise / 2.0;
 
             vec3 rgb_color = vec3(
-                (snoise(vec3(p.x / 3.0, p.y / 3.0, u_time / 1.1)) + 0.1),
-                (snoise(vec3(p.x / 2.0, p.y / 2.0, u_time / 1.2)) + 0.1),
-                (snoise(vec3(p.x / 5.0, p.y / 5.0, u_time / 1.3)) + 1.0) / 2.0 + offset
+                0,
+                (snoise(vec3(p.x / 2.0, p.y / 2.0, u_time / 1.1)) + 0.2),
+                (snoise(vec3(p.x / 4.0, p.y / 4.0, u_time / 1.3)) + 0.4)
             );
 
             gl_FragColor = vec4(rgb_color, 1.0);
         }
-    `
+    `;
 }
 
 function init() {
-    const container = document.getElementById('canvas')
+    const container = document.getElementById("canvas");
 
-    scene = new THREE.Scene()
-    camera = new THREE.Camera()
-    camera.position.z = 1
+    scene = new THREE.Scene();
+    camera = new THREE.Camera();
+    camera.position.z = 1;
 
-    const geometry = new THREE.PlaneBufferGeometry(2, 2)
-    
+    const geometry = new THREE.PlaneBufferGeometry(2, 2);
+
     const uniforms = {
-        u_time: { type: 'f', value: 100.0 },
-        u_resolution: { type: 'v2', value: new THREE.Vector2() },
-        u_mouse: { type: 'v2', value: new THREE.Vector2() },
-        c_mouse: { type: 'v2', value: new THREE.Vector2() }
-    }
+        u_time: { type: "f", value: 100.0 },
+        u_resolution: { type: "v2", value: new THREE.Vector2() },
+        u_mouse: { type: "v2", value: new THREE.Vector2() },
+        c_mouse: { type: "v2", value: new THREE.Vector2() },
+    };
 
     const material = new THREE.ShaderMaterial({
         uniforms: uniforms,
-        fragmentShader: [
-            perlinNoise(),
-            fragmentShader()
-        ].join('\n'),
-    })
+        fragmentShader: [perlinNoise(), fragmentShader()].join("\n"),
+    });
 
-    const mesh = new THREE.Mesh(geometry, material)
+    const mesh = new THREE.Mesh(geometry, material);
 
-    let mouseY = 0
-    let mouseX = 0
+    let mouseY = 0;
+    let mouseX = 0;
 
     const renderer = new THREE.WebGLRenderer({
-        canvas: container
-    })
+        canvas: container,
+    });
 
-    renderer.setSize(renderer.domElement.width, renderer.domElement.height)
+    renderer.setSize(renderer.domElement.width, renderer.domElement.height);
 
-    window.addEventListener('resize', setSize, false)
+    window.addEventListener("resize", setSize, false);
 
-    document.addEventListener('mousemove', (event) => {
-        mouseX = event.pageX
-        mouseY = event.pageY
-    }, false)
+    document.addEventListener(
+        "mousemove",
+        (event) => {
+            mouseX = event.pageX;
+            mouseY = event.pageY;
+        },
+        false
+    );
 
-    document.body.appendChild(renderer.domElement)
+    document.body.appendChild(renderer.domElement);
 
-    scene.add(mesh)
-    setSize()
-    animate()
+    scene.add(mesh);
+    setSize();
+    animate();
 
-    function setSize () {
-        container.width = window.innerWidth
-        container.height = window.innerHeight
-        renderer.setSize(renderer.domElement.width, renderer.domElement.height)
-        uniforms.u_resolution.value.x = renderer.domElement.width
-        uniforms.u_resolution.value.y = renderer.domElement.height
+    function setSize() {
+        container.width = window.innerWidth;
+        container.height = window.innerHeight;
+        renderer.setSize(renderer.domElement.width, renderer.domElement.height);
+        uniforms.u_resolution.value.x = renderer.domElement.width;
+        uniforms.u_resolution.value.y = renderer.domElement.height;
     }
 
-    function animate () {
-        requestAnimationFrame(animate)
-        render()
+    function animate() {
+        requestAnimationFrame(animate);
+        render();
     }
 
-    function render () {
-        uniforms.u_time.value += 0.005
-        uniforms.u_mouse.value.x += (mouseX - uniforms.u_mouse.value.x) / 30
-        uniforms.u_mouse.value.y += (mouseY - uniforms.u_mouse.value.y) / 30
-        renderer.render(scene, camera)
+    function render() {
+        uniforms.u_time.value += 0.003;
+        uniforms.u_mouse.value.x += (mouseX - uniforms.u_mouse.value.x) / 30;
+        uniforms.u_mouse.value.y += (mouseY - uniforms.u_mouse.value.y) / 30;
+        renderer.render(scene, camera);
     }
 }
 
