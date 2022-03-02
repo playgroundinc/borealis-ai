@@ -7,3 +7,11 @@ if (carousels.length) {
         CarouselClass.init();
     });
 }
+
+const testimonialSliders = [...document.querySelectorAll('.testimonial-slider')];
+if (testimonialSliders.length) {
+    testimonialSliders.forEach((carousel) => {
+        const CarouselClass = new Carousel(carousel, 'testimonial');
+        CarouselClass.init();
+    });
+}
