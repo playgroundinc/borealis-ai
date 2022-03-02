@@ -54,7 +54,7 @@
             $hero_image = get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg';
         }
         $headline = get_post_meta($post->ID, 'headline', true);
-        $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications']) ;
+        $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications', 'product', 'program']);
     ?>
     <style>
         .custom-gallery:hover,
@@ -130,6 +130,13 @@
                             <?php echo $header ?>
                         <?php endif; ?>
                     </div>
+                </div>
+            <?php elseif (is_singular('product')): ?>
+                <div class="container">
+                    <?php $header = pg_generate_product_header($post->ID); ?>
+                    <?php if (isset($header) && !empty($header)): ?>
+                        <?php echo $header ?>
+                    <?php endif; ?>
                 </div>
             <?php elseif ($no_header): ?>
                 <h1 class="sr-only"><?php echo esc_html(the_title()); ?></h1>

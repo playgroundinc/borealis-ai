@@ -1419,6 +1419,9 @@ ol.footnotes li small{
 .basis-2\/12{
   flex-basis: 16.666667%;
 }
+.basis-4\/12{
+  flex-basis: 33.333333%;
+}
 .rotate-0{
   --tw-rotate: 0deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1899,6 +1902,9 @@ ol.footnotes li small{
 }
 .pr-3{
   padding-right: 12px;
+}
+.pt-115{
+  padding-top: 460px;
 }
 .text-center{
   text-align: center;
@@ -2563,6 +2569,9 @@ ol.footnotes li small{
     .md\:pb-6{
     padding-bottom: 24px;
   }
+    .md\:pt-0{
+    padding-top: 0px;
+  }
     .md\:pl-0{
     padding-left: 0px;
   }
@@ -2580,9 +2589,6 @@ ol.footnotes li small{
   }
     .md\:pt-video-md{
     padding-top: 34.59%;
-  }
-    .md\:pt-0{
-    padding-top: 0px;
   }
     .md\:pt-11{
     padding-top: 44px;
