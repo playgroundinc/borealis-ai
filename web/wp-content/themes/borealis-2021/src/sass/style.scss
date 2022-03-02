@@ -107,6 +107,9 @@
     .wp-block-code {
         @apply bg-shade-grey-100 rounded-large p-12 grow;
     }
+    .paragraph-style .paragraph-blog {
+        @apply paragraph;
+    }
 }
 
 .visible-scroll {

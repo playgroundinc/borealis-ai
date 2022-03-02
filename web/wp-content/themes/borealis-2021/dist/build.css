@@ -1036,6 +1036,25 @@ ol.footnotes li small{
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
   padding: 48px;
 }
+.paragraph-style .paragraph-blog{
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  line-height: 1.80;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .paragraph-style .paragraph-blog{
+    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .paragraph-style .paragraph-blog{
+    font-size: 18px;
+  }
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1379,6 +1398,12 @@ ol.footnotes li small{
 .grow-0{
   flex-grow: 0;
 }
+.basis-1\/4{
+  flex-basis: 25%;
+}
+.basis-8\/12{
+  flex-basis: 66.666667%;
+}
 .basis-1\/2{
   flex-basis: 50%;
 }
@@ -1399,9 +1424,6 @@ ol.footnotes li small{
 }
 .basis-1\/6{
   flex-basis: 16.666667%;
-}
-.basis-8\/12{
-  flex-basis: 66.666667%;
 }
 .basis-5\/12{
   flex-basis: 41.666667%;
@@ -1545,6 +1567,10 @@ ol.footnotes li small{
   --tw-border-opacity: 1;
   border-color: rgb(101 104 146 / var(--tw-border-opacity));
 }
+.border-shade-grey-700{
+  --tw-border-opacity: 1;
+  border-color: rgb(92 93 118 / var(--tw-border-opacity));
+}
 .border-primary-electric-purple-400{
   --tw-border-opacity: 1;
   border-color: rgb(96 55 215 / var(--tw-border-opacity));
@@ -1552,10 +1578,6 @@ ol.footnotes li small{
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-.border-shade-grey-700{
-  --tw-border-opacity: 1;
-  border-color: rgb(92 93 118 / var(--tw-border-opacity));
 }
 .border-shade-black-400{
   --tw-border-opacity: 1;
@@ -1785,6 +1807,9 @@ ol.footnotes li small{
 }
 .pb-15{
   padding-bottom: 60px;
+}
+.pt-25{
+  padding-top: 100px;
 }
 .pl-4{
   padding-left: 16px;
@@ -2569,6 +2594,9 @@ ol.footnotes li small{
     .md\:pb-6{
     padding-bottom: 24px;
   }
+    .md\:pt-0{
+    padding-top: 0px;
+  }
     .md\:pl-0{
     padding-left: 0px;
   }
@@ -2586,9 +2614,6 @@ ol.footnotes li small{
   }
     .md\:pt-video-md{
     padding-top: 34.59%;
-  }
-    .md\:pt-0{
-    padding-top: 0px;
   }
     .md\:pt-11{
     padding-top: 44px;
@@ -2631,6 +2656,12 @@ ol.footnotes li small{
   }
     .md\:pb-4{
     padding-bottom: 16px;
+  }
+    .md\:pb-15{
+    padding-bottom: 60px;
+  }
+    .md\:text-left{
+    text-align: left;
   }
     .md\:text-center{
     text-align: center;

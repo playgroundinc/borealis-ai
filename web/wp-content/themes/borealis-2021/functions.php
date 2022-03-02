@@ -99,6 +99,9 @@ require get_template_directory() . '/inc/partials/publications/publication-heade
 require get_template_directory() . '/inc/partials/publications/publication-sidebar.php';
 require get_template_directory() . '/inc/partials/publications/publication-related.php';
 
+// Partials - Team Member
+require get_template_directory() . '/inc/partials/team-member/team-member-header.php';
+
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';
 require get_template_directory() . '/inc/gutenberg/render-select-post-block.php';
