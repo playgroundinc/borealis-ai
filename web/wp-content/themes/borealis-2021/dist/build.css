@@ -1235,6 +1235,12 @@ ol.footnotes li small{
 .mt-5{
   margin-top: 20px;
 }
+.mb-72{
+  margin-bottom: 288px;
+}
+.mb-42{
+  margin-bottom: 168px;
+}
 .block{
   display: block;
 }
