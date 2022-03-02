@@ -95,8 +95,6 @@ if (!function_exists('pg_render_job_block')) {
                                     }
                                     echo pg_generate_job_query_bar($department_array);
                                     ?>
-
-
                                     <?php foreach ($department_array as $department) : ?>
                                         <?php if ($department['id'] === 0) : ?>
                                             <ul aria-labelledby="<?php echo $department['id'] ?>-tab" id="<?php echo $department['id'] ?>-content-panel" role="tabpanel" class="pt-3 tb:pt-0 nested-block w-full tb:w-8/12 flex flex-col relative top-0 tb:-top-8">
@@ -121,51 +119,7 @@ if (!function_exists('pg_render_job_block')) {
                                 </div>
                             </div>
                         <?php endif; ?>
-                        <!-- <?php wp_reset_query(); ?> -->
                     </div>
-                    <!-- <ul class="grow pt-7 md:pt-0 nested-block">
-                        <?php
-                        $departments_query = pg_get_query_values($_GET, 'Departments');
-                        if ($departments_query[0] === "0" or empty($departments_query)) {
-                            $url_all_jobs = $settings['greenhouse_url'] . "/jobs";
-                            $response = wp_remote_get($url_all_jobs, $args);
-                            $body = wp_remote_retrieve_body($response);
-                            $data = json_decode($body, true);
-                            if (is_wp_error($response) || !is_array($response) || empty($response)) {
-                                return null;
-                            }
-                            foreach ($data['jobs'] as $job) {
-                                $output = pg_render_filter_jobs_item($job['id'], $settings['greenhouse_api_key'], $settings['greenhouse_url']);
-                                if ($output) {
-                                    echo $output;
-                                }
-                            }
-                        } else {
-                            $args = array(
-                                'headers' => array(
-                                    'Authorization' => 'Basic' . esc_attr($settings['greenhouse_api_key'])
-                                )
-                            );
-                            $url = $settings['greenhouse_url'] . "/departments";
-                            $response = wp_remote_get($url, $args);
-                            $body = wp_remote_retrieve_body($response);
-                            $data = json_decode($body, true);
-                            if (is_wp_error($response) || !is_array($response) || empty($response)) {
-                                return null;
-                            }
-                            foreach ($data['departments'] as $department) {
-                                if ($departments_query[0] === strval($department['id'])) {
-                                    foreach ($department['jobs'] as $job) {
-                                        $output = pg_render_filter_jobs_item($job['id'], $settings['greenhouse_api_key'], $settings['greenhouse_url']);
-                                        if ($output) {
-                                            echo $output;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        ?>
-                    </ul> -->
                 </div>
             </div>
         </div>

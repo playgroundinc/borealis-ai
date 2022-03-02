@@ -1102,9 +1102,6 @@ ol.footnotes li small{
 .bottom-0{
   bottom: 0px;
 }
-.-top-8{
-  top: -32px;
-}
 .right-6{
   right: 24px;
 }
@@ -1253,9 +1250,6 @@ ol.footnotes li small{
 }
 .mt-5{
   margin-top: 20px;
-}
-.ml-0{
-  margin-left: 0px;
 }
 .block{
   display: block;
@@ -2673,145 +2667,127 @@ ol.footnotes li small{
   }
 }
   @media (min-width: 1000px){
-  .tb\:container .container{
-    margin: 0px;
-  }
-  .tb\:container .container{
+  .page .tb\:container .container{
     width: 100%;
   }
-  .tb\:container .container{
-    margin: 0px;
-  }
-  .tb\:container .container{
+  .page .tb\:container .container{
     width: 100%;
   }
-    .tb\:container .container .icon-list, .container .container .accordion-list{
+    .page .tb\:container .container .icon-list{
     width: 100%;
   }
-    .tb\:container .container .icon-list, .container .container .accordion-list{
+    .page .tb\:container .container .icon-list{
     width: 100%;
   }
-    .tb\:container .container .icon-list, .container .container .accordion-list{
-    width: 100%;
-  }
-    .tb\:container .container .icon-list, .container .container .accordion-list{
-    width: 100%;
-  }
-  .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
     display: none;
   }
-  .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
     display: none;
   }
-  .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
     display: none;
   }
-  .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
     display: none;
   }
-  .tb\:-top-8{
+    .tb\:-top-8{
     top: -32px;
   }
-  .tb\:m-0{
+    .tb\:m-0{
     margin: 0px;
   }
-  .tb\:mb-0{
+    .tb\:mb-0{
     margin-bottom: 0px;
   }
-  .tb\:mb-11{
+    .tb\:mb-11{
     margin-bottom: 44px;
   }
-  .tb\:mb-8{
+    .tb\:mb-8{
     margin-bottom: 32px;
   }
-  .tb\:mb-12{
+    .tb\:mb-12{
     margin-bottom: 48px;
   }
-  .tb\:mt-0{
+    .tb\:mt-0{
     margin-top: 0px;
   }
-  .tb\:block{
+    .tb\:block{
     display: block;
   }
-  .tb\:flex{
+    .tb\:flex{
     display: flex;
   }
-  .tb\:w-8\/12{
+    .tb\:w-8\/12{
     width: 66.666667%;
   }
-  .tb\:w-7\/12{
+    .tb\:w-7\/12{
     width: 58.333333%;
   }
-  .tb\:w-4\/12{
+    .tb\:w-4\/12{
     width: 33.333333%;
   }
-  .tb\:w-2\/6{
+    .tb\:w-2\/6{
     width: 33.333333%;
   }
-  .tb\:w-4\/6{
+    .tb\:w-4\/6{
     width: 66.666667%;
   }
-  .tb\:w-3\/12{
+    .tb\:w-3\/12{
     width: 25%;
   }
-  .tb\:w-1\/4{
+    .tb\:w-1\/4{
     width: 25%;
   }
-  .tb\:flex-row{
+    .tb\:flex-row{
     flex-direction: row;
   }
-  .tb\:flex-row-reverse{
-    flex-direction: row-reverse;
-  }
-  .tb\:items-end{
+    .tb\:items-end{
     align-items: flex-end;
   }
-  .tb\:justify-end{
+    .tb\:justify-end{
     justify-content: flex-end;
   }
-  .tb\:pt-6{
+    .tb\:pt-6{
     padding-top: 24px;
   }
-  .tb\:pb-8{
+    .tb\:pb-8{
     padding-bottom: 32px;
   }
-  .tb\:pt-0{
+    .tb\:pt-0{
     padding-top: 0px;
   }
-  .tb\:pl-5{
+    .tb\:pl-5{
     padding-left: 20px;
   }
-  .tb\:pl-6{
+    .tb\:pl-6{
     padding-left: 24px;
   }
-  .tb\:pb-4{
+    .tb\:pb-4{
     padding-bottom: 16px;
   }
-  .tb\:pl-4{
+    .tb\:pl-4{
     padding-left: 16px;
   }
-  .tb\:pt-7{
-    padding-top: 28px;
-  }
-  .tb\:container{
+    .tb\:container{
     margin: 0 auto;
     max-width: 1440px;
     width: calc(100% - 48px);
   }
-  @media (min-width: 768px){
+    @media (min-width: 768px){
     .tb\:container{
       width: calc(100% - 56px);
     }
   }
-  @media (min-width: 1920px){
+    @media (min-width: 1920px){
     .tb\:container{
       width: calc(100% - 0);
     }
   }
-  .group:hover .tb\:group-hover\:visible{
+    .group:hover .tb\:group-hover\:visible{
     visibility: visible;
   }
-  .group:hover .tb\:group-hover\:opacity-100{
+    .group:hover .tb\:group-hover\:opacity-100{
     opacity: 1;
   }
 }

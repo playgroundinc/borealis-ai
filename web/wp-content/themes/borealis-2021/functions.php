@@ -179,11 +179,8 @@ require get_template_directory() . '/inc/gutenberg/stats/render-stat-column-bloc
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-jobs-block.php';
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-featured-jobs-block.php';
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-single-job-item.php';
-<<<<<<< HEAD
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-filter-jobs.php';
-=======
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-job-highlight-block.php';
->>>>>>> 470cd841363a88c4336b2bd2617f90aba1ffe3d0
 
 // Sidebar Table Of Contents Blocks
 require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/render-custom-section-block.php';

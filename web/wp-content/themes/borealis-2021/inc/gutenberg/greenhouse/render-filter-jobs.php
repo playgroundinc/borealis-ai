@@ -12,7 +12,6 @@ if (!function_exists('pg_render_filter_jobs_item')) {
         if (!$job_id || !intval($job_id) > 0) {
             return null;
         }
-        // TODO: borealisai instead of borealisaitest, migration to real borealis job board.
         $url = $url . '/jobs/' . $job_id;
         $response = wp_remote_get($url, $args);
         $body = wp_remote_retrieve_body($response);
