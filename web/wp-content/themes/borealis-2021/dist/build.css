@@ -1311,6 +1311,9 @@ ol.footnotes li small{
 .max-h-screen{
   max-height: 100vh;
 }
+.max-h-full{
+  max-height: 100%;
+}
 .max-h-\[450px\]{
   max-height: 450px;
 }
@@ -1433,6 +1436,9 @@ ol.footnotes li small{
 }
 .basis-4\/12{
   flex-basis: 33.333333%;
+}
+.basis-3\/12{
+  flex-basis: 25%;
 }
 .rotate-0{
   --tw-rotate: 0deg;
@@ -1622,6 +1628,13 @@ ol.footnotes li small{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
 }
+.bg-shade-grey-50{
+  background-color: rgba(244,244,251,0.5);
+}
+.bg-alert-error-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 2 15 / var(--tw-bg-opacity));
+}
 .bg-tint-teal-400{
   --tw-bg-opacity: 1;
   background-color: rgb(141 250 201 / var(--tw-bg-opacity));
@@ -1629,9 +1642,6 @@ ol.footnotes li small{
 .bg-primary-electric-purple-400{
   --tw-bg-opacity: 1;
   background-color: rgb(96 55 215 / var(--tw-bg-opacity));
-}
-.bg-shade-grey-50{
-  background-color: rgba(244,244,251,0.5);
 }
 .bg-tint-lightBlue-400{
   --tw-bg-opacity: 1;
@@ -1700,6 +1710,10 @@ ol.footnotes li small{
 .py-10{
   padding-top: 40px;
   padding-bottom: 40px;
+}
+.py-9{
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 .py-18{
   padding-top: 72px;
@@ -1814,6 +1828,15 @@ ol.footnotes li small{
 .pt-25{
   padding-top: 100px;
 }
+.pt-video{
+  padding-top: 70.17%;
+}
+.pb-25{
+  padding-bottom: 100px;
+}
+.pl-8{
+  padding-left: 32px;
+}
 .pb-15{
   padding-bottom: 60px;
 }
@@ -1828,9 +1851,6 @@ ol.footnotes li small{
 }
 .pt-15{
   padding-top: 60px;
-}
-.pt-video{
-  padding-top: 70.17%;
 }
 .pb-6{
   padding-bottom: 24px;
@@ -1879,9 +1899,6 @@ ol.footnotes li small{
 }
 .pt-featured-image-sm{
   padding-top: 268px;
-}
-.pl-8{
-  padding-left: 32px;
 }
 .pb-13{
   padding-bottom: 52px;
@@ -2475,6 +2492,9 @@ ol.footnotes li small{
     .md\:w-3\/8{
     width: calc((100% / 8) * 3);
   }
+    .md\:basis-3\/4{
+    flex-basis: 75%;
+  }
     .md\:basis-1\/4{
     flex-basis: 25%;
   }
@@ -2600,6 +2620,9 @@ ol.footnotes li small{
     .md\:pb-6{
     padding-bottom: 24px;
   }
+    .md\:pt-video-md{
+    padding-top: 34.59%;
+  }
     .md\:pt-0{
     padding-top: 0px;
   }
@@ -2617,9 +2640,6 @@ ol.footnotes li small{
   }
     .md\:pr-10{
     padding-right: 40px;
-  }
-    .md\:pt-video-md{
-    padding-top: 34.59%;
   }
     .md\:pt-11{
     padding-top: 44px;

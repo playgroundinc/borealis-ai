@@ -10,6 +10,7 @@ import teamMemberMetaBlock from "./blocks/meta/team-member-meta.jsx";
 import authorMetaBlock from './blocks/meta/author-meta.jsx';
 import publicationMetaBlock from './blocks/meta/publications-meta.jsx';
 import productMetaBlock from './blocks/meta/product-meta.jsx';
+import programMetaBlock from './blocks/meta/program-meta.jsx';
 
 import imageTextBlock from "./blocks/image-text.jsx";
 
@@ -113,6 +114,7 @@ teamMemberMetaBlock();
 authorMetaBlock();
 publicationMetaBlock();
 productMetaBlock();
+programMetaBlock();
 
 // Init blocks here
 imageTextBlock();

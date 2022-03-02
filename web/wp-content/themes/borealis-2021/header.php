@@ -138,6 +138,14 @@
                         <?php echo $header ?>
                     <?php endif; ?>
                 </div>
+
+            <?php elseif (is_singular('program')): ?>
+                <div class="container">
+                    <?php $header = pg_generate_program_header($post->ID); ?>
+                    <?php if (isset($header) && !empty($header)): ?>
+                        <?php echo $header ?>
+                    <?php endif; ?>
+                </div>
             <?php elseif ($no_header): ?>
                 <h1 class="sr-only"><?php echo esc_html(the_title()); ?></h1>
             <?php else: ?>

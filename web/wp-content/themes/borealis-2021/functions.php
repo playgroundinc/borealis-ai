@@ -96,6 +96,9 @@ require get_template_directory() . '/inc/partials/blog/blog-result.php';
 // Partials - Product
 require get_template_directory() . '/inc/partials/product/product-header.php';
 
+// Partials - Programs
+require get_template_directory() . '/inc/partials/programs/program-header.php';
+
 // Partials - Publications
 require get_template_directory() . '/inc/partials/publications/publication-result.php';
 require get_template_directory() . '/inc/partials/publications/publication-header.php';
