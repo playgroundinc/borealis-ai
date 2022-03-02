@@ -12,7 +12,7 @@ export default function productContainerBlock() {
 	const blockSlug = "product-container";
 	const blockTitle = "Products List Container";
 	const blockDescription = "Creates a container for a products list.";
-	const blockCategory = "common";
+	const blockCategory = "containers";
     const blockIcon = "editor-justify"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
 	registerBlockType(`${namespace}/${blockSlug}`, {

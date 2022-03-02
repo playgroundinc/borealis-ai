@@ -11,110 +11,157 @@ class PG_Allowed_Blocks {
     function __construct($post_type) {
         $this->post_type = $post_type;
         $this->namespace = 'pg';
-        $this->custom_blocks = array(
-
+        $this->shared_blocks = array(
             // Accordion
             'accordion',
             'accordion-row',
 
+            // Code
+            'code',
+            'compare-code',
+
+            // Jobs
+            'jobs-container',
+            'select-job',
+            'job-highlight',
+
+            // Icon List
+            'icon-list-container-block',
+            'icon-list-item-block',
+
+            // Images
+            'custom-image',
+            'image-text',
+            'image-text-strip',
+
+            // Page Strips
+            'page-strip-graphic',
+            'page-strip-graphic-container',
+            'page-strip',
+
+            // Publications
+            'publications-container',
+            'select-publications',
+            'select-research-blogs',
+            'select-news',
+
+            // Tabbed Content
+            'tabbed-content-container-block',
+            'tabbed-content-panel-block',
+
+            // Text 2up
+            'text-2-up',
+            'text-2-up-container'
+
+        );
+        $this->custom_blocks = array(
+
             // Callout
             'callout-column',
             'callout-container',
-            
+
             // Content Cards
             'content-card',
-            'content-card-container',
+            'content-card-container',   
+            
+            // Gallery
+            'gallery-container',
 
-            // Documents
-            'document-row',
-
-            // Forms
-            'form-builder',
-            'date-input',
-            'input-row',
-            'number-input',
-            'select-input',
-            'text-input',
-            'textarea-input',
-            'select-destination-input',
-
-            // Image List
-            'image-list',
-            'image-list-container',
+            // Jobs
+            'job-block',
+            'jobs-container',
+            'select-job',
 
             // Logos
             'logo',
             'logos-container',
+            'logos-subsection',
+
+            // Posts
+            'featured-posts-container',
+
+            // Products
+            'product-container',
+            'select-product',
+
+            // Select Posts
+            'select-team-member',
 
             // Sliders
-            'image-slide',
+            'news-slide',
             'carousel',
-            'testimonial-slide',
-            'testimonial-carousel',
 
             // Stats
             'stat-column',
             'stats-container',
 
-            // Timeline
-            'milestone',
-            'timeline-container',
+            // Tag Cloud
+            'tag-cloud-container-block',
+            'tag-cloud-item-block',
 
-            // Embed Forms
-            'cognito-form',
-            'formstack-form',
-
-            // Page Strips
-            'feature-strip',
-            'page-strip-graphic',
-            'page-strip-graphic-container',
-            'page-strip',
-
-            // Image
-            'custom-image',
-            'image-text',
+            // Statistics
+            'statistics',
+            'statistics-container'
+            
         );
-        $this->core_blocks = array(
+        $this->shared_core_blocks = array(
             'core/video',
-            'core/buttons',
             'core/list',
+            'core/code',
+            'core/embed-youtube',
         );
-        $this->news_release_blocks = array(
-            $this->namespace . '/' . 'news-release-meta-block',
+        $this->blog_core_blocks = array(
+            'core/table',
+            'core/podcast',
+            'core/quote'
         );
-        $this->research_blog_blocks = array(
-            $this->namespace . '/' . 'research-blog-meta-block',
+        $this->author_blocks = array(
+            $this->namespace . '/author-meta-block',
         );
         $this->news_blocks = array(
             $this->namespace . '/' . 'news-meta-block',
         );
-        $this->leadership_blocks = array(
-            $this->namespace . '/' . 'leadership-meta-block',
+        $this->research_blogs_blocks = array(
+            $this->namespace . '/' . 'research-blogs-meta-block',
+        );
+        $this->team_member_blocks = array(
+            $this->namespace . '/' . 'team-member-meta-block',
+            $this->namespace . '/page-strip-graphic-container',
+            $this->namespace . '/page-strip-graphic',
+            $this->namespace . '/paragraph',
+            $this->namespace . '/heading-two',
+            $this->namespace . '/heading-three',
+            $this->namespace . '/heading-four',
         );
         $this->page_blocks = array(
             $this->namespace . '/' . 'page-meta-block'
         );
-        $this->location_blocks = array(
-            $this->namespace . '/' . 'location-meta-block',
+        $this->product_blocks = array(
+            $this->namespace . '/' . 'product-meta-block',
+        );
+        $this->publication_blocks = array(
+            $this->namespace . '/' . 'publications-meta-block',
+            $this->namespace . '/bibtex',
+            $this->namespace . '/paragraph',
+            $this->namespace . '/heading-two',
+            $this->namespace . '/heading-three',
+            $this->namespace . '/heading-four',
+            $this->namespace . '/legal',
         );
         $this->body_copy_blocks = array(
-            // Body Copy
-            'body-copy',
-            'body-copy-image',
+            // Figures
+            'compare-figures',
 
-            // Sliders 
-            'body-copy-image-slide',
-            'body-copy-carousel',
+            // Sections
+            'custom-section-block',
+            'custom-subsection-block',
 
             // Text
-            'heading-one',
             'heading-two',
             'heading-three',
             'heading-four',
-            'heading-five',
-            'heading-six',
             'paragraph',
-            'paragraph-no-alignment',
+            'legal'
         );
     }
 
@@ -123,33 +170,47 @@ class PG_Allowed_Blocks {
     }
 
     function get_custom_allowed_blocks() {
-        if ($this->post_type === 'custom-location') {
-            return $this->location_blocks;
-        }
+        $shared_blocks = array_map(array($this, 'add_namespace'), $this->shared_blocks);
+        $shared_core_blocks = array_map(array($this, 'add_namespace'), $this->shared_core_blocks);
+        
         $body_copy_blocks = array_map(array($this, 'add_namespace'), $this->body_copy_blocks);
-        if ($this->post_type === 'news-releases') {
-            $news_release_blocks = array_merge($body_copy_blocks, $this->news_release_blocks);
-            return $news_release_blocks;
-        } 
-        if ($this->post_type === 'research-blogs') {
-            $research_blog_blocks = array_merge($body_copy_blocks, $this->research_blog_blocks);
-            return $research_blog_blocks;
-        } 
+        $body_copy_blocks = array_merge($body_copy_blocks, $shared_blocks);
+        $body_copy_blocks = array_merge($body_copy_blocks, $shared_core_blocks);
+        
+        // Authors
+        if ($this->post_type === 'author') {
+            return $this->author_blocks;
+        }
+        // News
         if ($this->post_type === 'news') {
             $news_blocks = array_merge($body_copy_blocks, $this->news_blocks);
             return $news_blocks;
         } 
-        if ($this->post_type === 'leadership') {
-            $news_blocks = array_merge($body_copy_blocks, $this->news_blocks);
-            return $news_blocks;
+        // Publications
+        if ($this->post_type === 'publications') {
+            return $this->publication_blocks;
+        }
+
+        // Research Blogs
+        if ($this->post_type === 'research-blogs') {
+            $research_blog_blocks = array_merge($body_copy_blocks, $this->research_blogs_blocks);
+            return $research_blog_blocks;
         } 
+        // Team Members
+        if ($this->post_type === 'team-member') {
+            return $this->team_member_blocks;
+        } 
+
         $custom_blocks = array_map(array($this, 'add_namespace'), $this->custom_blocks);
-        $custom_blocks = array_merge($this->core_blocks, $custom_blocks);
-        $custom_blocks = array_merge($body_copy_blocks, $custom_blocks);
-        if ($this->post_type === 'page') {
-            $custom_blocks = array_merge($custom_blocks, $this->page_blocks);
-        } 
-        return $custom_blocks;
+        $custom_blocks = array_merge($custom_blocks, $shared_core_blocks);
+        $custom_blocks = array_merge($custom_blocks, $shared_blocks);
+        if ($this->post_type === 'product') {
+            $product_blocks = array_merge($custom_blocks, $this->product_blocks);
+            return $product_blocks;
+        }  
+
+        $page_blocks = array_merge($custom_blocks, $this->page_blocks);
+        return $page_blocks;
     }
 }
 
@@ -160,4 +221,4 @@ function pg_add_allowed_blocks($allowed_blocks, $post) {
 }
 
 
-// add_filter( 'allowed_block_types', 'pg_add_allowed_blocks', 10, 2 );
+add_filter( 'allowed_block_types', 'pg_add_allowed_blocks', 10, 2 );

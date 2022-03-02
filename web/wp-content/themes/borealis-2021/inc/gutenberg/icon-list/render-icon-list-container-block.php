@@ -44,31 +44,31 @@ if (!function_exists('pg_render_icon_list_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <section aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
-            <div class="custom-component nestable">
-                <div class="container flex flex-col tb:flex-row nested-flex">
+        <div class="custom-component" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
+            <div>
+                <div class="flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container tb:flex-row') : '' ?>">
                     <div class="w-full mb-10 tb:mb-0 tb:w-2/6 icon-list-title">
                         <?php if (!empty($attributes->title)) : ?>
-                                <h3 class="h3"><?php echo esc_html($attributes->title) ?></h3>
+                                <h3 class="h3 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('tb:pb-4') : '' ?>"><?php echo esc_html($attributes->title) ?></h3>
                         <?php endif; ?>
                     </div>
-                    <div class="w-full tb:w-4/6 icon-list">
+                    <div class="w-full <?php echo is_singular(array('news', 'research-blogs')) ? '' : esc_attr('tb:w-4/6'); ?> icon-list">
                         <?php if (!empty($attributes->description)) : ?>
                             <div>
-                                <p class="paragraph nested-description"><?php echo esc_html($attributes->description) ?></p>
+                                <p class="<?php echo is_singular(array('news', 'research-blogs')) ? 'paragraph-blog' : 'paragraph' ?>  nested-description"><?php echo wp_kses($attributes->description, $allowed_html) ?></p>
                             </div>
                         <?php endif; ?>
-                        <ul class="flex flex-wrap mt-10 flex-col md:flex-row nested-block">
-                            <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
-                                <?php $inner_block['icon'] = $attributes->icon; ?>
+                        <ul class="flex flex-wrap mt-10 flex-col <?php echo is_singular(array('news', 'research-blogs')) ? '' : 'md:flex-row' ?> nested-block">
+                            <?php foreach ($block['innerBlocks'] as $tabbed_inner_block) : ?>
+                                <?php $tabbed_inner_block['icon'] = $attributes->icon; ?>
 
-                                <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
+                                <?php echo wp_kses(render_block($tabbed_inner_block), $allowed_html); ?>
                             <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 <?php
         return ob_get_clean();
     }

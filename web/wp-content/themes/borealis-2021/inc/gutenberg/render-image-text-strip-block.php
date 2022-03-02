@@ -50,7 +50,7 @@ if (!function_exists('pg_render_image_text_strip_block')) {
 
         if (!empty($image)) :
 ?>
-            <section class="w-full">
+            <div class="w-full">
                 <div class="flex container text-shade-black-400 <?php echo $attributes->reverse === true ? 'flex-col-reverse' : 'flex-col' ?> <?php echo $attributes->reverse === true ? 'md:flex-row-reverse' : 'md:flex-row' ?>">
                     <div class="w-full md:w-6/12 flex justify-center flex-col">
                         <div class="w-11/12 tb:w-7/12 <?php echo $attributes->reverse === true ? 'md:ml-30' : '0'?> ">
@@ -78,7 +78,7 @@ if (!function_exists('pg_render_image_text_strip_block')) {
                         <div class="w-full bg-cover bg-no-repeat pt-100 bg-center" style="background-image: url(<?php echo $image ?>);"></div>
                     </div>
                 </div>
-            </section>
+            </div>
 <?php
         endif;
         return ob_get_clean();

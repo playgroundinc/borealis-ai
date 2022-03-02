@@ -14,7 +14,7 @@ export default function authorMetaBlock() {
 	registerBlockType(`${namespace}/author-meta-block`, {
 		title: 'Author Meta',
 		icon: 'align-full-width',
-        category: 'common',
+        category: 'meta',
         supports: {
             multiple: false,
         },

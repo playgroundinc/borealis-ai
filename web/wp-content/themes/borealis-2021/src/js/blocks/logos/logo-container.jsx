@@ -3,7 +3,7 @@ import { namespace } from '../helper-functions/constants';
 import CustomRichText from '../reusable/custom-richtext-component.jsx';
 import BlockSettings from "../reusable/block-custom-settings.jsx";
 
-export default function trmcLogoContainerBlock() {
+export default function pgLogoContainerBlock() {
 	const { registerBlockType } = wp.blocks;
 	const {
 		InnerBlocks,
@@ -17,11 +17,7 @@ export default function trmcLogoContainerBlock() {
     const blockIcon = "awards"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
-        bg_color: {
-            type: 'String',
-            default: 'white'
-        },
-        description: {
+        copy: {
             type: 'String',
             default: '',
         },
@@ -39,45 +35,31 @@ export default function trmcLogoContainerBlock() {
         attributes,
 		edit: (props, editor = false, save = false ) => {
         const { setAttributes, attributes } = props;
-        const { bg_color, description, title } = attributes;
+        const { copy, title } = attributes;
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
 			}
 
 			return [
-                <div className={`custom-container block--${bg_color} }` }>
+                <div className={`custom-container`}>
                     <p className="block-title">Logo Parade</p>
-                    <BlockSettings 
-                        controls={[   
-                            {
-                                type: 'select',
-                                label: 'Background Color',
-                                reference: 'bg_color',
-                                value: bg_color,
-                                options: [
-                                    { value: 'white', label: 'White'},
-                                    { value: 'grey', label: 'Grey' }
-                                ]
-                            },
-                        ]}
-                        onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
-                    />
                     <CustomRichText 
                         components={[
                             {
                                 reference: 'title',
                                 value: title,
                                 tagName: 'h2',
-                                classes: ['heading_one'],
-                                placeholder: 'Logos title here',
+                                settings: [],
+                                placeholder: 'Logo parade title here (optional)',
                             },
                             {
-                                reference: 'description',
-                                value: description,
+                                reference: 'copy',
+                                value: copy,
                                 tagName: 'p',
                                 classes: ['paragraph'],
-                                placeholder: 'Add a description'
+                                settings: ['core/bold', 'core/link', 'core/italic', 'core/list'],
+                                placeholder: 'Logo parade copy here (optional)',
                             }
                         ]}
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
@@ -87,9 +69,8 @@ export default function trmcLogoContainerBlock() {
                             <InnerBlocks.Content />
                         ) : (
                             <InnerBlocks
-                                allowedBlocks={[`${namespace}/logo`]}
-                                template={[[`${namespace}/logo`]]}
-                            />
+                            allowedBlocks={[`${namespace}/logo-subsection`]}
+                        />
                         )}
                     </div>
                 </div>, 

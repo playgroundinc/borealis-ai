@@ -19,7 +19,7 @@ export default function researchBlogMetaBlock() {
 	registerBlockType(`${namespace}/research-blogs-meta-block`, {
 		title: 'Research Blogs Meta',
 		icon: 'align-full-width',
-        category: 'common',
+        category: 'meta',
         supports: {
             multiple: false,
         },

@@ -12,7 +12,7 @@ export default function publicationsContainerBlock() {
     const blockSlug = "publications-container"; // slug for the block
 	const blockTitle = "Publications container";
 	const blockDescription = "Component to create publications container block";
-	const blockCategory = "common";
+	const blockCategory = "containers";
     const blockIcon = "archive"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

@@ -50,7 +50,7 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
         ob_start();
         if (!empty($image)) :
 ?>
-            <section class="w-6/12 hidden md:block">
+            <div class="w-6/12 hidden md:block">
                 <div class="w-full bg-cover bg-no-repeat p-20 <?php echo $attributes->icon === true ? 'text-shade-white-400' : 'text-shade-black-400' ?>" style="background-image: url(<?php echo $image ?>)">
                     <?php if (!empty($attributes->title)) : ?>
                         <h3 class="h3 mb-11">
@@ -71,8 +71,8 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
                         </a>
                     <?php endif ?>
                 </div>
-            </section>
-            <section class="w-full md:hidden block">
+            </div>
+            <div class="w-full md:hidden block">
                 <div class="w-full bg-cover pb-56 bg-no-repeat pt-15 px-6 <?php echo $attributes->icon === true ? 'text-shade-white-400' : 'text-shade-black-400' ?>" style="background-image: url(<?php echo $image_mobile ?>)">
                     <?php if (!empty($attributes->title)) : ?>
                         <h3 class="h3 mb-6">
@@ -93,7 +93,7 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
                         </a>
                     <?php endif ?>
                 </div>
-            </section>
+            </div>
 <?php
         endif;
         return ob_get_clean();

@@ -36,7 +36,7 @@ if (!function_exists('pg_render_single_job_item')) {
         ob_start();
         ?>
             <li class="group">
-                <a class="block row-item md:container nested-flex" href="<?php echo esc_url_raw($url); ?>">
+                <a class="block row-item nested-flex" href="<?php echo esc_url_raw($url); ?>">
                     <div class="group-first:border-t border-b border-shade-grey-700 md:px-5 py-4">
                         <div class="container md:w-ful md:m-0 flex items-center">
                             <div class="grow">

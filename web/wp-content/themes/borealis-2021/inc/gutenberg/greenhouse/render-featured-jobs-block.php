@@ -36,6 +36,7 @@ if ( ! function_exists( 'pg_render_featured_jobs_block' )) {
         $fields     = array(
             'title'        => '',
         );
+        $namespace = pg_get_namespace();
         $attributes = pg_get_attributes( $attrs, $fields );
 
         $setting_names = array('greenhouse_api_key', 'greenhouse_url');
@@ -46,21 +47,29 @@ if ( ! function_exists( 'pg_render_featured_jobs_block' )) {
         ob_start();
 
         ?>
-            <div class="custom-component nestable">
-                <div class="md:container">
-                    <div class="md:flex nested-flex">
-                        <div class="container md:w-full md:m-0 md:basis-1/3 shrink-0 md:pr-10">
+            <div class="custom-component">
+                <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:container') : '' ?>">
+                    <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:flex') : '' ?>">
+                        <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : '' ?> md:w-full md:m-0 md:basis-1/3 shrink-0 md:pr-10">
                             <?php if (!empty($attributes->title)): ?>
-                                <h2 class="h3"><?php echo esc_html($attributes->title) ?></h2>
+                                <h2 class="h3 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('md:pb-12') : '' ?>"><?php echo esc_html($attributes->title) ?></h2>
                             <?php endif; ?>
                         </div>
                         <ul class="grow pt-7 md:pt-0 nested-block">
                             <?php foreach ($block['innerBlocks'] as $inner_block): ?>
                                 <?php 
-                                    $output = pg_render_single_job_item($inner_block['attrs'], $settings['greenhouse_api_key'], $settings['greenhouse_url']);
-                                    if ($output) {
-                                        echo $output;
+                                    if ($inner_block['blockName'] === $namespace . '/select-job') {
+                                        $output = pg_render_single_job_item($inner_block['attrs'], $settings['greenhouse_api_key'], $settings['greenhouse_url']);
+                                        if ($output) {
+                                            echo $output;
+                                        }
+                                    } else {
+                                        $output = pg_render_job_highlight_block($inner_block['attrs']);
+                                        if ($output) {
+                                            echo $output;
+                                        }
                                     }
+                                   
                                 ?>
                             <?php endforeach; ?>
                         </ul>

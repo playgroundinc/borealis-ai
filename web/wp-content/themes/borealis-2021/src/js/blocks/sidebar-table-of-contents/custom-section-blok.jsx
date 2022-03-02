@@ -12,7 +12,7 @@ export default function customSectionBlock() {
     const blockSlug = "custom-section-block"; // slug for the block
 	const blockTitle = "Custom Section";
 	const blockDescription = "Component to create custom section block";
-	const blockCategory = "common";
+	const blockCategory = "sections";
     const blockIcon = "welcome-add-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
@@ -57,12 +57,13 @@ export default function customSectionBlock() {
                         <InnerBlocks
                             allowedBlocks={[
                                 `${namespace}/custom-subsection-block`, 
-                                `core/code`, 
+
                                 `core/table`, 
                                 `core/podcast`, 
                                 `core/video`, 
                                 `core/list`, 
                                 `core/quote`,
+
                                 `${namespace}/tag-cloud-container-block`, 
                                 `${namespace}/paragraph`, 
                                 `${namespace}/heading-two`, 
@@ -72,7 +73,13 @@ export default function customSectionBlock() {
                                 `${namespace}/blockquote`,
                                 `${namespace}/publications-container`,
                                 `${namespace}/image-text`,
-                                `${namespace}/icon-list-container-block`
+                                `${namespace}/icon-list-container-block`,
+                                `${namespace}/compare-code`,
+                                `${namespace}/code`,
+                                `${namespace}/jobs-container`,
+                                `${namespace}/compare-figures`,
+                                `${namespace}/tabbed-content-container-block`
+
                             ]}
                         />
                     )}

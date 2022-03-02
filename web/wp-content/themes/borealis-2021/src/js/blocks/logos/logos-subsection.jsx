@@ -1,29 +1,26 @@
 import { namespace } from '../helper-functions/constants';
 
 import CustomRichText from '../reusable/custom-richtext-component.jsx';
+import BlockSettings from "../reusable/block-custom-settings.jsx";
 
-export default function trmcStatsContainerBlock() {
+export default function pgLogoSubsectionBlock() {
 	const { registerBlockType } = wp.blocks;
 	const {
 		InnerBlocks,
     } = wp.blockEditor;
     const { i18n } = wp;
 
-	const blockSlug = "stats-container";
-	const blockTitle = "Stat Call Out";
-	const blockDescription = "Creates a container for single statistics.";
+	const blockSlug = "logos-subsection";
+	const blockTitle = "Logo Parade Subsection";
+	const blockDescription = "Creates a subsection for logos parade.";
 	const blockCategory = "containers";
-    const blockIcon = "chart-bar"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+    const blockIcon = "awards"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
         title: {
             type: 'String',
             default: '',
-        },
-        description: {
-            type: 'String',
-            default: '',
-        },
+        }
     }
 
 	registerBlockType(`${namespace}/${blockSlug}`, {
@@ -32,42 +29,38 @@ export default function trmcStatsContainerBlock() {
 		category: blockCategory,
         icon: blockIcon,
         attributes,
+        parent: [`${namespace}/logos-container`],
 		edit: (props, editor = false, save = false ) => {
         const { setAttributes, attributes } = props;
-        const { description, title } = attributes;
+        const { title } = attributes;
 
 			function updateAttributeValue(attribute, value) {
 				setAttributes({ [attribute]: value });
 			}
 
 			return [
-                <div className="custom-container">
-                    <p className="block-title">Stat Call Out</p>
+                <div className="custom-child">
+                    <p className="block-title">Logo Parade Subsection</p>
                     <CustomRichText 
                         components={[
                             {
                                 reference: 'title',
                                 value: title,
-                                tagName: 'h2',
-                                classes: ['heading_one'],
-                                placeholder: 'Add title (optional)',
-                            },
-                            {
-                                reference: 'description',
-                                value: description,
-                                tagName: 'p',
+                                tagName: 'h3',
+                                settings: [],
                                 classes: ['paragraph'],
-                                placeholder: 'Add description (optional)',
-                            }
+                                placeholder: 'Logo parade subsection title here (optional)',
+                            },
                         ]}
                         onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
                     />
-                    <div className={`col--3`}>
+                    <div className="col--4">
                         {save ? (
                             <InnerBlocks.Content />
                         ) : (
                             <InnerBlocks
-                                allowedBlocks={[`${namespace}/stat-column`]}
+                                allowedBlocks={[`${namespace}/logo`]}
+                                template={[[`${namespace}/logo`]]}
                             />
                         )}
                     </div>
@@ -75,7 +68,6 @@ export default function trmcStatsContainerBlock() {
             ];
 		},
 		save: () => {
-            const { description, title } = attributes;
 			return <InnerBlocks.Content />;
 		},
 	});

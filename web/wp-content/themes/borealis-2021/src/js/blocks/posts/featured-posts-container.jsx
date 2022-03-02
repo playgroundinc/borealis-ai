@@ -15,7 +15,7 @@ export default function featuredPostsContainerBlock() {
     const slug = "featured-posts-container";
 	const title = "Featured Post(s)";
 	const description = "A container for one or more featured post.";
-	const category = "common";
+	const category = "containers";
     const icon = "welcome-write-blog"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

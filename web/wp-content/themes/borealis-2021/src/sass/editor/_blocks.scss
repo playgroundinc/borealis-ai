@@ -21,17 +21,40 @@
         color: darken(lightcoral, 20);
     }
     .custom-child {
-        border: 1px solid mediumpurple;
-        .block-title {
-            color: mediumpurple;
-        }
-    }
-    .custom-child .custom-child {
         border: 1px solid #3CB371;
         .block-title {
             color: #3CB371;
         }
+        .custom-child,
+        .custom-component,
+        .custom-container {
+            border: 1px solid darken(lightblue, 20);
+            .block-title {
+                color: darken(lightblue, 20);
+            }
+        }
     }
+    .custom-container,
+    .custom-component {
+        border: 1px solid mediumpurple;
+        .block-title {
+            color: mediumpurple;
+        }
+        .custom-child {
+            border: 1px solid #3CB371;
+            .block-title {
+                color: #3CB371;
+            }
+            .custom-child,
+            .custom-component,
+            .custom-container {
+                border: 1px solid darken(lightblue, 20);
+                .block-title {
+                    color: darken(lightblue, 20);
+                }
+            }
+        }
+    } 
 }
 .custom-component {
     border: 1px solid mediumpurple;
@@ -58,22 +81,36 @@
 }
 .custom-section, 
 .custom-subsection {
-    .custom-container {
+    .custom-container,
+    .custom-component,
+    .custom-section {
         border: 1px solid lightcoral;
         .block-title {
             color: darken(lightcoral, 20);
         }
-        .custom-child {
+        .custom-child,
+        .custom-container,
+        .custom-component {
             border: 1px solid mediumpurple;
             .block-title {
                 color: mediumpurple;
             }
-        }
-        .custom-child .custom-child {
-            border: 1px solid #3CB371;
-            .block-title {
-                color: #3CB371;
+            .custom-child,
+            .custom-component,
+            .custom-container {
+                border: 1px solid #3CB371;
+                .block-title {
+                    color: #3CB371;
+                }
+                .custom-child,
+                .custom-component,
+                .custom-container {
+                    border: 1px solid darken(lightblue, 20);
+                    .block-title {
+                        color: darken(lightblue, 20);
+                    }
+                }
             }
-        }
+        } 
     }
 }

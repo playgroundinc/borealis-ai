@@ -90,7 +90,7 @@ export default function imageTextStripBlock() {
         setAttributes({ [attribute]: value });
       }
       return [
-        <section class="custom-component">
+        <div class="custom-component">
           <p className="block-title">Graphic Page Strip</p>
           <CustomImageUpload
             components={[
@@ -174,7 +174,7 @@ export default function imageTextStripBlock() {
               updateAttributeValue("reverse", change);
             }}
           />
-        </section>,
+        </div>,
       ];
     },
     save: ({ attributes }) => {
