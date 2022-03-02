@@ -149,6 +149,10 @@ class PG_Allowed_Blocks {
             $this->namespace . '/legal',
         );
         $this->body_copy_blocks = array(
+            // Fellowships
+            'fellowship-container',
+            'fellowship', 
+
             // Figures
             'compare-figures',
 
