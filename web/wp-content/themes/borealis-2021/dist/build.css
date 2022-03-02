@@ -1431,6 +1431,9 @@ ol.footnotes li small{
 .basis-2\/12{
   flex-basis: 16.666667%;
 }
+.basis-4\/12{
+  flex-basis: 33.333333%;
+}
 .rotate-0{
   --tw-rotate: 0deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1805,11 +1808,14 @@ ol.footnotes li small{
 .pl-5{
   padding-left: 20px;
 }
-.pb-15{
-  padding-bottom: 60px;
+.pt-115{
+  padding-top: 460px;
 }
 .pt-25{
   padding-top: 100px;
+}
+.pb-15{
+  padding-bottom: 60px;
 }
 .pl-4{
   padding-left: 16px;
@@ -2654,11 +2660,11 @@ ol.footnotes li small{
     .md\:pl-1\/12{
     padding-left: calc(100% / 12);
   }
-    .md\:pb-4{
-    padding-bottom: 16px;
-  }
     .md\:pb-15{
     padding-bottom: 60px;
+  }
+    .md\:pb-4{
+    padding-bottom: 16px;
   }
     .md\:text-left{
     text-align: left;
