@@ -66,6 +66,7 @@
         $hero_image = get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg';
     }
     $headline = get_post_meta($post->ID, 'headline', true);
+    $header_height = is_front_page() ? 'min-h-[615px] flex flex-col' : 'min-h-[125px]';
     // var_dump(i);
     $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications']) || is_front_page();
     ?>
@@ -88,7 +89,7 @@
     <div id="page" class="site">
         <!-- Skip to Content link -->
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'pg-wp-starter'); ?></a>
-        <header id="masthead" class="<?php echo $no_header ? 'min-h-[125px]' : esc_attr('bg-cover bg-bottom min-h-[400px] md:min-h-[280px] flex flex-col justify-end') ?>" style="background-image: url(<?php echo $no_header ? '' : esc_attr($hero_image) ?> )">
+        <header id="masthead" class="<?php echo $no_header ? esc_attr($header_height) : esc_attr('bg-cover bg-bottom min-h-[400px] md:min-h-[280px] flex flex-col justify-end') ?>" style="background-image: url(<?php echo $no_header ? '' : esc_attr($hero_image) ?> )">
             <nav id="main-navigation" class="fixed z-10 left-0 right-0 top-3">
                 <div class="<?php echo ($has_subnav) ? 'rounded-b-large md:rounded-b-none rounded-t-large' : 'rounded-large'; ?> relative mt-4 top-2 py-4 nav-container <?php echo (is_home() || is_front_page()) ? 'bg-transparent' : 'bg-primary-navy-400'; ?>">
                     <div class="flex md:flex-row flex-col items-center px-4 md:px-5 lg:px-0 lg:container">
@@ -141,10 +142,10 @@
                 ?>
             <?php elseif (is_front_page()) : // Start of check for singular News or Blog 
             ?>
-                <?php $header = pg_generate_hero_header($post->ID); ?>
+                <?php $header = pg_generate_hero_header($post->ID, $headline); ?>
                 <?php if (isset($header) && !empty($header)) : // Start of Check for empty Blog header 
                 ?>
-                    <div class="container">
+                    <div class="container grow flex flex-col">
                         <?php echo $header; ?>
                     </div>
                 <?php endif; // End of check for empty blog header. 
