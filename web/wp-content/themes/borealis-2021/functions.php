@@ -167,7 +167,8 @@ require get_template_directory() . '/inc/gutenberg/products/render-products-item
 // Slider Blocks
 require get_template_directory() . '/inc/gutenberg/slider/render-slider-container-block.php';
 require get_template_directory() . '/inc/gutenberg/slider/render-news-slide.php';
-require get_template_directory() . '/inc/gutenberg/slider/render-image-slide-block.php';
+require get_template_directory() . '/inc/gutenberg/slider/render-testimonial-slider-block.php';
+require get_template_directory() . '/inc/gutenberg/slider/render-testimonial-slide-block.php';
 
 // Stat Blocks
 require get_template_directory() . '/inc/gutenberg/stats/render-stat-container-block.php';

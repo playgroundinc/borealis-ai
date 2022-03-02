@@ -55,7 +55,6 @@ class PG_Allowed_Blocks {
 
         );
         $this->custom_blocks = array(
-
             // Callout
             'callout-column',
             'callout-container',
@@ -90,6 +89,8 @@ class PG_Allowed_Blocks {
             // Sliders
             'news-slide',
             'carousel',
+            'testimonial-carousel',
+            'testimonial',
 
             // Stats
             'stat-column',
