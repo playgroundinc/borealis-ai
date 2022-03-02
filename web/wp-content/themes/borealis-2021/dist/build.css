@@ -1108,6 +1108,9 @@ ol.footnotes li small{
 .-top-20{
   top: -80px;
 }
+.bottom-12{
+  bottom: 48px;
+}
 .top-96{
   top: 384px;
 }
@@ -1116,9 +1119,6 @@ ol.footnotes li small{
 }
 .right-4{
   right: 16px;
-}
-.bottom-12{
-  bottom: 48px;
 }
 .z-10{
   z-index: 10;
@@ -1251,9 +1251,6 @@ ol.footnotes li small{
 .mt-5{
   margin-top: 20px;
 }
-.mr-4{
-  margin-right: 16px;
-}
 .block{
   display: block;
 }
@@ -1345,9 +1342,6 @@ ol.footnotes li small{
 }
 .w-42{
   width: 168px;
-}
-.w-4\/12{
-  width: 33.333333%;
 }
 .w-7\/12{
   width: 58.333333%;
@@ -1873,8 +1867,11 @@ ol.footnotes li small{
 .pt-72{
   padding-top: 288px;
 }
-.pt-125{
-  padding-top: 500px;
+.pb-29{
+  padding-bottom: 116px;
+}
+.pt-180{
+  padding-top: 720px;
 }
 .pt-11{
   padding-top: 44px;
@@ -1899,27 +1896,6 @@ ol.footnotes li small{
 }
 .pr-3{
   padding-right: 12px;
-}
-.pb-12{
-  padding-bottom: 48px;
-}
-.pt-140{
-  padding-top: 560px;
-}
-.pt-150{
-  padding-top: 600px;
-}
-.pt-200{
-  padding-top: 800px;
-}
-.pt-180{
-  padding-top: 720px;
-}
-.pb-19{
-  padding-bottom: 76px;
-}
-.pb-29{
-  padding-bottom: 116px;
 }
 .text-center{
   text-align: center;
@@ -2456,6 +2432,9 @@ ol.footnotes li small{
     .md\:w-5\/6{
     width: 83.333333%;
   }
+    .md\:w-7\/12{
+    width: 58.333333%;
+  }
     .md\:w-1\/3{
     width: 33.333333%;
   }
@@ -2464,9 +2443,6 @@ ol.footnotes li small{
   }
     .md\:w-3\/8{
     width: calc((100% / 8) * 3);
-  }
-    .md\:w-7\/12{
-    width: 58.333333%;
   }
     .md\:basis-1\/4{
     flex-basis: 25%;
@@ -2894,6 +2870,9 @@ ol.footnotes li small{
     .lg\:pl-8{
     padding-left: 32px;
   }
+    .lg\:pt-125{
+    padding-top: 500px;
+  }
     .lg\:pt-20{
     padding-top: 80px;
   }
@@ -2905,9 +2884,6 @@ ol.footnotes li small{
   }
     .lg\:pt-8{
     padding-top: 32px;
-  }
-    .lg\:pt-125{
-    padding-top: 500px;
   }
     .lg\:container{
     margin: 0 auto;
