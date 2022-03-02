@@ -49,7 +49,7 @@ if ( ! function_exists( 'pg_render_fellowship_block' ) ) {
         $logo_alt = get_post_meta($attributes->logo_id, '_wp_attachment_image_alt', TRUE);
         ob_start();
         ?>
-        <li class="basis-fellowship nth-child-3:mt-17 nth-child-2n:mr-7 flex flex-col">
+        <li class="basis-fellowship nth-child-2:mt-17 sm:nth-child-2:mt-0 sm:nth-child-3:mt-17 sm:nth-child-2n:mr-7 flex flex-col">
             <div class="flex flex-col md:flex-row grow md:items-center">
                 <div class="w-35 h-35 rounded-full overflow-hidden shrink-0">
                     <?php if (isset($image) && strlen($image) > 0): ?>
@@ -62,7 +62,7 @@ if ( ! function_exists( 'pg_render_fellowship_block' ) ) {
                         <p class="paragraph-sm"><?php echo esc_html($attributes->topic); ?></p>
                     </div>
                     <?php if (isset($logo) && strlen($logo) > 0): ?>
-                        <div class="max-w-40 w-40 max-h-18 object-contain mt-8 ">
+                        <div class="w-36 max-w-36 md:max-w-36 md:w-36 max-h-18 object-contain mt-8 ">
                             <img class="block max-h-full max-w-full" src="<?php echo esc_url_raw($logo); ?>" alt="<?php echo esc_attr($logo_alt)?>">
                         </div>
                     <?php endif; ?>

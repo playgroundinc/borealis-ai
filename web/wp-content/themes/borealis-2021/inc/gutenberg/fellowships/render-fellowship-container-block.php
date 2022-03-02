@@ -46,7 +46,7 @@ if ( ! function_exists( 'pg_render_fellowship_container_block' ) ) {
             <?php if (isset($attributes->title) && strlen($attributes->title) > 0): ?>
                 <h2 class="h3 mb-13 md:mb-10"><?php echo esc_html($attributes->title); ?></h2>
             <?php endif; ?>
-            <ul class="flex flex-wrap">
+            <ul class="sm:flex flex-wrap">
                 <?php 
                     foreach ($block['innerBlocks'] as $inner_block) {
                         echo wp_kses(render_block($inner_block), $allowed_html);
