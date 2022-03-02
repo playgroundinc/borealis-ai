@@ -15,8 +15,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../utils/constants */ "./utils/constants.js");
 
 class Slider {
-  constructor(slider) {
+  constructor(slider, type = 'news') {
     this.slider = slider;
+    this.type = type;
     this.slides = [];
     this.container = null;
     this.activeSlide = 1;
@@ -26,7 +27,13 @@ class Slider {
     this.left = 0;
     this.right = 0;
     this.slideCount = 1;
-    this.slideCounts = {
+    this.slideCounts = type === 'testimonial' ? {
+      sm: 1,
+      md: 1,
+      tb: 1,
+      lg: 1,
+      xl: 1
+    } : {
       sm: 2,
       md: 2,
       tb: 4,
@@ -47,6 +54,7 @@ class Slider {
     this.handleNext = this.handleNext.bind(this);
     this.handlePrev = this.handlePrev.bind(this);
     this.handleResize = this.handleResize.bind(this);
+    this.getSlideHeights = this.getSlideHeights.bind(this);
   }
 
   setState(name, value) {
@@ -218,6 +226,10 @@ class Slider {
     }
 
     this.prev.setAttribute('disabled', true);
+
+    if (this.type === 'testimonial') {
+      this.getSlideHeights();
+    }
   }
 
   addListeners() {
@@ -314,6 +326,23 @@ class Slider {
     this.slider.addEventListener('mouseup', this.handleMouseUp);
   }
 
+  getSlideHeights() {
+    const parent = this.container.parentElement;
+    parent.style.paddingTop = '';
+    const heights = this.slides.map(slide => {
+      const content = slide.querySelector('.container');
+      return Number(content.offsetHeight) > 0 ? Number(content.offsetHeight) : 450;
+    });
+    const maxHeight = Math.max(...heights);
+
+    if (window.innerWidth <= 768) {
+      parent.style.paddingTop = parent.dataset?.style === 'dark' ? `${Number(maxHeight + window.innerWidth)}px` : `${Number(maxHeight)}px`;
+      return;
+    }
+
+    parent.style.paddingTop = `${maxHeight}px`;
+  }
+
   init() {
     this.getSlides();
 
@@ -323,6 +352,11 @@ class Slider {
       this.getCount();
       this.setTotal();
       this.addListeners();
+
+      if (this.type === 'testimonial') {
+        this.getSlideHeights();
+      }
+
       return;
     } // this.hideCarousel();
 
@@ -371,6 +405,7 @@ module.exports.breakpoints = {
     spacing['col-6'] = 'calc((100% - 20px) / 2)';
     spacing['col-4'] = 'calc((100% - 40px) / 3)';
     spacing['col-3'] = 'calc((100% - 60px) / 4)';
+    spacing['full-bleed'] = 'calc(((1440px / 12) * 4) + ((100vw - 1440px) / 2))'
     for (let i = 0; i <= max; i = i + 1) {
       spacing[i] = `${i * base}px`;
     }
@@ -477,6 +512,15 @@ const carousels = [...document.querySelectorAll('.slider')];
 if (carousels.length) {
   carousels.forEach(carousel => {
     const CarouselClass = new _classes_class_slider__WEBPACK_IMPORTED_MODULE_0__["default"](carousel);
+    CarouselClass.init();
+  });
+}
+
+const testimonialSliders = [...document.querySelectorAll('.testimonial-slider')];
+
+if (testimonialSliders.length) {
+  testimonialSliders.forEach(carousel => {
+    const CarouselClass = new _classes_class_slider__WEBPACK_IMPORTED_MODULE_0__["default"](carousel, 'testimonial');
     CarouselClass.init();
   });
 }

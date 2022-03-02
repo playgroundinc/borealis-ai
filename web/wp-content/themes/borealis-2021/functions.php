@@ -94,6 +94,12 @@ require get_template_directory() . '/inc/partials/blog/blog-cite.php';
 require get_template_directory() . '/inc/partials/blog/blog-share.php';
 require get_template_directory() . '/inc/partials/blog/blog-result.php';
 
+// Partials - Product
+require get_template_directory() . '/inc/partials/product/product-header.php';
+
+// Partials - Programs
+require get_template_directory() . '/inc/partials/programs/program-header.php';
+
 // Partials - Publications
 require get_template_directory() . '/inc/partials/publications/publication-result.php';
 require get_template_directory() . '/inc/partials/publications/publication-header.php';
@@ -102,6 +108,9 @@ require get_template_directory() . '/inc/partials/publications/publication-relat
 
 // Partials - Hero
 require get_template_directory() . '/inc/partials/hero/hero-header.php';
+
+// Partials - Team Member
+require get_template_directory() . '/inc/partials/team-member/team-member-header.php';
 
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';
@@ -171,7 +180,8 @@ require get_template_directory() . '/inc/gutenberg/products/render-products-item
 // Slider Blocks
 require get_template_directory() . '/inc/gutenberg/slider/render-slider-container-block.php';
 require get_template_directory() . '/inc/gutenberg/slider/render-news-slide.php';
-require get_template_directory() . '/inc/gutenberg/slider/render-image-slide-block.php';
+require get_template_directory() . '/inc/gutenberg/slider/render-testimonial-slider-block.php';
+require get_template_directory() . '/inc/gutenberg/slider/render-testimonial-slide-block.php';
 
 // Stat Blocks
 require get_template_directory() . '/inc/gutenberg/stats/render-stat-container-block.php';

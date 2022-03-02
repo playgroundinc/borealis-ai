@@ -55,7 +55,6 @@ class PG_Allowed_Blocks {
 
         );
         $this->custom_blocks = array(
-
             // Callout
             'callout-column',
             'callout-container',
@@ -90,6 +89,8 @@ class PG_Allowed_Blocks {
             // Sliders
             'news-slide',
             'carousel',
+            'testimonial-carousel',
+            'testimonial',
 
             // Stats
             'stat-column',
@@ -138,6 +139,9 @@ class PG_Allowed_Blocks {
         );
         $this->product_blocks = array(
             $this->namespace . '/' . 'product-meta-block',
+        );
+        $this->program_blocks = array(
+            $this->namespace . '/program-meta-block',
         );
         $this->publication_blocks = array(
             $this->namespace . '/' . 'publications-meta-block',
@@ -207,6 +211,10 @@ class PG_Allowed_Blocks {
         if ($this->post_type === 'product') {
             $product_blocks = array_merge($custom_blocks, $this->product_blocks);
             return $product_blocks;
+        }  
+        if ($this->post_type === 'program') {
+            $program_blocks = array_merge($custom_blocks, $this->program_blocks);
+            return $program_blocks;
         }  
 
         $page_blocks = array_merge($custom_blocks, $this->page_blocks);
