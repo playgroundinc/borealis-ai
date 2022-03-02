@@ -1100,6 +1100,9 @@ ol.footnotes li small{
 .bottom-0{
   bottom: 0px;
 }
+.-top-8{
+  top: -32px;
+}
 .right-6{
   right: 24px;
 }
@@ -1191,6 +1194,12 @@ ol.footnotes li small{
 .mt-15{
   margin-top: 60px;
 }
+.mr-3{
+  margin-right: 12px;
+}
+.mb-3{
+  margin-bottom: 12px;
+}
 .mt-3{
   margin-top: 12px;
 }
@@ -1232,6 +1241,9 @@ ol.footnotes li small{
 }
 .mt-5{
   margin-top: 20px;
+}
+.ml-0{
+  margin-left: 0px;
 }
 .block{
   display: block;
@@ -1757,6 +1769,9 @@ ol.footnotes li small{
 .pt-video{
   padding-top: 70.17%;
 }
+.pt-6{
+  padding-top: 24px;
+}
 .pb-6{
   padding-bottom: 24px;
 }
@@ -1765,9 +1780,6 @@ ol.footnotes li small{
 }
 .pr-4{
   padding-right: 16px;
-}
-.pt-6{
-  padding-top: 24px;
 }
 .pl-6{
   padding-left: 24px;
@@ -1853,10 +1865,6 @@ ol.footnotes li small{
 .text-3xl{
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-.text-2xl{
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 .text-shade-grey-700{
   --tw-text-opacity: 1;
@@ -2616,6 +2624,48 @@ ol.footnotes li small{
   }
 }
   @media (min-width: 1000px){
+  .tb\:container .container{
+    margin: 0px;
+  }
+  .tb\:container .container{
+    width: 100%;
+  }
+  .tb\:container .container{
+    margin: 0px;
+  }
+  .tb\:container .container{
+    width: 100%;
+  }
+    .tb\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+    .tb\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+    .tb\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+    .tb\:container .container .icon-list, .container .container .accordion-list{
+    width: 100%;
+  }
+  .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
+    display: none;
+  }
+  .tb\:-top-8{
+    top: -32px;
+  }
+  .tb\:m-0{
+    margin: 0px;
+  }
   .tb\:mb-0{
     margin-bottom: 0px;
   }
@@ -2652,6 +2702,9 @@ ol.footnotes li small{
   .tb\:flex-row{
     flex-direction: row;
   }
+  .tb\:flex-row-reverse{
+    flex-direction: row-reverse;
+  }
   .tb\:items-end{
     align-items: flex-end;
   }
@@ -2672,6 +2725,24 @@ ol.footnotes li small{
   }
   .tb\:pl-4{
     padding-left: 16px;
+  }
+  .tb\:pt-7{
+    padding-top: 28px;
+  }
+  .tb\:container{
+    margin: 0 auto;
+    max-width: 1440px;
+    width: calc(100% - 48px);
+  }
+  @media (min-width: 768px){
+    .tb\:container{
+      width: calc(100% - 56px);
+    }
+  }
+  @media (min-width: 1920px){
+    .tb\:container{
+      width: calc(100% - 0);
+    }
   }
   .group:hover .tb\:group-hover\:visible{
     visibility: visible;

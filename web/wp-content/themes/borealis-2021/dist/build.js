@@ -164,7 +164,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _classes_class_query_params__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./classes/class-query-params */ "./src/js/scripts/classes/class-query-params.js");
 
-function checkboxSearchForm(container, setCount) {
+function checkboxSearchForm(container, setCount, isJobs = false) {
   let selections = {}; // Checkbox elements
 
   const checkboxEls = container.querySelectorAll("input[type='checkbox']"); // Params and current values
@@ -190,7 +190,7 @@ function checkboxSearchForm(container, setCount) {
 
     selections = {}; // Update topics number
 
-    count = setCount('clear');
+    count = setCount("clear");
     topics.innerHTML = count;
   } // Handles checking of checkboxes and updating of params
 
@@ -199,7 +199,7 @@ function checkboxSearchForm(container, setCount) {
     checkboxEls.forEach(checkbox => {
       if (currentValues.split(",").includes(checkbox.value)) {
         // Increment topics number
-        count = setCount('check'); // Set checkbox to checked
+        count = setCount("check"); // Set checkbox to checked
 
         checkbox.checked = true; // Add to selections object
 
@@ -213,37 +213,43 @@ function checkboxSearchForm(container, setCount) {
 
 
   topics.innerHTML = count;
-  topics.classList.add('opacity-100'); // Add event listener to checkboxes to updateUrl with term id's
+  topics.classList.add("opacity-100"); // Add event listener to checkboxes to updateUrl with term id's
 
   for (let i = 0; i < checkboxEls.length; i++) {
     checkboxEls[i].addEventListener("click", updateUrl);
   }
 
   function updateUrl(e) {
-    if (e.target.checked) {
-      // Increment topics number
-      count = setCount('check');
-      topics.innerHTML = count; // Add to selections object
-
-      selections[e.target.id] = {
-        name: e.target.name,
-        value: e.target.value
-      };
+    if (isJobs) {
+      checkboxEls.forEach(item => {
+        if (item !== e.target) item.checked = false;
+      });
     } else {
-      // Decrement topics number
-      count = setCount('uncheck');
-      topics.innerHTML = count; // Remove from selections object AND params
+      if (e.target.checked) {
+        // Increment topics number
+        count = setCount("check");
+        topics.innerHTML = count; // Add to selections object
 
-      delete selections[e.target.id];
+        selections[e.target.id] = {
+          name: e.target.name,
+          value: e.target.value
+        };
+      } else {
+        // Decrement topics number
+        count = setCount("uncheck");
+        topics.innerHTML = count; // Remove from selections object AND params
+
+        delete selections[e.target.id];
+      }
+
+      const results = [];
+
+      for (let key in selections) {
+        results.push(selections[key].value);
+      }
+
+      params.setParam(results.join(","));
     }
-
-    const results = [];
-
-    for (let key in selections) {
-      results.push(selections[key].value);
-    }
-
-    params.setParam(results.join(","));
   }
 }
 
@@ -1416,19 +1422,20 @@ function search() {
 
 
   const checkboxContainers = document.querySelectorAll(".checkbox-form");
+  const isJobs = checkboxContainers[0].classList.contains("job-checkboxes");
   let count = 0;
 
   const setCount = action => {
     switch (action) {
-      case 'check':
+      case "check":
         count = count + 1;
         return count;
 
-      case 'uncheck':
+      case "uncheck":
         count = count - 1;
         return count;
 
-      case 'clear':
+      case "clear":
         count = 0;
         return count;
 
@@ -1438,9 +1445,9 @@ function search() {
   };
 
   checkboxContainers.forEach(checkboxContainer => {
-    (0,_checkbox_searchform__WEBPACK_IMPORTED_MODULE_2__["default"])(checkboxContainer, setCount);
+    (0,_checkbox_searchform__WEBPACK_IMPORTED_MODULE_2__["default"])(checkboxContainer, setCount, isJobs);
   });
-  const radioForms = [...document.querySelectorAll('.radio-form')];
+  const radioForms = [...document.querySelectorAll(".radio-form")];
 
   if (radioForms.length > 0) {
     radioForms.forEach(form => {
@@ -1449,7 +1456,6 @@ function search() {
     });
   }
 }
-;
 
 /***/ }),
 

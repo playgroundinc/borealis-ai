@@ -4,9 +4,10 @@ var __webpack_exports__ = {};
   !*** ./src/js/scripts/tabbed-content.js ***!
   \******************************************/
 function tabbedContent(tabContainer) {
-  const tabs = tabContainer.querySelectorAll('[role=tab]');
-  const tabList = tabContainer.querySelector('[role=tablist]');
-  const isSearchNav = tabContainer.id === 'search-nav';
+  const jobNav = tabContainer.classList.contains("jobs");
+  const tabs = tabContainer.querySelectorAll("[role=tab]");
+  const tabList = tabContainer.querySelector("[role=tablist]");
+  const isSearchNav = tabContainer.id === "search-nav";
 
   const classToggle = (el, classToRemove, classToAdd) => {
     if (classToAdd) {
@@ -19,41 +20,46 @@ function tabbedContent(tabContainer) {
   };
 
   for (i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener('click', showTabPanel);
+    tabs[i].addEventListener("click", showTabPanel);
   }
 
   function showTabPanel(el) {
     el.preventDefault();
 
     for (i = 0; i < tabs.length; i++) {
-      tabs[i].setAttribute('aria-selected', 'false');
+      tabs[i].setAttribute("aria-selected", "false");
 
       if (isSearchNav) {
-        classToggle(tabs[i], 'border-b-4', 'border-b-0');
+        classToggle(tabs[i], "border-b-4", "border-b-0");
+      } else if (jobNav) {
+        classToggle(tabs[i], "pill-active", null);
       } else {
-        classToggle(tabs[i], 'pill-secondary-active', null);
+        classToggle(tabs[i], "pill-secondary-active", null);
       }
     }
 
-    el.target.setAttribute('aria-selected', 'true');
+    el.target.setAttribute("aria-selected", "true");
 
     if (isSearchNav) {
-      classToggle(el.target, 'border-b-0', 'border-b-4');
+      classToggle(el.target, "border-b-0", "border-b-4");
+    } else if (jobNav) {
+      classToggle(el.target, null, "pill-active");
     } else {
-      classToggle(el.target, null, 'pill-secondary-active');
+      classToggle(el.target, null, "pill-secondary-active");
     }
 
-    const tabPanelToOpen = el.target.getAttribute('aria-controls');
-    const tabPanels = tabContainer.querySelectorAll('[role=tabpanel]');
+    const tabPanelToOpen = el.target.getAttribute("aria-controls");
+    const tabPanels = tabContainer.querySelectorAll("[role=tabpanel]");
 
     for (i = 0; i < tabPanels.length; i++) {
-      classToggle(tabPanels[i], 'flex', 'hidden');
+      classToggle(tabPanels[i], "flex", "hidden");
     }
 
-    classToggle(tabContainer.querySelector(`#${tabPanelToOpen}`), 'hidden', 'flex');
+    console.log(tabPanelToOpen);
+    classToggle(tabContainer.querySelector(`[id='${tabPanelToOpen}']`), "hidden", "flex");
   }
 
-  tabList.addEventListener('keydown', e => {
+  tabList.addEventListener("keydown", e => {
     if (e.keyCode === 37 || e.keyCode === 38) {
       if (e.target.previousElementSibling !== null) {
         e.target.previousElementSibling.focus();
@@ -70,7 +76,7 @@ function tabbedContent(tabContainer) {
   });
 }
 
-const tabContainers = document.querySelectorAll('.tab-container');
+const tabContainers = document.querySelectorAll(".tab-container");
 tabContainers.forEach(tabContainer => tabbedContent(tabContainer));
 /******/ })()
 ;
