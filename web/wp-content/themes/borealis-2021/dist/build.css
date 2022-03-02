@@ -1247,6 +1247,9 @@ ol.footnotes li small{
 .mt-5{
   margin-top: 20px;
 }
+.mb-72{
+  margin-bottom: 288px;
+}
 .block{
   display: block;
 }
