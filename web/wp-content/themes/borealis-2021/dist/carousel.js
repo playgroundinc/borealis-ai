@@ -402,6 +402,8 @@ module.exports.breakpoints = {
     spacing['2/7'] = 'calc((100% / 7) * 2)';
     spacing['3/7'] = 'calc((100% / 7) * 3)';
 
+    spacing['fellowship'] = 'calc((100% - 28px) / 2)';
+
     spacing['col-6'] = 'calc((100% - 20px) / 2)';
     spacing['col-4'] = 'calc((100% - 40px) / 3)';
     spacing['col-3'] = 'calc((100% - 60px) / 4)';

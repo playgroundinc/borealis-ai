@@ -40,6 +40,10 @@ import codeBlock from './blocks/code/code-block.jsx';
 import contentCardContainerBlock from "./blocks/content-cards/content-card-container.jsx";
 import contentCardBlock from "./blocks/content-cards/content-card.jsx";
 
+// Fellowships
+import fellowshipContainerBlock from './blocks/fellowships/fellowship-container-block.jsx';
+import fellowshipBlock from './blocks/fellowships/fellowship-block.jsx';
+
 // Figures
 import compareFiguresBlock from './blocks/figures/compare-figures-block.jsx';
 
@@ -143,6 +147,10 @@ contentCardBlock();
 // Code
 compareCodeBlock();
 codeBlock();
+
+// Fellowship
+fellowshipBlock();
+fellowshipContainerBlock();
 
 // Figures
 compareFiguresBlock();

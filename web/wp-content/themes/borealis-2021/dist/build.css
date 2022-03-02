@@ -1254,6 +1254,9 @@ ol.footnotes li small{
 .mt-9{
   margin-top: 36px;
 }
+.mb-13{
+  margin-bottom: 52px;
+}
 .mt-14{
   margin-top: 56px;
 }
@@ -1307,6 +1310,9 @@ ol.footnotes li small{
 .h-4{
   height: 16px;
 }
+.h-35{
+  height: 140px;
+}
 .h-13{
   height: 52px;
 }
@@ -1318,6 +1324,9 @@ ol.footnotes li small{
 }
 .max-h-full{
   max-height: 100%;
+}
+.max-h-18{
+  max-height: 72px;
 }
 .max-h-\[450px\]{
   max-height: 450px;
@@ -1369,6 +1378,12 @@ ol.footnotes li small{
 }
 .w-23{
   width: 92px;
+}
+.w-35{
+  width: 140px;
+}
+.w-36{
+  width: 144px;
 }
 .w-42{
   width: 168px;
@@ -1426,6 +1441,9 @@ ol.footnotes li small{
 }
 .basis-7\/12{
   flex-basis: 58.333333%;
+}
+.basis-fellowship{
+  flex-basis: calc((100% - 28px) / 2);
 }
 .basis-team-member{
   flex-basis: 310px;
@@ -1890,6 +1908,9 @@ ol.footnotes li small{
 .pt-4{
   padding-top: 16px;
 }
+.pb-1{
+  padding-bottom: 4px;
+}
 .pt-gallery{
   padding-top: 600px;
 }
@@ -2207,6 +2228,9 @@ ol.footnotes li small{
   .nth-child-2\:mt-5:nth-child(n + 2){
   margin-top: 20px;
 }
+  .nth-child-2\:mt-17:nth-child(n + 2){
+  margin-top: 68px;
+}
   .nth-child-2\:mt-10:nth-child(n + 2){
   margin-top: 40px;
 }
@@ -2214,8 +2238,20 @@ ol.footnotes li small{
   padding-top: 48px;
 }
   @media (min-width: 375px){
+  .sm\:flex{
+    display: flex;
+  }
   .sm\:w-1\/2{
     width: 50%;
+  }
+  .sm\:nth-child-2\:mt-0:nth-child(n + 2){
+    margin-top: 0px;
+  }
+  .sm\:nth-child-2n\:mr-7:nth-child(2n + 1){
+    margin-right: 28px;
+  }
+  .sm\:nth-child-3\:mt-17:nth-child(n + 3){
+    margin-top: 68px;
   }
 }
   @media (min-width: 768px){
@@ -2425,6 +2461,9 @@ ol.footnotes li small{
     .md\:mt-10{
     margin-top: 40px;
   }
+    .md\:mb-10{
+    margin-bottom: 40px;
+  }
     .md\:mb-15{
     margin-bottom: 60px;
   }
@@ -2481,6 +2520,9 @@ ol.footnotes li small{
   }
     .md\:w-3\/4{
     width: 75%;
+  }
+    .md\:w-36{
+    width: 144px;
   }
     .md\:w-5\/12{
     width: 41.666667%;
@@ -2651,6 +2693,9 @@ ol.footnotes li small{
   }
     .md\:pt-11{
     padding-top: 44px;
+  }
+    .md\:pl-10{
+    padding-left: 40px;
   }
     .md\:pb-12{
     padding-bottom: 48px;
