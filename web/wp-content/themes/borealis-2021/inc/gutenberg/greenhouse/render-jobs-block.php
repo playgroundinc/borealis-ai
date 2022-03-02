@@ -99,7 +99,7 @@ if (!function_exists('pg_render_job_block')) {
 
                                     <?php foreach ($department_array as $department) : ?>
                                         <?php if ($department['id'] === 0) : ?>
-                                            <ul aria-labelledby="<?php echo $department['id'] ?>-tab" id="<?php echo $department['id'] ?>-content-panel" role="tabpanel" class=" pt-3 tb:pt-7 nested-block w-full tb:w-8/12 flex flex-col relative tb:-top-8">
+                                            <ul aria-labelledby="<?php echo $department['id'] ?>-tab" id="<?php echo $department['id'] ?>-content-panel" role="tabpanel" class="pt-3 tb:pt-0 nested-block w-full tb:w-8/12 flex flex-col relative top-0 tb:-top-8">
                                                 <?php foreach ($department['jobs'] as $job) {
                                                     $output = pg_render_filter_jobs_item($job['id'], $settings['greenhouse_api_key'], $settings['greenhouse_url']);
                                                     if ($output) {
@@ -108,7 +108,7 @@ if (!function_exists('pg_render_job_block')) {
                                                 } ?>
                                             </ul>
                                         <?php else : ?>
-                                            <ul aria-labelledby="<?php echo $department['id'] ?>-tab" id="<?php echo $department['id'] ?>-content-panel" role="tabpanel" class="hidden pt-3 tb:pt-7 nested-block w-full tb:w-8/12 flex flex-col relative tb:-top-8">
+                                            <ul aria-labelledby="<?php echo $department['id'] ?>-tab" id="<?php echo $department['id'] ?>-content-panel" role="tabpanel" class="hidden pt-3 tb:pt-0 nested-block w-full tb:w-8/12 flex flex-col relative top-0 tb:-top-8">
                                                 <?php foreach ($department['jobs'] as $job) {
                                                     $output = pg_render_filter_jobs_item($job['id'], $settings['greenhouse_api_key'], $settings['greenhouse_url']);
                                                     if ($output) {
