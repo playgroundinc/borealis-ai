@@ -31,6 +31,7 @@ module.exports.breakpoints = {
     spacing['col-6'] = 'calc((100% - 20px) / 2)';
     spacing['col-4'] = 'calc((100% - 40px) / 3)';
     spacing['col-3'] = 'calc((100% - 60px) / 4)';
+    spacing['full-bleed'] = 'calc(((1440px / 12) * 4) + ((100vw - 1440px) / 2))'
     for (let i = 0; i <= max; i = i + 1) {
       spacing[i] = `${i * base}px`;
     }
