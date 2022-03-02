@@ -244,6 +244,10 @@ if (!function_exists('pg_svg_spritemap')) {
                 <g transform="translate(2 1.5)" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><circle cx="11.097" cy="11.369" r="1.208"/><circle cx="11.097" cy="11.369" r="6.042"/><path d="M15.81 21.168v.013M19.604 18.148v.012M21.694 13.786v.012M21.694 8.952v.012M19.604 4.59v.012M15.81 1.569v.012M11.097.494v.012M6.385 1.569v.012M2.59 4.59v.012M.5 8.952v.012M.5 13.786v.012M2.59 18.148v.012M6.385 21.168v.013M11.097 22.244v.012"/></g>
             </symbol>
 
+            <symbol id="icon-applications-closed" viewBox="0 0 30 30">
+                <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M27.846 2 2 27.846M2 2l25.846 25.846"/></g>
+            </symbol>
+
         </svg>
 
 <?php
