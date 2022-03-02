@@ -1,8 +1,8 @@
 // Helpers
-import { namespace } from "./helper-functions/constants.js";
+import { namespace } from "../helper-functions/constants.js";
 
 // Reusable
-import CustomRichText from "./reusable/custom-richtext-component.jsx";
+import CustomRichText from "../reusable/custom-richtext-component.jsx";
 
 export default function statisticsBlock() {
   /**
@@ -16,7 +16,7 @@ export default function statisticsBlock() {
   const slug = "statistics";
   const title = "Statistics";
   const description = "A Statistics Page Strip";
-  const category = "page-strips";
+  const category = "rows";
   const icon = "align-full-width"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {

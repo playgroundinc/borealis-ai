@@ -12,9 +12,9 @@ export default function tabbedContentContainerBlock() {
     const { i18n } = wp;
 
     const blockSlug = "tabbed-content-container-block"; // slug for the block
-	const blockTitle = "Tabbed content container block";
+	const blockTitle = "Tabbed Content Container";
 	const blockDescription = "Component to create tabbed content container block";
-	const blockCategory = "common";
+	const blockCategory = "containers";
     const blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
@@ -86,7 +86,7 @@ export default function tabbedContentContainerBlock() {
             }
 
 			return [
-                <div class="tabbed-content-container__block custom-container">
+                <div class="tabbed-content-container__block custom-section">
                     <p class="block-title">Tabbed Content Container</p>
                     <BlockSettings 
                         title="Block Settings"

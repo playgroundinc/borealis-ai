@@ -9,7 +9,7 @@ export default function selectJobBlock() {
     const blockSlug = "select-job";
 	const blockTitle = "Select Job";
 	const blockDescription = "Component to select a single job";
-	const blockCategory = "common";
+	const blockCategory = "selects";
     const blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {

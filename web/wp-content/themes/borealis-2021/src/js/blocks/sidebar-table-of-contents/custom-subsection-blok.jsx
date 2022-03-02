@@ -12,7 +12,7 @@ export default function customSubsectionBlock() {
     const blockSlug = "custom-subsection-block"; // slug for the block
 	const blockTitle = "Custom Subsection";
 	const blockDescription = "Component to create custom subsection block";
-	const blockCategory = "common";
+	const blockCategory = "sections";
     const blockIcon = "admin-page"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const attributes = {
@@ -57,13 +57,13 @@ export default function customSubsectionBlock() {
                         <InnerBlocks.Content />
                     ) : (
                         <InnerBlocks
-                            allowedBlocks={[
-                                `core/code`, 
+                            allowedBlocks={[ 
                                 `core/table`, 
                                 `core/podcast`, 
                                 `core/video`, 
                                 `core/list`, 
                                 `core/quote`,
+
                                 `${namespace}/tag-cloud-container-block`, 
                                 `${namespace}/paragraph`, 
                                 `${namespace}/heading-two`, 
@@ -73,7 +73,13 @@ export default function customSubsectionBlock() {
                                 `${namespace}/blockquote`,
                                 `${namespace}/publications-container`,
                                 `${namespace}/image-text`,
-                                `${namespace}/icon-list-container-block`
+                                `${namespace}/icon-list-container-block`,
+                                `${namespace}/compare-code`,
+                                `${namespace}/code`,
+                                `${namespace}/jobs-container`,
+                                `${namespace}/compare-figures`,
+                                `${namespace}/tabbed-content-container-block`
+
                             ]}
                         />
                     )}

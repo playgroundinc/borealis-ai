@@ -50,12 +50,12 @@ if ( ! function_exists( 'pg_render_tabbed_content_container_block' ) ) {
         $dark = $image && strlen($image) > 0; 
         ob_start();
         ?>
-            <div class="custom-component animated-element">
-                <div class="bg-center bg-cover <?php echo $dark && $attributes->display_style === 'background-image' ? esc_attr('text-shade-white-400 pt-11 lg:py-20') : '' ?>" style="<?php echo $dark && $attributes->display_style === 'background-image' ? 'background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('. esc_url_raw($image) . ')' : '' ?>">
-                    <section class="tab-container container" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
+            <div class="custom-component animated-element nestable">
+                <div class="bg-center bg-cover <?php echo $dark && $attributes->display_style === 'background-image' ? esc_attr('text-shade-white-400 pt-11 lg:pt-20 pb-9') : '' ?>" style="<?php echo $dark && $attributes->display_style === 'background-image' ? 'background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('. esc_url_raw($image) . ')' : '' ?>">
+                    <div class="tab-container <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : '' ; ?>" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                         <?php if ($dark && $attributes->display_style === 'background-image'): ?>
                             <div class="lg:flex justify-between">
-                                <div class="lg:basis-4/12 shrink-0 flex flex-col">
+                                <div class="lg:basis-4/12 shrink-0 flex flex-col lg:pb-11">
                                     <div class="grow flex flex-col justify-end">
                                         <?php if (!empty($attributes->title)): ?>
                                             <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3"><?php echo esc_html($attributes->title) ?></h2>
@@ -103,7 +103,7 @@ if ( ! function_exists( 'pg_render_tabbed_content_container_block' ) ) {
                                                 </div>
                                             <?php endif;?>
                                     <?php endforeach; ?>
-                                    <div class="flex lg:justify-center lg:pt-8 overflow-scroll pb-11 pt-11 lg:pb-0" role="tablist" aria-orientation="horizontal">
+                                    <div class="flex lg:justify-center lg:pt-8 overflow-scroll pb-11 pt-11 pl-4" role="tablist" aria-orientation="horizontal">
                                         <?php foreach ($block['innerBlocks'] as $inner_block => $element): ?>
                                             <?php
                                                 $fields = array(
@@ -117,7 +117,7 @@ if ( ! function_exists( 'pg_render_tabbed_content_container_block' ) ) {
                                                 $title = $element['attrs']['title'];
                                             ?> 
                                                 <?php if ($inner_block === key($block['innerBlocks'])): ?>   
-                                                    <button class="pill-secondary pill-secondary-active shrink-0" role="tab" aria-selected="true" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
+                                                    <button class="pill-secondary pill-secondary-active shrink-0 first:ml-4" role="tab" aria-selected="true" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
                                                 <?php else: ?>
                                                     <button class="pill-secondary shrink-0" role="tab" aria-selected="false" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
                                                 <?php endif; ?>
@@ -126,25 +126,28 @@ if ( ! function_exists( 'pg_render_tabbed_content_container_block' ) ) {
                                 </div>
                             </div>
                         <?php else: ?>
-                            <div class="lg:flex justify-between default-tabs">
+                            <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('lg:flex') : '' ?> justify-between default-tabs">
                                 <div class="lg:basis-4/12 shrink-0">
                                     <?php if (!empty($attributes->title)): ?>
-                                        <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3 pr-6"><?php echo esc_html($attributes->title) ?></h2>
+                                        <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3 pr-6 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('pb-4') : '' ?>"><?php echo esc_html($attributes->title) ?></h2>
                                     <?php endif; ?>
                                 </div>
                                 <div class="basis-8/12 shrink-0 pt-5 lg:pt-0">
                                     <?php if (!empty($attributes->copy)): ?>
-                                        <p class="paragraph"><?php echo esc_html($attributes->copy) ?></p>
-                                    <?php endif; ?>
-                                    <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0):?>
-                                        <div class="md:flex flex-wrap">
-                                            <a class="primary-button flex items-center pt-11 pb-4" href="<?php echo esc_url_raw($attributes->cta_one_link)?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
-                                            <?php if (!empty($attributes->cta_two_text) && !empty($attributes->cta_two_link) && strlen($attributes->cta_two_text) > 0 && strlen($attributes->cta_two_link) > 0):?>
-                                                <a class="primary-button flex items-center pt-11 md:pl-8 pb-4" href="<?php echo esc_url_raw($attributes->cta_two_link)?>"><?php echo esc_html($attributes->cta_two_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                        <div class="pb-8">
+                                            <p class="paragraph"><?php echo esc_html($attributes->copy) ?></p>
+                                            <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0):?>
+                                                <div class="md:flex flex-wrap">
+                                                    <a class="primary-button flex items-center pt-11 pb-4" href="<?php echo esc_url_raw($attributes->cta_one_link)?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                                    <?php if (!empty($attributes->cta_two_text) && !empty($attributes->cta_two_link) && strlen($attributes->cta_two_text) > 0 && strlen($attributes->cta_two_link) > 0):?>
+                                                        <a class="primary-button flex items-center pt-11 md:pl-8 pb-4" href="<?php echo esc_url_raw($attributes->cta_two_link)?>"><?php echo esc_html($attributes->cta_two_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                                    <?php endif; ?>
+                                                </div>
                                             <?php endif; ?>
                                         </div>
                                     <?php endif; ?>
-                                    <div class="flex pt-8 border-b border-shade-grey-700 overflow-scroll" role="tablist" aria-orientation="horizontal">
+                                   
+                                    <div class="flex border-b border-shade-grey-700 overflow-scroll" role="tablist" aria-orientation="horizontal">
                                         <?php foreach ($block['innerBlocks'] as $inner_block => $element): ?>
                                             <?php
                                                 $fields = array(
@@ -196,7 +199,7 @@ if ( ! function_exists( 'pg_render_tabbed_content_container_block' ) ) {
                                 </div>
                             </div>
                         <?php endif; ?>
-                    </section>
+                    </div>
                 </div>
             </div>
         <?php

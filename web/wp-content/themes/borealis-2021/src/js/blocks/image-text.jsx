@@ -16,9 +16,9 @@ export default function imageTextBlock() {
     const { i18n } = wp;
 
     const slug = "image-text";
-	const title = "Content Block - Slanted Image";
+	const title = "Image + Content Block";
 	const description = "A reversible component with image one side and text on the other.";
-	const category = "common";
+	const category = "page-strips";
     const icon = "align-left"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
     const stringAttributes = [

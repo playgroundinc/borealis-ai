@@ -20,6 +20,7 @@ if ( ! function_exists( 'pg_register_custom_image_sizes' ) ) {
     function pg_register_custom_image_sizes() {
         add_image_size( 'team-member', 310, 410, true );
         add_image_size( 'product-single', 312, 187, true );
+        add_image_size( 'job-highlight', 331, 205, true);
     }
 }
 

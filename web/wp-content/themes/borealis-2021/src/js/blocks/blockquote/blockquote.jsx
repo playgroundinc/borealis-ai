@@ -11,7 +11,7 @@ export default function blockquoteBlock() {
 	const blockSlug = "blockquote";
 	const blockTitle = "Quote";
 	const blockDescription = "Creates a Blockquote.";
-	const blockCategory = "common";
+	const blockCategory = "copy";
     const blockIcon = "format-quote"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
 	registerBlockType(`${namespace}/${blockSlug}`, {

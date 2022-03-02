@@ -1,5 +1,4 @@
 import { namespace } from '../helper-functions/constants';
-import CustomRichText from '../reusable/custom-richtext-component.jsx';
 
 import SelectAuthors from '../reusable/select-authors.jsx';
 
@@ -25,7 +24,7 @@ export default function publicationMetaBlock() {
 	registerBlockType(`${namespace}/publications-meta-block`, {
 		title: 'Publications Meta',
 		icon: 'align-full-width',
-        category: 'common',
+        category: 'meta',
         supports: {
             multiple: false,
         },

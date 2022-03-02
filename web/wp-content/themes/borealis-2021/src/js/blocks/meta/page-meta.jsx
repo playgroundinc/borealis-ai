@@ -2,8 +2,6 @@ import { namespace } from '../helper-functions/constants';
 
 import defaultAttrs from '../helper-functions/default-attrs';
 
-import CustomVideoUpload from "../reusable/custom-video-upload.jsx";
-
 export default function pageMetaBlock() {
 
     const { registerBlockType } = wp.blocks;
@@ -20,7 +18,7 @@ export default function pageMetaBlock() {
 	registerBlockType(`${namespace}/page-meta-block`, {
 		title: 'Page Meta',
 		icon: 'align-full-width',
-        category: 'common',
+        category: 'meta',
         supports: {
             multiple: false,
         },

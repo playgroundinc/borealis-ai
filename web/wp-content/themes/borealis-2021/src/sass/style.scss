@@ -52,15 +52,17 @@
     @apply mt-0;
   }
 
-  .container .container {
-    @apply w-full m-0;
-    .icon-list,
+  .tab-container {
     .accordion-list {
       @apply w-full;
     }
   }
   .page {
     .container .container {
+      @apply w-full;
+      .icon-list {
+        @apply w-full;
+      }
       .icon-list-title,
       .accordion-title {
         @apply hidden;
@@ -93,22 +95,20 @@
     @apply list-disc list-inside;
   }
   .single .nestable {
-    .md\:container {
-      @apply m-0 w-full;
-    }
     .nested-flex {
       @apply block w-full md:w-full;
-      .nested-block {
+      .accordion-title + .accordion-list {
         @apply mt-10;
       }
-    }
-    .nested-description {
-      @apply mt-4;
     }
   }
 
   .row-item {
     @apply bg-shade-white-400 hover:bg-shade-grey-100 transition-background-color duration-300;
+  }
+
+  .wp-block-code {
+    @apply bg-shade-grey-100 rounded-large p-12 grow;
   }
 }
 
