@@ -61,7 +61,7 @@ export default function programMetaBlock() {
                             <p>Are applications open?</p>
                             <ToggleControl
                                 checked={applications_open}
-                                onChange={(value) => { console.log(value); updateAttributeValue('applications_open', value) }}
+                                onChange={(value) => { updateAttributeValue('applications_open', value) }}
                                 label="Yes or No?"
                             />
                             { 

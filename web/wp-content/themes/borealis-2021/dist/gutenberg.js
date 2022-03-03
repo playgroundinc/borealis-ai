@@ -3531,7 +3531,6 @@ function programMetaBlock() {
       })), /*#__PURE__*/React.createElement("p", null, "Are applications open?"), /*#__PURE__*/React.createElement(ToggleControl, {
         checked: applications_open,
         onChange: function onChange(value) {
-          console.log(value);
           updateAttributeValue('applications_open', value);
         },
         label: "Yes or No?"
