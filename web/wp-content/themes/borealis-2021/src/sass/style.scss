@@ -58,7 +58,7 @@
     }
   }
   .page {
-    .container .container {
+    .container .nestable .container {
       @apply w-full;
       .icon-list {
         @apply w-full;

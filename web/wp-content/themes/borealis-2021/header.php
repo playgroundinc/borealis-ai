@@ -67,7 +67,6 @@
     }
     $headline = get_post_meta($post->ID, 'headline', true);
     $header_height = is_front_page() ? 'min-h-[615px] flex flex-col' : 'min-h-[125px]';
-    // var_dump(i);
     $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications', 'product', 'program']) || is_front_page();
     ?>
     <style>
