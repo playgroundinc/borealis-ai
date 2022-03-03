@@ -1418,8 +1418,14 @@ ol.footnotes li small{
 .max-w-\[450px\]{
   max-width: 450px;
 }
+.flex-shrink{
+  flex-shrink: 1;
+}
 .shrink-0{
   flex-shrink: 0;
+}
+.flex-grow{
+  flex-grow: 1;
 }
 .grow{
   flex-grow: 1;
@@ -2117,14 +2123,57 @@ ol.footnotes li small{
   https: //pantheon.io/docs/ssh-keys;
 }
 
-.visible-scroll::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 10px; }
+.wp-block-table {
+  margin-top: 64px;
+  padding-bottom: 32px; }
+  @media (min-width: 768px) {
+    .wp-block-table {
+      padding-bottom: 0; } }
+  .wp-block-table thead {
+    background-color: #000F78;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.5; }
+    .wp-block-table thead tr {
+      display: flex; }
+    .wp-block-table thead th {
+      flex-grow: 1;
+      flex-shrink: 0;
+      display: inline-block;
+      flex-basis: 25%;
+      padding: 26px; }
+  .wp-block-table tbody tr {
+    display: flex;
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5; }
+    .wp-block-table tbody tr:nth-child(2n + 1) {
+      background-color: #F4F4FB; }
+  .wp-block-table tbody td {
+    display: inline-block;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 25%;
+    padding: 26px; }
+  .wp-block-table .caption {
+    color: #5C5D76;
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    display: block;
+    margin-top: 32px; }
 
-.visible-scroll::-webkit-scrollbar-thumb {
-  border-radius: 50px;
-  background-color: rgba(34, 39, 49, 0.5);
-  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+mjx-container {
+  padding-bottom: 32px;
+  overflow: scroll; }
+  @media (min-width: 768px) {
+    mjx-container {
+      padding-bottom: 0; } }
 
 .wp-block-video,
 .wp-block-embed,
@@ -2141,79 +2190,113 @@ ol.footnotes li small{
   .wp-block-embed__wrapper video,
   .wp-block-embed__wrapper iframe {
     max-height: 100%; }
-  .first\:ml-4:first-child{
+
+.visible-scroll::-webkit-scrollbar,
+mjx-container::-webkit-scrollbar,
+.wp-block-table::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px; }
+
+.visible-scroll::-webkit-scrollbar-thumb,
+mjx-container::-webkit-scrollbar-thumb,
+.wp-block-table::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: rgba(34, 39, 49, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+
+.first\:ml-4:first-child{
   margin-left: 16px;
 }
-  .first\:mt-0:first-child{
+
+.first\:mt-0:first-child{
   margin-top: 0px;
 }
-  .last\:basis-auto:last-child{
+
+.last\:basis-auto:last-child{
   flex-basis: auto;
 }
-  .last\:border-b-0:last-child{
+
+.last\:border-b-0:last-child{
   border-bottom-width: 0px;
 }
-  .visited\:text-primary-electric-purple-400:visited{
+
+.visited\:text-primary-electric-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-  .visited\:text-primary-purple-400:visited{
+
+.visited\:text-primary-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(85 0 155 / var(--tw-text-opacity));
 }
-  .hover\:cursor-pointer:hover{
+
+.hover\:cursor-pointer:hover{
   cursor: pointer;
 }
-  .hover\:bg-shade-grey-50:hover{
+
+.hover\:bg-shade-grey-50:hover{
   background-color: rgba(244,244,251,0.5);
 }
-  .hover\:bg-shade-grey-100:hover{
+
+.hover\:bg-shade-grey-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
 }
-  .hover\:bg-shade-white-400:hover{
+
+.hover\:bg-shade-white-400:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-  .hover\:text-primary-electric-blue-400:hover{
+
+.hover\:text-primary-electric-blue-400:hover{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
 }
-  .hover\:text-primary-electric-purple-400:hover{
+
+.hover\:text-primary-electric-purple-400:hover{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-  .hover\:underline:hover{
+
+.hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-  .focus\:border-primary-electric-blue-400:focus{
+
+.focus\:border-primary-electric-blue-400:focus{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
 }
-  .focus\:text-primary-electric-purple-400:focus{
+
+.focus\:text-primary-electric-purple-400:focus{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-  .focus\:outline-0:focus{
+
+.focus\:outline-0:focus{
   outline-width: 0px;
 }
-  .disabled\:text-shade-grey-400:disabled{
+
+.disabled\:text-shade-grey-400:disabled{
   --tw-text-opacity: 1;
   color: rgb(216 216 228 / var(--tw-text-opacity));
 }
-  .group:first-child .group-first\:border-t{
+
+.group:first-child .group-first\:border-t{
   border-top-width: 1px;
 }
-  .group:hover .group-hover\:bg-tint-teal-400{
+
+.group:hover .group-hover\:bg-tint-teal-400{
   --tw-bg-opacity: 1;
   background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
-  .group:hover .group-hover\:underline{
+
+.group:hover .group-hover\:underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-  .peer:checked ~ .peer-checked\:pill-active{
+
+.peer:checked ~ .peer-checked\:pill-active{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
@@ -2221,25 +2304,32 @@ ol.footnotes li small{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-  .nth-child-2\:ml-5:nth-child(n + 2){
+
+.nth-child-2\:ml-5:nth-child(n + 2){
   margin-left: 20px;
 }
-  .nth-child-2\:ml-0:nth-child(n + 2){
+
+.nth-child-2\:ml-0:nth-child(n + 2){
   margin-left: 0px;
 }
-  .nth-child-2\:mt-5:nth-child(n + 2){
+
+.nth-child-2\:mt-5:nth-child(n + 2){
   margin-top: 20px;
 }
-  .nth-child-2\:mt-17:nth-child(n + 2){
+
+.nth-child-2\:mt-17:nth-child(n + 2){
   margin-top: 68px;
 }
-  .nth-child-2\:mt-10:nth-child(n + 2){
+
+.nth-child-2\:mt-10:nth-child(n + 2){
   margin-top: 40px;
 }
-  .nth-child-3\:pt-12:nth-child(n + 3){
+
+.nth-child-3\:pt-12:nth-child(n + 3){
   padding-top: 48px;
 }
-  @media (min-width: 375px){
+
+@media (min-width: 375px){
   .sm\:flex{
     display: flex;
   }
@@ -2256,7 +2346,8 @@ ol.footnotes li small{
     margin-top: 68px;
   }
 }
-  @media (min-width: 768px){
+
+@media (min-width: 768px){
   .md\:h1{
     font-size: 70px;
     font-family: Metrophobic, sans-serif;
@@ -2816,7 +2907,8 @@ ol.footnotes li small{
     margin-top: 32px;
   }
 }
-  @media (min-width: 1000px){
+
+@media (min-width: 1000px){
   .page .tb\:container .container{
     width: 100%;
   }
@@ -2950,7 +3042,8 @@ ol.footnotes li small{
     opacity: 1;
   }
 }
-  @media (min-width: 1440px){
+
+@media (min-width: 1440px){
   .page .lg\:container .container{
     width: 100%;
   }
