@@ -30,7 +30,7 @@ if ( ! function_exists( 'pg_render_video_block' ) ) {
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
         ?>
-        <div class="custom-component animated-element">
+        <div class="custom-component nestable animated-element">
             <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : '' ?> relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg lg:min-h-[435px]">
                 <?php if ( ! empty( $image ) ) : ?>
                     <div class="bg-cover bg-center absolute inset-0 z-10 video-block__overlay transition-all duration-400" style="background-image: url(<?php echo esc_url_raw($image) ?>)">
