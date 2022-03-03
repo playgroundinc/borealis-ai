@@ -14,7 +14,7 @@ module.exports = plugin(function({ addBase }) {
         {
             className: 'h2',
             max: '60',
-            min: '60',
+            min: '57',
             lineHeight: '1.10',
             fontFamily: 'Metrophobic, sans-serif',
             letterSpacing: '-0.04em'
