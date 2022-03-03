@@ -107,9 +107,8 @@ get_header();
             $args = pg_generate_query($id, $query, array('research-areas' => $research_areas), 1);
             $Query = new WP_Query($args);
 
-
             if ($inner_block === key($tab_array)) { ?>
-                <div class="block load-more-results" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
+                <div class="block load-more-results flex-col" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
                     <?php
                     if (!empty($Query->posts)) : // Empty Query check. 
                     ?>
@@ -130,7 +129,7 @@ get_header();
                     <?php wp_reset_query(); ?>
                 </div>
             <?php } else { ?>
-                <div class="hidden load-more-results" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
+                <div class="hidden load-more-results flex-col" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
                     <?php
                     if (!empty($Query->posts)) : // Empty Query check. 
                     ?>

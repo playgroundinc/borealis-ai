@@ -43,7 +43,7 @@ if (!function_exists('pg_render_statistics_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="<?php echo $attributes->bgColour === 'purple' ? 'bg-primary-electric-purple-400' : 'bg-primary-navy-400'  ?> text-shade-white-400">
+        <div class="animated-element custom-component component-dark <?php echo $attributes->bgColour === 'purple' ? 'bg-primary-electric-purple-400' : 'bg-primary-navy-400'  ?> text-shade-white-400">
             <div class="container flex md:pt-16 md:pb-20 py-10 tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>

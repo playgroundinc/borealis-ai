@@ -115,9 +115,9 @@ function fragmentShader() {
             float offset = (1.0 / length(vec2(p.x - p_mouse.x, p.y + p_mouse.y))) * noise / 2.0;
 
             vec3 rgb_color = vec3(
-                (snoise(vec3(p.x / 3.0, p.y / 3.0, u_time / 1.1)) + 0.1),
-                (snoise(vec3(p.x / 2.0, p.y / 2.0, u_time / 1.2)) + 0.1),
-                (snoise(vec3(p.x / 5.0, p.y / 5.0, u_time / 1.3)) + 1.0) / 2.0 + offset
+                0,
+                (snoise(vec3(p.x / 2.0, p.y / 2.0, u_time / 1.1)) + 0.2),
+                (snoise(vec3(p.x / 4.0, p.y / 4.0, u_time / 1.3)) + 0.4)
             );
 
             gl_FragColor = vec4(rgb_color, 1.0);
@@ -126,32 +126,32 @@ function fragmentShader() {
 }
 
 function init() {
-  const container = document.getElementById('canvas');
+  const container = document.getElementById("canvas");
   scene = new THREE.Scene();
   camera = new THREE.Camera();
   camera.position.z = 1;
   const geometry = new THREE.PlaneBufferGeometry(2, 2);
   const uniforms = {
     u_time: {
-      type: 'f',
+      type: "f",
       value: 100.0
     },
     u_resolution: {
-      type: 'v2',
+      type: "v2",
       value: new THREE.Vector2()
     },
     u_mouse: {
-      type: 'v2',
+      type: "v2",
       value: new THREE.Vector2()
     },
     c_mouse: {
-      type: 'v2',
+      type: "v2",
       value: new THREE.Vector2()
     }
   };
   const material = new THREE.ShaderMaterial({
     uniforms: uniforms,
-    fragmentShader: [perlinNoise(), fragmentShader()].join('\n')
+    fragmentShader: [perlinNoise(), fragmentShader()].join("\n")
   });
   const mesh = new THREE.Mesh(geometry, material);
   let mouseY = 0;
@@ -160,8 +160,8 @@ function init() {
     canvas: container
   });
   renderer.setSize(renderer.domElement.width, renderer.domElement.height);
-  window.addEventListener('resize', setSize, false);
-  document.addEventListener('mousemove', event => {
+  window.addEventListener("resize", setSize, false);
+  document.addEventListener("mousemove", event => {
     mouseX = event.pageX;
     mouseY = event.pageY;
   }, false);
@@ -184,7 +184,7 @@ function init() {
   }
 
   function render() {
-    uniforms.u_time.value += 0.005;
+    uniforms.u_time.value += 0.003;
     uniforms.u_mouse.value.x += (mouseX - uniforms.u_mouse.value.x) / 30;
     uniforms.u_mouse.value.y += (mouseY - uniforms.u_mouse.value.y) / 30;
     renderer.render(scene, camera);

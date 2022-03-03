@@ -40,7 +40,7 @@ if ( ! function_exists( 'pg_render_page_strip_block' ) ) {
         $attributes = pg_get_attributes( $attrs, $fields );
         ob_start();
         ?>
-            <div class="custom-component">
+            <div class="custom-component animated-element">
                 <div class="container container-fluid animated-element">
                     <div class="page-strip mt-15 flex middle-xs center-xs ph-md-5 ph-lg-3 pv-md-12 pv-xs-7 ph-xs-3 br-xs-lg <?php echo esc_attr('block--' . $attributes->bg_color) ?>">
                         <div class="fc-md-100 fc-lg-70 fc-xl-50 ph-md-5 ph-lg-0 copy--center">

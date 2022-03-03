@@ -46,36 +46,43 @@ if (!function_exists('pg_render_image_text_strip_block')) {
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
+        $allowed_html = pg_allowed_html();
         ob_start();
 
         if (!empty($image)) :
 ?>
-            <div class="w-full">
-                <div class="flex container text-shade-black-400 <?php echo $attributes->reverse === true ? 'flex-col-reverse' : 'flex-col' ?> <?php echo $attributes->reverse === true ? 'md:flex-row-reverse' : 'md:flex-row' ?>">
-                    <div class="w-full md:w-6/12 flex justify-center flex-col">
-                        <div class="w-11/12 tb:w-7/12 <?php echo $attributes->reverse === true ? 'md:ml-30' : '0'?> ">
-                            <?php if (!empty($attributes->title)) : ?>
-                                <h3 class="h3 md:mt-0 mt-10 mb-6 tb:mb-11">
-                                    <?php echo $attributes->title ?>
-                                </h3>
-                            <?php endif ?>
-                            <?php if (!empty($attributes->copy)) : ?>
-                                <p class="paragraph mb-8 md:mb-5 tb:mb-8 w-full">
-                                    <?php echo $attributes->copy ?>
-                                </p>
-                            <?php endif ?>
-                            <?php if (!empty($attributes->btn_text) and !empty($attributes->btn_url)) : ?>
-                                <a href="<?php echo $attributes->btn_url ?>" class="primary-button flex items-end mb-18 md:mb-0">
-                                    <?php echo $attributes->btn_text ?>
-                                    <span class="icon icon--lg ml-7 relative top-0">
-                                        <?php echo ($attributes->icon === true) ? pg_render_icon('arrow-white') : pg_render_icon('arrow-black'); ?>
-                                    </span>
-                                </a>
-                            <?php endif ?>
+            <div class="w-full custom-component">
+                <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('flex flex-col md:min-h-[500px] relative') : '' ?>">
+                    <div class="flex justify-between <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:container grow flex-col md:flex-row') : esc_attr('flex-col-reverse') ?>  <?php echo $attributes->reverse === true ? 'md:flex-row-reverse' : 'md:flex-row' ?>">
+                        <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container md:m-0 md:basis-6/12 grow-0 flex flex-col-reverse') : esc_attr('md:w-6/12') ?> <?php echo $attributes->reverse === true ? 'items-center' : '' ?>">
+                            <div class="flex justify-center flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:m-0 md:w-3/4 tb:w-2/3 grow') : '' ?>">
+                                <div class="md:mt-0 mt-10">
+                                    <?php if (!empty($attributes->title)) : ?>
+                                        <h3 class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('h3 mb-6 tb:mb-11') : esc_attr('h4 mb-4') ?>">
+                                            <?php echo $attributes->title ?>
+                                        </h3>
+                                    <?php endif ?>
+                                    <?php if (!empty($attributes->copy)) : ?>
+                                        <div>
+                                            <p class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('paragraph') : esc_attr('paragraph-blog') ?> w-full">
+                                                <?php echo wp_kses($attributes->copy, $allowed_html); ?>
+                                            </p>
+                                        </div>
+                                    <?php endif ?>
+                                    <?php if (!empty($attributes->btn_text) and !empty($attributes->btn_url)) : ?>
+                                        <a href="<?php echo $attributes->btn_url ?>" class="primary-button flex items-end mb-18 md:mb-0 mt-8 md:mt-5 tb:mt-8">
+                                            <?php echo $attributes->btn_text ?>
+                                            <span class="icon icon--lg ml-7 relative top-0">
+                                                <?php echo ($attributes->icon === true) ? pg_render_icon('arrow-white') : pg_render_icon('arrow-black'); ?>
+                                            </span>
+                                        </a>
+                                    <?php endif ?>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="w-full md:w-6/12 flex items-center">
-                        <div class="w-full bg-cover bg-no-repeat pt-100 bg-center" style="background-image: url(<?php echo $image ?>);"></div>
+                        <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:w-6/12 md:absolute top-0 bottom-0') : esc_attr('md:w-3/8') ?> w-full  flex items-center shrink-0 <?php echo $attributes->reverse === true ? 'left-0 md:pr-8' : 'md:pl-8 right-0' ?>">
+                            <div class="w-full bg-cover bg-no-repeat bg-center <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('pt-100 md:pt-0 h-full') : esc_attr('rounded-large pt-50'); ?>" style="background-image: url(<?php echo $image ?>);"></div>
+                        </div>
                     </div>
                 </div>
             </div>

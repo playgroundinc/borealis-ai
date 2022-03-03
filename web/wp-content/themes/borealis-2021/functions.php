@@ -1,4 +1,5 @@
 <?php
+
 /**
  * pg-wp-starter functions and definitions
  *
@@ -15,7 +16,7 @@ require get_template_directory() . '/inc/custom-settings.php';
 require get_template_directory() . '/inc/sprite-map.php';
 require get_template_directory() . '/inc/custom-menus/register-menus.php';
 
-add_post_type_support( 'page', 'excerpt' );
+add_post_type_support('page', 'excerpt');
 
 require get_template_directory() . '/inc/utilities.php';
 
@@ -62,8 +63,8 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
+if (defined('JETPACK__VERSION')) {
+  require get_template_directory() . '/inc/jetpack.php';
 }
 
 /**
@@ -82,6 +83,7 @@ require get_template_directory() . '/inc/gutenberg/render-icon-btn.php';
 
 // Partials
 require get_template_directory() . '/inc/partials/search-bar.php';
+require get_template_directory() . '/inc/partials/search-bar-jobs.php';
 require get_template_directory() . '/inc/partials/search-bar-main.php';
 require get_template_directory() . '/inc/partials/search-bar-main-result.php';
 
@@ -93,17 +95,28 @@ require get_template_directory() . '/inc/partials/blog/blog-cite.php';
 require get_template_directory() . '/inc/partials/blog/blog-share.php';
 require get_template_directory() . '/inc/partials/blog/blog-result.php';
 
+// Partials - Product
+require get_template_directory() . '/inc/partials/product/product-header.php';
+
+// Partials - Programs
+require get_template_directory() . '/inc/partials/programs/program-header.php';
+
 // Partials - Publications
 require get_template_directory() . '/inc/partials/publications/publication-result.php';
 require get_template_directory() . '/inc/partials/publications/publication-header.php';
 require get_template_directory() . '/inc/partials/publications/publication-sidebar.php';
 require get_template_directory() . '/inc/partials/publications/publication-related.php';
 
+// Partials - Hero
+require get_template_directory() . '/inc/partials/hero/hero-header.php';
+
+// Partials - Team Member
+require get_template_directory() . '/inc/partials/team-member/team-member-header.php';
+
 // Custom Blocks
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';
 require get_template_directory() . '/inc/gutenberg/render-select-post-block.php';
 require get_template_directory() . '/inc/gutenberg/render-text-column.php';
-require get_template_directory() . '/inc/gutenberg/render-image-text-block.php';
 require get_template_directory() . '/inc/gutenberg/render-video-block.php';
 require get_template_directory() . '/inc/gutenberg/render-image-block.php';
 
@@ -127,19 +140,15 @@ require get_template_directory() . '/inc/gutenberg/copy/render-copy-blocks.php';
 require get_template_directory() . '/inc/gutenberg/code/render-compare-code-block.php';
 require get_template_directory() . '/inc/gutenberg/code/render-code-block.php';
 
-// Content Blocks
-require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-container.php';
-require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-block.php';
+// Fellowships
+require get_template_directory() . '/inc/gutenberg/fellowships/render-fellowship-block.php';
+require get_template_directory() . '/inc/gutenberg/fellowships/render-fellowship-container-block.php';
 
 // Figures 
 require get_template_directory() . '/inc/gutenberg/figures/render-compare-figures.php';
 
 // Gallery
 require get_template_directory() . '/inc/gutenberg/gallery/render-gallery-container-block.php';
-
-// Image List Blocks
-require get_template_directory() . '/inc/gutenberg/image-list/render-image-list-container-block.php';
-require get_template_directory() . '/inc/gutenberg/image-list/render-image-list-block.php';
 
 // Logo Blocks
 require get_template_directory() . '/inc/gutenberg/logos/render-logos-container.php';
@@ -167,16 +176,14 @@ require get_template_directory() . '/inc/gutenberg/products/render-products-item
 // Slider Blocks
 require get_template_directory() . '/inc/gutenberg/slider/render-slider-container-block.php';
 require get_template_directory() . '/inc/gutenberg/slider/render-news-slide.php';
-require get_template_directory() . '/inc/gutenberg/slider/render-image-slide-block.php';
-
-// Stat Blocks
-require get_template_directory() . '/inc/gutenberg/stats/render-stat-container-block.php';
-require get_template_directory() . '/inc/gutenberg/stats/render-stat-column-block.php';
+require get_template_directory() . '/inc/gutenberg/slider/render-testimonial-slider-block.php';
+require get_template_directory() . '/inc/gutenberg/slider/render-testimonial-slide-block.php';
 
 // Greenhouse Blocks
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-jobs-block.php';
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-featured-jobs-block.php';
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-single-job-item.php';
+require get_template_directory() . '/inc/gutenberg/greenhouse/render-filter-jobs.php';
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-job-highlight-block.php';
 
 // Sidebar Table Of Contents Blocks
@@ -203,55 +210,56 @@ require get_template_directory() . '/inc/gutenberg/render-text-2-up-block.php';
 require get_template_directory() . '/inc/gutenberg/render-image-text-strip-block.php';
 
 // Statistics Blocks
-require get_template_directory() . '/inc/gutenberg/render-statistics-container-block.php';
-require get_template_directory() . '/inc/gutenberg/render-statistics-block.php';
+require get_template_directory() . '/inc/gutenberg/stats/render-statistics-container-block.php';
+require get_template_directory() . '/inc/gutenberg/stats/render-statistics-block.php';
 
 // add hook for subnav
-add_filter( 'wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2 );
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2);
 
 // filter_hook function to react on sub_menu flag
-function my_wp_nav_menu_objects_sub_menu( $sorted_menu_items, $args ) {
-  if ( isset( $args->sub_menu ) ) {
+function my_wp_nav_menu_objects_sub_menu($sorted_menu_items, $args)
+{
+  if (isset($args->sub_menu)) {
     $root_id = 0;
-    
+
     // find the current menu item
-    foreach ( $sorted_menu_items as $menu_item ) {
-      if ( $menu_item->current ) {
+    foreach ($sorted_menu_items as $menu_item) {
+      if ($menu_item->current) {
         // set the root id based on whether the current menu item has a parent or not
-        $root_id = ( $menu_item->menu_item_parent ) ? $menu_item->menu_item_parent : $menu_item->ID;
+        $root_id = ($menu_item->menu_item_parent) ? $menu_item->menu_item_parent : $menu_item->ID;
         break;
       }
     }
-    
+
     // find the top level parent
-    if ( ! isset( $args->direct_parent ) ) {
+    if (!isset($args->direct_parent)) {
       $prev_root_id = $root_id;
-      while ( $prev_root_id != 0 ) {
-        foreach ( $sorted_menu_items as $menu_item ) {
-          if ( $menu_item->ID == $prev_root_id ) {
+      while ($prev_root_id != 0) {
+        foreach ($sorted_menu_items as $menu_item) {
+          if ($menu_item->ID == $prev_root_id) {
             $prev_root_id = $menu_item->menu_item_parent;
             // don't set the root_id to 0 if we've reached the top of the menu
-            if ( $prev_root_id != 0 ) $root_id = $menu_item->menu_item_parent;
+            if ($prev_root_id != 0) $root_id = $menu_item->menu_item_parent;
             break;
-          } 
+          }
         }
       }
     }
 
     $menu_item_parents = array();
-    foreach ( $sorted_menu_items as $key => $item ) {
+    foreach ($sorted_menu_items as $key => $item) {
       // init menu_item_parents
-      if ( $item->ID == $root_id ) $menu_item_parents[] = $item->ID;
+      if ($item->ID == $root_id) $menu_item_parents[] = $item->ID;
 
-      if ( in_array( $item->menu_item_parent, $menu_item_parents ) ) {
+      if (in_array($item->menu_item_parent, $menu_item_parents)) {
         // part of sub-tree: keep!
         $menu_item_parents[] = $item->ID;
-      } else if ( ! empty( $item->menu_item_parent ) ) {
+      } else if (!empty($item->menu_item_parent)) {
         // not part of sub-tree: away with it!
-        unset( $sorted_menu_items[$key] );
+        unset($sorted_menu_items[$key]);
       }
     }
-    
+
     return $sorted_menu_items;
   } else {
     return $sorted_menu_items;

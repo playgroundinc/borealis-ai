@@ -72,7 +72,8 @@ if ( ! function_exists( 'pg_render_blockquote_block' ) ) {
                             <?php endif; ?>
                         </div>
                     </div>
-                    <?php  return ob_get_clean(); ?>
+                </div>
+                <?php  return ob_get_clean(); ?>
                 <?php endif; ?>
                 <?php if ($attributes->style === 'circle-centered' && $hasImage): ?>
                     <div class="container">
@@ -96,7 +97,8 @@ if ( ! function_exists( 'pg_render_blockquote_block' ) ) {
                             </p>
                         <?php endif; ?>
                     </div>
-                    <?php  return ob_get_clean(); ?>
+                </div>
+                <?php  return ob_get_clean(); ?>
                 <?php endif; ?>
                 <?php if ($attributes->style === 'dark'): ?>
                     <div class="md:container">
@@ -127,7 +129,8 @@ if ( ! function_exists( 'pg_render_blockquote_block' ) ) {
                             </div>
                         </div>
                     </div>
-                    <?php  return ob_get_clean(); ?>
+                </div>
+                <?php  return ob_get_clean(); ?>
                 <?php endif; ?>
                 <div class="container">
                     <div class="flex" aria-hidden="true">
