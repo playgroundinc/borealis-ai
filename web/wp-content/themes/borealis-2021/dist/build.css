@@ -1948,11 +1948,8 @@ ol.footnotes li small{
 .pt-gallery{
   padding-top: 600px;
 }
-.pl-16{
-  padding-left: 64px;
-}
-.pr-25{
-  padding-right: 100px;
+.pr-6{
+  padding-right: 24px;
 }
 .pt-7{
   padding-top: 28px;
@@ -1992,9 +1989,6 @@ ol.footnotes li small{
 }
 .pb-11{
   padding-bottom: 44px;
-}
-.pr-6{
-  padding-right: 24px;
 }
 .pl-12{
   padding-left: 48px;
@@ -2830,6 +2824,12 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pl-10{
     padding-left: 40px;
   }
+    .md\:pl-16{
+    padding-left: 64px;
+  }
+    .md\:pr-25{
+    padding-right: 100px;
+  }
     .md\:pb-12{
     padding-bottom: 48px;
   }
@@ -2880,12 +2880,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pb-4{
     padding-bottom: 16px;
-  }
-    .md\:pr-25{
-    padding-right: 100px;
-  }
-    .md\:pl-16{
-    padding-left: 64px;
   }
     .md\:text-left{
     text-align: left;
