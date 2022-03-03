@@ -744,7 +744,7 @@ class NavScroll {
       this.handleHero();
     }
 
-    if (currentScroll < this.scroll || !currentScroll > 8) {
+    if (currentScroll < this.scroll || currentScroll <= 4) {
       this.showNav();
       this.setScroll(currentScroll);
       return;
