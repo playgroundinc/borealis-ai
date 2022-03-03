@@ -108,7 +108,7 @@ get_header();
             $Query = new WP_Query($args);
 
             if ($inner_block === key($tab_array)) { ?>
-                <div class="block load-more-results" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
+                <div class="block load-more-results flex-col" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
                     <?php
                     if (!empty($Query->posts)) : // Empty Query check. 
                     ?>
@@ -129,14 +129,13 @@ get_header();
                     <?php wp_reset_query(); ?>
                 </div>
             <?php } else { ?>
-                <div class="hidden load-more-results" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
+                <div class="hidden load-more-results flex-col" id="<?php echo $id ?>-content-panel" role="tabpanel" aria-labelledby="<?php echo $id ?>-tab">
                     <?php
                     if (!empty($Query->posts)) : // Empty Query check. 
                     ?>
                         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
                         <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="<?php echo esc_attr($id) ?>">
                             <?php foreach ($Query->posts as $post) : // Start of Query loop 
-                                var_dump($post)
                             ?>
                                 <li class="last:border-b-0 border-b border-shade-grey-500">
                                     <?php echo pg_generate_main_search_result($post, $research_areas, $id); ?>

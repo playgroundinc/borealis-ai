@@ -179,11 +179,10 @@ class PG_Allowed_Blocks {
 
     function get_custom_allowed_blocks() {
         $shared_blocks = array_map(array($this, 'add_namespace'), $this->shared_blocks);
-        $shared_core_blocks = array_map(array($this, 'add_namespace'), $this->shared_core_blocks);
-        
         $body_copy_blocks = array_map(array($this, 'add_namespace'), $this->body_copy_blocks);
         $body_copy_blocks = array_merge($body_copy_blocks, $shared_blocks);
-        $body_copy_blocks = array_merge($body_copy_blocks, $shared_core_blocks);
+        $body_copy_blocks = array_merge($body_copy_blocks, $this->blog_core_blocks);
+        $body_copy_blocks = array_merge($body_copy_blocks, $this->shared_core_blocks);
         
         // Authors
         if ($this->post_type === 'author') {
@@ -210,7 +209,7 @@ class PG_Allowed_Blocks {
         } 
 
         $custom_blocks = array_map(array($this, 'add_namespace'), $this->custom_blocks);
-        $custom_blocks = array_merge($custom_blocks, $shared_core_blocks);
+        $custom_blocks = array_merge($custom_blocks, $this->shared_core_blocks);
         $custom_blocks = array_merge($custom_blocks, $shared_blocks);
         if ($this->post_type === 'product') {
             $product_blocks = array_merge($custom_blocks, $this->product_blocks);

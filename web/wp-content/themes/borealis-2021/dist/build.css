@@ -840,13 +840,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tab-container .accordion-list{
   width: 100%;
 }
-.page .container .container{
+.page .container .nestable .container{
   width: 100%;
 }
-.page .container .container .icon-list{
+.page .container .nestable .container .icon-list{
   width: 100%;
 }
-.page .container .container .icon-list-title, .page .container .container .accordion-title{
+.page .container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
   display: none;
 }
 .footnote-link.footnote-identifier-link{
@@ -2484,28 +2484,28 @@ mjx-container::-webkit-scrollbar-thumb,
       margin-top: 32px;
     }
   }
-  .page .md\:container .container{
+  .page .md\:container .nestable .container{
     width: 100%;
   }
-  .page .md\:container .container{
+  .page .md\:container .nestable .container{
     width: 100%;
   }
-    .page .md\:container .container .icon-list{
+    .page .md\:container .nestable .container .icon-list{
     width: 100%;
   }
-    .page .md\:container .container .icon-list{
+    .page .md\:container .nestable .container .icon-list{
     width: 100%;
   }
-    .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .md\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
-    .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .md\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
-    .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .md\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
-    .page .md\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .md\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
     .md\:static{
@@ -2915,28 +2915,28 @@ mjx-container::-webkit-scrollbar-thumb,
 }
 
 @media (min-width: 1000px){
-  .page .tb\:container .container{
+  .page .tb\:container .nestable .container{
     width: 100%;
   }
-  .page .tb\:container .container{
+  .page .tb\:container .nestable .container{
     width: 100%;
   }
-    .page .tb\:container .container .icon-list{
+    .page .tb\:container .nestable .container .icon-list{
     width: 100%;
   }
-    .page .tb\:container .container .icon-list{
+    .page .tb\:container .nestable .container .icon-list{
     width: 100%;
   }
-    .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .tb\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
-    .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .tb\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
-    .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .tb\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
-    .page .tb\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .tb\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
     .tb\:-top-8{
@@ -3050,28 +3050,28 @@ mjx-container::-webkit-scrollbar-thumb,
 }
 
 @media (min-width: 1440px){
-  .page .lg\:container .container{
+  .page .lg\:container .nestable .container{
     width: 100%;
   }
-  .page .lg\:container .container{
+  .page .lg\:container .nestable .container{
     width: 100%;
   }
-    .page .lg\:container .container .icon-list{
+    .page .lg\:container .nestable .container .icon-list{
     width: 100%;
   }
-    .page .lg\:container .container .icon-list{
+    .page .lg\:container .nestable .container .icon-list{
     width: 100%;
   }
-    .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .lg\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
-    .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .lg\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
-    .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .lg\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
-    .page .lg\:container .container .icon-list-title, .page .container .container .accordion-title{
+    .page .lg\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
     .lg\:mr-16{
