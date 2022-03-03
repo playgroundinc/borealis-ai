@@ -1063,7 +1063,7 @@ ol.footnotes li small{
   opacity: 0;
   transition-property: opacity top;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 700ms;
+  transition-duration: 300ms;
 }
 .component-dark, .component-dark + .component-dark{
   margin-top: 0px;
@@ -2036,6 +2036,10 @@ ol.footnotes li small{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
+.antialiased{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .opacity-0{
   opacity: 0;
 }
@@ -2160,11 +2164,11 @@ ol.footnotes li small{
   .wp-block-embed__wrapper video,
   .wp-block-embed__wrapper iframe {
     max-height: 100%; }
-  .first\:mt-0:first-child{
-  margin-top: 0px;
-}
   .first\:ml-4:first-child{
   margin-left: 16px;
+}
+  .first\:mt-0:first-child{
+  margin-top: 0px;
 }
   .last\:basis-auto:last-child{
   flex-basis: auto;

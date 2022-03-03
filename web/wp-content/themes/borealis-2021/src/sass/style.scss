@@ -116,7 +116,7 @@
   }
 
   .animated-element {
-    @apply opacity-0 relative top-8 transition-animate duration-700;
+    @apply opacity-0 relative top-8 transition-animate duration-300;
   }
   .component-dark,
   .component-dark + .component-dark {
