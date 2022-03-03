@@ -1,0 +1,53 @@
+.wp-block-table {
+    margin-top: 64px;
+    padding-bottom: 32px;
+    @media (min-width: 768px) {
+      padding-bottom: 0;
+    }
+    thead {
+      background-color: #000F78;
+      color: #fff;
+      font-size: 1.125rem;
+      font-weight: bold;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+      line-height: 1.5;
+      tr {
+        display: flex;
+      }
+      th {
+        flex-grow: 1;
+        flex-shrink: 0;
+        display: inline-block;
+        flex-basis: 25%;
+        padding: 26px;
+      }
+    }
+    tbody {
+      tr {
+        display: flex;
+        padding: 26px;
+        font-size: 0.875rem;
+        font-weight: 400;
+        font-family: 'Inter', sans-serif;
+        line-height: 1.5;
+        &:nth-child(2n + 1) {
+          background-color: #F4F4FB;
+        }
+      }
+      td {
+        display: inline-block;
+        flex-grow: 1;
+        flex-basis: 25%;
+      }
+    }
+    .caption {
+      color: #5C5D76;
+      font-size: 0.875rem;
+      font-weight: 400;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      display: block;
+      margin-top: 32px;
+    }
+  }
