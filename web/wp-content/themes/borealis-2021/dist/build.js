@@ -1422,7 +1422,7 @@ function search() {
 
 
   const checkboxContainers = document.querySelectorAll(".checkbox-form");
-  const isJobs = checkboxContainers[0].classList.contains("job-checkboxes");
+  const isJobs = checkboxContainers[0]?.classList.contains("job-checkboxes");
   let count = 0;
 
   const setCount = action => {

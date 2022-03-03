@@ -1117,11 +1117,11 @@ ol.footnotes li small{
 .top-0{
   top: 0px;
 }
-.top-6{
-  top: 24px;
-}
 .bottom-0{
   bottom: 0px;
+}
+.top-6{
+  top: 24px;
 }
 .right-6{
   right: 24px;
@@ -1372,9 +1372,6 @@ ol.footnotes li small{
 }
 .w-auto{
   width: auto;
-}
-.w-11\/12{
-  width: 91.666667%;
 }
 .w-4{
   width: 16px;
@@ -1883,6 +1880,9 @@ ol.footnotes li small{
 }
 .pt-15{
   padding-top: 60px;
+}
+.pt-50{
+  padding-top: 200px;
 }
 .pt-6{
   padding-top: 24px;
@@ -2442,11 +2442,8 @@ ol.footnotes li small{
     .md\:mt-20{
     margin-top: 80px;
   }
-    .md\:ml-30{
-    margin-left: 120px;
-  }
-    .md\:mb-5{
-    margin-bottom: 20px;
+    .md\:mt-5{
+    margin-top: 20px;
   }
     .md\:mb-12{
     margin-bottom: 48px;
@@ -2490,6 +2487,9 @@ ol.footnotes li small{
     .md\:min-h-\[280px\]{
     min-height: 280px;
   }
+    .md\:min-h-\[500px\]{
+    min-height: 500px;
+  }
     .md\:min-h-\[244px\]{
     min-height: 244px;
   }
@@ -2514,14 +2514,17 @@ ol.footnotes li small{
     .md\:w-6\/12{
     width: 50%;
   }
+    .md\:w-3\/4{
+    width: 75%;
+  }
+    .md\:w-3\/8{
+    width: calc((100% / 8) * 3);
+  }
     .md\:w-4\/12{
     width: 33.333333%;
   }
     .md\:w-1\/4{
     width: 25%;
-  }
-    .md\:w-3\/4{
-    width: 75%;
   }
     .md\:w-36{
     width: 144px;
@@ -2541,14 +2544,14 @@ ol.footnotes li small{
     .md\:w-5\/8{
     width: calc((100% / 8) * 5);
   }
-    .md\:w-3\/8{
-    width: calc((100% / 8) * 3);
-  }
     .md\:basis-3\/4{
     flex-basis: 75%;
   }
     .md\:basis-1\/4{
     flex-basis: 25%;
+  }
+    .md\:basis-6\/12{
+    flex-basis: 50%;
   }
     .md\:basis-col-6{
     flex-basis: calc((100% - 20px) / 2);
@@ -2681,6 +2684,12 @@ ol.footnotes li small{
     .md\:pl-0{
     padding-left: 0px;
   }
+    .md\:pr-8{
+    padding-right: 32px;
+  }
+    .md\:pl-8{
+    padding-left: 32px;
+  }
     .md\:pr-20{
     padding-right: 80px;
   }
@@ -2719,9 +2728,6 @@ ol.footnotes li small{
   }
     .md\:pl-4{
     padding-left: 16px;
-  }
-    .md\:pl-8{
-    padding-left: 32px;
   }
     .md\:pr-14{
     padding-right: 56px;
@@ -2847,14 +2853,17 @@ ol.footnotes li small{
     .tb\:mb-11{
     margin-bottom: 44px;
   }
-    .tb\:mb-8{
-    margin-bottom: 32px;
+    .tb\:mt-8{
+    margin-top: 32px;
   }
     .tb\:mb-12{
     margin-bottom: 48px;
   }
     .tb\:mt-0{
     margin-top: 0px;
+  }
+    .tb\:mb-8{
+    margin-bottom: 32px;
   }
     .tb\:block{
     display: block;
@@ -2867,6 +2876,9 @@ ol.footnotes li small{
   }
     .tb\:w-7\/12{
     width: 58.333333%;
+  }
+    .tb\:w-2\/3{
+    width: 66.666667%;
   }
     .tb\:w-4\/12{
     width: 33.333333%;
