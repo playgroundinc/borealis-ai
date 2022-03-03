@@ -691,19 +691,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ NavScroll; }
 /* harmony export */ });
 class NavScroll {
-  constructor(nav, hero, alertBar) {
+  constructor(nav) {
     this.nav = nav;
-    this.hero = hero;
-    this.alertBar = alertBar ? alertBar : false;
+    this.hero = document.querySelector('#masthead');
     this.heroHeight = this.hero.offsetHeight;
-    this.scroll = pageYOffset;
-    this.hidden = false;
-    this.top = 0;
-    this.defaultTop = window.innerWidth >= 1440 ? 30 : 0;
-    this.children = [];
+    this.navContainer = this.nav.querySelector('.nav-container');
+    this.scroll = scrollY;
     this.handleScroll = this.handleScroll.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
-    this.handleResize = this.handleResize.bind(this);
   }
 
   setState(name, value) {
@@ -714,37 +709,12 @@ class NavScroll {
     this.setState('scroll', currentScroll);
   }
 
-  getChildren() {
-    const childLinks = [...this.nav.querySelectorAll('button, a')];
-
-    if (childLinks.length) {
-      this.setState('children', childLinks);
-      return;
-    }
-  }
-
-  setTop() {
-    const top = this.alertBar && !this.alertBar.classList.contains('alert--hidden') ? this.alertBar.offsetHeight + this.defaultTop : this.defaultTop;
-    this.setState('top', top);
-  }
-
-  setNavTop() {
-    this.nav.style.top = `${this.top}px`;
-  }
-
   showNav() {
-    if (this.hidden) {
-      this.setTop();
-      this.setState('hidden', false);
-      this.nav.classList.remove('scroll--hidden');
-      this.setNavTop();
-    }
+    this.nav.classList.remove('-top-full');
   }
 
   hideNav() {
-    this.setState('hidden', true);
-    this.nav.classList.add('scroll--hidden');
-    this.nav.style.top = `${-1 * this.nav.offsetHeight}px`;
+    this.nav.classList.add('-top-full');
   }
 
   handleFocus() {
@@ -753,45 +723,40 @@ class NavScroll {
     }
   }
 
-  handleChildren() {
-    this.getChildren();
-
-    if (this.children.length) {
-      this.children.forEach(child => {
-        child.addEventListener('focus', this.handleFocus);
-      });
-    }
-  }
-
-  handleResize() {
-    if (window.innerWidth >= 1440) {
-      this.setState('defaultTop', 30);
-      this.setTop();
-      this.setNavTop();
+  toggleNavigationClasses(belowFold) {
+    if (belowFold) {
+      this.navContainer.classList.add('bg-primary-navy-400');
+      this.navContainer.classList.remove('bg-transparent');
       return;
     }
 
-    this.setState('defaultTop', 0);
-    this.setTop();
-    this.setNavTop();
+    this.navContainer.classList.add('bg-transparent');
+    this.navContainer.classList.remove('bg-primary-navy-400');
+  }
+
+  handleHero() {
+    if (scrollY > this.heroHeight) {
+      this.toggleNavigationClasses(true);
+      return;
+    }
+
+    this.toggleNavigationClasses(false);
   }
 
   handleScroll() {
-    const currentScroll = pageYOffset;
+    const currentScroll = scrollY;
 
-    if (currentScroll < this.heroHeight || currentScroll < this.scroll) {
-      this.setScroll(currentScroll);
+    if (document.body.classList.contains('home')) {
+      this.handleHero();
+    }
+
+    if (currentScroll < this.scroll || !currentScroll > 8) {
       this.showNav();
+      this.setScroll(currentScroll);
       return;
     }
 
-    if (!this.hidden) {
-      const navStyles = window.getComputedStyle(this.nav);
-      this.setTop();
-      this.hideNav();
-      this.setScroll(currentScroll);
-    }
-
+    this.hideNav();
     this.setScroll(currentScroll);
   }
 
@@ -1357,34 +1322,23 @@ function navigation() {
     Toggle.init();
   };
 
+  const getNav = () => {
+    const nav = document.querySelector('#main-navigation');
+    return nav;
+  };
+
   const addNavHandlers = () => {
     const nav = getNav();
 
-    if (hero && nav) {
-      const NavScrollClass = new _classes_class_nav_scroll__WEBPACK_IMPORTED_MODULE_1__["default"](nav, hero, alertBar);
-      NavScrollClass.handleChildren();
+    if (nav) {
+      const NavScrollClass = new _classes_class_nav_scroll__WEBPACK_IMPORTED_MODULE_1__["default"](nav);
       window.addEventListener('scroll', NavScrollClass.handleScroll);
-      window.addEventListener('resize', NavScrollClass.handleResize);
-    }
-  };
-
-  const addMenuHandlers = () => {
-    const menus = getMenus();
-
-    if (menus.length) {
-      menus.forEach(menu => {
-        const parents = getParents(menu);
-
-        if (parents && parents.length) {
-          addDropdowns(parents);
-        }
-      });
     }
   };
 
   const init = () => {
-    // addMenuHandlers();
-    addToggle(); // addNavHandlers();
+    addNavHandlers();
+    addToggle();
   };
 
   init();

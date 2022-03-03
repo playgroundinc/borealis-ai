@@ -114,6 +114,10 @@
   .paragraph-style .paragraph-blog {
     @apply paragraph;
   }
+
+  .scroll--hidden {
+    @apply -top-full;
+  }
 }
 
 @import './wp-blocks/tables';

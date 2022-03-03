@@ -1057,6 +1057,9 @@ ol.footnotes li small{
     font-size: 18px;
   }
 }
+.scroll--hidden{
+  top: -100%;
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1141,11 +1144,14 @@ ol.footnotes li small{
 .right-4{
   right: 16px;
 }
-.z-10{
-  z-index: 10;
+.-top-full{
+  top: -100%;
 }
 .z-50{
   z-index: 50;
+}
+.z-10{
+  z-index: 10;
 }
 .-z-10{
   z-index: -10;
@@ -2052,6 +2058,11 @@ ol.footnotes li small{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.transition-background-color{
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 .transition-opacity{
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2059,11 +2070,6 @@ ol.footnotes li small{
 }
 .transition-all{
   transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.transition-background-color{
-  transition-property: background-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2075,11 +2081,11 @@ ol.footnotes li small{
 .duration-300{
   transition-duration: 300ms;
 }
-.duration-500{
-  transition-duration: 500ms;
-}
 .duration-700{
   transition-duration: 700ms;
+}
+.duration-500{
+  transition-duration: 500ms;
 }
 .container{
   margin: 0 auto;
