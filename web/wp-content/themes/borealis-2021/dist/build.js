@@ -114,13 +114,16 @@ function animate() {
         if (entry.intersectionRatio > 0) {
           // when on screen
           LazyImageLoad.loadImages();
+          console.log(window.innerHeight);
+          console.log(entry);
 
           if (entry.target.offsetHeight >= window.innerHeight) {
-            if (entry.intersectionRect.height > window.innerHeight / 3) {
-              entry.target.style.opacity = '1';
-              entry.target.style.top = '0px';
-            }
+            entry.target.style.opacity = '1';
+            entry.target.style.top = '0px';
           } else if (entry.intersectionRect.bottom >= window.innerHeight && entry.intersectionRect.height > entry.target.offsetHeight / 3) {
+            entry.target.style.opacity = '1';
+            entry.target.style.top = `0px`;
+          } else {
             entry.target.style.opacity = '1';
             entry.target.style.top = `0px`;
           }
