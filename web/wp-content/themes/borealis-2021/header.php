@@ -66,7 +66,7 @@
         $hero_image = get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg';
     }
     $headline = get_post_meta($post->ID, 'headline', true);
-    $header_height = is_front_page() ? 'min-h-[615px] flex flex-col' : 'min-h-[125px]';
+    $header_height = is_front_page() ? 'max-h-screen h-[615px] flex flex-col' : 'min-h-[125px]';
     $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications', 'product', 'program']) || is_front_page();
     ?>
     <style>

@@ -7,6 +7,7 @@
 @layer components {
   .canvas {
     height: 615px !important;
+    max-height: 100vh;
   }
   .pill {
     @apply border border-shade-black-400 px-4 py-1 rounded-pill inline-block text-center paragraph-sm;
