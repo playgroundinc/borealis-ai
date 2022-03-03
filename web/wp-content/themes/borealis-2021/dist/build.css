@@ -1057,6 +1057,9 @@ ol.footnotes li small{
     font-size: 18px;
   }
 }
+.scroll--hidden{
+  top: -100%;
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1140,6 +1143,9 @@ ol.footnotes li small{
 }
 .right-4{
   right: 16px;
+}
+.-top-full{
+  top: -100%;
 }
 .z-10{
   z-index: 10;
