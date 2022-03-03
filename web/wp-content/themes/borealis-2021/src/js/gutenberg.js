@@ -12,8 +12,6 @@ import publicationMetaBlock from './blocks/meta/publications-meta.jsx';
 import productMetaBlock from './blocks/meta/product-meta.jsx';
 import programMetaBlock from './blocks/meta/program-meta.jsx';
 
-import imageTextBlock from "./blocks/image-text.jsx";
-
 // Text 2 Up Blocks
 import text2UpBlock from "./blocks/text-2-up-block.jsx";
 import text2UpContainerBlock from "./blocks/text-2-up-container-block.jsx";
@@ -119,9 +117,6 @@ authorMetaBlock();
 publicationMetaBlock();
 productMetaBlock();
 programMetaBlock();
-
-// Init blocks here
-imageTextBlock();
 
 // Page Strips
 pageStripBlock();

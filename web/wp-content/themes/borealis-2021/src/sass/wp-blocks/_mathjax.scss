@@ -1,0 +1,7 @@
+mjx-container {
+    padding-bottom: 32px;
+    overflow: scroll;
+    @media (min-width: 768px) {
+      padding-bottom: 0;
+    }
+  }

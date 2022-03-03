@@ -4,6 +4,7 @@ import { namespace } from "./helper-functions/constants.js";
 // Reusable
 import CustomRichText from "./reusable/custom-richtext-component.jsx";
 import CustomImageUpload from "./reusable/custom-image-upload.jsx";
+import BlockSettings from "./reusable/block-custom-settings.jsx";
 
 export default function imageTextStripBlock() {
   /**
@@ -63,8 +64,8 @@ export default function imageTextStripBlock() {
       default: "",
     },
     reverse: {
-        type: "String",
-        default: "",
+        type: "Boolean",
+        default: false,
       },
   };
   registerBlockType(`${namespace}/${slug}`, {
@@ -91,7 +92,20 @@ export default function imageTextStripBlock() {
       }
       return [
         <div class="custom-component">
-          <p className="block-title">Graphic Page Strip</p>
+          <p className="block-title">Image Text Strip (Control layout in block settings)</p>
+             <BlockSettings
+                title="Block Settings"
+                controls={[
+                    { 
+                      type: 'toggle',
+                      label: 'Reversed?',
+                      reference: 'reverse',
+                      value: reverse,
+                    },
+                ]}
+                onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
+            />
+
           <CustomImageUpload
             components={[
               {
@@ -163,15 +177,6 @@ export default function imageTextStripBlock() {
             ]}
             onChange={(attribute, change) => {
               updateAttributeValue(attribute, change);
-            }}
-          />
-          <ToggleControl
-            label={
-              "Style: check for image and text to reverse positions"
-            }
-            checked={reverse}
-            onChange={(change) => {
-              updateAttributeValue("reverse", change);
             }}
           />
         </div>,
