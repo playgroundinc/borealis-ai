@@ -117,7 +117,6 @@ require get_template_directory() . '/inc/partials/team-member/team-member-header
 require get_template_directory() . '/inc/gutenberg/render-blocks.php';
 require get_template_directory() . '/inc/gutenberg/render-select-post-block.php';
 require get_template_directory() . '/inc/gutenberg/render-text-column.php';
-require get_template_directory() . '/inc/gutenberg/render-image-text-block.php';
 require get_template_directory() . '/inc/gutenberg/render-video-block.php';
 require get_template_directory() . '/inc/gutenberg/render-image-block.php';
 
@@ -141,10 +140,6 @@ require get_template_directory() . '/inc/gutenberg/copy/render-copy-blocks.php';
 require get_template_directory() . '/inc/gutenberg/code/render-compare-code-block.php';
 require get_template_directory() . '/inc/gutenberg/code/render-code-block.php';
 
-// Content Blocks
-require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-container.php';
-require get_template_directory() . '/inc/gutenberg/content-cards/render-content-card-block.php';
-
 // Fellowships
 require get_template_directory() . '/inc/gutenberg/fellowships/render-fellowship-block.php';
 require get_template_directory() . '/inc/gutenberg/fellowships/render-fellowship-container-block.php';
@@ -154,10 +149,6 @@ require get_template_directory() . '/inc/gutenberg/figures/render-compare-figure
 
 // Gallery
 require get_template_directory() . '/inc/gutenberg/gallery/render-gallery-container-block.php';
-
-// Image List Blocks
-require get_template_directory() . '/inc/gutenberg/image-list/render-image-list-container-block.php';
-require get_template_directory() . '/inc/gutenberg/image-list/render-image-list-block.php';
 
 // Logo Blocks
 require get_template_directory() . '/inc/gutenberg/logos/render-logos-container.php';
@@ -187,10 +178,6 @@ require get_template_directory() . '/inc/gutenberg/slider/render-slider-containe
 require get_template_directory() . '/inc/gutenberg/slider/render-news-slide.php';
 require get_template_directory() . '/inc/gutenberg/slider/render-testimonial-slider-block.php';
 require get_template_directory() . '/inc/gutenberg/slider/render-testimonial-slide-block.php';
-
-// Stat Blocks
-require get_template_directory() . '/inc/gutenberg/stats/render-stat-container-block.php';
-require get_template_directory() . '/inc/gutenberg/stats/render-stat-column-block.php';
 
 // Greenhouse Blocks
 require get_template_directory() . '/inc/gutenberg/greenhouse/render-jobs-block.php';
@@ -223,8 +210,8 @@ require get_template_directory() . '/inc/gutenberg/render-text-2-up-block.php';
 require get_template_directory() . '/inc/gutenberg/render-image-text-strip-block.php';
 
 // Statistics Blocks
-require get_template_directory() . '/inc/gutenberg/render-statistics-container-block.php';
-require get_template_directory() . '/inc/gutenberg/render-statistics-block.php';
+require get_template_directory() . '/inc/gutenberg/stats/render-statistics-container-block.php';
+require get_template_directory() . '/inc/gutenberg/stats/render-statistics-block.php';
 
 // add hook for subnav
 add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2);

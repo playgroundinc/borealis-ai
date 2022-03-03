@@ -44,7 +44,7 @@ if (!function_exists('pg_render_icon_list_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="custom-component" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
+        <div class="custom-component animated-element" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
             <div>
                 <div class="flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container tb:flex-row') : '' ?>">
                     <div class="w-full mb-10 tb:mb-0 tb:w-2/6 icon-list-title">

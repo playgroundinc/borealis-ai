@@ -6446,7 +6446,7 @@ function statisticsBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("section", {
-        class: "child-component"
+        class: "custom-child"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
       }, "Statistics Column"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {

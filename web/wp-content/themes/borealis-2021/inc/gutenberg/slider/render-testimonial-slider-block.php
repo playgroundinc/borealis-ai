@@ -44,7 +44,7 @@ if ( ! function_exists( 'pg_render_testimonial_slider_block' ) ) {
         ob_start();
             if (!empty($block['innerBlocks'])):
             ?>
-            <div class="custom-component animated-element testimonial-slider relative">
+            <div class="custom-component animated-element testimonial-slider relative <?php echo $attributes->display_style === 'dark' ? esc_attr('component-dark') : '' ;?>">
                 <?php if ($attributes->display_style === 'dark'): ?>
                     <div class="absolute right-0 bottom-12 w-full z-10">        
                         <div class="slider-block__controls container text-shade-white-400">

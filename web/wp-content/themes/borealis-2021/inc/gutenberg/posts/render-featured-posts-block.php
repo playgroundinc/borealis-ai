@@ -41,7 +41,7 @@ if ( ! function_exists( 'pg_render_featured_posts_block' ) ) {
         ob_start();
         $full = intval($attributes->columns) === 12;
         ?> 
-            <div class="container md:flex custom-component flex-wrap">
+            <div class="container md:flex custom-component flex-wrap animated-element">
                 <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
                     <div class="<?php echo $full ? esc_attr('basis-full') : esc_attr('basis-1/2 md:pr-3 md:nth-child-2:pl-3 md:nth-child-2:pr-0 md:flex flex-col') ?>">
                         <?php echo pg_render_featured_post($inner_block, $full); ?>

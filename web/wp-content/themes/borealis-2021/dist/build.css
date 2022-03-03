@@ -1057,6 +1057,17 @@ ol.footnotes li small{
     font-size: 18px;
   }
 }
+.animated-element{
+  position: relative;
+  top: 32px;
+  opacity: 0;
+  transition-property: opacity top;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+.component-dark, .component-dark + .component-dark{
+  margin-top: 0px;
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1119,6 +1130,9 @@ ol.footnotes li small{
 }
 .top-6{
   top: 24px;
+}
+.top-8{
+  top: 32px;
 }
 .bottom-0{
   bottom: 0px;
@@ -1671,10 +1685,6 @@ ol.footnotes li small{
   --tw-bg-opacity: 1;
   background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
-.bg-primary-electric-purple-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 55 215 / var(--tw-bg-opacity));
-}
 .bg-tint-lightBlue-400{
   --tw-bg-opacity: 1;
   background-color: rgb(111 222 250 / var(--tw-bg-opacity));
@@ -1682,6 +1692,10 @@ ol.footnotes li small{
 .bg-primary-electric-blue-400{
   --tw-bg-opacity: 1;
   background-color: rgb(0 68 255 / var(--tw-bg-opacity));
+}
+.bg-primary-electric-purple-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 55 215 / var(--tw-bg-opacity));
 }
 .bg-primary-purple-400{
   --tw-bg-opacity: 1;
@@ -2061,6 +2075,11 @@ ol.footnotes li small{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.transition-animate{
+  transition-property: opacity top;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 .transition-slider{
   transition-property: left right;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2141,11 +2160,11 @@ ol.footnotes li small{
   .wp-block-embed__wrapper video,
   .wp-block-embed__wrapper iframe {
     max-height: 100%; }
-  .first\:ml-4:first-child{
-  margin-left: 16px;
-}
   .first\:mt-0:first-child{
   margin-top: 0px;
+}
+  .first\:ml-4:first-child{
+  margin-left: 16px;
 }
   .last\:basis-auto:last-child{
   flex-basis: auto;
@@ -2448,9 +2467,6 @@ ol.footnotes li small{
     .md\:mb-5{
     margin-bottom: 20px;
   }
-    .md\:mb-12{
-    margin-bottom: 48px;
-  }
     .md\:mt-24{
     margin-top: 96px;
   }
@@ -2471,6 +2487,9 @@ ol.footnotes li small{
   }
     .md\:mb-8{
     margin-bottom: 32px;
+  }
+    .md\:mb-12{
+    margin-bottom: 48px;
   }
     .md\:mt-3{
     margin-top: 12px;
@@ -2681,15 +2700,6 @@ ol.footnotes li small{
     .md\:pl-0{
     padding-left: 0px;
   }
-    .md\:pr-20{
-    padding-right: 80px;
-  }
-    .md\:pt-16{
-    padding-top: 64px;
-  }
-    .md\:pb-20{
-    padding-bottom: 80px;
-  }
     .md\:pr-10{
     padding-right: 40px;
   }
@@ -2728,6 +2738,15 @@ ol.footnotes li small{
   }
     .md\:pr-4{
     padding-right: 16px;
+  }
+    .md\:pr-20{
+    padding-right: 80px;
+  }
+    .md\:pt-16{
+    padding-top: 64px;
+  }
+    .md\:pb-20{
+    padding-bottom: 80px;
   }
     .md\:pt-8{
     padding-top: 32px;
