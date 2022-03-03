@@ -113,7 +113,7 @@ class PG_Allowed_Blocks {
         );
         $this->blog_core_blocks = array(
             'core/table',
-            'core/podcast',
+            'core/embed-podcast',
             'core/quote'
         );
         $this->author_blocks = array(

@@ -89,8 +89,8 @@
         <!-- Skip to Content link -->
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'pg-wp-starter'); ?></a>
         <header id="masthead" class="<?php echo $no_header ? esc_attr($header_height) : esc_attr('bg-cover bg-bottom min-h-[400px] md:min-h-[280px] flex flex-col justify-end') ?>" style="background-image: url(<?php echo $no_header ? '' : esc_attr($hero_image) ?> )">
-            <nav id="main-navigation" class="fixed z-10 left-0 right-0 top-3">
-                <div class="<?php echo ($has_subnav) ? 'rounded-b-large md:rounded-b-none rounded-t-large' : 'rounded-large'; ?> relative mt-4 top-2 py-4 nav-container <?php echo (is_home() || is_front_page()) ? 'bg-transparent' : 'bg-primary-navy-400'; ?>">
+            <nav id="main-navigation" class="fixed z-50 left-0 right-0 top-3 transition-top duration-700">
+                <div class="<?php echo ($has_subnav) ? 'rounded-b-large md:rounded-b-none rounded-t-large' : 'rounded-large'; ?> relative mt-4 top-2 py-4 nav-container <?php echo (is_home() || is_front_page()) ? 'bg-transparent transition-background-color duration-700' : 'bg-primary-navy-400'; ?>">
                     <div class="flex md:flex-row flex-col items-center px-4 md:px-5 lg:px-0 lg:container">
                         <div class="logo shrink-0 h-fit flex md:w-auto w-full justify-between align-center">
                             <a href="<?php echo get_home_url(); ?>">
