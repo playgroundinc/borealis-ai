@@ -45,7 +45,7 @@ export default function statisticsBlock() {
       }
 
       return [
-        <section class="child-component">
+        <section class="custom-child">
           <p className="block-title">Statistics Column</p>
           <CustomRichText
             components={[

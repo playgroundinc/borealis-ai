@@ -46,7 +46,6 @@ function tabbedContent(tabContainer) {
             classToggle(tabPanels[i], "flex", "hidden");
         }
 
-        console.log(tabPanelToOpen);
         classToggle(
             tabContainer.querySelector(`[id='${tabPanelToOpen}']`),
             "hidden",

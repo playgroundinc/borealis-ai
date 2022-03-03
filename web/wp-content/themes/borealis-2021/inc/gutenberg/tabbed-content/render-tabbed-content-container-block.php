@@ -50,7 +50,7 @@ if ( ! function_exists( 'pg_render_tabbed_content_container_block' ) ) {
         $dark = $image && strlen($image) > 0; 
         ob_start();
         ?>
-            <div class="custom-component animated-element nestable">
+            <div class="custom-component animated-element nestable <?php echo  $dark && $attributes->display_style === 'background-image' ? esc_attr('component-dark') : '' ?>">
                 <div class="bg-center bg-cover <?php echo $dark && $attributes->display_style === 'background-image' ? esc_attr('text-shade-white-400 pt-11 lg:pt-20 pb-9') : '' ?>" style="<?php echo $dark && $attributes->display_style === 'background-image' ? 'background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('. esc_url_raw($image) . ')' : '' ?>">
                     <div class="tab-container <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : '' ; ?>" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                         <?php if ($dark && $attributes->display_style === 'background-image'): ?>

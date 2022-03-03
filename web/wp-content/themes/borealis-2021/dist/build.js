@@ -116,18 +116,14 @@ function animate() {
           LazyImageLoad.loadImages();
 
           if (entry.target.offsetHeight >= window.innerHeight) {
+            if (entry.intersectionRect.height > window.innerHeight / 3) {
+              entry.target.style.opacity = '1';
+              entry.target.style.top = '0px';
+            }
+          } else if (entry.intersectionRect.bottom >= window.innerHeight && entry.intersectionRect.height > entry.target.offsetHeight / 3) {
             entry.target.style.opacity = '1';
-            entry.target.style.top = '0px';
-          } else if (entry.intersectionRect.bottom >= window.innerHeight && entry.intersectionRect.height < entry.target.offsetHeight / 2) {
-            entry.target.style.opacity = `${entry.intersectionRatio}`;
-            entry.target.style.top = `${30 - 30 * Number(entry.intersectionRatio)}px`;
-          } else {
-            entry.target.style.opacity = '1';
-            entry.target.style.top = '0px';
+            entry.target.style.top = `0px`;
           }
-        } else {
-          //when off screen
-          entry.target.style.opacity = "0";
         }
       });
     }, {
@@ -718,9 +714,7 @@ class NavScroll {
   }
 
   handleFocus() {
-    if (this.hidden) {
-      this.showNav();
-    }
+    this.showNav();
   }
 
   toggleNavigationClasses(belowFold) {
@@ -1333,6 +1327,13 @@ function navigation() {
     if (nav) {
       const NavScrollClass = new _classes_class_nav_scroll__WEBPACK_IMPORTED_MODULE_1__["default"](nav);
       window.addEventListener('scroll', NavScrollClass.handleScroll);
+      const focusable = [...nav.querySelectorAll('button, a')];
+
+      if (focusable.length) {
+        focusable.forEach(element => {
+          element.addEventListener('focus', NavScrollClass.handleFocus);
+        });
+      }
     }
   };
 

@@ -46,7 +46,7 @@
 </head>
 
 
-<body <?php body_class('text-shade-black-400'); ?>>
+<body <?php body_class('text-shade-black-400 antialiased'); ?>>
     <?php if (!empty($settings['gtm_container_id'])) : ?>
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo esc_attr($settings['gtm_container_id']) ?>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

@@ -25,9 +25,7 @@ export default class NavScroll {
     }
 
     handleFocus() {
-        if (this.hidden) {
-            this.showNav();
-        }
+        this.showNav();
     }
 
     toggleNavigationClasses(belowFold) {

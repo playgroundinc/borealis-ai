@@ -43,7 +43,7 @@ if (!function_exists('pg_render_logos_container_block')) {
         $allowed_html = pg_allowed_html();
         ob_start();
 ?>
-        <div class="bg-shade-grey-100 w-full">
+        <div class="bg-shade-grey-100 w-full custom-component animated-element component-dark">
             <div class="container flex justify-between py-10 md:py-15 tb:flex-row flex-col">
                 <div class="w-full tb:w-3/12">
                     <?php if (!empty($attributes->title)) : ?>

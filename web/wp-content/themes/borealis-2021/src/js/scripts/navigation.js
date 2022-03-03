@@ -27,6 +27,12 @@ export default function navigation() {
         if (nav) {
             const NavScrollClass = new NavScroll(nav);
             window.addEventListener('scroll', NavScrollClass.handleScroll);
+            const focusable = [...nav.querySelectorAll('button, a')];
+            if (focusable.length) {
+                focusable.forEach((element) => {
+                    element.addEventListener('focus', NavScrollClass.handleFocus);
+                })
+            }
         }
     }
 

@@ -1057,6 +1057,21 @@ ol.footnotes li small{
     font-size: 18px;
   }
 }
+.animated-element{
+  position: relative;
+  opacity: 0;
+  transition-property: opacity top;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+@media (prefers-reduced-motion: no-preference){
+  .animated-element{
+    top: 32px;
+  }
+}
+.component-dark, .component-dark + .component-dark{
+  margin-top: 0px;
+}
 .scroll--hidden{
   top: -100%;
 }
@@ -1680,10 +1695,6 @@ ol.footnotes li small{
   --tw-bg-opacity: 1;
   background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
-.bg-primary-electric-purple-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(96 55 215 / var(--tw-bg-opacity));
-}
 .bg-tint-lightBlue-400{
   --tw-bg-opacity: 1;
   background-color: rgb(111 222 250 / var(--tw-bg-opacity));
@@ -1691,6 +1702,10 @@ ol.footnotes li small{
 .bg-primary-electric-blue-400{
   --tw-bg-opacity: 1;
   background-color: rgb(0 68 255 / var(--tw-bg-opacity));
+}
+.bg-primary-electric-purple-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 55 215 / var(--tw-bg-opacity));
 }
 .bg-primary-purple-400{
   --tw-bg-opacity: 1;
@@ -2034,6 +2049,10 @@ ol.footnotes li small{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
+.antialiased{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .opacity-0{
   opacity: 0;
 }
@@ -2070,6 +2089,11 @@ ol.footnotes li small{
 }
 .transition-all{
   transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-animate{
+  transition-property: opacity top;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2335,6 +2359,12 @@ mjx-container::-webkit-scrollbar-thumb,
   padding-top: 48px;
 }
 
+@media (prefers-reduced-motion: no-preference){
+  .motion-safe\:top-8{
+    top: 32px;
+  }
+}
+
 @media (min-width: 375px){
   .sm\:flex{
     display: flex;
@@ -2542,9 +2572,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:mt-5{
     margin-top: 20px;
   }
-    .md\:mb-12{
-    margin-bottom: 48px;
-  }
     .md\:mt-24{
     margin-top: 96px;
   }
@@ -2565,6 +2592,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:mb-8{
     margin-bottom: 32px;
+  }
+    .md\:mb-12{
+    margin-bottom: 48px;
   }
     .md\:mt-3{
     margin-top: 12px;
@@ -2787,15 +2817,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pl-8{
     padding-left: 32px;
   }
-    .md\:pr-20{
-    padding-right: 80px;
-  }
-    .md\:pt-16{
-    padding-top: 64px;
-  }
-    .md\:pb-20{
-    padding-bottom: 80px;
-  }
     .md\:pr-10{
     padding-right: 40px;
   }
@@ -2831,6 +2852,15 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pr-4{
     padding-right: 16px;
+  }
+    .md\:pr-20{
+    padding-right: 80px;
+  }
+    .md\:pt-16{
+    padding-top: 64px;
+  }
+    .md\:pb-20{
+    padding-bottom: 80px;
   }
     .md\:pt-8{
     padding-top: 32px;
