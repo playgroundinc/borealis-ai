@@ -113,7 +113,7 @@ class PG_Allowed_Blocks {
         );
         $this->blog_core_blocks = array(
             'core/table',
-            'core/podcast',
+            'core/embed-podcast',
             'core/quote'
         );
         $this->author_blocks = array(
@@ -233,4 +233,4 @@ function pg_add_allowed_blocks($allowed_blocks, $post) {
 }
 
 
-add_filter( 'allowed_block_types', 'pg_add_allowed_blocks', 10, 2 );
+// add_filter( 'allowed_block_types', 'pg_add_allowed_blocks', 10, 2 );
