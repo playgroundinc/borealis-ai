@@ -127,6 +127,12 @@
   .scroll--hidden {
     @apply -top-full;
   }
+  .lazy {
+    @apply w-full blur-md transition-filter duration-500;
+    &.img-loaded {
+      @apply blur-none;
+    }
+  }
 }
 
 @import './wp-blocks/tables';

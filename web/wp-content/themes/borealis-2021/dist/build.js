@@ -91,11 +91,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function animate() {
   /* All animated elements must have the class animated-element
-  *
-  * @data-animate {string} fade-in | slide-in | spin-in -- values of animations present in _animate.scss
-  * @data-animate-delay {num} sets the delay in seconds
-  * @data-animate-duration {num} sets the duration of the animation in seconds
-  *
   */
   let animatedElements = [...document.querySelectorAll('.animated-element')];
   const bodyCopyChildren = [...document.querySelectorAll('.body-copy > *')];
@@ -114,8 +109,6 @@ function animate() {
         if (entry.intersectionRatio > 0) {
           // when on screen
           LazyImageLoad.loadImages();
-          console.log(window.innerHeight);
-          console.log(entry);
 
           if (entry.target.offsetHeight >= window.innerHeight) {
             entry.target.style.opacity = '1';
