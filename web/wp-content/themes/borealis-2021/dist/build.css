@@ -754,7 +754,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .pill-secondary{
-  display: block;
   border-radius: 30px;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -764,6 +763,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 4px;
   padding-bottom: 4px;
   text-align: center;
+  display: block;
 }
 .pill-secondary:nth-child(n + 2){
   margin-left: 20px;
@@ -795,9 +795,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(96 55 215 / var(--tw-border-opacity));
 }
 .text-link{
-  display: block;
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
+  display: block;
 }
 .text-link:visited{
   --tw-text-opacity: 1;
@@ -1007,8 +1007,8 @@ ol.footnotes li small{
   list-style-type: disc;
 }
 .single .nestable .nested-flex{
-  display: block;
   width: 100%;
+  display: block;
 }
 @media (min-width: 768px){
   .single .nestable .nested-flex{
@@ -1123,6 +1123,15 @@ ol.footnotes li small{
 .z-50{
   z-index: 50;
 }
+.z-30{
+  z-index: 30;
+}
+.z-40{
+  z-index: 40;
+}
+.z-20{
+  z-index: 20;
+}
 .z-0{
   z-index: 0;
 }
@@ -1233,6 +1242,9 @@ ol.footnotes li small{
 .mb-12{
   margin-bottom: 48px;
 }
+.mt-26{
+  margin-top: 104px;
+}
 .mb-15{
   margin-bottom: 60px;
 }
@@ -1253,6 +1265,9 @@ ol.footnotes li small{
 }
 .flex{
   display: flex;
+}
+.grid{
+  display: grid;
 }
 .contents{
   display: contents;
@@ -1279,6 +1294,9 @@ ol.footnotes li small{
 }
 .h-13{
   height: 52px;
+}
+.h-10{
+  height: 40px;
 }
 .h-18{
   height: 72px;
@@ -1330,6 +1348,12 @@ ol.footnotes li small{
 }
 .w-23{
   width: 92px;
+}
+.w-10{
+  width: 40px;
+}
+.w-4\/12{
+  width: 33.333333%;
 }
 .w-42{
   width: 168px;
@@ -1469,6 +1493,9 @@ ol.footnotes li small{
 .overflow-scroll{
   overflow: scroll;
 }
+.overflow-y-scroll{
+  overflow-y: scroll;
+}
 .scroll-smooth{
   scroll-behavior: smooth;
 }
@@ -1604,6 +1631,10 @@ ol.footnotes li small{
   --tw-bg-opacity: 1;
   background-color: rgb(0 68 255 / var(--tw-bg-opacity));
 }
+.bg-shade-black-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 39 49 / var(--tw-bg-opacity));
+}
 .bg-primary-purple-400{
   --tw-bg-opacity: 1;
   background-color: rgb(85 0 155 / var(--tw-bg-opacity));
@@ -1611,10 +1642,6 @@ ol.footnotes li small{
 .bg-tint-purple-400{
   --tw-bg-opacity: 1;
   background-color: rgb(78 101 249 / var(--tw-bg-opacity));
-}
-.bg-shade-black-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 39 49 / var(--tw-bg-opacity));
 }
 .bg-opacity-70{
   --tw-bg-opacity: 0.7;
@@ -1643,6 +1670,9 @@ ol.footnotes li small{
 }
 .p-12{
   padding: 48px;
+}
+.p-18{
+  padding: 72px;
 }
 .px-4{
   padding-left: 16px;
@@ -1703,6 +1733,10 @@ ol.footnotes li small{
 .py-19{
   padding-top: 76px;
   padding-bottom: 76px;
+}
+.py-24{
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 .px-12{
   padding-left: 48px;
@@ -1965,11 +1999,17 @@ ol.footnotes li small{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.delay-150{
+  transition-delay: 150ms;
+}
 .duration-300{
   transition-duration: 300ms;
 }
 .duration-500{
   transition-duration: 500ms;
+}
+.ease-in-out{
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .container{
   margin: 0 auto;
@@ -2037,79 +2077,137 @@ ol.footnotes li small{
   .wp-block-embed__wrapper video,
   .wp-block-embed__wrapper iframe {
     max-height: 100%; }
-  .first\:ml-4:first-child{
+
+.lightbulb {
+  margin: 5px; }
+
+.none {
+  display: none; }
+
+.block {
+  display: block; }
+
+.grid-container {
+  -moz-column-count: 4;
+       column-count: 4;
+  -moz-column-gap: 0.5em;
+       column-gap: 0.5em;
+  max-width: 1440px;
+  margin: auto;
+  width: 100%; }
+
+img {
+  height: auto;
+  max-width: 100%; }
+
+@media (max-width: 800px) {
+  .grid-container {
+    -moz-column-count: 3;
+         column-count: 3; } }
+
+@media (max-width: 600px) {
+  .grid-container {
+    -moz-column-count: 2;
+         column-count: 2; } }
+
+@media (max-width: 400px) {
+  .grid {
+    -moz-column-count: 1;
+         column-count: 1; } }
+
+.first\:ml-4:first-child{
   margin-left: 16px;
 }
-  .first\:mt-0:first-child{
+
+.first\:mt-0:first-child{
   margin-top: 0px;
 }
-  .last\:basis-auto:last-child{
+
+.last\:basis-auto:last-child{
   flex-basis: auto;
 }
-  .last\:border-b-0:last-child{
+
+.last\:border-b-0:last-child{
   border-bottom-width: 0px;
 }
-  .visited\:text-primary-electric-purple-400:visited{
+
+.visited\:text-primary-electric-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-  .visited\:text-primary-purple-400:visited{
+
+.visited\:text-primary-purple-400:visited{
   --tw-text-opacity: 1;
   color: rgb(85 0 155 / var(--tw-text-opacity));
 }
-  .hover\:cursor-pointer:hover{
+
+.hover\:cursor-pointer:hover{
   cursor: pointer;
 }
-  .hover\:bg-shade-grey-50:hover{
+
+.hover\:bg-shade-grey-50:hover{
   background-color: rgba(244,244,251,0.5);
 }
-  .hover\:bg-shade-grey-100:hover{
+
+.hover\:bg-shade-grey-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
 }
-  .hover\:bg-shade-white-400:hover{
+
+.hover\:bg-shade-white-400:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-  .hover\:text-primary-electric-blue-400:hover{
+
+.hover\:text-primary-electric-blue-400:hover{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
 }
-  .hover\:text-primary-electric-purple-400:hover{
+
+.hover\:text-primary-electric-purple-400:hover{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-  .hover\:underline:hover{
+
+.hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-  .focus\:border-primary-electric-blue-400:focus{
+
+.focus\:border-primary-electric-blue-400:focus{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
 }
-  .focus\:text-primary-electric-purple-400:focus{
+
+.focus\:text-primary-electric-purple-400:focus{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-  .focus\:outline-0:focus{
+
+.focus\:outline-0:focus{
   outline-width: 0px;
 }
-  .disabled\:text-shade-grey-400:disabled{
+
+.disabled\:text-shade-grey-400:disabled{
   --tw-text-opacity: 1;
   color: rgb(216 216 228 / var(--tw-text-opacity));
 }
-  .group:first-child .group-first\:border-t{
+
+.group:first-child .group-first\:border-t{
   border-top-width: 1px;
 }
-  .group:hover .group-hover\:bg-tint-teal-400{
+
+.group:hover .group-hover\:bg-tint-teal-400{
   --tw-bg-opacity: 1;
   background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
-  .group:hover .group-hover\:underline{
+
+.group:hover .group-hover\:underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-  .peer:checked ~ .peer-checked\:pill-active{
+
+.peer:checked ~ .peer-checked\:pill-active{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
@@ -2117,27 +2215,34 @@ ol.footnotes li small{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-  .nth-child-2\:ml-5:nth-child(n + 2){
+
+.nth-child-2\:ml-5:nth-child(n + 2){
   margin-left: 20px;
 }
-  .nth-child-2\:ml-0:nth-child(n + 2){
+
+.nth-child-2\:ml-0:nth-child(n + 2){
   margin-left: 0px;
 }
-  .nth-child-2\:mt-5:nth-child(n + 2){
+
+.nth-child-2\:mt-5:nth-child(n + 2){
   margin-top: 20px;
 }
-  .nth-child-2\:mt-10:nth-child(n + 2){
+
+.nth-child-2\:mt-10:nth-child(n + 2){
   margin-top: 40px;
 }
-  .nth-child-3\:pt-12:nth-child(n + 3){
+
+.nth-child-3\:pt-12:nth-child(n + 3){
   padding-top: 48px;
 }
-  @media (min-width: 375px){
+
+@media (min-width: 375px){
   .sm\:w-1\/2{
     width: 50%;
   }
 }
-  @media (min-width: 768px){
+
+@media (min-width: 768px){
   .md\:h1{
     font-size: 70px;
     font-family: Metrophobic, sans-serif;
@@ -2343,6 +2448,9 @@ ol.footnotes li small{
   }
     .md\:mt-10{
     margin-top: 40px;
+  }
+    .md\:mt-46{
+    margin-top: 184px;
   }
     .md\:mb-15{
     margin-bottom: 60px;
@@ -2664,7 +2772,8 @@ ol.footnotes li small{
     margin-top: 32px;
   }
 }
-  @media (min-width: 1000px){
+
+@media (min-width: 1000px){
   .tb\:mb-0{
     margin-bottom: 0px;
   }
@@ -2744,7 +2853,8 @@ ol.footnotes li small{
     opacity: 1;
   }
 }
-  @media (min-width: 1440px){
+
+@media (min-width: 1440px){
   .page .lg\:container .container{
     width: 100%;
   }
