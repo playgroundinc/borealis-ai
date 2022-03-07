@@ -3012,7 +3012,7 @@ function locationBlock() {
       }), /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/location-image")],
         renderAppender: function renderAppender() {
-          if (innerBlockCount.length < 8) {
+          if (innerBlockCount.length < 6) {
             return /*#__PURE__*/React.createElement(InnerBlocks.ButtonBlockAppender, null);
           } else {
             return false;

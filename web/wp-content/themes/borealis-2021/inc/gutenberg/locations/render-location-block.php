@@ -56,23 +56,19 @@ if (!function_exists('pg_render_locations_block')) {
                     </p>
                     <div class="text-primary-electric-blue-400 h3 flex justify-start mt-6 md:mt-8">
                         <?php if (!empty($block['innerBlocks'])) : ?>
-                            <button id="open-img" class="mr-10 relative z-10">
-                                <div class="images">
-                                    <?php echo pg_render_icon('eye-btn'); ?>
-                                </div>
+                            <button tabindex="-1" aria-hidden="true" aria-label="Open fullscreen image modal" type="button" id="open-img" class="mr-10 relative z-10">
+                                <?php echo pg_render_icon('eye-btn'); ?>
                             </button>
                         <?php endif; ?>
                         <?php if (!empty($video)) : ?>
-                            <button id="open-vid" class="relative z-10">
-                                <div class="video">
-                                    <?php echo pg_render_icon('play-btn'); ?>
-                                </div>
+                            <button aria-label="Open fullscreen video modal" type="button" id="open-vid" class="relative z-10">
+                                <?php echo pg_render_icon('play-btn'); ?>
                             </button>
                         <?php endif; ?>
                     </div>
                 </div>
                 <?php if (!empty($video)) : ?>
-                    <div id="video-modal" class="w-full h-full absolute m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out delay-150">
+                    <div aria-modal="true" id="video-modal" class="w-full h-full absolute m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out delay-150">
                         <div class="container m-auto">
                             <video tabindex="-1" class="absolute top-0 left-0 w-full h-full z-30 py-28 md:py-24 max-h-screen" loop muted autoplay playsinline>
                                 <source src="<?php echo esc_url_raw($video); ?>" type="video/mp4">
@@ -82,7 +78,7 @@ if (!function_exists('pg_render_locations_block')) {
                     </div>
                 <?php endif; ?>
                 <?php if (!empty($block['innerBlocks'])) : ?>
-                    <div id="img-modal" class="px-6 w-full h-full absolute m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out delay-150">
+                    <div aria-hidden="true" aria-modal="true" id="img-modal" class="px-6 w-full h-full absolute m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out delay-150">
                         <div id="image-slideshow" class="grid-container w-full relative mt-26">
                             <?php foreach ($block['innerBlocks'] as $key => $inner_block) : ?>
                                 <div id="image<?php echo $key + 1 ?>" class="image-slideshow opacity-0">

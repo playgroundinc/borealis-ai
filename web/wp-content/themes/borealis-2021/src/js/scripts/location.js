@@ -59,6 +59,14 @@ function locationModal(locationContainer) {
             openImage.addEventListener("mouseover", () =>
                 openModal(imageModal, openImage)
             );
+            openImage.addEventListener("keydown", (event) => {
+                if (event.key === " " || event.key === "Enter") {
+                    openModal(imageModal, openImage);
+                } else if (event.key === "Escape") {
+                    console.log(event.key === "Escape");
+                    closeModal(imageModal, openImage);
+                }
+            });
             openImage.addEventListener("mouseleave", () =>
                 closeModal(imageModal, openImage)
             );
@@ -74,6 +82,11 @@ function locationModal(locationContainer) {
 
     if (openVideo) {
         openVideo.addEventListener("click", () => openModal(videoModal, null));
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeModal(videoModal, openVideo);
+            }
+        });
         videoModal.addEventListener("click", () =>
             closeModal(videoModal, openVideo)
         );
