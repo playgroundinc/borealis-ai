@@ -53,20 +53,22 @@ function locationModal(locationContainer) {
 
   const closeModal = (el, target) => {
     classToggle(el, ["opacity-1", "z-20"], ["opacity-0"]);
-    classToggle(target, ["z-30"], ["z-10"]);
+    target !== null && classToggle(target, ["z-30"], ["z-10"]);
     classToggle(containerHTML, ["w-full", "fixed", "overflow-y-scroll"], []);
   };
 
   if (openImage) {
-    if (!("ontouchstart" in document.documentElement)) {
+    if (!("ontouchend" in document.documentElement)) {
+      console.log("HERE BAD");
       openImage.addEventListener("mouseover", () => openModal(imageModal, openImage));
       openImage.addEventListener("mouseleave", () => closeModal(imageModal, openImage));
     } else {
+      console.log("HERE GOOD");
       openImage.addEventListener("touchend", e => {
-        openModal(imageModal, openImage);
+        openModal(imageModal, null); // console.log(openImage, "OPEN IMAGE");
       });
       imageModal.addEventListener("touchend", e => {
-        closeModal(imageModal, openImage);
+        closeModal(imageModal, null); // console.log("CLOSE IMAGE");
       });
     }
   }

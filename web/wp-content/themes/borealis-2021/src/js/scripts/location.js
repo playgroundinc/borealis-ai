@@ -55,7 +55,8 @@ function locationModal(locationContainer) {
     };
 
     if (openImage) {
-        if (!("ontouchstart" in document.documentElement)) {
+        if (!("ontouchend" in document.documentElement)) {
+            console.log("HERE BAD");
             openImage.addEventListener("mouseover", () =>
                 openModal(imageModal, openImage)
             );
@@ -63,13 +64,14 @@ function locationModal(locationContainer) {
                 closeModal(imageModal, openImage)
             );
         } else {
+            console.log("HERE GOOD");
             openImage.addEventListener("touchend", (e) => {
-                // openModal(imageModal, null);
-                console.log(openImage, "OPEN IMAGE");
+                openModal(imageModal, null);
+                // console.log(openImage, "OPEN IMAGE");
             });
             imageModal.addEventListener("touchend", (e) => {
-                // closeModal(imageModal, null);
-                console.log("CLOSE IMAGE");
+                closeModal(imageModal, null);
+                // console.log("CLOSE IMAGE");
             });
         }
     }
