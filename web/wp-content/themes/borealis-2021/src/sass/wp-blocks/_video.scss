@@ -1,0 +1,13 @@
+.wp-block-video,
+.wp-block-embed,
+.wp-block-embed__wrapper {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  video,
+  iframe {
+    max-height: 100%;
+  }
+}

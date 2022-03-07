@@ -2,8 +2,9 @@ import { breakpoints } from "../../../../utils/constants";
 
 
 export default class Slider {
-    constructor(slider) {
+    constructor(slider, type = 'news') {
         this.slider = slider;
+        this.type = type;
         this.slides = [];
         this.container = null;
         this.activeSlide = 1;
@@ -13,13 +14,7 @@ export default class Slider {
         this.left = 0;
         this.right = 0;
         this.slideCount = 1;
-        this.slideCounts = {
-            sm: 2,
-            md: 2,
-            tb: 4,
-            lg: 4,
-            xl: 4,
-        };
+        this.slideCounts = type === 'testimonial' ? { sm: 1, md: 1, tb: 1, lg: 1, xl: 1 } : { sm: 2, md: 2, tb: 4, lg: 4, xl: 4, };
         this.breakpoints = breakpoints;
         this.breakpoint = null;
         this.current = null;
@@ -34,6 +29,7 @@ export default class Slider {
         this.handleNext = this.handleNext.bind(this);
         this.handlePrev = this.handlePrev.bind(this);
         this.handleResize = this.handleResize.bind(this);
+        this.getSlideHeights = this.getSlideHeights.bind(this);
     }
     setState(name, value) {
         this[name] = value;
@@ -176,7 +172,9 @@ export default class Slider {
             this.next.removeAttribute('disabled');
         }
         this.prev.setAttribute('disabled', true);
-
+        if (this.type === 'testimonial') {
+            this.getSlideHeights();
+        }
     }
 
 
@@ -261,6 +259,21 @@ export default class Slider {
         this.slider.addEventListener('mousemove', this.handleMouseMove);
         this.slider.addEventListener('mouseup', this.handleMouseUp);
     }
+
+    getSlideHeights() {
+        const parent = this.container.parentElement;
+        parent.style.paddingTop = '';
+        const heights = this.slides.map((slide) => { 
+            const content = slide.querySelector('.container');
+            return Number(content.offsetHeight) > 0 ? Number(content.offsetHeight) :  450 
+        });
+        const maxHeight = Math.max(...heights);
+        if (window.innerWidth <= 768) {
+            parent.style.paddingTop = parent.dataset?.style === 'dark' ? `${Number(maxHeight + window.innerWidth)}px` : `${Number(maxHeight)}px`;
+            return;
+        }
+        parent.style.paddingTop = `${maxHeight}px`;
+    }
     init() {
         this.getSlides();
         if (this.slides.length) {
@@ -269,6 +282,9 @@ export default class Slider {
             this.getCount()
             this.setTotal();
             this.addListeners();
+            if (this.type === 'testimonial') {
+                this.getSlideHeights();
+            } 
             return;
         }
         // this.hideCarousel();

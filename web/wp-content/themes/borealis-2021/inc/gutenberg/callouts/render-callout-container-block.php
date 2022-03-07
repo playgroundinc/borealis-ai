@@ -45,7 +45,7 @@ if ( ! function_exists( 'pg_render_callout_container_block' ) ) {
         $allowed_html = pg_allowed_html();
         ob_start();
         ?>
-            <div class="custom-component py-19 bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<?php echo esc_url_raw($image)?>)">
+            <div class="custom-component component-dark py-19 bg-cover bg-center animated-element" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<?php echo esc_url_raw($image)?>)">
                 <div class="container">
                     <div class="text-shade-white-400 md:flex justify-between">
                         <div class="basis-1/3 shrink-0 pr-8">

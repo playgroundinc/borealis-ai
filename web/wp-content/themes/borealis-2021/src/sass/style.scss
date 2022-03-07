@@ -3,7 +3,12 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
 @layer components {
+  .canvas {
+    height: 615px !important;
+    max-height: 100vh;
+  }
   .pill {
     @apply border border-shade-black-400 px-4 py-1 rounded-pill inline-block text-center paragraph-sm;
   }
@@ -55,7 +60,7 @@
     }
   }
   .page {
-    .container .container {
+    .container .nestable .container {
       @apply w-full;
       .icon-list {
         @apply w-full;
@@ -120,6 +125,21 @@
     background-color: rgba(34, 39, 49, 0.5);
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
   }
+
+  .paragraph-style .paragraph-blog {
+    @apply paragraph;
+  }
+
+  .animated-element {
+    @apply opacity-0 relative motion-safe:top-8 transition-animate duration-700;
+  }
+  .component-dark,
+  .component-dark + .component-dark {
+    @apply mt-0;
+  }
+  .scroll--hidden {
+    @apply -top-full;
+  }
 }
 
 .wp-block-video,
@@ -142,14 +162,19 @@
   max-width: 1440px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .grid-container {
     column-count: 3;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .grid-container {
     column-count: 2;
   }
 }
+
+@import "./wp-blocks/tables";
+@import "./wp-blocks/mathjax";
+@import "./wp-blocks/video";
+@import "./wp-blocks/visible-scroll";

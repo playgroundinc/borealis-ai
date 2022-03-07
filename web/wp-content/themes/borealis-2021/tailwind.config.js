@@ -93,7 +93,7 @@ module.exports = {
 				},
 				alert: {
 					error: {
-						400: "#F05C5C",
+						400: "#CA020F",
 					},
 					success: {
 						400: "#3ECD80"
@@ -103,6 +103,7 @@ module.exports = {
 			transitionProperty: {
 				'background-color': 'background-color',
 				'slider': 'left right',
+				'animate': 'opacity top',
 			},
 			width: {
 				'3/8': 'calc((100% / 8) * 3)',
