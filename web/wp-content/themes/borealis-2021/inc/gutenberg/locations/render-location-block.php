@@ -90,9 +90,6 @@ if (!function_exists('pg_render_locations_block')) {
                                 </div>
                             <?php endforeach; ?>
                         </div>
-                        <div class="mt-16 md:hidden">
-                            <?php echo pg_render_icon('close-white'); ?>
-                        </div>
                     </div>
                 <?php endif; ?>
             </div>
