@@ -23,19 +23,20 @@ export default function animate() {
                 const LazyImageLoad = new LazyImages(entry.target);
                 if (entry.intersectionRatio > 0) { // when on screen
                     LazyImageLoad.loadImages();
+                    console.log(window.innerHeight)
+                    console.log(entry);
                     if (entry.target.offsetHeight >= window.innerHeight) {
                         entry.target.style.opacity = '1';
                         entry.target.style.top = '0px';
-                    } else if (entry.intersectionRect.bottom >= window.innerHeight && entry.intersectionRect.height < entry.target.offsetHeight / 2) {
-                        entry.target.style.opacity = `${entry.intersectionRatio}`;
-                        entry.target.style.top = `${30 - (30 * Number(entry.intersectionRatio))}px`;
+                    } else if (entry.intersectionRect.bottom >= window.innerHeight && entry.intersectionRect.height > entry.target.offsetHeight / 3) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.top = `0px`;
                     } else {
                         entry.target.style.opacity = '1';
-                        entry.target.style.top = '0px';
+                        entry.target.style.top = `0px`;
                     }
-                } else { //when off screen
-                    entry.target.style.opacity = "0"
                 }
+ 
             });
         }, {
             rootMargin: '0px',

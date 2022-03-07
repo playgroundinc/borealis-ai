@@ -46,7 +46,7 @@
 </head>
 
 
-<body <?php body_class('text-shade-black-400'); ?>>
+<body <?php body_class('text-shade-black-400 antialiased'); ?>>
     <?php if (!empty($settings['gtm_container_id'])) : ?>
         <!-- Google Tag Manager (noscript) -->
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo esc_attr($settings['gtm_container_id']) ?>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -66,8 +66,8 @@
         $hero_image = get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg';
     }
     $headline = get_post_meta($post->ID, 'headline', true);
-    // var_dump(i);
-    $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications']) || is_front_page();
+    $header_height = is_front_page() ? 'max-h-screen h-[615px] flex flex-col' : 'min-h-[125px]';
+    $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications', 'product', 'program']) || is_front_page();
     ?>
     <style>
         .custom-gallery:hover,
@@ -88,9 +88,9 @@
     <div id="page" class="site">
         <!-- Skip to Content link -->
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'pg-wp-starter'); ?></a>
-        <header id="masthead" class="<?php echo $no_header ? 'min-h-[125px]' : esc_attr('bg-cover bg-bottom min-h-[400px] md:min-h-[280px] flex flex-col justify-end') ?>" style="background-image: url(<?php echo $no_header ? '' : esc_attr($hero_image) ?> )">
-            <nav id="main-navigation" class="fixed z-10 left-0 right-0 top-3">
-                <div class="<?php echo ($has_subnav) ? 'rounded-b-large md:rounded-b-none rounded-t-large' : 'rounded-large'; ?> relative mt-4 top-2 py-4 nav-container <?php echo (is_home() || is_front_page()) ? 'bg-transparent' : 'bg-primary-navy-400'; ?>">
+        <header id="masthead" class="<?php echo $no_header ? esc_attr($header_height) : esc_attr('bg-cover bg-bottom min-h-[400px] md:min-h-[280px] flex flex-col justify-end') ?>" style="background-image: url(<?php echo $no_header ? '' : esc_attr($hero_image) ?> )">
+            <nav id="main-navigation" class="fixed z-50 left-0 right-0 top-3 transition-top duration-700">
+                <div class="<?php echo ($has_subnav) ? 'rounded-b-large md:rounded-b-none rounded-t-large' : 'rounded-large'; ?> relative mt-4 top-2 py-4 nav-container <?php echo (is_home() || is_front_page()) ? 'bg-transparent transition-background-color duration-700' : 'bg-primary-navy-400'; ?>">
                     <div class="flex md:flex-row flex-col items-center px-4 md:px-5 lg:px-0 lg:container">
                         <div class="logo shrink-0 h-fit flex md:w-auto w-full justify-between align-center">
                             <a href="<?php echo get_home_url(); ?>">
@@ -141,14 +141,38 @@
                 ?>
             <?php elseif (is_front_page()) : // Start of check for singular News or Blog 
             ?>
-                <?php $header = pg_generate_hero_header($post->ID); ?>
+                <?php $header = pg_generate_hero_header($post->ID, $headline); ?>
                 <?php if (isset($header) && !empty($header)) : // Start of Check for empty Blog header 
                 ?>
-                    <div class="container">
+                    <div class="container grow flex flex-col">
                         <?php echo $header; ?>
                     </div>
                 <?php endif; // End of check for empty blog header. 
                 ?>
+            <?php elseif (is_singular('team-member')) : ?>
+                <div class="border-b border-shade-grey-700">
+                    <div class="container">
+                        <?php $header = pg_generate_team_member_header($post->ID); ?>
+                        <?php if (isset($header) && !empty($header)) : ?>
+                            <?php echo $header ?>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php elseif (is_singular('product')) : ?>
+                <div class="container">
+                    <?php $header = pg_generate_product_header($post->ID); ?>
+                    <?php if (isset($header) && !empty($header)) : ?>
+                        <?php echo $header ?>
+                    <?php endif; ?>
+                </div>
+
+            <?php elseif (is_singular('program')) : ?>
+                <div class="container">
+                    <?php $header = pg_generate_program_header($post->ID); ?>
+                    <?php if (isset($header) && !empty($header)) : ?>
+                        <?php echo $header ?>
+                    <?php endif; ?>
+                </div>
             <?php elseif ($no_header) : ?>
                 <h1 class="sr-only"><?php echo esc_html(the_title()); ?></h1>
             <?php else : ?>

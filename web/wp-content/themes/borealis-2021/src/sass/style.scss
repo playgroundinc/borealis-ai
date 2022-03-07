@@ -3,9 +3,11 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
 @layer components {
   .canvas {
     height: 615px !important;
+    max-height: 100vh;
   }
   .pill {
     @apply border border-shade-black-400 px-4 py-1 rounded-pill inline-block text-center paragraph-sm;
@@ -58,7 +60,7 @@
     }
   }
   .page {
-    .container .container {
+    .container .nestable .container {
       @apply w-full;
       .icon-list {
         @apply w-full;
@@ -110,32 +112,20 @@
   .wp-block-code {
     @apply bg-shade-grey-100 rounded-large p-12 grow;
   }
-}
 
-.visible-scroll {
-  &::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 10px;
+  .paragraph-style .paragraph-blog {
+    @apply paragraph;
   }
 
-  &::-webkit-scrollbar-thumb {
-    border-radius: 50px;
-    background-color: rgba(34, 39, 49, 0.5);
-    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  .animated-element {
+    @apply opacity-0 relative motion-safe:top-8 transition-animate duration-700;
   }
-}
-
-.wp-block-video,
-.wp-block-embed,
-.wp-block-embed__wrapper {
-  margin: 0;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  video,
-  iframe {
-    max-height: 100%;
+  .component-dark,
+  .component-dark + .component-dark {
+    @apply mt-0;
+  }
+  .scroll--hidden {
+    @apply -top-full;
   }
 }
 
@@ -167,3 +157,7 @@
     transform: translateX(-50%);
   }
 }
+@import "./wp-blocks/tables";
+@import "./wp-blocks/mathjax";
+@import "./wp-blocks/video";
+@import "./wp-blocks/visible-scroll";

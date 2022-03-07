@@ -27,7 +27,7 @@ if (!function_exists('pg_generate_blog_result')) {
                 <div class="md:flex items-center justify-between">
                     <p class="paragraph basis-5/12"><?php echo esc_html($post->post_title) ?></p>
                     <?php if (isset($terms_string) && $terms_string !== ''): // Start of Terms String check ?>
-                        <p class="mt-5 md:mt-3 text-shade-grey-700 basis-5/12 md:pl-1/12 paragraph-sm">
+                        <p class="mt-5 md:mt-0 text-shade-grey-700 basis-5/12 md:pl-1/12 paragraph-sm">
                             <?php echo wp_kses($terms_string, $allowed_html) ?>
                         </p>
                     <?php endif; // End of Terms String check ?>
