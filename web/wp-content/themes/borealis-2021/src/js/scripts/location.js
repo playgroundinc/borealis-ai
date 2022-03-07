@@ -63,13 +63,12 @@ function locationModal(locationContainer) {
                 closeModal(imageModal, openImage)
             );
         } else {
-            3
             openImage.addEventListener("touchend", (e) => {
-                openModal(imageModal, null);
+                // openModal(imageModal, null);
                 console.log(openImage, "OPEN IMAGE");
             });
             imageModal.addEventListener("touchend", (e) => {
-                closeModal(imageModal, null);
+                // closeModal(imageModal, null);
                 console.log("CLOSE IMAGE");
             });
         }
