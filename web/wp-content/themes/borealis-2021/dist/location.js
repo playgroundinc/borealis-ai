@@ -65,10 +65,10 @@ function locationModal(locationContainer) {
     } else {
       console.log("HERE GOOD");
       openImage.addEventListener("touchend", e => {
-        openModal(imageModal, null); // console.log(openImage, "OPEN IMAGE");
+        openModal(imageModal, null);
       });
       imageModal.addEventListener("touchend", e => {
-        closeModal(imageModal, null); // console.log("CLOSE IMAGE");
+        closeModal(imageModal, null);
       });
     }
   }

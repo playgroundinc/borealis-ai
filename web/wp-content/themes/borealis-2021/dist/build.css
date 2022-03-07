@@ -2721,6 +2721,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:mt-3{
     margin-top: 12px;
   }
+    .md\:mr-8{
+    margin-right: 32px;
+  }
     .md\:block{
     display: block;
   }
@@ -2792,6 +2795,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:w-5\/8{
     width: calc((100% / 8) * 5);
+  }
+    .md\:w-2\/12{
+    width: 16.666667%;
   }
     .md\:basis-3\/4{
     flex-basis: 75%;
@@ -3128,6 +3134,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:mb-8{
     margin-bottom: 32px;
+  }
+    .tb\:mr-10{
+    margin-right: 40px;
   }
     .tb\:block{
     display: block;

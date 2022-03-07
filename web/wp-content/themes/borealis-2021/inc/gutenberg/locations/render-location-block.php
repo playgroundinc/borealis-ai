@@ -46,7 +46,7 @@ if (!function_exists('pg_render_locations_block')) {
 
         if (!empty($attributes->city) || !empty($attributes->address)) :
 ?>
-            <div class="location-container mr-10 mb-6">
+            <div class="location-container md:mr-8 tb:mr-10 mb-6">
                 <div class="mb-6">
                     <p class="h4 mb-4">
                         <?php echo $attributes->city ?>
