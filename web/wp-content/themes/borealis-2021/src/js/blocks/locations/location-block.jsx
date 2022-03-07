@@ -114,7 +114,7 @@ export default function locationBlock() {
           <InnerBlocks
             allowedBlocks={[`${namespace}/location-image`]}
             renderAppender={() => {
-              if (innerBlockCount.length < 4) {
+              if (innerBlockCount.length < 8) {
                 return <InnerBlocks.ButtonBlockAppender />;
               } else {
                 return false;

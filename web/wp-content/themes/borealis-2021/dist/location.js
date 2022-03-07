@@ -4,7 +4,6 @@ var __webpack_exports__ = {};
   !*** ./src/js/scripts/location.js ***!
   \************************************/
 function locationModal(locationContainer) {
-  const closeVideo = locationContainer.querySelector("#close-vid");
   const openVideo = locationContainer.querySelector("#open-vid");
   const videoModal = locationContainer.querySelector("#video-modal");
   const openImage = locationContainer.querySelector("#open-img");
@@ -14,80 +13,67 @@ function locationModal(locationContainer) {
 
   const classToggle = (el, classToRemove, classToAdd) => {
     if (classToAdd) {
-      el.classList.add(classToAdd);
+      classToAdd.forEach(classname => {
+        el.classList.add(classname);
+      });
     }
 
     if (classToRemove) {
-      el.classList.remove(classToRemove);
+      classToRemove.forEach(classname => {
+        el.classList.remove(classname);
+      });
     }
   };
 
-  const getRandomBulb = () => {
+  const getRandomImage = () => {
     if (imageSlideShow) {
       const randomNum = parseInt(Math.random() * imageSlideShow.childElementCount);
-      const selectBulb = locationContainer.querySelector(`#bulb${randomNum + 1}`);
-      const test = locationContainer.querySelectorAll(`.lightbulb`);
-      test.forEach(bulb => {
-        classToggle(bulb, "opacity-1", "opacity-0");
+      const selectImg = locationContainer.querySelector(`#image${randomNum + 1}`);
+      const images = locationContainer.querySelectorAll(`.image-slideshow`);
+      images.forEach(image => {
+        classToggle(image, ["opacity-1"], ["opacity-0"]);
       });
 
-      if (selectBulb) {
-        classToggle(selectBulb, "opacity-0", "opacity-1");
+      if (selectImg) {
+        classToggle(selectImg, ["opacity-0"], ["opacity-1"]);
       }
     }
   };
 
-  getRandomBulb();
+  getRandomImage();
   setInterval(function () {
-    getRandomBulb();
-  }, 1500);
+    getRandomImage();
+  }, 750);
 
-  const openModal = () => {
-    classToggle(videoModal, "opacity-0", "opacity-1");
-    videoModal.classList.add("z-20");
-    containerHTML.classList.add("w-full");
-    containerHTML.classList.add("overflow-y-scroll");
-    containerHTML.classList.add("fixed");
+  const openModal = (el, target) => {
+    classToggle(el, ["opacity-0"], ["opacity-1", "z-20"]);
+    target !== null && classToggle(target, ["z-10"], ["z-30"]);
+    classToggle(containerHTML, [], ["w-full", "fixed", "overflow-y-scroll"]);
   };
 
-  const closeModal = () => {
-    classToggle(videoModal, "opacity-1", "opacity-0");
-    videoModal.classList.remove("z-20");
-    classToggle(openVideo, "z-30", "z-10");
-    containerHTML.classList.remove("w-full");
-    containerHTML.classList.remove("overflow-y-scroll");
-    containerHTML.classList.remove("fixed");
-  }; // USE TOGGLE CLASS TOOL AND MAKE MORE ROBUST TO HANDLE ARRAY OF ADDED OR CHANGED TOGGLE CLASSES
-  // , chgane fucntion names, STYLE
-  // FINALIZE STYLE
-
+  const closeModal = (el, target) => {
+    classToggle(el, ["opacity-1", "z-20"], ["opacity-0"]);
+    classToggle(target, ["z-30"], ["z-10"]);
+    classToggle(containerHTML, ["w-full", "fixed", "overflow-y-scroll"], []);
+  };
 
   if (openImage) {
-    openImage.addEventListener("mouseover", e => {
-      imageModal.classList.remove("opacity-0");
-      imageModal.classList.add("opacity-1");
-      imageModal.classList.add("z-20");
-      openImage.classList.remove("z-10");
-      openImage.classList.add("z-30");
-      containerHTML.classList.add("w-full");
-      containerHTML.classList.add("overflow-y-scroll");
-      containerHTML.classList.add("fixed");
-    });
-    openImage.addEventListener("mouseleave", e => {
-      imageModal.classList.remove("opacity-1");
-      imageModal.classList.add("opacity-0");
-      imageModal.classList.remove("z-20");
-      openImage.classList.add("z-10");
-      openImage.classList.remove("z-30");
-      containerHTML.classList.remove("w-full");
-      containerHTML.classList.remove("overflow-y-scroll");
-      containerHTML.classList.remove("fixed");
-    });
+    if (!("ontouchstart" in document.documentElement)) {
+      openImage.addEventListener("mouseover", () => openModal(imageModal, openImage));
+      openImage.addEventListener("mouseleave", () => closeModal(imageModal, openImage));
+    } else {
+      openImage.addEventListener("touchend", e => {
+        openModal(imageModal, openImage);
+      });
+      imageModal.addEventListener("touchend", e => {
+        closeModal(imageModal, openImage);
+      });
+    }
   }
 
-  if (openVideo && closeVideo) {
-    openVideo.addEventListener("click", () => openModal(videoModal));
-    closeVideo.addEventListener("click", () => closeModal(videoModal));
+  if (openVideo) {
+    openVideo.addEventListener("click", () => openModal(videoModal, null));
+    videoModal.addEventListener("click", () => closeModal(videoModal, openVideo));
   }
 }
 

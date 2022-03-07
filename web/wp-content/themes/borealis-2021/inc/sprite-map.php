@@ -92,6 +92,12 @@ if (!function_exists('pg_svg_spritemap')) {
                 <path d="M7 7L19 19" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </symbol>
 
+            <!-- Close Icon White -->
+            <symbol id="icon-close-white" viewBox="0 0 26 26">
+                <path d="M19 7L7 19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7 7L19 19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </symbol>
+
             <!-- Cite Icon -->
             <symbol id="icon-cite" fill="none" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10 19H4C3.44772 19 3 18.5523 3 18V4C3 3.44772 3.44772 3 4 3H10C11.1046 3 12 3.89543 12 5C12 3.89543 12.8954 3 14 3H20C20.5523 3 21 3.44772 21 4V18C21 18.5523 20.5523 19 20 19H14C12.8954 19 12 19.8954 12 21C12 19.8954 11.1046 19 10 19Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -256,7 +262,6 @@ if (!function_exists('pg_svg_spritemap')) {
             </symbol>
 
             <!-- Eye -->
-
             <symbol id="icon-eye-btn" viewBox="0 0 40 40" fill="none">
                 <circle cx="19.9998" cy="20" r="3.33333" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M36.6668 20C32.2218 27.7784 26.6668 31.6667 20.0002 31.6667C13.3335 31.6667 7.7785 27.7784 3.3335 20C7.7785 12.2217 13.3335 8.33337 20.0002 8.33337C26.6668 8.33337 32.2218 12.2217 36.6668 20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

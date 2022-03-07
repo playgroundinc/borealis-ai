@@ -46,15 +46,15 @@ if (!function_exists('pg_render_locations_block')) {
 
         if (!empty($attributes->city) || !empty($attributes->address)) :
 ?>
-            <div class="location-container">
-                <div>
+            <div class="location-container mr-4 mb-6">
+                <div class="mb-6">
                     <p class="h4 mb-4">
                         <?php echo $attributes->city ?>
                     </p>
                     <p class="paragraph-sm">
                         <?php echo $attributes->address ?>
                     </p>
-                    <div class="text-primary-electric-blue-400 h3 flex justify-start mt-8">
+                    <div class="text-primary-electric-blue-400 h3 flex justify-start mt-6 md:mt-8">
                         <?php if (!empty($block['innerBlocks'])) : ?>
                             <button id="open-img" class="mr-10 relative z-10">
                                 <div class="images">
@@ -74,13 +74,7 @@ if (!function_exists('pg_render_locations_block')) {
                 <?php if (!empty($video)) : ?>
                     <div id="video-modal" class="w-full h-full absolute m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out delay-150">
                         <div class="container m-auto">
-                            <button id="close-vid" class="z-30 flex justify-end mt-26 w-full">
-                                <svg class="icon-close w-10 h-10 bg-shade-white-400 relative z-40" aria-labelledby="icon-close">
-                                    <title id="icon-close"></title>
-                                    <use xlink:href="#icon-close"></use>
-                                </svg>
-                            </button>
-                            <video tabindex="-1" class="absolute top-0 left-0 w-full h-full z-30 py-24 max-h-screen" loop muted autoplay playsinline>
+                            <video tabindex="-1" class="absolute top-0 left-0 w-full h-full z-30 py-28 md:py-24 max-h-screen" loop muted autoplay playsinline>
                                 <source src="<?php echo esc_url_raw($video); ?>" type="video/mp4">
                             </video>
                         </div>
@@ -88,13 +82,16 @@ if (!function_exists('pg_render_locations_block')) {
                     </div>
                 <?php endif; ?>
                 <?php if (!empty($block['innerBlocks'])) : ?>
-                    <div id="img-modal" class="w-full h-full absolute m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out delay-150">
-                        <div id="image-slideshow" class="grid-container relative md:mt-46">
+                    <div id="img-modal" class="px-6 w-full h-full absolute m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out delay-150">
+                        <div id="image-slideshow" class="grid-container w-full relative mt-26">
                             <?php foreach ($block['innerBlocks'] as $key => $inner_block) : ?>
-                                <div id="bulb<?php echo $key + 1 ?>" class="lightbulb opacity-0">
+                                <div id="image<?php echo $key + 1 ?>" class="image-slideshow opacity-0">
                                     <?php echo render_block($inner_block); ?>
                                 </div>
                             <?php endforeach; ?>
+                        </div>
+                        <div class="mt-16 md:hidden">
+                            <?php echo pg_render_icon('close-white'); ?>
                         </div>
                     </div>
                 <?php endif; ?>

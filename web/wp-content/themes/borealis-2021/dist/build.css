@@ -754,6 +754,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .pill-secondary{
+  display: block;
   border-radius: 30px;
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -763,7 +764,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 4px;
   padding-bottom: 4px;
   text-align: center;
-  display: block;
 }
 .pill-secondary:nth-child(n + 2){
   margin-left: 20px;
@@ -795,9 +795,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(96 55 215 / var(--tw-border-opacity));
 }
 .text-link{
+  display: block;
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
-  display: block;
 }
 .text-link:visited{
   --tw-text-opacity: 1;
@@ -1007,8 +1007,8 @@ ol.footnotes li small{
   list-style-type: disc;
 }
 .single .nestable .nested-flex{
-  width: 100%;
   display: block;
+  width: 100%;
 }
 @media (min-width: 768px){
   .single .nestable .nested-flex{
@@ -1117,17 +1117,17 @@ ol.footnotes li small{
 .right-4{
   right: 16px;
 }
-.z-10{
-  z-index: 10;
+.z-40{
+  z-index: 40;
 }
 .z-50{
   z-index: 50;
 }
+.z-10{
+  z-index: 10;
+}
 .z-30{
   z-index: 30;
-}
-.z-40{
-  z-index: 40;
 }
 .z-20{
   z-index: 20;
@@ -1242,6 +1242,9 @@ ol.footnotes li small{
 .mb-12{
   margin-bottom: 48px;
 }
+.mr-4{
+  margin-right: 16px;
+}
 .mt-26{
   margin-top: 104px;
 }
@@ -1265,9 +1268,6 @@ ol.footnotes li small{
 }
 .flex{
   display: flex;
-}
-.grid{
-  display: grid;
 }
 .contents{
   display: contents;
@@ -1294,9 +1294,6 @@ ol.footnotes li small{
 }
 .h-13{
   height: 52px;
-}
-.h-10{
-  height: 40px;
 }
 .h-18{
   height: 72px;
@@ -1348,12 +1345,6 @@ ol.footnotes li small{
 }
 .w-23{
   width: 92px;
-}
-.w-10{
-  width: 40px;
-}
-.w-4\/12{
-  width: 33.333333%;
 }
 .w-42{
   width: 168px;
@@ -1671,9 +1662,6 @@ ol.footnotes li small{
 .p-12{
   padding: 48px;
 }
-.p-18{
-  padding: 72px;
-}
 .px-4{
   padding-left: 16px;
   padding-right: 16px;
@@ -1734,9 +1722,9 @@ ol.footnotes li small{
   padding-top: 76px;
   padding-bottom: 76px;
 }
-.py-24{
-  padding-top: 96px;
-  padding-bottom: 96px;
+.py-28{
+  padding-top: 112px;
+  padding-bottom: 112px;
 }
 .px-12{
   padding-left: 48px;
@@ -2078,27 +2066,12 @@ ol.footnotes li small{
   .wp-block-embed__wrapper iframe {
     max-height: 100%; }
 
-.lightbulb {
-  margin: 5px; }
-
-.none {
-  display: none; }
-
-.block {
-  display: block; }
-
 .grid-container {
   -moz-column-count: 4;
        column-count: 4;
   -moz-column-gap: 0.5em;
        column-gap: 0.5em;
-  max-width: 1440px;
-  margin: auto;
-  width: 100%; }
-
-img {
-  height: auto;
-  max-width: 100%; }
+  max-width: 1440px; }
 
 @media (max-width: 800px) {
   .grid-container {
@@ -2109,11 +2082,6 @@ img {
   .grid-container {
     -moz-column-count: 2;
          column-count: 2; } }
-
-@media (max-width: 400px) {
-  .grid {
-    -moz-column-count: 1;
-         column-count: 1; } }
 
 .first\:ml-4:first-child{
   margin-left: 16px;
@@ -2449,8 +2417,11 @@ img {
     .md\:mt-10{
     margin-top: 40px;
   }
-    .md\:mt-46{
-    margin-top: 184px;
+    .md\:mt-8{
+    margin-top: 32px;
+  }
+    .md\:mb-6{
+    margin-bottom: 24px;
   }
     .md\:mb-15{
     margin-bottom: 60px;
@@ -2616,6 +2587,14 @@ img {
     .md\:px-15{
     padding-left: 60px;
     padding-right: 60px;
+  }
+    .md\:py-24{
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+    .md\:py-18{
+    padding-top: 72px;
+    padding-bottom: 72px;
   }
     .md\:py-15{
     padding-top: 60px;
