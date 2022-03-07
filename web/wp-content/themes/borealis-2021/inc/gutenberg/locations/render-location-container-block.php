@@ -52,7 +52,7 @@ if (!function_exists('pg_render_locations_container_block')) {
                         <h4 class="h4"><?php echo esc_html($attributes->description) ?></h4>
                     <?php endif; ?>
                 </div>
-                <div class="w-full tb:w-8/12 md:flex-row flex-col flex justify-between flex-wrap">
+                <div class="w-full tb:w-8/12 md:flex-row flex-col flex justify-start flex-wrap">
                     <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
                         <?php echo render_block($inner_block); ?>
                     <?php endforeach; ?>
