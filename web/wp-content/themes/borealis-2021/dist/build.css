@@ -1109,11 +1109,14 @@ ol.footnotes li small{
   bottom: 0px;
   left: 0px;
 }
-.-left-4{
-  left: -16px;
+.top-0{
+  top: 0px;
 }
 .left-0{
   left: 0px;
+}
+.-left-4{
+  left: -16px;
 }
 .right-0{
   right: 0px;
@@ -1132,9 +1135,6 @@ ol.footnotes li small{
 }
 .-top-2{
   top: -8px;
-}
-.top-0{
-  top: 0px;
 }
 .bottom-0{
   bottom: 0px;
@@ -1163,11 +1163,11 @@ ol.footnotes li small{
 .-top-full{
   top: -100%;
 }
-.z-50{
-  z-index: 50;
-}
 .z-10{
   z-index: 10;
+}
+.z-50{
+  z-index: 50;
 }
 .-z-10{
   z-index: -10;
@@ -1177,6 +1177,9 @@ ol.footnotes li small{
 }
 .m-auto{
   margin: auto;
+}
+.m-0{
+  margin: 0px;
 }
 .mx-auto{
   margin-left: auto;
@@ -1321,6 +1324,12 @@ ol.footnotes li small{
 .hidden{
   display: none;
 }
+.h-40{
+  height: 160px;
+}
+.h-full{
+  height: 100%;
+}
 .h-\[615px\]{
   height: 615px;
 }
@@ -1331,9 +1340,6 @@ ol.footnotes li small{
 }
 .h-screen{
   height: 100vh;
-}
-.h-full{
-  height: 100%;
 }
 .h-6{
   height: 24px;
@@ -1572,6 +1578,9 @@ ol.footnotes li small{
 .scroll-smooth{
   scroll-behavior: smooth;
 }
+.whitespace-nowrap{
+  white-space: nowrap;
+}
 .break-normal{
   overflow-wrap: normal;
   word-break: normal;
@@ -1629,6 +1638,10 @@ ol.footnotes li small{
 .border-solid{
   border-style: solid;
 }
+.border-shade-black-400{
+  --tw-border-opacity: 1;
+  border-color: rgb(34 39 49 / var(--tw-border-opacity));
+}
 .border-shade-grey-500{
   --tw-border-opacity: 1;
   border-color: rgb(101 104 146 / var(--tw-border-opacity));
@@ -1644,10 +1657,6 @@ ol.footnotes li small{
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-.border-shade-black-400{
-  --tw-border-opacity: 1;
-  border-color: rgb(34 39 49 / var(--tw-border-opacity));
 }
 .border-primary-electric-blue-400{
   --tw-border-opacity: 1;
@@ -2015,13 +2024,13 @@ ol.footnotes li small{
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
-.text-shade-grey-700{
-  --tw-text-opacity: 1;
-  color: rgb(92 93 118 / var(--tw-text-opacity));
-}
 .text-shade-black-400{
   --tw-text-opacity: 1;
   color: rgb(34 39 49 / var(--tw-text-opacity));
+}
+.text-shade-grey-700{
+  --tw-text-opacity: 1;
+  color: rgb(92 93 118 / var(--tw-text-opacity));
 }
 .text-shade-white-400{
   --tw-text-opacity: 1;
@@ -2046,6 +2055,10 @@ ol.footnotes li small{
 .underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+.no-underline{
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 .antialiased{
   -webkit-font-smoothing: antialiased;
@@ -2100,6 +2113,9 @@ ol.footnotes li small{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.duration-100{
+  transition-duration: 100ms;
+}
 .duration-300{
   transition-duration: 300ms;
 }
@@ -2150,6 +2166,37 @@ ol.footnotes li small{
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
 }
+
+.m-scroll__title > div.scroll1 {
+  display: flex;
+  -webkit-animation: scrollText 34s infinite linear;
+          animation: scrollText 34s infinite linear; }
+
+.m-scroll__title > div.scroll2 {
+  display: flex;
+  -webkit-animation: scrollText 30s infinite linear;
+          animation: scrollText 30s infinite linear; }
+
+.m-scroll__title > div.scroll3 {
+  display: flex;
+  -webkit-animation: scrollText 38s infinite linear;
+          animation: scrollText 38s infinite linear; }
+
+.m-scroll__title a:hover {
+  -webkit-text-stroke: 1px blue;
+  color: transparent; }
+
+@-webkit-keyframes scrollText {
+  from {
+    transform: translateX(0%); }
+  to {
+    transform: translateX(-50%); } }
+
+@keyframes scrollText {
+  from {
+    transform: translateX(0%); }
+  to {
+    transform: translateX(-50%); } }
 
 .wp-block-table {
   margin-top: 64px;
