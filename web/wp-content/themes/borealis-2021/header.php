@@ -45,7 +45,6 @@
     <?php wp_head(); ?>
 </head>
 
-
 <body <?php body_class('text-shade-black-400 antialiased'); ?>>
     <?php if (!empty($settings['gtm_container_id'])) : ?>
         <!-- Google Tag Manager (noscript) -->

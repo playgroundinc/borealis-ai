@@ -112,6 +112,19 @@
   .wp-block-code {
     @apply bg-shade-grey-100 rounded-large p-12 grow;
   }
+}
+
+.visible-scroll {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: rgba(34, 39, 49, 0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  }
 
   .paragraph-style .paragraph-blog {
     @apply paragraph;
@@ -129,7 +142,68 @@
   }
 }
 
-@import './wp-blocks/tables';
-@import './wp-blocks/mathjax';
-@import './wp-blocks/video';
-@import './wp-blocks/visible-scroll';
+.wp-block-video,
+.wp-block-embed,
+.wp-block-embed__wrapper {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  video,
+  iframe {
+    max-height: 100%;
+  }
+}
+
+.grid-container {
+  column-count: 4;
+  column-gap: 0.5em;
+  max-width: 1440px;
+}
+
+@media (max-width: 1000px) {
+  .grid-container {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    column-count: 2;
+  }
+}
+
+.m-scroll__title > div.scroll1 {
+  display: flex;
+  animation: scrollText 34s infinite linear;
+}
+
+.m-scroll__title > div.scroll2 {
+  display: flex;
+  animation: scrollText 30s infinite linear;
+}
+
+.m-scroll__title > div.scroll3 {
+  display: flex;
+  animation: scrollText 38s infinite linear;
+}
+
+.m-scroll__title a:hover {
+  -webkit-text-stroke: 1px blue;
+  color: transparent;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@import "./wp-blocks/tables";
+@import "./wp-blocks/mathjax";
+@import "./wp-blocks/video";
+@import "./wp-blocks/visible-scroll";
