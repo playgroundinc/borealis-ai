@@ -151,6 +151,13 @@ if (!function_exists('pg_svg_spritemap')) {
                 </g>
             </symbol>
 
+            <!-- Down Chevron (arrow) -->
+            <symbol id="icon-arrow-down" viewBox="0 0 24 25" fill="none">
+                <path d="M12 5.5L12 19.5" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 15.5L12 19.5" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16 15.5L12 19.5" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </symbol>
+
             <!-- Left Chevron (arrow) -->
             <symbol id="icon-arrow-left" viewBox="0 0 18 18">
                 <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
@@ -167,7 +174,7 @@ if (!function_exists('pg_svg_spritemap')) {
 
             <!-- Play Button -->
             <symbol id="icon-play" viewBox="0 0 30 30">
-                <path d="M5.5 3v24l19.322-12z" stroke="currentColor" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M5.5 3v24l19.322-12z" stroke="currentColor" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" />
             </symbol>
 
             <!--  Smart Quote -->
@@ -220,7 +227,9 @@ if (!function_exists('pg_svg_spritemap')) {
 
             <!-- CTA Arrow White -->
             <symbol id="icon-arrow-white" viewBox="0 0 18 18" fill="none">
-                <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9h14M12 13l4-4M12 5l4 4"/></g>
+                <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 9h14M12 13l4-4M12 5l4 4" />
+                </g>
             </symbol>
 
             <!-- CTA Arrow Black -->
@@ -231,7 +240,7 @@ if (!function_exists('pg_svg_spritemap')) {
             </symbol>
 
             <symbol id="icon-chevron" viewBox="0 0 24 25" fill="none">
-                <path d="M6 9.5L12 15.5L18 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 9.5L12 15.5L18 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </symbol>
 
             <!--  Cookie Close -->
@@ -241,11 +250,17 @@ if (!function_exists('pg_svg_spritemap')) {
 
             <!-- Callout -->
             <symbol id="icon-callout" viewBox="0 0 26 26">
-                <g transform="translate(2 1.5)" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><circle cx="11.097" cy="11.369" r="1.208"/><circle cx="11.097" cy="11.369" r="6.042"/><path d="M15.81 21.168v.013M19.604 18.148v.012M21.694 13.786v.012M21.694 8.952v.012M19.604 4.59v.012M15.81 1.569v.012M11.097.494v.012M6.385 1.569v.012M2.59 4.59v.012M.5 8.952v.012M.5 13.786v.012M2.59 18.148v.012M6.385 21.168v.013M11.097 22.244v.012"/></g>
+                <g transform="translate(2 1.5)" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11.097" cy="11.369" r="1.208" />
+                    <circle cx="11.097" cy="11.369" r="6.042" />
+                    <path d="M15.81 21.168v.013M19.604 18.148v.012M21.694 13.786v.012M21.694 8.952v.012M19.604 4.59v.012M15.81 1.569v.012M11.097.494v.012M6.385 1.569v.012M2.59 4.59v.012M.5 8.952v.012M.5 13.786v.012M2.59 18.148v.012M6.385 21.168v.013M11.097 22.244v.012" />
+                </g>
             </symbol>
 
             <symbol id="icon-applications-closed" viewBox="0 0 30 30">
-                <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M27.846 2 2 27.846M2 2l25.846 25.846"/></g>
+                <g stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M27.846 2 2 27.846M2 2l25.846 25.846" />
+                </g>
             </symbol>
 
         </svg>

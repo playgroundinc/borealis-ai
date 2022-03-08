@@ -31,6 +31,10 @@ export default function text2UpContainerBlock() {
       type: "String",
       default: "default",
     },
+    cta_text: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -41,14 +45,23 @@ export default function text2UpContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title, subtitle, bgColour, colAmount } = attributes;
+      const { title, subtitle, bgColour, colAmount, cta_text } = attributes;
 
       const bgStyles = [
         { label: "Default", value: "bg-shade-white-400 text-shade-black-400" },
-        { label: "Purple", value: "bg-primary-purple-400 text-shade-white-400" },
+        {
+          label: "Purple",
+          value: "bg-primary-purple-400 text-shade-white-400",
+        },
         { label: "Navy", value: "bg-primary-navy-400 text-shade-white-400" },
-        { label: "Light Blue", value: "bg-tint-lightBlue-400 text-shade-white-400" },
-        { label: "Light Purple", value: "bg-tint-purple-400 text-shade-white-400" },
+        {
+          label: "Light Blue",
+          value: "bg-tint-lightBlue-400 text-shade-white-400",
+        },
+        {
+          label: "Light Purple",
+          value: "bg-tint-purple-400 text-shade-white-400",
+        },
       ];
 
       const colStyles = [
@@ -128,11 +141,25 @@ export default function text2UpContainerBlock() {
               }
             }}
           />
+          <CustomRichText
+            components={[
+              {
+                value: cta_text,
+                reference: "cta_text",
+                tagName: "p",
+                classes: ["heading_three"],
+                placeholder: "Please provide CTA anchor text (optional)",
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
         </div>,
       ];
     },
     save: () => {
-      const { title, subtite, bgColour, colAmount } = attributes;
+      const { title, subtite, bgColour, colAmount, cta_text } = attributes;
       return <InnerBlocks.Content />;
     },
   });
