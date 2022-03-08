@@ -213,6 +213,11 @@ require get_template_directory() . '/inc/gutenberg/render-image-text-strip-block
 require get_template_directory() . '/inc/gutenberg/stats/render-statistics-container-block.php';
 require get_template_directory() . '/inc/gutenberg/stats/render-statistics-block.php';
 
+// Location Blocks
+require get_template_directory() . '/inc/gutenberg/locations/render-location-container-block.php';
+require get_template_directory() . '/inc/gutenberg/locations/render-location-image-block.php';
+require get_template_directory() . '/inc/gutenberg/locations/render-location-block.php';
+
 // add hook for subnav
 add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2);
 
