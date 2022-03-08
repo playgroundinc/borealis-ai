@@ -2,7 +2,7 @@
 
 /**
  *
- * Render Graphic Page Strip
+ * Render Location Block
  *
  * @package Borealis AI
  * @version 1.0.0
@@ -25,7 +25,7 @@ if (function_exists('register_block_type')) {
 
 if (!function_exists('pg_render_locations_block')) {
     /**
-     * Render out page strip block
+     * Render out location block
      *
      * @param array $attrs the current block's attributes.
      * @param mixed $content the content of the block.
@@ -56,7 +56,7 @@ if (!function_exists('pg_render_locations_block')) {
                     </p>
                     <div class="text-primary-electric-blue-400 h3 flex justify-start mt-6 md:mt-8">
                         <?php if (!empty($block['innerBlocks'])) : ?>
-                            <button tabindex="-1" aria-hidden="true" aria-label="Open fullscreen image modal" type="button" id="open-img" class="mr-10 relative z-10">
+                            <button aria-label="Open fullscreen image modal" type="button" id="open-img" class="mr-10 relative z-10">
                                 <?php echo pg_render_icon('eye-btn'); ?>
                             </button>
                         <?php endif; ?>

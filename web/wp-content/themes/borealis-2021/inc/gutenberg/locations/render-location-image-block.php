@@ -2,7 +2,7 @@
 
 /**
  *
- * Render Graphic Page Strip
+ * Render Location Image Block
  *
  * @package Borealis AI
  * @version 1.0.0
@@ -25,7 +25,7 @@ if (function_exists('register_block_type')) {
 
 if (!function_exists('pg_render_location_image_block')) {
     /**
-     * Render out page strip block
+     * Render out location image block
      *
      * @param array $attrs the current block's attributes.
      * @param mixed $content the content of the block.
@@ -37,6 +37,7 @@ if (!function_exists('pg_render_location_image_block')) {
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
             'image_id' => 0,
+            'image_alt' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
@@ -46,11 +47,9 @@ if (!function_exists('pg_render_location_image_block')) {
 
         if (!empty($attributes->image_id)) :
 ?>
-            <div class="">
-                <?php if (!empty($image_src)) : ?>
-                    <img src="<?php echo esc_url_raw($image_src[0]); ?>" alt="">
-                <?php endif; ?>
-            </div>
+            <?php if (!empty($image_src)) : ?>
+                <img src="<?php echo esc_url_raw($image_src[0]); ?>" alt="<?php echo !empty($attributes->image_alt) ? $attributes->image_alt : 'image from location' ?>">
+            <?php endif; ?>
 <?php
         endif;
         return ob_get_clean();
