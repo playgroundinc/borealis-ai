@@ -43,7 +43,6 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
             'cta_text' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
-        var_dump($attributes->cta_text);
         ob_start();
 ?>
         <div class="<?php echo $attributes->bgColour ?> custom-component animated-element">
@@ -63,7 +62,13 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
                             echo wp_kses(render_block($inner_block), 'post');
                         }
                     } else {
-                        echo wp_kses(render_block($block['innerBlocks'][0]), 'post');
+                    ?>
+                        <div class="mb-10 md:mb-0 w-full">
+                            <p class="paragraph md:pr-10">
+                                <?php echo $block['innerBlocks'][0]['attrs']['copy'] ?>
+                            </p>
+                        </div>
+                    <?php
                     }
                     ?>
                     <?php if (!empty($attributes->cta_text)) : ?>
