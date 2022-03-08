@@ -4,27 +4,27 @@ import { namespace } from "../helper-functions/constants.js";
 // Reusable
 import CustomRichText from "../reusable/custom-richtext-component.jsx";
 
-export default function statisticsBlock() {
+export default function podcastBlock() {
   /**
-   * GUTENBERG BLOCK - Statistics
+   * GUTENBERG BLOCK - Podcast
    */
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
 
   const { i18n } = wp;
 
-  const slug = "statistics";
-  const title = "Statistics";
-  const description = "A Statistics Page Strip";
+  const slug = "podcast";
+  const title = "Podcast";
+  const description = "A Podcast Page Strip";
   const category = "rows";
   const icon = "align-full-width"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {
-    stat: {
+    title: {
       type: "String",
       default: "",
     },
-    copy: {
+    author: {
       type: "String",
       default: "",
     },
@@ -35,10 +35,9 @@ export default function statisticsBlock() {
     category,
     icon,
     attributes,
-    parent: [`${namespace}/statistics-container`],
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { copy, stat } = attributes;
+      const { author, title } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -46,16 +45,15 @@ export default function statisticsBlock() {
 
       return [
         <section class="custom-child">
-          <p className="block-title">Statistics Column</p>
+          <p className="block-title">Podcast</p>
           <CustomRichText
             components={[
               {
-                value: stat,
-                reference: "stat",
+                value: title,
+                reference: "title",
                 tagName: "p",
                 classes: ["paragraph"],
-                settings: ["core/bold", "core/link", "core/italic"],
-                placeholder: "Please provide a stat",
+                placeholder: "Please provide a title",
               },
             ]}
             onChange={(attribute, change) => {
@@ -65,23 +63,37 @@ export default function statisticsBlock() {
           <CustomRichText
             components={[
               {
-                value: copy,
-                reference: "copy",
+                value: author,
+                reference: "author",
                 tagName: "p",
                 classes: ["paragraph"],
-                settings: ["core/bold", "core/link", "core/italic"],
-                placeholder: "Please provide copy (optional)",
+                placeholder: "Please provide author (optional)",
               },
             ]}
             onChange={(attribute, change) => {
               updateAttributeValue(attribute, change);
             }}
           />
+          {save ? (
+            <InnerBlocks.Content />
+          ) : (
+            <InnerBlocks
+              allowedBlocks={[
+                "podcast-player/podcast-player",
+                "core/table",
+                "core/shortcode",
+                "core/button",
+                "core/video",
+                "core/audio",
+                "core/embed-podcast",
+              ]}
+            />
+          )}
         </section>,
       ];
     },
     save: ({ attributes }) => {
-      const { copy, stat } = attributes;
+      const { title, author } = attributes;
       return <InnerBlocks.Content />;
     },
   });

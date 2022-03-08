@@ -213,6 +213,9 @@ require get_template_directory() . '/inc/gutenberg/render-image-text-strip-block
 require get_template_directory() . '/inc/gutenberg/stats/render-statistics-container-block.php';
 require get_template_directory() . '/inc/gutenberg/stats/render-statistics-block.php';
 
+// Podcast Blocks
+require get_template_directory() . '/inc/gutenberg/podcast/render-podcast-block.php';
+
 // Location Blocks
 require get_template_directory() . '/inc/gutenberg/locations/render-location-container-block.php';
 require get_template_directory() . '/inc/gutenberg/locations/render-location-image-block.php';

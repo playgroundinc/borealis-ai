@@ -51,6 +51,7 @@
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo esc_attr($settings['gtm_container_id']) ?>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
     <?php endif; ?>
+
     <?php
     pg_svg_spritemap();
     $Menu = new PG_Custom_Menus();
@@ -183,5 +184,34 @@
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
+            <?php
+            $setting_names = array('cookie_title', 'cookie_copy', 'cookie_link');
+            $settings = pg_get_settings($setting_names);
+            $split_cookie_text = explode('-', $settings['cookie_copy']);
+            if (!empty($settings['cookie_title']) || !empty($split_cookie_text) || !empty($settings['cookie_link'])) { ?>
+                <div class="cookies bg-shade-grey-100 text-primary-navy-400 cursor-default pl-6 py-4 md:py-5 flex justify-between hidden fixed z-40 bottom-2 md:bottom-5 right-2 md:right-5">
+                    <div>
+                        <h2 class="paragraph"><?php echo esc_html($settings['cookie_title']) ?></h2>
+                        <p class="paragraph-sm mr-4"><?php echo esc_html($split_cookie_text[0]) ?>&nbsp;
+                            <a href="<?php echo esc_url($settings['cookie_link']) ?>" class="text-primary-navy-400 cursor-pointer underline hover:opacity-70 transition duration-300"><?php echo esc_html($split_cookie_text[1]) ?></a>
+                        </p>
+                    </div>
+                    <div class="flex items-center cursor-pointer">
+                        <span id="cookie" class="pr-6 icon--lg"><?php echo pg_render_icon('close') ?></span>
+                    </div>
+                </div>
+                <script>
+                    const cookie = localStorage.getItem('borealisai-cookie-accepted');
+                    if (!cookie) {
+                        document.querySelector('.cookies').classList.remove('hidden');
+                    }
+
+                    const cookieClose = document.getElementById('cookie');
+                    cookieClose.addEventListener('click', () => {
+                        document.querySelector('.cookies').classList.add('hidden');
+                        localStorage.setItem('borealisai-cookie-accepted', 'true');
+                    });
+                </script>
+            <?php } ?>
         </header><!-- #masthead -->
         <main id="content">

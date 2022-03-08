@@ -44,6 +44,14 @@ function pg_init_menus()
                         'gtm_container_id' => 'text',
                     )
                 ),
+                'Cookies Notification' => array(
+                    'id' => $namespace . '-integrations-cookies',
+                    'fields' => array(
+                        'cookie_title' => 'text',
+                        'cookie_copy' => 'textarea',
+                        'cookie_link' => 'text',
+                    )
+                ),
                 'Greenhouse API Keys' => array(
                     'id' => $namespace . '-integrations-greenhouse',
                     'fields' => array(

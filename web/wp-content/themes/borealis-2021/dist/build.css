@@ -1039,6 +1039,43 @@ ol.footnotes li small{
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
   padding: 48px;
 }
+.paragraph-style .paragraph-blog{
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  line-height: 1.80;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .paragraph-style .paragraph-blog{
+    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .paragraph-style .paragraph-blog{
+    font-size: 18px;
+  }
+}
+.animated-element{
+  position: relative;
+  opacity: 0;
+  transition-property: opacity top;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+@media (prefers-reduced-motion: no-preference){
+  .animated-element{
+    top: 32px;
+  }
+}
+.component-dark, .component-dark + .component-dark{
+  margin-top: 0px;
+}
+.scroll--hidden{
+  top: -100%;
+}
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1093,6 +1130,12 @@ ol.footnotes li small{
 .-left-full{
   left: -100%;
 }
+.bottom-5{
+  bottom: 20px;
+}
+.right-5{
+  right: 20px;
+}
 .top-full{
   top: 100%;
 }
@@ -1126,11 +1169,20 @@ ol.footnotes li small{
 .-top-full{
   top: -100%;
 }
+.right-2{
+  right: 8px;
+}
+.bottom-2{
+  bottom: 8px;
+}
 .z-10{
   z-index: 10;
 }
 .z-50{
   z-index: 50;
+}
+.z-40{
+  z-index: 40;
 }
 .z-30{
   z-index: 30;
@@ -1172,6 +1224,9 @@ ol.footnotes li small{
 }
 .mt-6{
   margin-top: 24px;
+}
+.mr-4{
+  margin-right: 16px;
 }
 .mr-10{
   margin-right: 40px;
@@ -1846,6 +1901,18 @@ ol.footnotes li small{
 .pt-42{
   padding-top: 168px;
 }
+.pl-6{
+  padding-left: 24px;
+}
+.pr-6{
+  padding-right: 24px;
+}
+.pt-11{
+  padding-top: 44px;
+}
+.pb-4{
+  padding-bottom: 16px;
+}
 .pt-10{
   padding-top: 40px;
 }
@@ -1857,9 +1924,6 @@ ol.footnotes li small{
 }
 .pt-14{
   padding-top: 56px;
-}
-.pb-4{
-  padding-bottom: 16px;
 }
 .pt-100{
   padding-top: 400px;
@@ -1912,9 +1976,6 @@ ol.footnotes li small{
 .pr-4{
   padding-right: 16px;
 }
-.pl-6{
-  padding-left: 24px;
-}
 .pr-10{
   padding-right: 40px;
 }
@@ -1935,9 +1996,6 @@ ol.footnotes li small{
 }
 .pt-gallery{
   padding-top: 600px;
-}
-.pr-6{
-  padding-right: 24px;
 }
 .pt-7{
   padding-top: 28px;
@@ -1968,9 +2026,6 @@ ol.footnotes li small{
 }
 .pt-180{
   padding-top: 720px;
-}
-.pt-11{
-  padding-top: 44px;
 }
 .pb-9{
   padding-bottom: 36px;
@@ -2152,92 +2207,6 @@ ol.footnotes li small{
   https: //pantheon.io/docs/ssh-keys;
 }
 
-.visible-scroll::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 10px; }
-
-.visible-scroll::-webkit-scrollbar-thumb {
-  border-radius: 50px;
-  background-color: rgba(34, 39, 49, 0.5);
-  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
-
-.visible-scroll .paragraph-style .paragraph-blog{
-  font-size: 18px;
-  font-family: Inter, sans-serif;
-  line-height: 1.80;
-  letter-spacing: normal;
-  text-transform: none;
-  font-weight: normal;
-  word-break: break-word;
-}
-
-@media (min-width: 375px){
-  .visible-scroll .paragraph-style .paragraph-blog{
-    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
-  }
-}
-
-@media (min-width: 1920px){
-  .visible-scroll .paragraph-style .paragraph-blog{
-    font-size: 18px;
-  }
-}
-
-.visible-scroll .animated-element{
-  position: relative;
-  opacity: 0;
-  transition-property: opacity top;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 700ms;
-}
-
-@media (prefers-reduced-motion: no-preference){
-  .visible-scroll .animated-element{
-    top: 32px;
-  }
-}
-
-.visible-scroll .component-dark, .visible-scroll .component-dark + .component-dark{
-  margin-top: 0px;
-}
-
-.visible-scroll .scroll--hidden{
-  top: -100%;
-}
-
-.wp-block-video,
-.wp-block-embed,
-.wp-block-embed__wrapper {
-  margin: 0;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .wp-block-video video,
-  .wp-block-video iframe,
-  .wp-block-embed video,
-  .wp-block-embed iframe,
-  .wp-block-embed__wrapper video,
-  .wp-block-embed__wrapper iframe {
-    max-height: 100%; }
-
-.grid-container {
-  -moz-column-count: 4;
-       column-count: 4;
-  -moz-column-gap: 0.5em;
-       column-gap: 0.5em;
-  max-width: 1440px; }
-
-@media (max-width: 1000px) {
-  .grid-container {
-    -moz-column-count: 3;
-         column-count: 3; } }
-
-@media (max-width: 768px) {
-  .grid-container {
-    -moz-column-count: 2;
-         column-count: 2; } }
-
 .m-scroll__title > div.scroll1 {
   display: flex;
   -webkit-animation: scrollText 34s infinite linear;
@@ -2268,6 +2237,14 @@ ol.footnotes li small{
     transform: translateX(0%); }
   to {
     transform: translateX(-50%); } }
+
+.cookies {
+  border-radius: 63px;
+  width: 350px; }
+
+@media screen and (min-width: 768px) {
+  .cookies {
+    width: 450px; } }
 
 .wp-block-table {
   margin-top: 64px;
@@ -2407,6 +2384,10 @@ mjx-container::-webkit-scrollbar-thumb,
 .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.hover\:opacity-70:hover{
+  opacity: 0.7;
 }
 
 .focus\:border-primary-electric-blue-400:focus{
@@ -2665,6 +2646,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:-right-4{
     right: -16px;
+  }
+    .md\:bottom-5{
+    bottom: 20px;
+  }
+    .md\:right-5{
+    right: 20px;
   }
     .md\:m-0{
     margin: 0px;
@@ -2926,6 +2913,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pb-8{
     padding-bottom: 32px;
   }
+    .md\:pl-8{
+    padding-left: 32px;
+  }
     .md\:pt-12{
     padding-top: 48px;
   }
@@ -2947,9 +2937,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pr-8{
     padding-right: 32px;
   }
-    .md\:pl-8{
-    padding-left: 32px;
-  }
     .md\:pr-10{
     padding-right: 40px;
   }
@@ -2967,6 +2954,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pb-12{
     padding-bottom: 48px;
+  }
+    .md\:pr-20{
+    padding-right: 80px;
   }
     .md\:pt-featured-image-md{
     padding-top: 450px;
@@ -2991,9 +2981,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pr-4{
     padding-right: 16px;
-  }
-    .md\:pr-20{
-    padding-right: 80px;
   }
     .md\:pt-16{
     padding-top: 64px;
