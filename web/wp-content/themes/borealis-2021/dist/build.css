@@ -2052,6 +2052,9 @@ ol.footnotes li small{
 .pr-3{
   padding-right: 12px;
 }
+.pl-7{
+  padding-left: 28px;
+}
 .text-center{
   text-align: center;
 }
@@ -2244,7 +2247,7 @@ ol.footnotes li small{
 
 .cookies {
   border-radius: 63px;
-  width: 350px; }
+  width: 320px; }
 
 @media screen and (min-width: 768px) {
   .cookies {
@@ -2606,6 +2609,25 @@ mjx-container::-webkit-scrollbar-thumb,
   @media (min-width: 1920px){
     .md\:paragraph{
       font-size: 18px;
+    }
+  }
+  .md\:paragraph-sm{
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    line-height: 1.50;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:paragraph-sm{
+      font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:paragraph-sm{
+      font-size: 14px;
     }
   }
   .md\:hyperlink{
@@ -3034,6 +3056,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pb-4{
     padding-bottom: 16px;
+  }
+    .md\:pl-6{
+    padding-left: 24px;
   }
     .md\:text-left{
     text-align: left;
