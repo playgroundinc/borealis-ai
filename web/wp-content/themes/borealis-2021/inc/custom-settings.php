@@ -117,7 +117,6 @@ function pg_init_menus()
             'parent' => $parent,
             'description' => 'Use this page to update the copy and links for the cookies notification. If left blank it will default to the value set on the main Trimac site.',
             'sections' => array(
-
                 'Cookie Policy' => array(
                     'id' => $namespace . '-cookie-policy',
                     'fields' => array(
