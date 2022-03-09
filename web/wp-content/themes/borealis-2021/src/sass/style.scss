@@ -9,6 +9,9 @@
     height: 615px !important;
     max-height: 100vh;
   }
+  .core-list ul {
+    @apply list-disc list-inside;
+  }
   .product-cta {
     @apply flex text-shade-black-400 justify-between relative pb-1 overflow-hidden items-center;
   }

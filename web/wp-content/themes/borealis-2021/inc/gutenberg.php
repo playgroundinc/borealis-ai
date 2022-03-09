@@ -1,17 +1,18 @@
 <?php
 
-function pg_blocks() {
-    wp_enqueue_script('footer-banner', get_template_directory_uri() . '/dist/gutenberg.js', array('wp-blocks', 'wp-element', 'wp-editor', 'wp-i18n'));
+function pg_blocks()
+{
+	wp_enqueue_script('footer-banner', get_template_directory_uri() . '/dist/gutenberg.js', array('wp-blocks', 'wp-element', 'wp-editor', 'wp-i18n'));
 	$setting_names = array('greenhouse_api_key', 'greenhouse_url');
 	$settings = pg_get_settings($setting_names);
 	wp_localize_script(
-        'footer-banner',
-        'ajaxInfo',
-        array(
-            'greenhouseAPIKey'            => $settings['greenhouse_api_key'],
+		'footer-banner',
+		'ajaxInfo',
+		array(
+			'greenhouseAPIKey'            => $settings['greenhouse_api_key'],
 			'greenhouseURL' => $settings['greenhouse_url']
-        )
-    );
+		)
+	);
 }
 
 add_action('enqueue_block_editor_assets', 'pg_blocks', 10, 1);
@@ -22,15 +23,16 @@ add_action('enqueue_block_editor_assets', 'pg_blocks', 10, 1);
  * @param array $categories the current categoriess.
  * @param objects $post the current post object.
  */
-function pg_custom_block_categories( $categories, $post ) {
+function pg_custom_block_categories($categories, $post)
+{
 	return array_merge(
 		$categories,
 		array(
-            array(
+			array(
 				'slug' => 'carousels',
 				'title' => 'Carousels',
 			),
-            array(
+			array(
 				'slug' => 'containers',
 				'title' => 'Containers',
 			),
@@ -46,7 +48,7 @@ function pg_custom_block_categories( $categories, $post ) {
 				'slug' => 'meta',
 				'title' => 'Meta'
 			),
-            array(
+			array(
 				'slug' => 'page-strips',
 				'title' => 'Page Strips',
 			),
@@ -66,4 +68,4 @@ function pg_custom_block_categories( $categories, $post ) {
 	);
 }
 
-add_filter( 'block_categories', 'pg_custom_block_categories', 10, 2);
+add_filter('block_categories', 'pg_custom_block_categories', 10, 2);

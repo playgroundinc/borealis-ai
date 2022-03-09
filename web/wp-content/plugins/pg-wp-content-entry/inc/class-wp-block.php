@@ -1,36 +1,41 @@
-<?php 
+<?php
+
 /**
  * Builds WP Gutenberg blocks.
  * 
  * Based on current anatomy of Gutenberg comments.
  * May need to be updated alongside changes to Gutenberg.
  */
-class PG_WP_Block {
+class PG_WP_Block
+{
   public $block;
 
   /**
    * Builds the class by pulling off details.
    */
-  function __construct($block) {
+  function __construct($block)
+  {
     $this->name = $block['name'];
     $this->type = $block['type'];
     $this->attributes = $block['attributes'];
     $this->tag = $block['tag'];
-    $this->classes = $block['classes'] ?? "wp-block-". $this->type . "-" . $this->name;
+    $this->classes = $block['classes'] ?? "wp-block-" . $this->type . "-" . $this->name;
     $this->content = $block['content'];
   }
 
   /**
    * Generates the comment for a single list item.
    */
-  private function generate_list_item($content) {
+  private function generate_list_item($content)
+  {
     return '<li>' . $content . '</li>';
   }
 
   /**
    * Generates the full list Gutenberg comment.
    */
-  public function generate_list() {
+  public function generate_list()
+  {
     $list_items = explode(PHP_EOL, $this->content);
     if (!count($list_items) > 0) {
       return null;
@@ -58,8 +63,9 @@ class PG_WP_Block {
    * i.e. A core/paragraph or a core/heading.
    * Based on the current anatomy of a Gutenberg comment.
    */
-  public function pg_generate_core_comment() {
-    $comment = isset($this->type) && 'core' === $this->type ? "<!-- wp:" . $this->name . " " : "<!-- wp:". $this->type . '/' . $this->name . " ";
+  public function pg_generate_core_comment()
+  {
+    $comment = isset($this->type) && 'core' === $this->type ? "<!-- wp:" . $this->name . " " : "<!-- wp:" . $this->type . '/' . $this->name . " ";
     $comment .= isset($this->attributes) && !empty($this->attributes) ? $this->attributes : null;
     $comment .= " -->";
     if (isset($this->type) && 'core' === $this->type) {
@@ -68,12 +74,12 @@ class PG_WP_Block {
       } else if ($this->tag === 'pre') {
         $comment .= "<" . $this->tag . ' class="wp-block-code">' . $this->content . "</" . $this->tag . ">";
       } else if ($this->name === 'table') {
-          $comment .= "<" . $this->tag . ' class="wp-block-table">' . $this->content . "</" . $this->tag . ">";
+        $comment .= "<" . $this->tag . ' class="wp-block-table">' . $this->content . "</" . $this->tag . ">";
       } else {
         $comment .= "<" . $this->tag . ">" . $this->content . "</" . $this->tag . ">";
       }
     } else if ($this->name !== 'bibtex') {
-      $comment .= "<" . $this->tag . ' class="' . $this->classes . '">' . addslashes($this->content) . "</" . $this->tag . ">"; 
+      $comment .= "<" . $this->tag . ' class="' . $this->classes . '">' . addslashes($this->content) . "</" . $this->tag . ">";
     }
     $comment .= isset($this->type) && 'core' === $this->type ? "<!-- /wp:" . $this->name . " -->" : "<!-- /wp:" . $this->type . "/" . $this->name . " -->";
     return $comment;
@@ -84,7 +90,8 @@ class PG_WP_Block {
    * 
    * Based on the current anatomy of a Gutenberg comment.
    */
-  public function pg_generate_custom_image() {
+  public function pg_generate_custom_image()
+  {
     $comment = "<!-- wp:pg/custom-image ";
     $comment .= isset($this->attributes) && !empty($this->attributes) ? $this->attributes : null;
     $comment .= " /-->";
@@ -96,7 +103,8 @@ class PG_WP_Block {
    * 
    * Based on the current anatomy of a Gutenberg comment.
    */
-  public function pg_generate_equation_comment() {
+  public function pg_generate_equation_comment()
+  {
     $slashed_content = addslashes($this->content);
     $comment = '<!-- wp:katex/display-block -->
     <div class="wp-block-katex-display-block katex-eq" data-katex-display="true"><pre>' . $slashed_content . '</pre></div>
@@ -107,23 +115,24 @@ class PG_WP_Block {
   /**
    * Dictates which kind of comment to generate.
    */
-  public function pg_generate_comment() {
-      if ($this->type !== 'core') {
-        switch($this->name) {
-          case 'pg/custom-image':
-            $comment = $this->pg_generate_custom_image();
-            return $comment;
+  public function pg_generate_comment()
+  {
+    if ($this->type !== 'core') {
+      switch ($this->name) {
+        case 'pg/custom-image':
+          $comment = $this->pg_generate_custom_image();
+          return $comment;
           break;
-          default:
-            $comment = $this->pg_generate_core_comment();
-            return $comment;
+        default:
+          $comment = $this->pg_generate_core_comment();
+          return $comment;
           break;
-        }
       }
-      if(!isset($this->content) || empty($this->content) ) {
-        return null;
-      }
-      $comment = $this->pg_generate_core_comment();
-      return $comment;
+    }
+    if (!isset($this->content) || empty($this->content)) {
+      return null;
+    }
+    $comment = $this->pg_generate_core_comment();
+    return $comment;
   }
 }
