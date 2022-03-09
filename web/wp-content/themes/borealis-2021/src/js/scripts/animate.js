@@ -20,7 +20,6 @@ export default function animate() {
                         // when on screen
                         LazyImageLoad.loadImages();
                         if (entry.target.offsetHeight >= window.innerHeight) {
-                            console.log("in here");
                             entry.target.style.opacity = "1";
                             entry.target.style.top = "0px";
                         } else if (
