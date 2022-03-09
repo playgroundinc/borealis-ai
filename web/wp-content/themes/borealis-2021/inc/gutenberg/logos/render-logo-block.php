@@ -47,11 +47,11 @@ if (!function_exists('pg_render_logo_block')) {
         if (!empty($image)) :
 ?>
             <?php if (!empty($attributes->link)) : ?>
-                <a class="mb-8 md:mb-15 mr-10 lg:mr-16 w-42 h-18" href="<?php echo esc_url_raw($attributes->link); ?>" <?php echo !empty($attributes->image_alt) ? esc_html('aria-label=' . $attributes->image_alt) : null; ?>>
+                <a class="mr-10 lg:mr-16 w-42 h-18" href="<?php echo esc_url_raw($attributes->link); ?>" <?php echo !empty($attributes->image_alt) ? esc_html('aria-label=' . $attributes->image_alt) : null; ?>>
                     <img class="lazy h-full w-full object-contain" data-src="<?php echo esc_url_raw($image) ?>" src="<?php echo esc_url_raw($image) ?>" <?php echo !empty($attributes->image_alt) ? esc_html('alt=' . $attributes->image_alt) : null; ?>>
                 </a>
             <?php else : ?>
-                <div class="mb-15 mr-10 lg:mr-16 w-42 h-18">
+                <div class="mr-10 lg:mr-16 w-42 h-18">
                     <img class="lazy h-full w-full object-contain" data-src="<?php echo esc_url_raw($image) ?>" src="<?php echo esc_url_raw($image) ?>" <?php echo !empty($attributes->image_alt) ? esc_html('alt=' . $attributes->image_alt) : null; ?>>
                 </div>
             <?php endif ?>

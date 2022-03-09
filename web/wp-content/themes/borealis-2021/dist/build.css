@@ -1280,9 +1280,6 @@ ol.footnotes li small{
 .mt-26{
   margin-top: 104px;
 }
-.mb-15{
-  margin-bottom: 60px;
-}
 .mb-0{
   margin-bottom: 0px;
 }
@@ -1295,6 +1292,15 @@ ol.footnotes li small{
 .mt-5{
   margin-top: 20px;
 }
+.mb-15{
+  margin-bottom: 60px;
+}
+.mb-23{
+  margin-bottom: 92px;
+}
+.mb-1{
+  margin-bottom: 4px;
+}
 .block{
   display: block;
 }
@@ -1303,6 +1309,9 @@ ol.footnotes li small{
 }
 .flex{
   display: flex;
+}
+.inline-flex{
+  display: inline-flex;
 }
 .contents{
   display: contents;
@@ -1554,6 +1563,21 @@ ol.footnotes li small{
 }
 .justify-between{
   justify-content: space-between;
+}
+.gap-y-16{
+  row-gap: 64px;
+}
+.gap-y-14{
+  row-gap: 56px;
+}
+.gap-y-5{
+  row-gap: 20px;
+}
+.gap-y-15{
+  row-gap: 60px;
+}
+.gap-y-8{
+  row-gap: 32px;
 }
 .overflow-hidden{
   overflow: hidden;
@@ -2757,9 +2781,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:mb-6{
     margin-bottom: 24px;
   }
-    .md\:mb-15{
-    margin-bottom: 60px;
-  }
     .md\:mb-8{
     margin-bottom: 32px;
   }
@@ -2768,6 +2789,15 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:mt-3{
     margin-top: 12px;
+  }
+    .md\:mb-15{
+    margin-bottom: 60px;
+  }
+    .md\:mb-22{
+    margin-bottom: 88px;
+  }
+    .md\:mb-23{
+    margin-bottom: 92px;
   }
     .md\:block{
     display: block;
@@ -2891,6 +2921,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:justify-between{
     justify-content: space-between;
+  }
+    .md\:gap-y-15{
+    row-gap: 60px;
+  }
+    .md\:gap-y-8{
+    row-gap: 32px;
   }
     .md\:overflow-auto{
     overflow: auto;
@@ -3060,6 +3096,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pb-4{
     padding-bottom: 16px;
+  }
+    .md\:pt-15{
+    padding-top: 60px;
   }
     .md\:text-left{
     text-align: left;
