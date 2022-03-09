@@ -235,6 +235,10 @@
       } else {
         $page_id = $page->ID;
       }
+      wp_update_post(array(
+        'ID' => $page_id,
+        'post_content' => "<!-- wp:pg/" . $post_type . "-meta-block /-->",
+      ));
       // Either returns or generates the ID of the translated page.
       $response = new WP_REST_Response( array(
         'id' => $page_id
