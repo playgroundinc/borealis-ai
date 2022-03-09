@@ -698,6 +698,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .canvas {
     height: 615px !important;
     max-height: 100vh; }
+.core-list ul{
+  list-style-position: inside;
+  list-style-type: disc;
+}
 .product-cta{
   position: relative;
   display: flex;
