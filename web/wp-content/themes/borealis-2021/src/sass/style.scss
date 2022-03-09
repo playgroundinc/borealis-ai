@@ -239,6 +239,10 @@
   width: 100%;
 }
 
+.logo-lineheight {
+  line-height: 1.1;
+}
+
 @media (prefers-reduced-motion) {
   .product-cta::before,
   .product-cta:hover span {
