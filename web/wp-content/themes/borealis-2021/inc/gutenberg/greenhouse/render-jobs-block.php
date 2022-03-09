@@ -50,7 +50,7 @@ if (!function_exists('pg_render_job_block')) {
         <div class="custom-component animated-element">
             <div class="md:container">
                 <div class="md:flex">
-                    <div class="container">
+                    <div id="job-anchor" class="container">
                         <?php if (!empty($attributes->title)) : ?>
                             <h2 class="h3"><?php echo esc_html($attributes->title) ?></h2>
                             <div class="tab-container jobs">

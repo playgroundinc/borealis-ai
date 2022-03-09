@@ -698,6 +698,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .canvas {
     height: 615px !important;
     max-height: 100vh; }
+.product-cta{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding-bottom: 4px;
+  --tw-text-opacity: 1;
+  color: rgb(34 39 49 / var(--tw-text-opacity));
+}
 .pill{
   font-size: 14px;
   font-family: Inter, sans-serif;
@@ -1264,6 +1274,9 @@ ol.footnotes li small{
 .mt-15{
   margin-top: 60px;
 }
+.mt-14{
+  margin-top: 56px;
+}
 .mr-3{
   margin-right: 12px;
 }
@@ -1305,9 +1318,6 @@ ol.footnotes li small{
 }
 .mb-13{
   margin-bottom: 52px;
-}
-.mt-14{
-  margin-top: 56px;
 }
 .mb-12{
   margin-bottom: 48px;
@@ -1967,6 +1977,9 @@ ol.footnotes li small{
 .pr-4{
   padding-right: 16px;
 }
+.pb-1{
+  padding-bottom: 4px;
+}
 .pr-10{
   padding-right: 40px;
 }
@@ -1981,9 +1994,6 @@ ol.footnotes li small{
 }
 .pt-4{
   padding-top: 16px;
-}
-.pb-1{
-  padding-bottom: 4px;
 }
 .pt-gallery{
   padding-top: 600px;
@@ -2239,6 +2249,34 @@ ol.footnotes li small{
 @media screen and (min-width: 768px) {
   .cookies {
     width: 450px; } }
+
+.product-cta:hover::before {
+  transform: translateX(100%); }
+
+.product-cta span {
+  transition: transform 0.25s ease-in-out; }
+
+.product-cta:hover span {
+  transform: translateX(-0.33333rem); }
+
+.product-cta:hover span.down {
+  transform: translateY(0.33333rem); }
+
+.product-cta::before {
+  transition: transform 0.25s ease-in-out;
+  background: black;
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%; }
+
+@media (prefers-reduced-motion) {
+  .product-cta::before,
+  .product-cta:hover span {
+    transition: none;
+    transform: none; } }
 
 .wp-block-table {
   margin-top: 64px;
@@ -3167,14 +3205,14 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:pl-5{
     padding-left: 20px;
   }
+    .tb\:pl-4{
+    padding-left: 16px;
+  }
     .tb\:pl-6{
     padding-left: 24px;
   }
     .tb\:pb-4{
     padding-bottom: 16px;
-  }
-    .tb\:pl-4{
-    padding-left: 16px;
   }
     .tb\:pt-130{
     padding-top: 520px;
@@ -3285,14 +3323,14 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:pt-video-lg{
     padding-top: 30%;
   }
+    .lg\:pl-8{
+    padding-left: 32px;
+  }
     .lg\:pl-gallery-offset{
     padding-left: calc((100vw - 1300px) / 2);
   }
     .lg\:pr-gallery-offset{
     padding-right: calc((100vw - 1300px) / 2);
-  }
-    .lg\:pl-8{
-    padding-left: 32px;
   }
     .lg\:pt-125{
     padding-top: 500px;
