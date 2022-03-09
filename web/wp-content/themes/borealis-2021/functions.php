@@ -118,6 +118,7 @@ require get_template_directory() . '/inc/gutenberg/render-blocks.php';
 require get_template_directory() . '/inc/gutenberg/render-select-post-block.php';
 require get_template_directory() . '/inc/gutenberg/render-text-column.php';
 require get_template_directory() . '/inc/gutenberg/render-video-block.php';
+require get_template_directory() . '/inc/gutenberg/render-list-block.php';
 require get_template_directory() . '/inc/gutenberg/render-image-block.php';
 
 // Accordion Blocks
