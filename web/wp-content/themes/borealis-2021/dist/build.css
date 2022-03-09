@@ -1049,6 +1049,62 @@ ol.footnotes li small{
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
   padding: 48px;
 }
+.lazy{
+  width: 100%;
+  --tw-blur: blur(12px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  transition-property: filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+.lazy .img-loaded{
+  --tw-blur: blur(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.paragraph-style .paragraph-blog{
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  line-height: 1.80;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .paragraph-style .paragraph-blog{
+    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .paragraph-style .paragraph-blog{
+    font-size: 18px;
+  }
+}
+.animated-element{
+  position: relative;
+  opacity: 0;
+  transition-property: opacity top;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 700ms;
+}
+@media (prefers-reduced-motion: no-preference){
+  .animated-element{
+    top: 32px;
+  }
+}
+.component-dark, .component-dark + .component-dark{
+  margin-top: 0px;
+}
+.scroll--hidden{
+  top: -100%;
+}
+.visible-scroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px; }
+.visible-scroll::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: rgba(34, 39, 49, 0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
 .sr-only{
   position: absolute;
   width: 1px;
@@ -2093,13 +2149,13 @@ ol.footnotes li small{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.transition-animate{
-  transition-property: opacity top;
+.transition-filter{
+  transition-property: filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.transition-filter{
-  transition-property: filter;
+.transition-animate{
+  transition-property: opacity top;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2166,72 +2222,6 @@ ol.footnotes li small{
 }
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
-}
-
-.visible-scroll::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 10px; }
-
-.visible-scroll::-webkit-scrollbar-thumb {
-  border-radius: 50px;
-  background-color: rgba(34, 39, 49, 0.5);
-  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
-
-.visible-scroll .paragraph-style .paragraph-blog{
-  font-size: 18px;
-  font-family: Inter, sans-serif;
-  line-height: 1.80;
-  letter-spacing: normal;
-  text-transform: none;
-  font-weight: normal;
-  word-break: break-word;
-}
-
-@media (min-width: 375px){
-  .visible-scroll .paragraph-style .paragraph-blog{
-    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
-  }
-}
-
-@media (min-width: 1920px){
-  .visible-scroll .paragraph-style .paragraph-blog{
-    font-size: 18px;
-  }
-}
-
-.visible-scroll .animated-element{
-  position: relative;
-  opacity: 0;
-  transition-property: opacity top;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 700ms;
-}
-
-@media (prefers-reduced-motion: no-preference){
-  .visible-scroll .animated-element{
-    top: 32px;
-  }
-}
-
-.visible-scroll .component-dark, .visible-scroll .component-dark + .component-dark{
-  margin-top: 0px;
-}
-
-.visible-scroll .scroll--hidden{
-  top: -100%;
-}
-
-.visible-scroll .lazy{
-  width: 100%;
-  --tw-blur: blur(12px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-  transition-property: filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
-}
-  .visible-scroll .lazy.img-loaded{
-  --tw-blur: blur(0);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .wp-block-video,
