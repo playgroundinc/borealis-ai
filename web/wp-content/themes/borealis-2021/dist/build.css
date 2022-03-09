@@ -1130,11 +1130,11 @@ ol.footnotes li small{
 .-left-full{
   left: -100%;
 }
-.bottom-5{
-  bottom: 20px;
+.bottom-2{
+  bottom: 8px;
 }
-.right-5{
-  right: 20px;
+.right-2{
+  right: 8px;
 }
 .top-full{
   top: 100%;
@@ -1168,12 +1168,6 @@ ol.footnotes li small{
 }
 .-top-full{
   top: -100%;
-}
-.right-2{
-  right: 8px;
-}
-.bottom-2{
-  bottom: 8px;
 }
 .z-10{
   z-index: 10;
@@ -1907,12 +1901,6 @@ ol.footnotes li small{
 .pr-6{
   padding-right: 24px;
 }
-.pt-11{
-  padding-top: 44px;
-}
-.pb-4{
-  padding-bottom: 16px;
-}
 .pt-10{
   padding-top: 40px;
 }
@@ -1924,6 +1912,9 @@ ol.footnotes li small{
 }
 .pt-14{
   padding-top: 56px;
+}
+.pb-4{
+  padding-bottom: 16px;
 }
 .pt-100{
   padding-top: 400px;
@@ -2026,6 +2017,9 @@ ol.footnotes li small{
 }
 .pt-180{
   padding-top: 720px;
+}
+.pt-11{
+  padding-top: 44px;
 }
 .pb-9{
   padding-bottom: 36px;
@@ -2865,6 +2859,10 @@ mjx-container::-webkit-scrollbar-thumb,
     padding-top: 8px;
     padding-bottom: 8px;
   }
+    .md\:py-5{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
     .md\:py-20{
     padding-top: 80px;
     padding-bottom: 80px;
@@ -2897,10 +2895,6 @@ mjx-container::-webkit-scrollbar-thumb,
     padding-top: 60px;
     padding-bottom: 60px;
   }
-    .md\:py-5{
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
     .md\:pr-5{
     padding-right: 20px;
   }
@@ -2912,9 +2906,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pb-8{
     padding-bottom: 32px;
-  }
-    .md\:pl-8{
-    padding-left: 32px;
   }
     .md\:pt-12{
     padding-top: 48px;
@@ -2936,6 +2927,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pr-8{
     padding-right: 32px;
+  }
+    .md\:pl-8{
+    padding-left: 32px;
   }
     .md\:pr-10{
     padding-right: 40px;
