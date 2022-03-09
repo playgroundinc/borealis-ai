@@ -40,7 +40,7 @@ if (!function_exists('pg_generate_search_bar_main')) {
                                 <legend class="sr-only"><?php echo esc_html($taxonomy['label']) ?></legend>
                                 <div class="flex flex-wrap">
                                     <?php foreach ($terms as $term) : ?>
-                                        <div class="mr-7 mb-4">
+                                        <div class="mr-3 mb-4">
                                             <input class="peer sr-only" value="<?php echo esc_attr($term->term_id) ?>" name="<?php echo esc_attr($term->term_id . '[]') ?>" type="checkbox" id="<?php echo esc_attr($term->term_id) ?>">
                                             <label class="pill peer-checked:pill-active hover:cursor-pointer" for="<?php echo esc_attr($term->term_id) ?>">
                                                 <?php echo esc_html($term->name) ?>
