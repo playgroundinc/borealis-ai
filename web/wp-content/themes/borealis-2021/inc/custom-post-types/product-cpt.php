@@ -2,7 +2,7 @@
 
 if (!function_exists('pg_register_product_cpt')) {
     /**
-     * Creates an Author Custom Post Type with custom metadata
+     * Creates an Product Custom Post Type with custom metadata
      */
     function pg_register_product_cpt()
     {
