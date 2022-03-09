@@ -111,7 +111,6 @@ function animate() {
           LazyImageLoad.loadImages();
 
           if (entry.target.offsetHeight >= window.innerHeight) {
-            console.log("in here");
             entry.target.style.opacity = "1";
             entry.target.style.top = "0px";
           } else if (entry.intersectionRect.bottom >= window.innerHeight && entry.intersectionRect.height > entry.target.offsetHeight / 3) {

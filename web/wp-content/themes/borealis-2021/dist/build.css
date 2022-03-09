@@ -1297,9 +1297,6 @@ ol.footnotes li small{
 .mt-3{
   margin-top: 12px;
 }
-.mr-7{
-  margin-right: 28px;
-}
 .mr-6{
   margin-right: 24px;
 }
@@ -1350,6 +1347,9 @@ ol.footnotes li small{
 }
 .mt-5{
   margin-top: 20px;
+}
+.mr-7{
+  margin-right: 28px;
 }
 .block{
   display: block;
