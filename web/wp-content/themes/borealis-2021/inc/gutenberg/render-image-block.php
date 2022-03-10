@@ -49,7 +49,7 @@ if ( ! function_exists( 'pg_render_image_block' ) ) {
             <div class="animated-element mt-10">
                 <div class="image-block rounded-large overflow-hidden">
                     <picture class="image-block__img lazy">
-                        <img class="lazy w-auto" data-src="<?php echo esc_url_raw($image)?>" src="<?php echo esc_url_raw($placholder)?>" alt="<?php echo !empty($attributes->image_alt) ? esc_attr($attributes->image_alt) : null ?>">
+                        <img class="lazy" data-src="<?php echo esc_url_raw($image)?>" src="<?php echo esc_url_raw($placholder)?>" alt="<?php echo !empty($attributes->image_alt) ? esc_attr($attributes->image_alt) : null ?>">
                     </picture>
                 </div>
                 <?php if (!empty($attributes->caption) || !empty($attributes->image_alt)): ?>
