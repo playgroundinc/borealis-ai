@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 $allowed_html = pg_allowed_html();
 $query = "";
 if (isset($_GET['q'])) {
     $query = sanitize_text_field(wp_unslash($_GET['q']));
-} 
+}
 $placeholder = __('Looking for something', 'trmc');
 ?>
 
