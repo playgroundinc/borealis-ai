@@ -54,11 +54,7 @@ class PG_Allowed_Blocks
 
             // Text 2up
             'text-2-up',
-            'text-2-up-container',
-
-            // Podcast
-            'podcast'
-
+            'text-2-up-container'
         );
         $this->custom_blocks = array(
             // Callout
@@ -113,25 +109,16 @@ class PG_Allowed_Blocks
 
             // Statistics
             'statistics',
-            'statistics-container',
-
-            // Podcast
-            'podcast',
+            'statistics-container'
         );
         $this->shared_core_blocks = array(
             'core/video',
-            'core/audio',
-            'core/shortcode',
             'core/list',
             'core/code',
             'core/embed-youtube',
         );
         $this->blog_core_blocks = array(
             'core/table',
-            'core/shortcode',
-            `core/button`,
-            'core/audio',
-            'core/embed-podcast',
             'core/quote'
         );
         $this->author_blocks = array(
