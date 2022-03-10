@@ -104,6 +104,7 @@ module.exports = {
 				'background-color': 'background-color',
 				'slider': 'left right',
 				'animate': 'opacity top',
+				'filter': 'filter',
 			},
 			width: {
 				'3/8': 'calc((100% / 8) * 3)',
