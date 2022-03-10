@@ -6054,8 +6054,8 @@ function customSectionBlock() {
 
   var attributes = {
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -6087,11 +6087,11 @@ function customSectionBlock() {
           value: title,
           reference: "title",
           tagName: "h2",
-          settings: ['core/bold', 'core/link', 'core/italic', 'core/code'],
+          settings: ["core/bold", "core/link", "core/italic", "core/code"],
           placeholder: "Please provide a title"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-subsection-block"), "core/table", "core/podcast", "core/video", "core/list", "core/quote", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-two"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-three"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/blockquote"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-text"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/jobs-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-figures"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tabbed-content-container-block")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-subsection-block"), "core/table", "core/shortcode", "core/button", "core/audio", "core/embed-podcast", "core/video", "core/list", "core/quote", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-two"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-three"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/blockquote"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-text"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/jobs-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-figures"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tabbed-content-container-block")]
       }))];
     },
     save: function save(_ref) {
@@ -6136,8 +6136,8 @@ function customSubsectionBlock() {
 
   var attributes = {
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -6167,15 +6167,15 @@ function customSubsectionBlock() {
           updateAttributeValue(attribute, change);
         },
         components: [{
-          label: 'Title',
+          label: "Title",
           value: title,
           reference: "title",
           tagName: "h3",
-          settings: ['core/bold', 'core/link', 'core/italic', 'core/code'],
+          settings: ["core/bold", "core/link", "core/italic", "core/code"],
           placeholder: "Please provide a title"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["core/table", "core/podcast", "core/video", "core/list", "core/quote", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-two"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-three"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/blockquote"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-text"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/jobs-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-figures"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tabbed-content-container-block")]
+        allowedBlocks: ["core/table", "core/button", "core/shortcode", "core/embed-podcast", "core/audio", "core/video", "core/list", "core/quote", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-two"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-three"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/blockquote"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-text"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/jobs-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-figures"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tabbed-content-container-block")]
       }))];
     },
     save: function save(_ref) {
@@ -7072,12 +7072,12 @@ function tabbedContentPanelBlock() {
 
   var attributes = {
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     content: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -7858,7 +7858,8 @@ __webpack_require__.r(__webpack_exports__);
 (0,_blocks_image_text_strip_block_jsx__WEBPACK_IMPORTED_MODULE_35__["default"])(); // Statistics Content Blocks
 
 (0,_blocks_stats_statistics_container_block_jsx__WEBPACK_IMPORTED_MODULE_54__["default"])();
-(0,_blocks_stats_statistics_block_jsx__WEBPACK_IMPORTED_MODULE_53__["default"])();
+(0,_blocks_stats_statistics_block_jsx__WEBPACK_IMPORTED_MODULE_53__["default"])(); // Locations Blocks
+
 (0,_blocks_locations_location_container_block_jsx__WEBPACK_IMPORTED_MODULE_30__["default"])();
 (0,_blocks_locations_location_block_jsx__WEBPACK_IMPORTED_MODULE_31__["default"])();
 (0,_blocks_locations_location_image_jsx__WEBPACK_IMPORTED_MODULE_32__["default"])();
