@@ -1053,8 +1053,6 @@ ol.footnotes li small{
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
   padding: 48px;
 }
-<<<<<<< HEAD
-=======
 .lazy{
   width: 100%;
   --tw-blur: blur(12px);
@@ -1067,7 +1065,6 @@ ol.footnotes li small{
   --tw-blur: blur(0);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
->>>>>>> c5090620cd5e03ca6cd8cb8c3ff4fb874c45f701
 .paragraph-style .paragraph-blog{
   font-size: 18px;
   font-family: Inter, sans-serif;
@@ -1105,8 +1102,6 @@ ol.footnotes li small{
 .scroll--hidden{
   top: -100%;
 }
-<<<<<<< HEAD
-=======
 .visible-scroll::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 10px; }
@@ -1114,7 +1109,6 @@ ol.footnotes li small{
     border-radius: 50px;
     background-color: rgba(34, 39, 49, 0.5);
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
->>>>>>> c5090620cd5e03ca6cd8cb8c3ff4fb874c45f701
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1351,12 +1345,6 @@ ol.footnotes li small{
 .mt-26{
   margin-top: 104px;
 }
-.mb-15{
-  margin-bottom: 60px;
-}
-.mb-0{
-  margin-bottom: 0px;
-}
 .ml-15{
   margin-left: 60px;
 }
@@ -1377,6 +1365,9 @@ ol.footnotes li small{
 }
 .flex{
   display: flex;
+}
+.inline-flex{
+  display: inline-flex;
 }
 .contents{
   display: contents;
@@ -1625,6 +1616,9 @@ ol.footnotes li small{
 }
 .justify-between{
   justify-content: space-between;
+}
+.gap-y-8{
+  row-gap: 32px;
 }
 .overflow-hidden{
   overflow: hidden;
@@ -1931,8 +1925,8 @@ ol.footnotes li small{
 .pt-42{
   padding-top: 168px;
 }
-.pl-6{
-  padding-left: 24px;
+.pl-7{
+  padding-left: 28px;
 }
 .pr-6{
   padding-right: 24px;
@@ -2006,6 +2000,9 @@ ol.footnotes li small{
 .pb-1{
   padding-bottom: 4px;
 }
+.pl-6{
+  padding-left: 24px;
+}
 .pr-10{
   padding-right: 40px;
 }
@@ -2077,9 +2074,6 @@ ol.footnotes li small{
 }
 .pr-3{
   padding-right: 12px;
-}
-.pl-7{
-  padding-left: 28px;
 }
 .text-center{
   text-align: center;
@@ -2249,8 +2243,6 @@ ol.footnotes li small{
   https: //pantheon.io/docs/ssh-keys;
 }
 
-<<<<<<< HEAD
-=======
 .wp-block-video,
 .wp-block-embed,
 .wp-block-embed__wrapper {
@@ -2284,7 +2276,6 @@ ol.footnotes li small{
     -moz-column-count: 2;
          column-count: 2; } }
 
->>>>>>> c5090620cd5e03ca6cd8cb8c3ff4fb874c45f701
 .m-scroll__title > div.scroll1 {
   display: flex;
   -webkit-animation: scrollText 34s infinite linear;
@@ -2345,6 +2336,9 @@ ol.footnotes li small{
   left: 0;
   position: absolute;
   width: 100%; }
+
+.logo-lineheight {
+  line-height: 1.1; }
 
 @media (prefers-reduced-motion) {
   .product-cta::before,
@@ -2824,11 +2818,8 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:mb-6{
     margin-bottom: 24px;
   }
-    .md\:mb-15{
-    margin-bottom: 60px;
-  }
-    .md\:mb-8{
-    margin-bottom: 32px;
+    .md\:mb-23{
+    margin-bottom: 92px;
   }
     .md\:mb-12{
     margin-bottom: 48px;
@@ -2959,6 +2950,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:justify-between{
     justify-content: space-between;
   }
+    .md\:gap-y-15{
+    row-gap: 60px;
+  }
     .md\:overflow-auto{
     overflow: auto;
   }
@@ -3038,6 +3032,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pb-8{
     padding-bottom: 32px;
   }
+    .md\:pl-6{
+    padding-left: 24px;
+  }
     .md\:pt-12{
     padding-top: 48px;
   }
@@ -3080,8 +3077,8 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pb-12{
     padding-bottom: 48px;
   }
-    .md\:pr-20{
-    padding-right: 80px;
+    .md\:pt-15{
+    padding-top: 60px;
   }
     .md\:pt-featured-image-md{
     padding-top: 450px;
@@ -3107,6 +3104,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pr-4{
     padding-right: 16px;
   }
+    .md\:pr-20{
+    padding-right: 80px;
+  }
     .md\:pt-16{
     padding-top: 64px;
   }
@@ -3127,9 +3127,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pb-4{
     padding-bottom: 16px;
-  }
-    .md\:pl-6{
-    padding-left: 24px;
   }
     .md\:text-left{
     text-align: left;
