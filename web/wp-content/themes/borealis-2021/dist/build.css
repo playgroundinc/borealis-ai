@@ -1053,6 +1053,8 @@ ol.footnotes li small{
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
   padding: 48px;
 }
+<<<<<<< HEAD
+=======
 .lazy{
   width: 100%;
   --tw-blur: blur(12px);
@@ -1065,6 +1067,7 @@ ol.footnotes li small{
   --tw-blur: blur(0);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
+>>>>>>> c5090620cd5e03ca6cd8cb8c3ff4fb874c45f701
 .paragraph-style .paragraph-blog{
   font-size: 18px;
   font-family: Inter, sans-serif;
@@ -1102,6 +1105,8 @@ ol.footnotes li small{
 .scroll--hidden{
   top: -100%;
 }
+<<<<<<< HEAD
+=======
 .visible-scroll::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 10px; }
@@ -1109,6 +1114,7 @@ ol.footnotes li small{
     border-radius: 50px;
     background-color: rgba(34, 39, 49, 0.5);
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+>>>>>>> c5090620cd5e03ca6cd8cb8c3ff4fb874c45f701
 .sr-only{
   position: absolute;
   width: 1px;
@@ -1163,6 +1169,12 @@ ol.footnotes li small{
 .-left-full{
   left: -100%;
 }
+.bottom-2{
+  bottom: 8px;
+}
+.right-2{
+  right: 8px;
+}
 .top-full{
   top: 100%;
 }
@@ -1201,6 +1213,9 @@ ol.footnotes li small{
 }
 .z-50{
   z-index: 50;
+}
+.z-40{
+  z-index: 40;
 }
 .z-30{
   z-index: 30;
@@ -1242,6 +1257,9 @@ ol.footnotes li small{
 }
 .mt-6{
   margin-top: 24px;
+}
+.mr-4{
+  margin-right: 16px;
 }
 .mr-10{
   margin-right: 40px;
@@ -1913,6 +1931,12 @@ ol.footnotes li small{
 .pt-42{
   padding-top: 168px;
 }
+.pl-6{
+  padding-left: 24px;
+}
+.pr-6{
+  padding-right: 24px;
+}
 .pt-10{
   padding-top: 40px;
 }
@@ -1982,9 +2006,6 @@ ol.footnotes li small{
 .pb-1{
   padding-bottom: 4px;
 }
-.pl-6{
-  padding-left: 24px;
-}
 .pr-10{
   padding-right: 40px;
 }
@@ -2002,9 +2023,6 @@ ol.footnotes li small{
 }
 .pt-gallery{
   padding-top: 600px;
-}
-.pr-6{
-  padding-right: 24px;
 }
 .pt-7{
   padding-top: 28px;
@@ -2059,6 +2077,9 @@ ol.footnotes li small{
 }
 .pr-3{
   padding-right: 12px;
+}
+.pl-7{
+  padding-left: 28px;
 }
 .text-center{
   text-align: center;
@@ -2228,6 +2249,8 @@ ol.footnotes li small{
   https: //pantheon.io/docs/ssh-keys;
 }
 
+<<<<<<< HEAD
+=======
 .wp-block-video,
 .wp-block-embed,
 .wp-block-embed__wrapper {
@@ -2261,6 +2284,7 @@ ol.footnotes li small{
     -moz-column-count: 2;
          column-count: 2; } }
 
+>>>>>>> c5090620cd5e03ca6cd8cb8c3ff4fb874c45f701
 .m-scroll__title > div.scroll1 {
   display: flex;
   -webkit-animation: scrollText 34s infinite linear;
@@ -2291,6 +2315,14 @@ ol.footnotes li small{
     transform: translateX(0%); }
   to {
     transform: translateX(-50%); } }
+
+.cookies {
+  border-radius: 63px;
+  width: 320px; }
+
+@media screen and (min-width: 768px) {
+  .cookies {
+    width: 450px; } }
 
 .product-cta:hover::before {
   transform: translateX(100%); }
@@ -2458,6 +2490,10 @@ mjx-container::-webkit-scrollbar-thumb,
 .hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.hover\:opacity-70:hover{
+  opacity: 0.7;
 }
 
 .focus\:border-primary-electric-blue-400:focus{
@@ -2646,6 +2682,25 @@ mjx-container::-webkit-scrollbar-thumb,
       font-size: 18px;
     }
   }
+  .md\:paragraph-sm{
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    line-height: 1.50;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:paragraph-sm{
+      font-size: calc(14px + ((14 - 14) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:paragraph-sm{
+      font-size: 14px;
+    }
+  }
   .md\:hyperlink{
     font-size: 14px;
     font-family: Inter, sans-serif;
@@ -2716,6 +2771,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:-right-4{
     right: -16px;
+  }
+    .md\:bottom-5{
+    bottom: 20px;
+  }
+    .md\:right-5{
+    right: 20px;
   }
     .md\:m-0{
     margin: 0px;
@@ -2929,6 +2990,10 @@ mjx-container::-webkit-scrollbar-thumb,
     padding-top: 8px;
     padding-bottom: 8px;
   }
+    .md\:py-5{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
     .md\:py-20{
     padding-top: 80px;
     padding-bottom: 80px;
@@ -2960,10 +3025,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:py-15{
     padding-top: 60px;
     padding-bottom: 60px;
-  }
-    .md\:py-5{
-    padding-top: 20px;
-    padding-bottom: 20px;
   }
     .md\:pr-5{
     padding-right: 20px;
@@ -3019,6 +3080,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pb-12{
     padding-bottom: 48px;
   }
+    .md\:pr-20{
+    padding-right: 80px;
+  }
     .md\:pt-featured-image-md{
     padding-top: 450px;
   }
@@ -3043,9 +3107,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pr-4{
     padding-right: 16px;
   }
-    .md\:pr-20{
-    padding-right: 80px;
-  }
     .md\:pt-16{
     padding-top: 64px;
   }
@@ -3066,6 +3127,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pb-4{
     padding-bottom: 16px;
+  }
+    .md\:pl-6{
+    padding-left: 24px;
   }
     .md\:text-left{
     text-align: left;
