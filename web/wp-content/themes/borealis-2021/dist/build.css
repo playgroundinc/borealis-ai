@@ -2796,6 +2796,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:min-h-\[244px\]{
     min-height: 244px;
   }
+    .md\:min-h-\[400px\]{
+    min-height: 400px;
+  }
     .md\:w-auto{
     width: auto;
   }
