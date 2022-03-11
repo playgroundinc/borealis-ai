@@ -4,7 +4,7 @@ if (!function_exists('pg_generate_search_bar_main')) {
     {
         ob_start();
 ?>
-        <div class="border-t border-shade-grey-500 mt-8">
+        <div class="border-t border-shade-grey-500">
             <div class="container flex">
                 <form class="search-form relative grow">
                     <label class="sr-only" for="search">Search</label>

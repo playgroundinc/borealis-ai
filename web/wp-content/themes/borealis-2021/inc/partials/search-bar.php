@@ -11,7 +11,7 @@ if (!function_exists('pg_generate_search_bar')) {
                         <div class="container md:w-full relative md:m-0">
                             <label class="sr-only" for="search"><?php echo esc_html('Search') ?></label>
                             <span class="icon icon--lg absolute left-0 top-6 text-shade-grey-700"><?php echo pg_render_icon('search-publication') ?></span>
-                            <input class="border block w-full border-0 py-6 pl-10 pr-4" id="search" name="q" type="search" placeholder="<?php echo esc_attr('Search') ?>" value="<?php echo isset($query) && !empty($query) ? esc_attr($query) : null; ?>">
+                            <input class="border block w-full border-0 py-6 pl-10 pr-4 paragraph" id="search" name="q" type="search" placeholder="<?php echo esc_attr('Search') ?>" value="<?php echo isset($query) && !empty($query) ? esc_attr($query) : null; ?>">
                             <button class="sr-only" type="submit">
                                 <span><?php echo esc_html('Search') ?></span>
                             </button>
