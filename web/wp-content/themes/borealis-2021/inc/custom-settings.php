@@ -117,31 +117,15 @@ function pg_init_menus()
             'parent' => $parent,
             'description' => 'Use this page to update the copy and links for the cookies notification. If left blank it will default to the value set on the main Trimac site.',
             'sections' => array(
-                'Cookie Settings' => array(
-                    'id' => $namespace . '-cookie-settings',
+                'Cookie Policy' => array(
+                    'id' => $namespace . '-cookie-policy',
                     'fields' => array(
-                        'cookie_policy_cookie_name' => 'text',
-                        'cookie_policy_cookie_lifespan_in_hours' => 'number',
+                        'cookie_policy_title' => 'text',
+                        'cookie_policy_copy' => 'textarea',
+                        'cookie_policy_link_text' => 'text',
+                        'cookie_policy_link' => 'text'
                     )
                 ),
-                'Cookie Policy English' => array(
-                    'id' => $namespace . '-cookie-policy-en',
-                    'fields' => array(
-                        'cookie_policy_title_en' => 'text',
-                        'cookie_policy_copy_en' => 'textarea',
-                        'cookie_policy_link_text_en' => 'text',
-                        'cookie_policy_link_en' => 'text'
-                    )
-                ),
-                'Cookie Policy French' => array(
-                    'id' => $namespace . '-cookie-policy-fr',
-                    'fields' => array(
-                        'cookie_policy_title_fr' => 'text',
-                        'cookie_policy_copy_fr' => 'textarea',
-                        'cookie_policy_link_text_fr' => 'text',
-                        'cookie_policy_link_fr' => 'text'
-                    )
-                )
             )
         ),
 

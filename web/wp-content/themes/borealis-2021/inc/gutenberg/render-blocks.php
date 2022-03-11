@@ -13,6 +13,7 @@ if (!function_exists('pg_server_side_block_render')) {
                 break;
             case 'core/embed':
                 $block_content = pg_render_video_block($block_content, $block);
+                break;
             case 'core/list':
                 $block_content = pg_render_list_block($block_content, $block);
                 break;
