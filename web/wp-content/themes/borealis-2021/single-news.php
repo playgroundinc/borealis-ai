@@ -31,7 +31,7 @@ $url = get_permalink($post->ID);
                 && isset($title) && !empty($title)
                 && isset($url) && !empty($url)
             ) : ?>
-                <div class="flex cursor-pointer text-3xl" id="open-cite">
+                <div class="flex cursor-pointer text-3xl open-cite">
                     <?php echo pg_render_icon('cite') ?>
                     <button class="ml-2 paragraph-sm">Cite</button>
                 </div>
@@ -50,14 +50,14 @@ $url = get_permalink($post->ID);
                 endif;
                 ?>
             </div>
-            <div id="share-modal" class="hidden rounded-large text-shade-grey-700 paragraph-sm mt-6 ml-19 bg-shade-grey-100 flex flex-col justify-center items-start">
+            <div class="share-modal hidden rounded-large text-shade-grey-700 paragraph-sm mt-6 ml-19 bg-shade-grey-100 flex flex-col justify-center items-start">
                 <ul class="w-full">
-                    <li> 
+                    <li>
                         <a class="block p-5" href="https://www.linkedin.com/shareArticle?mini=true&url=https://dev-borealis-ai.pantheonsite.io/?shareSlug%3D<?php echo $url ?>" target="_blank" rel="noopener noreferrer">
                             LinkedIn
                         </a>
                     </li>
-                    <li> 
+                    <li>
                         <a class="pb-5 pl-5 block twitter-share-button" href="http://twitter.com/share?text=Hiring across all teams: research, product, engineering, and more! Check out this role with Borealis AI.&url=<?php echo $url ?>" target="_blank" rel="noopener noreferrer">
                             Twitter
                         </a>
