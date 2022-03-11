@@ -71,7 +71,7 @@ get_header();
             <p class="h3 py-10">No results found for <?php echo esc_html($search_query) ?></p>
         <?php endif; ?>
     </div>
-    <section id="search-nav" class="tab-container min-h-[400px]">
+    <section id="search-nav" class="tab-container min-h-[400px] md:min-h-[800px]">
         <div role="tablist" aria-orientation="horizontal" class="flex container">
             <?php
             foreach ($tab_array as $inner_block => $element) {
