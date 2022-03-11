@@ -1190,8 +1190,8 @@ ol.footnotes li small{
 .bottom-12{
   bottom: 48px;
 }
-.top-96{
-  top: 384px;
+.top-42{
+  top: 168px;
 }
 .top-4{
   top: 16px;
@@ -2774,6 +2774,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:right-5{
     right: 20px;
+  }
+    .md\:top-96{
+    top: 384px;
   }
     .md\:m-0{
     margin: 0px;
