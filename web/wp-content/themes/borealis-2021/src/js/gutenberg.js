@@ -212,6 +212,7 @@ imageTextStripBlock();
 statisticsContainerBlock();
 statisticsBlock();
 
+// Locations Blocks
 LocationsContainerBlock();
 locationBlock();
 locationImageBlock();

@@ -44,9 +44,9 @@ if (!function_exists('pg_render_logos_subsection_block')) {
 ?>
         <div class="flex flex-col">
             <?php if (!empty($attributes->title)) : ?>
-                <h2 class="paragraph-lg my-8 tb:mb-8 tb:mt-0"><?php echo wp_kses($attributes->title, $allowed_html); ?></h2>
+                <h2 class="paragraph-lg logo-lineheight my-8 tb:mb-8 tb:mt-0"><?php echo wp_kses($attributes->title, $allowed_html); ?></h2>
             <?php endif; ?>
-            <div class="flex flex-row mb-0 md:mb-8 flex-wrap justify-between md:justify-start">
+            <div class="inline-flex flex-row mb-10 md:mb-23 flex-wrap justify-between md:justify-start gap-y-8 md:gap-y-15">
                 <?php foreach ($block['innerBlocks'] as $index => $inner_block) : ?>
                     <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
                 <?php endforeach; ?>
