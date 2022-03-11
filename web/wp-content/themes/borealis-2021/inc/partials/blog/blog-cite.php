@@ -28,7 +28,7 @@ if (!function_exists('pg_generate_blog_sidebar_cite')) {
             && isset($url) && !empty($url)
         ) {
 ?>
-            <div id="modal" class="bg-navy-400 z-20 w-full md:w-8/12 tb:w-2/5 m-auto fixed right-0 left-0 top-96 bg-shade-white-400 rounded-large hidden">
+            <div id="modal" class="bg-navy-400 z-20 w-full md:w-8/12 tb:w-2/5 m-auto fixed right-0 left-0 top-42 md:top-96 bg-shade-white-400 rounded-large hidden">
                 <button id="close-cite" class="absolute top-4 right-4">
                     <svg class="icon-close w-6 h-6" aria-labelledby="icon-close">
                         <title id="icon-close"></title>
