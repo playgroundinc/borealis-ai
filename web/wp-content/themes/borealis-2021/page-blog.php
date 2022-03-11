@@ -61,8 +61,10 @@ get_header();
             <?php endforeach;  // End of Query Loop 
             ?>
         </ul>
-        <div class="container">
-            <button class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> block h4 pt-10 pb-8 text-center w-full load-more"><?php echo esc_html('Load More Posts') ?></button>
+        <div class="border-solid border-b border-shade-grey-500">
+            <button class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> container block h4 pt-10 pb-8 text-center w-full load-more"><?php echo esc_html('Load More Posts') ?></button>
         </div>
-    </div <?php wp_reset_query(); ?> <?php
-                                        get_footer();
+        <?php wp_reset_query(); ?>
+    </div>
+    <?php
+    get_footer();

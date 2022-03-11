@@ -56,8 +56,8 @@ get_header();
                 <?php endforeach;  // End of Query Loop 
                 ?>
             </ul>
-            <div class="container">
-                <button class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> block h4 pt-10 pb-8 text-center w-full load-more"><?php echo esc_html('Load More Publications') ?></button>
+            <div class="border-solid border-b border-shade-grey-500">
+                <button class="container block h4 pt-10 pb-8 text-center w-full load-more"><?php echo esc_html('Load More Publications') ?></button>
             </div>
         </div>
     <?php endif; ?>
