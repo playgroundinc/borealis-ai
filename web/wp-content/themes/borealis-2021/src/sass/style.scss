@@ -218,6 +218,17 @@
   }
 }
 
+.cookies {
+  border-radius: 63px;
+  width: 320px;
+}
+
+@media screen and (min-width: 768px) {
+  .cookies {
+    width: 450px;
+  }
+}
+
 .product-cta:hover::before {
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
@@ -246,6 +257,10 @@
   left: 0;
   position: absolute;
   width: 100%;
+}
+
+.logo-lineheight {
+  line-height: 1.1;
 }
 
 @media (prefers-reduced-motion) {
