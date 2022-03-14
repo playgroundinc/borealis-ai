@@ -56,28 +56,37 @@ function locationModal(locationContainer) {
 
     if (openImage) {
         if (!("ontouchend" in document.documentElement)) {
-            console.log("HERE BAD");
             openImage.addEventListener("mouseover", () =>
                 openModal(imageModal, openImage)
             );
+            openImage.addEventListener("keydown", (event) => {
+                if (event.key === " " || event.key === "Enter") {
+                    openModal(imageModal, openImage);
+                } else if (event.key === "Escape") {
+                    console.log(event.key === "Escape");
+                    closeModal(imageModal, openImage);
+                }
+            });
             openImage.addEventListener("mouseleave", () =>
                 closeModal(imageModal, openImage)
             );
         } else {
-            console.log("HERE GOOD");
             openImage.addEventListener("touchend", (e) => {
                 openModal(imageModal, null);
-                // console.log(openImage, "OPEN IMAGE");
             });
             imageModal.addEventListener("touchend", (e) => {
                 closeModal(imageModal, null);
-                // console.log("CLOSE IMAGE");
             });
         }
     }
 
     if (openVideo) {
         openVideo.addEventListener("click", () => openModal(videoModal, null));
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeModal(videoModal, openVideo);
+            }
+        });
         videoModal.addEventListener("click", () =>
             closeModal(videoModal, openVideo)
         );

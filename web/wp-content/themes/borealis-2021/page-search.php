@@ -71,7 +71,7 @@ get_header();
             <p class="h3 py-10">No results found for <?php echo esc_html($search_query) ?></p>
         <?php endif; ?>
     </div>
-    <section id="search-nav" class="tab-container">
+    <section id="search-nav" class="tab-container min-h-[400px] md:min-h-[800px]">
         <div role="tablist" aria-orientation="horizontal" class="flex container">
             <?php
             foreach ($tab_array as $inner_block => $element) {
@@ -122,8 +122,8 @@ get_header();
                             <?php endforeach;  // End of Query Loop 
                             ?>
                         </ul>
-                        <div class="container">
-                            <button class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> block h4 pt-10 pb-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
+                        <div class="border-solid border-t border-shade-grey-500 <?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?>">
+                            <button class=" container block h4 pt-10 pb-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
                         </div>
                     <?php endif; ?>
                     <?php wp_reset_query(); ?>
@@ -143,8 +143,8 @@ get_header();
                             <?php endforeach;  // End of Query Loop 
                             ?>
                         </ul>
-                        <div class="container">
-                            <button class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> block h4 pt-10 pb-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
+                        <div class="border-solid border-t border-shade-grey-500 <?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?>">
+                            <button class=" container block h4 pt-10 pb-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
                         </div>
                     <?php endif; ?>
                     <?php wp_reset_query(); ?>

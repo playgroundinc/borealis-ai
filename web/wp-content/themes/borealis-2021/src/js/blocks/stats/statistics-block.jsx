@@ -25,9 +25,9 @@ export default function statisticsBlock() {
       default: "",
     },
     copy: {
-        type: "String",
-        default: "",
-      },
+      type: "String",
+      default: "",
+    },
   };
   registerBlockType(`${namespace}/${slug}`, {
     title: i18n.__(title, `${namespace}`),
@@ -54,13 +54,9 @@ export default function statisticsBlock() {
                 reference: "stat",
                 tagName: "p",
                 classes: ["paragraph"],
-                settings: [
-                  "core/bold",
-                  "core/link",
-                  "core/italic",
-                ],
+                settings: ["core/bold", "core/link", "core/italic"],
                 placeholder: "Please provide a stat",
-              }
+              },
             ]}
             onChange={(attribute, change) => {
               updateAttributeValue(attribute, change);
@@ -73,13 +69,9 @@ export default function statisticsBlock() {
                 reference: "copy",
                 tagName: "p",
                 classes: ["paragraph"],
-                settings: [
-                  "core/bold",
-                  "core/link",
-                  "core/italic",
-                ],
+                settings: ["core/bold", "core/link", "core/italic"],
                 placeholder: "Please provide copy (optional)",
-              }
+              },
             ]}
             onChange={(attribute, change) => {
               updateAttributeValue(attribute, change);

@@ -3012,7 +3012,7 @@ function locationBlock() {
       }), /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/location-image")],
         renderAppender: function renderAppender() {
-          if (innerBlockCount.length < 8) {
+          if (innerBlockCount.length < 6) {
             return /*#__PURE__*/React.createElement(InnerBlocks.ButtonBlockAppender, null);
           } else {
             return false;
@@ -3756,19 +3756,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
 function productMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
-  var meta_fields = ['market', 'description'];
-  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, 'meta');
+  var meta_fields = ["market", "description", "cta_text", "cta_link"];
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, "meta");
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/product-meta-block"), {
-    title: 'Product Meta',
-    icon: 'align-full-width',
-    category: 'meta',
+    title: "Product Meta",
+    icon: "align-full-width",
+    category: "meta",
     supports: {
       multiple: false
     },
@@ -3777,7 +3779,9 @@ function productMetaBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var market = attributes.market,
-          description = attributes.description;
+          description = attributes.description,
+          cta_text = attributes.cta_text,
+          cta_link = attributes.cta_link;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -3794,15 +3798,27 @@ function productMetaBlock() {
       }, /*#__PURE__*/React.createElement(TextControl, {
         value: market,
         onChange: function onChange(value) {
-          updateAttributeValue('market', value);
+          updateAttributeValue("market", value);
         },
         label: "Market:"
       }), /*#__PURE__*/React.createElement(TextControl, {
         value: description,
         onChange: function onChange(value) {
-          updateAttributeValue('description', value);
+          updateAttributeValue("description", value);
         },
         label: "Description:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: cta_text,
+        onChange: function onChange(value) {
+          updateAttributeValue("cta_text", value);
+        },
+        label: "CTA Text:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: cta_link,
+        onChange: function onChange(value) {
+          updateAttributeValue("cta_link", value);
+        },
+        label: "CTA Link:"
       }))))];
     },
     // No information saved to the block
@@ -5391,7 +5407,7 @@ function selectPostBlock(postObject) {
     });
   };
 
-  var stringAttrs = ['post'];
+  var stringAttrs = ["post"];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(stringAttrs);
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-").concat(slug), {
     title: "Select ".concat(single),
@@ -6038,8 +6054,8 @@ function customSectionBlock() {
 
   var attributes = {
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -6071,11 +6087,11 @@ function customSectionBlock() {
           value: title,
           reference: "title",
           tagName: "h2",
-          settings: ['core/bold', 'core/link', 'core/italic', 'core/code'],
+          settings: ["core/bold", "core/link", "core/italic", "core/code"],
           placeholder: "Please provide a title"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-subsection-block"), "core/table", "core/podcast", "core/video", "core/list", "core/quote", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-two"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-three"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/blockquote"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-text"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/jobs-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-figures"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tabbed-content-container-block")]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-subsection-block"), "core/table", "core/shortcode", "core/button", "core/audio", "core/embed-podcast", "core/video", "core/list", "core/quote", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-two"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-three"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/blockquote"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-text"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/jobs-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-figures"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tabbed-content-container-block")]
       }))];
     },
     save: function save(_ref) {
@@ -6120,8 +6136,8 @@ function customSubsectionBlock() {
 
   var attributes = {
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -6151,15 +6167,15 @@ function customSubsectionBlock() {
           updateAttributeValue(attribute, change);
         },
         components: [{
-          label: 'Title',
+          label: "Title",
           value: title,
           reference: "title",
           tagName: "h3",
-          settings: ['core/bold', 'core/link', 'core/italic', 'core/code'],
+          settings: ["core/bold", "core/link", "core/italic", "core/code"],
           placeholder: "Please provide a title"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["core/table", "core/podcast", "core/video", "core/list", "core/quote", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-two"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-three"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/blockquote"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-text"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/jobs-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-figures"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tabbed-content-container-block")]
+        allowedBlocks: ["core/table", "core/button", "core/shortcode", "core/embed-podcast", "core/audio", "core/video", "core/list", "core/quote", "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-two"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-three"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/heading-four"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/blockquote"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/publications-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-text"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/code"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/jobs-container"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/compare-figures"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tabbed-content-container-block")]
       }))];
     },
     save: function save(_ref) {
@@ -7056,12 +7072,12 @@ function tabbedContentPanelBlock() {
 
   var attributes = {
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     content: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -7424,6 +7440,10 @@ function text2UpContainerBlock() {
     colAmount: {
       type: "String",
       default: "default"
+    },
+    cta_text: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -7440,7 +7460,8 @@ function text2UpContainerBlock() {
       var title = attributes.title,
           subtitle = attributes.subtitle,
           bgColour = attributes.bgColour,
-          colAmount = attributes.colAmount;
+          colAmount = attributes.colAmount,
+          cta_text = attributes.cta_text;
       var bgStyles = [{
         label: "Default",
         value: "bg-shade-white-400 text-shade-black-400"
@@ -7525,13 +7546,25 @@ function text2UpContainerBlock() {
             return false;
           }
         }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        components: [{
+          value: cta_text,
+          reference: "cta_text",
+          tagName: "p",
+          classes: ["heading_three"],
+          placeholder: "Please provide CTA anchor text (optional)"
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
       }))];
     },
     save: function save() {
       var title = attributes.title,
           subtite = attributes.subtite,
           bgColour = attributes.bgColour,
-          colAmount = attributes.colAmount;
+          colAmount = attributes.colAmount,
+          cta_text = attributes.cta_text;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -7825,7 +7858,8 @@ __webpack_require__.r(__webpack_exports__);
 (0,_blocks_image_text_strip_block_jsx__WEBPACK_IMPORTED_MODULE_35__["default"])(); // Statistics Content Blocks
 
 (0,_blocks_stats_statistics_container_block_jsx__WEBPACK_IMPORTED_MODULE_54__["default"])();
-(0,_blocks_stats_statistics_block_jsx__WEBPACK_IMPORTED_MODULE_53__["default"])();
+(0,_blocks_stats_statistics_block_jsx__WEBPACK_IMPORTED_MODULE_53__["default"])(); // Locations Blocks
+
 (0,_blocks_locations_location_container_block_jsx__WEBPACK_IMPORTED_MODULE_30__["default"])();
 (0,_blocks_locations_location_block_jsx__WEBPACK_IMPORTED_MODULE_31__["default"])();
 (0,_blocks_locations_location_image_jsx__WEBPACK_IMPORTED_MODULE_32__["default"])();
