@@ -54,7 +54,10 @@ class PG_Allowed_Blocks
 
             // Text 2up
             'text-2-up',
-            'text-2-up-container'
+            'text-2-up-container',
+
+            // Podcast
+            'podcast',
         );
         $this->custom_blocks = array(
             // Callout
@@ -72,6 +75,9 @@ class PG_Allowed_Blocks
             'job-block',
             'jobs-container',
             'select-job',
+
+            // Podcast
+            'podcast',
 
             // Logos
             'logo',
@@ -115,10 +121,14 @@ class PG_Allowed_Blocks
             'core/video',
             'core/list',
             'core/code',
+            'core/audio',
+            'core/shortcode',
             'core/embed-youtube',
         );
         $this->blog_core_blocks = array(
             'core/table',
+            'core/audio',
+            'core/shortcode',
             'core/quote'
         );
         $this->author_blocks = array(

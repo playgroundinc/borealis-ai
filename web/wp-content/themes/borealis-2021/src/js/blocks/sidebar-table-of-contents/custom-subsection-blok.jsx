@@ -48,12 +48,7 @@ export default function customSubsectionBlock() {
                 value: title,
                 reference: "title",
                 tagName: "h3",
-                settings: [
-                  "core/bold",
-                  "core/link",
-                  "core/italic",
-                  "core/code",
-                ],
+                settings: ["core/bold", "core/link", "core/italic", "core/code"],
                 placeholder: "Please provide a title",
               },
             ]}
@@ -65,9 +60,6 @@ export default function customSubsectionBlock() {
               allowedBlocks={[
                 `core/table`,
                 `core/button`,
-                "core/shortcode",
-
-                `core/embed-podcast`,
                 `core/audio`,
                 `core/video`,
                 `core/list`,
@@ -86,6 +78,7 @@ export default function customSubsectionBlock() {
                 `${namespace}/code`,
                 `${namespace}/jobs-container`,
                 `${namespace}/compare-figures`,
+                `${namespace}/podcast`,
                 `${namespace}/tabbed-content-container-block`,
               ]}
             />

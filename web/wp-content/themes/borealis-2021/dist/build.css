@@ -1237,6 +1237,10 @@ ol.footnotes li small{
   margin-top: 32px;
   margin-bottom: 32px;
 }
+.my-5{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .mt-20{
   margin-top: 80px;
 }
@@ -1345,6 +1349,9 @@ ol.footnotes li small{
 .mt-26{
   margin-top: 104px;
 }
+.mr-7{
+  margin-right: 28px;
+}
 .ml-15{
   margin-left: 60px;
 }
@@ -1354,8 +1361,8 @@ ol.footnotes li small{
 .mt-5{
   margin-top: 20px;
 }
-.mr-7{
-  margin-right: 28px;
+.mr-1{
+  margin-right: 4px;
 }
 .block{
   display: block;
@@ -1406,6 +1413,18 @@ ol.footnotes li small{
 }
 .h-18{
   height: 72px;
+}
+.h-2{
+  height: 8px;
+}
+.h-11{
+  height: 44px;
+}
+.h-9{
+  height: 36px;
+}
+.h-10{
+  height: 40px;
 }
 .max-h-screen{
   max-height: 100vh;
@@ -1467,6 +1486,18 @@ ol.footnotes li small{
 .w-42{
   width: 168px;
 }
+.w-9\/12{
+  width: 75%;
+}
+.w-0{
+  width: 0px;
+}
+.w-2\/12{
+  width: 16.666667%;
+}
+.w-11{
+  width: 44px;
+}
 .w-7\/12{
   width: 58.333333%;
 }
@@ -1485,6 +1516,15 @@ ol.footnotes li small{
 .w-22{
   width: 88px;
 }
+.w-3\/12{
+  width: 25%;
+}
+.w-9{
+  width: 36px;
+}
+.w-10{
+  width: 40px;
+}
 .max-w-\[200px\]{
   max-width: 200px;
 }
@@ -1493,6 +1533,9 @@ ol.footnotes li small{
 }
 .max-w-\[450px\]{
   max-width: 450px;
+}
+.max-w-\[180px\]{
+  max-width: 180px;
 }
 .flex-shrink{
   flex-shrink: 1;
@@ -1770,6 +1813,10 @@ ol.footnotes li small{
 .bg-shade-black-400{
   --tw-bg-opacity: 1;
   background-color: rgb(34 39 49 / var(--tw-bg-opacity));
+}
+.bg-shade-grey-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(216 216 228 / var(--tw-bg-opacity));
 }
 .bg-primary-electric-purple-400{
   --tw-bg-opacity: 1;
@@ -2075,6 +2122,9 @@ ol.footnotes li small{
 .pr-3{
   padding-right: 12px;
 }
+.pl-1{
+  padding-left: 4px;
+}
 .text-center{
   text-align: center;
 }
@@ -2178,6 +2228,11 @@ ol.footnotes li small{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.transition-width{
+  transition-property: width;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
 .transition-slider{
   transition-property: left right;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2258,6 +2313,9 @@ ol.footnotes li small{
   .wp-block-embed__wrapper video,
   .wp-block-embed__wrapper iframe {
     max-height: 100%; }
+
+.wp-embedded-audio {
+  display: none; }
 
 .grid-container {
   -moz-column-count: 4;
@@ -2714,6 +2772,25 @@ mjx-container::-webkit-scrollbar-thumb,
       font-size: 14px;
     }
   }
+  .md\:icon--lg{
+    font-size: 24px;
+    font-family: Inter, sans-serif;
+    line-height: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:icon--lg{
+      font-size: calc(24px + ((24 - 24) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:icon--lg{
+      font-size: 24px;
+    }
+  }
   .md\:h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
     margin-top: 12px;
   }
@@ -2827,6 +2904,15 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:mt-3{
     margin-top: 12px;
   }
+    .md\:mt-11{
+    margin-top: 44px;
+  }
+    .md\:mr-7{
+    margin-right: 28px;
+  }
+    .md\:mr-0{
+    margin-right: 0px;
+  }
     .md\:block{
     display: block;
   }
@@ -2838,6 +2924,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:h-auto{
     height: auto;
+  }
+    .md\:h-11{
+    height: 44px;
   }
     .md\:min-h-\[280px\]{
     min-height: 280px;
@@ -2898,6 +2987,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:w-5\/8{
     width: calc((100% / 8) * 5);
+  }
+    .md\:w-11{
+    width: 44px;
   }
     .md\:basis-3\/4{
     flex-basis: 75%;
@@ -3247,6 +3339,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:mb-8{
     margin-bottom: 32px;
   }
+    .tb\:mr-7{
+    margin-right: 28px;
+  }
     .tb\:block{
     display: block;
   }
@@ -3276,6 +3371,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:w-1\/4{
     width: 25%;
+  }
+    .tb\:w-9\/12{
+    width: 75%;
+  }
+    .tb\:w-2\/12{
+    width: 16.666667%;
   }
     .tb\:flex-row{
     flex-direction: row;

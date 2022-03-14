@@ -281,6 +281,11 @@ if (!function_exists('pg_svg_spritemap')) {
                 </g>
             </symbol>
 
+            <!-- Podcast Play Btn -->
+            <symbol id="icon-podcast-play" viewBox="0 0 15 19" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 1.5V17.5L14 9.5L1 1.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </symbol>
+
         </svg>
 <?php
     }
