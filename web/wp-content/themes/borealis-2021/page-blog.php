@@ -50,7 +50,7 @@ get_header();
         endwhile;
     endif;
     ?>
-    <div class="load-more-results">
+    <div class="load-more-results min-h-[400px] md:min-h-[800px]">
         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
         <ul class="posts-listing" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="<?php echo esc_attr($post_type) ?>">
             <?php foreach ($Query->posts as $post) : // Start of Query loop 
