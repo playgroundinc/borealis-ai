@@ -1,17 +1,17 @@
-import { slideToggle }  from "./slide-toggle";
+import { slideToggle } from "./slide-toggle";
 
 export default class Accordion {
     constructor(accordion, trigger, elements, index) {
         this.accordion = accordion;
         this.trigger = trigger;
         this.elements = elements;
-        this.chevron = this.trigger.querySelector('.icon-chevron');
+        this.chevron = this.trigger.querySelector(".icon-chevron");
         this.index = index;
         this.first = null;
         this.last = null;
         this.active = false;
         this.panel = null;
-        this.handleTriggerClick = this.handleTriggerClick.bind(this)
+        this.handleTriggerClick = this.handleTriggerClick.bind(this);
         this.handleArrowControls = this.handleArrowControls.bind(this);
         this.handleWindowResize = this.handleWindowResize.bind(this);
     }
@@ -21,10 +21,10 @@ export default class Accordion {
     }
 
     moveFocus($parent) {
-        $header = $parent.find('.accordion-row__header');
+        $header = $parent.find(".accordion-row__header");
         $header.focus();
     }
-    
+
     handleUpKey() {
         const prevIndex = this.index - 1;
         if (this.elements[prevIndex]) {
@@ -33,15 +33,15 @@ export default class Accordion {
         }
         this.last.focus();
     }
-    
+
     handleEndKey() {
         this.last.focus();
     }
-    
+
     handleHomeKey() {
         this.first.focus();
     }
-    
+
     handleDownKey() {
         const nextIndex = this.index + 1;
         if (this.elements[nextIndex]) {
@@ -51,7 +51,6 @@ export default class Accordion {
         this.first.focus();
     }
 
-    
     handleArrowControls(e) {
         // 38 is up
         if (e.keyCode === 38) {
@@ -73,73 +72,75 @@ export default class Accordion {
             e.preventDefault();
             this.handleHomeKey();
         }
-
     }
 
     clearActiveElement(element) {
         this.getPanel(element);
         slideToggle(this.panel);
-        element.classList.remove('accordion-row--active');
-        element.setAttribute('aria-expanded', false);
-        const chevron = document.getElementById(element.id).getElementsByClassName("icon")[0];
-        chevron.classList.remove('rotate-180');
-        chevron.classList.add('rotate-0');
+        element.classList.remove("accordion-row--active");
+        element.setAttribute("aria-expanded", false);
+        const chevron = document
+            .getElementById(element.id)
+            .getElementsByClassName("icon")[0];
+        chevron.classList.remove("rotate-180");
+        chevron.classList.add("rotate-0");
         this.getPanel(this.trigger);
     }
 
     handleWindowResize() {
-        if (this.panel.classList.contains('slide-toggle--active')) {
-            this.panel.style.maxHeight = 'unset';
+        if (this.panel.classList.contains("slide-toggle--active")) {
+            this.panel.style.maxHeight = "unset";
             const height = this.panel.offsetHeight;
             this.panel.style.maxHeight = `${height}px`;
         }
     }
     handleActiveElements() {
-        const activeElements = [...this.accordion.querySelectorAll('.accordion-row--active')];
+        const activeElements = [
+            ...this.accordion.querySelectorAll(".accordion-row--active"),
+        ];
         if (activeElements && activeElements.length) {
             activeElements.forEach((element) => {
                 this.clearActiveElement(element);
-            })
+            });
         }
     }
-
 
     handleTriggerClick(e) {
         slideToggle(this.panel);
-        if (this.trigger.classList.contains('accordion-row--active')) {
+        if (this.trigger.classList.contains("accordion-row--active")) {
             if (this.chevron) {
-                this.chevron.classList.add('rotate-0');
-                this.chevron.classList.remove('rotate-180');
+                this.chevron.classList.add("rotate-0");
+                this.chevron.classList.remove("rotate-180");
             }
 
-            this.trigger.classList.remove('accordion-row--active');
-            this.trigger.setAttribute('aria-expanded', false);
+            this.trigger.classList.remove("accordion-row--active");
+            this.trigger.setAttribute("aria-expanded", false);
             return;
-        } 
+        }
         this.handleActiveElements();
         if (this.chevron) {
-            this.chevron.classList.add('rotate-180');
-            this.chevron.classList.remove('rotate-0');
+            this.chevron.classList.add("rotate-180");
+            this.chevron.classList.remove("rotate-0");
         }
-        this.trigger.setAttribute('aria-expanded', true);
-        this.trigger.classList.add('accordion-row--active');
+        this.trigger.setAttribute("aria-expanded", true);
+        this.trigger.classList.add("accordion-row--active");
     }
 
     getPanel(element) {
-        const panelId = element.getAttribute('aria-controls');
+        const panelId = element.getAttribute("aria-controls");
         const panel = document.getElementById(`${panelId}`);
-        this.setState('panel', panel);
+        this.setState("panel", panel);
     }
 
     getFirst() {
         const first = this.elements[0];
-        this.setState('first', first);
+        this.setState("first", first);
     }
 
     getLast() {
         const index = this.elements.length - 1;
         const last = this.elements[index];
-        this.setState('last', last);
+        this.setState("last", last);
     }
     getRelatedElements() {
         this.getPanel(this.trigger);
@@ -149,8 +150,8 @@ export default class Accordion {
 
     addTriggerClickHandlers() {
         this.getRelatedElements();
-        this.trigger.addEventListener('click', this.handleTriggerClick);
-        this.trigger.addEventListener('keydown', this.handleArrowControls);
-        window.addEventListener('resize', this.handleWindowResize);
+        this.trigger.addEventListener("click", this.handleTriggerClick);
+        this.trigger.addEventListener("keydown", this.handleArrowControls);
+        window.addEventListener("resize", this.handleWindowResize);
     }
 }

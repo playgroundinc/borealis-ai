@@ -3,22 +3,24 @@ var __webpack_exports__ = {};
 /*!*************************************!*\
   !*** ./src/js/scripts/blogShare.js ***!
   \*************************************/
-function blogShare() {
-  const btn = document.getElementById('blog-share');
-  const modal = document.getElementById('share-modal');
+function blogShare(sidebar) {
+  const btn = sidebar.querySelector(".blog-share"); //class now
+
+  const modal = sidebar.querySelector(".share-modal");
 
   const toggleShareModal = () => {
-    if (modal.classList.contains('hidden')) {
-      modal.classList.remove('hidden');
+    if (modal.classList.contains("hidden")) {
+      modal.classList.remove("hidden");
     } else {
-      modal.classList.add('hidden');
+      modal.classList.add("hidden");
     }
   };
 
-  btn.addEventListener('click', toggleShareModal);
+  btn.addEventListener("click", toggleShareModal);
 }
 
-blogShare();
+const blogshareContainers = document.querySelectorAll(".sidebar");
+blogshareContainers.forEach(blogshareContainer => blogShare(blogshareContainer));
 /******/ })()
 ;
 //# sourceMappingURL=blogShare.js.map
