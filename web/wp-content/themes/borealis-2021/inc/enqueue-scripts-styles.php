@@ -53,6 +53,14 @@ if (!function_exists('pg_gallery_script')) {
     }
 }
 
+if (!function_exists('pg_podcast_script')) {
+    function pg_podcast_script()
+    {
+        wp_enqueue_script('podcast', get_template_directory_uri() . '/dist/podcast.js', array(), '20151215', true);
+    }
+}
+
+
 
 if (!function_exists('pg_threejs_scripts')) {
     /**
@@ -116,8 +124,10 @@ function pg_wp_starter_scripts()
     pg_tabbed_content_script();
     pg_main_search_script();
     pg_blog_modal_script();
+    pg_blog_share_script();
     pg_location_modal_script();
     pg_gallery_script();
+    pg_podcast_script();
 }
 add_action('wp_enqueue_scripts', 'pg_wp_starter_scripts');
 

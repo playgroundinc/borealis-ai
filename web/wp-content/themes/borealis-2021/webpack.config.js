@@ -19,6 +19,7 @@ const entry = {
     build: ["@babel/polyfill", JS_DIR + "/main.js"],
     gutenberg: JS_DIR + "/gutenberg.js",
     shader: JS_DIR + "/scripts/shader.js",
+    podcast: JS_DIR + "/scripts/podcast.js",
     tabbedContent: JS_DIR + "/scripts/tabbed-content.js",
     carousel: JS_DIR + "/scripts/carousel.js",
     mainSearch: JS_DIR + "/scripts/main-search.js",

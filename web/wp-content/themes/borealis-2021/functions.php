@@ -151,6 +151,9 @@ require get_template_directory() . '/inc/gutenberg/figures/render-compare-figure
 // Gallery
 require get_template_directory() . '/inc/gutenberg/gallery/render-gallery-container-block.php';
 
+// Podcast
+require get_template_directory() . '/inc/gutenberg/podcast/render-podcast-block.php';
+
 // Logo Blocks
 require get_template_directory() . '/inc/gutenberg/logos/render-logos-container.php';
 require get_template_directory() . '/inc/gutenberg/logos/render-logos-subsection.php';
