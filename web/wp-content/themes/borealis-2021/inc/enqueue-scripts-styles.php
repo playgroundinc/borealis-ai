@@ -124,6 +124,7 @@ function pg_wp_starter_scripts()
     pg_tabbed_content_script();
     pg_main_search_script();
     pg_blog_modal_script();
+    pg_blog_share_script();
     pg_location_modal_script();
     pg_gallery_script();
     pg_podcast_script();
