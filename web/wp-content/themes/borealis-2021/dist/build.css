@@ -2848,6 +2848,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:min-h-\[280px\]{
     min-height: 280px;
   }
+    .md\:min-h-\[800px\]{
+    min-height: 800px;
+  }
     .md\:min-h-\[500px\]{
     min-height: 500px;
   }
