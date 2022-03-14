@@ -46,12 +46,7 @@ export default function customSectionBlock() {
                 value: title,
                 reference: "title",
                 tagName: "h2",
-                settings: [
-                  "core/bold",
-                  "core/link",
-                  "core/italic",
-                  "core/code",
-                ],
+                settings: ["core/bold", "core/link", "core/italic", "core/code"],
                 placeholder: "Please provide a title",
               },
             ]}
@@ -63,11 +58,8 @@ export default function customSectionBlock() {
               allowedBlocks={[
                 `${namespace}/custom-subsection-block`,
                 `core/table`,
-                "core/shortcode",
-
                 `core/button`,
                 `core/audio`,
-                `core/embed-podcast`,
                 `core/video`,
                 `core/list`,
                 `core/quote`,
@@ -84,6 +76,7 @@ export default function customSectionBlock() {
                 `${namespace}/compare-code`,
                 `${namespace}/code`,
                 `${namespace}/jobs-container`,
+                `${namespace}/podcast`,
                 `${namespace}/compare-figures`,
                 `${namespace}/tabbed-content-container-block`,
               ]}
