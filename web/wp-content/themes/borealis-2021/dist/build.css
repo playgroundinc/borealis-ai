@@ -2503,8 +2503,17 @@ mjx-container::-webkit-scrollbar-thumb,
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
 
+.focus\:outline-none:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .focus\:outline-0:focus{
   outline-width: 0px;
+}
+
+.focus\:outline-4:focus{
+  outline-width: 4px;
 }
 
 .disabled\:text-shade-grey-400:disabled{
