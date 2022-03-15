@@ -39,12 +39,12 @@ function locationModal(locationContainer) {
     }, 750);
 
     const openModal = (el, target) => {
-        classToggle(el, ["opacity-0"], ["opacity-1", "z-20"]);
+        classToggle(el, ["opacity-0", "-z-10"], ["opacity-1", "z-20"]);
         target !== null && classToggle(target, ["z-10"], ["z-30"]);
     };
 
     const closeModal = (el, target) => {
-        classToggle(el, ["opacity-1", "z-20"], ["opacity-0"]);
+        classToggle(el, ["opacity-1", "z-20"], ["opacity-0", "-z-10"]);
         target !== null && classToggle(target, ["z-30"], ["z-10"]);
     };
 

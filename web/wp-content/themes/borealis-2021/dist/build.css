@@ -1223,6 +1223,9 @@ ol.footnotes li small{
 .z-0{
   z-index: 0;
 }
+.-z-0{
+  z-index: 0;
+}
 .m-auto{
   margin: auto;
 }
@@ -1650,9 +1653,6 @@ ol.footnotes li small{
 }
 .overflow-scroll{
   overflow: scroll;
-}
-.overflow-y-scroll{
-  overflow-y: scroll;
 }
 .scroll-smooth{
   scroll-behavior: smooth;
