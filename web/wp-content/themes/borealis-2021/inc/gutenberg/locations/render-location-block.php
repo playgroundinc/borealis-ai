@@ -68,7 +68,7 @@ if (!function_exists('pg_render_locations_block')) {
                     </div>
                 </div>
                 <?php if (!empty($video)) : ?>
-                    <div aria-modal="true" id="video-modal" class="w-full h-full fixed m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out delay-150">
+                    <div aria-modal="true" id="video-modal" class="w-full h-full fixed m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out delay-150 -z-10">
                         <div class="container m-auto">
                             <video tabindex="-1" class="w-full h-full z-30 py-28 md:py-24 max-h-screen" loop muted autoplay playsinline>
                                 <source src="<?php echo esc_url_raw($video); ?>" type="video/mp4">
@@ -78,7 +78,7 @@ if (!function_exists('pg_render_locations_block')) {
                     </div>
                 <?php endif; ?>
                 <?php if (!empty($block['innerBlocks'])) : ?>
-                    <div aria-hidden="true" aria-modal="true" id="img-modal" class="px-6 w-full h-full fixed m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out delay-150">
+                    <div aria-hidden="true" aria-modal="true" id="img-modal" class="px-6 w-full h-full fixed m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out delay-150 -z-10">
                         <div id="image-slideshow" class="grid-container w-full relative mt-26">
                             <?php foreach ($block['innerBlocks'] as $key => $inner_block) : ?>
                                 <div id="image<?php echo $key + 1 ?>" class="image-slideshow opacity-0">
