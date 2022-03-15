@@ -21,12 +21,8 @@ function locationModal(locationContainer) {
 
     const getRandomImage = () => {
         if (imageSlideShow) {
-            const randomNum = parseInt(
-                Math.random() * imageSlideShow.childElementCount
-            );
-            const selectImg = locationContainer.querySelector(
-                `#image${randomNum + 1}`
-            );
+            const randomNum = parseInt(Math.random() * imageSlideShow.childElementCount);
+            const selectImg = locationContainer.querySelector(`#image${randomNum + 1}`);
             const images = locationContainer.querySelectorAll(`.image-slideshow`);
             images.forEach((image) => {
                 classToggle(image, ["opacity-1"], ["opacity-0"]);
@@ -45,31 +41,30 @@ function locationModal(locationContainer) {
     const openModal = (el, target) => {
         classToggle(el, ["opacity-0"], ["opacity-1", "z-20"]);
         target !== null && classToggle(target, ["z-10"], ["z-30"]);
-        classToggle(containerHTML, [], ["w-full", "fixed", "overflow-y-scroll"]);
+        if (el.id === "video-modal") {
+            classToggle(containerHTML, [], ["w-full", "fixed", "overflow-y-scroll"]);
+        }
     };
 
     const closeModal = (el, target) => {
         classToggle(el, ["opacity-1", "z-20"], ["opacity-0"]);
         target !== null && classToggle(target, ["z-30"], ["z-10"]);
-        classToggle(containerHTML, ["w-full", "fixed", "overflow-y-scroll"], []);
+        if (el.id === "video-modal") {
+            classToggle(containerHTML, ["w-full", "fixed", "overflow-y-scroll"], []);
+        }
     };
 
     if (openImage) {
         if (!("ontouchend" in document.documentElement)) {
-            openImage.addEventListener("mouseover", () =>
-                openModal(imageModal, openImage)
-            );
+            openImage.addEventListener("mouseenter", () => openModal(imageModal, openImage));
             openImage.addEventListener("keydown", (event) => {
                 if (event.key === " " || event.key === "Enter") {
                     openModal(imageModal, openImage);
                 } else if (event.key === "Escape") {
-                    console.log(event.key === "Escape");
                     closeModal(imageModal, openImage);
                 }
             });
-            openImage.addEventListener("mouseleave", () =>
-                closeModal(imageModal, openImage)
-            );
+            openImage.addEventListener("mouseleave", () => closeModal(imageModal, openImage));
         } else {
             openImage.addEventListener("touchend", (e) => {
                 openModal(imageModal, null);
@@ -87,13 +82,9 @@ function locationModal(locationContainer) {
                 closeModal(videoModal, openVideo);
             }
         });
-        videoModal.addEventListener("click", () =>
-            closeModal(videoModal, openVideo)
-        );
+        videoModal.addEventListener("click", () => closeModal(videoModal, openVideo));
     }
 }
 
 const locationContainers = document.querySelectorAll(".location-container");
-locationContainers.forEach((locationContainer) =>
-    locationModal(locationContainer)
-);
+locationContainers.forEach((locationContainer) => locationModal(locationContainer));
