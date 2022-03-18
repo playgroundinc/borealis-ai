@@ -1211,19 +1211,16 @@ ol.footnotes li small{
 .z-40{
   z-index: 40;
 }
+.-z-10{
+  z-index: -10;
+}
 .z-30{
   z-index: 30;
 }
 .z-20{
   z-index: 20;
 }
-.-z-10{
-  z-index: -10;
-}
 .z-0{
-  z-index: 0;
-}
-.-z-0{
   z-index: 0;
 }
 .m-auto{
@@ -1425,6 +1422,9 @@ ol.footnotes li small{
 }
 .h-9{
   height: 36px;
+}
+.h-8{
+  height: 32px;
 }
 .max-h-screen{
   max-height: 100vh;
@@ -1653,6 +1653,9 @@ ol.footnotes li small{
 }
 .overflow-scroll{
   overflow: scroll;
+}
+.overflow-x-scroll{
+  overflow-x: scroll;
 }
 .scroll-smooth{
   scroll-behavior: smooth;
@@ -2089,6 +2092,9 @@ ol.footnotes li small{
 .pb-11{
   padding-bottom: 44px;
 }
+.pr-12{
+  padding-right: 48px;
+}
 .pl-12{
   padding-left: 48px;
 }
@@ -2273,6 +2279,10 @@ ol.footnotes li small{
 }
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
+}
+
+.wp-block-video video{
+  border-radius: 10px;
 }
 
 .wp-block-video,
@@ -3040,6 +3050,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:overflow-auto{
     overflow: auto;
   }
+    .md\:overflow-hidden{
+    overflow: hidden;
+  }
     .md\:rounded-b-none{
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -3203,6 +3216,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pb-20{
     padding-bottom: 80px;
   }
+    .md\:pb-7{
+    padding-bottom: 28px;
+  }
     .md\:pt-8{
     padding-top: 32px;
   }
@@ -3340,6 +3356,12 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:mb-8{
     margin-bottom: 32px;
   }
+    .tb\:-mt-14{
+    margin-top: -56px;
+  }
+    .tb\:mb-5{
+    margin-bottom: 20px;
+  }
     .tb\:block{
     display: block;
   }
@@ -3348,6 +3370,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:hidden{
     display: none;
+  }
+    .tb\:min-h-\[350px\]{
+    min-height: 350px;
   }
     .tb\:w-8\/12{
     width: 66.666667%;
@@ -3388,6 +3413,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:w-1\/4{
     width: 25%;
   }
+    .tb\:w-5\/12{
+    width: 41.666667%;
+  }
     .tb\:w-2\/5{
     width: 40%;
   }
@@ -3397,8 +3425,21 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:items-end{
     align-items: flex-end;
   }
+    .tb\:items-center{
+    align-items: center;
+  }
     .tb\:justify-end{
     justify-content: flex-end;
+  }
+    .tb\:justify-center{
+    justify-content: center;
+  }
+    .tb\:overflow-x-scroll{
+    overflow-x: scroll;
+  }
+    .tb\:py-20{
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
     .tb\:pt-6{
     padding-top: 24px;
@@ -3423,6 +3464,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:pt-130{
     padding-top: 520px;
+  }
+    .tb\:pt-20{
+    padding-top: 80px;
   }
     .tb\:container{
     margin: 0 auto;
@@ -3475,6 +3519,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:mr-16{
     margin-right: 64px;
   }
+    .lg\:-mt-11{
+    margin-top: -44px;
+  }
     .lg\:flex{
     display: flex;
   }
@@ -3495,6 +3542,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:w-full-bleed{
     width: calc(((1440px / 12) * 4) + ((100vw - 1440px) / 2));
+  }
+    .lg\:w-4\/12{
+    width: 33.333333%;
   }
     .lg\:basis-1\/5{
     flex-basis: 20%;
@@ -3519,6 +3569,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:justify-between{
     justify-content: space-between;
+  }
+    .lg\:overflow-hidden{
+    overflow: hidden;
   }
     .lg\:px-0{
     padding-left: 0px;

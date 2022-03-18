@@ -157,6 +157,10 @@
   }
 }
 
+.wp-block-video video {
+  @apply rounded-large;
+}
+
 .wp-block-video,
 .wp-block-embed,
 .wp-block-embed__wrapper {

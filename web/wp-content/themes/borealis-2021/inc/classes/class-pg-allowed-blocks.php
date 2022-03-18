@@ -52,6 +52,10 @@ class PG_Allowed_Blocks
             'tabbed-content-container-block',
             'tabbed-content-panel-block',
 
+            // Video Tabbed Content
+            'video-tabbed-content-container-block',
+            'video-tabbed-content-panel-block',
+
             // Text 2up
             'text-2-up',
             'text-2-up-container',
