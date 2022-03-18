@@ -1364,6 +1364,33 @@ ol.footnotes li small{
 .mr-7{
   margin-right: 28px;
 }
+.-mt-8{
+  margin-top: -32px;
+}
+.-mt-10{
+  margin-top: -40px;
+}
+.-mt-12{
+  margin-top: -48px;
+}
+.-mt-13{
+  margin-top: -52px;
+}
+.mb-14{
+  margin-bottom: 56px;
+}
+.-mt-19{
+  margin-top: -76px;
+}
+.-mt-9{
+  margin-top: -36px;
+}
+.-mt-14{
+  margin-top: -56px;
+}
+.-mt-11{
+  margin-top: -44px;
+}
 .block{
   display: block;
 }
@@ -1423,6 +1450,9 @@ ol.footnotes li small{
 .h-9{
   height: 36px;
 }
+.h-8{
+  height: 32px;
+}
 .max-h-screen{
   max-height: 100vh;
 }
@@ -1438,6 +1468,9 @@ ol.footnotes li small{
 .max-h-15{
   max-height: 60px;
 }
+.max-h-\[250px\]{
+  max-height: 250px;
+}
 .min-h-\[125px\]{
   min-height: 125px;
 }
@@ -1446,6 +1479,18 @@ ol.footnotes li small{
 }
 .min-h-\[224px\]{
   min-height: 224px;
+}
+.min-h-\[350px\]{
+  min-height: 350px;
+}
+.min-h-\[435px\]{
+  min-height: 435px;
+}
+.min-h-\[\]{
+  min-height: ;
+}
+.min-h-\[250px\]{
+  min-height: 250px;
 }
 .w-full{
   width: 100%;
@@ -1498,6 +1543,9 @@ ol.footnotes li small{
 .w-1\/2{
   width: 50%;
 }
+.w-4\/12{
+  width: 33.333333%;
+}
 .w-6{
   width: 24px;
 }
@@ -1506,6 +1554,9 @@ ol.footnotes li small{
 }
 .w-22{
   width: 88px;
+}
+.w-5\/12{
+  width: 41.666667%;
 }
 .max-w-\[200px\]{
   max-width: 200px;
@@ -1650,6 +1701,9 @@ ol.footnotes li small{
 }
 .overflow-scroll{
   overflow: scroll;
+}
+.overflow-x-scroll{
+  overflow-x: scroll;
 }
 .overflow-y-scroll{
   overflow-y: scroll;
@@ -1924,6 +1978,10 @@ ol.footnotes li small{
   padding-top: 48px;
   padding-bottom: 48px;
 }
+.py-20{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
 .pt-13{
   padding-top: 52px;
 }
@@ -2107,6 +2165,39 @@ ol.footnotes li small{
 .pl-1{
   padding-left: 4px;
 }
+.pt-19{
+  padding-top: 76px;
+}
+.pr-5{
+  padding-right: 20px;
+}
+.pr-20{
+  padding-right: 80px;
+}
+.pr-24{
+  padding-right: 96px;
+}
+.pb-19{
+  padding-bottom: 76px;
+}
+.pt-20{
+  padding-top: 80px;
+}
+.pr-0{
+  padding-right: 0px;
+}
+.pr-12{
+  padding-right: 48px;
+}
+.pt-0{
+  padding-top: 0px;
+}
+.pb-12{
+  padding-bottom: 48px;
+}
+.pb-2{
+  padding-bottom: 8px;
+}
 .text-center{
   text-align: center;
 }
@@ -2273,6 +2364,10 @@ ol.footnotes li small{
 }
 .\[https\:\/\/pantheon\.io\/docs\/ssh-keys\]{
   https: //pantheon.io/docs/ssh-keys;
+}
+
+.wp-block-video video{
+  border-radius: 10px;
 }
 
 .wp-block-video,
@@ -3040,6 +3135,12 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:overflow-auto{
     overflow: auto;
   }
+    .md\:overflow-hidden{
+    overflow: hidden;
+  }
+    .md\:overflow-x-scroll{
+    overflow-x: scroll;
+  }
     .md\:rounded-b-none{
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
@@ -3218,6 +3319,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pb-4{
     padding-bottom: 16px;
   }
+    .md\:pb-7{
+    padding-bottom: 28px;
+  }
     .md\:text-left{
     text-align: left;
   }
@@ -3340,6 +3444,24 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:mb-8{
     margin-bottom: 32px;
   }
+    .tb\:-mt-11{
+    margin-top: -44px;
+  }
+    .tb\:mb-5{
+    margin-bottom: 20px;
+  }
+    .tb\:-mt-15{
+    margin-top: -60px;
+  }
+    .tb\:-mt-13{
+    margin-top: -52px;
+  }
+    .tb\:-mt-14{
+    margin-top: -56px;
+  }
+    .tb\:-mt-1{
+    margin-top: -4px;
+  }
     .tb\:block{
     display: block;
   }
@@ -3348,6 +3470,18 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:hidden{
     display: none;
+  }
+    .tb\:min-h-\[435px\]{
+    min-height: 435px;
+  }
+    .tb\:min-h-\[35px\]{
+    min-height: 35px;
+  }
+    .tb\:min-h-\[350px\]{
+    min-height: 350px;
+  }
+    .tb\:min-h-\[300px\]{
+    min-height: 300px;
   }
     .tb\:w-8\/12{
     width: 66.666667%;
@@ -3391,14 +3525,36 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:w-2\/5{
     width: 40%;
   }
+    .tb\:w-5\/12{
+    width: 41.666667%;
+  }
     .tb\:flex-row{
     flex-direction: row;
+  }
+    .tb\:flex-wrap{
+    flex-wrap: wrap;
   }
     .tb\:items-end{
     align-items: flex-end;
   }
+    .tb\:items-center{
+    align-items: center;
+  }
     .tb\:justify-end{
     justify-content: flex-end;
+  }
+    .tb\:justify-center{
+    justify-content: center;
+  }
+    .tb\:justify-between{
+    justify-content: space-between;
+  }
+    .tb\:overflow-x-scroll{
+    overflow-x: scroll;
+  }
+    .tb\:py-20{
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
     .tb\:pt-6{
     padding-top: 24px;
@@ -3423,6 +3579,15 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:pt-130{
     padding-top: 520px;
+  }
+    .tb\:pt-11{
+    padding-top: 44px;
+  }
+    .tb\:pt-20{
+    padding-top: 80px;
+  }
+    .tb\:pr-4{
+    padding-right: 16px;
   }
     .tb\:container{
     margin: 0 auto;
@@ -3475,6 +3640,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:mr-16{
     margin-right: 64px;
   }
+    .lg\:-mt-11{
+    margin-top: -44px;
+  }
     .lg\:flex{
     display: flex;
   }
@@ -3496,6 +3664,12 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:w-full-bleed{
     width: calc(((1440px / 12) * 4) + ((100vw - 1440px) / 2));
   }
+    .lg\:w-7\/12{
+    width: 58.333333%;
+  }
+    .lg\:w-4\/12{
+    width: 33.333333%;
+  }
     .lg\:basis-1\/5{
     flex-basis: 20%;
   }
@@ -3514,11 +3688,28 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:basis-1\/4{
     flex-basis: 25%;
   }
+    .lg\:flex-row{
+    flex-direction: row;
+  }
+    .lg\:justify-end{
+    justify-content: flex-end;
+  }
     .lg\:justify-center{
     justify-content: center;
   }
     .lg\:justify-between{
     justify-content: space-between;
+  }
+    @media (min-width: 1440px){
+    .lg\:lg\:justify-between{
+      justify-content: space-between;
+    }
+  }
+    .lg\:overflow-hidden{
+    overflow: hidden;
+  }
+    .lg\:overflow-x-scroll{
+    overflow-x: scroll;
   }
     .lg\:px-0{
     padding-left: 0px;
@@ -3554,6 +3745,12 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:pt-8{
     padding-top: 32px;
   }
+    .lg\:pr-24{
+    padding-right: 96px;
+  }
+    .lg\:pr-12{
+    padding-right: 48px;
+  }
     .lg\:container{
     margin: 0 auto;
     max-width: 1440px;
@@ -3586,6 +3783,14 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:nth-child-5\:mt-6:nth-child(n + 5){
     margin-top: 24px;
+  }
+}
+
+@media (min-width: 1000px){
+  @media (min-width: 1440px){
+    .tb\:lg\:min-h-\[435px\]{
+      min-height: 435px;
+    }
   }
 }
 
