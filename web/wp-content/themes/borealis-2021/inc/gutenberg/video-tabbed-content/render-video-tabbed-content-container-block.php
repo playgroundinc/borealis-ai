@@ -129,7 +129,7 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                         <?php endforeach; ?>
                     </div>
                     <div class="flex justify-end">
-                        <div class="flex justify-start tb:justify-center items-start overflow-x-scroll md:overflow-hidden tb:overflow-x-scroll lg:overflow-hidden w-full tb:w-7/12 mb-11 tb:mb-5" role="tablist" aria-orientation="horizontal">
+                        <div class="flex justify-start lg:justify-center items-start overflow-x-scroll md:overflow-hidden tb:overflow-x-scroll lg:overflow-hidden w-full tb:w-7/12 mb-11 tb:mb-5" role="tablist" aria-orientation="horizontal">
                             <?php foreach ($block['innerBlocks'] as $inner_block => $element) : ?>
                                 <?php
                                 $fields = array(
