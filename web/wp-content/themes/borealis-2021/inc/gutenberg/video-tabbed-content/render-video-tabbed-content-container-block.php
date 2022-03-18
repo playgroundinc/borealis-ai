@@ -42,6 +42,7 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
             'title' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
+        $title = $attributes->title;
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
 ?>
@@ -69,11 +70,14 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                             <?php if ($inner_block === key($block['innerBlocks'])) : ?>
                                 <div class="flex justify-between flex-col tb:flex-row w-full cursor-default" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
                                     <div class="w-full tb:w-5/12 lg:w-4/12 tb:-mt-14 lg:-mt-11 pr-12">
+                                        <?php if (!empty($title)) : ?>
+                                            <h2 id="<?php echo esc_html($title) ?>" class="h3"><?php echo esc_html($title) ?></h2>
+                                        <?php endif; ?>
                                         <?php if (!empty($attributes->title)) : ?>
-                                            <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3"><?php echo esc_html($attributes->title) ?></h2>
+                                            <h2 id="<?php echo esc_html($attributes->title) ?>" class="h4 pt-10 tb:pt-20"><?php echo esc_html($attributes->title) ?></h2>
                                         <?php endif; ?>
                                         <?php if (!empty($attributes->copy)) : ?>
-                                            <p class="paragraph pt-10 tb:pt-20"><?php echo esc_html($attributes->copy) ?></p>
+                                            <p class="paragraph"><?php echo esc_html($attributes->copy) ?></p>
                                         <?php endif; ?>
                                         <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0) : ?>
                                             <div class="md:flex justify-between flex-wrap flex-col tb:flex-row md:pb-7 tb:items-center pt-11">
@@ -95,11 +99,14 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                             <?php else : ?>
                                 <div class="flex hidden justify-between flex-col tb:flex-row w-full cursor-default" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
                                     <div class="w-full tb:w-5/12 lg:w-4/12 tb:-mt-14 lg:-mt-11 pr-12">
+                                        <?php if (!empty($title)) : ?>
+                                            <h2 id="<?php echo esc_html($title) ?>" class="h3"><?php echo esc_html($title) ?></h2>
+                                        <?php endif; ?>
                                         <?php if (!empty($attributes->title)) : ?>
-                                            <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3"><?php echo esc_html($attributes->title) ?></h2>
+                                            <h2 id="<?php echo esc_html($attributes->title) ?>" class="h4 pt-10 tb:pt-20"><?php echo esc_html($attributes->title) ?></h2>
                                         <?php endif; ?>
                                         <?php if (!empty($attributes->copy)) : ?>
-                                            <p class="paragraph pt-10 tb:pt-20"><?php echo esc_html($attributes->copy) ?></p>
+                                            <p class="paragraph"><?php echo esc_html($attributes->copy) ?></p>
                                         <?php endif; ?>
                                         <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0) : ?>
                                             <div class="md:flex justify-between flex-wrap flex-col tb:flex-row md:pb-7 tb:items-center pt-11">
