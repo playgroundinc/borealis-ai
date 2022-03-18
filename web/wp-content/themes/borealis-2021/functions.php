@@ -87,7 +87,6 @@ require get_template_directory() . '/inc/partials/search-bar-jobs.php';
 require get_template_directory() . '/inc/partials/search-bar-main.php';
 require get_template_directory() . '/inc/partials/search-bar-main-result.php';
 
-
 // Partials - Blogs
 require get_template_directory() . '/inc/partials/blog/blog-sidebar.php';
 require get_template_directory() . '/inc/partials/blog/blog-header.php';
@@ -201,6 +200,10 @@ require get_template_directory() . '/inc/gutenberg/icon-list/render-icon-list-it
 // Tabbed Content Blocks
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-container-block.php';
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-panel-block.php';
+
+// Video Tabbed Content Blocks
+require get_template_directory() . '/inc/gutenberg/video-tabbed-content/render-video-tabbed-content-container-block.php';
+require get_template_directory() . '/inc/gutenberg/video-tabbed-content/render-video-tabbed-content-panel-block.php';
 
 // Tag Cloud Blocks
 require get_template_directory() . '/inc/gutenberg/tag-cloud/render-tag-cloud-container-block.php';
