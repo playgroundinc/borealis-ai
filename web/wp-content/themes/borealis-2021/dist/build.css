@@ -1211,14 +1211,14 @@ ol.footnotes li small{
 .z-40{
   z-index: 40;
 }
+.-z-10{
+  z-index: -10;
+}
 .z-30{
   z-index: 30;
 }
 .z-20{
   z-index: 20;
-}
-.-z-10{
-  z-index: -10;
 }
 .z-0{
   z-index: 0;
@@ -1656,9 +1656,6 @@ ol.footnotes li small{
 }
 .overflow-x-scroll{
   overflow-x: scroll;
-}
-.overflow-y-scroll{
-  overflow-y: scroll;
 }
 .scroll-smooth{
   scroll-behavior: smooth;

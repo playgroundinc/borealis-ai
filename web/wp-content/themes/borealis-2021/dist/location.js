@@ -46,25 +46,22 @@ function locationModal(locationContainer) {
   }, 750);
 
   const openModal = (el, target) => {
-    classToggle(el, ["opacity-0"], ["opacity-1", "z-20"]);
+    classToggle(el, ["opacity-0", "-z-10"], ["opacity-1", "z-20"]);
     target !== null && classToggle(target, ["z-10"], ["z-30"]);
-    classToggle(containerHTML, [], ["w-full", "fixed", "overflow-y-scroll"]);
   };
 
   const closeModal = (el, target) => {
-    classToggle(el, ["opacity-1", "z-20"], ["opacity-0"]);
+    classToggle(el, ["opacity-1", "z-20"], ["opacity-0", "-z-10"]);
     target !== null && classToggle(target, ["z-30"], ["z-10"]);
-    classToggle(containerHTML, ["w-full", "fixed", "overflow-y-scroll"], []);
   };
 
   if (openImage) {
     if (!("ontouchend" in document.documentElement)) {
-      openImage.addEventListener("mouseover", () => openModal(imageModal, openImage));
+      openImage.addEventListener("mouseenter", () => openModal(imageModal, openImage));
       openImage.addEventListener("keydown", event => {
         if (event.key === " " || event.key === "Enter") {
           openModal(imageModal, openImage);
         } else if (event.key === "Escape") {
-          console.log(event.key === "Escape");
           closeModal(imageModal, openImage);
         }
       });
