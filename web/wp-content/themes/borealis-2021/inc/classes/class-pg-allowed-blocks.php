@@ -141,7 +141,7 @@ class PG_Allowed_Blocks
             'core/table',
             'core/audio',
             'core/shortcode',
-            'core/quote'
+            'core/quote',
         );
         $this->author_blocks = array(
             $this->namespace . '/author-meta-block',

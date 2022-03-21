@@ -42,8 +42,8 @@ if (!function_exists('pg_render_image_row_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="custom-component component-dark animated-element my-10">
-            <div aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="flex flex-col md:flex-row justify-between gap-6">
+        <div class="custom-component component-dark animated-element container">
+            <div aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="flex flex-col md:flex-row justify-between gap-6 my-10">
                 <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
                     <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
                 <?php endforeach; ?>
