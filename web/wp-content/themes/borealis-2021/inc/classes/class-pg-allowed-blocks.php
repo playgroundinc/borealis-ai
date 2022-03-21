@@ -19,6 +19,9 @@ class PG_Allowed_Blocks
             'accordion',
             'accordion-row',
 
+            // Blockquote
+            'blockquote',
+
             // Code
             'code',
             'compare-code',
@@ -64,6 +67,9 @@ class PG_Allowed_Blocks
             'podcast',
         );
         $this->custom_blocks = array(
+            // Blockquote
+            'blockquote',
+
             // Callout
             'callout-column',
             'callout-container',
