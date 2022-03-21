@@ -23,7 +23,6 @@ if (!function_exists('pg_render_featured_post')) {
         if (!$image) {
             $image = get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg';
         }
-        var_dump($full);
         ob_start();
 ?>
         <a href="<?php echo esc_url_raw($url) ?>" class="block pt-12 md:flex flex-col grow">
