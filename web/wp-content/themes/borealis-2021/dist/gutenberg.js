@@ -2684,6 +2684,182 @@ function imageBlock() {
 
 /***/ }),
 
+/***/ "./src/js/blocks/image-row/image-row-block.jsx":
+/*!*****************************************************!*\
+  !*** ./src/js/blocks/image-row/image-row-block.jsx ***!
+  \*****************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ imageRowBlock; }
+/* harmony export */ });
+/* harmony import */ var _helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants.js */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+// Helpers
+ // Reusable
+
+
+
+function imageRowBlock() {
+  /**
+   * GUTENBERG BLOCK - Image Row Block
+   */
+  var _wp$blocks = wp.blocks,
+      registerBlockType = _wp$blocks.registerBlockType,
+      createBlock = _wp$blocks.createBlock;
+  var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var ToggleControl = wp.components.ToggleControl;
+  var _wp = wp,
+      i18n = _wp.i18n;
+  var slug = "image-row-block";
+  var title = "Image Row Block";
+  var description = "An Image Row Block";
+  var category = "page-strips";
+  var icon = "format-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+
+  var attributes = {
+    image_id: {
+      type: "Number",
+      default: 0
+    },
+    image_alt: {
+      type: "String",
+      default: ""
+    },
+    image_url: {
+      type: "String",
+      default: ""
+    }
+  };
+  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
+    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
+    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
+    category: category,
+    icon: icon,
+    attributes: attributes,
+    parent: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-row-container")],
+    edit: function edit(props) {
+      var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var setAttributes = props.setAttributes,
+          attributes = props.attributes;
+      var image_alt = attributes.image_alt,
+          image_id = attributes.image_id,
+          image_url = attributes.image_url;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
+
+      return [/*#__PURE__*/React.createElement("section", {
+        class: "custom-child"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "block-title"
+      }, "Image Row Block"), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        components: [{
+          value: image_url,
+          reference: "image_url",
+          altValue: image_alt,
+          altReference: "image_alt",
+          idValue: image_id,
+          idReference: "image_id",
+          buttonText: "Add an image"
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }))];
+    },
+    save: function save(_ref) {
+      var attributes = _ref.attributes;
+      var image_url = attributes.image_url,
+          image_id = attributes.image_id,
+          image_alt = attributes.image_alt;
+      return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/image-row/image-row-container.jsx":
+/*!*********************************************************!*\
+  !*** ./src/js/blocks/image-row/image-row-container.jsx ***!
+  \*********************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ imageRowContainer; }
+/* harmony export */ });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+
+
+function imageRowContainer() {
+  var _wp$blocks = wp.blocks,
+      registerBlockType = _wp$blocks.registerBlockType,
+      createBlock = _wp$blocks.createBlock;
+  var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var useSelect = wp.data.useSelect;
+  var _wp = wp,
+      i18n = _wp.i18n;
+  var blockSlug = "image-row-container"; // slug for the block
+
+  var blockTitle = "Image Row Container";
+  var blockDescription = "Component to create image row container block";
+  var blockCategory = "containers";
+  var blockIcon = "cover-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+
+  var attributes = {
+    title: {
+      type: "String",
+      default: ""
+    },
+    limit: {
+      type: "Number",
+      default: 0
+    }
+  };
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
+    title: i18n.__(blockTitle),
+    description: i18n.__(blockDescription),
+    category: blockCategory,
+    icon: blockIcon,
+    attributes: attributes,
+    edit: function edit(props) {
+      var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var innerBlockCount = useSelect(function (select) {
+        return select("core/block-editor").getBlock(props.clientId).innerBlocks;
+      });
+      return [/*#__PURE__*/React.createElement("div", {
+        class: "custom-component"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "block-title"
+      }, "Image Row Container Block"), /*#__PURE__*/React.createElement(InnerBlocks, {
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/image-row-block")],
+        renderAppender: function renderAppender() {
+          if (innerBlockCount.length < 4) {
+            return /*#__PURE__*/React.createElement(InnerBlocks.ButtonBlockAppender, null);
+          } else {
+            return false;
+          }
+        }
+      }))];
+    },
+    save: function save() {
+      return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/blocks/image-text-strip-block.jsx":
 /*!**************************************************!*\
   !*** ./src/js/blocks/image-text-strip-block.jsx ***!
@@ -8073,32 +8249,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_icon_list_icon_list_container_block_jsx__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./blocks/icon-list/icon-list-container-block.jsx */ "./src/js/blocks/icon-list/icon-list-container-block.jsx");
 /* harmony import */ var _blocks_icon_list_icon_list_item_block_jsx__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./blocks/icon-list/icon-list-item-block.jsx */ "./src/js/blocks/icon-list/icon-list-item-block.jsx");
 /* harmony import */ var _blocks_image_text_strip_block_jsx__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./blocks/image-text-strip-block.jsx */ "./src/js/blocks/image-text-strip-block.jsx");
-/* harmony import */ var _blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./blocks/logos/logo-container.jsx */ "./src/js/blocks/logos/logo-container.jsx");
-/* harmony import */ var _blocks_logos_logos_subsection_jsx__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./blocks/logos/logos-subsection.jsx */ "./src/js/blocks/logos/logos-subsection.jsx");
-/* harmony import */ var _blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./blocks/logos/logo.jsx */ "./src/js/blocks/logos/logo.jsx");
-/* harmony import */ var _blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./blocks/page-strips/page-strip.jsx */ "./src/js/blocks/page-strips/page-strip.jsx");
-/* harmony import */ var _blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./blocks/page-strips/page-strip-graphic.jsx */ "./src/js/blocks/page-strips/page-strip-graphic.jsx");
-/* harmony import */ var _blocks_page_strips_page_strip_graphic_container_jsx__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./blocks/page-strips/page-strip-graphic-container.jsx */ "./src/js/blocks/page-strips/page-strip-graphic-container.jsx");
-/* harmony import */ var _blocks_posts_featured_posts_container_jsx__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./blocks/posts/featured-posts-container.jsx */ "./src/js/blocks/posts/featured-posts-container.jsx");
-/* harmony import */ var _blocks_products_product_container_jsx__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./blocks/products/product-container.jsx */ "./src/js/blocks/products/product-container.jsx");
-/* harmony import */ var _blocks_publications_publications_container_jsx__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./blocks/publications/publications-container.jsx */ "./src/js/blocks/publications/publications-container.jsx");
-/* harmony import */ var _blocks_publications_select_posts_blocks_jsx__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./blocks/publications/select-posts-blocks.jsx */ "./src/js/blocks/publications/select-posts-blocks.jsx");
-/* harmony import */ var _blocks_publications_bibtex_block_jsx__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./blocks/publications/bibtex-block.jsx */ "./src/js/blocks/publications/bibtex-block.jsx");
-/* harmony import */ var _blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-section-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx");
-/* harmony import */ var _blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-subsection-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-subsection-blok.jsx");
-/* harmony import */ var _blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./blocks/slider/slider-container.jsx */ "./src/js/blocks/slider/slider-container.jsx");
-/* harmony import */ var _blocks_slider_news_slide_jsx__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./blocks/slider/news-slide.jsx */ "./src/js/blocks/slider/news-slide.jsx");
-/* harmony import */ var _blocks_slider_testimonial_slider_jsx__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./blocks/slider/testimonial-slider.jsx */ "./src/js/blocks/slider/testimonial-slider.jsx");
-/* harmony import */ var _blocks_slider_testimonial_slide_jsx__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./blocks/slider/testimonial-slide.jsx */ "./src/js/blocks/slider/testimonial-slide.jsx");
-/* harmony import */ var _blocks_stats_statistics_block_jsx__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./blocks/stats/statistics-block.jsx */ "./src/js/blocks/stats/statistics-block.jsx");
-/* harmony import */ var _blocks_stats_statistics_container_block_jsx__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./blocks/stats/statistics-container-block.jsx */ "./src/js/blocks/stats/statistics-container-block.jsx");
-/* harmony import */ var _blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-container.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-container.jsx");
-/* harmony import */ var _blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-panel.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-panel.jsx");
-/* harmony import */ var _blocks_video_tabbed_content_video_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./blocks/video-tabbed-content/video-tabbed-content-container.jsx */ "./src/js/blocks/video-tabbed-content/video-tabbed-content-container.jsx");
-/* harmony import */ var _blocks_video_tabbed_content_video_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./blocks/video-tabbed-content/video-tabbed-content-panel.jsx */ "./src/js/blocks/video-tabbed-content/video-tabbed-content-panel.jsx");
-/* harmony import */ var _blocks_tag_cloud_tag_cloud_container_block_jsx__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ./blocks/tag-cloud/tag-cloud-container-block.jsx */ "./src/js/blocks/tag-cloud/tag-cloud-container-block.jsx");
-/* harmony import */ var _blocks_tag_cloud_tag_cloud_item_block_jsx__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ./blocks/tag-cloud/tag-cloud-item-block.jsx */ "./src/js/blocks/tag-cloud/tag-cloud-item-block.jsx");
-/* harmony import */ var _blocks_podcast_podcast_block_jsx__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ./blocks/podcast/podcast-block.jsx */ "./src/js/blocks/podcast/podcast-block.jsx");
+/* harmony import */ var _blocks_image_row_image_row_container_jsx__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./blocks/image-row/image-row-container.jsx */ "./src/js/blocks/image-row/image-row-container.jsx");
+/* harmony import */ var _blocks_image_row_image_row_block_jsx__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./blocks/image-row/image-row-block.jsx */ "./src/js/blocks/image-row/image-row-block.jsx");
+/* harmony import */ var _blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./blocks/logos/logo-container.jsx */ "./src/js/blocks/logos/logo-container.jsx");
+/* harmony import */ var _blocks_logos_logos_subsection_jsx__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./blocks/logos/logos-subsection.jsx */ "./src/js/blocks/logos/logos-subsection.jsx");
+/* harmony import */ var _blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./blocks/logos/logo.jsx */ "./src/js/blocks/logos/logo.jsx");
+/* harmony import */ var _blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./blocks/page-strips/page-strip.jsx */ "./src/js/blocks/page-strips/page-strip.jsx");
+/* harmony import */ var _blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./blocks/page-strips/page-strip-graphic.jsx */ "./src/js/blocks/page-strips/page-strip-graphic.jsx");
+/* harmony import */ var _blocks_page_strips_page_strip_graphic_container_jsx__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./blocks/page-strips/page-strip-graphic-container.jsx */ "./src/js/blocks/page-strips/page-strip-graphic-container.jsx");
+/* harmony import */ var _blocks_posts_featured_posts_container_jsx__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./blocks/posts/featured-posts-container.jsx */ "./src/js/blocks/posts/featured-posts-container.jsx");
+/* harmony import */ var _blocks_products_product_container_jsx__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! ./blocks/products/product-container.jsx */ "./src/js/blocks/products/product-container.jsx");
+/* harmony import */ var _blocks_publications_publications_container_jsx__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./blocks/publications/publications-container.jsx */ "./src/js/blocks/publications/publications-container.jsx");
+/* harmony import */ var _blocks_publications_select_posts_blocks_jsx__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./blocks/publications/select-posts-blocks.jsx */ "./src/js/blocks/publications/select-posts-blocks.jsx");
+/* harmony import */ var _blocks_publications_bibtex_block_jsx__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./blocks/publications/bibtex-block.jsx */ "./src/js/blocks/publications/bibtex-block.jsx");
+/* harmony import */ var _blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-section-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-section-blok.jsx");
+/* harmony import */ var _blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./blocks/sidebar-table-of-contents/custom-subsection-blok.jsx */ "./src/js/blocks/sidebar-table-of-contents/custom-subsection-blok.jsx");
+/* harmony import */ var _blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./blocks/slider/slider-container.jsx */ "./src/js/blocks/slider/slider-container.jsx");
+/* harmony import */ var _blocks_slider_news_slide_jsx__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./blocks/slider/news-slide.jsx */ "./src/js/blocks/slider/news-slide.jsx");
+/* harmony import */ var _blocks_slider_testimonial_slider_jsx__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./blocks/slider/testimonial-slider.jsx */ "./src/js/blocks/slider/testimonial-slider.jsx");
+/* harmony import */ var _blocks_slider_testimonial_slide_jsx__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./blocks/slider/testimonial-slide.jsx */ "./src/js/blocks/slider/testimonial-slide.jsx");
+/* harmony import */ var _blocks_stats_statistics_block_jsx__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./blocks/stats/statistics-block.jsx */ "./src/js/blocks/stats/statistics-block.jsx");
+/* harmony import */ var _blocks_stats_statistics_container_block_jsx__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! ./blocks/stats/statistics-container-block.jsx */ "./src/js/blocks/stats/statistics-container-block.jsx");
+/* harmony import */ var _blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-container.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-container.jsx");
+/* harmony import */ var _blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(/*! ./blocks/tabbed-content/tabbed-content-panel.jsx */ "./src/js/blocks/tabbed-content/tabbed-content-panel.jsx");
+/* harmony import */ var _blocks_video_tabbed_content_video_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(/*! ./blocks/video-tabbed-content/video-tabbed-content-container.jsx */ "./src/js/blocks/video-tabbed-content/video-tabbed-content-container.jsx");
+/* harmony import */ var _blocks_video_tabbed_content_video_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(/*! ./blocks/video-tabbed-content/video-tabbed-content-panel.jsx */ "./src/js/blocks/video-tabbed-content/video-tabbed-content-panel.jsx");
+/* harmony import */ var _blocks_tag_cloud_tag_cloud_container_block_jsx__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(/*! ./blocks/tag-cloud/tag-cloud-container-block.jsx */ "./src/js/blocks/tag-cloud/tag-cloud-container-block.jsx");
+/* harmony import */ var _blocks_tag_cloud_tag_cloud_item_block_jsx__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(/*! ./blocks/tag-cloud/tag-cloud-item-block.jsx */ "./src/js/blocks/tag-cloud/tag-cloud-item-block.jsx");
+/* harmony import */ var _blocks_podcast_podcast_block_jsx__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./blocks/podcast/podcast-block.jsx */ "./src/js/blocks/podcast/podcast-block.jsx");
 // import customButtonIcons from './blocks/core-extends/button-icons';
 
  // Meta
@@ -8149,6 +8327,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // Image & Text Strip Block
+
+ // Image Row Blocks
+
 
  // Logo Blocks
 
@@ -8202,10 +8383,10 @@ __webpack_require__.r(__webpack_exports__);
 (0,_blocks_meta_product_meta_jsx__WEBPACK_IMPORTED_MODULE_8__["default"])();
 (0,_blocks_meta_program_meta_jsx__WEBPACK_IMPORTED_MODULE_9__["default"])(); // Page Strips
 
-(0,_blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_39__["default"])();
+(0,_blocks_page_strips_page_strip_jsx__WEBPACK_IMPORTED_MODULE_41__["default"])();
 (0,_blocks_image_block_jsx__WEBPACK_IMPORTED_MODULE_12__["default"])();
-(0,_blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_40__["default"])();
-(0,_blocks_page_strips_page_strip_graphic_container_jsx__WEBPACK_IMPORTED_MODULE_41__["default"])(); // Accordion Blocks
+(0,_blocks_page_strips_page_strip_graphic_jsx__WEBPACK_IMPORTED_MODULE_42__["default"])();
+(0,_blocks_page_strips_page_strip_graphic_container_jsx__WEBPACK_IMPORTED_MODULE_43__["default"])(); // Accordion Blocks
 
 (0,_blocks_accordion_accordion_jsx__WEBPACK_IMPORTED_MODULE_13__["default"])();
 (0,_blocks_accordion_accordion_row_jsx__WEBPACK_IMPORTED_MODULE_14__["default"])(); // Block Quote
@@ -8228,56 +8409,59 @@ __webpack_require__.r(__webpack_exports__);
 
 (0,_blocks_gallery_gallery_container_block_jsx__WEBPACK_IMPORTED_MODULE_25__["default"])(); // Logo Blocks
 
-(0,_blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_36__["default"])();
-(0,_blocks_logos_logos_subsection_jsx__WEBPACK_IMPORTED_MODULE_37__["default"])();
-(0,_blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_38__["default"])(); // Publications
+(0,_blocks_logos_logo_container_jsx__WEBPACK_IMPORTED_MODULE_38__["default"])();
+(0,_blocks_logos_logos_subsection_jsx__WEBPACK_IMPORTED_MODULE_39__["default"])();
+(0,_blocks_logos_logo_jsx__WEBPACK_IMPORTED_MODULE_40__["default"])(); // Publications
 
-(0,_blocks_publications_publications_container_jsx__WEBPACK_IMPORTED_MODULE_44__["default"])();
-(0,_blocks_publications_select_posts_blocks_jsx__WEBPACK_IMPORTED_MODULE_45__["default"])();
-(0,_blocks_publications_bibtex_block_jsx__WEBPACK_IMPORTED_MODULE_46__["default"])(); // Posts
+(0,_blocks_publications_publications_container_jsx__WEBPACK_IMPORTED_MODULE_46__["default"])();
+(0,_blocks_publications_select_posts_blocks_jsx__WEBPACK_IMPORTED_MODULE_47__["default"])();
+(0,_blocks_publications_bibtex_block_jsx__WEBPACK_IMPORTED_MODULE_48__["default"])(); // Posts
 
-(0,_blocks_posts_featured_posts_container_jsx__WEBPACK_IMPORTED_MODULE_42__["default"])(); // Products
+(0,_blocks_posts_featured_posts_container_jsx__WEBPACK_IMPORTED_MODULE_44__["default"])(); // Products
 
-(0,_blocks_products_product_container_jsx__WEBPACK_IMPORTED_MODULE_43__["default"])(); // Slide Blocks
+(0,_blocks_products_product_container_jsx__WEBPACK_IMPORTED_MODULE_45__["default"])(); // Slide Blocks
 
-(0,_blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_49__["default"])();
-(0,_blocks_slider_news_slide_jsx__WEBPACK_IMPORTED_MODULE_50__["default"])();
-(0,_blocks_slider_testimonial_slider_jsx__WEBPACK_IMPORTED_MODULE_51__["default"])();
-(0,_blocks_slider_testimonial_slide_jsx__WEBPACK_IMPORTED_MODULE_52__["default"])(); // Greenhouse Blocks
+(0,_blocks_slider_slider_container_jsx__WEBPACK_IMPORTED_MODULE_51__["default"])();
+(0,_blocks_slider_news_slide_jsx__WEBPACK_IMPORTED_MODULE_52__["default"])();
+(0,_blocks_slider_testimonial_slider_jsx__WEBPACK_IMPORTED_MODULE_53__["default"])();
+(0,_blocks_slider_testimonial_slide_jsx__WEBPACK_IMPORTED_MODULE_54__["default"])(); // Greenhouse Blocks
 
 (0,_blocks_greenhouse_jobs_block_jsx__WEBPACK_IMPORTED_MODULE_26__["default"])();
 (0,_blocks_greenhouse_select_job_block_jsx__WEBPACK_IMPORTED_MODULE_27__["default"])();
 (0,_blocks_greenhouse_jobs_list_jsx__WEBPACK_IMPORTED_MODULE_28__["default"])();
 (0,_blocks_greenhouse_job_highlight_block_jsx__WEBPACK_IMPORTED_MODULE_29__["default"])(); // Sidebar Table Of Contents Blocks
 
-(0,_blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_47__["default"])();
-(0,_blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_48__["default"])(); // Icon List Blocks
+(0,_blocks_sidebar_table_of_contents_custom_section_blok_jsx__WEBPACK_IMPORTED_MODULE_49__["default"])();
+(0,_blocks_sidebar_table_of_contents_custom_subsection_blok_jsx__WEBPACK_IMPORTED_MODULE_50__["default"])(); // Icon List Blocks
 
 (0,_blocks_icon_list_icon_list_container_block_jsx__WEBPACK_IMPORTED_MODULE_33__["default"])();
 (0,_blocks_icon_list_icon_list_item_block_jsx__WEBPACK_IMPORTED_MODULE_34__["default"])(); // Tabbed Content Blocks
 
-(0,_blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_55__["default"])();
-(0,_blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_56__["default"])(); // Video Tabbed Content Blocks
+(0,_blocks_tabbed_content_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_57__["default"])();
+(0,_blocks_tabbed_content_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_58__["default"])(); // Video Tabbed Content Blocks
 
-(0,_blocks_video_tabbed_content_video_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_57__["default"])();
-(0,_blocks_video_tabbed_content_video_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_58__["default"])(); // Tag Cloud Content Blocks
+(0,_blocks_video_tabbed_content_video_tabbed_content_container_jsx__WEBPACK_IMPORTED_MODULE_59__["default"])();
+(0,_blocks_video_tabbed_content_video_tabbed_content_panel_jsx__WEBPACK_IMPORTED_MODULE_60__["default"])(); // Tag Cloud Content Blocks
 
-(0,_blocks_tag_cloud_tag_cloud_container_block_jsx__WEBPACK_IMPORTED_MODULE_59__["default"])();
-(0,_blocks_tag_cloud_tag_cloud_item_block_jsx__WEBPACK_IMPORTED_MODULE_60__["default"])(); // Text 2 Up Blocks
+(0,_blocks_tag_cloud_tag_cloud_container_block_jsx__WEBPACK_IMPORTED_MODULE_61__["default"])();
+(0,_blocks_tag_cloud_tag_cloud_item_block_jsx__WEBPACK_IMPORTED_MODULE_62__["default"])(); // Text 2 Up Blocks
 
 (0,_blocks_text_2_up_container_block_jsx__WEBPACK_IMPORTED_MODULE_11__["default"])();
 (0,_blocks_text_2_up_block_jsx__WEBPACK_IMPORTED_MODULE_10__["default"])(); // Image & Text Strip Block
 
 (0,_blocks_image_text_strip_block_jsx__WEBPACK_IMPORTED_MODULE_35__["default"])(); // Statistics Content Blocks
 
-(0,_blocks_stats_statistics_container_block_jsx__WEBPACK_IMPORTED_MODULE_54__["default"])();
-(0,_blocks_stats_statistics_block_jsx__WEBPACK_IMPORTED_MODULE_53__["default"])(); // Locations Blocks
+(0,_blocks_stats_statistics_container_block_jsx__WEBPACK_IMPORTED_MODULE_56__["default"])();
+(0,_blocks_stats_statistics_block_jsx__WEBPACK_IMPORTED_MODULE_55__["default"])(); // Locations Blocks
 
 (0,_blocks_locations_location_container_block_jsx__WEBPACK_IMPORTED_MODULE_30__["default"])();
 (0,_blocks_locations_location_block_jsx__WEBPACK_IMPORTED_MODULE_31__["default"])();
 (0,_blocks_locations_location_image_jsx__WEBPACK_IMPORTED_MODULE_32__["default"])(); // Podcast Block
 
-(0,_blocks_podcast_podcast_block_jsx__WEBPACK_IMPORTED_MODULE_61__["default"])();
+(0,_blocks_podcast_podcast_block_jsx__WEBPACK_IMPORTED_MODULE_63__["default"])(); // Image Row Blocks
+
+(0,_blocks_image_row_image_row_block_jsx__WEBPACK_IMPORTED_MODULE_37__["default"])();
+(0,_blocks_image_row_image_row_container_jsx__WEBPACK_IMPORTED_MODULE_36__["default"])();
 }();
 /******/ })()
 ;

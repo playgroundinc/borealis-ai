@@ -42,6 +42,10 @@ class PG_Allowed_Blocks
             'page-strip-graphic-container',
             'page-strip',
 
+            // Image Row
+            'image-row-container',
+            'image-row-block',
+
             // Publications
             'publications-container',
             'select-publications',
@@ -74,6 +78,10 @@ class PG_Allowed_Blocks
 
             // Gallery
             'gallery-container',
+
+            // Image Row
+            'image-row-container',
+            'image-row-block',
 
             // Jobs
             'job-block',

@@ -1241,6 +1241,14 @@ ol.footnotes li small{
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.my-14{
+  margin-top: 56px;
+  margin-bottom: 56px;
+}
+.my-10{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 .mt-20{
   margin-top: 80px;
 }
@@ -1645,6 +1653,9 @@ ol.footnotes li small{
 .justify-between{
   justify-content: space-between;
 }
+.gap-6{
+  gap: 24px;
+}
 .gap-y-8{
   row-gap: 32px;
 }
@@ -1820,6 +1831,9 @@ ol.footnotes li small{
 }
 .bg-cover{
   background-size: cover;
+}
+.bg-contain{
+  background-size: contain;
 }
 .bg-bottom{
   background-position: bottom;
