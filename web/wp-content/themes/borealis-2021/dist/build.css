@@ -1510,6 +1510,18 @@ ol.footnotes li small{
 .w-22{
   width: 88px;
 }
+.w-5\/12{
+  width: 41.666667%;
+}
+.w-10\/12{
+  width: 83.333333%;
+}
+.w-11\/12{
+  width: 91.666667%;
+}
+.w-4\/5{
+  width: 80%;
+}
 .max-w-\[200px\]{
   max-width: 200px;
 }
@@ -2112,6 +2124,9 @@ ol.footnotes li small{
 }
 .pl-1{
   padding-left: 4px;
+}
+.pr-20{
+  padding-right: 80px;
 }
 .text-center{
   text-align: center;
@@ -2992,6 +3007,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:w-5\/8{
     width: calc((100% / 8) * 5);
+  }
+    .md\:w-10\/12{
+    width: 83.333333%;
   }
     .md\:basis-3\/4{
     flex-basis: 75%;
