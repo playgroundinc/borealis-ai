@@ -68,7 +68,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
                 <?php
                 if ($attributes->colAmount === 'three') {
                 ?>
-                    <div class="w-full tb:w-8/12 flex flex-col test">
+                    <div class="w-full tb:w-8/12 flex flex-col">
                         <div class="w-full">
                             <div class="mb-10 md:mb-0 w-full text-2-up">
                                 <p class="<?php echo $attributes->copy_size ?> md:pr-10">
