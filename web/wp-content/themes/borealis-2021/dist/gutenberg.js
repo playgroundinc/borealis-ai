@@ -7666,6 +7666,9 @@ function text2UpContainerBlock() {
       }, {
         label: "Two",
         value: "two"
+      }, {
+        label: "Three",
+        value: "three"
       }];
       var textOrImageStyles = [{
         label: "text",
@@ -7757,7 +7760,7 @@ function text2UpContainerBlock() {
           value: bgColour
         }, {
           type: "select",
-          label: "1 or 2 Columns",
+          label: "1/2/3 Columns",
           options: colStyles,
           reference: "colAmount",
           value: colAmount
@@ -7786,7 +7789,7 @@ function text2UpContainerBlock() {
       }), /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/text-2-up")],
         renderAppender: function renderAppender() {
-          if (innerBlockCount.length < 2) {
+          if (innerBlockCount.length < 3) {
             return /*#__PURE__*/React.createElement(InnerBlocks.ButtonBlockAppender, null);
           } else {
             return false;

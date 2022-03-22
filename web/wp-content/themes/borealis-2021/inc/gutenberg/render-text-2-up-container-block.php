@@ -61,34 +61,68 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
                             <h2 class="<?php echo $attributes->title_size ?> mb-8"><?php echo $attributes->title ?></h2>
                         <?php endif; ?>
                         <?php if (!empty($attributes->subtitle)) : ?>
-                            <h3 class="h4 mb-8"><?php echo esc_html($attributes->title) ?></h3>
+                            <h3 class="h4 mb-8"><?php echo esc_html($attributes->subtitle) ?></h3>
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>
-                <div class="w-full md:flex-row flex-col tb:w-8/12 <?php echo $attributes->colAmount === 'two' ? 'flex' : '' ?>">
-                    <?php
-                    if ($attributes->colAmount === 'two') {
+                <?php
+                if ($attributes->colAmount === 'three') {
+                ?>
+                    <div class="w-full tb:w-8/12 flex flex-col test">
+                        <?php
+                        foreach ($block['innerBlocks'] as $inner_block) {
+                            if ($inner_block === $block['innerBlocks'][0]) {
+                        ?>
+                                <div class="w-full">
+                                    <div class="mb-10 md:mb-0 w-full text-2-up">
+                                        <p class="<?php echo $attributes->copy_size ?> md:pr-10">
+                                            <?php echo $block['innerBlocks'][0]['attrs']['copy'] ?>
+                                        </p>
+                                    </div>
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
+                        <div class="flex md:flex-row flex-col mt-0 md:mt-12">
+                            <?php
+                            echo wp_kses(render_block($block['innerBlocks'][1]), 'post');
+                            echo wp_kses(render_block($block['innerBlocks'][2]), 'post');
+                            ?>
+                        </div>
+                        <?php
+                        ?>
+                    </div>
+                <?php
+                } elseif ($attributes->colAmount === 'two') {
+                ?>
+                    <div class="w-full md:flex-row flex-col tb:w-8/12 flex">
+                        <?php
                         foreach ($block['innerBlocks'] as $inner_block) {
                             echo wp_kses(render_block($inner_block), 'post');
                         }
-                    } else {
-                    ?>
+                        ?>
+                    </div>
+                <?php
+                } else {
+                ?>
+                    <div class="w-full md:flex-row flex-col tb:w-8/12">
                         <div class="mb-10 md:mb-0 w-full text-2-up">
                             <p class="<?php echo $attributes->copy_size ?> md:pr-10">
                                 <?php echo $block['innerBlocks'][0]['attrs']['copy'] ?>
                             </p>
                         </div>
-                    <?php
-                    }
-                    ?>
-                    <?php if (!empty($attributes->cta_text)) : ?>
-                        <a href="#job-anchor" class="primary-button mt-14 text-shade-black-400 flex items-center">
-                            <p class="product-cta">
-                                <?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8 down"><?php echo pg_render_icon('arrow-down'); ?></span>
-                            </p>
-                        </a>
-                    <?php endif; ?>
-                </div>
+                    </div>
+                <?php
+                }
+                ?>
+                <?php if (!empty($attributes->cta_text)) : ?>
+                    <a href="#job-anchor" class="primary-button mt-14 text-shade-black-400 flex items-center">
+                        <p class="product-cta">
+                            <?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8 down"><?php echo pg_render_icon('arrow-down'); ?></span>
+                        </p>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
 <?php

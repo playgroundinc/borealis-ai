@@ -104,6 +104,7 @@ export default function text2UpContainerBlock() {
       const colStyles = [
         { label: "Default", value: "default" },
         { label: "Two", value: "two" },
+        { label: "Three", value: "three" },
       ];
 
       const textOrImageStyles = [
@@ -201,7 +202,7 @@ export default function text2UpContainerBlock() {
               },
               {
                 type: "select",
-                label: "1 or 2 Columns",
+                label: "1/2/3 Columns",
                 options: colStyles,
                 reference: "colAmount",
                 value: colAmount,
@@ -236,7 +237,7 @@ export default function text2UpContainerBlock() {
           <InnerBlocks
             allowedBlocks={[`${namespace}/text-2-up`]}
             renderAppender={() => {
-              if (innerBlockCount.length < 2) {
+              if (innerBlockCount.length < 3) {
                 return <InnerBlocks.ButtonBlockAppender />;
               } else {
                 return false;
