@@ -2113,6 +2113,9 @@ ol.footnotes li small{
 .pl-1{
   padding-left: 4px;
 }
+.pr-20{
+  padding-right: 80px;
+}
 .text-center{
   text-align: center;
 }

@@ -73,10 +73,7 @@ export default function text2UpContainerBlock() {
         setAttributes({ [attribute]: value });
       }
 
-      const innerBlockCount = useSelect(
-        (select) =>
-          select("core/block-editor").getBlock(props.clientId).innerBlocks
-      );
+      const innerBlockCount = useSelect((select) => select("core/block-editor").getBlock(props.clientId).innerBlocks);
 
       return [
         <div class="custom-component">
