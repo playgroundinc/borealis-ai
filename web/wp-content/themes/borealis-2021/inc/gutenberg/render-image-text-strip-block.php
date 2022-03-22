@@ -43,20 +43,22 @@ if (!function_exists('pg_render_image_text_strip_block')) {
             'image_id' => 0,
             'image_alt' => '',
             'reverse' => '',
+            'full_width' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         $allowed_html = pg_allowed_html();
+        var_dump($attributes->full_width === true);
         ob_start();
 
         if (!empty($image)) :
 ?>
             <div class="w-full custom-component">
-                <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('flex flex-col md:min-h-[500px] relative') : '' ?>">
+                <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('flex flex-col md:min-h-[500px] relative') : '' ?> <?php echo $attributes->full_width === true ? 'bg-cover bg-no-repeat p-20' : '' ?>" style="background-image: url(<?php echo $attributes->full_width === true ? $image : '' ?>)">
                     <div class="flex justify-between <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:container grow flex-col md:flex-row') : esc_attr('flex-col-reverse') ?>  <?php echo $attributes->reverse === true ? 'md:flex-row-reverse' : 'md:flex-row' ?>">
                         <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container md:m-0 md:basis-6/12 grow-0 flex flex-col-reverse') : esc_attr('md:w-6/12') ?> <?php echo $attributes->reverse === true ? 'items-center' : '' ?>">
                             <div class="flex justify-center flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:m-0 md:w-3/4 tb:w-2/3 grow') : '' ?>">
-                                <div class="md:mt-0 mt-10">
+                                <div class="md:mt-0 mt-10 <?php echo $attributes->full_width === true ? 'text-shade-white-400' : '' ?>">
                                     <?php if (!empty($attributes->title)) : ?>
                                         <h3 class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('h3 mb-6 tb:mb-11') : esc_attr('h4 mb-4') ?>">
                                             <?php echo $attributes->title ?>
@@ -73,16 +75,18 @@ if (!function_exists('pg_render_image_text_strip_block')) {
                                         <a href="<?php echo $attributes->btn_url ?>" class="primary-button flex items-end mb-18 md:mb-0 mt-8 md:mt-5 tb:mt-8">
                                             <?php echo $attributes->btn_text ?>
                                             <span class="icon icon--lg ml-7 relative top-0">
-                                                <?php echo ($attributes->icon === true) ? pg_render_icon('arrow-white') : pg_render_icon('arrow-black'); ?>
+                                                <?php echo pg_render_icon('arrow-general') ?>
                                             </span>
                                         </a>
                                     <?php endif ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:w-6/12 md:absolute top-0 bottom-0') : esc_attr('md:w-3/8') ?> w-full  flex items-center shrink-0 <?php echo $attributes->reverse === true ? 'left-0 md:pr-8' : 'md:pl-8 right-0' ?>">
-                            <div class="w-full bg-cover bg-no-repeat bg-center <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('pt-100 md:pt-0 h-full') : esc_attr('rounded-large pt-50'); ?>" style="background-image: url(<?php echo $image ?>);"></div>
-                        </div>
+                        <?php if ($attributes->full_width !== true) : ?>
+                            <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:w-6/12 md:absolute top-0 bottom-0') : esc_attr('md:w-3/8') ?> w-full  flex items-center shrink-0 <?php echo $attributes->reverse === true ? 'left-0 md:pr-8' : 'md:pl-8 right-0' ?>">
+                                <div class="w-full bg-cover bg-no-repeat bg-center <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('pt-100 md:pt-0 h-full') : esc_attr('rounded-large pt-50'); ?>" style="background-image: url(<?php echo $image ?>);"></div>
+                            </div>
+                        <?php endif ?>
                     </div>
                 </div>
             </div>

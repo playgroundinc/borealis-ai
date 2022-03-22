@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * Render Graphic Page Strip
@@ -41,61 +42,61 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
             'btn_url' => '',
             'image_id' => 0,
             'image_id_mobile' => 0,
-            'icon' => '',
-            'test' => '',
+            'background_colour' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         $image_mobile = wp_get_attachment_image_url($attributes->image_id_mobile, 'full');
         ob_start();
-        if (!empty($image)) :
 ?>
-            <div class="w-6/12 hidden md:block">
-                <div class="w-full bg-cover bg-no-repeat p-20 <?php echo $attributes->icon === true ? 'text-shade-white-400' : 'text-shade-black-400' ?>" style="background-image: url(<?php echo $image ?>)">
-                    <?php if (!empty($attributes->title)) : ?>
-                        <h3 class="h3 mb-11">
-                            <?php echo $attributes->title ?>
-                        </h3>
-                    <?php endif ?>
-                    <?php if (!empty($attributes->copy)) : ?>
-                        <p class="paragraph mb-8 w-full tb:w-7/12 lg:w-6/12">
-                            <?php echo $attributes->copy ?>
-                        </p>
-                    <?php endif ?>
-                    <?php if (!empty($attributes->btn_text) and !empty($attributes->btn_url)) : ?>
-                        <a href="<?php echo $attributes->btn_url ?>" class="primary-button flex items-end">
-                            <?php echo $attributes->btn_text ?>
-                            <span class="icon icon--lg ml-7 relative top-0">
-                                <?php echo ($attributes->icon === true) ? pg_render_icon('arrow-white') : pg_render_icon('arrow-black'); ?>
-                            </span>
-                        </a>
-                    <?php endif ?>
-                </div>
+        <div class="hidden md:flex h-full flex-col-reverse <?php echo $attributes->background_colour ?> bg-cover bg-no-repeat p-20" style="background-image: url(<?php echo $image ?>)">
+            <div class="w-full">
+                <?php if (!empty($attributes->title)) : ?>
+                    <h3 class="h3 mb-11">
+                        <?php echo $attributes->title ?>
+                    </h3>
+                <?php endif ?>
+                <?php if (!empty($attributes->copy)) : ?>
+                    <p class="paragraph mb-8 w-full tb:w-7/12 lg:w-6/12">
+                        <?php echo $attributes->copy ?>
+                    </p>
+                <?php endif ?>
+                <?php if (!empty($attributes->btn_text) and !empty($attributes->btn_url)) : ?>
+                    <a href="<?php echo $attributes->btn_url ?>" class="primary-button flex items-end">
+                        <?php echo $attributes->btn_text ?>
+                        <span class="icon icon--lg ml-7 relative top-0">
+                            <?php echo pg_render_icon('arrow-general') ?>
+                        </span>
+                    </a>
+                <?php endif ?>
             </div>
-            <div class="w-full md:hidden block">
-                <div class="w-full bg-cover pb-56 bg-no-repeat pt-15 px-6 <?php echo $attributes->icon === true ? 'text-shade-white-400' : 'text-shade-black-400' ?>" style="background-image: url(<?php echo $image_mobile ?>)">
-                    <?php if (!empty($attributes->title)) : ?>
-                        <h3 class="h3 mb-6">
-                            <?php echo $attributes->title ?>
-                        </h3>
-                    <?php endif ?>
-                    <?php if (!empty($attributes->copy)) : ?>
-                        <p class="paragraph mb-6 w-full tb:w-7/12 lg:w-6/12">
-                            <?php echo $attributes->copy ?>
-                        </p>
-                    <?php endif ?>
-                    <?php if (!empty($attributes->btn_text) and !empty($attributes->btn_url)) : ?>
-                        <a href="<?php echo $attributes->btn_url ?>" class="primary-button flex items-end">
-                            <?php echo $attributes->btn_text ?>
-                            <span class="icon icon--lg ml-7 relative top-0">
-                                <?php echo ($attributes->icon === true) ? pg_render_icon('arrow-white') : pg_render_icon('arrow-black'); ?>
-                            </span>
-                        </a>
-                    <?php endif ?>
-                </div>
+            <div>
+
             </div>
+        </div>
+        <div class="md:hidden block <?php echo $attributes->background_colour ?>">
+            <div class="w-full bg-cover pb-56 bg-no-repeat pt-15 px-6" style="background-image: url(<?php echo $image_mobile ?>)">
+                <?php if (!empty($attributes->title)) : ?>
+                    <h3 class="h3 mb-6">
+                        <?php echo $attributes->title ?>
+                    </h3>
+                <?php endif ?>
+                <?php if (!empty($attributes->copy)) : ?>
+                    <p class="paragraph mb-6 w-full tb:w-7/12 lg:w-6/12">
+                        <?php echo $attributes->copy ?>
+                    </p>
+                <?php endif ?>
+                <?php if (!empty($attributes->btn_text) and !empty($attributes->btn_url)) : ?>
+                    <a href="<?php echo $attributes->btn_url ?>" class="primary-button flex items-end">
+                        <?php echo $attributes->btn_text ?>
+                        <span class="icon icon--lg ml-7 relative top-0">
+                            <?php echo pg_render_icon('arrow-general') ?>
+                        </span>
+                    </a>
+                <?php endif ?>
+            </div>
+        </div>
 <?php
-        endif;
         return ob_get_clean();
     }
 }

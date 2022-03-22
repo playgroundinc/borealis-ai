@@ -3419,6 +3419,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:w-2\/5{
     width: 40%;
   }
+    .tb\:w-6\/12{
+    width: 50%;
+  }
     .tb\:flex-row{
     flex-direction: row;
   }
