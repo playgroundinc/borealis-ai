@@ -69,21 +69,13 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
                 if ($attributes->colAmount === 'three') {
                 ?>
                     <div class="w-full tb:w-8/12 flex flex-col test">
-                        <?php
-                        foreach ($block['innerBlocks'] as $inner_block) {
-                            if ($inner_block === $block['innerBlocks'][0]) {
-                        ?>
-                                <div class="w-full">
-                                    <div class="mb-10 md:mb-0 w-full text-2-up">
-                                        <p class="<?php echo $attributes->copy_size ?> md:pr-10">
-                                            <?php echo $block['innerBlocks'][0]['attrs']['copy'] ?>
-                                        </p>
-                                    </div>
-                                </div>
-                        <?php
-                            }
-                        }
-                        ?>
+                        <div class="w-full">
+                            <div class="mb-10 md:mb-0 w-full text-2-up">
+                                <p class="<?php echo $attributes->copy_size ?> md:pr-10">
+                                    <?php echo $block['innerBlocks'][0]['attrs']['copy'] ?>
+                                </p>
+                            </div>
+                        </div>
                         <div class="flex md:flex-row flex-col mt-0 md:mt-12">
                             <?php
                             echo wp_kses(render_block($block['innerBlocks'][1]), 'post');
