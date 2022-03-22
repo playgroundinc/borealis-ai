@@ -824,6 +824,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
+.text-2-up a{
+  display: inline-block;
+  --tw-text-opacity: 1;
+  color: rgb(0 68 255 / var(--tw-text-opacity));
+}
+.text-2-up a:visited{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
+}
+.text-2-up a:hover{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
 .current_page_item .submenu{
   display: block;
 }

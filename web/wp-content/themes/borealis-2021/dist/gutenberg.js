@@ -7554,7 +7554,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
+/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -7591,7 +7593,31 @@ function text2UpContainerBlock() {
       type: "String",
       default: "default"
     },
+    title_size: {
+      type: "String",
+      default: "default"
+    },
+    copy_size: {
+      type: "String",
+      default: "default"
+    },
+    text_or_image: {
+      type: "String",
+      default: "default"
+    },
     cta_text: {
+      type: "String",
+      default: ""
+    },
+    image_id: {
+      type: "Number",
+      default: 0
+    },
+    image_alt: {
+      type: "String",
+      default: ""
+    },
+    image_url: {
       type: "String",
       default: ""
     }
@@ -7611,7 +7637,13 @@ function text2UpContainerBlock() {
           subtitle = attributes.subtitle,
           bgColour = attributes.bgColour,
           colAmount = attributes.colAmount,
-          cta_text = attributes.cta_text;
+          cta_text = attributes.cta_text,
+          title_size = attributes.title_size,
+          copy_size = attributes.copy_size,
+          image_alt = attributes.image_alt,
+          image_id = attributes.image_id,
+          image_url = attributes.image_url,
+          text_or_image = attributes.text_or_image;
       var bgStyles = [{
         label: "Default",
         value: "bg-shade-white-400 text-shade-black-400"
@@ -7634,6 +7666,27 @@ function text2UpContainerBlock() {
       }, {
         label: "Two",
         value: "two"
+      }];
+      var textOrImageStyles = [{
+        label: "text",
+        value: "default"
+      }, {
+        label: "image",
+        value: "image"
+      }];
+      var titleStyles = [{
+        label: "Large",
+        value: "h2"
+      }, {
+        label: "Small",
+        value: "h3"
+      }];
+      var copyStyles = [{
+        label: "Large",
+        value: "paragraph-lg"
+      }, {
+        label: "Small",
+        value: "paragraph"
       }];
 
       function updateAttributeValue(attribute, value) {
@@ -7658,6 +7711,19 @@ function text2UpContainerBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        components: [{
+          value: image_url,
+          reference: "image_url",
+          altValue: image_alt,
+          altReference: "image_alt",
+          idValue: image_id,
+          idReference: "image_id",
+          buttonText: "Add an image"
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
       }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
           value: subtitle,
@@ -7673,16 +7739,46 @@ function text2UpContainerBlock() {
         title: "Block Settings",
         controls: [{
           type: "select",
+          label: "Title or Img",
+          options: textOrImageStyles,
+          reference: "text_or_image",
+          value: text_or_image
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
           label: "Background Colour",
           options: bgStyles,
           reference: "bgColour",
           value: bgColour
         }, {
           type: "select",
-          label: "1 or 2 Columns of Copy",
+          label: "1 or 2 Columns",
           options: colStyles,
           reference: "colAmount",
           value: colAmount
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Title Size",
+          options: titleStyles,
+          reference: "title_size",
+          value: title_size
+        }, {
+          type: "select",
+          label: "Copy Size",
+          options: copyStyles,
+          reference: "copy_size",
+          value: copy_size
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -7714,7 +7810,13 @@ function text2UpContainerBlock() {
           subtite = attributes.subtite,
           bgColour = attributes.bgColour,
           colAmount = attributes.colAmount,
-          cta_text = attributes.cta_text;
+          cta_text = attributes.cta_text,
+          title_size = attributes.title_size,
+          copy_size = attributes.copy_size,
+          image_alt = attributes.image_alt,
+          image_id = attributes.image_id,
+          image_url = attributes.image_url,
+          text_or_image = attributes.text_or_image;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
