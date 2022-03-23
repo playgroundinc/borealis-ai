@@ -1,18 +1,14 @@
-// Helpers
 import { namespace } from "../helper-functions/constants.js";
-
-// Reusable
+import BlockSettings from "../reusable/block-custom-settings.jsx";
 import CustomRichText from "../reusable/custom-richtext-component.jsx";
 import CustomImageUpload from "../reusable/custom-image-upload.jsx";
 
-export default function trmcPageStripGraphicBlock() {
+export default function pageStripGraphicBlock() {
   /**
    * GUTENBERG BLOCK - Page Strip Graphic
    */
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
-    const { ToggleControl } = wp.components;
-
   const { i18n } = wp;
 
   const slug = "page-strip-graphic";
@@ -62,7 +58,7 @@ export default function trmcPageStripGraphicBlock() {
       type: "String",
       default: "",
     },
-    icon: {
+    background_colour: {
       type: "String",
       default: "",
     },
@@ -79,11 +75,7 @@ export default function trmcPageStripGraphicBlock() {
           type: "block",
           blocks: [`${namespace}/page-strip`],
           transform: (attributes, innerBlocks) => {
-            return wp.blocks.createBlock(
-              `${namespace}/page-strip`,
-              attributes,
-              innerBlocks
-            );
+            return wp.blocks.createBlock(`${namespace}/page-strip`, attributes, innerBlocks);
           },
         },
       ],
@@ -102,15 +94,51 @@ export default function trmcPageStripGraphicBlock() {
         image_url_mobile,
         image_id_mobile,
         image_alt_mobile,
-        icon,
+        background_colour,
       } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
       }
+
+      const background_styles = [
+        {
+          label: "Default",
+          value: "bg-shade-white-400 text-shade-black-400",
+        },
+        {
+          label: "Purple",
+          value: "bg-primary-purple-400 text-shade-white-400",
+        },
+        { label: "Navy", value: "bg-primary-navy-400 text-shade-white-400" },
+        {
+          label: "Light Blue",
+          value: "bg-tint-lightBlue-400 text-shade-white-400",
+        },
+        {
+          label: "Light Purple",
+          value: "bg-tint-purple-400 text-shade-white-400",
+        },
+      ];
+
       return [
         <section class="custom-child">
           <p className="block-title">Graphic Page Strip</p>
+          <BlockSettings
+            title="Block Settings"
+            controls={[
+              {
+                type: "select",
+                label: "Background Colour",
+                options: background_styles,
+                reference: "background_colour",
+                value: background_colour,
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
           <CustomImageUpload
             components={[
               {
@@ -127,7 +155,7 @@ export default function trmcPageStripGraphicBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
-           <CustomImageUpload
+          <CustomImageUpload
             components={[
               {
                 value: image_url_mobile,
@@ -199,20 +227,11 @@ export default function trmcPageStripGraphicBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
-          <ToggleControl
-            label={
-              "Style: check for white arrow or leave unchecked for black arrow"
-            }
-            checked={icon}
-            onChange={(change) => {
-              updateAttributeValue("icon", change);
-            }}
-          />
         </section>,
       ];
     },
     save: ({ attributes }) => {
-      const { title, copy, btn_url, btn_text, image_url, icon, image_url_mobile } = attributes;
+      const { title, copy, btn_url, btn_text, image_url, image_url_mobile, background_colour } = attributes;
       return <InnerBlocks.Content />;
     },
   });

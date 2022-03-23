@@ -12,7 +12,7 @@ export default function imageTextStripBlock() {
    */
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
-    const { ToggleControl } = wp.components;
+  const { ToggleControl } = wp.components;
 
   const { i18n } = wp;
 
@@ -64,9 +64,13 @@ export default function imageTextStripBlock() {
       default: "",
     },
     reverse: {
-        type: "Boolean",
-        default: false,
-      },
+      type: "Boolean",
+      default: false,
+    },
+    full_width: {
+      type: "Boolean",
+      default: false,
+    },
   };
   registerBlockType(`${namespace}/${slug}`, {
     title: i18n.__(title, `${namespace}`),
@@ -82,9 +86,13 @@ export default function imageTextStripBlock() {
         btn_url,
         btn_text,
         image_alt,
+        image_alt_mobile,
         image_id,
+        image_id_mobile,
+        image_url_mobile,
         image_url,
         reverse,
+        full_width,
       } = attributes;
 
       function updateAttributeValue(attribute, value) {
@@ -93,18 +101,26 @@ export default function imageTextStripBlock() {
       return [
         <div class="custom-component">
           <p className="block-title">Image Text Strip (Control layout in block settings)</p>
-             <BlockSettings
-                title="Block Settings"
-                controls={[
-                    { 
-                      type: 'toggle',
-                      label: 'Reversed?',
-                      reference: 'reverse',
-                      value: reverse,
-                    },
-                ]}
-                onChange={ ( attribute, change ) => { updateAttributeValue(attribute, change) } }
-            />
+          <BlockSettings
+            title="Block Settings"
+            controls={[
+              {
+                type: "toggle",
+                label: "Reversed?",
+                reference: "reverse",
+                value: reverse,
+              },
+              {
+                type: "toggle",
+                label: "Full Width?",
+                reference: "full_width",
+                value: full_width,
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
 
           <CustomImageUpload
             components={[
@@ -116,6 +132,22 @@ export default function imageTextStripBlock() {
                 idValue: image_id,
                 idReference: "image_id",
                 buttonText: "Add an image",
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
+          <CustomImageUpload
+            components={[
+              {
+                value: image_url_mobile,
+                reference: "image_url_mobile",
+                altValue: image_alt_mobile,
+                altReference: "image_alt_mobile",
+                idValue: image_id_mobile,
+                idReference: "image_id_mobile",
+                buttonText: "Add an image (Mobile)",
               },
             ]}
             onChange={(attribute, change) => {
@@ -143,7 +175,7 @@ export default function imageTextStripBlock() {
                 reference: "copy",
                 tagName: "p",
                 classes: ["paragraph"],
-                settings: ['core/bold', 'core/link', 'core/italic', 'core/list'],
+                settings: ["core/bold", "core/link", "core/italic", "core/list"],
                 placeholder: "Please provide copy (optional)",
               },
             ]}
@@ -183,7 +215,7 @@ export default function imageTextStripBlock() {
       ];
     },
     save: ({ attributes }) => {
-      const { title, copy, btn_url, btn_text, image_url, reverse, image_url_mobile } = attributes;
+      const { title, copy, btn_url, btn_text, image_url, reverse, image_url_mobile, full_width, image_id, image_id_mobile } = attributes;
       return <InnerBlocks.Content />;
     },
   });

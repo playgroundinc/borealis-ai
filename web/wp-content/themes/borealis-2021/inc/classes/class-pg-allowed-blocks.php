@@ -40,7 +40,6 @@ class PG_Allowed_Blocks
             // Page Strips
             'page-strip-graphic',
             'page-strip-graphic-container',
-            'page-strip',
 
             // Publications
             'publications-container',
