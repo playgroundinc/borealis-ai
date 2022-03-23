@@ -159,7 +159,6 @@ require get_template_directory() . '/inc/gutenberg/logos/render-logos-subsection
 require get_template_directory() . '/inc/gutenberg/logos/render-logo-block.php';
 
 // Page Strips
-require get_template_directory() . '/inc/gutenberg/render-page-strip-block.php';
 require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-container-block.php';
 require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-block.php';
 
