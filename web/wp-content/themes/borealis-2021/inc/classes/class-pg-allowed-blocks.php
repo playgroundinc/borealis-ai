@@ -43,7 +43,6 @@ class PG_Allowed_Blocks
             // Page Strips
             'page-strip-graphic',
             'page-strip-graphic-container',
-            'page-strip',
 
             // Publications
             'publications-container',
@@ -54,6 +53,10 @@ class PG_Allowed_Blocks
             // Tabbed Content
             'tabbed-content-container-block',
             'tabbed-content-panel-block',
+
+            // Text & Image
+            'text-image-container',
+            'text-image-block',
 
             // Video Tabbed Content
             'video-tabbed-content-container-block',
@@ -117,6 +120,10 @@ class PG_Allowed_Blocks
             // Tag Cloud
             'tag-cloud-container-block',
             'tag-cloud-item-block',
+
+            // Text & Image
+            'text-image-container',
+            'text-image-block',
 
             // Locations
             'locations-container',
