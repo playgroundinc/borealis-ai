@@ -43,13 +43,13 @@ if (!function_exists('pg_render_graphic_page_strip_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="custom-component component-dark animated-element container">
+        <div class="custom-component component-dark animated-element">
             <?php if (!empty($attributes->column_amount === 'three')) : ?>
-                <div class="flex flex-col tb:flex-row">
-                    <div class="w-full tb:w-6/12">
+                <div class="flex flex-col md:flex-row">
+                    <div class="w-full md:w-6/12">
                         <?php echo wp_kses(render_block($block['innerBlocks'][0]), $allowed_html); ?>
                     </div>
-                    <div class="w-full tb:w-6/12 h-full">
+                    <div class="w-full md:w-6/12 h-full">
                         <?php echo wp_kses(render_block($block['innerBlocks'][1]), $allowed_html); ?>
                         <?php echo wp_kses(render_block($block['innerBlocks'][2]), $allowed_html); ?>
                     </div>
@@ -57,7 +57,7 @@ if (!function_exists('pg_render_graphic_page_strip_container_block')) {
             <?php else : ?>
                 <div aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="flex flex-col md:flex-row">
                     <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
-                        <div class="w-full tb:w-6/12">
+                        <div class="w-full md:w-6/12">
                             <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
                         </div>
                     <?php endforeach; ?>

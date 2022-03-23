@@ -2789,7 +2789,10 @@ function imageTextStripBlock() {
           btn_url = attributes.btn_url,
           btn_text = attributes.btn_text,
           image_alt = attributes.image_alt,
+          image_alt_mobile = attributes.image_alt_mobile,
           image_id = attributes.image_id,
+          image_id_mobile = attributes.image_id_mobile,
+          image_url_mobile = attributes.image_url_mobile,
           image_url = attributes.image_url,
           reverse = attributes.reverse,
           full_width = attributes.full_width;
@@ -2827,6 +2830,19 @@ function imageTextStripBlock() {
           idValue: image_id,
           idReference: "image_id",
           buttonText: "Add an image"
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        components: [{
+          value: image_url_mobile,
+          reference: "image_url_mobile",
+          altValue: image_alt_mobile,
+          altReference: "image_alt_mobile",
+          idValue: image_id_mobile,
+          idReference: "image_id_mobile",
+          buttonText: "Add an image (Mobile)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -2887,7 +2903,9 @@ function imageTextStripBlock() {
           image_url = attributes.image_url,
           reverse = attributes.reverse,
           image_url_mobile = attributes.image_url_mobile,
-          full_width = attributes.full_width;
+          full_width = attributes.full_width,
+          image_id = attributes.image_id,
+          image_id_mobile = attributes.image_id_mobile;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });

@@ -75,7 +75,7 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
             </div>
         </div>
         <div class="md:hidden block <?php echo $attributes->background_colour ?>">
-            <div class="w-full bg-cover pb-56 bg-no-repeat pt-15 px-6" style="background-image: url(<?php echo $image_mobile ?>)">
+            <div class="w-full bg-cover pb-78 bg-no-repeat pt-15 px-6" style="background-image: url(<?php echo $image_mobile ?>)">
                 <?php if (!empty($attributes->title)) : ?>
                     <h3 class="h3 mb-6">
                         <?php echo $attributes->title ?>

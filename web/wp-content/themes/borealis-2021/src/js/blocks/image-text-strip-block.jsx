@@ -80,7 +80,20 @@ export default function imageTextStripBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title, copy, btn_url, btn_text, image_alt, image_id, image_url, reverse, full_width } = attributes;
+      const {
+        title,
+        copy,
+        btn_url,
+        btn_text,
+        image_alt,
+        image_alt_mobile,
+        image_id,
+        image_id_mobile,
+        image_url_mobile,
+        image_url,
+        reverse,
+        full_width,
+      } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -119,6 +132,22 @@ export default function imageTextStripBlock() {
                 idValue: image_id,
                 idReference: "image_id",
                 buttonText: "Add an image",
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
+          <CustomImageUpload
+            components={[
+              {
+                value: image_url_mobile,
+                reference: "image_url_mobile",
+                altValue: image_alt_mobile,
+                altReference: "image_alt_mobile",
+                idValue: image_id_mobile,
+                idReference: "image_id_mobile",
+                buttonText: "Add an image (Mobile)",
               },
             ]}
             onChange={(attribute, change) => {
@@ -186,7 +215,7 @@ export default function imageTextStripBlock() {
       ];
     },
     save: ({ attributes }) => {
-      const { title, copy, btn_url, btn_text, image_url, reverse, image_url_mobile, full_width } = attributes;
+      const { title, copy, btn_url, btn_text, image_url, reverse, image_url_mobile, full_width, image_id, image_id_mobile } = attributes;
       return <InnerBlocks.Content />;
     },
   });
