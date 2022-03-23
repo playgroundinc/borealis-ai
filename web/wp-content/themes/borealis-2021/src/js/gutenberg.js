@@ -109,6 +109,10 @@ import statisticsContainerBlock from "./blocks/stats/statistics-container-block.
 import tabbedContentContainerBlock from "./blocks/tabbed-content/tabbed-content-container.jsx";
 import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-panel.jsx";
 
+// Text & Image Blocks
+import textImageBlock from "./blocks/text-image/text-image-block.jsx";
+import textImageContainerBlock from "./blocks/text-image/text-image-container-block.jsx";
+
 // Video Tabbed Content Blocks
 import videoTabbedContentContainerBlock from "./blocks/video-tabbed-content/video-tabbed-content-container.jsx";
 import videoTabbedContentPanelBlock from "./blocks/video-tabbed-content/video-tabbed-content-panel.jsx";
@@ -209,6 +213,10 @@ iconListItemBlock();
 tabbedContentContainerBlock();
 tabbedContentPanelBlock();
 
+//  Text & Image Blocks
+textImageBlock();
+textImageContainerBlock();
+
 // Video Tabbed Content Blocks
 videoTabbedContentContainerBlock();
 videoTabbedContentPanelBlock();
@@ -220,6 +228,7 @@ tagCloudItemBlock();
 // Text 2 Up Blocks
 text2UpContainerBlock();
 text2UpBlock();
+
 // Image & Text Strip Block
 imageTextStripBlock();
 

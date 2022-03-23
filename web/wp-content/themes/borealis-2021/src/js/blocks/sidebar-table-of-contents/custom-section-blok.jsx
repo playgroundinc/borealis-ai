@@ -71,6 +71,7 @@ export default function customSectionBlock() {
                 `${namespace}/custom-image`,
                 `${namespace}/blockquote`,
                 `${namespace}/publications-container`,
+                `${namespace}/image-row-container`,
                 `${namespace}/image-text`,
                 `${namespace}/icon-list-container-block`,
                 `${namespace}/compare-code`,
