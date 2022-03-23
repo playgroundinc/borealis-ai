@@ -41,44 +41,80 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
             'bgColour' => '',
             'colAmount' => '',
             'cta_text' => '',
+            'title_size' => '',
+            'copy_size' => '',
+            'text_or_image' => '',
+            'image_id' => '',
+            'image_alt' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
+        $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
 ?>
         <div class="<?php echo $attributes->bgColour ?> custom-component animated-element">
             <div class="container flex md:py-20 py-10 tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
-                    <?php if (!empty($attributes->title)) : ?>
-                        <h2 class="<?php echo $attributes->bgColour === 'bg-shade-white-400 text-shade-black-400' ? 'h2' : 'h3' ?> mb-8"><?php echo esc_html($attributes->title) ?></h2>
-                    <?php endif; ?>
-                    <?php if (!empty($attributes->subtitle)) : ?>
-                        <h3 class="h4 mb-8"><?php echo esc_html($attributes->title) ?></h3>
+                    <?php if ($attributes->text_or_image === 'image') : ?>
+                        <img class="mb-6" src="<?php echo $image ?>" alt="<?php echo $attributes->image_id ?>">
+                    <?php else : ?>
+                        <?php if (!empty($attributes->title)) : ?>
+                            <h2 class="<?php echo $attributes->title_size ?> mb-8"><?php echo $attributes->title ?></h2>
+                        <?php endif; ?>
+                        <?php if (!empty($attributes->subtitle)) : ?>
+                            <h3 class="h4 mb-8"><?php echo esc_html($attributes->subtitle) ?></h3>
+                        <?php endif; ?>
                     <?php endif; ?>
                 </div>
-                <div class="w-full md:flex-row flex-col tb:w-8/12 <?php echo $attributes->colAmount === 'two' ? 'flex' : '' ?>">
-                    <?php
-                    if ($attributes->colAmount === 'two') {
+                <?php
+                if ($attributes->colAmount === 'three') {
+                ?>
+                    <div class="w-full tb:w-8/12 flex flex-col">
+                        <div class="w-full">
+                            <div class="mb-10 md:mb-0 w-full text-2-up">
+                                <p class="<?php echo $attributes->copy_size ?> md:pr-10">
+                                    <?php echo $block['innerBlocks'][0]['attrs']['copy'] ?>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex md:flex-row flex-col mt-0 md:mt-12">
+                            <?php
+                            echo wp_kses(render_block($block['innerBlocks'][1]), 'post');
+                            echo wp_kses(render_block($block['innerBlocks'][2]), 'post');
+                            ?>
+                        </div>
+                        <?php
+                        ?>
+                    </div>
+                <?php
+                } elseif ($attributes->colAmount === 'two') {
+                ?>
+                    <div class="w-full md:flex-row flex-col tb:w-8/12 flex">
+                        <?php
                         foreach ($block['innerBlocks'] as $inner_block) {
                             echo wp_kses(render_block($inner_block), 'post');
                         }
-                    } else {
-                    ?>
-                        <div class="mb-10 md:mb-0 w-full">
-                            <p class="paragraph md:pr-10">
+                        ?>
+                    </div>
+                <?php
+                } else {
+                ?>
+                    <div class="w-full md:flex-row flex-col tb:w-8/12">
+                        <div class="mb-10 md:mb-0 w-full text-2-up">
+                            <p class="<?php echo $attributes->copy_size ?> md:pr-10">
                                 <?php echo $block['innerBlocks'][0]['attrs']['copy'] ?>
                             </p>
                         </div>
-                    <?php
-                    }
-                    ?>
-                    <?php if (!empty($attributes->cta_text)) : ?>
-                        <a href="#job-anchor" class="primary-button mt-14 text-shade-black-400 flex items-center">
-                            <p class="product-cta">
-                                <?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8 down"><?php echo pg_render_icon('arrow-down'); ?></span>
-                            </p>
-                        </a>
-                    <?php endif; ?>
-                </div>
+                    </div>
+                <?php
+                }
+                ?>
+                <?php if (!empty($attributes->cta_text)) : ?>
+                    <a href="#job-anchor" class="primary-button mt-14 text-shade-black-400 flex items-center">
+                        <p class="product-cta">
+                            <?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8 down"><?php echo pg_render_icon('arrow-down'); ?></span>
+                        </p>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
 <?php

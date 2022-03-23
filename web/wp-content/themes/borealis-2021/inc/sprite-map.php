@@ -245,6 +245,14 @@ if (!function_exists('pg_svg_spritemap')) {
                 <path d="M15 8.25L19 12.25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </symbol>
 
+            <!-- CTA Arrow General -->
+            <symbol id="icon-arrow-general" viewBox="0 0 24 25" fill="none">
+                <path d="M5 12.25H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M15 16.25L19 12.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M15 8.25L19 12.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </symbol>
+
+
             <symbol id="icon-chevron" viewBox="0 0 24 25" fill="none">
                 <path d="M6 9.5L12 15.5L18 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </symbol>

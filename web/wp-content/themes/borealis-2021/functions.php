@@ -159,9 +159,12 @@ require get_template_directory() . '/inc/gutenberg/logos/render-logos-subsection
 require get_template_directory() . '/inc/gutenberg/logos/render-logo-block.php';
 
 // Page Strips
-require get_template_directory() . '/inc/gutenberg/render-page-strip-block.php';
 require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-container-block.php';
 require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-block.php';
+
+// Image Row 
+require get_template_directory() . '/inc/gutenberg/image-row/render-image-row-container-block.php';
+require get_template_directory() . '/inc/gutenberg/image-row/render-image-row-block.php';
 
 // Publications 
 require get_template_directory() . '/inc/gutenberg/publications/render-publications-container.php';
@@ -196,6 +199,10 @@ require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/ren
 // Icon List Blocks
 require get_template_directory() . '/inc/gutenberg/icon-list/render-icon-list-container-block.php';
 require get_template_directory() . '/inc/gutenberg/icon-list/render-icon-list-item-block.php';
+
+// Text & Image Block
+require get_template_directory() . '/inc/gutenberg/text-image/render-text-image-container-block.php';
+require get_template_directory() . '/inc/gutenberg/text-image/render-text-image-block.php';
 
 // Tabbed Content Blocks
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-container-block.php';

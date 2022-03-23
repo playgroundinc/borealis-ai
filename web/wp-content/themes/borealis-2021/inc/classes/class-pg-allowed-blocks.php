@@ -19,6 +19,9 @@ class PG_Allowed_Blocks
             'accordion',
             'accordion-row',
 
+            // Blockquote
+            'blockquote',
+
             // Code
             'code',
             'compare-code',
@@ -40,7 +43,10 @@ class PG_Allowed_Blocks
             // Page Strips
             'page-strip-graphic',
             'page-strip-graphic-container',
-            'page-strip',
+
+            // Image Row
+            'image-row-container',
+            'image-row-block',
 
             // Publications
             'publications-container',
@@ -51,6 +57,10 @@ class PG_Allowed_Blocks
             // Tabbed Content
             'tabbed-content-container-block',
             'tabbed-content-panel-block',
+
+            // Text & Image
+            'text-image-container',
+            'text-image-block',
 
             // Video Tabbed Content
             'video-tabbed-content-container-block',
@@ -64,6 +74,9 @@ class PG_Allowed_Blocks
             'podcast',
         );
         $this->custom_blocks = array(
+            // Blockquote
+            'blockquote',
+
             // Callout
             'callout-column',
             'callout-container',
@@ -74,6 +87,10 @@ class PG_Allowed_Blocks
 
             // Gallery
             'gallery-container',
+
+            // Image Row
+            'image-row-container',
+            'image-row-block',
 
             // Jobs
             'job-block',
@@ -112,6 +129,10 @@ class PG_Allowed_Blocks
             'tag-cloud-container-block',
             'tag-cloud-item-block',
 
+            // Text & Image
+            'text-image-container',
+            'text-image-block',
+
             // Locations
             'locations-container',
             'location',
@@ -133,7 +154,7 @@ class PG_Allowed_Blocks
             'core/table',
             'core/audio',
             'core/shortcode',
-            'core/quote'
+            'core/quote',
         );
         $this->author_blocks = array(
             $this->namespace . '/author-meta-block',

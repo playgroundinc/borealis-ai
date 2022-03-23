@@ -66,6 +66,10 @@ import iconListItemBlock from "./blocks/icon-list/icon-list-item-block.jsx";
 // Image & Text Strip Block
 import imageTextStripBlock from "./blocks/image-text-strip-block.jsx";
 
+// Image Row Blocks
+import imageRowContainer from "./blocks/image-row/image-row-container.jsx";
+import imageRowBlock from "./blocks/image-row/image-row-block.jsx";
+
 // Logo Blocks
 import logosContainer from "./blocks/logos/logo-container.jsx";
 import logosSubsection from "./blocks/logos/logos-subsection.jsx";
@@ -104,6 +108,10 @@ import statisticsContainerBlock from "./blocks/stats/statistics-container-block.
 // Tabbed Content Blocks
 import tabbedContentContainerBlock from "./blocks/tabbed-content/tabbed-content-container.jsx";
 import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-panel.jsx";
+
+// Text & Image Blocks
+import textImageBlock from "./blocks/text-image/text-image-block.jsx";
+import textImageContainerBlock from "./blocks/text-image/text-image-container-block.jsx";
 
 // Video Tabbed Content Blocks
 import videoTabbedContentContainerBlock from "./blocks/video-tabbed-content/video-tabbed-content-container.jsx";
@@ -205,6 +213,10 @@ iconListItemBlock();
 tabbedContentContainerBlock();
 tabbedContentPanelBlock();
 
+//  Text & Image Blocks
+textImageBlock();
+textImageContainerBlock();
+
 // Video Tabbed Content Blocks
 videoTabbedContentContainerBlock();
 videoTabbedContentPanelBlock();
@@ -216,6 +228,7 @@ tagCloudItemBlock();
 // Text 2 Up Blocks
 text2UpContainerBlock();
 text2UpBlock();
+
 // Image & Text Strip Block
 imageTextStripBlock();
 
@@ -230,3 +243,7 @@ locationImageBlock();
 
 // Podcast Block
 podcastBlock();
+
+// Image Row Blocks
+imageRowBlock();
+imageRowContainer();
