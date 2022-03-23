@@ -2767,6 +2767,10 @@ function imageTextStripBlock() {
     reverse: {
       type: "Boolean",
       default: false
+    },
+    full_width: {
+      type: "Boolean",
+      default: false
     }
   };
   registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
@@ -2785,9 +2789,13 @@ function imageTextStripBlock() {
           btn_url = attributes.btn_url,
           btn_text = attributes.btn_text,
           image_alt = attributes.image_alt,
+          image_alt_mobile = attributes.image_alt_mobile,
           image_id = attributes.image_id,
+          image_id_mobile = attributes.image_id_mobile,
+          image_url_mobile = attributes.image_url_mobile,
           image_url = attributes.image_url,
-          reverse = attributes.reverse;
+          reverse = attributes.reverse,
+          full_width = attributes.full_width;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -2800,10 +2808,15 @@ function imageTextStripBlock() {
       }, "Image Text Strip (Control layout in block settings)"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
         title: "Block Settings",
         controls: [{
-          type: 'toggle',
-          label: 'Reversed?',
-          reference: 'reverse',
+          type: "toggle",
+          label: "Reversed?",
+          reference: "reverse",
           value: reverse
+        }, {
+          type: "toggle",
+          label: "Full Width?",
+          reference: "full_width",
+          value: full_width
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -2817,6 +2830,19 @@ function imageTextStripBlock() {
           idValue: image_id,
           idReference: "image_id",
           buttonText: "Add an image"
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        components: [{
+          value: image_url_mobile,
+          reference: "image_url_mobile",
+          altValue: image_alt_mobile,
+          altReference: "image_alt_mobile",
+          idValue: image_id_mobile,
+          idReference: "image_id_mobile",
+          buttonText: "Add an image (Mobile)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -2838,7 +2864,7 @@ function imageTextStripBlock() {
           reference: "copy",
           tagName: "p",
           classes: ["paragraph"],
-          settings: ['core/bold', 'core/link', 'core/italic', 'core/list'],
+          settings: ["core/bold", "core/link", "core/italic", "core/list"],
           placeholder: "Please provide copy (optional)"
         }],
         onChange: function onChange(attribute, change) {
@@ -2876,7 +2902,10 @@ function imageTextStripBlock() {
           btn_text = attributes.btn_text,
           image_url = attributes.image_url,
           reverse = attributes.reverse,
-          image_url_mobile = attributes.image_url_mobile;
+          image_url_mobile = attributes.image_url_mobile,
+          full_width = attributes.full_width,
+          image_id = attributes.image_id,
+          image_id_mobile = attributes.image_id_mobile;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -4215,7 +4244,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ pageStripGraphicContainer; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 function pageStripGraphicContainer() {
@@ -4241,6 +4272,10 @@ function pageStripGraphicContainer() {
     limit: {
       type: "Number",
       default: 0
+    },
+    column_amount: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -4255,14 +4290,41 @@ function pageStripGraphicContainer() {
       var innerBlockCount = useSelect(function (select) {
         return select("core/block-editor").getBlock(props.clientId).innerBlocks;
       });
+      var setAttributes = props.setAttributes,
+          attributes = props.attributes;
+      var column_amount = attributes.column_amount;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
+
+      var column_styles = [{
+        label: "Default",
+        value: "default"
+      }, {
+        label: "Three",
+        value: "three"
+      }];
       return [/*#__PURE__*/React.createElement("div", {
         class: "custom-component"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Page Strip Graphic Container Block"), /*#__PURE__*/React.createElement(InnerBlocks, {
+      }, "Page Strip Graphic Container Block"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Layout",
+          options: column_styles,
+          reference: "column_amount",
+          value: column_amount
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/page-strip-graphic")],
         renderAppender: function renderAppender() {
-          if (innerBlockCount.length < 2) {
+          if (innerBlockCount.length < 3) {
             return /*#__PURE__*/React.createElement(InnerBlocks.ButtonBlockAppender, null);
           } else {
             return false;
@@ -4271,6 +4333,7 @@ function pageStripGraphicContainer() {
       }))];
     },
     save: function save() {
+      var column_amount = attributes.column_amount;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -4286,19 +4349,19 @@ function pageStripGraphicContainer() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ trmcPageStripGraphicBlock; }
+/* harmony export */   "default": function() { return /* binding */ pageStripGraphicBlock; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants.js */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
-/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
+/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-// Helpers
- // Reusable
 
 
 
-function trmcPageStripGraphicBlock() {
+
+function pageStripGraphicBlock() {
   /**
    * GUTENBERG BLOCK - Page Strip Graphic
    */
@@ -4306,7 +4369,6 @@ function trmcPageStripGraphicBlock() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
-  var ToggleControl = wp.components.ToggleControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var slug = "page-strip-graphic";
@@ -4356,7 +4418,7 @@ function trmcPageStripGraphicBlock() {
       type: "String",
       default: ""
     },
-    icon: {
+    background_colour: {
       type: "String",
       default: ""
     }
@@ -4392,17 +4454,45 @@ function trmcPageStripGraphicBlock() {
           image_url_mobile = attributes.image_url_mobile,
           image_id_mobile = attributes.image_id_mobile,
           image_alt_mobile = attributes.image_alt_mobile,
-          icon = attributes.icon;
+          background_colour = attributes.background_colour;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
+      var background_styles = [{
+        label: "Default",
+        value: "bg-shade-white-400 text-shade-black-400"
+      }, {
+        label: "Purple",
+        value: "bg-primary-purple-400 text-shade-white-400"
+      }, {
+        label: "Navy",
+        value: "bg-primary-navy-400 text-shade-white-400"
+      }, {
+        label: "Light Blue",
+        value: "bg-tint-lightBlue-400 text-shade-white-400"
+      }, {
+        label: "Light Purple",
+        value: "bg-tint-purple-400 text-shade-white-400"
+      }];
       return [/*#__PURE__*/React.createElement("section", {
         class: "custom-child"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Graphic Page Strip"), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, "Graphic Page Strip"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Background Colour",
+          options: background_styles,
+          reference: "background_colour",
+          value: background_colour
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
         components: [{
           value: image_url,
           reference: "image_url",
@@ -4415,7 +4505,7 @@ function trmcPageStripGraphicBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
         components: [{
           value: image_url_mobile,
           reference: "image_url_mobile",
@@ -4428,7 +4518,7 @@ function trmcPageStripGraphicBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
           value: title,
           reference: "title",
@@ -4439,7 +4529,7 @@ function trmcPageStripGraphicBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
           value: copy,
           reference: "copy",
@@ -4450,7 +4540,7 @@ function trmcPageStripGraphicBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
           value: btn_url,
           reference: "btn_url",
@@ -4461,7 +4551,7 @@ function trmcPageStripGraphicBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
           value: btn_text,
           reference: "btn_text",
@@ -4472,12 +4562,6 @@ function trmcPageStripGraphicBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), /*#__PURE__*/React.createElement(ToggleControl, {
-        label: "Style: check for white arrow or leave unchecked for black arrow",
-        checked: icon,
-        onChange: function onChange(change) {
-          updateAttributeValue("icon", change);
-        }
       }))];
     },
     save: function save(_ref) {
@@ -4487,8 +4571,8 @@ function trmcPageStripGraphicBlock() {
           btn_url = attributes.btn_url,
           btn_text = attributes.btn_text,
           image_url = attributes.image_url,
-          icon = attributes.icon,
-          image_url_mobile = attributes.image_url_mobile;
+          image_url_mobile = attributes.image_url_mobile,
+          background_colour = attributes.background_colour;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -7554,7 +7638,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 /* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
+/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -7591,7 +7677,31 @@ function text2UpContainerBlock() {
       type: "String",
       default: "default"
     },
+    title_size: {
+      type: "String",
+      default: "default"
+    },
+    copy_size: {
+      type: "String",
+      default: "default"
+    },
+    text_or_image: {
+      type: "String",
+      default: "default"
+    },
     cta_text: {
+      type: "String",
+      default: ""
+    },
+    image_id: {
+      type: "Number",
+      default: 0
+    },
+    image_alt: {
+      type: "String",
+      default: ""
+    },
+    image_url: {
       type: "String",
       default: ""
     }
@@ -7611,7 +7721,13 @@ function text2UpContainerBlock() {
           subtitle = attributes.subtitle,
           bgColour = attributes.bgColour,
           colAmount = attributes.colAmount,
-          cta_text = attributes.cta_text;
+          cta_text = attributes.cta_text,
+          title_size = attributes.title_size,
+          copy_size = attributes.copy_size,
+          image_alt = attributes.image_alt,
+          image_id = attributes.image_id,
+          image_url = attributes.image_url,
+          text_or_image = attributes.text_or_image;
       var bgStyles = [{
         label: "Default",
         value: "bg-shade-white-400 text-shade-black-400"
@@ -7634,6 +7750,30 @@ function text2UpContainerBlock() {
       }, {
         label: "Two",
         value: "two"
+      }, {
+        label: "Three",
+        value: "three"
+      }];
+      var textOrImageStyles = [{
+        label: "text",
+        value: "default"
+      }, {
+        label: "image",
+        value: "image"
+      }];
+      var titleStyles = [{
+        label: "Large",
+        value: "h2"
+      }, {
+        label: "Small",
+        value: "h3"
+      }];
+      var copyStyles = [{
+        label: "Large",
+        value: "paragraph-lg"
+      }, {
+        label: "Small",
+        value: "paragraph"
       }];
 
       function updateAttributeValue(attribute, value) {
@@ -7658,6 +7798,19 @@ function text2UpContainerBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        components: [{
+          value: image_url,
+          reference: "image_url",
+          altValue: image_alt,
+          altReference: "image_alt",
+          idValue: image_id,
+          idReference: "image_id",
+          buttonText: "Add an image"
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
       }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
           value: subtitle,
@@ -7673,13 +7826,25 @@ function text2UpContainerBlock() {
         title: "Block Settings",
         controls: [{
           type: "select",
+          label: "Title or Img",
+          options: textOrImageStyles,
+          reference: "text_or_image",
+          value: text_or_image
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
           label: "Background Colour",
           options: bgStyles,
           reference: "bgColour",
           value: bgColour
         }, {
           type: "select",
-          label: "1 or 2 Columns of Copy",
+          label: "1/2/3 Columns",
           options: colStyles,
           reference: "colAmount",
           value: colAmount
@@ -7687,10 +7852,28 @@ function text2UpContainerBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Title Size",
+          options: titleStyles,
+          reference: "title_size",
+          value: title_size
+        }, {
+          type: "select",
+          label: "Copy Size",
+          options: copyStyles,
+          reference: "copy_size",
+          value: copy_size
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
       }), /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/text-2-up")],
         renderAppender: function renderAppender() {
-          if (innerBlockCount.length < 2) {
+          if (innerBlockCount.length < 3) {
             return /*#__PURE__*/React.createElement(InnerBlocks.ButtonBlockAppender, null);
           } else {
             return false;
@@ -7714,7 +7897,13 @@ function text2UpContainerBlock() {
           subtite = attributes.subtite,
           bgColour = attributes.bgColour,
           colAmount = attributes.colAmount,
-          cta_text = attributes.cta_text;
+          cta_text = attributes.cta_text,
+          title_size = attributes.title_size,
+          copy_size = attributes.copy_size,
+          image_alt = attributes.image_alt,
+          image_id = attributes.image_id,
+          image_url = attributes.image_url,
+          text_or_image = attributes.text_or_image;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });

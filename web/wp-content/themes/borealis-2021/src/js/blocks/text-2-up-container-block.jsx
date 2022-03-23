@@ -1,6 +1,7 @@
 import { namespace } from "./helper-functions/constants";
 import CustomRichText from "./reusable/custom-richtext-component.jsx";
 import BlockSettings from "./reusable/block-custom-settings.jsx";
+import CustomImageUpload from "./reusable/custom-image-upload.jsx";
 
 export default function text2UpContainerBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
@@ -31,7 +32,31 @@ export default function text2UpContainerBlock() {
       type: "String",
       default: "default",
     },
+    title_size: {
+      type: "String",
+      default: "default",
+    },
+    copy_size: {
+      type: "String",
+      default: "default",
+    },
+    text_or_image: {
+      type: "String",
+      default: "default",
+    },
     cta_text: {
+      type: "String",
+      default: "",
+    },
+    image_id: {
+      type: "Number",
+      default: 0,
+    },
+    image_alt: {
+      type: "String",
+      default: "",
+    },
+    image_url: {
       type: "String",
       default: "",
     },
@@ -45,7 +70,19 @@ export default function text2UpContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title, subtitle, bgColour, colAmount, cta_text } = attributes;
+      const { 
+        title, 
+        subtitle, 
+        bgColour, 
+        colAmount, 
+        cta_text, 
+        title_size, 
+        copy_size, 
+        image_alt, 
+        image_id, 
+        image_url, 
+        text_or_image 
+      } = attributes;
 
       const bgStyles = [
         { label: "Default", value: "bg-shade-white-400 text-shade-black-400" },
@@ -67,6 +104,22 @@ export default function text2UpContainerBlock() {
       const colStyles = [
         { label: "Default", value: "default" },
         { label: "Two", value: "two" },
+        { label: "Three", value: "three" },
+      ];
+
+      const textOrImageStyles = [
+        { label: "text", value: "default" },
+        { label: "image", value: "image" },
+      ];
+
+      const titleStyles = [
+        { label: "Large", value: "h2" },
+        { label: "Small", value: "h3" },
+      ];
+
+      const copyStyles = [
+        { label: "Large", value: "paragraph-lg" },
+        { label: "Small", value: "paragraph" },
       ];
 
       function updateAttributeValue(attribute, value) {
@@ -92,6 +145,22 @@ export default function text2UpContainerBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <CustomImageUpload
+            components={[
+              {
+                value: image_url,
+                reference: "image_url",
+                altValue: image_alt,
+                altReference: "image_alt",
+                idValue: image_id,
+                idReference: "image_id",
+                buttonText: "Add an image",
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
           <CustomRichText
             components={[
               {
@@ -111,6 +180,21 @@ export default function text2UpContainerBlock() {
             controls={[
               {
                 type: "select",
+                label: "Title or Img",
+                options: textOrImageStyles,
+                reference: "text_or_image",
+                value: text_or_image,
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
+          <BlockSettings
+            title="Block Settings"
+            controls={[
+              {
+                type: "select",
                 label: "Background Colour",
                 options: bgStyles,
                 reference: "bgColour",
@@ -118,7 +202,7 @@ export default function text2UpContainerBlock() {
               },
               {
                 type: "select",
-                label: "1 or 2 Columns of Copy",
+                label: "1/2/3 Columns",
                 options: colStyles,
                 reference: "colAmount",
                 value: colAmount,
@@ -128,10 +212,32 @@ export default function text2UpContainerBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <BlockSettings
+            title="Block Settings"
+            controls={[
+              {
+                type: "select",
+                label: "Title Size",
+                options: titleStyles,
+                reference: "title_size",
+                value: title_size,
+              },
+              {
+                type: "select",
+                label: "Copy Size",
+                options: copyStyles,
+                reference: "copy_size",
+                value: copy_size,
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
           <InnerBlocks
             allowedBlocks={[`${namespace}/text-2-up`]}
             renderAppender={() => {
-              if (innerBlockCount.length < 2) {
+              if (innerBlockCount.length < 3) {
                 return <InnerBlocks.ButtonBlockAppender />;
               } else {
                 return false;
@@ -156,7 +262,7 @@ export default function text2UpContainerBlock() {
       ];
     },
     save: () => {
-      const { title, subtite, bgColour, colAmount, cta_text } = attributes;
+      const { title, subtite, bgColour, colAmount, cta_text, title_size, copy_size, image_alt, image_id, image_url, text_or_image } = attributes;
       return <InnerBlocks.Content />;
     },
   });
