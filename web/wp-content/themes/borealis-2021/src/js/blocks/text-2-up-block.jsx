@@ -50,15 +50,9 @@ export default function text2UpBlock() {
                 reference: "copy",
                 tagName: "p",
                 classes: ["paragraph"],
-                settings: [
-                  "core/bold",
-                  "core/link",
-                  "core/italic",
-                  "core/list",
-                  "core/paragraph",
-                ],
+                settings: ["core/bold", "core/link", "core/italic", "core/list", "core/paragraph"],
                 placeholder: "Please provide copy (optional)",
-              }
+              },
             ]}
             onChange={(attribute, change) => {
               updateAttributeValue(attribute, change);
