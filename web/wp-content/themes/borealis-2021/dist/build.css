@@ -1250,6 +1250,10 @@ ol.footnotes li small{
   margin-top: 32px;
   margin-bottom: 32px;
 }
+.my-10{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 .my-5{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1666,6 +1670,9 @@ ol.footnotes li small{
 }
 .justify-between{
   justify-content: space-between;
+}
+.gap-6{
+  gap: 24px;
 }
 .gap-y-8{
   row-gap: 32px;

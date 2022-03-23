@@ -44,6 +44,10 @@ class PG_Allowed_Blocks
             'page-strip-graphic',
             'page-strip-graphic-container',
 
+            // Image Row
+            'image-row-container',
+            'image-row-block',
+
             // Publications
             'publications-container',
             'select-publications',
@@ -83,6 +87,10 @@ class PG_Allowed_Blocks
 
             // Gallery
             'gallery-container',
+
+            // Image Row
+            'image-row-container',
+            'image-row-block',
 
             // Jobs
             'job-block',
@@ -146,7 +154,7 @@ class PG_Allowed_Blocks
             'core/table',
             'core/audio',
             'core/shortcode',
-            'core/quote'
+            'core/quote',
         );
         $this->author_blocks = array(
             $this->namespace . '/author-meta-block',

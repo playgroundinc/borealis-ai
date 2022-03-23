@@ -162,6 +162,10 @@ require get_template_directory() . '/inc/gutenberg/logos/render-logo-block.php';
 require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-container-block.php';
 require get_template_directory() . '/inc/gutenberg/render-graphic-page-strip-block.php';
 
+// Image Row 
+require get_template_directory() . '/inc/gutenberg/image-row/render-image-row-container-block.php';
+require get_template_directory() . '/inc/gutenberg/image-row/render-image-row-block.php';
+
 // Publications 
 require get_template_directory() . '/inc/gutenberg/publications/render-publications-container.php';
 require get_template_directory() . '/inc/gutenberg/publications/render-publications-item.php';

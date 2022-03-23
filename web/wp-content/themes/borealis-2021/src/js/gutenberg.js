@@ -66,6 +66,10 @@ import iconListItemBlock from "./blocks/icon-list/icon-list-item-block.jsx";
 // Image & Text Strip Block
 import imageTextStripBlock from "./blocks/image-text-strip-block.jsx";
 
+// Image Row Blocks
+import imageRowContainer from "./blocks/image-row/image-row-container.jsx";
+import imageRowBlock from "./blocks/image-row/image-row-block.jsx";
+
 // Logo Blocks
 import logosContainer from "./blocks/logos/logo-container.jsx";
 import logosSubsection from "./blocks/logos/logos-subsection.jsx";
@@ -239,3 +243,7 @@ locationImageBlock();
 
 // Podcast Block
 podcastBlock();
+
+// Image Row Blocks
+imageRowBlock();
+imageRowContainer();
