@@ -81,6 +81,7 @@ if (!function_exists('pg_render_image_text_strip_block')) {
                                         </a>
                                     <?php endif ?>
                                 </div>
+
                             </div>
                         </div>
                         <?php if ($attributes->full_width !== true) : ?>
