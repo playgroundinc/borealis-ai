@@ -3012,6 +3012,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:w-5\/6{
     width: 83.333333%;
   }
+    .md\:w-10\/12{
+    width: 83.333333%;
+  }
     .md\:w-7\/12{
     width: 58.333333%;
   }

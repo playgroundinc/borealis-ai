@@ -6208,7 +6208,7 @@ function SelectPost(_ref) {
 
   var _useSelect = useSelect(function (select) {
     return {
-      posts: select('core').getEntityRecords('postType', slug, {
+      posts: select("core").getEntityRecords("postType", slug, {
         per_page: -1
       })
     };
@@ -6236,7 +6236,7 @@ function SelectPost(_ref) {
       return 0;
     });
     selectPosts.push({
-      label: 'Select',
+      label: "Select",
       value: 0
     });
   }
