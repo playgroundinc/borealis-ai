@@ -824,6 +824,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
+.text-2-up a{
+  display: inline-block;
+  --tw-text-opacity: 1;
+  color: rgb(0 68 255 / var(--tw-text-opacity));
+}
+.text-2-up a:visited{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
+}
+.text-2-up a:hover{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
 .current_page_item .submenu{
   display: block;
 }
@@ -1298,8 +1311,14 @@ ol.footnotes li small{
 .mt-8{
   margin-top: 32px;
 }
+.mt-15{
+  margin-top: 60px;
+}
 .mb-18{
   margin-bottom: 72px;
+}
+.mt-0{
+  margin-top: 0px;
 }
 .mt-14{
   margin-top: 56px;
@@ -1327,9 +1346,6 @@ ol.footnotes li small{
 }
 .mb-5{
   margin-bottom: 20px;
-}
-.mt-0{
-  margin-top: 0px;
 }
 .mt-25{
   margin-top: 100px;
@@ -1360,9 +1376,6 @@ ol.footnotes li small{
 }
 .mr-7{
   margin-right: 28px;
-}
-.mt-15{
-  margin-top: 60px;
 }
 .block{
   display: block;
@@ -1447,23 +1460,17 @@ ol.footnotes li small{
 .min-h-\[400px\]{
   min-height: 400px;
 }
-.min-h-\[224px\]{
-  min-height: 224px;
-}
-.min-h-\[500px\]{
-  min-height: 500px;
-}
-.min-h-\[1000px\]{
-  min-height: 1000px;
-}
-.min-h-\[800px\]{
-  min-height: 800px;
+.min-h-\[850px\]{
+  min-height: 850px;
 }
 .min-h-\[950px\]{
   min-height: 950px;
 }
-.min-h-\[850px\]{
-  min-height: 850px;
+.min-h-\[500px\]{
+  min-height: 500px;
+}
+.min-h-\[224px\]{
+  min-height: 224px;
 }
 .w-full{
   width: 100%;
@@ -1836,9 +1843,6 @@ ol.footnotes li small{
 .bg-cover{
   background-size: cover;
 }
-.bg-contain{
-  background-size: contain;
-}
 .bg-bottom{
   background-position: bottom;
 }
@@ -2130,9 +2134,6 @@ ol.footnotes li small{
 }
 .pl-1{
   padding-left: 4px;
-}
-.pb-38{
-  padding-bottom: 152px;
 }
 .text-center{
   text-align: center;
@@ -2893,6 +2894,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:mt-5{
     margin-top: 20px;
+  }
+    .md\:mt-12{
+    margin-top: 48px;
   }
     .md\:mt-24{
     margin-top: 96px;
