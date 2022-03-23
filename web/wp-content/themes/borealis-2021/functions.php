@@ -196,6 +196,10 @@ require get_template_directory() . '/inc/gutenberg/sidebar-table-of-contents/ren
 require get_template_directory() . '/inc/gutenberg/icon-list/render-icon-list-container-block.php';
 require get_template_directory() . '/inc/gutenberg/icon-list/render-icon-list-item-block.php';
 
+// Text & Image Block
+require get_template_directory() . '/inc/gutenberg/text-image/render-text-image-container-block.php';
+require get_template_directory() . '/inc/gutenberg/text-image/render-text-image-block.php';
+
 // Tabbed Content Blocks
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-container-block.php';
 require get_template_directory() . '/inc/gutenberg/tabbed-content/render-tabbed-content-panel-block.php';

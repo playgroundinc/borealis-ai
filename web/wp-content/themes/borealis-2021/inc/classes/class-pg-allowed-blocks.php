@@ -51,6 +51,10 @@ class PG_Allowed_Blocks
             'tabbed-content-container-block',
             'tabbed-content-panel-block',
 
+            // Text & Image
+            'text-image-container',
+            'text-image-block',
+
             // Video Tabbed Content
             'video-tabbed-content-container-block',
             'video-tabbed-content-panel-block',
@@ -110,6 +114,10 @@ class PG_Allowed_Blocks
             // Tag Cloud
             'tag-cloud-container-block',
             'tag-cloud-item-block',
+
+            // Text & Image
+            'text-image-container',
+            'text-image-block',
 
             // Locations
             'locations-container',
