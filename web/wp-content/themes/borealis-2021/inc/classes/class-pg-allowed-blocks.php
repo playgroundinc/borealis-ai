@@ -48,6 +48,9 @@ class PG_Allowed_Blocks
             'image-row-container',
             'image-row-block',
 
+            // Paragraph
+            'paragraph',
+
             // Publications
             'publications-container',
             'select-publications',

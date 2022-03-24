@@ -133,6 +133,10 @@
     @apply paragraph;
   }
 
+  .paragraph-blog {
+    @apply paragraph;
+  }
+
   .animated-element {
     @apply opacity-0 relative motion-safe:top-8 transition-animate duration-700;
   }
