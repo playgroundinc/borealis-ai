@@ -50,6 +50,7 @@ if (!function_exists('pg_render_logo_block')) {
                 <a class="mr-10 lg:mr-16 w-42 h-18" href="<?php echo esc_url_raw($attributes->link); ?>" <?php echo !empty($attributes->image_alt) ? esc_html('aria-label=' . $attributes->image_alt) : null; ?>>
                     <picture class="image-block__img lazy">
                         <img class="lazy h-full w-full object-contain" data-src="<?php echo esc_url_raw($image) ?>" src="<?php echo esc_url_raw($image) ?>" <?php echo !empty($attributes->image_alt) ? esc_html('alt=' . $attributes->image_alt) : null; ?>>
+                    </picture>
                 </a>
             <?php else : ?>
                 <div class="mr-10 lg:mr-16 w-42 h-18">
