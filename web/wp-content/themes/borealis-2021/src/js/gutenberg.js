@@ -113,6 +113,9 @@ import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-pane
 import textImageBlock from "./blocks/text-image/text-image-block.jsx";
 import textImageContainerBlock from "./blocks/text-image/text-image-container-block.jsx";
 
+// Title Text Cta Block
+import titleTextCtaBlock from "./blocks/title-text-cta/title-text-cta-block.jsx";
+
 // Video Tabbed Content Blocks
 import videoTabbedContentContainerBlock from "./blocks/video-tabbed-content/video-tabbed-content-container.jsx";
 import videoTabbedContentPanelBlock from "./blocks/video-tabbed-content/video-tabbed-content-panel.jsx";
@@ -228,6 +231,9 @@ tagCloudItemBlock();
 // Text 2 Up Blocks
 text2UpContainerBlock();
 text2UpBlock();
+
+// Title Text Cta Block
+titleTextCtaBlock();
 
 // Image & Text Strip Block
 imageTextStripBlock();

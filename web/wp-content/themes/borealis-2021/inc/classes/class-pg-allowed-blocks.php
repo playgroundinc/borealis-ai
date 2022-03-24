@@ -62,6 +62,9 @@ class PG_Allowed_Blocks
             'text-image-container',
             'text-image-block',
 
+            // Title Text Cta
+            'title-text-cta',
+
             // Video Tabbed Content
             'video-tabbed-content-container-block',
             'video-tabbed-content-panel-block',
@@ -132,6 +135,9 @@ class PG_Allowed_Blocks
             // Text & Image
             'text-image-container',
             'text-image-block',
+
+            // Title Text Cta
+            'title-text-cta',
 
             // Locations
             'locations-container',
