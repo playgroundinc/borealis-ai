@@ -1381,6 +1381,12 @@ ol.footnotes li small{
 .mr-7{
   margin-right: 28px;
 }
+.mb-20{
+  margin-bottom: 80px;
+}
+.mb-40{
+  margin-bottom: 160px;
+}
 .block{
   display: block;
 }
@@ -2946,6 +2952,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:mt-3{
     margin-top: 12px;
+  }
+    .md\:mb-40{
+    margin-bottom: 160px;
   }
     .md\:block{
     display: block;
