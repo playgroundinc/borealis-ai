@@ -40,11 +40,12 @@ if (!function_exists('pg_render_icon_list_item_block')) {
             'copy' => '',
             'image_url' => '',
             'image_alt' => '',
+            'width' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <li class="flex mb-12 w-full <?php echo is_singular(array('news', 'research-blogs')) ? 'border-b border-shade-grey-700 pb-8' : 'md:w-6/12 pr-8' ?> " aria-labelledby="<?php echo esc_html(pg_slugify($attributes->subtitle)) ?>">
+        <li class="flex mb-12 w-full <?php echo $attributes->width === 'full-width' ? 'border-b border-shade-grey-700 pb-8' : 'md:w-6/12 pr-8' ?> " aria-labelledby="<?php echo esc_html(pg_slugify($attributes->subtitle)) ?>">
             <?php if (!empty($attributes->image_url) and $block["icon"]) : ?>
                 <img class="mr-10 h-13" src="<?php echo esc_html($attributes->image_url) ?>" alt="<?php echo esc_html($attributes->image_alt) ?>">
             <?php endif; ?>
@@ -53,7 +54,7 @@ if (!function_exists('pg_render_icon_list_item_block')) {
                     <h4 class="h4" id="<?php echo esc_html($attributes->subtitle) ?>" class=""><?php echo $attributes->subtitle ?></h4>
                 <?php endif; ?>
                 <?php if (!empty($attributes->copy)) : ?>
-                    <p class="<?php echo is_singular(array('news', 'research-blogs')) ? 'paragraph-blog' : 'paragraph' ?>" id="<?php echo esc_html($attributes->copy) ?>" class=""><?php echo esc_html($attributes->copy) ?></p>
+                    <p class="paragraph" id="<?php echo esc_html($attributes->copy) ?>" class=""><?php echo esc_html($attributes->copy) ?></p>
                 <?php endif; ?>
             </div>
         </li>
