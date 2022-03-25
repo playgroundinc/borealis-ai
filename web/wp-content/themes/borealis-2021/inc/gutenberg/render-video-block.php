@@ -31,6 +31,7 @@ if (!function_exists('pg_render_video_block')) {
         $allowed_html = pg_allowed_html();
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
+
 ?>
         <div class="custom-component nestable animated-element">
             <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : '' ?> relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg tb:min-h-[350px] lg:min-h-[435px]">
