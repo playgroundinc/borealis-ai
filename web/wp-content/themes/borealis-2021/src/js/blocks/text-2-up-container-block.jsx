@@ -70,34 +70,23 @@ export default function text2UpContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { 
-        title, 
-        subtitle, 
-        bgColour, 
-        colAmount, 
-        cta_text, 
-        title_size, 
-        copy_size, 
-        image_alt, 
-        image_id, 
-        image_url, 
-        text_or_image 
-      } = attributes;
+      const { title, subtitle, bgColour, colAmount, cta_text, title_size, copy_size, image_alt, image_id, image_url, text_or_image } =
+        attributes;
 
       const bgStyles = [
-        { label: "Default", value: "bg-shade-white-400 text-shade-black-400" },
+        { label: "Default", value: "bg-shade-white-400 text-shade-black-400 before:bg-shade-black-400" },
         {
           label: "Purple",
-          value: "bg-primary-purple-400 text-shade-white-400",
+          value: "bg-primary-purple-400 text-shade-white-400 before:bg-shade-white-400",
         },
-        { label: "Navy", value: "bg-primary-navy-400 text-shade-white-400" },
+        { label: "Navy", value: "bg-primary-navy-400 text-shade-white-400 before:bg-shade-white-400" },
         {
           label: "Light Blue",
-          value: "bg-tint-lightBlue-400 text-shade-white-400",
+          value: "bg-tint-lightBlue-400 text-shade-white-400 before:bg-shade-white-400",
         },
         {
           label: "Light Purple",
-          value: "bg-tint-purple-400 text-shade-white-400",
+          value: "bg-tint-purple-400 text-shade-white-400 before:bg-shade-white-400",
         },
       ];
 
@@ -262,7 +251,8 @@ export default function text2UpContainerBlock() {
       ];
     },
     save: () => {
-      const { title, subtite, bgColour, colAmount, cta_text, title_size, copy_size, image_alt, image_id, image_url, text_or_image } = attributes;
+      const { title, subtite, bgColour, colAmount, cta_text, title_size, copy_size, image_alt, image_id, image_url, text_or_image } =
+        attributes;
       return <InnerBlocks.Content />;
     },
   });

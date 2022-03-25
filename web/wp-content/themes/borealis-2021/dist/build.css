@@ -1346,9 +1346,6 @@ ol.footnotes li small{
 .mt-0{
   margin-top: 0px;
 }
-.mt-14{
-  margin-top: 56px;
-}
 .mr-3{
   margin-right: 12px;
 }
@@ -1382,11 +1379,11 @@ ol.footnotes li small{
 .mt-9{
   margin-top: 36px;
 }
-.mr-8{
-  margin-right: 32px;
-}
 .mb-13{
   margin-bottom: 52px;
+}
+.mt-14{
+  margin-top: 56px;
 }
 .mb-12{
   margin-bottom: 48px;
@@ -1896,9 +1893,6 @@ ol.footnotes li small{
 }
 .p-12{
   padding: 48px;
-}
-.p-6{
-  padding: 24px;
 }
 .px-4{
   padding-left: 16px;
@@ -3245,6 +3239,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pr-10{
     padding-right: 40px;
   }
+    .md\:pb-20{
+    padding-bottom: 80px;
+  }
     .md\:pt-11{
     padding-top: 44px;
   }
@@ -3295,9 +3292,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pt-16{
     padding-top: 64px;
-  }
-    .md\:pb-20{
-    padding-bottom: 80px;
   }
     .md\:pb-7{
     padding-bottom: 28px;
@@ -3385,25 +3379,6 @@ mjx-container::-webkit-scrollbar-thumb,
 }
 
 @media (min-width: 1000px){
-  .tb\:paragraph{
-    font-size: 18px;
-    font-family: Inter, sans-serif;
-    line-height: 1.80;
-    letter-spacing: normal;
-    text-transform: none;
-    font-weight: normal;
-    word-break: break-word;
-  }
-  @media (min-width: 375px){
-    .tb\:paragraph{
-      font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
-    }
-  }
-  @media (min-width: 1920px){
-    .tb\:paragraph{
-      font-size: 18px;
-    }
-  }
   .page .tb\:container .nestable .container{
     width: 100%;
   }
@@ -3446,11 +3421,11 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:mt-8{
     margin-top: 32px;
   }
+    .tb\:mt-14{
+    margin-top: 56px;
+  }
     .tb\:mb-12{
     margin-bottom: 48px;
-  }
-    .tb\:mr-12{
-    margin-right: 48px;
   }
     .tb\:mt-0{
     margin-top: 0px;
@@ -3481,9 +3456,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:min-h-\[350px\]{
     min-height: 350px;
-  }
-    .tb\:min-h-\[550px\]{
-    min-height: 550px;
   }
     .tb\:min-h-\[400px\]{
     min-height: 400px;
@@ -3652,9 +3624,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:min-h-\[435px\]{
     min-height: 435px;
   }
-    .lg\:min-h-\[730px\]{
-    min-height: 730px;
-  }
     .lg\:min-h-\[500px\]{
     min-height: 500px;
   }
@@ -3702,9 +3671,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:overflow-hidden{
     overflow: hidden;
-  }
-    .lg\:p-9{
-    padding: 36px;
   }
     .lg\:px-0{
     padding-left: 0px;

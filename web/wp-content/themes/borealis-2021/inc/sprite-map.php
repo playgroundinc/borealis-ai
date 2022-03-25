@@ -159,9 +159,9 @@ if (!function_exists('pg_svg_spritemap')) {
 
             <!-- Down Chevron (arrow) -->
             <symbol id="icon-arrow-down" viewBox="0 0 24 25" fill="none">
-                <path d="M12 5.5L12 19.5" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M8 15.5L12 19.5" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M16 15.5L12 19.5" stroke="#222731" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12 5.5L12 19.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M8 15.5L12 19.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16 15.5L12 19.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </symbol>
 
             <!-- Left Chevron (arrow) -->

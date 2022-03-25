@@ -52,7 +52,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
         ob_start();
 ?>
         <div class="<?php echo $attributes->bgColour ?> custom-component animated-element">
-            <div class="container flex md:py-20 py-10 tb:flex-row flex-col">
+            <div class="container flex <?php echo !empty($attributes->cta_text) ? 'md:pt-20 pt-10' : 'md:py-20 py-10' ?> tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if ($attributes->text_or_image === 'image') : ?>
                         <img class="mb-6" src="<?php echo $image ?>" alt="<?php echo $attributes->image_id ?>">
@@ -108,14 +108,16 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
                 <?php
                 }
                 ?>
-                <?php if (!empty($attributes->cta_text)) : ?>
-                    <a href="#job-anchor" class="primary-button mt-14 text-shade-black-400 flex items-center">
-                        <p class="product-cta">
+            </div>
+            <?php if (!empty($attributes->cta_text)) : ?>
+                <div class="container flex justify-end">
+                    <a href="#job-anchor" class="primary-button flex items-center md:pb-20 pb-10 w-full tb:w-8/12 mt-8 tb:mt-14">
+                        <p class="product-cta  <?php echo $attributes->bgColour ?>">
                             <?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8 down"><?php echo pg_render_icon('arrow-down'); ?></span>
                         </p>
                     </a>
-                <?php endif; ?>
-            </div>
+                </div>
+            <?php endif; ?>
         </div>
 <?php
         return ob_get_clean();
