@@ -8109,19 +8109,19 @@ function text2UpContainerBlock() {
           text_or_image = attributes.text_or_image;
       var bgStyles = [{
         label: "Default",
-        value: "bg-shade-white-400 text-shade-black-400"
+        value: "bg-shade-white-400 text-shade-black-400 before:bg-shade-black-400"
       }, {
         label: "Purple",
-        value: "bg-primary-purple-400 text-shade-white-400"
+        value: "bg-primary-purple-400 text-shade-white-400 before:bg-shade-white-400"
       }, {
         label: "Navy",
-        value: "bg-primary-navy-400 text-shade-white-400"
+        value: "bg-primary-navy-400 text-shade-white-400 before:bg-shade-white-400"
       }, {
         label: "Light Blue",
-        value: "bg-tint-lightBlue-400 text-shade-white-400"
+        value: "bg-tint-lightBlue-400 text-shade-white-400 before:bg-shade-white-400"
       }, {
         label: "Light Purple",
-        value: "bg-tint-purple-400 text-shade-white-400"
+        value: "bg-tint-purple-400 text-shade-white-400 before:bg-shade-white-400"
       }];
       var colStyles = [{
         label: "Default",
