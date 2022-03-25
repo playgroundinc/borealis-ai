@@ -183,6 +183,11 @@ if (!function_exists('pg_svg_spritemap')) {
                 <path d="M5.5 3v24l19.322-12z" stroke="currentColor" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" />
             </symbol>
 
+            <!-- Video Play Button -->
+            <symbol id="icon-video-play" viewBox="0 0 74 75" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.3984 13.0269V62.216L61.0003 37.6215L21.3984 13.0269Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </symbol>
+
             <!--  Smart Quote -->
             <symbol id="icon-quote" viewbox="0 0 24 24">
                 <path d="M8.363 1c-.615 0-.993.17-1.474.485-.456.296-1.969 2.025-3.164 3.73-1.785 2.547-2.7 4.67-2.72 6.308L1 21.133C1 22.164 2.047 23 3.332 23h17.337C21.954 23 23 22.163 23 21.134l-.001-11.612c0-1.03-1.046-1.869-2.332-1.869H10.446l-.084-.367a9.545 9.545 0 0 1-.234-2.093c0-.75.085-1.472.262-2.207.032-.152.04-.241.04-.327C10.43 1.745 9.503 1 8.364 1Z" fill="currentColor" fill-rule="nonzero" />
