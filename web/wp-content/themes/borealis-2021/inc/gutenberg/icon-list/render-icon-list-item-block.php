@@ -27,6 +27,7 @@ if (!function_exists('pg_render_icon_list_item_block')) {
     /**
      * Render out icon list item block
      *
+     * 
      * @param array $attrs the current block's attributes.
      * @param mixed $content the content of the block.
      * @param array $block_obj array of the block features.
