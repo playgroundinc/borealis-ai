@@ -41,17 +41,15 @@ if (!function_exists('pg_render_custom_video_block')) {
             'image_url' => '',
             'image_alt' => '',
             'image_id'  => '',
-            'copy'   => '',
-            'width'  => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
         ob_start();
 ?>
         <div class="custom-component nestable animated-element">
-            <div class="<?php echo $attributes->width === 'full-width' ? '' : 'flex w-full justify-end container' ?>">
-                <div class="<?php echo $attributes->width === 'full-width' ? '' : 'w-full tb:w-8/12' ?>">
-                    <div class=" <?php echo $attributes->width === 'full-width' ? 'md:min-h-[350px] tb:min-h-[550px] lg:min-h-[730px] container' : 'md:min-h-[350px] tb:min-h-[400px] lg:min-h-[500px]' ?> relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg">
+            <div class="flex w-full justify-end container">
+                <div class="w-full tb:w-8/12">
+                    <div class="md:min-h-[350px] tb:min-h-[400px] lg:min-h-[500px] relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg">
                         <?php if (!empty($attributes->image_url)) : ?>
                             <div class="bg-cover bg-center absolute inset-0 z-10 video-block__overlay transition-all duration-400" style="background-image: url(<?php echo esc_url_raw($attributes->image_url) ?>)">
                                 <a class="block w-full h-full video-block__overlay__button" href="#" aria-label="<?php echo esc_attr('Play video') ?>">
@@ -71,19 +69,6 @@ if (!function_exists('pg_render_custom_video_block')) {
                             <video class="h-full w-full max-h-full" tabindex="-1" class="video" controls playsinline poster="<?php echo esc_url_raw($attributes->image_url) ?>">
                                 <source src="<?php echo esc_url_raw($attributes->video_url); ?>" type="video/mp4">
                             </video>
-                        </div>
-                    </div>
-                    <div class="container w-full flex justify-end <?php echo $attributes->width === 'full-width' ? '' : 'hidden' ?>">
-                        <div class="w-full tb:w-8/12 flex items-center p-6 lg:p-9 bg-alert-error-400 text-shade-white-400">
-                            <span class="h3 mr-8 tb:mr-12">
-                                <?php
-                                $icon = pg_render_icon('cookie-close');
-                                echo wp_kses($icon, $allowed_html);
-                                ?>
-                            </span>
-                            <p class="paragraph-md tb:paragraph">
-                                <?php echo $attributes->copy ?>
-                            </p>
                         </div>
                     </div>
                 </div>
