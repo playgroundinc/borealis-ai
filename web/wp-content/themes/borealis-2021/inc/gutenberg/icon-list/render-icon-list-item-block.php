@@ -54,7 +54,7 @@ if (!function_exists('pg_render_icon_list_item_block')) {
                     <h4 class="h4" id="<?php echo esc_html($attributes->subtitle) ?>" class=""><?php echo $attributes->subtitle ?></h4>
                 <?php endif; ?>
                 <?php if (!empty($attributes->copy)) : ?>
-                    <p class="<?php echo is_singular(array('news', 'research-blogs')) ? 'paragraph-blog' : 'paragraph' ?>" id="<?php echo esc_html($attributes->copy) ?>" class=""><?php echo esc_html($attributes->copy) ?></p>
+                    <p class="<?php echo $attributes->width === 'full-width' ? 'paragraph-blog' : 'paragraph' ?>" id="<?php echo esc_html($attributes->copy) ?>" class=""><?php echo esc_html($attributes->copy) ?></p>
                 <?php endif; ?>
             </div>
         </li>
