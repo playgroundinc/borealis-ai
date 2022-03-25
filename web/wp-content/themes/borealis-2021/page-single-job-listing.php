@@ -20,7 +20,7 @@ if (!empty($settings['greenhouse_api_key']) && strlen($settings['greenhouse_url'
         if (isset($_GET['gh_jid'])) {
             $jobIdQuery = sanitize_text_field(wp_unslash($_GET['gh_jid']));
         }
-        
+
         $args = array(
             'headers' => array(
                 'Authorization' => 'Basic' . esc_attr($settings['greenhouse_api_key'])
