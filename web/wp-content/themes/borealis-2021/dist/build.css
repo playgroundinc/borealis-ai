@@ -1097,6 +1097,25 @@ ol.footnotes li small{
     font-size: 18px;
   }
 }
+.paragraph-blog{
+  font-size: 18px;
+  font-family: Inter, sans-serif;
+  line-height: 1.80;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: normal;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .paragraph-blog{
+    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .paragraph-blog{
+    font-size: 18px;
+  }
+}
 .animated-element{
   position: relative;
   opacity: 0;
