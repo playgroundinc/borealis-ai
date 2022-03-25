@@ -38,6 +38,9 @@ import codeBlock from "./blocks/code/code-block.jsx";
 import contentCardContainerBlock from "./blocks/content-cards/content-card-container.jsx";
 import contentCardBlock from "./blocks/content-cards/content-card.jsx";
 
+// Custom Video
+import customVideoBlock from "./blocks/custom-video/custom-video.jsx";
+
 // Fellowships
 import fellowshipContainerBlock from "./blocks/fellowships/fellowship-container-block.jsx";
 import fellowshipBlock from "./blocks/fellowships/fellowship-block.jsx";
@@ -165,6 +168,9 @@ contentCardBlock();
 // Code
 compareCodeBlock();
 codeBlock();
+
+// Custom Video
+customVideoBlock();
 
 // Fellowship
 fellowshipBlock();

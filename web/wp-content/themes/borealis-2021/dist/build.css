@@ -1277,6 +1277,10 @@ ol.footnotes li small{
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.my-12{
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
 .mt-20{
   margin-top: 80px;
 }
@@ -1402,6 +1406,15 @@ ol.footnotes li small{
 }
 .mr-7{
   margin-right: 28px;
+}
+.mr-8{
+  margin-right: 32px;
+}
+.mr-9{
+  margin-right: 36px;
+}
+.mr-12{
+  margin-right: 48px;
 }
 .block{
   display: block;
@@ -1893,6 +1906,15 @@ ol.footnotes li small{
 }
 .p-12{
   padding: 48px;
+}
+.p-6{
+  padding: 24px;
+}
+.p-9{
+  padding: 36px;
+}
+.p-4{
+  padding: 16px;
 }
 .px-4{
   padding-left: 16px;
@@ -2795,6 +2817,25 @@ mjx-container::-webkit-scrollbar-thumb,
       font-size: 18px;
     }
   }
+  .md\:paragraph-md{
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    line-height: 1.80;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:paragraph-md{
+      font-size: calc(16px + ((16 - 16) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:paragraph-md{
+      font-size: 16px;
+    }
+  }
   .md\:paragraph-sm{
     font-size: 14px;
     font-family: Inter, sans-serif;
@@ -3009,6 +3050,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:min-h-\[244px\]{
     min-height: 244px;
+  }
+    .md\:min-h-\[350px\]{
+    min-height: 350px;
   }
     .md\:w-auto{
     width: auto;
@@ -3376,6 +3420,44 @@ mjx-container::-webkit-scrollbar-thumb,
 }
 
 @media (min-width: 1000px){
+  .tb\:paragraph{
+    font-size: 18px;
+    font-family: Inter, sans-serif;
+    line-height: 1.80;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .tb\:paragraph{
+      font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .tb\:paragraph{
+      font-size: 18px;
+    }
+  }
+  .tb\:paragraph-md{
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    line-height: 1.80;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .tb\:paragraph-md{
+      font-size: calc(16px + ((16 - 16) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .tb\:paragraph-md{
+      font-size: 16px;
+    }
+  }
   .page .tb\:container .nestable .container{
     width: 100%;
   }
@@ -3439,6 +3521,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:mb-5{
     margin-bottom: 20px;
   }
+    .tb\:mr-12{
+    margin-right: 48px;
+  }
     .tb\:block{
     display: block;
   }
@@ -3450,6 +3535,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:min-h-\[350px\]{
     min-height: 350px;
+  }
+    .tb\:min-h-\[550px\]{
+    min-height: 550px;
+  }
+    .tb\:min-h-\[400px\]{
+    min-height: 400px;
   }
     .tb\:w-8\/12{
     width: 66.666667%;
@@ -3519,6 +3610,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:overflow-x-scroll{
     overflow-x: scroll;
+  }
+    .tb\:p-6{
+    padding: 24px;
   }
     .tb\:py-18{
     padding-top: 72px;
@@ -3615,6 +3709,12 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:min-h-\[435px\]{
     min-height: 435px;
   }
+    .lg\:min-h-\[730px\]{
+    min-height: 730px;
+  }
+    .lg\:min-h-\[500px\]{
+    min-height: 500px;
+  }
     .lg\:w-1\/6{
     width: 16.666667%;
   }
@@ -3659,6 +3759,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:overflow-hidden{
     overflow: hidden;
+  }
+    .lg\:p-9{
+    padding: 36px;
   }
     .lg\:px-0{
     padding-left: 0px;

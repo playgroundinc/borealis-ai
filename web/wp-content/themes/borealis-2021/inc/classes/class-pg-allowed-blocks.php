@@ -26,10 +26,8 @@ class PG_Allowed_Blocks
             'code',
             'compare-code',
 
-            // Jobs
-            'jobs-container',
-            'select-job',
-            'job-highlight',
+            // Custom Video
+            'custom-video',
 
             // Icon List
             'icon-list-container-block',
@@ -40,16 +38,24 @@ class PG_Allowed_Blocks
             'image-text',
             'image-text-strip',
 
-            // Page Strips
-            'page-strip-graphic',
-            'page-strip-graphic-container',
-
             // Image Row
             'image-row-container',
             'image-row-block',
 
+            // Jobs
+            'jobs-container',
+            'select-job',
+            'job-highlight',
+
+            // Page Strips
+            'page-strip-graphic',
+            'page-strip-graphic-container',
+
             // Paragraph
             'paragraph',
+
+            // Podcast
+            'podcast',
 
             // Publications
             'publications-container',
@@ -65,19 +71,16 @@ class PG_Allowed_Blocks
             'text-image-container',
             'text-image-block',
 
+            // Text 2up
+            'text-2-up',
+            'text-2-up-container',
+
             // Title Text Cta
             'title-text-cta',
 
             // Video Tabbed Content
             'video-tabbed-content-container-block',
-            'video-tabbed-content-panel-block',
-
-            // Text 2up
-            'text-2-up',
-            'text-2-up-container',
-
-            // Podcast
-            'podcast',
+            'video-tabbed-content-panel-block'
         );
         $this->custom_blocks = array(
             // Blockquote
@@ -91,6 +94,9 @@ class PG_Allowed_Blocks
             'content-card',
             'content-card-container',
 
+            // Custom Video
+            'custom-video',
+
             // Gallery
             'gallery-container',
 
@@ -103,13 +109,18 @@ class PG_Allowed_Blocks
             'jobs-container',
             'select-job',
 
-            // Podcast
-            'podcast',
+            // Locations
+            'locations-container',
+            'location',
+            'location-image',
 
             // Logos
             'logo',
             'logos-container',
             'logos-subsection',
+
+            // Podcast
+            'podcast',
 
             // Posts
             'featured-posts-container',
@@ -131,6 +142,10 @@ class PG_Allowed_Blocks
             'stat-column',
             'stats-container',
 
+            // Statistics
+            'statistics',
+            'statistics-container',
+
             // Tag Cloud
             'tag-cloud-container-block',
             'tag-cloud-item-block',
@@ -141,15 +156,6 @@ class PG_Allowed_Blocks
 
             // Title Text Cta
             'title-text-cta',
-
-            // Locations
-            'locations-container',
-            'location',
-            'location-image',
-
-            // Statistics
-            'statistics',
-            'statistics-container'
         );
         $this->shared_core_blocks = array(
             'core/video',

@@ -235,6 +235,9 @@ require get_template_directory() . '/inc/gutenberg/locations/render-location-con
 require get_template_directory() . '/inc/gutenberg/locations/render-location-image-block.php';
 require get_template_directory() . '/inc/gutenberg/locations/render-location-block.php';
 
+// Custom Video Block
+require get_template_directory() . '/inc/gutenberg/custom-video/render-custom-video-block.php';
+
 // add hook for subnav
 add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2);
 
