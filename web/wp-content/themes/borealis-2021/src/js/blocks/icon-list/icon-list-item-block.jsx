@@ -1,15 +1,12 @@
 import { namespace } from "../helper-functions/constants";
-
+import BlockSettings from "../reusable/block-custom-settings.jsx";
 import CustomRichText from "../reusable/custom-richtext-component.jsx";
 import CustomImageUpload from "../reusable/custom-image-upload.jsx";
-
 
 export default function iconListItemBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { i18n } = wp;
-  const {
-    InnerBlocks,
-} = wp.blockEditor;
+  const { InnerBlocks } = wp.blockEditor;
 
   const blockSlug = "icon-list-item-block"; // slug for the block
   const blockTitle = "Icon list item block";
@@ -21,6 +18,10 @@ export default function iconListItemBlock() {
     image_id: {
       type: "Number",
       default: 0,
+    },
+    width: {
+      type: "String",
+      default: "",
     },
     image_alt: {
       type: "String",
@@ -49,16 +50,42 @@ export default function iconListItemBlock() {
     parent: [`${namespace}/icon-list-container-block`],
     edit: (props, editor = false, save = false) => {
       const { attributes, setAttributes } = props;
-      const { subtitle, copy, image_url, image_alt, image_id } = attributes;
+      const { subtitle, copy, image_url, image_alt, image_id, width } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
       }
 
+      const width_styles = [
+        {
+          label: "Default",
+          value: "default",
+        },
+        {
+          label: "Full Width",
+          value: "full-width",
+        },
+      ];
+
       return [
         <div className={`custom-child`}>
           <p className="block-title">Icon List Item</p>
           <div>
+            <BlockSettings
+              title="Width Settings"
+              controls={[
+                {
+                  type: "select",
+                  label: "Width",
+                  options: width_styles,
+                  reference: "width",
+                  value: width,
+                },
+              ]}
+              onChange={(attribute, change) => {
+                updateAttributeValue(attribute, change);
+              }}
+            />
             <CustomImageUpload
               components={[
                 {
@@ -90,7 +117,7 @@ export default function iconListItemBlock() {
                 updateAttributeValue(attribute, change);
               }}
             />
-             <CustomRichText
+            <CustomRichText
               components={[
                 {
                   value: copy,
@@ -109,7 +136,7 @@ export default function iconListItemBlock() {
       ];
     },
     save: () => {
-      const { subtitle, copy, image_url, image_alt, image_id } = attributes;
+      const { subtitle, copy, image_url, image_alt, image_id, width } = attributes;
       return <InnerBlocks.Content />;
     },
   });

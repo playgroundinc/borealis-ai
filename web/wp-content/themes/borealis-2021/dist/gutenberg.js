@@ -2630,9 +2630,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ iconListItemBlock; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
-/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
+/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -2655,6 +2657,10 @@ function iconListItemBlock() {
     image_id: {
       type: "Number",
       default: 0
+    },
+    width: {
+      type: "String",
+      default: ""
     },
     image_alt: {
       type: "String",
@@ -2689,17 +2695,37 @@ function iconListItemBlock() {
           copy = attributes.copy,
           image_url = attributes.image_url,
           image_alt = attributes.image_alt,
-          image_id = attributes.image_id;
+          image_id = attributes.image_id,
+          width = attributes.width;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
+      var width_styles = [{
+        label: "Default",
+        value: "default"
+      }, {
+        label: "Full Width",
+        value: "full-width"
+      }];
       return [/*#__PURE__*/React.createElement("div", {
         className: "custom-child"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Icon List Item"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, "Icon List Item"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        title: "Width Settings",
+        controls: [{
+          type: "select",
+          label: "Width",
+          options: width_styles,
+          reference: "width",
+          value: width
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
         components: [{
           value: image_url,
           reference: "image_url",
@@ -2713,7 +2739,7 @@ function iconListItemBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
           value: subtitle,
           reference: "subtitle",
@@ -2724,7 +2750,7 @@ function iconListItemBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
           value: copy,
           reference: "copy",
@@ -2742,7 +2768,8 @@ function iconListItemBlock() {
           copy = attributes.copy,
           image_url = attributes.image_url,
           image_alt = attributes.image_alt,
-          image_id = attributes.image_id;
+          image_id = attributes.image_id,
+          width = attributes.width;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
