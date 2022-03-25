@@ -41,7 +41,6 @@ if (!function_exists('pg_render_logo_block')) {
             'image_url' => '',
             'link' => '',
         );
-        
         $attributes = pg_get_attributes($attrs, $fields);
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
