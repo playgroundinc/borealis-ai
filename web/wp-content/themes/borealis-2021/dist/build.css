@@ -1381,6 +1381,12 @@ ol.footnotes li small{
 .mr-7{
   margin-right: 28px;
 }
+.ml-auto{
+  margin-left: auto;
+}
+.mt-2{
+  margin-top: 8px;
+}
 .block{
   display: block;
 }
@@ -1536,6 +1542,27 @@ ol.footnotes li small{
 .w-22{
   width: 88px;
 }
+.w-4\/12{
+  width: 33.333333%;
+}
+.w-5\/12{
+  width: 41.666667%;
+}
+.w-2\/12{
+  width: 16.666667%;
+}
+.w-2{
+  width: 8px;
+}
+.w-1\/12{
+  width: 8.333333%;
+}
+.w-1\/5{
+  width: 20%;
+}
+.w-1\/4{
+  width: 25%;
+}
 .max-w-\[200px\]{
   max-width: 200px;
 }
@@ -1674,8 +1701,17 @@ ol.footnotes li small{
 .gap-6{
   gap: 24px;
 }
+.gap-20{
+  gap: 80px;
+}
+.gap-5{
+  gap: 20px;
+}
 .gap-y-8{
   row-gap: 32px;
+}
+.self-center{
+  align-self: center;
 }
 .overflow-hidden{
   overflow: hidden;
@@ -1955,6 +1991,18 @@ ol.footnotes li small{
 .py-12{
   padding-top: 48px;
   padding-bottom: 48px;
+}
+.py-15{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.px-15{
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.px-19{
+  padding-left: 76px;
+  padding-right: 76px;
 }
 .pt-13{
   padding-top: 52px;
@@ -2406,7 +2454,6 @@ ol.footnotes li small{
 
 .product-cta::before {
   transition: transform 0.25s ease-in-out;
-  background: black;
   bottom: 0;
   content: "";
   height: 1px;
@@ -2503,6 +2550,18 @@ mjx-container::-webkit-scrollbar-thumb,
   border-radius: 50px;
   background-color: rgba(34, 39, 49, 0.5);
   -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+
+.before\:bg-shade-black-400::before{
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 39 49 / var(--tw-bg-opacity));
+}
+
+.before\:bg-shade-white-400::before{
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
 
 .first\:ml-4:first-child{
   margin-left: 16px;
@@ -3400,6 +3459,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:mb-5{
     margin-bottom: 20px;
   }
+    .tb\:ml-auto{
+    margin-left: auto;
+  }
     .tb\:block{
     display: block;
   }
@@ -3457,6 +3519,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:w-2\/5{
     width: 40%;
   }
+    .tb\:w-1\/5{
+    width: 20%;
+  }
     .tb\:flex-row{
     flex-direction: row;
   }
@@ -3472,12 +3537,19 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:justify-center{
     justify-content: center;
   }
+    .tb\:self-center{
+    align-self: center;
+  }
     .tb\:overflow-x-scroll{
     overflow-x: scroll;
   }
     .tb\:py-20{
     padding-top: 80px;
     padding-bottom: 80px;
+  }
+    .tb\:py-18{
+    padding-top: 72px;
+    padding-bottom: 72px;
   }
     .tb\:pt-6{
     padding-top: 24px;
