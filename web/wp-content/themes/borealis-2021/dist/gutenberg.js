@@ -1370,13 +1370,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ customVideoBlock; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants.js */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
-/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
-/* harmony import */ var _reusable_custom_video_upload_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reusable/custom-video-upload.jsx */ "./src/js/blocks/reusable/custom-video-upload.jsx");
-/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
+/* harmony import */ var _reusable_custom_video_upload_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-video-upload.jsx */ "./src/js/blocks/reusable/custom-video-upload.jsx");
+/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
 
 
 
@@ -1399,14 +1395,6 @@ function customVideoBlock() {
   var icon = "align-full-width"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
-    copy: {
-      type: "String",
-      default: ""
-    },
-    width: {
-      type: "String",
-      default: ""
-    },
     video_url: {
       type: "String",
       default: ""
@@ -1443,9 +1431,7 @@ function customVideoBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var copy = attributes.copy,
-          width = attributes.width,
-          video_url = attributes.video_url,
+      var video_url = attributes.video_url,
           video_id = attributes.video_id,
           video_alt = attributes.video_alt,
           image_url = attributes.image_url,
@@ -1456,30 +1442,11 @@ function customVideoBlock() {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
-      var width_styles = [{
-        label: "Default",
-        value: "default"
-      }, {
-        label: "Full Width",
-        value: "full-width"
-      }];
       return [/*#__PURE__*/React.createElement("section", {
         class: "custom-component"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Custom Video Block"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        title: "Width Settings",
-        controls: [{
-          type: "select",
-          label: "Width",
-          options: width_styles,
-          reference: "width",
-          value: width
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_video_upload_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, "Custom Video Block"), /*#__PURE__*/React.createElement(_reusable_custom_video_upload_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
           value: video_url,
           reference: "video_url",
@@ -1492,7 +1459,7 @@ function customVideoBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
           value: image_url,
           reference: "image_url",
@@ -1505,24 +1472,11 @@ function customVideoBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        components: [{
-          value: copy,
-          reference: "copy",
-          tagName: "p",
-          classes: ["paragraph"],
-          placeholder: "Please provide copy (optional)"
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
       }))];
     },
     save: function save(_ref) {
       var attributes = _ref.attributes;
-      var copy = attributes.copy,
-          width = attributes.width,
-          video_url = attributes.video_url,
+      var video_url = attributes.video_url,
           video_id = attributes.video_id,
           video_alt = attributes.video_alt,
           image_url = attributes.image_url,

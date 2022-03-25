@@ -1,6 +1,4 @@
 import { namespace } from "../helper-functions/constants.js";
-import CustomRichText from "../reusable/custom-richtext-component.jsx";
-import BlockSettings from "../reusable/block-custom-settings.jsx";
 import CustomVideoUpload from "../reusable/custom-video-upload.jsx";
 import CustomImageUpload from "../reusable/custom-image-upload.jsx";
 
@@ -20,14 +18,6 @@ export default function customVideoBlock() {
   const icon = "align-full-width"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {
-    copy: {
-      type: "String",
-      default: "",
-    },
-    width: {
-      type: "String",
-      default: "",
-    },
     video_url: {
       type: "String",
       default: "",
@@ -61,41 +51,15 @@ export default function customVideoBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { copy, width, video_url, video_id, video_alt, image_url, image_id, image_alt } = attributes;
+      const { video_url, video_id, video_alt, image_url, image_id, image_alt } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
       }
 
-      const width_styles = [
-        {
-          label: "Default",
-          value: "default",
-        },
-        {
-          label: "Full Width",
-          value: "full-width",
-        },
-      ];
-
       return [
         <section class="custom-component">
           <p className="block-title">Custom Video Block</p>
-          <BlockSettings
-            title="Width Settings"
-            controls={[
-              {
-                type: "select",
-                label: "Width",
-                options: width_styles,
-                reference: "width",
-                value: width,
-              },
-            ]}
-            onChange={(attribute, change) => {
-              updateAttributeValue(attribute, change);
-            }}
-          />
           <CustomVideoUpload
             components={[
               {
@@ -128,25 +92,11 @@ export default function customVideoBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
-          <CustomRichText
-            components={[
-              {
-                value: copy,
-                reference: "copy",
-                tagName: "p",
-                classes: ["paragraph"],
-                placeholder: "Please provide copy (optional)",
-              },
-            ]}
-            onChange={(attribute, change) => {
-              updateAttributeValue(attribute, change);
-            }}
-          />
         </section>,
       ];
     },
     save: ({ attributes }) => {
-      const { copy, width, video_url, video_id, video_alt, image_url, image_id, image_alt } = attributes;
+      const { video_url, video_id, video_alt, image_url, image_id, image_alt } = attributes;
       return <InnerBlocks.Content />;
     },
   });
