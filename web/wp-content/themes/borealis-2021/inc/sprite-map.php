@@ -55,11 +55,6 @@ if (!function_exists('pg_svg_spritemap')) {
                 <path d="M23.4 3.08036C23.1 2.01786 22.35 1.25893 21.3 0.955357C19.5 0.5 11.85 0.5 11.85 0.5C11.85 0.5 4.35001 0.5 2.40001 0.955357C1.35001 1.25893 0.599995 2.01786 0.299995 3.08036C-4.58956e-06 5.05357 0 9 0 9C0 9 4.55976e-06 12.9464 0.450005 14.9196C0.750005 15.9821 1.5 16.7411 2.55 17.0446C4.35 17.5 12 17.5 12 17.5C12 17.5 19.5 17.5 21.45 17.0446C22.5 16.7411 23.25 15.9821 23.55 14.9196C24 12.9464 24 9 24 9C24 9 24 5.05357 23.4 3.08036ZM9.59999 12.6429V5.35714L15.9 9L9.59999 12.6429Z" fill="currentColor" />
             </symbol>
 
-            <!-- Down Chevron -->
-            <symbol id="icon-chevron" viewBox="0 0 10 10">
-                <path d="m2 3.5 3 3.066L8 3.5" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" />
-            </symbol>
-
             <!-- Hamburger Icon -->
             <symbol id="icon-hamburger" viewBox="0 0 24 24">
                 <g transform="translate(1 5.5)" fill="currentColor" fill-rule="nonzero">
@@ -257,10 +252,11 @@ if (!function_exists('pg_svg_spritemap')) {
                 <path d="M15 8.25L19 12.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </symbol>
 
-
-            <symbol id="icon-chevron" viewBox="0 0 24 25" fill="none">
-                <path d="M6 9.5L12 15.5L18 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <!-- Down Chevron -->
+            <symbol id="icon-chevron" viewBox="0 0 14 9" fill="none">
+                <path d="M1 1.5L7 7.5L13 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </symbol>
+
 
             <!--  Cookie Close -->
             <symbol id="icon-cookie-close" viewBox="0 0 8 8">
