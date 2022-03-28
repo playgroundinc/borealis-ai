@@ -859,9 +859,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 0px;
   }
 }
-.custom-component{
-  margin-top: 92px;
-}
 .custom-component .custom-component{
   margin-top: 0px;
 }
@@ -2167,6 +2164,9 @@ ol.footnotes li small{
 .pl-1{
   padding-left: 4px;
 }
+.pb-0{
+  padding-bottom: 0px;
+}
 .text-center{
   text-align: center;
 }
@@ -3311,6 +3311,12 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pb-4{
     padding-bottom: 16px;
   }
+    .md\:pb-10{
+    padding-bottom: 40px;
+  }
+    .md\:pb-5{
+    padding-bottom: 20px;
+  }
     .md\:text-left{
     text-align: left;
   }
@@ -3563,6 +3569,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:pt-20{
     padding-top: 80px;
+  }
+    .tb\:pb-10{
+    padding-bottom: 40px;
   }
     .tb\:container{
     margin: 0 auto;

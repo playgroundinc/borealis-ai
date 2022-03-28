@@ -18,6 +18,10 @@ export default function textImageContainerBlock() {
       type: "String",
       default: "",
     },
+    copy: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -28,7 +32,7 @@ export default function textImageContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title } = attributes;
+      const { title, copy } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -63,11 +67,25 @@ export default function textImageContainerBlock() {
               }
             }}
           />
+          <CustomRichText
+            components={[
+              {
+                value: copy,
+                reference: "copy",
+                tagName: "h3",
+                classes: ["heading_three"],
+                placeholder: "Please provide a copy (optional)",
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
         </div>,
       ];
     },
     save: () => {
-      const { title } = attributes;
+      const { title, copy } = attributes;
       return <InnerBlocks.Content />;
     },
   });
