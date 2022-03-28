@@ -8407,6 +8407,10 @@ function textImageContainerBlock() {
     title: {
       type: "String",
       default: ""
+    },
+    copy: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -8420,7 +8424,8 @@ function textImageContainerBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var title = attributes.title;
+      var title = attributes.title,
+          copy = attributes.copy;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -8453,10 +8458,22 @@ function textImageContainerBlock() {
             return false;
           }
         }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        components: [{
+          value: copy,
+          reference: "copy",
+          tagName: "h3",
+          classes: ["heading_three"],
+          placeholder: "Please provide a copy (optional)"
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
       }))];
     },
     save: function save() {
-      var title = attributes.title;
+      var title = attributes.title,
+          copy = attributes.copy;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
