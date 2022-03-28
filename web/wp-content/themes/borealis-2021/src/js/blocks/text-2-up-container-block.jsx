@@ -10,7 +10,7 @@ export default function text2UpContainerBlock() {
   const { i18n } = wp;
 
   const blockSlug = "text-2-up-container"; // slug for the block
-  const blockTitle = "Text 2 Up Container";
+  const blockTitle = "Text 2 Up Container Block";
   const blockDescription = "Component to create a text 2 up container block";
   const blockCategory = "containers";
   const blockIcon = "align-left"; // Dashicons: https://developer.wordpress.org/resource/dashicons/

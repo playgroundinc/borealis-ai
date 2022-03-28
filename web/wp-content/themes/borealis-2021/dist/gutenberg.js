@@ -185,14 +185,14 @@ function accordionBlock() {
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "accordion";
-  var blockTitle = "Accordion";
+  var blockTitle = "Accordion Container Block";
   var blockDescription = "Creates a set of expandable items.";
   var blockCategory = "containers";
   var blockIcon = "feedback"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ['anchor_id', 'description', 'title', 'bg_color'];
+  var stringAttrs = ["anchor_id", "description", "title", "bg_color"];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_3__["default"])(stringAttrs);
-  attributes['bg_color']['default'] = 'white';
+  attributes["bg_color"]["default"] = "white";
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
@@ -219,21 +219,21 @@ function accordionBlock() {
         className: "block-title"
       }, "Accordion"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         controls: [{
-          type: 'select',
-          label: 'Background color',
-          reference: 'bg_color',
+          type: "select",
+          label: "Background color",
+          reference: "bg_color",
           value: bg_color,
           options: [{
-            value: 'white',
-            label: 'White'
+            value: "white",
+            label: "White"
           }, {
-            value: 'grey',
-            label: 'Grey'
+            value: "grey",
+            label: "Grey"
           }]
         }, {
-          type: 'text',
-          label: 'Anchor',
-          reference: 'anchor_id',
+          type: "text",
+          label: "Anchor",
+          reference: "anchor_id",
           value: anchor_id
         }],
         onChange: function onChange(attribute, change) {
@@ -241,18 +241,18 @@ function accordionBlock() {
         }
       }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
-          reference: 'title',
+          reference: "title",
           value: title,
-          tagName: 'h2',
-          classes: ['heading_two'],
+          tagName: "h2",
+          classes: ["heading_two"],
           settings: [],
-          placeholder: 'Add title (optional)'
+          placeholder: "Add title (optional)"
         }, {
-          reference: 'description',
+          reference: "description",
           value: description,
-          tagName: 'p',
-          classes: ['paragraph'],
-          placeholder: 'Add description (optional)'
+          tagName: "p",
+          classes: ["paragraph"],
+          placeholder: "Add description (optional)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -566,30 +566,30 @@ function trmcAccordionBlock() {
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "callout-container";
-  var blockTitle = "Callout Cards Container";
+  var blockTitle = "Callout Cards Container Block";
   var blockDescription = "Creates a container for single callout cards.";
   var blockCategory = "containers";
   var blockIcon = "layout"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     description: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     image_alt: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     image_url: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     image_id: {
-      type: 'Number',
+      type: "Number",
       default: 0
     }
   };
@@ -621,29 +621,29 @@ function trmcAccordionBlock() {
       }, "Callout Cards Container"), /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
           value: image_url,
-          reference: 'image_url',
+          reference: "image_url",
           altValue: image_alt,
-          altReference: 'image_alt',
+          altReference: "image_alt",
           idValue: image_id,
-          idReference: 'image_id',
-          buttonText: 'Add background image'
+          idReference: "image_id",
+          buttonText: "Add background image"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
       }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
-          reference: 'title',
+          reference: "title",
           value: title,
-          tagName: 'h2',
-          classes: ['heading-two'],
-          placeholder: 'Add title (optional)'
+          tagName: "h2",
+          classes: ["heading-two"],
+          placeholder: "Add title (optional)"
         }, {
-          reference: 'description',
+          reference: "description",
           value: description,
-          tagName: 'p',
-          classes: ['paragraph'],
-          placeholder: 'Add description (optional)'
+          tagName: "p",
+          classes: ["paragraph"],
+          placeholder: "Add description (optional)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -692,7 +692,7 @@ function codeBlock() {
 
   var blockTitle = "Code";
   var blockDescription = "Single code block";
-  var blockCategory = "copy";
+  var blockCategory = "code";
   var blockIcon = "editor-code"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
@@ -747,7 +747,7 @@ function codeBlock() {
         }
       }), /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["core/code"],
-        template: [['core/code']],
+        template: [["core/code"]],
         templateLock: "all"
       }))];
     },
@@ -788,7 +788,7 @@ function compareCodeBlock() {
 
   var blockTitle = "Compare Code";
   var blockDescription = "Component to compare two code blocks";
-  var blockCategory = "containers";
+  var blockCategory = "code";
   var blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
@@ -843,7 +843,7 @@ function compareCodeBlock() {
         }
       }), /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["core/code"],
-        template: [['core/code'], ['core/code']],
+        template: [["core/code"], ["core/code"]],
         templateLock: "all"
       }))];
     },
@@ -1389,9 +1389,9 @@ function customVideoBlock() {
   var _wp = wp,
       i18n = _wp.i18n;
   var slug = "custom-video";
-  var title = "Custom Video";
+  var title = "Video Block";
   var description = "A Custom Video Block";
-  var category = "page-strips";
+  var category = "media";
   var icon = "align-full-width"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
@@ -1879,25 +1879,25 @@ function galleryContainerBlock() {
 
   var blockTitle = "Gallery Container";
   var blockDescription = "Creates a Gallery Container block";
-  var blockCategory = "containers";
+  var blockCategory = "carousels";
   var blockIcon = "format-gallery"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     description: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     link: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     link_text: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -1939,7 +1939,7 @@ function galleryContainerBlock() {
           reference: "description",
           tagName: "p",
           placeholder: "Please provide a description (optional)",
-          settings: ['core/bold', 'core/link', 'core/italic']
+          settings: ["core/bold", "core/link", "core/italic"]
         }, {
           value: link,
           reference: "link",
@@ -2115,19 +2115,19 @@ function jobBlock() {
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "job-block";
-  var blockTitle = "Create job block";
+  var blockTitle = "Open Roles/Jobs Block";
   var blockDescription = "Component to create job block";
   var blockCategory = "jobs";
-  var blockIcon = "users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+  var blockIcon = "admin-users"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     emptyState: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -2206,15 +2206,15 @@ function featuredJobsBlock() {
       i18n = _wp.i18n;
   var blockSlug = "jobs-container"; // slug for the block
 
-  var blockTitle = "Featured Jobs container";
+  var blockTitle = "Featured Jobs Block";
   var blockDescription = "Component to create highlighted jobs container block";
   var blockCategory = "jobs";
   var blockIcon = "archive"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -2488,7 +2488,7 @@ function iconListContainerBlock() {
       i18n = _wp.i18n;
   var blockSlug = "icon-list-container-block"; // slug for the block
 
-  var blockTitle = "Icon List Container";
+  var blockTitle = "Icon List Container Block";
   var blockDescription = "Component to create icon list container block";
   var blockCategory = "containers";
   var blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -2552,7 +2552,7 @@ function iconListContainerBlock() {
           placeholder: "Please provide a description (optional)"
         }]
       }), /*#__PURE__*/React.createElement(ToggleControl, {
-        label: 'Style: check for with icon or leave unchecked for without icon',
+        label: "Style: check for with icon or leave unchecked for without icon",
         checked: icon,
         onChange: function onChange(change) {
           updateAttributeValue("icon", change);
@@ -2767,19 +2767,19 @@ function imageBlock() {
     icon: blockIcon,
     attributes: {
       caption: {
-        type: 'String',
-        default: ''
+        type: "String",
+        default: ""
       },
       image_alt: {
-        type: 'String',
-        default: ''
+        type: "String",
+        default: ""
       },
       image_url: {
-        type: 'String',
-        default: ''
+        type: "String",
+        default: ""
       },
       image_id: {
-        type: 'Number',
+        type: "Number",
         default: 0
       }
     },
@@ -2804,12 +2804,12 @@ function imageBlock() {
       }, "Media - Image"), /*#__PURE__*/React.createElement(_blocks_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
           value: image_url,
-          reference: 'image_url',
+          reference: "image_url",
           altValue: image_alt,
-          altReference: 'image_alt',
+          altReference: "image_alt",
           idValue: image_id,
-          idReference: 'image_id',
-          buttonText: 'Add an image'
+          idReference: "image_id",
+          buttonText: "Add an image"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -2821,7 +2821,7 @@ function imageBlock() {
         components: [{
           value: caption,
           reference: "caption",
-          classes: ['caption'],
+          classes: ["caption"],
           tagName: "p",
           settings: [],
           placeholder: "Please provide a caption for your image"
@@ -2969,7 +2969,7 @@ function imageRowContainer() {
 
   var blockTitle = "Image Row Container";
   var blockDescription = "Component to create image row container block";
-  var blockCategory = "containers";
+  var blockCategory = "media";
   var blockIcon = "cover-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
@@ -3051,7 +3051,7 @@ function imageTextStripBlock() {
   var _wp = wp,
       i18n = _wp.i18n;
   var slug = "image-text-strip";
-  var title = "Image Text Strip";
+  var title = "Image & Text Block";
   var description = "A page strip with an image and text.";
   var category = "page-strips";
   var icon = "format-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -3424,9 +3424,9 @@ function LocationsContainerBlock() {
       i18n = _wp.i18n;
   var blockSlug = "locations-container"; // slug for the block
 
-  var blockTitle = "Create Locations container block";
+  var blockTitle = "Locations Container Block";
   var blockDescription = "Component to create a Locations container block";
-  var blockCategory = "common";
+  var blockCategory = "containers";
   var blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
@@ -3626,19 +3626,19 @@ function pgLogoContainerBlock() {
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "logos-container";
-  var blockTitle = "Logo Parade";
+  var blockTitle = "Logo Parade Block";
   var blockDescription = "Creates a container for logos parade.";
   var blockCategory = "containers";
   var blockIcon = "awards"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     copy: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -3665,18 +3665,18 @@ function pgLogoContainerBlock() {
         className: "block-title"
       }, "Logo Parade"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
-          reference: 'title',
+          reference: "title",
           value: title,
-          tagName: 'h2',
+          tagName: "h2",
           settings: [],
-          placeholder: 'Logo parade title here (optional)'
+          placeholder: "Logo parade title here (optional)"
         }, {
-          reference: 'copy',
+          reference: "copy",
           value: copy,
-          tagName: 'p',
-          classes: ['paragraph'],
-          settings: ['core/bold', 'core/link', 'core/italic', 'core/list'],
-          placeholder: 'Logo parade copy here (optional)'
+          tagName: "p",
+          classes: ["paragraph"],
+          settings: ["core/bold", "core/link", "core/italic", "core/list"],
+          placeholder: "Logo parade copy here (optional)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -4592,9 +4592,9 @@ function pageStripGraphicContainer() {
       i18n = _wp.i18n;
   var blockSlug = "page-strip-graphic-container"; // slug for the block
 
-  var blockTitle = "Graphic Page Strip Container";
+  var blockTitle = "Graphic Page Strip Container Block";
   var blockDescription = "Component to create page strip graphic container block";
-  var blockCategory = "containers";
+  var blockCategory = "page-strips";
   var blockIcon = "cover-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
@@ -5066,9 +5066,9 @@ function podcastBlock() {
       i18n = _wp.i18n;
   var blockSlug = "podcast"; // slug for the block
 
-  var blockTitle = "Create podcast block";
+  var blockTitle = "Podcast Block";
   var blockDescription = "Component to create a podcast block";
-  var blockCategory = "common";
+  var blockCategory = "media";
   var blockIcon = "format-audio"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
@@ -5217,15 +5217,15 @@ function featuredPostsContainerBlock() {
   var _wp = wp,
       i18n = _wp.i18n;
   var slug = "featured-posts-container";
-  var title = "Featured Post(s)";
+  var title = "Featured Post(s) Page Strip Block";
   var description = "A container for one or more featured post.";
-  var category = "containers";
+  var category = "page-strips";
   var icon = "welcome-write-blog"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     columns: {
-      type: 'String',
-      default: '12'
+      type: "String",
+      default: "12"
     }
   };
   registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
@@ -5248,16 +5248,16 @@ function featuredPostsContainerBlock() {
       return [/*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         title: "Block Settings",
         controls: [{
-          type: 'radio',
-          label: 'Number of Columns',
-          reference: 'columns',
+          type: "radio",
+          label: "Number of Columns",
+          reference: "columns",
           value: columns,
           options: [{
-            label: 'One',
-            value: '12'
+            label: "One",
+            value: "12"
           }, {
-            label: 'Two',
-            value: '6'
+            label: "Two",
+            value: "6"
           }]
         }],
         onChange: function onChange(attribute, change) {
@@ -5303,7 +5303,7 @@ function productContainerBlock() {
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "product-container";
-  var blockTitle = "Products List Container";
+  var blockTitle = "Products List Container Block";
   var blockDescription = "Creates a container for a products list.";
   var blockCategory = "containers";
   var blockIcon = "editor-justify"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -5336,12 +5336,12 @@ function productContainerBlock() {
         className: "block-title"
       }, "Products Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
-          reference: 'title',
+          reference: "title",
           value: title,
-          tagName: 'h2',
-          classes: ['h2'],
+          tagName: "h2",
+          classes: ["h2"],
           settings: [],
-          placeholder: 'Provide a title (optional)'
+          placeholder: "Provide a title (optional)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -5459,19 +5459,19 @@ function publicationsContainerBlock() {
       i18n = _wp.i18n;
   var blockSlug = "publications-container"; // slug for the block
 
-  var blockTitle = "Publications container";
+  var blockTitle = "Publications Container Block";
   var blockDescription = "Component to create publications container block";
   var blockCategory = "containers";
   var blockIcon = "archive"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     link: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -7311,7 +7311,7 @@ function statisticsContainerBlock() {
       i18n = _wp.i18n;
   var blockSlug = "statistics-container"; // slug for the block
 
-  var blockTitle = "Create statistics container block";
+  var blockTitle = "Statistics Container Block";
   var blockDescription = "Component to create a statistics container block";
   var blockCategory = "containers";
   var blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -7449,15 +7449,15 @@ function tabbedContentContainerBlock() {
       i18n = _wp.i18n;
   var blockSlug = "tabbed-content-container-block"; // slug for the block
 
-  var blockTitle = "Tabbed Content Container";
+  var blockTitle = "Tabbed Content Container Block";
   var blockDescription = "Component to create tabbed content container block";
   var blockCategory = "containers";
   var blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     copy: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     cta_one_text: {
       type: "String",
@@ -7480,11 +7480,11 @@ function tabbedContentContainerBlock() {
       default: "default"
     },
     image_url: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     },
     image_id: {
-      type: 'Number',
+      type: "Number",
       default: 0
     },
     image_alt: {
@@ -7492,8 +7492,8 @@ function tabbedContentContainerBlock() {
       default: ""
     },
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -7529,10 +7529,10 @@ function tabbedContentContainerBlock() {
       }, "Tabbed Content Container"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
         title: "Block Settings",
         controls: [{
-          type: 'radio',
-          label: 'Display Style',
+          type: "radio",
+          label: "Display Style",
           value: display_style,
-          reference: 'display_style',
+          reference: "display_style",
           options: [{
             label: "Default",
             value: "default"
@@ -7547,12 +7547,12 @@ function tabbedContentContainerBlock() {
       }), display_style === "background-image" ? /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
           value: image_url,
-          reference: 'image_url',
+          reference: "image_url",
           altValue: image_alt,
-          altReference: 'image_alt',
+          altReference: "image_alt",
           idValue: image_id,
-          idReference: 'image_id',
-          buttonText: 'Add a background image (optional)'
+          idReference: "image_id",
+          buttonText: "Add a background image (optional)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -7719,15 +7719,15 @@ function tagCloudContainerBlock() {
       i18n = _wp.i18n;
   var blockSlug = "tag-cloud-container-block"; // slug for the block
 
-  var blockTitle = "Tag cloud container block";
+  var blockTitle = "Tag Cloud Container Block";
   var blockDescription = "Component to create tag cloud container block";
   var blockCategory = "containers";
   var blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
     title: {
-      type: 'String',
-      default: ''
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -7988,7 +7988,7 @@ function text2UpContainerBlock() {
       i18n = _wp.i18n;
   var blockSlug = "text-2-up-container"; // slug for the block
 
-  var blockTitle = "Text 2 Up Container";
+  var blockTitle = "Text 2 Up Container Block";
   var blockDescription = "Component to create a text 2 up container block";
   var blockCategory = "containers";
   var blockIcon = "align-left"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -8398,9 +8398,9 @@ function textImageContainerBlock() {
       i18n = _wp.i18n;
   var blockSlug = "text-image-container"; // slug for the block
 
-  var blockTitle = "Text & Image Container";
+  var blockTitle = "Text & Image Container Block";
   var blockDescription = "Component to create a text and image container block";
-  var blockCategory = "containers";
+  var blockCategory = "page-strips";
   var blockIcon = "format-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   var attributes = {
@@ -8511,7 +8511,7 @@ function titleTextCtaBlock() {
   var _wp = wp,
       i18n = _wp.i18n;
   var slug = "title-text-cta";
-  var title = "Title Text Cta";
+  var title = "Title & Text & Cta Block";
   var description = "A Title Text Cta Page Strip";
   var category = "page-strips";
   var icon = "align-full-width"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -8668,7 +8668,7 @@ function videoTabbedContentContainerBlock() {
       i18n = _wp.i18n;
   var blockSlug = "video-tabbed-content-container-block"; // slug for the block
 
-  var blockTitle = "Video Tabbed Content Container";
+  var blockTitle = "Video Tabbed Content Container Block";
   var blockDescription = "Component to create a video tabbed content container block";
   var blockCategory = "containers";
   var blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/

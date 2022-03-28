@@ -9,7 +9,7 @@ export default function statisticsContainerBlock() {
   const { i18n } = wp;
 
   const blockSlug = "statistics-container"; // slug for the block
-  const blockTitle = "Create statistics container block";
+  const blockTitle = "Statistics Container Block";
   const blockDescription = "Component to create a statistics container block";
   const blockCategory = "containers";
 
@@ -49,10 +49,7 @@ export default function statisticsContainerBlock() {
         { label: "Purple", value: "purple" },
       ];
 
-      const innerBlockCount = useSelect(
-        (select) =>
-          select("core/block-editor").getBlock(props.clientId).innerBlocks
-      );
+      const innerBlockCount = useSelect((select) => select("core/block-editor").getBlock(props.clientId).innerBlocks);
 
       return [
         <div class="custom-component">
@@ -79,12 +76,7 @@ export default function statisticsContainerBlock() {
                 tagName: "h3",
                 classes: ["heading_two"],
                 placeholder: "Please provide a description (optional)",
-                settings: [
-                  "core/bold",
-                  "core/link",
-                  "core/italic",
-                  "core/list",
-                ],
+                settings: ["core/bold", "core/link", "core/italic", "core/list"],
               },
             ]}
             onChange={(attribute, change) => {

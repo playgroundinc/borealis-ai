@@ -12,7 +12,7 @@ export default function titleTextCtaBlock() {
   const { i18n } = wp;
 
   const slug = "title-text-cta";
-  const title = "Title Text Cta";
+  const title = "Title & Text & Cta Block";
   const description = "A Title Text Cta Page Strip";
   const category = "page-strips";
   const icon = "align-full-width"; // Dashicons: https://developer.wordpress.org/resource/dashicons/

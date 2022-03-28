@@ -8,7 +8,7 @@ export default function videoTabbedContentContainerBlock() {
   const { i18n } = wp;
 
   const blockSlug = "video-tabbed-content-container-block"; // slug for the block
-  const blockTitle = "Video Tabbed Content Container";
+  const blockTitle = "Video Tabbed Content Container Block";
   const blockDescription = "Component to create a video tabbed content container block";
   const blockCategory = "containers";
   const blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/

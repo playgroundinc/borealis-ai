@@ -9,9 +9,9 @@ export default function LocationsContainerBlock() {
   const { i18n } = wp;
 
   const blockSlug = "locations-container"; // slug for the block
-  const blockTitle = "Create Locations container block";
+  const blockTitle = "Locations Container Block";
   const blockDescription = "Component to create a Locations container block";
-  const blockCategory = "common";
+  const blockCategory = "containers";
   const blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {
@@ -39,10 +39,7 @@ export default function LocationsContainerBlock() {
         setAttributes({ [attribute]: value });
       }
 
-      const innerBlockCount = useSelect(
-        (select) =>
-          select("core/block-editor").getBlock(props.clientId).innerBlocks
-      );
+      const innerBlockCount = useSelect((select) => select("core/block-editor").getBlock(props.clientId).innerBlocks);
 
       return [
         <div class="custom-container">
@@ -69,12 +66,7 @@ export default function LocationsContainerBlock() {
                 tagName: "h3",
                 classes: ["heading_two"],
                 placeholder: "Please provide a description (optional)",
-                settings: [
-                  "core/bold",
-                  "core/link",
-                  "core/italic",
-                  "core/list",
-                ],
+                settings: ["core/bold", "core/link", "core/italic", "core/list"],
               },
             ]}
             onChange={(attribute, change) => {

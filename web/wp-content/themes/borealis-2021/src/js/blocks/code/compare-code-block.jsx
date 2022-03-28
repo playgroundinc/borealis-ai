@@ -9,7 +9,7 @@ export default function compareCodeBlock() {
   const blockSlug = "compare-code"; // slug for the block
   const blockTitle = "Compare Code";
   const blockDescription = "Component to compare two code blocks";
-  const blockCategory = "containers";
+  const blockCategory = "code";
   const blockIcon = "columns"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {
@@ -19,8 +19,8 @@ export default function compareCodeBlock() {
     },
     caption: {
       type: "String",
-      default: ""
-    }
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -62,12 +62,8 @@ export default function compareCodeBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
-      
-          <InnerBlocks
-            allowedBlocks={[`core/code`]}
-            template={ [['core/code'], ['core/code']]}
-            templateLock="all"
-          />
+
+          <InnerBlocks allowedBlocks={[`core/code`]} template={[["core/code"], ["core/code"]]} templateLock="all" />
         </div>,
       ];
     },
