@@ -1400,6 +1400,9 @@ ol.footnotes li small{
 .mr-7{
   margin-right: 28px;
 }
+.mb-2{
+  margin-bottom: 8px;
+}
 .block{
   display: block;
 }
@@ -2166,6 +2169,9 @@ ol.footnotes li small{
 }
 .pl-1{
   padding-left: 4px;
+}
+.pb-2{
+  padding-bottom: 8px;
 }
 .text-center{
   text-align: center;

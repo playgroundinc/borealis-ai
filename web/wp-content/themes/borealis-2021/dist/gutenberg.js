@@ -2599,6 +2599,7 @@ function iconListItemBlock() {
       createBlock = _wp$blocks.createBlock;
   var _wp = wp,
       i18n = _wp.i18n;
+  var TextControl = wp.components.TextControl;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
   var blockSlug = "icon-list-item-block"; // slug for the block
 
@@ -2624,11 +2625,23 @@ function iconListItemBlock() {
       type: "String",
       default: ""
     },
+    title: {
+      type: "String",
+      default: ""
+    },
     subtitle: {
       type: "String",
       default: ""
     },
     copy: {
+      type: "String",
+      default: ""
+    },
+    link_text: {
+      type: "String",
+      default: ""
+    },
+    link_url: {
       type: "String",
       default: ""
     }
@@ -2645,8 +2658,11 @@ function iconListItemBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var attributes = props.attributes,
           setAttributes = props.setAttributes;
-      var subtitle = attributes.subtitle,
+      var title = attributes.title,
+          subtitle = attributes.subtitle,
           copy = attributes.copy,
+          link_text = attributes.link_text,
+          link_url = attributes.link_url,
           image_url = attributes.image_url,
           image_alt = attributes.image_alt,
           image_id = attributes.image_id,
@@ -2695,6 +2711,17 @@ function iconListItemBlock() {
         }
       }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
+          value: title,
+          reference: "title",
+          tagName: "p",
+          classes: ["p"],
+          placeholder: "Add title (optional)"
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        components: [{
           value: subtitle,
           reference: "subtitle",
           tagName: "p",
@@ -2715,11 +2742,26 @@ function iconListItemBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: link_text,
+        onChange: function onChange(value) {
+          updateAttributeValue("link_text", value);
+        },
+        label: "Link Text:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: link_url,
+        onChange: function onChange(value) {
+          updateAttributeValue("link_url", value);
+        },
+        label: "Link URL:"
       })))];
     },
     save: function save() {
-      var subtitle = attributes.subtitle,
+      var title = attributes.title,
+          subtitle = attributes.subtitle,
           copy = attributes.copy,
+          link_text = attributes.link_text,
+          link_url = attributes.link_url,
           image_url = attributes.image_url,
           image_alt = attributes.image_alt,
           image_id = attributes.image_id,
