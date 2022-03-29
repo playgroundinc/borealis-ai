@@ -9,7 +9,7 @@ export default function iconListContainerBlock() {
   const { i18n } = wp;
 
   const blockSlug = "icon-list-container-block"; // slug for the block
-  const blockTitle = "Icon List Container";
+  const blockTitle = "Icon List Container Block";
   const blockDescription = "Component to create icon list container block";
   const blockCategory = "containers";
   const blockIcon = "block-default"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
@@ -74,19 +74,13 @@ export default function iconListContainerBlock() {
             ]}
           />
           <ToggleControl
-            label={'Style: check for with icon or leave unchecked for without icon'} 
+            label={"Style: check for with icon or leave unchecked for without icon"}
             checked={icon}
             onChange={(change) => {
-                updateAttributeValue("icon", change);
+              updateAttributeValue("icon", change);
             }}
           />
-          {save ? (
-            <InnerBlocks.Content />
-          ) : (
-            <InnerBlocks
-              allowedBlocks={[`${namespace}/custom-icon-list-item-block`]}
-            />
-          )}
+          {save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/custom-icon-list-item-block`]} />}
         </div>,
       ];
     },

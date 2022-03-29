@@ -33,6 +33,10 @@ function pg_custom_block_categories($categories, $post)
 				'title' => 'Carousels',
 			),
 			array(
+				'slug' => 'code',
+				'title' => 'Code',
+			),
+			array(
 				'slug' => 'containers',
 				'title' => 'Containers',
 			),

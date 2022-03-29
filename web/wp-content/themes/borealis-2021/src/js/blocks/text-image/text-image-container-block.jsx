@@ -8,13 +8,17 @@ export default function textImageContainerBlock() {
   const { i18n } = wp;
 
   const blockSlug = "text-image-container"; // slug for the block
-  const blockTitle = "Text & Image Container";
+  const blockTitle = "Text & Image Container Block";
   const blockDescription = "Component to create a text and image container block";
-  const blockCategory = "containers";
+  const blockCategory = "page-strips";
   const blockIcon = "format-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {
     title: {
+      type: "String",
+      default: "",
+    },
+    copy: {
       type: "String",
       default: "",
     },
@@ -28,7 +32,7 @@ export default function textImageContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title } = attributes;
+      const { title, copy } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -63,11 +67,25 @@ export default function textImageContainerBlock() {
               }
             }}
           />
+          <CustomRichText
+            components={[
+              {
+                value: copy,
+                reference: "copy",
+                tagName: "h3",
+                classes: ["heading_three"],
+                placeholder: "Please provide a copy (optional)",
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
         </div>,
       ];
     },
     save: () => {
-      const { title } = attributes;
+      const { title, copy } = attributes;
       return <InnerBlocks.Content />;
     },
   });

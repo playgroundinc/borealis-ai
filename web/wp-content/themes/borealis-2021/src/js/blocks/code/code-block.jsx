@@ -9,7 +9,7 @@ export default function codeBlock() {
   const blockSlug = "code"; // slug for the block
   const blockTitle = "Code";
   const blockDescription = "Single code block";
-  const blockCategory = "copy";
+  const blockCategory = "code";
   const blockIcon = "editor-code"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {
@@ -19,8 +19,8 @@ export default function codeBlock() {
     },
     caption: {
       type: "String",
-      default: ""
-    }
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -62,12 +62,8 @@ export default function codeBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
-      
-          <InnerBlocks
-            allowedBlocks={[`core/code`]}
-            template={ [['core/code']]}
-            templateLock="all"
-          />
+
+          <InnerBlocks allowedBlocks={[`core/code`]} template={[["core/code"]]} templateLock="all" />
         </div>,
       ];
     },

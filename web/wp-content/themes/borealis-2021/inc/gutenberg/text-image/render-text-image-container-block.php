@@ -37,16 +37,17 @@ if (!function_exists('pg_render_text_image_container_block')) {
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
             'title' => '',
+            'copy'  => '',
         );
         $allowed_html = pg_allowed_html();
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
         <div class="bg-shade-white-400 text-shade-black-400 custom-component animated-element">
-            <div class="container flex md:py-20 py-10 tb:flex-row flex-col">
+            <div class="container flex  <?php echo !empty($attributes->copy) ? 'md:pt-20 pt-10 pb-10' : 'md:py-20 py-10' ?> tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h2 class="h3 mb-8 pr-20"><?php echo esc_html($attributes->title) ?></h2>
+                        <h2 class="h3 mb-8 pr-20"><?php echo $attributes->title ?></h2>
                     <?php endif; ?>
                 </div>
                 <div class="w-full md:flex-row flex-col tb:w-8/12">
@@ -54,7 +55,17 @@ if (!function_exists('pg_render_text_image_container_block')) {
                         <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
                     <?php endforeach; ?>
                 </div>
+
             </div>
+            <?php if (!empty($attributes->copy)) : ?>
+                <div class="container flex justify-end">
+                    <div class="w-full tb:w-8/12">
+                        <?php if (!empty($attributes->copy)) : ?>
+                            <p class="paragraph-lg tb:pb-10 pb-0"><?php echo $attributes->copy ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endif ?>
         </div>
 <?php
         return ob_get_clean();

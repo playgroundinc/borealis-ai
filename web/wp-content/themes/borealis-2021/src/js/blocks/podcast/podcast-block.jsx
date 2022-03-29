@@ -9,9 +9,9 @@ export default function podcastBlock() {
   const { i18n } = wp;
 
   const blockSlug = "podcast"; // slug for the block
-  const blockTitle = "Create podcast block";
+  const blockTitle = "Podcast Block";
   const blockDescription = "Component to create a podcast block";
-  const blockCategory = "common";
+  const blockCategory = "media";
   const blockIcon = "format-audio"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {

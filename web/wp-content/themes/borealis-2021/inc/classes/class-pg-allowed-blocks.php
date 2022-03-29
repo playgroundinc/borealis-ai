@@ -26,27 +26,35 @@ class PG_Allowed_Blocks
             'code',
             'compare-code',
 
-            // Jobs
-            'jobs-container',
-            'select-job',
-            'job-highlight',
+            // Custom Video
+            'custom-video',
 
             // Icon List
             'icon-list-container-block',
             'icon-list-item-block',
 
             // Images
-            'custom-image',
             'image-text',
             'image-text-strip',
+
+            // Image Row
+            'image-row-container',
+            'image-row-block',
+
+            // Jobs
+            'jobs-container',
+            'select-job',
+            'job-highlight',
 
             // Page Strips
             'page-strip-graphic',
             'page-strip-graphic-container',
 
-            // Image Row
-            'image-row-container',
-            'image-row-block',
+            // Paragraph
+            'paragraph',
+
+            // Podcast
+            'podcast',
 
             // Publications
             'publications-container',
@@ -62,16 +70,16 @@ class PG_Allowed_Blocks
             'text-image-container',
             'text-image-block',
 
-            // Video Tabbed Content
-            'video-tabbed-content-container-block',
-            'video-tabbed-content-panel-block',
-
             // Text 2up
             'text-2-up',
             'text-2-up-container',
 
-            // Podcast
-            'podcast',
+            // Title Text Cta
+            'title-text-cta',
+
+            // Video Tabbed Content
+            'video-tabbed-content-container-block',
+            'video-tabbed-content-panel-block'
         );
         $this->custom_blocks = array(
             // Blockquote
@@ -85,6 +93,9 @@ class PG_Allowed_Blocks
             'content-card',
             'content-card-container',
 
+            // Custom Video
+            'custom-video',
+
             // Gallery
             'gallery-container',
 
@@ -97,13 +108,18 @@ class PG_Allowed_Blocks
             'jobs-container',
             'select-job',
 
-            // Podcast
-            'podcast',
+            // Locations
+            'locations-container',
+            'location',
+            'location-image',
 
             // Logos
             'logo',
             'logos-container',
             'logos-subsection',
+
+            // Podcast
+            'podcast',
 
             // Posts
             'featured-posts-container',
@@ -125,6 +141,10 @@ class PG_Allowed_Blocks
             'stat-column',
             'stats-container',
 
+            // Statistics
+            'statistics',
+            'statistics-container',
+
             // Tag Cloud
             'tag-cloud-container-block',
             'tag-cloud-item-block',
@@ -133,27 +153,14 @@ class PG_Allowed_Blocks
             'text-image-container',
             'text-image-block',
 
-            // Locations
-            'locations-container',
-            'location',
-            'location-image',
-
-            // Statistics
-            'statistics',
-            'statistics-container'
+            // Title Text Cta
+            'title-text-cta',
         );
         $this->shared_core_blocks = array(
-            'core/video',
-            'core/list',
-            'core/code',
-            'core/audio',
-            'core/shortcode',
             'core/embed-youtube',
         );
         $this->blog_core_blocks = array(
             'core/table',
-            'core/audio',
-            'core/shortcode',
             'core/quote',
         );
         $this->author_blocks = array(

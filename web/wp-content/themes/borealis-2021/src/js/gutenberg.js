@@ -38,6 +38,9 @@ import codeBlock from "./blocks/code/code-block.jsx";
 import contentCardContainerBlock from "./blocks/content-cards/content-card-container.jsx";
 import contentCardBlock from "./blocks/content-cards/content-card.jsx";
 
+// Custom Video
+import customVideoBlock from "./blocks/custom-video/custom-video.jsx";
+
 // Fellowships
 import fellowshipContainerBlock from "./blocks/fellowships/fellowship-container-block.jsx";
 import fellowshipBlock from "./blocks/fellowships/fellowship-block.jsx";
@@ -113,6 +116,9 @@ import tabbedContentPanelBlock from "./blocks/tabbed-content/tabbed-content-pane
 import textImageBlock from "./blocks/text-image/text-image-block.jsx";
 import textImageContainerBlock from "./blocks/text-image/text-image-container-block.jsx";
 
+// Title Text Cta Block
+import titleTextCtaBlock from "./blocks/title-text-cta/title-text-cta-block.jsx";
+
 // Video Tabbed Content Blocks
 import videoTabbedContentContainerBlock from "./blocks/video-tabbed-content/video-tabbed-content-container.jsx";
 import videoTabbedContentPanelBlock from "./blocks/video-tabbed-content/video-tabbed-content-panel.jsx";
@@ -162,6 +168,9 @@ contentCardBlock();
 // Code
 compareCodeBlock();
 codeBlock();
+
+// Custom Video
+customVideoBlock();
 
 // Fellowship
 fellowshipBlock();
@@ -228,6 +237,9 @@ tagCloudItemBlock();
 // Text 2 Up Blocks
 text2UpContainerBlock();
 text2UpBlock();
+
+// Title Text Cta Block
+titleTextCtaBlock();
 
 // Image & Text Strip Block
 imageTextStripBlock();
