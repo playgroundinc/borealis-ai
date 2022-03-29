@@ -46,12 +46,14 @@ if (!function_exists('pg_render_icon_list_container_block')) {
 ?>
         <div class="custom-component nestable animated-element" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
             <div>
-                <div class="flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container tb:flex-row') : '' ?>">
-                    <div class="w-full mb-10 tb:mb-0 tb:w-2/6 icon-list-title">
-                        <?php if (!empty($attributes->title)) : ?>
-                                <h3 class="h3 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('tb:pb-4') : '' ?>"><?php echo esc_html($attributes->title) ?></h3>
-                        <?php endif; ?>
-                    </div>
+                <div class="flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container tb:flex-row justify-end') : '' ?>">
+                    <?php if (!empty($attributes->title)) : ?>
+                        <div class="w-full my-10 tb:w-2/6 icon-list-title">
+                            <h3 class="h3 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('tb:pb-4') : '' ?>">
+                                <?php echo esc_html($attributes->title) ?>
+                            </h3>
+                        </div>
+                    <?php endif; ?>
                     <div class="w-full <?php echo is_singular(array('news', 'research-blogs')) ? '' : esc_attr('tb:w-4/6'); ?> icon-list">
                         <?php if (!empty($attributes->description)) : ?>
                             <div>
