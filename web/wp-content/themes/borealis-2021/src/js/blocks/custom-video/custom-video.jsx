@@ -12,9 +12,9 @@ export default function customVideoBlock() {
   const { i18n } = wp;
 
   const slug = "custom-video";
-  const title = "Custom Video";
+  const title = "Video Block";
   const description = "A Custom Video Block";
-  const category = "page-strips";
+  const category = "media";
   const icon = "align-full-width"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {

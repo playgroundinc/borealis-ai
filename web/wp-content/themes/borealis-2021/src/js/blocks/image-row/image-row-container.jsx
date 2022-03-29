@@ -10,7 +10,7 @@ export default function imageRowContainer() {
   const blockSlug = "image-row-container"; // slug for the block
   const blockTitle = "Image Row Container";
   const blockDescription = "Component to create image row container block";
-  const blockCategory = "containers";
+  const blockCategory = "media";
   const blockIcon = "cover-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {

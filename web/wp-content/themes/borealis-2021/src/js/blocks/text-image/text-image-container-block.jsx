@@ -8,9 +8,9 @@ export default function textImageContainerBlock() {
   const { i18n } = wp;
 
   const blockSlug = "text-image-container"; // slug for the block
-  const blockTitle = "Text & Image Container";
+  const blockTitle = "Text & Image Container Block";
   const blockDescription = "Component to create a text and image container block";
-  const blockCategory = "containers";
+  const blockCategory = "page-strips";
   const blockIcon = "format-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
   const attributes = {

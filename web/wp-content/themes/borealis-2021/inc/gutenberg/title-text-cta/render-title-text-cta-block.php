@@ -51,7 +51,7 @@ if (!function_exists('pg_render_title_text_cta_block')) {
                 <p class="w-full tb:w-4/12 tb:self-center">
                     <?php echo $attributes->copy ?>
                 </p>
-                <a href="<?php echo $attributes->cta_url ?>" class="primary-button flex items-center product-cta mt-3 md:mt-0 w-full md:w-5/12 tb:w-1/5 tb:ml-auto tb:self-center <?php echo $attributes->background_colour ?>"><?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8"><?php echo pg_render_icon('arrow-white'); ?></span></a>
+                <a href="<?php echo $attributes->cta_url ?>" class="primary-button flex items-center product-cta before:bg-shade-black-400 mt-3 md:mt-0 w-full md:w-5/12 tb:w-1/5 tb:ml-auto tb:self-center <?php echo $attributes->background_colour ?>"><?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8"><?php echo pg_render_icon('arrow-white'); ?></span></a>
             </div>
         </div>
 <?php

@@ -17,7 +17,7 @@ export default function imageTextStripBlock() {
   const { i18n } = wp;
 
   const slug = "image-text-strip";
-  const title = "Image Text Strip";
+  const title = "Image & Text Block";
   const description = "A page strip with an image and text.";
   const category = "page-strips";
   const icon = "format-image"; // Dashicons: https://developer.wordpress.org/resource/dashicons/

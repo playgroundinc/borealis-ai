@@ -34,7 +34,6 @@ class PG_Allowed_Blocks
             'icon-list-item-block',
 
             // Images
-            'custom-image',
             'image-text',
             'image-text-strip',
 
@@ -158,17 +157,10 @@ class PG_Allowed_Blocks
             'title-text-cta',
         );
         $this->shared_core_blocks = array(
-            'core/video',
-            'core/list',
-            'core/code',
-            'core/audio',
-            'core/shortcode',
             'core/embed-youtube',
         );
         $this->blog_core_blocks = array(
             'core/table',
-            'core/audio',
-            'core/shortcode',
             'core/quote',
         );
         $this->author_blocks = array(
