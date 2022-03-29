@@ -56,7 +56,7 @@ if (!function_exists('pg_render_icon_list_container_block')) {
                     <?php endif; ?>
                     <div class="w-full <?php echo is_singular(array('news', 'research-blogs')) ? '' : esc_attr('tb:w-4/6'); ?> icon-list">
                         <?php if (!empty($attributes->description)) : ?>
-                            <div>
+                            <div class="mt-0 md:my-10">
                                 <p class="<?php echo is_singular(array('news', 'research-blogs')) ? 'paragraph-blog' : 'paragraph' ?>  nested-description"><?php echo wp_kses($attributes->description, $allowed_html) ?></p>
                             </div>
                         <?php endif; ?>
