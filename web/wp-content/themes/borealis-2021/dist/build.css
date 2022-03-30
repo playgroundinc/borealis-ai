@@ -1400,6 +1400,9 @@ ol.footnotes li small{
 .mr-7{
   margin-right: 28px;
 }
+.mb-7{
+  margin-bottom: 28px;
+}
 .block{
   display: block;
 }
@@ -1554,6 +1557,9 @@ ol.footnotes li small{
 }
 .w-22{
   width: 88px;
+}
+.w-13{
+  width: 52px;
 }
 .max-w-\[200px\]{
   max-width: 200px;
@@ -1798,6 +1804,10 @@ ol.footnotes li small{
 }
 .border-shade-transparent-400{
   border-color: transparent;
+}
+.border-shade-grey-100{
+  --tw-border-opacity: 1;
+  border-color: rgb(244 244 251 / var(--tw-border-opacity));
 }
 .border-l-shade-black-400{
   --tw-border-opacity: 1;
@@ -3508,6 +3518,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:w-2\/5{
     width: 40%;
   }
+    .tb\:w-6\/12{
+    width: 50%;
+  }
     .tb\:flex-row{
     flex-direction: row;
   }
@@ -3528,6 +3541,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:overflow-x-scroll{
     overflow-x: scroll;
+  }
+    .tb\:border-b-0{
+    border-bottom-width: 0px;
+  }
+    .tb\:border-b{
+    border-bottom-width: 1px;
   }
     .tb\:py-18{
     padding-top: 72px;
@@ -3566,6 +3585,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:pt-20{
     padding-top: 80px;
+  }
+    .tb\:pb-0{
+    padding-bottom: 0px;
   }
     .tb\:container{
     margin: 0 auto;
