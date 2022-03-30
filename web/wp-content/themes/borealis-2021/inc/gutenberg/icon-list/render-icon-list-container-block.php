@@ -58,7 +58,7 @@ if (!function_exists('pg_render_icon_list_container_block')) {
                                 <p class="<?php echo is_singular(array('news', 'research-blogs')) ? 'paragraph-blog' : 'paragraph' ?>  nested-description"><?php echo wp_kses($attributes->description, $allowed_html) ?></p>
                             </div>
                         <?php endif; ?>
-                        <ul class="flex flex-wrap mt-10 flex-col <?php echo is_singular(array('news', 'research-blogs')) ? '' : 'md:flex-row' ?> nested-block">
+                        <ul class="flex flex-wrap mt-10 flex-col <?php echo is_singular(array('news', 'research-blogs')) ? 'md:flex-row' : 'md:flex-row' ?> nested-block">
                             <?php foreach ($block['innerBlocks'] as $tabbed_inner_block) : ?>
                                 <?php $tabbed_inner_block['icon'] = $attributes->icon; ?>
 
