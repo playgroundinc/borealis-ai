@@ -100,7 +100,7 @@ export default function videoTabbedContentPanelBlock() {
               },
             ]}
           />
-          {save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`core/video`, `core/embed-youtube`]} />}
+          {save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/custom-video`]} />}
         </div>,
       ];
     },

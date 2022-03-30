@@ -859,10 +859,27 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 0px;
   }
 }
+.no-background-padding{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media (min-width: 1000px){
+  .no-background-padding{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+.default-tabs .no-background-padding{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 .custom-component .custom-component{
   margin-top: 0px;
 }
 .tab-container .accordion-list{
+  width: 100%;
+}
+.tab-container .custom-video{
   width: 100%;
 }
 .page .container .nestable .container{
@@ -1265,10 +1282,6 @@ ol.footnotes li small{
 .my-8{
   margin-top: 32px;
   margin-bottom: 32px;
-}
-.my-10{
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
 .my-5{
   margin-top: 20px;
@@ -1951,9 +1964,9 @@ ol.footnotes li small{
   padding-left: 36px;
   padding-right: 36px;
 }
-.py-19{
-  padding-top: 76px;
-  padding-bottom: 76px;
+.py-20{
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 .py-28{
   padding-top: 112px;
@@ -2166,6 +2179,9 @@ ol.footnotes li small{
 }
 .pl-1{
   padding-left: 4px;
+}
+.pt-20{
+  padding-top: 80px;
 }
 .text-center{
   text-align: center;
@@ -3257,9 +3273,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pb-12{
     padding-bottom: 48px;
   }
-    .md\:pt-15{
-    padding-top: 60px;
-  }
     .md\:pt-featured-image-md{
     padding-top: 450px;
   }
@@ -3310,6 +3323,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pb-4{
     padding-bottom: 16px;
+  }
+    .md\:pr-0{
+    padding-right: 0px;
   }
     .md\:text-left{
     text-align: left;
@@ -3537,6 +3553,10 @@ mjx-container::-webkit-scrollbar-thumb,
     padding-top: 80px;
     padding-bottom: 80px;
   }
+    .tb\:py-10{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
     .tb\:pt-6{
     padding-top: 24px;
   }
@@ -3566,6 +3586,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:pt-20{
     padding-top: 80px;
+  }
+    .tb\:pb-20{
+    padding-bottom: 80px;
   }
     .tb\:container{
     margin: 0 auto;
