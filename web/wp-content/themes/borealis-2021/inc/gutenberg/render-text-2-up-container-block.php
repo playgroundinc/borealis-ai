@@ -51,7 +51,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
 ?>
-        <div class="<?php echo $attributes->bgColour ?> custom-component animated-element">
+        <div class="<?php echo $attributes->bgColour ?> custom-component animated-element <?php echo is_singular('product') ? '-mb-10' : '' ?>">
             <div class="container flex <?php echo !empty($attributes->cta_text) ? 'md:pt-20 pt-10' : 'md:py-20 py-10' ?> tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if ($attributes->text_or_image === 'image') : ?>
