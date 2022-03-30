@@ -77,6 +77,14 @@
       }
     }
   }
+  .nestable .paragraph-blog {
+    @apply mt-0;
+  }
+  // .tab-panel {
+  //   .icon-list {
+  //     @apply hidden;
+  //   }
+  // }
   .footnote-link.footnote-identifier-link {
     @apply scroll-mt-30;
   }

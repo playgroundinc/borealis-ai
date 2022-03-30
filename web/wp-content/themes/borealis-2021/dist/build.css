@@ -874,6 +874,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .page .container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
   display: none;
 }
+.nestable .paragraph-blog{
+  margin-top: 0px;
+}
 .footnote-link.footnote-identifier-link{
   scroll-margin-top: 120px;
 }
