@@ -45,14 +45,14 @@ if (!function_exists('pg_render_accordion_row_block')) {
             $id         = pg_slugify($attributes->title);
             $heading_id = $id . '-title';
 ?>
-            <li class="border-shade-grey-500 border-t">
+            <li class="border-color-shade-grey-500 border-t">
                 <div>
                     <h3>
                         <button class="accordion-row__header h4 w-full flex justify-between items-center px-6 py-7 md:py-7 md:px-5" id="<?php echo esc_attr($heading_id); ?>" aria-controls="<?php echo esc_attr($id); ?>" aria-label="<?php esc_attr_e('Expand or collapse item', 'pg'); ?>" aria-expanded="false">
                             <span>
                                 <?php echo esc_html($attributes->title); ?>
                             </span>
-                            <span class="icon--lg text-shade-grey-700">
+                            <span class="icon--lg text-shade-grey-500">
                                 <?php echo pg_render_icon('chevron') ?>
                             </span>
                         </button>

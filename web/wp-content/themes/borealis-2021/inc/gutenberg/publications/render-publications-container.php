@@ -55,7 +55,7 @@ if (!function_exists('pg_render_publications_container_block')) {
                     <?php endif; ?>
                 </div>
                 <div class="md:basis-8/12 shrink-0 mt-18 md:mt-0 nested-block">
-                    <ul class="border-t border-shade-grey-700">
+                    <ul class="border-t border-color-shade-grey-500">
                         <?php foreach ($block['innerBlocks'] as $index => $inner_block) : ?>
                             <?php echo pg_render_publications_item($inner_block, $attributes->link) ?>
                         <?php endforeach; ?>

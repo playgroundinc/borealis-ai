@@ -45,10 +45,10 @@ if (!function_exists('pg_render_podcast_block')) {
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
 ?>
-        <section class="custom-component animated-element no-background-padding">
+        <section class="custom-component animated-element no-background-padding container">
             <div class="bg-shade-grey-100 text-shade-grey-500 px-6 py-5">
                 <?php if (!empty($attributes->title) and !empty($attributes->author) and !empty($attributes->link_url)) : ?>
-                    <div class="flex md:flex-row flex-col container">
+                    <div class="flex md:flex-row flex-col">
                         <picture class="image-block__img">
                             <img class="max-w-[180px] rounded-large" data-src="<?php echo esc_url_raw($image) ?>" src="<?php echo esc_url_raw($image) ?>" alt="<?php echo !empty($attributes->image_alt) ? esc_attr($attributes->image_alt) : null ?>">
                         </picture>

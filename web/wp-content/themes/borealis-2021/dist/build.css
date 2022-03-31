@@ -1821,10 +1821,6 @@ ol.footnotes li small{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
-.border-shade-grey-100{
-  --tw-border-opacity: 1;
-  border-color: rgb(244 244 251 / var(--tw-border-opacity));
-}
 .border-shade-transparent-400{
   border-color: transparent;
 }
