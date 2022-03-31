@@ -36,25 +36,34 @@ if (!function_exists('pg_render_icon_list_item_block')) {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields = array(
-            'subtitle' => '',
+            'title' => '',
             'copy' => '',
+            'subtitle' => '',
             'image_url' => '',
             'image_alt' => '',
+            'link_text' => '',
+            'link_url' => '',
             'width' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <li class="flex mb-12 w-full <?php echo $attributes->width === 'full-width' ? 'border-b border-shade-grey-700 pb-8' : 'md:w-6/12 pr-8' ?> " aria-labelledby="<?php echo esc_html(pg_slugify($attributes->subtitle)) ?>">
+        <li class="flex mb-12 w-full tb:flex-row flex-col tb:border-b-0 border-b border-shade-grey-100 <?php echo $attributes->width === 'full-width' ? ' tb:border-b border-b border-shade-grey-100 pb-0 tb:pb-8' : 'tb:w-6/12 pr-8' ?> " aria-labelledby="<?php echo esc_html(pg_slugify($attributes->subtitle)) ?>">
             <?php if (!empty($attributes->image_url) and $block["icon"]) : ?>
-                <img class="mr-10 h-13" src="<?php echo esc_html($attributes->image_url) ?>" alt="<?php echo esc_html($attributes->image_alt) ?>">
+                <img class="mr-10 h-13 w-13 tb:mb-0 mb-8" src="<?php echo esc_html($attributes->image_url) ?>" alt="<?php echo esc_html($attributes->image_alt) ?>">
             <?php endif; ?>
-            <div class="flex flex-col">
-                <?php if (!empty($attributes->subtitle)) : ?>
-                    <h4 class="h4" id="<?php echo esc_html($attributes->subtitle) ?>" class=""><?php echo $attributes->subtitle ?></h4>
+            <div class="flex flex-col text-shade-black-400">
+                <?php if (!empty($attributes->title)) : ?>
+                    <h4 class="h4 pb-2" id="<?php echo esc_html($attributes->title) ?>"><?php echo $attributes->title ?></h4>
                 <?php endif; ?>
                 <?php if (!empty($attributes->copy)) : ?>
-                    <p class="paragraph" id="<?php echo esc_html($attributes->copy) ?>" class=""><?php echo esc_html($attributes->copy) ?></p>
+                    <p class="paragraph pb-4" id="<?php echo esc_html($attributes->copy) ?>"><?php echo esc_html($attributes->copy) ?></p>
+                <?php endif; ?>
+                <?php if (!empty($attributes->subtitle)) : ?>
+                    <h4 class="paragraph-sm text-shade-grey-700" id="<?php echo esc_html($attributes->subtitle) ?>"><?php echo $attributes->subtitle ?></h4>
+                <?php endif; ?>
+                <?php if (!empty($attributes->link_text) and !empty($attributes->link_url)) : ?>
+                    <a href="<?php echo esc_attr($attributes->link_url) ?>" class="pb-2 pt-8 text-primary-electric-blue-400 h4"><?php echo $attributes->link_text ?></a>
                 <?php endif; ?>
             </div>
         </li>

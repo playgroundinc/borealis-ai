@@ -46,10 +46,10 @@ if (!function_exists('pg_render_custom_video_block')) {
         $allowed_html = pg_allowed_html();
         ob_start();
 ?>
-        <div class="custom-component nestable animated-element">
+        <div class="custom-component nestable animated-element no-background-padding">
             <div class="flex w-full justify-end container">
                 <div class="w-full tb:w-8/12">
-                    <div class="md:min-h-[350px] tb:min-h-[400px] lg:min-h-[500px] relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg">
+                    <div class="md:min-h-[350px] tb:min-h-[400px] lg:min-h-[540px] relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg">
                         <?php if (!empty($attributes->image_url)) : ?>
                             <div class="bg-cover bg-center absolute inset-0 z-10 video-block__overlay transition-all duration-400" style="background-image: url(<?php echo esc_url_raw($attributes->image_url) ?>)">
                                 <a class="block w-full h-full video-block__overlay__button" href="#" aria-label="<?php echo esc_attr('Play video') ?>">
