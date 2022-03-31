@@ -88,6 +88,9 @@
       }
     }
   }
+  .nestable .paragraph-blog {
+    @apply mt-0;
+  }
   .footnote-link.footnote-identifier-link {
     @apply scroll-mt-30;
   }

@@ -872,7 +872,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var blocks = [{
-  slug: 'paragraph',
+  slug: "paragraph",
   title: "Paragraph",
   description: "Add a paragraph",
   classes: "paragraph-blog mt-10 md:mt-15 wp-block-pg-paragraph first:mt-0",
@@ -881,7 +881,7 @@ var blocks = [{
   tagName: "p",
   transforms: ["heading-two", "heading-three", "heading-four", "legal"]
 }, {
-  slug: 'heading-two',
+  slug: "heading-two",
   title: "Heading Two",
   description: "Add a second level header",
   classes: "wp-block-pg-heading-two h3 md:h2 mt-11 md:mt-13 first:mt-0",
@@ -890,7 +890,7 @@ var blocks = [{
   tagName: "h2",
   transforms: ["paragraph", "heading-three", "heading-four", "legal"]
 }, {
-  slug: 'heading-three',
+  slug: "heading-three",
   title: "Heading Three",
   classes: "h3 mt-11 md:mt-13 first:mt-0 wp-block-pg-heading-three first:mt-0",
   description: "Add a third level header",
@@ -899,7 +899,7 @@ var blocks = [{
   tagName: "h3",
   transforms: ["paragraph", "heading-two", "heading-four", "legal"]
 }, {
-  slug: 'heading-four',
+  slug: "heading-four",
   title: "Heading Four",
   classes: "h4 mt-9 md:mt-10 wp-block-pg-heading-four first:mt-0",
   description: "Add a fourth level header",
@@ -908,7 +908,7 @@ var blocks = [{
   tagName: "h4",
   transforms: ["paragraph", "heading-two", "heading-three", "legal"]
 }, {
-  slug: 'legal',
+  slug: "legal",
   title: "Legal Text",
   classes: "legal mt-8 wp-block-pg-paragraph first:mt-0",
   description: "Add legal text",
@@ -7416,7 +7416,7 @@ function tabbedContentPanelBlock() {
           placeholder: "Please provide a title"
         }]
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/accordion"), "core/video", "core/embed-youtube"]
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/icon-list-container-block"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/accordion")]
       }))];
     },
     save: function save(_ref) {
