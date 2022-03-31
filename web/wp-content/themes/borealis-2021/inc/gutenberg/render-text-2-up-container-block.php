@@ -112,7 +112,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
             <?php if (!empty($attributes->cta_text)) : ?>
                 <div class="container flex justify-end">
                     <a href="#job-anchor" class="primary-button flex items-center md:pb-20 pb-10 w-full tb:w-8/12 mt-8 tb:mt-14">
-                        <p class="product-cta  <?php echo $attributes->bgColour ?>">
+                        <p class="underline-cta  <?php echo $attributes->bgColour ?>">
                             <?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8 down"><?php echo pg_render_icon('arrow-down'); ?></span>
                         </p>
                     </a>
