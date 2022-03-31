@@ -1394,6 +1394,9 @@ ol.footnotes li small{
 .mt-22{
   margin-top: 88px;
 }
+.mb-9{
+  margin-bottom: 36px;
+}
 .mt-5{
   margin-top: 20px;
 }
@@ -2103,6 +2106,9 @@ ol.footnotes li small{
 }
 .pt-7{
   padding-top: 28px;
+}
+.pb-2{
+  padding-bottom: 8px;
 }
 .pt-featured-image{
   padding-top: 360px;
@@ -2920,6 +2926,10 @@ mjx-container::-webkit-scrollbar-thumb,
     margin-left: auto;
     margin-right: auto;
   }
+    .md\:my-10{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
     .md\:mt-0{
     margin-top: 0px;
   }
@@ -2982,6 +2992,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:mt-3{
     margin-top: 12px;
+  }
+    .md\:mb-11{
+    margin-bottom: 44px;
   }
     .md\:block{
     display: block;
@@ -3199,6 +3212,10 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:py-15{
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+    .md\:py-16{
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
     .md\:pr-5{
     padding-right: 20px;
