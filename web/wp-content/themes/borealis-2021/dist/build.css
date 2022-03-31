@@ -1547,6 +1547,9 @@ ol.footnotes li small{
 .w-36{
   width: 144px;
 }
+.w-13{
+  width: 52px;
+}
 .w-42{
   width: 168px;
 }
@@ -1817,6 +1820,10 @@ ol.footnotes li small{
 .border-shade-white-400{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+.border-shade-grey-100{
+  --tw-border-opacity: 1;
+  border-color: rgb(244 244 251 / var(--tw-border-opacity));
 }
 .border-shade-transparent-400{
   border-color: transparent;
@@ -2125,6 +2132,9 @@ ol.footnotes li small{
 }
 .pt-7{
   padding-top: 28px;
+}
+.pb-0{
+  padding-bottom: 0px;
 }
 .pb-2{
   padding-bottom: 8px;
@@ -3510,6 +3520,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:w-4\/6{
     width: 66.666667%;
   }
+    .tb\:w-6\/12{
+    width: 50%;
+  }
     .tb\:w-3\/12{
     width: 25%;
   }
@@ -3551,6 +3564,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:overflow-x-scroll{
     overflow-x: scroll;
+  }
+    .tb\:border-b-0{
+    border-bottom-width: 0px;
+  }
+    .tb\:border-b{
+    border-bottom-width: 1px;
   }
     .tb\:pt-6{
     padding-top: 24px;
