@@ -43,30 +43,30 @@ if (!function_exists('pg_render_accordion_block')) {
         $allowed_html = pg_allowed_html();
         ob_start();
 ?>
-    <div class="custom-component animated-element nestable">
-        <div class="container flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('tb:flex-row') : ''; ?> custom-component nested-flex">
-            <div class="w-full mb-5 tb:mb-0 md:w-4/12 accordion-title">
-                <?php if (!empty($attributes->title)) : ?>
-                    <h3 class="h3">
-                        <?php echo wp_kses($attributes->title, $allowed_html); ?>
-                    </h3>
-                <?php endif; ?>
-            </div>
+        <div class="custom-component animated-element nestable no-background-padding">
+            <div class="container flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('tb:flex-row') : ''; ?> custom-component nested-flex">
+                <div class="w-full mb-5 tb:mb-0 md:w-4/12 accordion-title">
+                    <?php if (!empty($attributes->title)) : ?>
+                        <h3 class="h3">
+                            <?php echo wp_kses($attributes->title, $allowed_html); ?>
+                        </h3>
+                    <?php endif; ?>
+                </div>
 
-            <div class="paragraph w-full <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('tb:w-8/12') : ''; ?> accordion-list">
-                <?php if (!empty($attributes->description)) : ?>
-                    <div class="mt-0 mb-5 tb:mb-12">
-                        <p class="paragraph"><?php echo wp_kses($attributes->description, $allowed_html); ?></p>
-                    </div>
-                <?php endif; ?>
-                <ul class="accordion-block border-b border-shade-grey-500">
-                    <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
-                        <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
-                    <?php endforeach; ?>
-                </ul>
+                <div class="paragraph w-full <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('tb:w-8/12') : ''; ?> accordion-list">
+                    <?php if (!empty($attributes->description)) : ?>
+                        <div class="mt-0 mb-5 tb:mb-12">
+                            <p class="paragraph"><?php echo wp_kses($attributes->description, $allowed_html); ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <ul class="accordion-block border-b border-shade-grey-500">
+                        <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
+                            <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 <?php
         return ob_get_clean();
     }
