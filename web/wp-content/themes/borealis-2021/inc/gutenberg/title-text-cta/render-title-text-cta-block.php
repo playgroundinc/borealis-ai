@@ -45,13 +45,13 @@ if (!function_exists('pg_render_title_text_cta_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="w-full py-10 tb:py-18 <?php echo $attributes->background_colour ?>">
+        <div class="w-full py-20 <?php echo $attributes->background_colour ?>">
             <div class="container flex flex-col tb:flex-row gap-6">
                 <h3 class="h3 w-full tb:w-4/12"> <?php echo $attributes->title ?></h3>
                 <p class="w-full tb:w-4/12 tb:self-center">
                     <?php echo $attributes->copy ?>
                 </p>
-                <a href="<?php echo $attributes->cta_url ?>" class="primary-button flex items-center product-cta before:bg-shade-black-400 mt-3 md:mt-0 w-full md:w-5/12 tb:w-1/5 tb:ml-auto tb:self-center <?php echo $attributes->background_colour ?>"><?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8"><?php echo pg_render_icon('arrow-white'); ?></span></a>
+                <a href="<?php echo $attributes->cta_url ?>" class="primary-button flex items-center underline-cta before:bg-shade-black-400 mt-3 md:mt-0 w-full md:w-5/12 tb:w-1/5 tb:ml-auto tb:self-center <?php echo $attributes->background_colour ?>"><?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8"><?php echo pg_render_icon('arrow-white'); ?></span></a>
             </div>
         </div>
 <?php

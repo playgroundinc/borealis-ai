@@ -61,7 +61,7 @@ if (!function_exists('pg_render_text_image_container_block')) {
                 <div class="container flex justify-end">
                     <div class="w-full tb:w-8/12">
                         <?php if (!empty($attributes->copy)) : ?>
-                            <p class="paragraph-lg tb:pb-10 pb-0"><?php echo $attributes->copy ?></p>
+                            <p class="paragraph-lg tb:pb-20 pb-10"><?php echo $attributes->copy ?></p>
                         <?php endif; ?>
                     </div>
                 </div>

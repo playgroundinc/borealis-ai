@@ -12,8 +12,14 @@
   .core-list ul {
     @apply list-disc list-inside;
   }
-  .product-cta {
+  .underline-cta {
     @apply flex text-shade-black-400 justify-between relative pb-1 overflow-hidden items-center;
+  }
+  .white-underline {
+    @apply before:bg-shade-white-400;
+  }
+  .black-underline {
+    @apply before:bg-shade-black-400;
   }
   .pill {
     @apply border border-shade-black-400 px-4 py-1 rounded-pill inline-block text-center paragraph-sm;
@@ -56,12 +62,23 @@
     }
   }
 
+  .no-background-padding {
+    @apply py-10 tb:py-20;
+  }
+
+  .default-tabs .no-background-padding {
+    @apply py-0;
+  }
+
   .custom-component .custom-component {
     @apply mt-0;
   }
 
   .tab-container {
     .accordion-list {
+      @apply w-full;
+    }
+    .custom-video {
       @apply w-full;
     }
   }
@@ -76,6 +93,9 @@
         @apply hidden;
       }
     }
+  }
+  .nestable .paragraph-blog {
+    @apply mt-0;
   }
   .footnote-link.footnote-identifier-link {
     @apply scroll-mt-30;
@@ -241,25 +261,25 @@
   }
 }
 
-.product-cta:hover::before {
+.underline-cta:hover::before {
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-.product-cta span {
+.underline-cta span {
   -webkit-transition: -webkit-transform 0.25s ease-in-out;
   transition: transform 0.25s ease-in-out;
 }
 
-.product-cta:hover span {
+.underline-cta:hover span {
   transform: translateX(-0.33333rem);
 }
 
-.product-cta:hover span.down {
+.underline-cta:hover span.down {
   transform: translateY(0.33333rem);
 }
 
-.product-cta::before {
+.underline-cta::before {
   -webkit-transition: -webkit-transform 0.25s ease-in-out;
   transition: transform 0.25s ease-in-out;
   bottom: 0;
@@ -275,8 +295,8 @@
 }
 
 @media (prefers-reduced-motion) {
-  .product-cta::before,
-  .product-cta:hover span {
+  .underline-cta::before,
+  .underline-cta:hover span {
     -webkit-transition: none;
     transition: none;
     transform: none;

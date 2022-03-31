@@ -57,15 +57,7 @@ export default function tabbedContentPanelBlock() {
           {save ? (
             <InnerBlocks.Content />
           ) : (
-            <InnerBlocks
-              allowedBlocks={[
-                `${namespace}/paragraph`,
-                `${namespace}/icon-list-container-block`,
-                `${namespace}/accordion`,
-                `core/video`,
-                `core/embed-youtube`,
-              ]}
-            />
+            <InnerBlocks allowedBlocks={[`${namespace}/paragraph`, `${namespace}/icon-list-container-block`, `${namespace}/accordion`]} />
           )}
         </div>,
       ];
