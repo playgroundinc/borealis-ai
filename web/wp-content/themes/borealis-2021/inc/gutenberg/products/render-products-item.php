@@ -31,7 +31,7 @@ if (!function_exists('pg_render_products_item')) {
                             </div>
                         </div>
                         <div class="basis-1/6 shrink-0 pt-15 md:pt-0">
-                            <p class="primary-button flex items-center product-cta"><?php echo $cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8"><?php echo pg_render_icon('arrow-white'); ?></span></p>
+                            <p class="primary-button flex items-center underline-cta black-underline"><?php echo $cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8"><?php echo pg_render_icon('arrow-white'); ?></span></p>
                         </div>
                     </div>
                 </a>

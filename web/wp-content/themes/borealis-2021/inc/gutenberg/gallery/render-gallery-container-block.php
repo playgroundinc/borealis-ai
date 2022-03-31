@@ -52,17 +52,19 @@ if (!function_exists('pg_render_gallery_container_block')) {
             <div class="md:flex container">
                 <div class="md:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h2 class="h3 md:h2 pr-8"><?php echo esc_html($attributes->title) ?></h2>
+                        <h2 class="h3 tb:h2 pr-8"><?php echo $attributes->title ?></h2>
                     <?php endif; ?>
                 </div>
                 <div class="md:w-8/12">
                     <?php if (strlen($attributes->description) > 0) : ?>
-                        <p class="paragraph md:paragraph-lg pt-8 md:pt-0"><?php echo esc_html($attributes->description); ?></p>
+                        <p class="paragraph tb:paragraph-lg pt-8 md:pt-0"><?php echo esc_html($attributes->description); ?></p>
                     <?php endif; ?>
                     <?php if (!empty($attributes->link) && strlen($attributes->link_text) > 0) : ?>
-                        <a class="py-4 h4 text-shade-black-400 visited:text-primary-electric-purple-400 paragraph flex items-center" href="<?php echo esc_attr($attributes->link) ?>">
-                            <?php echo esc_html($attributes->link_text); ?>
-                            <span aria-hidden="true" class="rotate-90 pb-6"><?php echo pg_render_icon('arrow-white') ?></span>
+                        <a href="<?php echo esc_attr($attributes->link) ?>" class="primary-button flex items-center underline-cta w-fit black-underline text-shade-black-400 visited:text-primary-electric-purple-400 paragraph mt-7 md:mt-14">
+                            <?php echo $attributes->link_text ?>
+                            <span class="icon icon--lg ml-7 relative top-0 down">
+                                <?php echo pg_render_icon('arrow-down') ?>
+                            </span>
                         </a>
 
                     <?php endif; ?>
