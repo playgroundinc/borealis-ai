@@ -1283,6 +1283,10 @@ ol.footnotes li small{
   margin-top: 32px;
   margin-bottom: 32px;
 }
+.my-10{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 .my-5{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -2120,6 +2124,9 @@ ol.footnotes li small{
 .pt-7{
   padding-top: 28px;
 }
+.pb-2{
+  padding-bottom: 8px;
+}
 .pt-featured-image{
   padding-top: 360px;
 }
@@ -2933,6 +2940,10 @@ mjx-container::-webkit-scrollbar-thumb,
     margin-left: auto;
     margin-right: auto;
   }
+    .md\:my-10{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
     .md\:mt-0{
     margin-top: 0px;
   }
@@ -3637,9 +3648,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:w-5\/6{
     width: 83.333333%;
-  }
-    .lg\:w-6\/12{
-    width: 50%;
   }
     .lg\:w-3\/8{
     width: calc((100% / 8) * 3);
