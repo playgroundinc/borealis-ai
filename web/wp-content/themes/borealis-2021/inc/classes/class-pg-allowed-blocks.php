@@ -89,10 +89,6 @@ class PG_Allowed_Blocks
             'callout-column',
             'callout-container',
 
-            // Content Cards
-            'content-card',
-            'content-card-container',
-
             // Custom Video
             'custom-video',
 
@@ -158,6 +154,7 @@ class PG_Allowed_Blocks
         );
         $this->shared_core_blocks = array(
             'core/embed-youtube',
+            'core/video',
         );
         $this->blog_core_blocks = array(
             'core/table',
