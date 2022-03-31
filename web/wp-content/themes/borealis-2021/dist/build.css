@@ -901,6 +901,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .page .container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
   display: none;
 }
+.nestable .paragraph-blog{
+  margin-top: 0px;
+}
 .footnote-link.footnote-identifier-link{
   scroll-margin-top: 120px;
 }
@@ -1293,10 +1296,6 @@ ol.footnotes li small{
   margin-top: 32px;
   margin-bottom: 32px;
 }
-.my-10{
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
 .my-5{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1409,6 +1408,9 @@ ol.footnotes li small{
 .mb-13{
   margin-bottom: 52px;
 }
+.mt-7{
+  margin-top: 28px;
+}
 .mt-14{
   margin-top: 56px;
 }
@@ -1429,9 +1431,6 @@ ol.footnotes li small{
 }
 .mr-7{
   margin-right: 28px;
-}
-.mt-7{
-  margin-top: 28px;
 }
 .block{
   display: block;
@@ -1546,6 +1545,11 @@ ol.footnotes li small{
 .w-18{
   width: 72px;
 }
+.w-fit{
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
 .w-4{
   width: 16px;
 }
@@ -1560,6 +1564,9 @@ ol.footnotes li small{
 }
 .w-36{
   width: 144px;
+}
+.w-13{
+  width: 52px;
 }
 .w-42{
   width: 168px;
@@ -1587,11 +1594,6 @@ ol.footnotes li small{
 }
 .w-22{
   width: 88px;
-}
-.w-fit{
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 .max-w-\[560px\]{
   max-width: 560px;
@@ -1671,10 +1673,6 @@ ol.footnotes li small{
 }
 .rotate-180{
   --tw-rotate: 180deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.rotate-90{
-  --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .transform{
@@ -2144,6 +2142,9 @@ ol.footnotes li small{
 }
 .pt-7{
   padding-top: 28px;
+}
+.pb-0{
+  padding-bottom: 0px;
 }
 .pb-2{
   padding-bottom: 8px;
@@ -3004,6 +3005,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:mb-10{
     margin-bottom: 40px;
   }
+    .md\:mt-14{
+    margin-top: 56px;
+  }
     .md\:mr-8{
     margin-right: 32px;
   }
@@ -3027,9 +3031,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:mt-3{
     margin-top: 12px;
-  }
-    .md\:mt-14{
-    margin-top: 56px;
   }
     .md\:block{
     display: block;
@@ -3578,6 +3579,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:w-4\/6{
     width: 66.666667%;
   }
+    .tb\:w-6\/12{
+    width: 50%;
+  }
     .tb\:w-3\/12{
     width: 25%;
   }
@@ -3619,6 +3623,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:overflow-x-scroll{
     overflow-x: scroll;
+  }
+    .tb\:border-b-0{
+    border-bottom-width: 0px;
+  }
+    .tb\:border-b{
+    border-bottom-width: 1px;
   }
     .tb\:pt-6{
     padding-top: 24px;
