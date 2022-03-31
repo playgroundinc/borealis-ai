@@ -48,7 +48,7 @@ if (!function_exists('pg_render_icon_list_item_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <li class="flex mb-12 w-full <?php echo $attributes->width === 'full-width' ? 'border-b border-shade-grey-700 pb-8' : 'md:w-6/12 pr-8' ?> " aria-labelledby="<?php echo esc_html(pg_slugify($attributes->subtitle)) ?>">
+        <li class="flex mb-12 w-full <?php echo $attributes->width === 'full-width' ? 'border-b border-color-shade-grey-500 pb-8' : 'md:w-6/12 pr-8' ?> " aria-labelledby="<?php echo esc_html(pg_slugify($attributes->subtitle)) ?>">
             <?php if (!empty($attributes->image_url) and $block["icon"]) : ?>
                 <img class="mr-10 h-13" src="<?php echo esc_html($attributes->image_url) ?>" alt="<?php echo esc_html($attributes->image_alt) ?>">
             <?php endif; ?>

@@ -59,7 +59,7 @@ if (!function_exists('pg_render_accordion_block')) {
                             <p class="paragraph"><?php echo wp_kses($attributes->description, $allowed_html); ?></p>
                         </div>
                     <?php endif; ?>
-                    <ul class="accordion-block border-b border-shade-grey-500">
+                    <ul class="accordion-block border-b border-color-shade-grey-500">
                         <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
                             <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
                         <?php endforeach; ?>
