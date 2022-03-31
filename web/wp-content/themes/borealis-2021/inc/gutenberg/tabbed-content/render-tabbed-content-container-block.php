@@ -88,7 +88,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                                     $titleSlug = pg_slugify($attributes->title);
                                     ?>
                                     <?php if ($inner_block === key($block['innerBlocks'])) : ?>
-                                        <div class="flex justify-center flex-col grow" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
+                                        <div class="flex justify-center flex-col grow tab-panel" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
                                             <?php
                                             foreach ($element['innerBlocks'] as $panel) {
                                                 echo wp_kses(render_block($panel), $allowed_html);
@@ -96,7 +96,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                                             ?>
                                         </div>
                                     <?php else : ?>
-                                        <div class="hidden justify-center flex-col grow" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
+                                        <div class="hidden justify-center flex-col grow tab-panel" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
                                             <?php
                                             foreach ($element['innerBlocks'] as $panel) {
                                                 echo wp_kses(render_block($panel), $allowed_html);
@@ -181,7 +181,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                                     $titleSlug = pg_slugify($attributes->title);
                                     ?>
                                     <?php if ($inner_block === key($block['innerBlocks'])) : ?>
-                                        <div class="flex flex-col pt-12" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
+                                        <div class="flex flex-col pt-12 tab-panel" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
                                             <?php
                                             foreach ($element['innerBlocks'] as $panel) {
                                                 echo wp_kses(render_block($panel), $allowed_html);
@@ -189,7 +189,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                                             ?>
                                         </div>
                                     <?php else : ?>
-                                        <div class="hidden flex-col pt-12" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
+                                        <div class="hidden flex-col pt-12 tab-panel" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
                                             <?php
                                             foreach ($element['innerBlocks'] as $panel) {
                                                 echo wp_kses(render_block($panel), $allowed_html);

@@ -891,6 +891,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .page .container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
   display: none;
 }
+.nestable .paragraph-blog{
+  margin-top: 0px;
+}
 .footnote-link.footnote-identifier-link{
   scroll-margin-top: 120px;
 }
@@ -1283,10 +1286,6 @@ ol.footnotes li small{
   margin-top: 32px;
   margin-bottom: 32px;
 }
-.my-10{
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
 .my-5{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1547,6 +1546,9 @@ ol.footnotes li small{
 }
 .w-36{
   width: 144px;
+}
+.w-13{
+  width: 52px;
 }
 .w-42{
   width: 168px;
@@ -2126,6 +2128,9 @@ ol.footnotes li small{
 }
 .pt-7{
   padding-top: 28px;
+}
+.pb-0{
+  padding-bottom: 0px;
 }
 .pb-2{
   padding-bottom: 8px;
@@ -3511,6 +3516,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:w-4\/6{
     width: 66.666667%;
   }
+    .tb\:w-6\/12{
+    width: 50%;
+  }
     .tb\:w-3\/12{
     width: 25%;
   }
@@ -3552,6 +3560,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:overflow-x-scroll{
     overflow-x: scroll;
+  }
+    .tb\:border-b-0{
+    border-bottom-width: 0px;
+  }
+    .tb\:border-b{
+    border-bottom-width: 1px;
   }
     .tb\:pt-6{
     padding-top: 24px;
