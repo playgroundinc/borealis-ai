@@ -54,7 +54,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
 ?>
         <div class="custom-component animated-element nestable <?php echo  $dark && $attributes->display_style === 'background-image' ? esc_attr('component-dark') : '' ?>">
             <div class="bg-center bg-cover <?php echo $dark && $attributes->display_style === 'background-image' ? esc_attr('text-shade-white-400 pt-11 lg:pt-20 pb-9') : '' ?>" style="<?php echo $dark && $attributes->display_style === 'background-image' ? 'background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(' . esc_url_raw($image) . ')' : '' ?>">
-                <div class="tab-container <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : ''; ?>" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
+                <div class="tab-container no-background-padding <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : ''; ?>" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                     <?php if ($dark && $attributes->display_style === 'background-image') : ?>
                         <div class="lg:flex justify-between">
                             <div class="lg:basis-4/12 shrink-0 flex flex-col lg:pb-11">
@@ -105,7 +105,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                                         </div>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
-                                <div class="flex lg:justify-center lg:pt-8 overflow-scroll pb-11 pt-11 pl-4" role="tablist" aria-orientation="horizontal">
+                                <div class="flex lg:justify-center lg:pt-8 md:overflow-hidden overflow-scroll pb-11 pt-11 pl-4" role="tablist" aria-orientation="horizontal">
                                     <?php foreach ($block['innerBlocks'] as $inner_block => $element) : ?>
                                         <?php
                                         $fields = array(
@@ -149,7 +149,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                                     </div>
                                 <?php endif; ?>
 
-                                <div class="flex border-b border-shade-grey-700 overflow-scroll" role="tablist" aria-orientation="horizontal">
+                                <div class="flex border-b border-shade-grey-700 md:overflow-hidden overflow-scroll" role="tablist" aria-orientation="horizontal">
                                     <?php foreach ($block['innerBlocks'] as $inner_block => $element) : ?>
                                         <?php
                                         $fields = array(

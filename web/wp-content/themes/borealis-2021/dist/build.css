@@ -859,10 +859,27 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 0px;
   }
 }
+.no-background-padding{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media (min-width: 1000px){
+  .no-background-padding{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+.default-tabs .no-background-padding{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 .custom-component .custom-component{
   margin-top: 0px;
 }
 .tab-container .accordion-list{
+  width: 100%;
+}
+.tab-container .custom-video{
   width: 100%;
 }
 .page .container .nestable .container{
@@ -1269,10 +1286,6 @@ ol.footnotes li small{
   margin-top: 32px;
   margin-bottom: 32px;
 }
-.my-10{
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
 .my-5{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1342,6 +1355,9 @@ ol.footnotes li small{
 }
 .mb-18{
   margin-bottom: 72px;
+}
+.-mb-10{
+  margin-bottom: -40px;
 }
 .mt-0{
   margin-top: 0px;
@@ -1557,6 +1573,9 @@ ol.footnotes li small{
 }
 .w-22{
   width: 88px;
+}
+.max-w-\[560px\]{
+  max-width: 560px;
 }
 .max-w-\[200px\]{
   max-width: 200px;
@@ -1954,9 +1973,9 @@ ol.footnotes li small{
   padding-left: 36px;
   padding-right: 36px;
 }
-.py-19{
-  padding-top: 76px;
-  padding-bottom: 76px;
+.py-20{
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 .py-28{
   padding-top: 112px;
@@ -2107,6 +2126,9 @@ ol.footnotes li small{
 .pt-7{
   padding-top: 28px;
 }
+.pb-2{
+  padding-bottom: 8px;
+}
 .pt-featured-image{
   padding-top: 360px;
 }
@@ -2145,9 +2167,6 @@ ol.footnotes li small{
 }
 .pr-20{
   padding-right: 80px;
-}
-.pb-0{
-  padding-bottom: 0px;
 }
 .pr-12{
   padding-right: 48px;
@@ -2923,6 +2942,10 @@ mjx-container::-webkit-scrollbar-thumb,
     margin-left: auto;
     margin-right: auto;
   }
+    .md\:my-10{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
     .md\:mt-0{
     margin-top: 0px;
   }
@@ -3260,9 +3283,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pb-12{
     padding-bottom: 48px;
   }
-    .md\:pt-15{
-    padding-top: 60px;
-  }
     .md\:pt-featured-image-md{
     padding-top: 450px;
   }
@@ -3532,14 +3552,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:overflow-x-scroll{
     overflow-x: scroll;
   }
-    .tb\:py-18{
-    padding-top: 72px;
-    padding-bottom: 72px;
-  }
-    .tb\:py-20{
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
     .tb\:pt-6{
     padding-top: 24px;
   }
@@ -3564,8 +3576,8 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:pt-130{
     padding-top: 520px;
   }
-    .tb\:pb-10{
-    padding-bottom: 40px;
+    .tb\:pb-20{
+    padding-bottom: 80px;
   }
     .tb\:pt-20{
     padding-top: 80px;
@@ -3630,17 +3642,14 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:min-h-\[435px\]{
     min-height: 435px;
   }
-    .lg\:min-h-\[500px\]{
-    min-height: 500px;
+    .lg\:min-h-\[540px\]{
+    min-height: 540px;
   }
     .lg\:w-1\/6{
     width: 16.666667%;
   }
     .lg\:w-5\/6{
     width: 83.333333%;
-  }
-    .lg\:w-6\/12{
-    width: 50%;
   }
     .lg\:w-3\/8{
     width: calc((100% / 8) * 3);

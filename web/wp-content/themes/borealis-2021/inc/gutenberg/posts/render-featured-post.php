@@ -25,7 +25,7 @@ if (!function_exists('pg_render_featured_post')) {
         }
         ob_start();
 ?>
-        <a href="<?php echo esc_url_raw($url) ?>" class="block pt-12 md:flex flex-col grow">
+        <a href="<?php echo esc_url_raw($url) ?>" class="block no-background-padding md:flex flex-col grow">
             <div class=" <?php echo $full ? esc_attr('md:flex justify-between') : 'grow' ?>">
                 <h2 class="paragraph-lg <?php echo $full ? esc_attr('md:w-5/12') : esc_attr('md:w-5/6') ?>"><?php echo esc_html($post_obj->post_title) ?></h2>
                 <?php if ($full && strlen($post_obj->post_excerpt) > 0) : ?>

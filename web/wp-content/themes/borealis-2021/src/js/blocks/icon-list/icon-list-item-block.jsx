@@ -6,6 +6,7 @@ import CustomImageUpload from "../reusable/custom-image-upload.jsx";
 export default function iconListItemBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { i18n } = wp;
+  const { TextControl } = wp.components;
   const { InnerBlocks } = wp.blockEditor;
 
   const blockSlug = "icon-list-item-block"; // slug for the block
@@ -31,11 +32,23 @@ export default function iconListItemBlock() {
       type: "String",
       default: "",
     },
+    title: {
+      type: "String",
+      default: "",
+    },
     subtitle: {
       type: "String",
       default: "",
     },
     copy: {
+      type: "String",
+      default: "",
+    },
+    link_text: {
+      type: "String",
+      default: "",
+    },
+    link_url: {
       type: "String",
       default: "",
     },
@@ -50,7 +63,7 @@ export default function iconListItemBlock() {
     parent: [`${namespace}/icon-list-container-block`],
     edit: (props, editor = false, save = false) => {
       const { attributes, setAttributes } = props;
-      const { subtitle, copy, image_url, image_alt, image_id, width } = attributes;
+      const { title, subtitle, copy, link_text, link_url, image_url, image_alt, image_id, width } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -106,6 +119,20 @@ export default function iconListItemBlock() {
             <CustomRichText
               components={[
                 {
+                  value: title,
+                  reference: "title",
+                  tagName: "p",
+                  classes: ["p"],
+                  placeholder: "Add title (optional)",
+                },
+              ]}
+              onChange={(attribute, change) => {
+                updateAttributeValue(attribute, change);
+              }}
+            />
+            <CustomRichText
+              components={[
+                {
                   value: subtitle,
                   reference: "subtitle",
                   tagName: "p",
@@ -131,12 +158,26 @@ export default function iconListItemBlock() {
                 updateAttributeValue(attribute, change);
               }}
             />
+            <TextControl
+              value={link_text}
+              onChange={(value) => {
+                updateAttributeValue("link_text", value);
+              }}
+              label="Link Text:"
+            />
+            <TextControl
+              value={link_url}
+              onChange={(value) => {
+                updateAttributeValue("link_url", value);
+              }}
+              label="Link URL:"
+            />
           </div>
         </div>,
       ];
     },
     save: () => {
-      const { subtitle, copy, image_url, image_alt, image_id, width } = attributes;
+      const { title, subtitle, copy, link_text, link_url, image_url, image_alt, image_id, width } = attributes;
       return <InnerBlocks.Content />;
     },
   });

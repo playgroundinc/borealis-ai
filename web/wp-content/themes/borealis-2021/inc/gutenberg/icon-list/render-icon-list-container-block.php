@@ -44,9 +44,9 @@ if (!function_exists('pg_render_icon_list_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="custom-component nestable animated-element" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
+        <div class="custom-component nestable animated-element no-background-padding" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
             <div>
-                <div class="flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container tb:flex-row') : '' ?>">
+                <div class="flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container tb:flex-row justify-end') : '' ?>">
                     <div class="w-full mb-10 tb:mb-0 tb:w-2/6 icon-list-title">
                         <?php if (!empty($attributes->title)) : ?>
                             <h3 class="h3 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('tb:pb-4') : '' ?>"><?php echo esc_html($attributes->title) ?></h3>
@@ -54,11 +54,11 @@ if (!function_exists('pg_render_icon_list_container_block')) {
                     </div>
                     <div class="w-full <?php echo is_singular(array('news', 'research-blogs')) ? '' : esc_attr('tb:w-4/6'); ?> icon-list <?php echo !empty($block['innerBlocks']) ? '' : 'hidden' ?>">
                         <?php if (!empty($attributes->description)) : ?>
-                            <div>
+                            <div class="mt-0 md:my-10">
                                 <p class="<?php echo is_singular(array('news', 'research-blogs')) ? 'paragraph-blog' : 'paragraph' ?>  nested-description"><?php echo wp_kses($attributes->description, $allowed_html) ?></p>
                             </div>
                         <?php endif; ?>
-                        <ul class="flex flex-wrap mt-10 flex-col <?php echo is_singular(array('news', 'research-blogs')) ? '' : 'md:flex-row' ?> nested-block">
+                        <ul class="flex flex-wrap mt-10 flex-col <?php echo is_singular(array('news', 'research-blogs')) ? 'md:flex-row' : 'md:flex-row' ?> nested-block">
                             <?php foreach ($block['innerBlocks'] as $tabbed_inner_block) : ?>
                                 <?php $tabbed_inner_block['icon'] = $attributes->icon; ?>
 
