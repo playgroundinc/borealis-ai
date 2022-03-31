@@ -1357,6 +1357,9 @@ ol.footnotes li small{
 .mb-18{
   margin-bottom: 72px;
 }
+.-mb-10{
+  margin-bottom: -40px;
+}
 .mt-0{
   margin-top: 0px;
 }
