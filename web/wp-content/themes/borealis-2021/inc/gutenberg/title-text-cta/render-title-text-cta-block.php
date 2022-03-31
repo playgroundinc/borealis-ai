@@ -45,7 +45,7 @@ if (!function_exists('pg_render_title_text_cta_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="w-full py-10 tb:py-18 <?php echo $attributes->background_colour ?>">
+        <div class="w-full py-20 <?php echo $attributes->background_colour ?>">
             <div class="container flex flex-col tb:flex-row gap-6">
                 <h3 class="h3 w-full tb:w-4/12"> <?php echo $attributes->title ?></h3>
                 <p class="w-full tb:w-4/12 tb:self-center">

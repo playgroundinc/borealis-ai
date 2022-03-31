@@ -34,10 +34,6 @@ import calloutColumnBlock from "./blocks/callouts/callout-column.jsx";
 import compareCodeBlock from "./blocks/code/compare-code-block.jsx";
 import codeBlock from "./blocks/code/code-block.jsx";
 
-// Content Columns
-import contentCardContainerBlock from "./blocks/content-cards/content-card-container.jsx";
-import contentCardBlock from "./blocks/content-cards/content-card.jsx";
-
 // Custom Video
 import customVideoBlock from "./blocks/custom-video/custom-video.jsx";
 
@@ -160,10 +156,6 @@ blockquoteBlock();
 // Callout Columns
 calloutContainerBlock();
 calloutColumnBlock();
-
-// Content Cards
-contentCardContainerBlock();
-contentCardBlock();
 
 // Code
 compareCodeBlock();

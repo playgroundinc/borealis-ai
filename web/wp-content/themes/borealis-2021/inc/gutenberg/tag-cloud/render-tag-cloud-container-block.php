@@ -43,14 +43,14 @@ if (!function_exists('pg_render_tag_cloud_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="custom-component animated-element">
-            <div class="container md:flex py-9 md:py-16" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
+        <div class="custom-component animated-element no-background-padding">
+            <div class="container md:flex" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                 <div class="md:w-4/12 md:pr-4">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h3 class="h3 text-shade-black-400 mb-9"><?php echo esc_html($attributes->title) ?></h3>
+                        <h3 class="h3 text-shade-black-400"><?php echo esc_html($attributes->title) ?></h3>
                     <?php endif; ?>
                 </div>
-                <div class="md:w-8/12 flex justify-between flex-wrap">
+                <div class="mt-8 md:mt-0 md:w-8/12 flex justify-between flex-wrap">
                     <?php if (!empty($block['innerBlocks'])) : ?>
                         <?php foreach ($block['innerBlocks'] as $index => $inner_block) : ?>
                             <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
