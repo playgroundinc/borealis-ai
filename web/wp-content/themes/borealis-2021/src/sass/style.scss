@@ -294,6 +294,10 @@
   line-height: 1.1;
 }
 
+.scrollbar-height::-webkit-scrollbar {
+  height: 10px;
+}
+
 @media (prefers-reduced-motion) {
   .underline-cta::before,
   .underline-cta:hover span {
