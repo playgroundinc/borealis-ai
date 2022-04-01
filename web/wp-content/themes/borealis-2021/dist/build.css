@@ -1432,6 +1432,9 @@ ol.footnotes li small{
 .mr-7{
   margin-right: 28px;
 }
+.mb-1{
+  margin-bottom: 4px;
+}
 .block{
   display: block;
 }
@@ -2640,6 +2643,14 @@ mjx-container::-webkit-scrollbar-thumb,
 
 .hover\:opacity-70:hover{
   opacity: 0.7;
+}
+
+.focus\:border-b:focus{
+  border-bottom-width: 1px;
+}
+
+.focus\:border-b-0:focus{
+  border-bottom-width: 0px;
 }
 
 .focus\:border-primary-electric-blue-400:focus{
