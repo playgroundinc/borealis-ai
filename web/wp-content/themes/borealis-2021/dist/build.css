@@ -1411,6 +1411,9 @@ ol.footnotes li small{
 .mt-7{
   margin-top: 28px;
 }
+.mb-1{
+  margin-bottom: 4px;
+}
 .mt-14{
   margin-top: 56px;
 }
@@ -1431,9 +1434,6 @@ ol.footnotes li small{
 }
 .mr-7{
   margin-right: 28px;
-}
-.mb-1{
-  margin-bottom: 4px;
 }
 .block{
   display: block;
@@ -1841,12 +1841,18 @@ ol.footnotes li small{
 .border-shade-transparent-400{
   border-color: transparent;
 }
+.border-transparent{
+  border-color: transparent;
+}
 .border-l-shade-black-400{
   --tw-border-opacity: 1;
   border-left-color: rgb(34 39 49 / var(--tw-border-opacity));
 }
 .border-opacity-40{
   --tw-border-opacity: 0.4;
+}
+.border-opacity-0{
+  --tw-border-opacity: 0;
 }
 .bg-shade-white-400{
   --tw-bg-opacity: 1;
@@ -2645,14 +2651,6 @@ mjx-container::-webkit-scrollbar-thumb,
   opacity: 0.7;
 }
 
-.focus\:border-b:focus{
-  border-bottom-width: 1px;
-}
-
-.focus\:border-b-0:focus{
-  border-bottom-width: 0px;
-}
-
 .focus\:border-primary-electric-blue-400:focus{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
@@ -2668,12 +2666,12 @@ mjx-container::-webkit-scrollbar-thumb,
   outline-offset: 2px;
 }
 
-.focus\:outline-0:focus{
-  outline-width: 0px;
-}
-
 .focus\:outline-4:focus{
   outline-width: 4px;
+}
+
+.focus\:outline-0:focus{
+  outline-width: 0px;
 }
 
 .disabled\:text-shade-grey-400:disabled{
