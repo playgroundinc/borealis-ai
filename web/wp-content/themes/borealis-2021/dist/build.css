@@ -1432,6 +1432,9 @@ ol.footnotes li small{
 .mr-7{
   margin-right: 28px;
 }
+.mb-2{
+  margin-bottom: 8px;
+}
 .block{
   display: block;
 }
@@ -1549,6 +1552,11 @@ ol.footnotes li small{
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+.w-max{
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 .w-4{
   width: 16px;
@@ -2480,11 +2488,26 @@ ol.footnotes li small{
 .logo-lineheight {
   line-height: 1.1; }
 
+.scrollbar-height::-webkit-scrollbar {
+  height: 10px; }
+
 @media (prefers-reduced-motion) {
   .underline-cta::before,
   .underline-cta:hover span {
     transition: none;
     transform: none; } }
+
+fieldset {
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+legend {
+  min-width: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
 
 .wp-block-table {
   margin-top: 64px;
@@ -3151,6 +3174,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:flex-col{
     flex-direction: column;
+  }
+    .md\:flex-wrap{
+    flex-wrap: wrap;
   }
     .md\:items-end{
     align-items: flex-end;
