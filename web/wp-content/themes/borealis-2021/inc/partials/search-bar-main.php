@@ -9,16 +9,16 @@ if (!function_exists('pg_generate_search_bar_main')) {
                 <form class="search-form relative grow">
                     <label class="sr-only" for="search">Search</label>
                     <input class=" h2 border block w-full border-0 text-shade-grey-700 py-10" id="search" name="q" type="text" role="search" placeholder="<?php echo esc_attr('Type Here') ?>" value="<?php echo isset($query) && !empty($query) ? esc_attr($query) : null; ?>">
-                    <button class="sr-only" type="submit">
+                    <button tabindex="-1" class="sr-only" type="submit">
                         <span><?php echo esc_html('Search') ?></span>
                     </button>
-                    <div role="region" id="search-info" aria-atomic="true" aria-live="assertive">
+                    <div tabindex="-1" role="region" id="search-info" aria-atomic="true" aria-live="assertive">
                         <p id="helper-text" class="sr-only"><?php echo esc_html('Press enter to search') ?></p>
                     </div>
                 </form>
-                <div class="cursor-pointer flex items-center accordion-block">
-                    <span id="open-search" class="icon icon--xl"><?php echo pg_render_icon('large-search') ?></span>
-                    <span id="close-search" class="icon icon--xl hidden"><?php echo pg_render_icon('large-search-close') ?></span>
+                <div class="cursor-pointer flex items-center accordion-block pl-1">
+                    <span tabindex="0" id="open-search" class="icon focus:outline-4 icon--xl"><?php echo pg_render_icon('large-search') ?></span>
+                    <span tabindex="0" id="close-search" class="icon focus:outline-4 icon--xl hidden"><?php echo pg_render_icon('large-search-close') ?></span>
                 </div>
             </div>
             <div class="hidden">
@@ -41,8 +41,8 @@ if (!function_exists('pg_generate_search_bar_main')) {
                                 <div class="flex flex-wrap">
                                     <?php foreach ($terms as $term) : ?>
                                         <div class="mr-3 mb-4">
-                                            <input class="peer sr-only" value="<?php echo esc_attr($term->term_id) ?>" name="<?php echo esc_attr($term->term_id . '[]') ?>" type="checkbox" id="<?php echo esc_attr($term->term_id) ?>">
-                                            <label class="pill peer-checked:pill-active hover:cursor-pointer" for="<?php echo esc_attr($term->term_id) ?>">
+                                            <input tabindex="-1" class="peer sr-only" value="<?php echo esc_attr($term->term_id) ?>" name="<?php echo esc_attr($term->term_id . '[]') ?>" type="checkbox" id="<?php echo esc_attr($term->term_id) ?>">
+                                            <label tabindex="0" class="pill peer-checked:pill-active hover:cursor-pointer focus:outline-4" for="<?php echo esc_attr($term->term_id) ?>">
                                                 <?php echo esc_html($term->name) ?>
                                             </label>
                                         </div>
