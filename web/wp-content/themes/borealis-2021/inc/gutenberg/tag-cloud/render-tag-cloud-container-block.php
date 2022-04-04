@@ -47,7 +47,7 @@ if (!function_exists('pg_render_tag_cloud_container_block')) {
             <div class="container md:flex" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                 <div class="md:w-4/12 md:pr-4">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h3 class="h3 text-shade-black-400"><?php echo esc_html($attributes->title) ?></h3>
+                        <h3 class="h3 text-shade-black-400"><?php echo $attributes->title ?></h3>
                     <?php endif; ?>
                 </div>
                 <div class="mt-8 md:mt-0 md:w-8/12 flex justify-between flex-wrap">
