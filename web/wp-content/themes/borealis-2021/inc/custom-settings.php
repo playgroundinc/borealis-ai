@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package trimac-2021
+ * @package Borealis-2021
  */
 
 /**
@@ -58,56 +58,15 @@ function pg_init_menus()
         '404 Page Settings' => array(
             'slug' => $namespace . '-404-settings',
             'parent' => $parent,
-            'description' => 'Use this page to update the copy on the 404 page. If left blank it will default to the value set on the main Trimac site.',
+            'description' => 'Use this page to update the copy on the 404 page. If left blank it will default to the value set on the main Borealis site.',
             'sections' => array(
                 '404 Page English' => array(
                     'id' => $namespace . '-404-en',
                     'fields' => array(
-                        '404_title_en' => 'text',
-                        '404_description_en' => 'textarea',
+                        '404_title' => 'text',
+                        '404_description' => 'textarea',
                     )
                 ),
-                '404 Page French' => array(
-                    'id' => $namespace . '-404-fr',
-                    'fields' => array(
-                        '404_title_fr' => 'text',
-                        '404_description_fr' => 'textarea',
-                    )
-                )
-            )
-        ),
-
-        // Alert Bar settings submenu with English and French sections.
-        'Alert Bar Settings' => array(
-            'slug' => $namespace . '-alert-settings',
-            'parent' => $parent,
-            'description' => 'Use this page to update the copy on the Alert Bar. If left blank it will default to the value set on the main Trimac site.',
-            'sections' => array(
-                'Alert Bar Cookie' => array(
-                    'id' => $namespace . '-alert-bar-cookie',
-                    'fields' => array(
-                        'alert_bar_cookie_name' => 'text',
-                        'cookie_lifespan_in_hours' => 'number',
-                    )
-                ),
-                'Alert Bar English' => array(
-                    'id' => $namespace . '-alert-bar-en',
-                    'fields' => array(
-                        'alert_bar_title_en' => 'text',
-                        'alert_bar_copy_en' => 'textarea',
-                        'alert_bar_link_text_en' => 'text',
-                        'alert_bar_link_en' => 'text'
-                    )
-                ),
-                'Alert Bar French' => array(
-                    'id' => $namespace . '-alert-bar-fr',
-                    'fields' => array(
-                        'alert_bar_title_fr' => 'text',
-                        'alert_bar_copy_fr' => 'textarea',
-                        'alert_bar_link_text_fr' => 'text',
-                        'alert_bar_link_fr' => 'text'
-                    )
-                )
             )
         ),
 
@@ -115,7 +74,7 @@ function pg_init_menus()
         'Cookie Notification Settings' => array(
             'slug' => $namespace . '-cookie-settings',
             'parent' => $parent,
-            'description' => 'Use this page to update the copy and links for the cookies notification. If left blank it will default to the value set on the main Trimac site.',
+            'description' => 'Use this page to update the copy and links for the cookies notification. If left blank it will default to the value set on the main Borealis site.',
             'sections' => array(
                 'Cookie Policy' => array(
                     'id' => $namespace . '-cookie-policy',
@@ -133,39 +92,14 @@ function pg_init_menus()
             'slug' => $namespace . '-footer-settings',
             // This will create a submenu page. 
             'parent' => $parent,
-            'description' => 'This is where you can add links for the social media integrations on your site. If left blank it will default to the value set on the main Trimac site.',
+            'description' => 'This is where you can add links for the social media integrations on your site. If left blank it will default to the value set on the main Borealis site.',
             // Sections allow for breaking up the inputs onto the page. 
             // The key for each item will act as the section's title. 
             'sections' => array(
                 'Footer Banner English' => array(
                     'id' => $namespace . '-footer-banner-en',
                     'fields' => array(
-                        'footer_banner_copy_en' => 'textarea',
-                    )
-                ),
-            ),
-        ),
-
-        'Header Settings' => array(
-            'slug' => $namespace . '-header-settings',
-            // This will create a submenu page. 
-            'parent' => $parent,
-            'description' => 'This is where you can add links for the social media integrations on your site. If left blank it will default to the value set on the main Trimac site.',
-            // Sections allow for breaking up the inputs onto the page. 
-            // The key for each item will act as the section's title. 
-            'sections' => array(
-                'Header CTA English' => array(
-                    'id' => $namespace . '-header-cta-en',
-                    'fields' => array(
-                        'header_cta_text_en' => 'text',
-                        'header_cta_link_en' => 'text',
-                    )
-                ),
-                'Header CTA French' => array(
-                    'id' => $namespace . '-header-cta-fr',
-                    'fields' => array(
-                        'header_cta_text_fr' => 'text',
-                        'header_cta_link_fr' => 'text',
+                        'footer_banner_copy' => 'textarea',
                     )
                 ),
             ),
@@ -176,44 +110,7 @@ function pg_init_menus()
             'slug' => $namespace . '-social-settings',
             // This will create a submenu page. 
             'parent' => $parent,
-            'description' => 'This is where you can add links for the social media integrations on your site. If left blank it will default to the value set on the main Trimac site.',
-            // Sections allow for breaking up the inputs onto the page. 
-            // The key for each item will act as the section's title. 
-            'sections' => array(
-                'Social Media English' => array(
-                    'id' => $namespace . '-socials-en',
-                    // The key should be written in kebab case. 
-                    // It will be deslugified and turned into the label. 
-                    // The value here defines what kind of input it should be.
-                    'fields' => array(
-                        'facebook_en' => 'text',
-                        'instagram_en' => 'text',
-                        'youtube_en' => 'text',
-                        'linkedin_en' => 'text',
-                        'twitter_en' => 'text',
-                    )
-                ),
-                'Social Media French' => array(
-                    'id' => $namespace . '-socials-fr',
-                    // The key should be written in kebab case. 
-                    // It will be deslugified and turned into the label. 
-                    // The value here defines what kind of input it should be.
-                    'fields' => array(
-                        'facebook_fr' => 'text',
-                        'instagram_fr' => 'text',
-                        'youtube_fr' => 'text',
-                        'linkedin_fr' => 'text',
-                        'twitter_fr' => 'text',
-                    )
-                )
-            )
-        ),
-        // Social Media settings submenu.
-        'Social Media Settings' => array(
-            'slug' => $namespace . '-social-settings',
-            // This will create a submenu page. 
-            'parent' => $parent,
-            'description' => 'This is where you can add links for the social media integrations on your site. If left blank it will default to the value set on the main Trimac site.',
+            'description' => 'This is where you can add links for the social media integrations on your site. If left blank it will default to the value set on the main Borealis site.',
             // Sections allow for breaking up the inputs onto the page. 
             // The key for each item will act as the section's title. 
             'sections' => array(
@@ -224,10 +121,10 @@ function pg_init_menus()
                     // It will be deslugified and turned into the label. 
                     // The value here defines what kind of input it should be.
                     'fields' => array(
-                        'linkedin_en' => 'text',
-                        'github_en' => 'text',
-                        'youtube_en' => 'text',
-                        'twitter_en' => 'text',
+                        'linkedin' => 'text',
+                        'github' => 'text',
+                        'youtube' => 'text',
+                        'twitter' => 'text',
                     )
                 ),
             )
