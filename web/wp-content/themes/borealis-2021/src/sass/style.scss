@@ -307,6 +307,19 @@
   }
 }
 
+fieldset {
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+legend {
+  min-width: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 @import "./wp-blocks/tables";
 @import "./wp-blocks/mathjax";
 @import "./wp-blocks/video";
