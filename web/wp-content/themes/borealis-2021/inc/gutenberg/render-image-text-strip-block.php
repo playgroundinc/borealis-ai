@@ -52,7 +52,6 @@ if (!function_exists('pg_render_image_text_strip_block')) {
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         $image_mobile = wp_get_attachment_image_url($attributes->image_id_mobile, 'full');
         $allowed_html = pg_allowed_html();
-        var_dump($attributes);
         ob_start();
         if (!empty($image)) :
 ?>
