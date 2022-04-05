@@ -1470,6 +1470,9 @@ ol.footnotes li small{
 .h-screen{
   height: 100vh;
 }
+.h-13{
+  height: 52px;
+}
 .h-6{
   height: 24px;
 }
@@ -1478,9 +1481,6 @@ ol.footnotes li small{
 }
 .h-35{
   height: 140px;
-}
-.h-13{
-  height: 52px;
 }
 .h-18{
   height: 72px;
@@ -1937,6 +1937,10 @@ ol.footnotes li small{
 .py-4{
   padding-top: 16px;
   padding-bottom: 16px;
+}
+.px-2{
+  padding-left: 8px;
+  padding-right: 8px;
 }
 .px-6{
   padding-left: 24px;
@@ -2682,6 +2686,11 @@ mjx-container::-webkit-scrollbar-thumb,
 .group:hover .group-hover\:underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.group:focus .group-focus\:bg-tint-teal-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(141 250 201 / var(--tw-bg-opacity));
 }
 
 .peer:checked ~ .peer-checked\:pill-active{
