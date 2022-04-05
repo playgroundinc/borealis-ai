@@ -303,6 +303,10 @@
   }
 }
 
+.scrollbar-height::-webkit-scrollbar {
+  height: 10px;
+}
+
 @import "./wp-blocks/tables";
 @import "./wp-blocks/mathjax";
 @import "./wp-blocks/video";

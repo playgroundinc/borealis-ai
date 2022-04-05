@@ -105,7 +105,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                                         </div>
                                     <?php endif; ?>
                                 <?php endforeach; ?>
-                                <div class="flex lg:justify-center lg:pt-8 md:overflow-hidden overflow-scroll pb-11 pt-11 pl-4" role="tablist" aria-orientation="horizontal">
+                                <div class="flex lg:justify-center lg:pt-8 md:overflow-hidden overflow-x-scroll pb-11 pt-11 pl-4" role="tablist" aria-orientation="horizontal">
                                     <?php foreach ($block['innerBlocks'] as $inner_block => $element) : ?>
                                         <?php
                                         $fields = array(
@@ -149,7 +149,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                                     </div>
                                 <?php endif; ?>
 
-                                <div class="flex border-b border-shade-grey-700 md:overflow-hidden overflow-scroll" role="tablist" aria-orientation="horizontal">
+                                <div class="flex border-b border-shade-grey-700 md:overflow-hidden overflow-x-scroll" role="tablist" aria-orientation="horizontal">
                                     <?php foreach ($block['innerBlocks'] as $inner_block => $element) : ?>
                                         <?php
                                         $fields = array(
