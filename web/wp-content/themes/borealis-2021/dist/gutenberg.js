@@ -7167,11 +7167,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
-/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
-/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
 
 
 
@@ -7210,22 +7206,6 @@ function tabbedContentContainerBlock() {
       type: "String",
       default: ""
     },
-    display_style: {
-      type: "String",
-      default: "default"
-    },
-    image_url: {
-      type: "String",
-      default: ""
-    },
-    image_id: {
-      type: "Number",
-      default: 0
-    },
-    image_alt: {
-      type: "String",
-      default: ""
-    },
     title: {
       type: "String",
       default: ""
@@ -7247,10 +7227,6 @@ function tabbedContentContainerBlock() {
           cta_one_link = attributes.cta_one_link,
           cta_two_text = attributes.cta_two_text,
           cta_two_link = attributes.cta_two_link,
-          display_style = attributes.display_style,
-          image_id = attributes.image_id,
-          image_url = attributes.image_url,
-          image_alt = attributes.image_alt,
           title = attributes.title;
 
       function updateAttributeValue(attribute, value) {
@@ -7261,38 +7237,7 @@ function tabbedContentContainerBlock() {
         class: "tabbed-content-container__block custom-section"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
-      }, "Tabbed Content Container"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        title: "Block Settings",
-        controls: [{
-          type: "radio",
-          label: "Display Style",
-          value: display_style,
-          reference: "display_style",
-          options: [{
-            label: "Default",
-            value: "default"
-          }, {
-            label: "Background Image",
-            value: "background-image"
-          }]
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }), display_style === "background-image" ? /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        components: [{
-          value: image_url,
-          reference: "image_url",
-          altValue: image_alt,
-          altReference: "image_alt",
-          idValue: image_id,
-          idReference: "image_id",
-          buttonText: "Add a background image (optional)"
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }) : null, /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Tabbed Content Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         },
