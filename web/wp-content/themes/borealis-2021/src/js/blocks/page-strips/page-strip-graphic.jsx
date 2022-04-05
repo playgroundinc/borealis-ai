@@ -62,6 +62,10 @@ export default function pageStripGraphicBlock() {
       type: "String",
       default: "",
     },
+    text_position: {
+      type: "String",
+      default: "",
+    },
   };
   registerBlockType(`${namespace}/${slug}`, {
     title: i18n.__(title, `${namespace}`),
@@ -95,6 +99,7 @@ export default function pageStripGraphicBlock() {
         image_id_mobile,
         image_alt_mobile,
         background_colour,
+        text_position,
       } = attributes;
 
       function updateAttributeValue(attribute, value) {
@@ -121,6 +126,11 @@ export default function pageStripGraphicBlock() {
         },
       ];
 
+      const text_styles = [
+        { label: "Top", value: "default" },
+        { label: "Bottom", value: "bottom" },
+      ];
+
       return [
         <section class="custom-child">
           <p className="block-title">Graphic Page Strip</p>
@@ -133,6 +143,21 @@ export default function pageStripGraphicBlock() {
                 options: background_styles,
                 reference: "background_colour",
                 value: background_colour,
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
+          <BlockSettings
+            title="Block Settings"
+            controls={[
+              {
+                type: "select",
+                label: "Text Position",
+                options: text_styles,
+                reference: "text_position",
+                value: text_position,
               },
             ]}
             onChange={(attribute, change) => {
@@ -231,7 +256,7 @@ export default function pageStripGraphicBlock() {
       ];
     },
     save: ({ attributes }) => {
-      const { title, copy, btn_url, btn_text, image_url, image_url_mobile, background_colour } = attributes;
+      const { title, copy, btn_url, btn_text, image_url, image_url_mobile, background_colour, text_position } = attributes;
       return <InnerBlocks.Content />;
     },
   });

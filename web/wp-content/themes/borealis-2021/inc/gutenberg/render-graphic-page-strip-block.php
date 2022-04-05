@@ -43,13 +43,14 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
             'image_id' => 0,
             'image_id_mobile' => 0,
             'background_colour' => '',
+            'text_position' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         $image_mobile = wp_get_attachment_image_url($attributes->image_id_mobile, 'full');
         ob_start();
 ?>
-        <div class="hidden md:flex h-full flex-col-reverse justify-end <?php echo $attributes->background_colour ?> bg-cover bg-no-repeat p-20" style="background-image: url(<?php echo $image ?>)">
+        <div class="hidden md:flex h-full <?php echo $attributes->text_position === 'bottom' ? 'flex-col' : 'flex-col-reverse' ?>  justify-end <?php echo $attributes->background_colour ?> bg-cover bg-no-repeat p-20" style="background-image: url(<?php echo $image ?>)">
             <div class="flex justify-center">
                 <div class="w-full max-w-[560px]">
                     <?php if (!empty($attributes->title)) : ?>
