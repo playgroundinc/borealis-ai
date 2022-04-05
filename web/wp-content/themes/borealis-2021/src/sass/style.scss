@@ -294,6 +294,10 @@
   line-height: 1.1;
 }
 
+.scrollbar-height::-webkit-scrollbar {
+  height: 10px;
+}
+
 @media (prefers-reduced-motion) {
   .underline-cta::before,
   .underline-cta:hover span {
@@ -301,6 +305,19 @@
     transition: none;
     transform: none;
   }
+}
+
+fieldset {
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+legend {
+  min-width: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @import "./wp-blocks/tables";
