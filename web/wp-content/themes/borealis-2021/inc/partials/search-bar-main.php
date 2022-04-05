@@ -17,8 +17,8 @@ if (!function_exists('pg_generate_search_bar_main')) {
                     </div>
                 </form>
                 <div class="cursor-pointer flex items-center accordion-block pl-1">
-                    <span tabindex="0" id="open-search" class="icon focus:outline-4 icon--xl"><?php echo pg_render_icon('large-search') ?></span>
-                    <span tabindex="0" id="close-search" class="icon focus:outline-4 icon--xl hidden"><?php echo pg_render_icon('large-search-close') ?></span>
+                    <button tabindex="0" id="open-search" class="icon focus:outline-4 icon--xl"><?php echo pg_render_icon('large-search') ?></button>
+                    <button tabindex="0" id="close-search" class="icon focus:outline-4 icon--xl hidden"><?php echo pg_render_icon('large-search-close') ?></button>
                 </div>
             </div>
             <div class="hidden">
