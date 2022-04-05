@@ -1646,7 +1646,7 @@ function galleryContainerBlock() {
           placeholder: "Please provide a link text (optional)",
           settings: []
         }]
-      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+      }), /*#__PURE__*/React.createElement("p", null, "Please included a minimum of 4 new blocks below"), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-team-member"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image")]
       }))];
     },
@@ -6613,7 +6613,7 @@ function pgCarouselBlock() {
   var blockCategory = "carousels";
   var blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ['link', 'title'];
+  var stringAttrs = ["link", "title"];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
@@ -6639,24 +6639,24 @@ function pgCarouselBlock() {
         className: "block-title"
       }, "Media - Slider"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
-          reference: 'title',
+          reference: "title",
           value: title,
-          tagName: 'h2',
-          classes: ['h2'],
+          tagName: "h2",
+          classes: ["h2"],
           settings: [],
-          placeholder: 'Provide a Carousel title (optional)'
+          placeholder: "Provide a Carousel title (optional)"
         }, {
-          reference: 'link',
+          reference: "link",
           value: link,
-          tagName: 'p',
-          classes: ['paragraph'],
+          tagName: "p",
+          classes: ["paragraph"],
           settings: [],
-          placeholder: 'Provide a Carousel View All link (optional)'
+          placeholder: "Provide a Carousel View All link (optional)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+      }), /*#__PURE__*/React.createElement("p", null, "Please included a minimum of 4 new blocks below"), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-research-blogs"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-news"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/news-slide")]
       }))];
     },
