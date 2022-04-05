@@ -1591,6 +1591,10 @@ function galleryContainerBlock() {
     link_text: {
       type: "String",
       default: ""
+    },
+    font_size: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -1607,17 +1611,37 @@ function galleryContainerBlock() {
       var title = attributes.title,
           description = attributes.description,
           link = attributes.link,
-          link_text = attributes.link_text;
+          link_text = attributes.link_text,
+          font_size = attributes.font_size;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
+      var fontStyles = [{
+        label: "Large",
+        value: ["h3 tb:h2", "paragraph tb:paragraph-lg"]
+      }, {
+        label: "Small",
+        value: ["h3", "paragraph"]
+      }];
       return [/*#__PURE__*/React.createElement("div", {
         class: "custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
-      }, "Gallery Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Gallery Container"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Font Size",
+          options: fontStyles,
+          reference: "font_size",
+          value: font_size
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         },
@@ -1655,7 +1679,8 @@ function galleryContainerBlock() {
       var title = attributes.title,
           description = attributes.description,
           link = attributes.link,
-          link_text = attributes.link_text;
+          link_text = attributes.link_text,
+          font_size = attributes.font_size;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -6613,7 +6638,7 @@ function pgCarouselBlock() {
   var blockCategory = "carousels";
   var blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ['link', 'title'];
+  var stringAttrs = ["link", "title"];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
@@ -6627,7 +6652,8 @@ function pgCarouselBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var link = attributes.link,
-          title = attributes.title;
+          title = attributes.title,
+          font_size = attributes.font_size;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -6639,19 +6665,19 @@ function pgCarouselBlock() {
         className: "block-title"
       }, "Media - Slider"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
-          reference: 'title',
+          reference: "title",
           value: title,
-          tagName: 'h2',
-          classes: ['h2'],
+          tagName: "h2",
+          classes: ["h2"],
           settings: [],
-          placeholder: 'Provide a Carousel title (optional)'
+          placeholder: "Provide a Carousel title (optional)"
         }, {
-          reference: 'link',
+          reference: "link",
           value: link,
-          tagName: 'p',
-          classes: ['paragraph'],
+          tagName: "p",
+          classes: ["paragraph"],
           settings: [],
-          placeholder: 'Provide a Carousel View All link (optional)'
+          placeholder: "Provide a Carousel View All link (optional)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
