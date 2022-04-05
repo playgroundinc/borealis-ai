@@ -63,11 +63,12 @@ if (!function_exists('pg_generate_search_bar')) {
                         ?>
                             <fieldset class="checkbox-form" id="<?php echo esc_attr($taxonomy['name']) ?>">
                                 <legend class="sr-only"><?php echo esc_html($taxonomy['label']) ?></legend>
-                                <div class="flex flex-wrap">
+                                <p class="paragraph mb-2"><?php echo esc_html($taxonomy['label']) ?></p>
+                                <div class="flex md:flex-wrap overflow-x-scroll md:overflow-hidden visible-scroll scrollbar-height">
                                     <?php foreach ($terms as $term) : ?>
                                         <div class="mr-3 mb-4">
-                                            <input tabindex="-1" class="peer sr-only" value="<?php echo esc_attr($term->term_id) ?>" name="<?php echo esc_attr($term->term_id . '[]') ?>" type="checkbox" id="<?php echo esc_attr($term->term_id) ?>">
-                                            <label tabindex="0" class="focus:outline-4 pill peer-checked:pill-active hover:cursor-pointer" for="<?php echo esc_attr($term->term_id) ?>">
+                                            <input tabindex="-1" class="peer sr-only hidden" value="<?php echo esc_attr($term->term_id) ?>" name="<?php echo esc_attr($term->term_id . '[]') ?>" type="checkbox" id="<?php echo esc_attr($term->term_id) ?>">
+                                            <label tabindex="0" class="w-max focus:outline-4 pill peer-checked:pill-active hover:cursor-pointer" for="<?php echo esc_attr($term->term_id) ?>">
                                                 <?php echo esc_html($term->name) ?>
                                             </label>
                                         </div>
@@ -76,7 +77,7 @@ if (!function_exists('pg_generate_search_bar')) {
                             </fieldset>
                         <?php endforeach; ?>
                     </form>
-                    <button class="clear-checkboxes">
+                    <button class="clear-checkboxes md:mt-0 mt-3">
                         <?php echo esc_html('Clear All') ?>
                     </button>
                 </div>
