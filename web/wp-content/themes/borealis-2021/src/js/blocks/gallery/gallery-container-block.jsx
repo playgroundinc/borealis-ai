@@ -31,6 +31,10 @@ export default function galleryContainerBlock() {
       type: "String",
       default: "",
     },
+    font_size: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -41,15 +45,35 @@ export default function galleryContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { attributes, setAttributes } = props;
-      const { title, description, link, link_text } = attributes;
+      const { title, description, link, link_text, font_size } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
       }
 
+      const fontStyles = [
+        { label: "Large", value: ["h3 tb:h2", "paragraph tb:paragraph-lg"] },
+        { label: "Small", value: ["h3", "paragraph"] },
+      ];
+
       return [
         <div class="custom-container">
           <p class="block-title">Gallery Container</p>
+          <BlockSettings
+            title="Block Settings"
+            controls={[
+              {
+                type: "select",
+                label: "Font Size",
+                options: fontStyles,
+                reference: "font_size",
+                value: font_size,
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
           <CustomRichText
             onChange={(attribute, change) => {
               updateAttributeValue(attribute, change);
@@ -95,7 +119,7 @@ export default function galleryContainerBlock() {
       ];
     },
     save: ({ attributes }) => {
-      const { title, description, link, link_text } = attributes;
+      const { title, description, link, link_text, font_size } = attributes;
       return <InnerBlocks.Content />;
     },
   });

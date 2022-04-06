@@ -60,10 +60,10 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                             <div class="lg:basis-4/12 shrink-0 flex flex-col lg:pb-11">
                                 <div class="grow flex flex-col justify-end">
                                     <?php if (!empty($attributes->title)) : ?>
-                                        <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3"><?php echo esc_html($attributes->title) ?></h2>
+                                        <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3"><?php echo $attributes->title ?></h2>
                                     <?php endif; ?>
                                     <?php if (!empty($attributes->copy)) : ?>
-                                        <p class="paragraph pt-11"><?php echo esc_html($attributes->copy) ?></p>
+                                        <p class="paragraph pt-11"><?php echo $attributes->copy ?></p>
                                     <?php endif; ?>
                                     <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0) : ?>
                                         <div class="md:flex lg:justify-between flex-wrap">
@@ -131,13 +131,13 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                         <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('lg:flex') : '' ?> justify-between default-tabs">
                             <div class="lg:basis-4/12 shrink-0">
                                 <?php if (!empty($attributes->title)) : ?>
-                                    <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3 pr-6 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('pb-4') : '' ?>"><?php echo esc_html($attributes->title) ?></h2>
+                                    <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3 pr-6 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('pb-4') : '' ?>"><?php echo $attributes->title ?></h2>
                                 <?php endif; ?>
                             </div>
                             <div class="basis-8/12 shrink-0 pt-5 lg:pt-0">
                                 <?php if (!empty($attributes->copy)) : ?>
                                     <div class="pb-8">
-                                        <p class="paragraph"><?php echo esc_html($attributes->copy) ?></p>
+                                        <p class="paragraph"><?php echo $attributes->copy ?></p>
                                         <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0) : ?>
                                             <div class="md:flex flex-wrap">
                                                 <a class="primary-button flex items-center pt-11 pb-4" href="<?php echo esc_url_raw($attributes->cta_one_link) ?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
@@ -163,9 +163,9 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                                         $title = $element['attrs']['title'];
                                         ?>
                                         <?php if ($inner_block === key($block['innerBlocks'])) : ?>
-                                            <button class="pill-secondary pill-secondary-active shrink-0" role="tab" aria-selected="true" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
+                                            <button class="pill-secondary pill-secondary-active shrink-0" role="tab" aria-selected="true" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo $title ?></button>
                                         <?php else : ?>
-                                            <button class="pill-secondary shrink-0" role="tab" aria-selected="false" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
+                                            <button class="pill-secondary shrink-0" role="tab" aria-selected="false" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo $title ?></button>
                                         <?php endif; ?>
                                     <?php endforeach; ?>
                                 </div>

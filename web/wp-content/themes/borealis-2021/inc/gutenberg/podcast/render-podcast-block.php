@@ -53,8 +53,8 @@ if (!function_exists('pg_render_podcast_block')) {
                             <img class="max-w-[180px] rounded-large" data-src="<?php echo esc_url_raw($image) ?>" src="<?php echo esc_url_raw($image) ?>" alt="<?php echo !empty($attributes->image_alt) ? esc_attr($attributes->image_alt) : null ?>">
                         </picture>
                         <div class="pl-0 md:pl-6 pt-4 w-full cursor-default">
-                            <h4 class="h4"><?php echo esc_html($attributes->title) ?></h4>
-                            <p class="paragraph"><?php echo esc_html($attributes->author) ?></p>
+                            <h4 class="h4"><?php echo $attributes->title ?></h4>
+                            <p class="paragraph"><?php echo $attributes->author ?></p>
                             <audio class="hidden">
                                 <source src="<?php echo esc_html($attributes->link_url) ?>">
                                 Your browser does not support the audio tag.

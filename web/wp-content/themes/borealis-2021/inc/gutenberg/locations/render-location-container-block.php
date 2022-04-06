@@ -46,10 +46,10 @@ if (!function_exists('pg_render_locations_container_block')) {
             <div class="container flex flex-col md:flex-row py-10 md:py-18 cursor-default">
                 <div class="w-full tb:w-4/12 mb-8 tb:mb-0">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h3 class="h3 md:mb-6"><?php echo esc_html($attributes->title) ?></h3>
+                        <h3 class="h3 md:mb-6"><?php echo $attributes->title ?></h3>
                     <?php endif; ?>
                     <?php if (!empty($attributes->description)) : ?>
-                        <h4 class="h4"><?php echo esc_html($attributes->description) ?></h4>
+                        <h4 class="h4"><?php echo $attributes->description ?></h4>
                     <?php endif; ?>
                 </div>
                 <div class="w-full tb:w-8/12 md:flex-row flex-col flex justify-between flex-wrap">

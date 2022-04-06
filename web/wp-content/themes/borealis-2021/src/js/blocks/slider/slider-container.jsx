@@ -1,7 +1,5 @@
 import { namespace } from "../helper-functions/constants";
-
 import CustomRichText from "../reusable/custom-richtext-component.jsx";
-
 import defaultAttrs from "../helper-functions/default-attrs";
 
 export default function pgCarouselBlock() {
