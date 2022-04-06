@@ -61,7 +61,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
                             <h2 class="<?php echo $attributes->title_size ?> mb-8"><?php echo $attributes->title ?></h2>
                         <?php endif; ?>
                         <?php if (!empty($attributes->subtitle)) : ?>
-                            <h3 class="h4 mb-8"><?php echo esc_html($attributes->subtitle) ?></h3>
+                            <h3 class="h4 mb-8"><?php echo $attributes->subtitle ?></h3>
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>

@@ -54,13 +54,13 @@ if (!function_exists('pg_render_icon_list_item_block')) {
             <?php endif; ?>
             <div class="flex flex-col text-shade-black-400">
                 <?php if (!empty($attributes->title)) : ?>
-                    <h4 class="h4 pb-2" id="<?php echo esc_html($attributes->title) ?>"><?php echo $attributes->title ?></h4>
+                    <h4 class="h4 pb-2"><?php echo $attributes->title ?></h4>
                 <?php endif; ?>
                 <?php if (!empty($attributes->copy)) : ?>
-                    <p class="paragraph pb-4" id="<?php echo esc_html($attributes->copy) ?>"><?php echo esc_html($attributes->copy) ?></p>
+                    <p class="paragraph pb-4"><?php echo $attributes->copy ?></p>
                 <?php endif; ?>
                 <?php if (!empty($attributes->subtitle)) : ?>
-                    <h4 class="paragraph-sm text-shade-grey-700" id="<?php echo esc_html($attributes->subtitle) ?>"><?php echo $attributes->subtitle ?></h4>
+                    <h4 class="paragraph-sm text-shade-grey-700"><?php echo $attributes->subtitle ?></h4>
                 <?php endif; ?>
                 <?php if (!empty($attributes->link_text) and !empty($attributes->link_url)) : ?>
                     <a href="<?php echo esc_attr($attributes->link_url) ?>" class="pb-2 pt-8 text-primary-electric-blue-400 h4"><?php echo $attributes->link_text ?></a>
