@@ -42,7 +42,7 @@ if (!empty($settings['greenhouse_api_key']) && strlen($settings['greenhouse_url'
             <div class="container w-full tb:w-8/12 m-auto pb-14">
                 <div class="flex flex-col-reverse">
                     <div class="flex justify-between items-start flex-col tb:flex-row tb:items-end">
-                        <h1 class="h3 text-shade-black-400 mb-4 tb:mb-0 md:h1 pt-5 break-normal"><?php echo $data['title'] ?></h1>
+                        <h1 class="h3 text-shade-black-400 mb-4 tb:mb-0 md:h1-desktop pt-5 break-normal"><?php echo $data['title'] ?></h1>
                         <h4 class="h4 text-shade-grey-700"><?php echo $data['location']['name'] ?></h4>
                     </div>
                     <div class="flex">
@@ -56,7 +56,7 @@ if (!empty($settings['greenhouse_api_key']) && strlen($settings['greenhouse_url'
             <div class="border-b border-shade-grey-500 mb-19"></div>
             <div class="container w-full tb:w-8/12 m-auto greenhouse mb-36"><?php echo  htmlspecialchars_decode($data['content']); ?></div>
             <div class="w-full bg-shade-grey-100 mt-20 md:mt-36">
-                <h1 class="w-full tb:w-8/12 container md:h2 h3 text-shade-black-400 pt-14 md:pt-20 pb-4 md:pb-6 bg-shade-grey-100">Ready to Apply?</h1>
+                <h2 class="w-full tb:w-8/12 container md:h2-desktop h3 text-shade-black-400 pt-14 md:pt-20 pb-4 md:pb-6 bg-shade-grey-100">Ready to Apply?</h2>
             </div>
         </div>
         <div id="grnhse_app"></div>

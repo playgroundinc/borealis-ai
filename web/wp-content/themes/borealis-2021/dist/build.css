@@ -2224,9 +2224,6 @@ ol.footnotes li small{
 .pl-1{
   padding-left: 4px;
 }
-.pb-11{
-  padding-bottom: 44px;
-}
 .text-left{
   text-align: left;
 }
@@ -2801,6 +2798,25 @@ mjx-container::-webkit-scrollbar-thumb,
       font-size: 70px;
     }
   }
+  .md\:h1-desktop{
+    font-size: 36px;
+    font-family: Metrophobic, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.04em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:h1-desktop{
+      font-size: calc(36px + ((70 - 36) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:h1-desktop{
+      font-size: 70px;
+    }
+  }
   .md\:h2{
     font-size: 57px;
     font-family: Metrophobic, sans-serif;
@@ -2817,6 +2833,25 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 1920px){
     .md\:h2{
+      font-size: 60px;
+    }
+  }
+  .md\:h2-desktop{
+    font-size: 31px;
+    font-family: Metrophobic, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.04em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:h2-desktop{
+      font-size: calc(31px + ((60 - 31) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:h2-desktop{
       font-size: 60px;
     }
   }
@@ -3486,6 +3521,25 @@ mjx-container::-webkit-scrollbar-thumb,
       font-size: 60px;
     }
   }
+  .tb\:h2-desktop{
+    font-size: 31px;
+    font-family: Metrophobic, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.04em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .tb\:h2-desktop{
+      font-size: calc(31px + ((60 - 31) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .tb\:h2-desktop{
+      font-size: 60px;
+    }
+  }
   .tb\:paragraph-lg{
     font-size: 27px;
     font-family: Inter, sans-serif;
@@ -3822,9 +3876,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:pt-0{
     padding-top: 0px;
-  }
-    .lg\:pt-8{
-    padding-top: 32px;
   }
     .lg\:container{
     margin: 0 auto;

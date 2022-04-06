@@ -54,7 +54,7 @@ if (!function_exists('pg_render_custom_video_block')) {
                             <div class="bg-cover bg-center absolute inset-0 z-10 video-block__overlay transition-all duration-400" style="background-image: url(<?php echo esc_url_raw($attributes->image_url) ?>)">
                                 <a class="block w-full h-full video-block__overlay__button" href="#" aria-label="<?php echo esc_attr('Play video') ?>">
                                     <div class="flex w-full h-full items-center justify-center">
-                                        <span class="text-shade-white-400 paragraph-lg md:h2">
+                                        <span class="text-shade-white-400 paragraph-lg md:h2-desktop">
                                             <?php
                                             $icon = pg_render_icon('video-play');
                                             echo wp_kses($icon, $allowed_html);

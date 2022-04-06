@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -18,7 +19,7 @@ $options = pg_get_options($option_names);
 <footer class="bg-shade-white-400">
 	<div class="tb:flex pt-13 container w-full mt-20 border-solid border-b border-shade-grey-500 border-opacity-40">
 		<div class="pr-14">
-			<div class="mb-4 h1">
+			<div class="mb-4 h1 md:h1-desktop">
 				<?php echo pg_render_icon('rbc'); ?>
 			</div>
 			<div class="legal text-shade-grey-700">
@@ -27,7 +28,7 @@ $options = pg_get_options($option_names);
 		</div>
 		<div class="mb-10 grow">
 			<?php
-				$Menu->generate_menu('footer-main');
+			$Menu->generate_menu('footer-main');
 			?>
 		</div>
 	</div>
@@ -44,8 +45,8 @@ $options = pg_get_options($option_names);
 			);
 			?>
 			<ul class="flex relative -left-4 md:left-0 md:-right-4">
-				<?php foreach ($icons as $id => $title): ?>
-					<?php if (!empty($options[$id])): ?>
+				<?php foreach ($icons as $id => $title) : ?>
+					<?php if (!empty($options[$id])) : ?>
 						<li>
 							<a class="px-4 pt-3 md:pt-7 pb-8 icon--lg block text-shade-grey-700 hover:text-primary-electric-blue-400 transition duration-300" aria-label="<?php esc_attr_e($title); ?>" href="<?php echo esc_url_raw($options[$id]) ?>">
 								<?php
