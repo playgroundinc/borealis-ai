@@ -2200,12 +2200,6 @@ ol.footnotes li small{
 .pt-11{
   padding-top: 44px;
 }
-.pb-9{
-  padding-bottom: 36px;
-}
-.pb-11{
-  padding-bottom: 44px;
-}
 .pr-20{
   padding-right: 80px;
 }
@@ -2616,10 +2610,6 @@ mjx-container::-webkit-scrollbar-thumb,
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.first\:ml-4:first-child{
-  margin-left: 16px;
 }
 
 .first\:mt-0:first-child{
@@ -3673,10 +3663,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:border-b{
     border-bottom-width: 1px;
   }
-    .tb\:py-20{
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
     .tb\:pt-6{
     padding-top: 24px;
   }
@@ -3797,17 +3783,11 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:basis-4\/12{
     flex-basis: 33.333333%;
   }
-    .lg\:basis-7\/12{
-    flex-basis: 58.333333%;
-  }
     .lg\:basis-1\/4{
     flex-basis: 25%;
   }
     .lg\:justify-center{
     justify-content: center;
-  }
-    .lg\:justify-between{
-    justify-content: space-between;
   }
     .lg\:overflow-hidden{
     overflow: hidden;
@@ -3834,17 +3814,8 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:pt-125{
     padding-top: 500px;
   }
-    .lg\:pt-20{
-    padding-top: 80px;
-  }
-    .lg\:pb-11{
-    padding-bottom: 44px;
-  }
     .lg\:pt-0{
     padding-top: 0px;
-  }
-    .lg\:pt-8{
-    padding-top: 32px;
   }
     .lg\:container{
     margin: 0 auto;

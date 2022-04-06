@@ -60,6 +60,16 @@ get_header();
                 <button class="container block h4 pt-10 pb-8 text-center w-full load-more"><?php echo esc_html('Load More Publications') ?></button>
             </div>
         </div>
+        <?php
+        if (have_posts()) :
+            while (have_posts()) :
+                the_post();
+        ?>
+        <?php
+                the_content();
+            endwhile;
+        endif;
+        ?>
     <?php endif; ?>
     <?php wp_reset_query(); ?>
 </main>
