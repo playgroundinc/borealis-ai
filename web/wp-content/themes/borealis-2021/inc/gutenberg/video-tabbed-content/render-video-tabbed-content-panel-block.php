@@ -49,7 +49,7 @@ if (!function_exists('pg_render_video_tabbed_content_panel_block')) {
         $allowed_html = pg_allowed_html();
         ob_start();
 ?>
-        <div aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
+        <div aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
             <?php if (!empty($block['innerBlocks'])) : ?>
                 <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
                     <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
