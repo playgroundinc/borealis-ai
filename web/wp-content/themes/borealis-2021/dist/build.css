@@ -1270,6 +1270,9 @@ ol.footnotes li small{
 .z-40{
   z-index: 40;
 }
+.z-0{
+  z-index: 0;
+}
 .-z-10{
   z-index: -10;
 }
@@ -1278,9 +1281,6 @@ ol.footnotes li small{
 }
 .z-20{
   z-index: 20;
-}
-.z-0{
-  z-index: 0;
 }
 .m-auto{
   margin: auto;
@@ -1380,6 +1380,9 @@ ol.footnotes li small{
 }
 .mt-3{
   margin-top: 12px;
+}
+.mt-1{
+  margin-top: 4px;
 }
 .mr-6{
   margin-right: 24px;
@@ -2025,6 +2028,10 @@ ol.footnotes li small{
 .py-12{
   padding-top: 48px;
   padding-bottom: 48px;
+}
+.px-1{
+  padding-left: 4px;
+  padding-right: 4px;
 }
 .pt-13{
   padding-top: 52px;
