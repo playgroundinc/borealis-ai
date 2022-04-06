@@ -4511,6 +4511,10 @@ function pageStripGraphicBlock() {
     background_colour: {
       type: "String",
       default: ""
+    },
+    text_position: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
@@ -4544,7 +4548,8 @@ function pageStripGraphicBlock() {
           image_url_mobile = attributes.image_url_mobile,
           image_id_mobile = attributes.image_id_mobile,
           image_alt_mobile = attributes.image_alt_mobile,
-          background_colour = attributes.background_colour;
+          background_colour = attributes.background_colour,
+          text_position = attributes.text_position;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -4566,6 +4571,13 @@ function pageStripGraphicBlock() {
         label: "Light Purple",
         value: "bg-tint-purple-400 text-shade-white-400"
       }];
+      var text_styles = [{
+        label: "Top",
+        value: "default"
+      }, {
+        label: "Bottom",
+        value: "bottom"
+      }];
       return [/*#__PURE__*/React.createElement("section", {
         class: "custom-child"
       }, /*#__PURE__*/React.createElement("p", {
@@ -4578,6 +4590,18 @@ function pageStripGraphicBlock() {
           options: background_styles,
           reference: "background_colour",
           value: background_colour
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Text Position",
+          options: text_styles,
+          reference: "text_position",
+          value: text_position
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -4662,7 +4686,8 @@ function pageStripGraphicBlock() {
           btn_text = attributes.btn_text,
           image_url = attributes.image_url,
           image_url_mobile = attributes.image_url_mobile,
-          background_colour = attributes.background_colour;
+          background_colour = attributes.background_colour,
+          text_position = attributes.text_position;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
