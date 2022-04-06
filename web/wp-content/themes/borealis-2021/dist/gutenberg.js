@@ -2839,6 +2839,10 @@ function imageTextStripBlock() {
     full_width: {
       type: "Boolean",
       default: false
+    },
+    text_color: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
@@ -2863,7 +2867,8 @@ function imageTextStripBlock() {
           image_url_mobile = attributes.image_url_mobile,
           image_url = attributes.image_url,
           reverse = attributes.reverse,
-          full_width = attributes.full_width;
+          full_width = attributes.full_width,
+          text_color = attributes.text_color;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -2885,6 +2890,24 @@ function imageTextStripBlock() {
           label: "Full Width?",
           reference: "full_width",
           value: full_width
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Text color",
+          reference: "text_color",
+          value: text_color,
+          options: [{
+            value: "text-shade-white-400 white-underline",
+            label: "White"
+          }, {
+            value: "text-shade-black-400 black-underline",
+            label: "Black"
+          }]
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -2973,7 +2996,8 @@ function imageTextStripBlock() {
           image_url_mobile = attributes.image_url_mobile,
           full_width = attributes.full_width,
           image_id = attributes.image_id,
-          image_id_mobile = attributes.image_id_mobile;
+          image_id_mobile = attributes.image_id_mobile,
+          text_color = attributes.text_color;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
