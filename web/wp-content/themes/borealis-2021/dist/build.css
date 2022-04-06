@@ -2224,9 +2224,6 @@ ol.footnotes li small{
 .pl-1{
   padding-left: 4px;
 }
-.pb-11{
-  padding-bottom: 44px;
-}
 .text-left{
   text-align: left;
 }
@@ -3822,9 +3819,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:pt-0{
     padding-top: 0px;
-  }
-    .lg\:pt-8{
-    padding-top: 32px;
   }
     .lg\:container{
     margin: 0 auto;
