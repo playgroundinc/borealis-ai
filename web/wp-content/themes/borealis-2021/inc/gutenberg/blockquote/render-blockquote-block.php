@@ -11,6 +11,7 @@
  * @since  1.0.0
  */
 
+
 // Check if `register_block_type` exists before calling
 // If Gutenberg isn't enabled it wont exist and error.
 if (function_exists('register_block_type')) {
