@@ -52,7 +52,7 @@ if (!function_exists('pg_render_job_block')) {
                 <div class="md:flex">
                     <div id="job-anchor" class="w-full">
                         <?php if (!empty($attributes->title)) : ?>
-                            <h2 class="h3 pl-5 md:pl-0"><?php echo esc_html($attributes->title) ?></h2>
+                            <h2 class="h3 pl-5 md:pl-0"><?php echo $attributes->title ?></h2>
                             <div class="tab-container jobs">
                                 <div class="flex flex-col tb:flex-row" role="tablist" aria-orientation="horizontal">
                                     <?php

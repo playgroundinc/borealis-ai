@@ -104,19 +104,19 @@ if (!function_exists('pg_render_blockquote_block')) {
     <?php if ($attributes->style === 'dark') : ?>
         <div class="container">
             <div class="bg-primary-navy-400 py-8 md:py-10 px-8 md:px-15 rounded-large text-shade-white-400">
-                <p class="paragraph md:paragraph-lg"><?php echo  esc_html($attributes->quote); ?></p>
+                <p class="paragraph md:paragraph-lg"><?php echo  $attributes->quote; ?></p>
                 <div class="flex md:flex-row flex-col-reverse md:items-center md:justify-between pt-10">
                     <div>
                         <?php if ($hasSpeaker || $hasRole) : ?>
                             <p class="pt-8 md:pt-0">
                                 <?php if ($hasSpeaker) : ?>
-                                    <span class="h4"><?php echo esc_html($attributes->speaker); ?></span>
+                                    <span class="h4"><?php echo $attributes->speaker; ?></span>
                                 <?php endif; ?>
                                 <?php if ($hasSpeaker && $hasRole) : ?>
                                     <span class="px-5"><?php echo esc_html('-') ?></span>
                                 <?php endif; ?>
                                 <?php if ($hasRole) : ?>
-                                    <span class="paragraph"><?php echo esc_html($attributes->role); ?></span>
+                                    <span class="paragraph"><?php echo $attributes->role; ?></span>
                                 <?php endif; ?>
                             </p>
                         <?php endif; ?>

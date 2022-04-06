@@ -1,8 +1,5 @@
 import { namespace } from "../helper-functions/constants";
-
 import CustomRichText from "../reusable/custom-richtext-component.jsx";
-import CustomImageUpload from "../reusable/custom-image-upload.jsx";
-import BlockSettings from "../reusable/block-custom-settings.jsx";
 
 export default function tabbedContentContainerBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
@@ -36,22 +33,6 @@ export default function tabbedContentContainerBlock() {
       type: "String",
       default: "",
     },
-    display_style: {
-      type: "String",
-      default: "default",
-    },
-    image_url: {
-      type: "String",
-      default: "",
-    },
-    image_id: {
-      type: "Number",
-      default: 0,
-    },
-    image_alt: {
-      type: "String",
-      default: "",
-    },
     title: {
       type: "String",
       default: "",
@@ -66,8 +47,7 @@ export default function tabbedContentContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { attributes, setAttributes } = props;
-      const { copy, cta_one_text, cta_one_link, cta_two_text, cta_two_link, display_style, image_id, image_url, image_alt, title } =
-        attributes;
+      const { copy, cta_one_text, cta_one_link, cta_two_text, cta_two_link, title } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -76,43 +56,6 @@ export default function tabbedContentContainerBlock() {
       return [
         <div class="tabbed-content-container__block custom-section">
           <p class="block-title">Tabbed Content Container</p>
-          <BlockSettings
-            title="Block Settings"
-            controls={[
-              {
-                type: "radio",
-                label: "Display Style",
-                value: display_style,
-                reference: "display_style",
-                options: [
-                  { label: "Default", value: "default" },
-                  { label: "Background Image", value: "background-image" },
-                ],
-              },
-            ]}
-            onChange={(attribute, change) => {
-              updateAttributeValue(attribute, change);
-            }}
-          />
-          {display_style === "background-image" ? (
-            <CustomImageUpload
-              components={[
-                {
-                  value: image_url,
-                  reference: "image_url",
-                  altValue: image_alt,
-                  altReference: "image_alt",
-                  idValue: image_id,
-                  idReference: "image_id",
-                  buttonText: "Add a background image (optional)",
-                },
-              ]}
-              onChange={(attribute, change) => {
-                updateAttributeValue(attribute, change);
-              }}
-            />
-          ) : null}
-
           <CustomRichText
             onChange={(attribute, change) => {
               updateAttributeValue(attribute, change);

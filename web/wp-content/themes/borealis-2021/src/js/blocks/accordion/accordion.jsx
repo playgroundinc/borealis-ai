@@ -1,8 +1,5 @@
 import { namespace } from "../helper-functions/constants";
-
 import CustomRichText from "../reusable/custom-richtext-component.jsx";
-import BlockSettings from "../reusable/block-custom-settings.jsx";
-
 import defaultAttrs from "../helper-functions/default-attrs";
 
 export default function accordionBlock() {
@@ -16,9 +13,8 @@ export default function accordionBlock() {
   const blockCategory = "containers";
   const blockIcon = "feedback"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  const stringAttrs = ["anchor_id", "description", "title", "bg_color"];
+  const stringAttrs = ["description", "title"];
   const attributes = defaultAttrs(stringAttrs);
-  attributes["bg_color"]["default"] = "white";
 
   registerBlockType(`${namespace}/${blockSlug}`, {
     title: i18n.__(blockTitle),
@@ -28,38 +24,15 @@ export default function accordionBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { anchor_id, bg_color, description, title } = attributes;
+      const { description, title } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
       }
 
       return [
-        <div className={`custom-container block--${bg_color} }`}>
+        <div className={`custom-container`}>
           <p className="block-title">Accordion</p>
-          <BlockSettings
-            controls={[
-              {
-                type: "select",
-                label: "Background color",
-                reference: "bg_color",
-                value: bg_color,
-                options: [
-                  { value: "white", label: "White" },
-                  { value: "grey", label: "Grey" },
-                ],
-              },
-              {
-                type: "text",
-                label: "Anchor",
-                reference: "anchor_id",
-                value: anchor_id,
-              },
-            ]}
-            onChange={(attribute, change) => {
-              updateAttributeValue(attribute, change);
-            }}
-          />
           <CustomRichText
             components={[
               {

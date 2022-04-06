@@ -21,6 +21,11 @@
   .black-underline {
     @apply before:bg-shade-black-400;
   }
+  .tab-container {
+    .custom-video-panel {
+      @apply w-full;
+    }
+  }
   .pill {
     @apply border border-shade-black-400 px-4 py-1 rounded-pill inline-block text-center paragraph-sm;
   }
@@ -294,6 +299,10 @@
   line-height: 1.1;
 }
 
+.scrollbar-height::-webkit-scrollbar {
+  height: 10px;
+}
+
 @media (prefers-reduced-motion) {
   .underline-cta::before,
   .underline-cta:hover span {
@@ -305,6 +314,20 @@
 
 .scrollbar-height::-webkit-scrollbar {
   height: 10px;
+}
+
+fieldset {
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+legend {
+  min-width: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @import "./wp-blocks/tables";
