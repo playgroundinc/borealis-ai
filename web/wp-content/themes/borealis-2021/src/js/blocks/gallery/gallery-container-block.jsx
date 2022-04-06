@@ -109,6 +109,7 @@ export default function galleryContainerBlock() {
               },
             ]}
           />
+          <p>Please included a minimum of 4 new blocks below</p>
           {save ? (
             <InnerBlocks.Content />
           ) : (

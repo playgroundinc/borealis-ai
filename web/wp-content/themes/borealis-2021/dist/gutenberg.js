@@ -1643,7 +1643,7 @@ function galleryContainerBlock() {
           placeholder: "Please provide a link text (optional)",
           settings: []
         }]
-      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+      }), /*#__PURE__*/React.createElement("p", null, "Please included a minimum of 4 new blocks below"), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-team-member"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image")]
       }))];
     },
@@ -6649,8 +6649,7 @@ function pgCarouselBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var link = attributes.link,
-          title = attributes.title,
-          font_size = attributes.font_size;
+          title = attributes.title;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -6679,7 +6678,7 @@ function pgCarouselBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+      }), /*#__PURE__*/React.createElement("p", null, "Please included a minimum of 4 new blocks below"), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-research-blogs"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-news"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/news-slide")]
       }))];
     },

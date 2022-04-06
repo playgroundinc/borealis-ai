@@ -24,7 +24,7 @@ export default function pgCarouselBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { link, title, font_size } = attributes;
+      const { link, title } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -56,6 +56,7 @@ export default function pgCarouselBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <p>Please included a minimum of 4 new blocks below</p>
           {save ? (
             <InnerBlocks.Content />
           ) : (
