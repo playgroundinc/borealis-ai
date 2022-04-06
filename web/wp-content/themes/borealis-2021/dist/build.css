@@ -3663,10 +3663,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:border-b{
     border-bottom-width: 1px;
   }
-    .tb\:py-20{
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
     .tb\:pt-6{
     padding-top: 24px;
   }
