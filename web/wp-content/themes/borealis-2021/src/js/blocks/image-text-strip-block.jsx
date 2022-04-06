@@ -71,6 +71,10 @@ export default function imageTextStripBlock() {
       type: "Boolean",
       default: false,
     },
+    text_color: {
+      type: "String",
+      default: "",
+    },
   };
   registerBlockType(`${namespace}/${slug}`, {
     title: i18n.__(title, `${namespace}`),
@@ -93,6 +97,7 @@ export default function imageTextStripBlock() {
         image_url,
         reverse,
         full_width,
+        text_color,
       } = attributes;
 
       function updateAttributeValue(attribute, value) {
@@ -115,6 +120,24 @@ export default function imageTextStripBlock() {
                 label: "Full Width?",
                 reference: "full_width",
                 value: full_width,
+              },
+            ]}
+            onChange={(attribute, change) => {
+              updateAttributeValue(attribute, change);
+            }}
+          />
+           <BlockSettings
+            title="Block Settings"
+            controls={[
+              {
+                type: "select",
+                label: "Text color",
+                reference: "text_color",
+                value: text_color,
+                options: [
+                  { value: "text-shade-white-400 white-underline", label: "White" },
+                  { value: "text-shade-black-400 black-underline", label: "Black" },
+                ],
               },
             ]}
             onChange={(attribute, change) => {
@@ -215,7 +238,19 @@ export default function imageTextStripBlock() {
       ];
     },
     save: ({ attributes }) => {
-      const { title, copy, btn_url, btn_text, image_url, reverse, image_url_mobile, full_width, image_id, image_id_mobile } = attributes;
+      const { 
+        title, 
+        copy, 
+        btn_url, 
+        btn_text, 
+        image_url, 
+        reverse, 
+        image_url_mobile, 
+        full_width, 
+        image_id, 
+        image_id_mobile, 
+        text_color 
+      } = attributes;
       return <InnerBlocks.Content />;
     },
   });

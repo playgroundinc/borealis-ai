@@ -81,9 +81,9 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                                         <?php endif; ?>
                                         <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0) : ?>
                                             <div class="md:flex justify-between flex-wrap flex-col tb:flex-row md:pb-7 tb:items-center pt-11">
-                                                <a class="primary-button flex items-center mb-6 text-shade-white-400 underline-cta white-underline" href="<?php echo esc_url_raw($attributes->cta_one_link) ?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                                <a class="primary-button flex items-center mb-6" href="<?php echo esc_url_raw($attributes->cta_one_link) ?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
                                                 <?php if (!empty($attributes->cta_two_text) && !empty($attributes->cta_two_link) && strlen($attributes->cta_two_text) > 0 && strlen($attributes->cta_two_link) > 0) : ?>
-                                                    <a class="primary-button flex items-center mb-6 text-shade-white-400 underline-cta white-underline" href="<?php echo esc_url_raw($attributes->cta_two_link) ?>"><?php echo esc_html($attributes->cta_two_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                                    <a class="primary-button flex items-center mb-6" href="<?php echo esc_url_raw($attributes->cta_two_link) ?>"><?php echo esc_html($attributes->cta_two_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
                                                 <?php endif; ?>
                                             </div>
                                         <?php endif; ?>
@@ -110,9 +110,9 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                                         <?php endif; ?>
                                         <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0) : ?>
                                             <div class="md:flex justify-between flex-wrap flex-col tb:flex-row md:pb-7 tb:items-center pt-11">
-                                                <a class="primary-button flex items-center mb-6 text-shade-white-400 underline-cta white-underline" href="<?php echo esc_url_raw($attributes->cta_one_link) ?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                                <a class="primary-button flex items-center mb-6" href="<?php echo esc_url_raw($attributes->cta_one_link) ?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
                                                 <?php if (!empty($attributes->cta_two_text) && !empty($attributes->cta_two_link) && strlen($attributes->cta_two_text) > 0 && strlen($attributes->cta_two_link) > 0) : ?>
-                                                    <a class="primary-button flex items-center mb-6 text-shade-white-400 underline-cta white-underline" href="<?php echo esc_url_raw($attributes->cta_two_link) ?>"><?php echo esc_html($attributes->cta_two_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                                    <a class="primary-button flex items-center mb-6" href="<?php echo esc_url_raw($attributes->cta_two_link) ?>"><?php echo esc_html($attributes->cta_two_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
                                                 <?php endif; ?>
                                             </div>
                                         <?php endif; ?>
