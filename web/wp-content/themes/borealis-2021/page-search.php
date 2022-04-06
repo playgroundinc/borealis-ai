@@ -91,7 +91,7 @@ get_header();
                     if ($inner_block === key($tab_array)) {
                         echo '<button class="paragraph text-primary-navy-400 mr-10 md-mr-20 pb-5 border-b border-b-4 border-primary-electric-purple-400" role="tab" aria-selected="true" id="' . $id . '-tab" aria-controls="' . $id . '-content-panel">' . $title . '</button>';
                     } else {
-                        echo '<button class="paragraph text-primary-navy-400 mr-10 md-mr-20 pb-5 border-b border-b-0 border-primary-electric-purple-400" role="tab" aria-selected="false" id="' . $id . '-tab" aria-controls="' . $id . '-content-panel">' . $title . '</button>';
+                        echo '<button class="paragraph text-primary-navy-400 mr-10 md-mr-20 pb-5 border-b border-b-4 border-transparent" role="tab" aria-selected="false" id="' . $id . '-tab" aria-controls="' . $id . '-content-panel">' . $title . '</button>';
                     }
                 }
             }
