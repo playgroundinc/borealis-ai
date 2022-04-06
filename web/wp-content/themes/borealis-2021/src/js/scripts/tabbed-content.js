@@ -22,7 +22,7 @@ function tabbedContent(tabContainer) {
         for (i = 0; i < tabs.length; i++) {
             tabs[i].setAttribute("aria-selected", "false");
             if (isSearchNav) {
-                classToggle(tabs[i], "border-b-4", "border-b-0");
+                classToggle(tabs[i], "border-primary-electric-purple-400", "border-transparent");
             } else if (jobNav) {
                 classToggle(tabs[i], "pill-active", null);
             } else {
@@ -32,7 +32,7 @@ function tabbedContent(tabContainer) {
 
         el.target.setAttribute("aria-selected", "true");
         if (isSearchNav) {
-            classToggle(el.target, "border-b-0", "border-b-4");
+            classToggle(el.target, "border-transparent", "border-primary-electric-purple-400");
         } else if (jobNav) {
             classToggle(el.target, null, "pill-active");
         } else {
@@ -46,11 +46,7 @@ function tabbedContent(tabContainer) {
             classToggle(tabPanels[i], "flex", "hidden");
         }
 
-        classToggle(
-            tabContainer.querySelector(`[id='${tabPanelToOpen}']`),
-            "hidden",
-            "flex"
-        );
+        classToggle(tabContainer.querySelector(`[id='${tabPanelToOpen}']`), "hidden", "flex");
     }
 
     tabList.addEventListener("keydown", (e) => {
