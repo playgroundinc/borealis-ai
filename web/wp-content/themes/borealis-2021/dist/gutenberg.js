@@ -171,10 +171,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
-/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
-/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
+/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -190,9 +188,8 @@ function accordionBlock() {
   var blockCategory = "containers";
   var blockIcon = "feedback"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ["anchor_id", "description", "title", "bg_color"];
-  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_3__["default"])(stringAttrs);
-  attributes["bg_color"]["default"] = "white";
+  var stringAttrs = ["description", "title"];
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
@@ -204,9 +201,7 @@ function accordionBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var anchor_id = attributes.anchor_id,
-          bg_color = attributes.bg_color,
-          description = attributes.description,
+      var description = attributes.description,
           title = attributes.title;
 
       function updateAttributeValue(attribute, value) {
@@ -214,32 +209,10 @@ function accordionBlock() {
       }
 
       return [/*#__PURE__*/React.createElement("div", {
-        className: "custom-container block--".concat(bg_color, " }")
+        className: "custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Accordion"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        controls: [{
-          type: "select",
-          label: "Background color",
-          reference: "bg_color",
-          value: bg_color,
-          options: [{
-            value: "white",
-            label: "White"
-          }, {
-            value: "grey",
-            label: "Grey"
-          }]
-        }, {
-          type: "text",
-          label: "Anchor",
-          reference: "anchor_id",
-          value: anchor_id
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Accordion"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
           reference: "title",
           value: title,
@@ -1591,6 +1564,10 @@ function galleryContainerBlock() {
     link_text: {
       type: "String",
       default: ""
+    },
+    font_size: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -1607,17 +1584,37 @@ function galleryContainerBlock() {
       var title = attributes.title,
           description = attributes.description,
           link = attributes.link,
-          link_text = attributes.link_text;
+          link_text = attributes.link_text,
+          font_size = attributes.font_size;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
+      var fontStyles = [{
+        label: "Large",
+        value: ["h3 tb:h2", "paragraph tb:paragraph-lg"]
+      }, {
+        label: "Small",
+        value: ["h3", "paragraph"]
+      }];
       return [/*#__PURE__*/React.createElement("div", {
         class: "custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
-      }, "Gallery Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Gallery Container"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Font Size",
+          options: fontStyles,
+          reference: "font_size",
+          value: font_size
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         },
@@ -1646,7 +1643,7 @@ function galleryContainerBlock() {
           placeholder: "Please provide a link text (optional)",
           settings: []
         }]
-      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+      }), /*#__PURE__*/React.createElement("p", null, "Please included a minimum of 4 new blocks below"), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-team-member"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image")]
       }))];
     },
@@ -1655,7 +1652,8 @@ function galleryContainerBlock() {
       var title = attributes.title,
           description = attributes.description,
           link = attributes.link,
-          link_text = attributes.link_text;
+          link_text = attributes.link_text,
+          font_size = attributes.font_size;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -2839,6 +2837,10 @@ function imageTextStripBlock() {
     full_width: {
       type: "Boolean",
       default: false
+    },
+    text_color: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
@@ -2863,7 +2865,8 @@ function imageTextStripBlock() {
           image_url_mobile = attributes.image_url_mobile,
           image_url = attributes.image_url,
           reverse = attributes.reverse,
-          full_width = attributes.full_width;
+          full_width = attributes.full_width,
+          text_color = attributes.text_color;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -2885,6 +2888,24 @@ function imageTextStripBlock() {
           label: "Full Width?",
           reference: "full_width",
           value: full_width
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Text color",
+          reference: "text_color",
+          value: text_color,
+          options: [{
+            value: "text-shade-white-400 white-underline",
+            label: "White"
+          }, {
+            value: "text-shade-black-400 black-underline",
+            label: "Black"
+          }]
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -2973,7 +2994,8 @@ function imageTextStripBlock() {
           image_url_mobile = attributes.image_url_mobile,
           full_width = attributes.full_width,
           image_id = attributes.image_id,
-          image_id_mobile = attributes.image_id_mobile;
+          image_id_mobile = attributes.image_id_mobile,
+          text_color = attributes.text_color;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -4711,9 +4733,9 @@ function pageStripBlock() {
   var category = "page-strips";
   var icon = "align-center"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttributes = ['bg_color', 'title'];
+  var stringAttributes = ["bg_color", "title"];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(stringAttributes);
-  attributes['bg_color']['default'] = 'white';
+  attributes["bg_color"]["default"] = "white";
   registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
     title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
     description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
@@ -4744,47 +4766,47 @@ function pageStripBlock() {
       return [/*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
         title: "Block Settings",
         controls: [{
-          type: 'select',
-          label: 'Background Color',
-          reference: 'bg_color',
+          type: "select",
+          label: "Background Color",
+          reference: "bg_color",
           value: bg_color,
           options: [{
-            value: 'white',
-            label: 'White'
+            value: "white",
+            label: "White"
           }, {
-            value: 'grey',
-            label: 'Grey'
+            value: "grey",
+            label: "Grey"
           }, {
-            value: 'black',
-            label: 'Black'
+            value: "black",
+            label: "Black"
           }, {
-            value: 'red',
-            label: 'Dark Red'
+            value: "red",
+            label: "Dark Red"
           }, {
-            value: 'red-lt',
-            label: 'Light Red'
+            value: "red-lt",
+            label: "Light Red"
           }]
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
       }), /*#__PURE__*/React.createElement("div", {
-        className: "block--".concat(bg_color, " custom-component")
+        className: "custom-component"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
       }, "Page Strip"), /*#__PURE__*/React.createElement("section", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
           value: title,
-          reference: 'title',
-          tagName: 'h2',
-          classes: ['heading_one'],
+          reference: "title",
+          tagName: "h2",
+          classes: ["heading_one"],
           placeholder: "Please provide a title"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
-        allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph-no-alignment"), 'core/buttons']
+        allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/paragraph-no-alignment"), "core/buttons"]
       })))))];
     },
     save: function save(_ref) {
@@ -6638,7 +6660,7 @@ function pgCarouselBlock() {
   var blockCategory = "carousels";
   var blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ['link', 'title'];
+  var stringAttrs = ["link", "title"];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
@@ -6664,24 +6686,24 @@ function pgCarouselBlock() {
         className: "block-title"
       }, "Media - Slider"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
-          reference: 'title',
+          reference: "title",
           value: title,
-          tagName: 'h2',
-          classes: ['h2'],
+          tagName: "h2",
+          classes: ["h2"],
           settings: [],
-          placeholder: 'Provide a Carousel title (optional)'
+          placeholder: "Provide a Carousel title (optional)"
         }, {
-          reference: 'link',
+          reference: "link",
           value: link,
-          tagName: 'p',
-          classes: ['paragraph'],
+          tagName: "p",
+          classes: ["paragraph"],
           settings: [],
-          placeholder: 'Provide a Carousel View All link (optional)'
+          placeholder: "Provide a Carousel View All link (optional)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
-      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+      }), /*#__PURE__*/React.createElement("p", null, "Please included a minimum of 4 new blocks below"), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-research-blogs"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-news"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/news-slide")]
       }))];
     },
@@ -7192,11 +7214,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
-/* harmony import */ var _reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-image-upload.jsx */ "./src/js/blocks/reusable/custom-image-upload.jsx");
-/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
 
 
 
@@ -7235,22 +7253,6 @@ function tabbedContentContainerBlock() {
       type: "String",
       default: ""
     },
-    display_style: {
-      type: "String",
-      default: "default"
-    },
-    image_url: {
-      type: "String",
-      default: ""
-    },
-    image_id: {
-      type: "Number",
-      default: 0
-    },
-    image_alt: {
-      type: "String",
-      default: ""
-    },
     title: {
       type: "String",
       default: ""
@@ -7272,10 +7274,6 @@ function tabbedContentContainerBlock() {
           cta_one_link = attributes.cta_one_link,
           cta_two_text = attributes.cta_two_text,
           cta_two_link = attributes.cta_two_link,
-          display_style = attributes.display_style,
-          image_id = attributes.image_id,
-          image_url = attributes.image_url,
-          image_alt = attributes.image_alt,
           title = attributes.title;
 
       function updateAttributeValue(attribute, value) {
@@ -7286,38 +7284,7 @@ function tabbedContentContainerBlock() {
         class: "tabbed-content-container__block custom-section"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
-      }, "Tabbed Content Container"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        title: "Block Settings",
-        controls: [{
-          type: "radio",
-          label: "Display Style",
-          value: display_style,
-          reference: "display_style",
-          options: [{
-            label: "Default",
-            value: "default"
-          }, {
-            label: "Background Image",
-            value: "background-image"
-          }]
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }), display_style === "background-image" ? /*#__PURE__*/React.createElement(_reusable_custom_image_upload_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        components: [{
-          value: image_url,
-          reference: "image_url",
-          altValue: image_alt,
-          altReference: "image_alt",
-          idValue: image_id,
-          idReference: "image_id",
-          buttonText: "Add a background image (optional)"
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }) : null, /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Tabbed Content Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         },
