@@ -722,6 +722,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(34 39 49 / var(--tw-bg-opacity));
 }
+.tab-container .custom-video-panel{
+  width: 100%;
+}
 .pill{
   font-size: 14px;
   font-family: Inter, sans-serif;
@@ -2227,6 +2230,9 @@ ol.footnotes li small{
 .pl-1{
   padding-left: 4px;
 }
+.text-left{
+  text-align: left;
+}
 .text-center{
   text-align: center;
 }
@@ -3000,10 +3006,6 @@ mjx-container::-webkit-scrollbar-thumb,
     margin-left: auto;
     margin-right: auto;
   }
-    .md\:my-10{
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
     .md\:mt-0{
     margin-top: 0px;
   }
@@ -3670,6 +3672,10 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:border-b{
     border-bottom-width: 1px;
+  }
+    .tb\:py-20{
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
     .tb\:pt-6{
     padding-top: 24px;
