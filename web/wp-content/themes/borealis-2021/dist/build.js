@@ -159,7 +159,8 @@ __webpack_require__.r(__webpack_exports__);
 function checkboxSearchForm(container, setCount, isJobs = false) {
   let selections = {}; // Checkbox elements
 
-  const checkboxEls = container.querySelectorAll("input[type='checkbox']"); // Params and current values
+  const checkboxEls = container.querySelectorAll("input[type='checkbox']");
+  const checkboxElsLabels = container.querySelectorAll("label"); // Params and current values
 
   const params = new _classes_class_query_params__WEBPACK_IMPORTED_MODULE_0__["default"](container.id);
   const currentValues = params.getParam(container.id); // Clear all button
@@ -209,9 +210,12 @@ function checkboxSearchForm(container, setCount, isJobs = false) {
 
   for (let i = 0; i < checkboxEls.length; i++) {
     checkboxEls[i].addEventListener("click", updateUrl);
+    checkboxElsLabels[i].addEventListener("keydown", updateUrl);
   }
 
   function updateUrl(e) {
+    // i
+    // console.log(e.keyCode === 32);
     if (isJobs) {
       checkboxEls.forEach(item => {
         if (item !== e.target) item.checked = false;

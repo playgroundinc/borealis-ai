@@ -1273,6 +1273,9 @@ ol.footnotes li small{
 .z-50{
   z-index: 50;
 }
+.z-0{
+  z-index: 0;
+}
 .-z-10{
   z-index: -10;
 }
@@ -1281,9 +1284,6 @@ ol.footnotes li small{
 }
 .z-20{
   z-index: 20;
-}
-.z-0{
-  z-index: 0;
 }
 .m-auto{
   margin: auto;
@@ -1386,6 +1386,9 @@ ol.footnotes li small{
 }
 .mt-3{
   margin-top: 12px;
+}
+.mt-1{
+  margin-top: 4px;
 }
 .mr-2{
   margin-right: 8px;
@@ -1991,6 +1994,10 @@ ol.footnotes li small{
   padding-left: 20px;
   padding-right: 20px;
 }
+.px-1{
+  padding-left: 4px;
+  padding-right: 4px;
+}
 .py-6{
   padding-top: 24px;
   padding-bottom: 24px;
@@ -2131,6 +2138,9 @@ ol.footnotes li small{
 .pb-6{
   padding-bottom: 24px;
 }
+.pl-1{
+  padding-left: 4px;
+}
 .pl-10{
   padding-left: 40px;
 }
@@ -2220,12 +2230,6 @@ ol.footnotes li small{
 }
 .pr-3{
   padding-right: 12px;
-}
-.pl-1{
-  padding-left: 4px;
-}
-.pb-11{
-  padding-bottom: 44px;
 }
 .text-left{
   text-align: left;
@@ -3822,9 +3826,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:pt-0{
     padding-top: 0px;
-  }
-    .lg\:pt-8{
-    padding-top: 32px;
   }
     .lg\:container{
     margin: 0 auto;
