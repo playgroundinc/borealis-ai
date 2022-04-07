@@ -5,6 +5,10 @@ config:
   site: borealis-ai
   id: 7c6ad968-c37a-40d5-8591-e6c85d4abc7f
 services:
+  phpmyadmin:
+    type: phpmyadmin
+    hosts:
+      - database
   node:
     type: node:14
     build:
