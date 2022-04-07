@@ -1,13 +1,11 @@
 import QueryParams from "./classes/class-query-params";
 
-export default function checkboxSearchForm(
-    container,
-    setCount,
-    isJobs = false
-) {
+export default function checkboxSearchForm(container, setCount, isJobs = false) {
     let selections = {};
     // Checkbox elements
     const checkboxEls = container.querySelectorAll("input[type='checkbox']");
+    const checkboxElsLabels = container.querySelectorAll("label");
+
     // Params and current values
     const params = new QueryParams(container.id);
     const currentValues = params.getParam(container.id);
@@ -58,6 +56,7 @@ export default function checkboxSearchForm(
     // Add event listener to checkboxes to updateUrl with term id's
     for (let i = 0; i < checkboxEls.length; i++) {
         checkboxEls[i].addEventListener("click", updateUrl);
+        checkboxElsLabels[i].addEventListener("keydown", updateUrl);
     }
 
     function updateUrl(e) {
