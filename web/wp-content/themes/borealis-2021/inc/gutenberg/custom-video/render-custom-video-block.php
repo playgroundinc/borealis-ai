@@ -48,13 +48,13 @@ if (!function_exists('pg_render_custom_video_block')) {
 ?>
         <div class="custom-component nestable animated-element no-background-padding">
             <div class="flex w-full justify-end container">
-                <div class="w-full tb:w-8/12">
+                <div class="w-full tb:w-8/12 custom-video-panel">
                     <div class="md:min-h-[350px] tb:min-h-[400px] lg:min-h-[540px] relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg">
                         <?php if (!empty($attributes->image_url)) : ?>
                             <div class="bg-cover bg-center absolute inset-0 z-10 video-block__overlay transition-all duration-400" style="background-image: url(<?php echo esc_url_raw($attributes->image_url) ?>)">
                                 <a class="block w-full h-full video-block__overlay__button" href="#" aria-label="<?php echo esc_attr('Play video') ?>">
                                     <div class="flex w-full h-full items-center justify-center">
-                                        <span class="text-shade-white-400 paragraph-lg md:h2">
+                                        <span class="text-shade-white-400 paragraph-lg md:h2-desktop">
                                             <?php
                                             $icon = pg_render_icon('video-play');
                                             echo wp_kses($icon, $allowed_html);
@@ -66,8 +66,7 @@ if (!function_exists('pg_render_custom_video_block')) {
                             </div>
                         <?php endif; ?>
                         <div class="flex w-full h-full justify-start tb:justify-center items-center absolute inset-0 bg-shade-black-400">
-                            <video class="h-full w-full max-h-full" tabindex="-1" class="video" controls playsinline poster="<?php echo esc_url_raw($attributes->image_url) ?>">
-                                <source src="<?php echo esc_url_raw($attributes->video_url); ?>" type="video/mp4">
+                            <video class="h-full w-full max-h-full" tabindex="-1" class="video" controls playsinline poster="<?php echo esc_url_raw($attributes->image_url) ?>" src="<?php echo esc_url_raw($attributes->video_url); ?>" type="video/mp4">
                             </video>
                         </div>
                     </div>

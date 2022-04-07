@@ -29,7 +29,7 @@ if (!function_exists('pg_render_featured_post')) {
             <div class=" <?php echo $full ? esc_attr('md:flex justify-between') : 'grow' ?>">
                 <h2 class="paragraph-lg <?php echo $full ? esc_attr('md:w-5/12') : esc_attr('md:w-5/6') ?>"><?php echo esc_html($post_obj->post_title) ?></h2>
                 <?php if ($full && strlen($post_obj->post_excerpt) > 0) : ?>
-                    <p class="basis-1/2 pt-6 md:pt-0"><?php echo esc_html($post_obj->post_excerpt) ?></p>
+                    <p class="paragraph basis-1/2 pt-6 md:pt-0"><?php echo esc_html($post_obj->post_excerpt) ?></p>
                 <?php endif; ?>
             </div>
             <div class="mt-10">

@@ -49,12 +49,12 @@ if (!function_exists('pg_render_icon_list_container_block')) {
                 <div class="flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container tb:flex-row justify-end') : '' ?>">
                     <div class="w-full mb-10 tb:mb-0 tb:w-2/6 icon-list-title">
                         <?php if (!empty($attributes->title)) : ?>
-                            <h3 class="h3 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('tb:pb-4') : '' ?>"><?php echo esc_html($attributes->title) ?></h3>
+                            <h3 class="h3 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('tb:pb-4') : '' ?>"><?php echo $attributes->title ?></h3>
                         <?php endif; ?>
                     </div>
                     <div class="w-full <?php echo is_singular(array('news', 'research-blogs')) ? '' : esc_attr('tb:w-4/6'); ?> icon-list <?php echo !empty($block['innerBlocks']) ? '' : 'hidden' ?>">
                         <?php if (!empty($attributes->description)) : ?>
-                            <div class="mt-0 md:my-10">
+                            <div class="mt-0 md:mb-10">
                                 <p class="<?php echo is_singular(array('news', 'research-blogs')) ? 'paragraph-blog' : 'paragraph' ?>  nested-description"><?php echo wp_kses($attributes->description, $allowed_html) ?></p>
                             </div>
                         <?php endif; ?>

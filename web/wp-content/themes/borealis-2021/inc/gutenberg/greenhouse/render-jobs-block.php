@@ -36,7 +36,8 @@ if (!function_exists('pg_render_job_block')) {
         $block = $block_obj->parsed_block;
         // Need to set the name of the attribute and the default as a safeguard.
         $fields     = array(
-            'title'        => '',
+            'title' => '',
+            'background_color' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
 
@@ -47,12 +48,12 @@ if (!function_exists('pg_render_job_block')) {
         }
         ob_start();
 ?>
-        <div class="custom-component animated-element no-background-padding">
-            <div class="md:container">
+        <div class="custom-component no-background-padding <?php echo $attributes->background_color ?>">
+            <div class="md:container animated-element">
                 <div class="md:flex">
-                    <div id="job-anchor" class="w-full">
+                    <div id="job-anchor" class="w-full ">
                         <?php if (!empty($attributes->title)) : ?>
-                            <h2 class="h3 pl-5 md:pl-0"><?php echo esc_html($attributes->title) ?></h2>
+                            <h2 class="h3 pl-5 md:pl-0"><?php echo $attributes->title ?></h2>
                             <div class="tab-container jobs">
                                 <div class="flex flex-col tb:flex-row" role="tablist" aria-orientation="horizontal">
                                     <?php

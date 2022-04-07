@@ -41,23 +41,24 @@ if (!function_exists('pg_render_gallery_container_block')) {
             'link' => '',
             'link_text' => '',
             'title' => '',
+            'font_size' => ''
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
         $namespace = pg_get_namespace();
-
+        $font = explode(",", $attributes->font_size);
         ob_start();
 ?>
         <div class="custom-component animated-element no-background-padding">
             <div class="md:flex container">
                 <div class="md:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h2 class="h3 tb:h2 pr-8"><?php echo $attributes->title ?></h2>
+                        <h2 class="<?php echo $font[0] !== "" ? $font[0] : 'h3 tb:h2-desktop' ?> pr-8"><?php echo $attributes->title ?></h2>
                     <?php endif; ?>
                 </div>
                 <div class="md:w-8/12">
                     <?php if (strlen($attributes->description) > 0) : ?>
-                        <p class="paragraph tb:paragraph-lg pt-8 md:pt-0"><?php echo esc_html($attributes->description); ?></p>
+                        <p class="<?php echo $font[1] !== "" ? $font[1] : 'paragraph tb:paragraph-lg' ?> pt-8 md:pt-0"><?php echo esc_html($attributes->description); ?></p>
                     <?php endif; ?>
                     <?php if (!empty($attributes->link) && strlen($attributes->link_text) > 0) : ?>
                         <a href="<?php echo esc_attr($attributes->link) ?>" class="primary-button flex items-center underline-cta w-fit black-underline text-shade-black-400 visited:text-primary-electric-purple-400 paragraph mt-7 md:mt-14">
@@ -71,8 +72,8 @@ if (!function_exists('pg_render_gallery_container_block')) {
                 </div>
             </div>
             <div>
-                <div class="mx-auto relative pt-gallery transition-all duration-400">
-                    <ul class="flex absolute left-0 top-0 bottom-0 max-w-full overflow-scroll pl-6 md:pl-16 lg:pl-gallery-offset items-center pr-6 md:pr-25 lg:pr-gallery-offset custom-gallery">
+                <div class="mx-auto md:ml-auto md:mr-0 w-full md:w-11/12 relative pt-gallery transition-all duration-400">
+                    <ul class="flex absolute left-0 top-0 bottom-0 max-w-full visible-scroll scrollbar-height overflow-x-scroll pl-6 items-center pr-6 md:pr-25 lg:pr-gallery-offset custom-gallery">
                         <?php foreach ($block['innerBlocks'] as $index => $inner_block) : ?>
                             <?php if ($inner_block['blockName'] === $namespace . '/custom-image') : ?>
                                 <?php

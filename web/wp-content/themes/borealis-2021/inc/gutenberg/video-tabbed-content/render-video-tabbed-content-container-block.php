@@ -47,7 +47,7 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
         ob_start();
 ?>
         <div class="custom-component animated-element nestable component-dark">
-            <div class="bg-center bg-cover text-shade-white-400 pt-12 pb-4 tb:pt-20" style="<?php echo $image ? 'background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(' . esc_url_raw($image) . ')' : '' ?>">
+            <div class="bg-center bg-cover text-shade-white-400 pt-12 pb-4 tb:pt-20" style="<?php echo $image ? 'background-image: url(' . esc_url_raw($image) . ')' : '' ?>">
                 <div class="tab-container flex flex-col-reverse <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : ''; ?>" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                     <div class="w-full flex justify-between">
 
@@ -81,9 +81,9 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                                         <?php endif; ?>
                                         <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0) : ?>
                                             <div class="md:flex justify-between flex-wrap flex-col tb:flex-row md:pb-7 tb:items-center pt-11">
-                                                <a class="primary-button flex items-center mb-6 text-shade-white-400 underline-cta white-underline" href="<?php echo esc_url_raw($attributes->cta_one_link) ?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                                <a class="primary-button flex items-center mb-6" href="<?php echo esc_url_raw($attributes->cta_one_link) ?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
                                                 <?php if (!empty($attributes->cta_two_text) && !empty($attributes->cta_two_link) && strlen($attributes->cta_two_text) > 0 && strlen($attributes->cta_two_link) > 0) : ?>
-                                                    <a class="primary-button flex items-center mb-6 text-shade-white-400 underline-cta white-underline" href="<?php echo esc_url_raw($attributes->cta_two_link) ?>"><?php echo esc_html($attributes->cta_two_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                                    <a class="primary-button flex items-center mb-6" href="<?php echo esc_url_raw($attributes->cta_two_link) ?>"><?php echo esc_html($attributes->cta_two_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
                                                 <?php endif; ?>
                                             </div>
                                         <?php endif; ?>
@@ -110,9 +110,9 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                                         <?php endif; ?>
                                         <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0) : ?>
                                             <div class="md:flex justify-between flex-wrap flex-col tb:flex-row md:pb-7 tb:items-center pt-11">
-                                                <a class="primary-button flex items-center mb-6 text-shade-white-400 underline-cta white-underline" href="<?php echo esc_url_raw($attributes->cta_one_link) ?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                                <a class="primary-button flex items-center mb-6" href="<?php echo esc_url_raw($attributes->cta_one_link) ?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
                                                 <?php if (!empty($attributes->cta_two_text) && !empty($attributes->cta_two_link) && strlen($attributes->cta_two_text) > 0 && strlen($attributes->cta_two_link) > 0) : ?>
-                                                    <a class="primary-button flex items-center mb-6 text-shade-white-400 underline-cta white-underline" href="<?php echo esc_url_raw($attributes->cta_two_link) ?>"><?php echo esc_html($attributes->cta_two_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
+                                                    <a class="primary-button flex items-center mb-6" href="<?php echo esc_url_raw($attributes->cta_two_link) ?>"><?php echo esc_html($attributes->cta_two_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
                                                 <?php endif; ?>
                                             </div>
                                         <?php endif; ?>
@@ -129,7 +129,7 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                         <?php endforeach; ?>
                     </div>
                     <div class="flex justify-end">
-                        <div class="flex justify-start lg:justify-center items-start overflow-x-scroll md:overflow-hidden tb:overflow-x-scroll lg:overflow-hidden w-full tb:w-7/12 mb-11 tb:mb-5" role="tablist" aria-orientation="horizontal">
+                        <div class="flex justify-start lg:justify-center items-start overflow-x-scroll md:overflow-hidden scrollbar-height visible-scroll tb:overflow-x-scroll lg:overflow-hidden w-full tb:w-7/12 mb-11 tb:mb-5" role="tablist" aria-orientation="horizontal">
                             <?php foreach ($block['innerBlocks'] as $inner_block => $element) : ?>
                                 <?php
                                 $fields = array(

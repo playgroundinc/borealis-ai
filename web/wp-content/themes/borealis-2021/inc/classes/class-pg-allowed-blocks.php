@@ -26,6 +26,9 @@ class PG_Allowed_Blocks
             'code',
             'compare-code',
 
+            // Custom Image
+            'custom-image',
+
             // Custom Video
             'custom-video',
 
