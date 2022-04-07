@@ -214,8 +214,6 @@ function checkboxSearchForm(container, setCount, isJobs = false) {
   }
 
   function updateUrl(e) {
-    // i
-    // console.log(e.keyCode === 32);
     if (isJobs) {
       checkboxEls.forEach(item => {
         if (item !== e.target) item.checked = false;

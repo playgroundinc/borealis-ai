@@ -2075,9 +2075,6 @@ ol.footnotes li small{
 .pt-42{
   padding-top: 168px;
 }
-.pr-6{
-  padding-right: 24px;
-}
 .pt-10{
   padding-top: 40px;
 }
@@ -2171,6 +2168,9 @@ ol.footnotes li small{
 .pt-gallery{
   padding-top: 600px;
 }
+.pr-6{
+  padding-right: 24px;
+}
 .pt-7{
   padding-top: 28px;
 }
@@ -2231,12 +2231,6 @@ ol.footnotes li small{
 .pr-3{
   padding-right: 12px;
 }
-<<<<<<< HEAD
-.pl-1{
-  padding-left: 4px;
-}
-=======
->>>>>>> d111c394ea54e08e8e4509aaf63fee1c986e86a0
 .text-left{
   text-align: left;
 }
@@ -2792,25 +2786,6 @@ mjx-container::-webkit-scrollbar-thumb,
 }
 
 @media (min-width: 768px){
-  .md\:h1{
-    font-size: 70px;
-    font-family: Metrophobic, sans-serif;
-    line-height: 1.10;
-    letter-spacing: -0.04em;
-    text-transform: none;
-    font-weight: normal;
-    word-break: break-word;
-  }
-  @media (min-width: 375px){
-    .md\:h1{
-      font-size: calc(70px + ((70 - 70) * ((100vw - 375px) / (1920 - 375))));
-    }
-  }
-  @media (min-width: 1920px){
-    .md\:h1{
-      font-size: 70px;
-    }
-  }
   .md\:h1-desktop{
     font-size: 36px;
     font-family: Metrophobic, sans-serif;
@@ -3515,25 +3490,6 @@ mjx-container::-webkit-scrollbar-thumb,
 }
 
 @media (min-width: 1000px){
-  .tb\:h2{
-    font-size: 57px;
-    font-family: Metrophobic, sans-serif;
-    line-height: 1.10;
-    letter-spacing: -0.04em;
-    text-transform: none;
-    font-weight: normal;
-    word-break: break-word;
-  }
-  @media (min-width: 375px){
-    .tb\:h2{
-      font-size: calc(57px + ((60 - 57) * ((100vw - 375px) / (1920 - 375))));
-    }
-  }
-  @media (min-width: 1920px){
-    .tb\:h2{
-      font-size: 60px;
-    }
-  }
   .tb\:h2-desktop{
     font-size: 31px;
     font-family: Metrophobic, sans-serif;
@@ -3570,14 +3526,6 @@ mjx-container::-webkit-scrollbar-thumb,
   @media (min-width: 1920px){
     .tb\:paragraph-lg{
       font-size: 27px;
-    }
-  }
-  .tb\:h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
-    margin-top: 12px;
-  }
-  @media (min-width: 768px){
-    .tb\:h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
-      margin-top: 32px;
     }
   }
   .page .tb\:container .nestable .container{
