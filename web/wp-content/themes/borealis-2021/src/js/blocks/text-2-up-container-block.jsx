@@ -109,7 +109,7 @@ export default function text2UpContainerBlock() {
       ];
 
       const titleStyles = [
-        { label: "Large", value: "h2" },
+        { label: "Large", value: "h2 md:h2-desktop" },
         { label: "Small", value: "h3" },
       ];
 

@@ -1,5 +1,5 @@
 // BREAKPOINTS
-// Defi             s the project's breakpoints
+// Defines the project's breakpoints
 // Doesn't use units as I need the bare values for fluid type.
 module.exports.breakpoints = {
     sm: 375,
@@ -7,11 +7,11 @@ module.exports.breakpoints = {
     tb: 1000,
     lg: 1440,
     xl: 1920,
-  };
-  
-  // SPACING
-  // Genereates a spacing object from a base value up to a max
-  const generateSpacing = (base = 4, max = 200) => {
+};
+
+// SPACING
+// Genereates a spacing object from a base value up to a max
+const generateSpacing = (base = 4, max = 200) => {
     const spacing = {};
     spacing['1/12'] = 'calc(100% / 12)';
     spacing['featured-image-sm'] = '268px';
@@ -35,34 +35,33 @@ module.exports.breakpoints = {
     spacing['col-3'] = 'calc((100% - 60px) / 4)';
     spacing['full-bleed'] = 'calc(((1440px / 12) * 4) + ((100vw - 1440px) / 2))'
     for (let i = 0; i <= max; i = i + 1) {
-      spacing[i] = `${i * base}px`;
+        spacing[i] = `${i * base}px`;
     }
-  
+
     return spacing;
-  };
-  
-  module.exports.spacing = generateSpacing();
-  
-  // Duration
-  // Generates duration values from 0.1 to 1 second
-  
-  const generateDuration = (max = 9) => {
+};
+
+module.exports.spacing = generateSpacing();
+
+// Duration
+// Generates duration values from 0.1 to 1 second
+
+const generateDuration = (max = 9) => {
     const duration = {};
     for (let i = 1; i <= max; i = i + 1) {
-      duration[i] = `0.${i}s`;
+        duration[i] = `0.${i}s`;
     }
     return duration;
-  };
-  
-  module.exports.duration = generateDuration();
-  
-  const generateDelay = (max = 10, base = 0.2) => {
+};
+
+module.exports.duration = generateDuration();
+
+const generateDelay = (max = 10, base = 0.2) => {
     const delays = {};
     for (let i = 1; i <= max; i = i + 1) {
-      delays[i] = `${Number(i * base)}s`;
+        delays[i] = `${Number(i * base)}s`;
     }
     return delays;
-  };
-  
-  module.exports.delay = generateDelay();
-  
+};
+
+module.exports.delay = generateDelay();

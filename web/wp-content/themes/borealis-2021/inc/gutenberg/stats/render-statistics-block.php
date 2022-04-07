@@ -45,7 +45,7 @@ if (!function_exists('pg_render_statistics_block')) {
         if (!empty($attributes->stat)) :
 ?>
             <div class="mb-10 md:mb-0">
-                <p class="h1 mb-4 md:mb-12"> <?php echo $attributes->stat ?></p>
+                <p class="h1 md:h1-desktop mb-4 md:mb-12"> <?php echo $attributes->stat ?></p>
                 <p class="paragraph md:pr-20">
                     <?php echo $attributes->copy ?>
                 </p>
