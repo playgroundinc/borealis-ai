@@ -39,11 +39,12 @@ if (!function_exists('pg_render_tag_cloud_container_block')) {
         // Need to set the name of the attribute and the default as a safeguard.
         $fields = array(
             'title' => '',
+            'background_color' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="custom-component animated-element no-background-padding">
+        <div class="custom-component animated-element no-background-padding <?php echo $attributes->background_color ?>">
             <div class="container md:flex" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                 <div class="md:w-4/12 md:pr-4">
                     <?php if (!empty($attributes->title)) : ?>

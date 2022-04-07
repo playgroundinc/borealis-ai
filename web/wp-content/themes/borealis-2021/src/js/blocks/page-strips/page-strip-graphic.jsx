@@ -112,6 +112,10 @@ export default function pageStripGraphicBlock() {
           value: "bg-shade-white-400 text-shade-black-400",
         },
         {
+          label: "Grey",
+          value: "bg-shade-grey-100 text-shade-black-400",
+        },
+        {
           label: "Purple",
           value: "bg-primary-purple-400 text-shade-white-400",
         },

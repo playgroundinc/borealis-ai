@@ -74,7 +74,14 @@ export default function text2UpContainerBlock() {
         attributes;
 
       const bgStyles = [
-        { label: "Default", value: "bg-shade-white-400 text-shade-black-400 before:bg-shade-black-400" },
+        {
+          label: "Default",
+          value: "bg-shade-white-400 text-shade-black-400 before:bg-shade-black-400",
+        },
+        {
+          label: "Grey",
+          value: "bg-shade-grey-100 text-shade-black-400 before:bg-shade-black-400",
+        },
         {
           label: "Purple",
           value: "bg-primary-purple-400 text-shade-white-400 before:bg-shade-white-400",

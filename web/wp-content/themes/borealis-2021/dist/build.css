@@ -722,6 +722,30 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(34 39 49 / var(--tw-bg-opacity));
 }
+.hover-light .hover-item{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.hover-light .hover-item:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 244 251 / var(--tw-bg-opacity));
+}
+.hover-light .hover-item-background{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.hover-dark .hover-item{
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 244 251 / var(--tw-bg-opacity));
+}
+.hover-dark .hover-item:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.hover-dark .hover-item-background{
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 244 251 / var(--tw-bg-opacity));
+}
 .tab-container .custom-video-panel{
   width: 100%;
 }
@@ -2223,9 +2247,6 @@ ol.footnotes li small{
 }
 .pl-1{
   padding-left: 4px;
-}
-.pb-11{
-  padding-bottom: 44px;
 }
 .text-left{
   text-align: left;
@@ -3822,9 +3843,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:pt-0{
     padding-top: 0px;
-  }
-    .lg\:pt-8{
-    padding-top: 32px;
   }
     .lg\:container{
     margin: 0 auto;

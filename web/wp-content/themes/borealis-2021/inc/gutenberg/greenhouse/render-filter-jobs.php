@@ -34,7 +34,7 @@ if (!function_exists('pg_render_filter_jobs_item')) {
 ?>
         <li class="group">
             <a class="block row-item tb:container" href="<?php echo esc_url_raw($url); ?>">
-                <div class="group-first:border-t border-b border-color-shade-grey-500 md:px-5 py-4 focus:outline-4 mb-1">
+                <div class="hover-item transition-background-color duration-300 group-first:border-t border-b border-color-shade-grey-500 md:px-5 py-4 focus:outline-4 mb-1">
                     <div class="container md:w-ful md:m-0 flex items-center">
                         <div class="grow">
                             <p class="paragraph"><?php echo esc_html($title) ?></p>
