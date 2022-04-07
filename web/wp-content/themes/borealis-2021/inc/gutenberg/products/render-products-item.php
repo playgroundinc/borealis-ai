@@ -17,7 +17,7 @@ if (!function_exists('pg_render_products_item')) {
             $cta_link = get_post_meta($post->ID, 'cta_link', true);
 ?>
             <li class="block border-b border-color-shade-grey-500">
-                <a class="block py-8 md:py-15 hover:bg-shade-grey-100 bg-shade-white-400 transition-background-color duration-300 group" href="<?php echo $cta_link ?>" target="_blank" rel="noopener noreferrer">
+                <a class="hover-item block py-8 md:py-15 transition-background-color duration-300 group" href="<?php echo $cta_link ?>" target="_blank" rel="noopener noreferrer">
                     <div class="container md:flex items-center">
                         <div class="basis-1/3 shrink-0 md:pr-12">
                             <?php if (isset($market) && strlen($market) > 0) : ?>

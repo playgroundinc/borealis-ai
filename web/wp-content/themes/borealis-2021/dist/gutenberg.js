@@ -1794,8 +1794,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ jobBlock; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1816,7 +1818,7 @@ function jobBlock() {
       type: "String",
       default: ""
     },
-    emptyState: {
+    background_color: {
       type: "String",
       default: ""
     }
@@ -1833,17 +1835,36 @@ function jobBlock() {
       var attributes = props.attributes,
           setAttributes = props.setAttributes;
       var title = attributes.title,
-          emptyState = attributes.emptyState;
+          background_color = attributes.background_color;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
+      var bgStyles = [{
+        label: "Default",
+        value: "bg-shade-white-400 text-shade-black-400 before:bg-shade-black-400 hover-light"
+      }, {
+        label: "Grey",
+        value: "bg-shade-grey-100 text-shade-black-400 before:bg-shade-black-400 hover-dark"
+      }];
       return [/*#__PURE__*/React.createElement("div", {
         class: "custom-job__block"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Jobs Block"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Jobs Block"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Background Colour",
+          options: bgStyles,
+          reference: "background_color",
+          value: background_color
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         },
@@ -1853,21 +1874,12 @@ function jobBlock() {
           tagName: "p",
           placeholder: "Please provide a title"
         }]
-      }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        },
-        components: [{
-          value: emptyState,
-          reference: "emptyState",
-          tagName: "p"
-        }]
-      })))];
+      }))];
     },
     save: function save(_ref) {
       var attributes = _ref.attributes;
       var title = attributes.title,
-          emptyState = attributes.emptyState;
+          background_color = attributes.background_color;
     }
   });
 }
@@ -1885,8 +1897,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ featuredJobsBlock; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1906,6 +1920,10 @@ function featuredJobsBlock() {
     title: {
       type: "String",
       default: ""
+    },
+    background_color: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -1919,17 +1937,37 @@ function featuredJobsBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var attributes = props.attributes,
           setAttributes = props.setAttributes;
-      var title = attributes.title;
+      var title = attributes.title,
+          background_color = attributes.background_color;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
+      var bgStyles = [{
+        label: "Default",
+        value: "bg-shade-white-400 text-shade-black-400 before:bg-shade-black-400 hover-light"
+      }, {
+        label: "Grey",
+        value: "bg-shade-grey-100 text-shade-black-400 before:bg-shade-black-400 hover-dark"
+      }];
       return [/*#__PURE__*/React.createElement("div", {
         class: "custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
-      }, "Featured Jobs Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Featured Jobs Container"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Background Colour",
+          options: bgStyles,
+          reference: "background_color",
+          value: background_color
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         },
@@ -1946,7 +1984,8 @@ function featuredJobsBlock() {
     },
     save: function save(_ref) {
       var attributes = _ref.attributes;
-      var title = attributes.title;
+      var title = attributes.title,
+          background_color = attributes.background_color;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -4559,6 +4598,9 @@ function pageStripGraphicBlock() {
         label: "Default",
         value: "bg-shade-white-400 text-shade-black-400"
       }, {
+        label: "Grey",
+        value: "bg-shade-grey-100 text-shade-black-400"
+      }, {
         label: "Purple",
         value: "bg-primary-purple-400 text-shade-white-400"
       }, {
@@ -5074,8 +5116,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ productContainerBlock; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -5099,6 +5143,10 @@ function productContainerBlock() {
       title: {
         type: "String",
         default: ""
+      },
+      background_color: {
+        type: "String",
+        default: ""
       }
     },
     edit: function edit(props) {
@@ -5106,17 +5154,37 @@ function productContainerBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var title = attributes.title;
+      var title = attributes.title,
+          background_color = attributes.background_color;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
+      var bgStyles = [{
+        label: "Default",
+        value: "bg-shade-white-400 text-shade-black-400 before:bg-shade-black-400 hover-light"
+      }, {
+        label: "Grey",
+        value: "bg-shade-grey-100 text-shade-black-400 before:bg-shade-black-400 hover-dark"
+      }];
       return [/*#__PURE__*/React.createElement("div", {
         className: "custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Products Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Products Container"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Background Colour",
+          options: bgStyles,
+          reference: "background_color",
+          value: background_color
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         components: [{
           reference: "title",
           value: title,
@@ -5133,6 +5201,7 @@ function productContainerBlock() {
       }))];
     },
     save: function save() {
+      // const { title, background_color } = attributes;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -7432,8 +7501,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* binding */ tagCloudContainerBlock; }
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
-/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
+/* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -7455,6 +7526,10 @@ function tagCloudContainerBlock() {
     title: {
       type: "String",
       default: ""
+    },
+    background_color: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -7468,17 +7543,37 @@ function tagCloudContainerBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var attributes = props.attributes,
           setAttributes = props.setAttributes;
-      var title = attributes.title;
+      var title = attributes.title,
+          background_color = attributes.background_color;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
       }
 
+      var bgStyles = [{
+        label: "Default",
+        value: "bg-shade-white-400 text-shade-black-400 before:bg-shade-black-400 hover-light"
+      }, {
+        label: "Grey",
+        value: "bg-shade-grey-100 text-shade-black-400 before:bg-shade-black-400 hover-dark"
+      }];
       return [/*#__PURE__*/React.createElement("div", {
         class: "tag-cloud-container__block custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         class: "block-title"
-      }, "Tag Cloud Container"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Tag Cloud Container"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        title: "Block Settings",
+        controls: [{
+          type: "select",
+          label: "Background Colour",
+          options: bgStyles,
+          reference: "background_color",
+          value: background_color
+        }],
+        onChange: function onChange(attribute, change) {
+          updateAttributeValue(attribute, change);
+        }
+      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         },
@@ -7495,7 +7590,8 @@ function tagCloudContainerBlock() {
     },
     save: function save(_ref) {
       var attributes = _ref.attributes;
-      var title = attributes.title;
+      var title = attributes.title,
+          background_color = attributes.background_color;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -7791,6 +7887,9 @@ function text2UpContainerBlock() {
       var bgStyles = [{
         label: "Default",
         value: "bg-shade-white-400 text-shade-black-400 before:bg-shade-black-400"
+      }, {
+        label: "Grey",
+        value: "bg-shade-grey-100 text-shade-black-400 before:bg-shade-black-400"
       }, {
         label: "Purple",
         value: "bg-primary-purple-400 text-shade-white-400 before:bg-shade-white-400"
@@ -8289,6 +8388,9 @@ function titleTextCtaBlock() {
       var background_styles = [{
         label: "Default",
         value: "bg-shade-white-400 text-shade-black-400 before:bg-shade-black-400"
+      }, {
+        label: "Grey",
+        value: "bg-shade-grey-100 text-shade-black-400 before:bg-shade-black-400"
       }, {
         label: "Purple",
         value: "bg-primary-purple-400 text-shade-white-400 before:bg-shade-white-400"

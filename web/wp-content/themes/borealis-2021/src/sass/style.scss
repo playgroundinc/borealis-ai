@@ -21,6 +21,22 @@
   .black-underline {
     @apply before:bg-shade-black-400;
   }
+  .hover-light {
+    .hover-item {
+      @apply hover:bg-shade-grey-100 bg-shade-white-400;
+    }
+    .hover-item-background {
+      @apply bg-shade-white-400;
+    }
+  }
+  .hover-dark {
+    .hover-item {
+      @apply hover:bg-shade-white-400 bg-shade-grey-100;
+    }
+    .hover-item-background {
+      @apply bg-shade-grey-100;
+    }
+  }
   .tab-container {
     .custom-video-panel {
       @apply w-full;
