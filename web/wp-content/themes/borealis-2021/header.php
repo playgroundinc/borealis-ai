@@ -208,41 +208,11 @@
             <?php else : ?>
                 <div class="container">
                     <?php if (!empty($headline)) : ?>
-                        <h1 class="h1 text-shade-white-400 pb-10 md:pb-8 <?php echo $has_subnav ? esc_attr('pt-55') : esc_attr('pt-42') ?>"><?php echo esc_html($headline) ?></h1>
+                        <h1 class="h1 md:h1-desktop text-shade-white-400 pb-10 md:pb-8 <?php echo $has_subnav ? esc_attr('pt-55') : esc_attr('pt-42') ?>"><?php echo esc_html($headline) ?></h1>
                     <?php else : ?>
                         <h1 class="sr-only"><?php echo the_title(); ?></h1>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
-            <!-- <?php
-                    $setting_names = array('cookie_policy_title', 'cookie_policy_copy', 'cookie_policy_link', 'cookie_policy_link_text');
-                    $settings = pg_get_settings($setting_names);
-                    if (!empty($settings['cookie_policy_title']) || !empty($settings['cookie_policy_copy']) || !empty($settings['cookie_policy_link']) || !empty($settings['cookie_policy_link_text'])) { ?>
-                <div class="cookies bg-shade-grey-100 text-primary-navy-400 cursor-default pl-7 md:pl-6 py-4 md:py-5 flex justify-between hidden fixed z-40 bottom-2 md:bottom-5 right-2 md:right-5">
-                    <div>
-                        <h2 class="paragraph-sm md:paragraph"><?php echo esc_html($settings['cookie_policy_title']) ?></h2>
-                        <p class="icon-md md:paragraph-sm mr-4"><?php echo esc_html($settings['cookie_policy_copy']) ?>&nbsp;
-                            <a href="<?php echo esc_url($settings['cookie_policy_link']) ?>" class="text-primary-navy-400 cursor-pointer underline hover:opacity-70 transition duration-300"><?php echo esc_html($settings['cookie_policy_link_text']) ?></a>
-                        </p>
-                    </div>
-                    <div class="flex items-center cursor-pointer">
-                        <span id="cookie" class="pr-6 icon--lg"><?php echo pg_render_icon('close') ?></span>
-                    </div>
-                </div>
-                <script>
-                    const cookie = localStorage.getItem('borealisai-cookie-accepted');
-                    const cookieModal = document.querySelector('.cookies');
-                    const cookieClose = document.getElementById('cookie');
-
-                    if (!cookie) {
-                        cookieModal.classList.remove('hidden');
-                    }
-
-                    cookieClose.addEventListener('click', () => {
-                        cookieModal.classList.add('hidden');
-                        localStorage.setItem('borealisai-cookie-accepted', 'true');
-                    });
-                </script>
-            <?php } ?> -->
         </header><!-- #masthead -->
         <main id="content">

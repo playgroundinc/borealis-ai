@@ -8,7 +8,7 @@ if (!function_exists('pg_generate_search_bar_main')) {
             <div class="container flex">
                 <form class="search-form relative grow">
                     <label class="sr-only" for="search">Search</label>
-                    <input class=" h2 border block w-full border-0 text-shade-grey-700 py-10" id="search" name="q" type="text" role="search" placeholder="<?php echo esc_attr('Type Here') ?>" value="<?php echo isset($query) && !empty($query) ? esc_attr($query) : null; ?>">
+                    <input class="h2 md:h2-desktop border block w-full border-0 text-shade-grey-700 py-10" id="search" name="q" type="text" role="search" placeholder="<?php echo esc_attr('Type Here') ?>" value="<?php echo isset($query) && !empty($query) ? esc_attr($query) : null; ?>">
                     <button tabindex="-1" class="sr-only" type="submit">
                         <span><?php echo esc_html('Search') ?></span>
                     </button>

@@ -52,7 +52,7 @@ export default function galleryContainerBlock() {
       }
 
       const fontStyles = [
-        { label: "Large", value: ["h3 tb:h2", "paragraph tb:paragraph-lg"] },
+        { label: "Large", value: ["h3 tb:h2-desktop", "paragraph tb:paragraph-lg"] },
         { label: "Small", value: ["h3", "paragraph"] },
       ];
 

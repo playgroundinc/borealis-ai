@@ -2231,6 +2231,12 @@ ol.footnotes li small{
 .pr-3{
   padding-right: 12px;
 }
+<<<<<<< HEAD
+.pl-1{
+  padding-left: 4px;
+}
+=======
+>>>>>>> d111c394ea54e08e8e4509aaf63fee1c986e86a0
 .text-left{
   text-align: left;
 }
@@ -2805,6 +2811,25 @@ mjx-container::-webkit-scrollbar-thumb,
       font-size: 70px;
     }
   }
+  .md\:h1-desktop{
+    font-size: 36px;
+    font-family: Metrophobic, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.04em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:h1-desktop{
+      font-size: calc(36px + ((70 - 36) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:h1-desktop{
+      font-size: 70px;
+    }
+  }
   .md\:h2{
     font-size: 57px;
     font-family: Metrophobic, sans-serif;
@@ -2821,6 +2846,25 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 1920px){
     .md\:h2{
+      font-size: 60px;
+    }
+  }
+  .md\:h2-desktop{
+    font-size: 31px;
+    font-family: Metrophobic, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.04em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .md\:h2-desktop{
+      font-size: calc(31px + ((60 - 31) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .md\:h2-desktop{
       font-size: 60px;
     }
   }
@@ -3487,6 +3531,25 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 1920px){
     .tb\:h2{
+      font-size: 60px;
+    }
+  }
+  .tb\:h2-desktop{
+    font-size: 31px;
+    font-family: Metrophobic, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.04em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .tb\:h2-desktop{
+      font-size: calc(31px + ((60 - 31) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .tb\:h2-desktop{
       font-size: 60px;
     }
   }
