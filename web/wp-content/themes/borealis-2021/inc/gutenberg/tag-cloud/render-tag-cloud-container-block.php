@@ -44,8 +44,8 @@ if (!function_exists('pg_render_tag_cloud_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="custom-component animated-element no-background-padding <?php echo $attributes->background_color ?>">
-            <div class="container md:flex" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
+        <div class="custom-component no-background-padding <?php echo $attributes->background_color ?>">
+            <div class="animated-element container md:flex" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                 <div class="md:w-4/12 md:pr-4">
                     <?php if (!empty($attributes->title)) : ?>
                         <h3 class="h3 text-shade-black-400"><?php echo $attributes->title ?></h3>

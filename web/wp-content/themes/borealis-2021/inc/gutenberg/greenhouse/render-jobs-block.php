@@ -48,8 +48,8 @@ if (!function_exists('pg_render_job_block')) {
         }
         ob_start();
 ?>
-        <div class="custom-component animated-element no-background-padding <?php echo $attributes->background_color ?>">
-            <div class="md:container">
+        <div class="custom-component no-background-padding <?php echo $attributes->background_color ?>">
+            <div class="md:container animated-element">
                 <div class="md:flex">
                     <div id="job-anchor" class="w-full ">
                         <?php if (!empty($attributes->title)) : ?>
