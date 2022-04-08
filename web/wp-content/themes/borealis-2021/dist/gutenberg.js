@@ -6934,10 +6934,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
-/* harmony import */ var _reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reusable/block-custom-settings.jsx */ "./src/js/blocks/reusable/block-custom-settings.jsx");
-/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
+/* harmony import */ var _helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper-functions/default-attrs */ "./src/js/blocks/helper-functions/default-attrs.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -6953,8 +6951,8 @@ function testimonialSliderBlock() {
   var blockCategory = "carousels";
   var blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ['title'];
-  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_3__["default"])(stringAttrs);
+  var stringAttrs = ["title"];
+  var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
     description: i18n.__(blockDescription),
@@ -6962,12 +6960,8 @@ function testimonialSliderBlock() {
     icon: blockIcon,
     attributes: {
       title: {
-        type: 'String',
-        default: ''
-      },
-      display_style: {
-        type: 'String',
-        default: 'light'
+        type: "String",
+        default: ""
       }
     },
     edit: function edit(props) {
@@ -6975,8 +6969,7 @@ function testimonialSliderBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var display_style = attributes.display_style,
-          title = attributes.title;
+      var title = attributes.title;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -6986,32 +6979,14 @@ function testimonialSliderBlock() {
         className: "custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Testimonial Slider"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        title: "Block Settings",
-        controls: [{
-          type: 'radio',
-          label: 'Style',
-          options: [{
-            value: 'dark',
-            label: 'Dark'
-          }, {
-            value: 'light',
-            label: 'Light'
-          }],
-          reference: 'display_style',
-          value: display_style
-        }],
-        onChange: function onChange(attribute, change) {
-          updateAttributeValue(attribute, change);
-        }
-      }), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }, "Testimonial Slider"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
-          reference: 'title',
+          reference: "title",
           value: title,
-          tagName: 'h2',
-          classes: ['h2'],
+          tagName: "h2",
+          classes: ["h2"],
           settings: [],
-          placeholder: 'Provide a title (optional)'
+          placeholder: "Provide a title (optional)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);

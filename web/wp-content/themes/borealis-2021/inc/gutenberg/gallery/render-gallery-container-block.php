@@ -49,7 +49,7 @@ if (!function_exists('pg_render_gallery_container_block')) {
         $font = explode(",", $attributes->font_size);
         ob_start();
 ?>
-        <div class="custom-component animated-element no-background-padding">
+        <div class="custom-component animated-element component-padding">
             <div class="md:flex container">
                 <div class="md:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>

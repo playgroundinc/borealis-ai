@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * Render Featured Posts Block
@@ -12,7 +13,7 @@
 
 // Check if `register_block_type` exists before calling
 // If Gutenberg isn't enabled it wont exist and error.
-if ( function_exists( 'register_block_type' ) ) {
+if (function_exists('register_block_type')) {
     $namespace = pg_get_namespace();
     register_block_type(
         $namespace . '/featured-posts-container',
@@ -22,7 +23,7 @@ if ( function_exists( 'register_block_type' ) ) {
     );
 }
 
-if ( ! function_exists( 'pg_render_featured_posts_block' ) ) {
+if (!function_exists('pg_render_featured_posts_block')) {
     /**
      * Render out Featured Posts block
      *
@@ -30,25 +31,26 @@ if ( ! function_exists( 'pg_render_featured_posts_block' ) ) {
      * @param mixed $content the content of the block.
      * @param array $block_obj array of the block features.
      */
-    function pg_render_featured_posts_block( $attrs, $content, $block_obj ) {
+    function pg_render_featured_posts_block($attrs, $content, $block_obj)
+    {
         $block = $block_obj->parsed_block;
         $allowed_html = pg_allowed_html();
         $fields     = array(
             'columns' => '12',
         );
-        $attributes = pg_get_attributes( $attrs, $fields );
+        $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
         ob_start();
         $full = intval($attributes->columns) === 12;
-        ?> 
-            <div class="container md:flex custom-component flex-wrap animated-element">
-                <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
-                    <div class="<?php echo $full ? esc_attr('basis-full') : esc_attr('basis-1/2 md:pr-3 md:nth-child-2:pl-3 md:nth-child-2:pr-0 md:flex flex-col') ?>">
-                        <?php echo pg_render_featured_post($inner_block, $full); ?>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        <?php
+?>
+        <div class="container md:flex custom-component flex-wrap animated-element component-padding">
+            <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
+                <div class="<?php echo $full ? esc_attr('basis-full') : esc_attr('basis-1/2 md:pr-3 md:nth-child-2:pl-3 md:nth-child-2:pr-0 md:flex flex-col') ?>">
+                    <?php echo pg_render_featured_post($inner_block, $full); ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+<?php
         return ob_get_clean();
     }
 }

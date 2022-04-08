@@ -44,7 +44,7 @@ if (!function_exists('pg_render_logos_container_block')) {
         ob_start();
 ?>
         <div class="bg-shade-grey-100 w-full custom-component animated-element component-dark">
-            <div class="container flex justify-between pt-10 md:pt-20 tb:flex-row flex-col">
+            <div class="container flex justify-between pt-7 md:pt-14 tb:flex-row flex-col">
                 <div class="w-full tb:w-3/12">
                     <?php if (!empty($attributes->title)) : ?>
                         <h2 class="h3 mb-8 pr-10"><?php echo wp_kses($attributes->title, $allowed_html); ?></h2>

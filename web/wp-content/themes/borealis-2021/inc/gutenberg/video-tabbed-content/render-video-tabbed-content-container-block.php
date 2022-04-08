@@ -47,7 +47,7 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
         ob_start();
 ?>
         <div class="custom-component animated-element nestable component-dark">
-            <div class="bg-center bg-cover text-shade-white-400 pt-12 pb-4 tb:pt-20" style="<?php echo $image ? 'background-image: url(' . esc_url_raw($image) . ')' : '' ?>">
+            <div class="bg-center bg-cover text-shade-white-400 pt-12 pb-0 tb:pt-20" style="<?php echo $image ? 'background-image: url(' . esc_url_raw($image) . ')' : '' ?>">
                 <div class="tab-container flex flex-col-reverse <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : ''; ?>" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                     <div class="w-full flex justify-between">
 

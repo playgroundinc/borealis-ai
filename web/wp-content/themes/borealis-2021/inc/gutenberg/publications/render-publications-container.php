@@ -44,7 +44,7 @@ if (!function_exists('pg_render_publications_container_block')) {
 
         ob_start();
 ?>
-        <div class="custom-component animated-element nestable no-background-padding">
+        <div class="custom-component animated-element nestable component-padding">
             <div class="md:flex nested-flex md:container">
                 <div class="md:basis-4/12 container md:m-0 shrink-0">
                     <?php if (!empty($attributes->title)) : ?>

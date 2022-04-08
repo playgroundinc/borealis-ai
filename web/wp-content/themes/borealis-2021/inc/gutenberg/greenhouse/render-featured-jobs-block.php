@@ -50,7 +50,7 @@ if (!function_exists('pg_render_featured_jobs_block')) {
         ob_start();
 
 ?>
-        <div id="job-anchor" class="custom-component no-background-padding <?php echo $attributes->background_color ?>">
+        <div id="job-anchor" class="custom-component component-padding <?php echo $attributes->background_color ?>">
             <div class="animated-element <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:container') : '' ?>">
                 <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:flex') : '' ?>">
                     <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : '' ?> md:w-full md:m-0 md:basis-1/3 shrink-0 md:pr-10">
