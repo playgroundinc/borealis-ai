@@ -43,8 +43,8 @@ if (!function_exists('pg_render_text_image_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="bg-shade-white-400 text-shade-black-400 custom-component animated-element">
-            <div class="container flex  <?php echo !empty($attributes->copy) ? 'md:pt-20 pt-10 pb-10' : 'md:py-20 py-10' ?> tb:flex-row flex-col">
+        <div class="bg-shade-white-400 text-shade-black-400 custom-component animated-element component-padding">
+            <div class="container flex tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>
                         <h2 class="h3 mb-8 pr-20"><?php echo $attributes->title ?></h2>
@@ -61,7 +61,7 @@ if (!function_exists('pg_render_text_image_container_block')) {
                 <div class="container flex justify-end">
                     <div class="w-full tb:w-8/12">
                         <?php if (!empty($attributes->copy)) : ?>
-                            <p class="paragraph-lg tb:pb-20 pb-10"><?php echo $attributes->copy ?></p>
+                            <p class="paragraph-lg tb:py-14 py-7"><?php echo $attributes->copy ?></p>
                         <?php endif; ?>
                     </div>
                 </div>

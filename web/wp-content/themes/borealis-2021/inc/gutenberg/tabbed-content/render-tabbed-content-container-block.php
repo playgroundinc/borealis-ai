@@ -53,7 +53,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
 ?>
         <div class="custom-component animated-element nestable">
             <div class="bg-center bg-cover">
-                <div class="tab-container no-background-padding <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : ''; ?>" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
+                <div class="tab-container component-padding <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : ''; ?>" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
 
                     <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('lg:flex') : '' ?> justify-between default-tabs">
                         <div class="lg:basis-4/12 shrink-0">
@@ -108,7 +108,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                                 $titleSlug = pg_slugify($attributes->title);
                                 ?>
                                 <?php if ($inner_block === key($block['innerBlocks'])) : ?>
-                                    <div class="flex flex-col pt-12 tab-panel" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
+                                    <div class="flex flex-col tab-panel" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
                                         <?php
                                         foreach ($element['innerBlocks'] as $panel) {
                                             echo wp_kses(render_block($panel), $allowed_html);
@@ -116,7 +116,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                                         ?>
                                     </div>
                                 <?php else : ?>
-                                    <div class="hidden flex-col pt-12 tab-panel" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
+                                    <div class="hidden flex-col tab-panel" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
                                         <?php
                                         foreach ($element['innerBlocks'] as $panel) {
                                             echo wp_kses(render_block($panel), $allowed_html);

@@ -44,7 +44,7 @@ if (!function_exists('pg_render_code_block')) {
 
         ob_start();
 ?>
-        <div class="custom-component animated-element container no-background-padding">
+        <div class="custom-component animated-element container component-padding">
             <?php if (strlen($attributes->title) > 0) : ?>
                 <h2 class="h4 mb-8"><?php echo esc_html($attributes->title); ?></h2>
             <?php endif; ?>

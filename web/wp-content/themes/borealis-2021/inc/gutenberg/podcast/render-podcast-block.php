@@ -45,7 +45,7 @@ if (!function_exists('pg_render_podcast_block')) {
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
 ?>
-        <section class="custom-component animated-element no-background-padding container">
+        <section class="custom-component animated-element component-padding container">
             <div class="bg-shade-grey-100 text-shade-grey-500 px-6 py-5">
                 <?php if (!empty($attributes->title) and !empty($attributes->author) and !empty($attributes->link_url)) : ?>
                     <div class="flex md:flex-row flex-col">

@@ -82,19 +82,24 @@
       @apply lg:mt-0;
     }
   }
-
-  .no-background-padding {
-    @apply py-10 tb:py-20;
+  .component-padding {
+    @apply md:py-14 py-7;
   }
-
-  .default-tabs .no-background-padding {
+  // .custom-component {
+  //   @apply my-8 md:my-16;
+  // }
+  // .component-dark {
+  //   @apply pb-0;
+  // }
+  // .component-dark + .component-dark {
+  //   @apply pt-0;
+  // }
+  .default-tabs .custom-component {
     @apply py-0;
   }
-
-  .custom-component .custom-component {
-    @apply mt-0;
-  }
-
+  // .custom-component .custom-component {
+  //   @apply mt-0 py-0;
+  // }
   .tab-container {
     .accordion-list {
       @apply w-full;
