@@ -40,7 +40,7 @@ if (!function_exists('pg_render_blockquote_block')) {
             'quote' => '',
             'role' => '',
             'speaker' => '',
-            'style' => 'default',
+            'style' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $image = wp_get_attachment_image_url($attributes->image_id);
@@ -49,7 +49,7 @@ if (!function_exists('pg_render_blockquote_block')) {
         $hasSpeaker = isset($attributes->speaker) && strlen($attributes->speaker) > 0;
         ob_start();
 ?>
-        <div class="custom-component animated-element <?php echo $attributes->style === 'dark' ? '' : 'component-dark' ?>">
+        <div class="custom-component animated-element component-padding <?php echo $attributes->style === 'dark' ? 'component-dark' : '' ?>">
             <?php if ($attributes->style === 'circle' && $hasImage) : ?>
                 <div class="container md:flex">
                     <div class="w-2/3 max-w-[200px] md:w-1/4 pr-10">
@@ -74,9 +74,8 @@ if (!function_exists('pg_render_blockquote_block')) {
                         <?php endif; ?>
                     </div>
                 </div>
-                <?php return ob_get_clean(); ?>
             <?php endif; ?>
-            <?php if ($attributes->style === 'circle-centered' && $hasImage) : ?>
+            <?php if ($attributes->style === 'circle-centered') : ?>
                 <div class="container">
                     <div class="w-full md:w-1/4 md:mx-auto max-w-[200px]">
                         <div class="w-full pt-full overflow-hidden relative">
@@ -98,9 +97,8 @@ if (!function_exists('pg_render_blockquote_block')) {
                         </p>
                     <?php endif; ?>
                 </div>
-                <?php return ob_get_clean(); ?>
             <?php endif; ?>
-            <?php if ($attributes->style === 'circle-centered') : ?>
+            <?php if ($attributes->style === 'dark' && $hasImage) : ?>
                 <div class="container">
                     <div class="bg-primary-navy-400 py-8 md:py-10 px-8 md:px-15 rounded-large text-shade-white-400">
                         <p class="paragraph md:paragraph-lg"><?php echo  $attributes->quote; ?></p>
@@ -129,67 +127,37 @@ if (!function_exists('pg_render_blockquote_block')) {
                         </div>
                     </div>
                 </div>
-                <?php return ob_get_clean(); ?>
             <?php endif; ?>
-            <?php if ($attributes->style === 'dark') : ?>
+            <?php if ($attributes->style === '') : ?>
                 <div class="container">
-                    <div class="bg-primary-navy-400 py-8 md:py-10 px-8 md:px-15 rounded-large text-shade-white-400">
-                        <p class="paragraph md:paragraph-lg"><?php echo  $attributes->quote; ?></p>
-                        <div class="flex md:flex-row flex-col-reverse md:items-center md:justify-between pt-10">
-                            <div>
-                                <?php if ($hasSpeaker || $hasRole) : ?>
-                                    <p class="pt-8 md:pt-0">
-                                        <?php if ($hasSpeaker) : ?>
-                                            <span class="h4"><?php echo $attributes->speaker; ?></span>
-                                        <?php endif; ?>
-                                        <?php if ($hasSpeaker && $hasRole) : ?>
-                                            <span class="px-5"><?php echo esc_html('-') ?></span>
-                                        <?php endif; ?>
-                                        <?php if ($hasRole) : ?>
-                                            <span class="paragraph"><?php echo $attributes->role; ?></span>
-                                        <?php endif; ?>
-                                    </p>
-                                <?php endif; ?>
-                            </div>
-                            <div class="flex" aria-hidden="true">
-                                <span style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
-                                <span class="pr-8" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
-                                <span class="rotate-180" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
-                                <span class="rotate-180" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
-                            </div>
+                    <div class="flex" aria-hidden="true">
+                        <span class="text-primary-electric-blue-400" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
+                        <span class="text-primary-electric-blue-400 pr-8" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
+                        <span class="text-primary-electric-blue-400 rotate-180" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
+                        <span class="text-primary-electric-blue-400 rotate-180" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
+                    </div>
+                    <p class="paragraph md:paragraph-lg pt-8 md:pt-11"><?php echo esc_html($attributes->quote); ?></p>
+                    <?php if ($hasImage || $hasRole || $hasSpeaker) : ?>
+                        <div class="flex items-center pt-8 md:pt-11">
+                            <?php if ($hasImage) : ?>
+                                <div class="rounded-large overflow-hidden w-23 pt-23 relative">
+                                    <img class="absolute inset-0" src="<?php echo esc_url_raw($image) ?>" />
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($hasSpeaker || $hasRole) : ?>
+                                <div class="<?php echo $hasImage ? esc_attr('pl-5') : '' ?>">
+                                    <?php if ($hasSpeaker) : ?>
+                                        <p class="h4"><?php echo esc_html($attributes->speaker); ?></p>
+                                    <?php endif; ?>
+                                    <?php if ($hasRole) : ?>
+                                        <p class="paragraph"><?php echo esc_html($attributes->role); ?></p>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
-                <?php return ob_get_clean(); ?>
             <?php endif; ?>
-            <div class="container">
-                <div class="flex" aria-hidden="true">
-                    <span class="text-primary-electric-blue-400" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
-                    <span class="text-primary-electric-blue-400 pr-8" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
-                    <span class="text-primary-electric-blue-400 rotate-180" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
-                    <span class="text-primary-electric-blue-400 rotate-180" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
-                </div>
-                <p class="paragraph md:paragraph-lg pt-8 md:pt-11"><?php echo esc_html($attributes->quote); ?></p>
-                <?php if ($hasImage || $hasRole || $hasSpeaker) : ?>
-                    <div class="flex items-center pt-8 md:pt-11">
-                        <?php if ($hasImage) : ?>
-                            <div class="rounded-large overflow-hidden w-23 pt-23 relative">
-                                <img class="absolute inset-0" src="<?php echo esc_url_raw($image) ?>" />
-                            </div>
-                        <?php endif; ?>
-                        <?php if ($hasSpeaker || $hasRole) : ?>
-                            <div class="<?php echo $hasImage ? esc_attr('pl-5') : '' ?>">
-                                <?php if ($hasSpeaker) : ?>
-                                    <p class="h4"><?php echo esc_html($attributes->speaker); ?></p>
-                                <?php endif; ?>
-                                <?php if ($hasRole) : ?>
-                                    <p class="paragraph"><?php echo esc_html($attributes->role); ?></p>
-                                <?php endif; ?>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                <?php endif; ?>
-            </div>
         </div>
         <?php return ob_get_clean(); ?>
 <?php
