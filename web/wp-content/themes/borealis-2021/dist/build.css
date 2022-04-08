@@ -906,9 +906,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-bottom: 56px;
   }
 }
+.icon-padding + .icon-padding{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.icon-padding + .accordion-padding{
+  padding-top: 0px;
+}
 .default-tabs .custom-component{
   padding-top: 0px;
   padding-bottom: 0px;
+}
+.default-tabs .icon-container{
+  flex-direction: column;
+  padding-top: 28px;
 }
 .tab-container .accordion-list{
   width: 100%;
@@ -1365,6 +1376,9 @@ ol.footnotes li small{
 }
 .ml-19{
   margin-left: 76px;
+}
+.mb-14{
+  margin-bottom: 56px;
 }
 .mt-10{
   margin-top: 40px;
@@ -2185,12 +2199,6 @@ ol.footnotes li small{
 }
 .pt-4{
   padding-top: 16px;
-}
-.pt-18{
-  padding-top: 72px;
-}
-.pb-12{
-  padding-bottom: 48px;
 }
 .pt-gallery{
   padding-top: 600px;

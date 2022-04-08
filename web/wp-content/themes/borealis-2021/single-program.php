@@ -21,7 +21,7 @@ $allowed_html = pg_allowed_html();
 ?>
 <main id="main-content" class="main-content">
     <?php if (isset($video) && strlen($video) > 0) : ?>
-        <div>
+        <div class="mb-14">
             <div class="container relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg lg:min-h-[435px] pb-25">
                 <?php if (!empty($image)) : ?>
                     <div class="bg-cover bg-center absolute inset-0 z-10 video-block__overlay transition-all duration-400" style="background-image: url(<?php echo esc_url_raw($image) ?>)">

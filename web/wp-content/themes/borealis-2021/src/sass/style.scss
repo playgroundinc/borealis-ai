@@ -85,21 +85,18 @@
   .component-padding {
     @apply md:py-14 py-7;
   }
-  // .custom-component {
-  //   @apply my-8 md:my-16;
-  // }
-  // .component-dark {
-  //   @apply pb-0;
-  // }
-  // .component-dark + .component-dark {
-  //   @apply pt-0;
-  // }
+  .icon-padding + .icon-padding {
+    @apply py-0;
+  }
+  .icon-padding + .accordion-padding {
+    @apply pt-0;
+  }
   .default-tabs .custom-component {
     @apply py-0;
   }
-  // .custom-component .custom-component {
-  //   @apply mt-0 py-0;
-  // }
+  .default-tabs .icon-container {
+    @apply flex-col pt-7;
+  }
   .tab-container {
     .accordion-list {
       @apply w-full;
