@@ -49,7 +49,7 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
         <div class="custom-component animated-element nestable component-dark">
             <div class="bg-center bg-cover text-shade-white-400 pt-12 pb-0 tb:pt-20" style="<?php echo $image ? 'background-image: url(' . esc_url_raw($image) . ')' : '' ?>">
                 <div class="tab-container flex flex-col-reverse <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : ''; ?>" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
-                    <div class="w-full flex justify-between">
+                    <div class="w-full flex justify-between pb-5 md:pb-10">
 
                         <?php foreach ($block['innerBlocks'] as $inner_block => $element) : ?>
                             <?php
@@ -68,7 +68,7 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                             $titleSlug = pg_slugify($attributes->title);
                             ?>
                             <?php if ($inner_block === key($block['innerBlocks'])) : ?>
-                                <div class="flex justify-between flex-col tb:flex-row w-full cursor-default" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
+                                <div class="flex justify-between flex-col tb:flex-row w-full cursor-default items-center" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
                                     <div class="w-full tb:w-5/12 lg:w-4/12 tb:-mt-14 lg:-mt-11 pr-12">
                                         <?php if (!empty($title)) : ?>
                                             <h2 id="<?php echo esc_html($title) ?>" class="h3"><?php echo esc_html($title) ?></h2>
@@ -97,7 +97,7 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                                     </div>
                                 </div>
                             <?php else : ?>
-                                <div class="flex hidden justify-between flex-col tb:flex-row w-full cursor-default" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
+                                <div class="flex hidden justify-between flex-col tb:flex-row w-full cursor-default items-center" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
                                     <div class="w-full tb:w-5/12 lg:w-4/12 tb:-mt-14 lg:-mt-11 pr-12">
                                         <?php if (!empty($title)) : ?>
                                             <h2 id="<?php echo esc_html($title) ?>" class="h3"><?php echo esc_html($title) ?></h2>

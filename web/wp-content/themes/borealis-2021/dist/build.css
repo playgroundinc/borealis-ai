@@ -746,6 +746,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 251 / var(--tw-bg-opacity));
 }
+.tab-container .video-tabbable{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 .tab-container .custom-video-panel{
   width: 100%;
 }
@@ -3459,6 +3463,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pb-4{
     padding-bottom: 16px;
+  }
+    .md\:pb-10{
+    padding-bottom: 40px;
   }
     .md\:text-left{
     text-align: left;
