@@ -34,6 +34,7 @@ web/private/*
 !web/private/scripts/
 web/private/scripts/quicksilver
 !web/private/config/
+web/wp-content/themes/borealis-2021/dist
 !.circleci
 .bashrc
 
