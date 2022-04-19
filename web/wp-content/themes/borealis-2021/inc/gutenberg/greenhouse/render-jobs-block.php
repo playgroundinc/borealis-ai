@@ -38,6 +38,7 @@ if (!function_exists('pg_render_job_block')) {
         $fields     = array(
             'title' => '',
             'background_color' => '',
+            'anchor_id'  => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
 
@@ -48,10 +49,10 @@ if (!function_exists('pg_render_job_block')) {
         }
         ob_start();
 ?>
-        <div class="custom-component component-padding <?php echo $attributes->background_color ?>">
+        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component component-padding <?php echo $attributes->background_color ?>">
             <div class="md:container animated-element">
                 <div class="md:flex">
-                    <div id="job-anchor" class="w-full ">
+                    <div class="w-full ">
                         <?php if (!empty($attributes->title)) : ?>
                             <h2 class="h3 pl-5 md:pl-0"><?php echo $attributes->title ?></h2>
                             <div class="tab-container jobs">
