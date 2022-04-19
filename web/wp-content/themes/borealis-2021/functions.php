@@ -77,6 +77,10 @@ require get_template_directory() . '/inc/ajax-actions.php';
 require get_template_directory() . '/inc/custom-post-types/register-cpts.php';
 require get_template_directory() . '/inc/custom-taxonomies/register-taxonomies.php';
 require get_template_directory() . '/inc/admin-columns/custom-post.php';
+/**
+ * Filters
+ */
+require get_template_directory() . '/inc/filters/lang-redirect.php';
 
 // Reusable
 require get_template_directory() . '/inc/gutenberg/render-icon-btn.php';
