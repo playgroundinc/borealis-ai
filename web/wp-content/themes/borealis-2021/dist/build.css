@@ -3446,6 +3446,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pb-20{
     padding-bottom: 80px;
   }
+    .md\:pb-10{
+    padding-bottom: 40px;
+  }
     .md\:pb-7{
     padding-bottom: 28px;
   }
@@ -3463,9 +3466,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pb-4{
     padding-bottom: 16px;
-  }
-    .md\:pb-10{
-    padding-bottom: 40px;
   }
     .md\:text-left{
     text-align: left;
