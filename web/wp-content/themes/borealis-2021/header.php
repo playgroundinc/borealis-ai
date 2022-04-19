@@ -131,7 +131,7 @@
                             </button>
                         </div>
                         <div id="main-nav-items" class="nav-items grow flex fixed md:static inset-0 -left-full w-screen h-screen md:h-auto z-50 md:justify-end items-center md:text-shade-white-400 opacity-0 md:opacity-100 transition-opacity transition-left duration-500 bg-shade-black-30 md:bg-transparent max-h-screen">
-                            <div class="w-3/4 h-13 md:w-auto bg-shade-white-400 md:bg-transparent h-full md:flex-row flex-col flex pb-14 md:pb-0 md:items-center overflow-scroll md:overflow-auto px-2">
+                            <div class="w-3/4 md:w-auto bg-shade-white-400 md:bg-transparent h-full md:flex-row flex-col flex pb-14 md:pb-0 md:items-center overflow-scroll md:overflow-auto px-2">
                                 <button role="button" class="icon-sm px-6 py-5 block w-full text-shade-black-400 md:hidden" aria-label="Close Main Menu">
                                     <?php echo pg_render_icon('menu-close') ?>
                                 </button>
