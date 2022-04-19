@@ -46,7 +46,7 @@ if (!function_exists('pg_render_custom_video_block')) {
         $allowed_html = pg_allowed_html();
         ob_start();
 ?>
-        <div class="custom-component nestable animated-element component-padding">
+        <div class="custom-component nestable animated-element component-padding video-tabbable">
             <div class="flex w-full justify-end container">
                 <div class="w-full tb:w-8/12 custom-video-panel">
                     <div class="md:min-h-[350px] tb:min-h-[400px] lg:min-h-[540px] relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg">
