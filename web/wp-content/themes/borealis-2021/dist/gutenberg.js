@@ -7031,6 +7031,114 @@ function testimonialSliderBlock() {
 
 /***/ }),
 
+/***/ "./src/js/blocks/spacer/spacer-container.jsx":
+/*!***************************************************!*\
+  !*** ./src/js/blocks/spacer/spacer-container.jsx ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ pgSpacerContainer; }
+/* harmony export */ });
+/* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
+
+function pgSpacerContainer() {
+  /**
+   * GUTENBERG BLOCK - SPACER CONTAINER
+   */
+  var registerBlockType = wp.blocks.registerBlockType;
+  var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var _wp = wp,
+      i18n = _wp.i18n;
+  var blockSlug = "spacer-container";
+  var blockTitle = "Spacer";
+  var blockDescription = "Creates a container for spacer blocks.";
+  var blockCategory = "containers";
+  var blockIcon = "editor-insertmore"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+
+  registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
+    title: i18n.__(blockTitle),
+    description: i18n.__(blockDescription),
+    category: blockCategory,
+    icon: blockIcon,
+    edit: function edit(props) {
+      var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      return [/*#__PURE__*/React.createElement("div", {
+        className: "custom-container"
+      }, /*#__PURE__*/React.createElement("p", {
+        className: "block-title"
+      }, "Spacer Blocks Container"), /*#__PURE__*/React.createElement("div", {
+        className: "col--4"
+      }, save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+        allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/spacer")]
+      })))];
+    },
+    save: function save() {
+      return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
+    }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/blocks/spacer/spacer.jsx":
+/*!*****************************************!*\
+  !*** ./src/js/blocks/spacer/spacer.jsx ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ pgSpacerBlock; }
+/* harmony export */ });
+/* harmony import */ var _helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants.js */ "./src/js/blocks/helper-functions/constants.js");
+// Helpers
+
+function pgSpacerBlock() {
+  /**
+   * GUTENBERG BLOCK - SPACER
+   */
+  var _wp$blocks = wp.blocks,
+      registerBlockType = _wp$blocks.registerBlockType,
+      createBlock = _wp$blocks.createBlock;
+  var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var _wp = wp,
+      i18n = _wp.i18n;
+  var slug = "spacer";
+  var title = "Spacer";
+  var description = "Adds vertical spacer";
+  var category = "rows";
+  var icon = "insert"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
+
+  var attributes = {
+    copy: {
+      type: "String",
+      default: ""
+    }
+  };
+  registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
+    title: i18n.__(title, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
+    description: i18n.__(description, "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace)),
+    category: category,
+    icon: icon,
+    attributes: attributes,
+    edit: function edit(props) {
+      var editor = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      return [/*#__PURE__*/React.createElement("section", {
+        class: "child-component h-14"
+      }, /*#__PURE__*/React.createElement("p", null, " 56px of Space"))];
+    },
+    save: function save() {
+      return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/blocks/stats/statistics-block.jsx":
 /*!**************************************************!*\
   !*** ./src/js/blocks/stats/statistics-block.jsx ***!
@@ -8877,6 +8985,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_tag_cloud_tag_cloud_container_block_jsx__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./blocks/tag-cloud/tag-cloud-container-block.jsx */ "./src/js/blocks/tag-cloud/tag-cloud-container-block.jsx");
 /* harmony import */ var _blocks_tag_cloud_tag_cloud_item_block_jsx__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./blocks/tag-cloud/tag-cloud-item-block.jsx */ "./src/js/blocks/tag-cloud/tag-cloud-item-block.jsx");
 /* harmony import */ var _blocks_podcast_podcast_block_jsx__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ./blocks/podcast/podcast-block.jsx */ "./src/js/blocks/podcast/podcast-block.jsx");
+/* harmony import */ var _blocks_spacer_spacer_container_jsx__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(/*! ./blocks/spacer/spacer-container.jsx */ "./src/js/blocks/spacer/spacer-container.jsx");
+/* harmony import */ var _blocks_spacer_spacer_jsx__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(/*! ./blocks/spacer/spacer.jsx */ "./src/js/blocks/spacer/spacer.jsx");
 // import customButtonIcons from './blocks/core-extends/button-icons';
 
  // Meta
@@ -8972,6 +9082,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // Podcast Block
+
+ // Spacer
+
 
  // Core Extends Blocks
 
@@ -9069,7 +9182,10 @@ __webpack_require__.r(__webpack_exports__);
 (0,_blocks_podcast_podcast_block_jsx__WEBPACK_IMPORTED_MODULE_65__["default"])(); // Image Row Blocks
 
 (0,_blocks_image_row_image_row_block_jsx__WEBPACK_IMPORTED_MODULE_36__["default"])();
-(0,_blocks_image_row_image_row_container_jsx__WEBPACK_IMPORTED_MODULE_35__["default"])();
+(0,_blocks_image_row_image_row_container_jsx__WEBPACK_IMPORTED_MODULE_35__["default"])(); // Spacer Blocks
+
+(0,_blocks_spacer_spacer_container_jsx__WEBPACK_IMPORTED_MODULE_66__["default"])();
+(0,_blocks_spacer_spacer_jsx__WEBPACK_IMPORTED_MODULE_67__["default"])();
 }();
 /******/ })()
 ;

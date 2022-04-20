@@ -126,6 +126,10 @@ import tagCloudItemBlock from "./blocks/tag-cloud/tag-cloud-item-block.jsx";
 // Podcast Block
 import podcastBlock from "./blocks/podcast/podcast-block.jsx";
 
+// Spacer
+import spacerContainerBlock from "./blocks/spacer/spacer-container.jsx";
+import spacerBlock from "./blocks/spacer/spacer.jsx";
+
 // Core Extends Blocks
 customVideoPoster();
 registerRichTextBlocks();
@@ -251,3 +255,7 @@ podcastBlock();
 // Image Row Blocks
 imageRowBlock();
 imageRowContainer();
+
+// Spacer Blocks
+spacerContainerBlock();
+spacerBlock();

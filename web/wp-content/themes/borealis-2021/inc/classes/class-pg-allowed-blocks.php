@@ -154,6 +154,10 @@ class PG_Allowed_Blocks
 
             // Title Text Cta
             'title-text-cta',
+
+            // Spacer
+            'spacer-container',
+            'spacer'
         );
         $this->shared_core_blocks = array(
             'core/embed-youtube',

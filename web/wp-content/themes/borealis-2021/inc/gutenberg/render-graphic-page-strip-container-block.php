@@ -43,7 +43,7 @@ if (!function_exists('pg_render_graphic_page_strip_container_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="custom-component component-dark animated-element component-padding">
+        <div class="graphic-page-strip custom-component component-dark animated-element">
             <?php if (!empty($attributes->column_amount === 'three')) : ?>
                 <div class="flex flex-col md:flex-row">
                     <div class="w-full md:w-6/12">
