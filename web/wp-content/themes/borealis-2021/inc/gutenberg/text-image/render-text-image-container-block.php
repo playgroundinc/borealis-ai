@@ -38,12 +38,13 @@ if (!function_exists('pg_render_text_image_container_block')) {
         $fields     = array(
             'title' => '',
             'copy'  => '',
+            'anchor_id' => '',
         );
         $allowed_html = pg_allowed_html();
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="bg-shade-white-400 text-shade-black-400 custom-component animated-element component-padding">
+        <div id="<?php echo $attributes->anchor_id ?>" class="text-image bg-shade-white-400 text-shade-black-400 custom-component animated-element component-padding">
             <div class="container flex tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>

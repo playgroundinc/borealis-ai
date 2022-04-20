@@ -41,11 +41,12 @@ if (!function_exists('pg_render_title_text_cta_block')) {
             'cta_text' => '',
             'cta_url' => '',
             'background_colour' => '',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="w-full component-padding custom-component animated-element <?php echo $attributes->background_colour ?> component-dark">
+        <div id="<?php echo $attributes->anchor_id ?>" class="w-full component-padding custom-component animated-element title-text <?php echo $attributes->background_colour ?> component-dark">
             <div class="container flex flex-col tb:flex-row gap-6">
                 <h3 class="h3 w-full tb:w-4/12"> <?php echo $attributes->title ?></h3>
                 <p class="w-full tb:w-4/12 tb:self-center">

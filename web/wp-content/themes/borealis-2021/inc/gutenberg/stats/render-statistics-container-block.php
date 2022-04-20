@@ -38,12 +38,13 @@ if (!function_exists('pg_render_statistics_container_block')) {
         $fields     = array(
             'title' => '',
             'description' => '',
-            'bgColour' => 'default'
+            'bgColour' => 'default',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="animated-element custom-component component-dark <?php echo $attributes->bgColour === 'purple' ? 'bg-primary-electric-purple-400' : 'bg-primary-navy-400'  ?> text-shade-white-400">
+        <div id="<?php echo $attributes->anchor_id ?>" class="animated-element custom-component component-dark statistics <?php echo $attributes->bgColour === 'purple' ? 'bg-primary-electric-purple-400' : 'bg-primary-navy-400'  ?> text-shade-white-400">
             <div class="container flex md:pt-16 md:pb-20 py-10 tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>

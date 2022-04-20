@@ -40,11 +40,12 @@ if (!function_exists('pg_render_icon_list_container_block')) {
             'title' => '',
             'description' => '',
             'icon' => '',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="custom-component nestable animated-element component-padding icon-padding" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
+        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component nestable animated-element component-padding icon-padding icon-list" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="">
             <div>
                 <div class="flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container tb:flex-row justify-end') : '' ?> icon-container">
                     <div class="w-full mb-10 tb:mb-0 tb:w-2/6 icon-list-title">

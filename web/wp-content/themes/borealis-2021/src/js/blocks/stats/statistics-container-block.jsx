@@ -5,6 +5,7 @@ import BlockSettings from "../reusable/block-custom-settings.jsx";
 export default function statisticsContainerBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
   const { useSelect } = wp.data;
   const { i18n } = wp;
 
@@ -28,6 +29,10 @@ export default function statisticsContainerBlock() {
       type: "String",
       default: "default",
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -38,7 +43,7 @@ export default function statisticsContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title, description, bgColour } = attributes;
+      const { title, description, bgColour, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -98,6 +103,13 @@ export default function statisticsContainerBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
           <InnerBlocks
             allowedBlocks={[`${namespace}/statistics`]}
             renderAppender={() => {
@@ -112,7 +124,7 @@ export default function statisticsContainerBlock() {
       ];
     },
     save: () => {
-      const { title, description, bgColour } = attributes;
+      const { title, description, bgColour, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

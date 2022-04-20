@@ -41,7 +41,8 @@ if (!function_exists('pg_render_gallery_container_block')) {
             'link' => '',
             'link_text' => '',
             'title' => '',
-            'font_size' => ''
+            'font_size' => '',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
@@ -49,7 +50,7 @@ if (!function_exists('pg_render_gallery_container_block')) {
         $font = explode(",", $attributes->font_size);
         ob_start();
 ?>
-        <div class="custom-component animated-element component-padding">
+        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component animated-element component-padding gallery">
             <div class="md:flex container">
                 <div class="md:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>

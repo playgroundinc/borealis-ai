@@ -40,11 +40,12 @@ if (!function_exists('pg_render_tag_cloud_container_block')) {
         $fields = array(
             'title' => '',
             'background_color' => '',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="custom-component component-padding <?php echo $attributes->background_color ?>">
+        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component component-padding tag-cloud <?php echo $attributes->background_color ?>">
             <div class="animated-element container md:flex" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                 <div class="md:w-4/12 md:pr-4">
                     <?php if (!empty($attributes->title)) : ?>

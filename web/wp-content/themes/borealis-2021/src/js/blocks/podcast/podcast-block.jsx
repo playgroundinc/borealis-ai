@@ -5,6 +5,7 @@ import CustomImageUpload from "../reusable/custom-image-upload.jsx";
 export default function podcastBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
   const { useSelect } = wp.data;
   const { i18n } = wp;
 
@@ -39,6 +40,10 @@ export default function podcastBlock() {
       type: "String",
       default: "",
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -49,7 +54,7 @@ export default function podcastBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title, author, link_url, image_id, image_url, image_alt } = attributes;
+      const { title, author, link_url, image_id, image_url, image_alt, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -118,11 +123,18 @@ export default function podcastBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
         </div>,
       ];
     },
     save: () => {
-      const { title, author, link_url, image_id, image_url, image_alt } = attributes;
+      const { title, author, link_url, image_id, image_url, image_alt, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

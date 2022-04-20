@@ -49,7 +49,7 @@ if (!function_exists('pg_render_job_block')) {
         }
         ob_start();
 ?>
-        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component component-padding <?php echo $attributes->background_color ?>">
+        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component component-padding jobs <?php echo $attributes->background_color ?>">
             <div class="md:container animated-element">
                 <div class="md:flex">
                     <div class="w-full ">

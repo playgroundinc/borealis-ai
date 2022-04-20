@@ -5,6 +5,7 @@ export default function imageRowContainer() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
   const { useSelect } = wp.data;
+  const { TextControl } = wp.components;
   const { i18n } = wp;
 
   const blockSlug = "image-row-container"; // slug for the block
@@ -22,6 +23,10 @@ export default function imageRowContainer() {
       type: "Number",
       default: 0,
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -32,6 +37,13 @@ export default function imageRowContainer() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const innerBlockCount = useSelect((select) => select("core/block-editor").getBlock(props.clientId).innerBlocks);
+
+      const { setAttributes, attributes } = props;
+      const { anchor_id } = attributes;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes({ [attribute]: value });
+      }
 
       return [
         <div class="custom-component">
@@ -46,10 +58,18 @@ export default function imageRowContainer() {
               }
             }}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
         </div>,
       ];
     },
     save: () => {
+      const { anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });
