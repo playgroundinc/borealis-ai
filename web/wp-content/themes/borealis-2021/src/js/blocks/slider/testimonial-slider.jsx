@@ -5,6 +5,7 @@ import defaultAttrs from "../helper-functions/default-attrs";
 export default function testimonialSliderBlock() {
   const { registerBlockType } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
   const { i18n } = wp;
 
   const blockSlug = "testimonial-carousel";
@@ -13,7 +14,7 @@ export default function testimonialSliderBlock() {
   const blockCategory = "carousels";
   const blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  const stringAttrs = ["title"];
+  const stringAttrs = ["title", "anchor_id"];
   const attributes = defaultAttrs(stringAttrs);
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -26,10 +27,14 @@ export default function testimonialSliderBlock() {
         type: "String",
         default: "",
       },
+      anchor_id: {
+        type: "String",
+        default: "",
+      },
     },
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title } = attributes;
+      const { title, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -53,12 +58,19 @@ export default function testimonialSliderBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
           {save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/testimonial`]} />}
         </div>,
       ];
     },
     save: () => {
-      const { link, title } = attributes;
+      const { link, title, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

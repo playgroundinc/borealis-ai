@@ -6,6 +6,7 @@ import BlockSettings from "../reusable/block-custom-settings.jsx";
 export default function pgLogoContainerBlock() {
   const { registerBlockType } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
   const { i18n } = wp;
 
   const blockSlug = "logos-container";
@@ -23,6 +24,10 @@ export default function pgLogoContainerBlock() {
       type: "String",
       default: "",
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -33,7 +38,7 @@ export default function pgLogoContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { copy, title } = attributes;
+      const { copy, title, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -64,11 +69,19 @@ export default function pgLogoContainerBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
           <div className="col--4">{save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/logo-subsection`]} />}</div>
         </div>,
       ];
     },
     save: () => {
+      const { title, copy, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });
