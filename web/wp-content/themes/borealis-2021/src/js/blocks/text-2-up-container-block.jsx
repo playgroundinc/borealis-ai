@@ -6,6 +6,8 @@ import CustomImageUpload from "./reusable/custom-image-upload.jsx";
 export default function text2UpContainerBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
+
   const { useSelect } = wp.data;
   const { i18n } = wp;
 
@@ -60,6 +62,14 @@ export default function text2UpContainerBlock() {
       type: "String",
       default: "",
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
+    anchor_href: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -70,8 +80,7 @@ export default function text2UpContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title, subtitle, bgColour, colAmount, cta_text, title_size, copy_size, image_alt, image_id, image_url, text_or_image } =
-        attributes;
+      const { title, subtitle, bgColour, colAmount, cta_text, title_size, copy_size, image_alt, image_id, image_url, text_or_image, anchor_id, anchor_href } = attributes;
 
       const bgStyles = [
         {
@@ -254,12 +263,25 @@ export default function text2UpContainerBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID: (optional)"
+          />
+          <TextControl
+            value={anchor_href}
+            onChange={(value) => {
+              updateAttributeValue("anchor_href", value);
+            }}
+            label="Anchor HREF: (optional)"
+          />
         </div>,
       ];
     },
     save: () => {
-      const { title, subtite, bgColour, colAmount, cta_text, title_size, copy_size, image_alt, image_id, image_url, text_or_image } =
-        attributes;
+      const { title, subtite, bgColour, colAmount, cta_text, title_size, copy_size, image_alt, image_id, image_url, text_or_image, anchor_id, anchor_href } = attributes;
       return <InnerBlocks.Content />;
     },
   });
