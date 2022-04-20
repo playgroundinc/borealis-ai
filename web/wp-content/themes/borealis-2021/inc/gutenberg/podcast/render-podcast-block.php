@@ -40,12 +40,13 @@ if (!function_exists('pg_render_podcast_block')) {
             'author' => '',
             'link_url' => '',
             'image_id' => 0,
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
 ?>
-        <section class="custom-component animated-element component-padding container">
+        <section id="<?php echo $attributes->anchor_id ?>" class="custom-component animated-element component-padding container podcast">
             <div class="bg-shade-grey-100 text-shade-grey-500 px-6 py-5">
                 <?php if (!empty($attributes->title) and !empty($attributes->author) and !empty($attributes->link_url)) : ?>
                     <div class="flex md:flex-row flex-col">

@@ -6,6 +6,7 @@ import BlockSettings from "../reusable/block-custom-settings.jsx";
 export default function galleryContainerBlock() {
   const { registerBlockType } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
   const { i18n } = wp;
 
   const blockSlug = "gallery-container"; // slug for the block
@@ -35,6 +36,10 @@ export default function galleryContainerBlock() {
       type: "String",
       default: "",
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -45,7 +50,7 @@ export default function galleryContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { attributes, setAttributes } = props;
-      const { title, description, link, link_text, font_size } = attributes;
+      const { title, description, link, link_text, font_size, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -109,17 +114,20 @@ export default function galleryContainerBlock() {
               },
             ]}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
           <p>Please included a minimum of 4 new blocks below</p>
-          {save ? (
-            <InnerBlocks.Content />
-          ) : (
-            <InnerBlocks allowedBlocks={[`${namespace}/select-team-member`, `${namespace}/custom-image`]} />
-          )}
+          {save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/select-team-member`, `${namespace}/custom-image`]} />}
         </div>,
       ];
     },
     save: ({ attributes }) => {
-      const { title, description, link, link_text, font_size } = attributes;
+      const { title, description, link, link_text, font_size, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

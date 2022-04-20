@@ -4,6 +4,7 @@ import BlockSettings from "../reusable/block-custom-settings.jsx";
 export default function pageStripGraphicContainer() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
   const { useSelect } = wp.data;
   const { i18n } = wp;
 
@@ -26,6 +27,10 @@ export default function pageStripGraphicContainer() {
       type: "String",
       default: "",
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -37,7 +42,7 @@ export default function pageStripGraphicContainer() {
     edit: (props, editor = false, save = false) => {
       const innerBlockCount = useSelect((select) => select("core/block-editor").getBlock(props.clientId).innerBlocks);
       const { setAttributes, attributes } = props;
-      const { column_amount } = attributes;
+      const { column_amount, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -66,6 +71,13 @@ export default function pageStripGraphicContainer() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
           <InnerBlocks
             allowedBlocks={[`${namespace}/page-strip-graphic`]}
             renderAppender={() => {
@@ -80,7 +92,7 @@ export default function pageStripGraphicContainer() {
       ];
     },
     save: () => {
-      const { column_amount } = attributes;
+      const { column_amount, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

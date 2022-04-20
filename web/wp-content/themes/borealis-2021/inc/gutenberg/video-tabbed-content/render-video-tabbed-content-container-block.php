@@ -40,13 +40,14 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
         $fields = array(
             'image_id' => 0,
             'title' => '',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $title = $attributes->title;
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
 ?>
-        <div class="custom-component animated-element nestable component-dark">
+        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component animated-element nestable component-dark video-tabbed">
             <div class="bg-center bg-cover text-shade-white-400 pt-12 pb-0 tb:pt-20" style="<?php echo $image ? 'background-image: url(' . esc_url_raw($image) . ')' : '' ?>">
                 <div class="tab-container flex flex-col-reverse <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : ''; ?>" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
                     <div class="w-full flex justify-between pb-5 md:pb-10">

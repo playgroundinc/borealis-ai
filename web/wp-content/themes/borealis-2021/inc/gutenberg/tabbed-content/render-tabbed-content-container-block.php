@@ -46,12 +46,13 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
             'copy' => '',
             'image_id' => 0,
             'title' => '',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
 ?>
-        <div class="custom-component animated-element nestable">
+        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component animated-element nestable tabbed-content">
             <div class="bg-center bg-cover">
                 <div class="tab-container component-padding <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : ''; ?>" aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>">
 

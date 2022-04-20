@@ -42,6 +42,10 @@ export default function customVideoBlock() {
       type: "Number",
       default: 0,
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
   registerBlockType(`${namespace}/${slug}`, {
     title: i18n.__(title, `${namespace}`),
@@ -51,7 +55,7 @@ export default function customVideoBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { video_url, video_id, video_alt, image_url, image_id, image_alt } = attributes;
+      const { video_url, video_id, video_alt, image_url, image_id, image_alt, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -92,11 +96,18 @@ export default function customVideoBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
         </section>,
       ];
     },
     save: ({ attributes }) => {
-      const { video_url, video_id, video_alt, image_url, image_id, image_alt } = attributes;
+      const { video_url, video_id, video_alt, image_url, image_id, image_alt, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

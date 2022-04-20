@@ -39,11 +39,12 @@ if (!function_exists('pg_render_graphic_page_strip_container_block')) {
         $fields = array(
             'title' => '',
             'column_amount' => '',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="graphic-page-strip custom-component component-dark animated-element">
+        <div id="<?php echo $attributes->anchor_id ?>" class="graphic-page-strip custom-component component-dark animated-element">
             <?php if (!empty($attributes->column_amount === 'three')) : ?>
                 <div class="flex flex-col md:flex-row">
                     <div class="w-full md:w-6/12">

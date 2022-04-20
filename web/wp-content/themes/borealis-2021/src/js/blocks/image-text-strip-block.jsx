@@ -12,7 +12,7 @@ export default function imageTextStripBlock() {
    */
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
-  const { ToggleControl } = wp.components;
+  const { ToggleControl, TextControl } = wp.components;
 
   const { i18n } = wp;
 
@@ -75,6 +75,10 @@ export default function imageTextStripBlock() {
       type: "String",
       default: "",
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
   registerBlockType(`${namespace}/${slug}`, {
     title: i18n.__(title, `${namespace}`),
@@ -84,21 +88,7 @@ export default function imageTextStripBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const {
-        title,
-        copy,
-        btn_url,
-        btn_text,
-        image_alt,
-        image_alt_mobile,
-        image_id,
-        image_id_mobile,
-        image_url_mobile,
-        image_url,
-        reverse,
-        full_width,
-        text_color,
-      } = attributes;
+      const { title, copy, btn_url, btn_text, image_alt, image_alt_mobile, image_id, image_id_mobile, image_url_mobile, image_url, reverse, full_width, text_color, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -126,7 +116,7 @@ export default function imageTextStripBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
-           <BlockSettings
+          <BlockSettings
             title="Block Settings"
             controls={[
               {
@@ -234,23 +224,18 @@ export default function imageTextStripBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
         </div>,
       ];
     },
     save: ({ attributes }) => {
-      const { 
-        title, 
-        copy, 
-        btn_url, 
-        btn_text, 
-        image_url, 
-        reverse, 
-        image_url_mobile, 
-        full_width, 
-        image_id, 
-        image_id_mobile, 
-        text_color 
-      } = attributes;
+      const { title, copy, btn_url, btn_text, image_url, reverse, image_url_mobile, full_width, image_id, image_id_mobile, text_color, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

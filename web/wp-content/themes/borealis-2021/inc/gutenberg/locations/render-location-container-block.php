@@ -38,11 +38,12 @@ if (!function_exists('pg_render_locations_container_block')) {
         $fields     = array(
             'title' => '',
             'description' => '',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <section class="bg-primary-navy-400 text-shade-white-400">
+        <section id="<?php echo $attributes->anchor_id ?>" class="bg-primary-navy-400 text-shade-white-400 location">
             <div class="container flex flex-col md:flex-row py-10 md:py-18 cursor-default">
                 <div class="w-full tb:w-4/12 mb-8 tb:mb-0">
                     <?php if (!empty($attributes->title)) : ?>

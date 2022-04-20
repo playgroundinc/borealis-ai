@@ -4,6 +4,7 @@ import CustomRichText from "../reusable/custom-richtext-component.jsx";
 export default function tabbedContentContainerBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
   const { i18n } = wp;
 
   const blockSlug = "tabbed-content-container-block"; // slug for the block
@@ -37,6 +38,10 @@ export default function tabbedContentContainerBlock() {
       type: "String",
       default: "",
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -47,7 +52,7 @@ export default function tabbedContentContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { attributes, setAttributes } = props;
-      const { copy, cta_one_text, cta_one_link, cta_two_text, cta_two_link, title } = attributes;
+      const { copy, cta_one_text, cta_one_link, cta_two_text, cta_two_link, title, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -99,12 +104,19 @@ export default function tabbedContentContainerBlock() {
               },
             ]}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
           {save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/tabbed-content-panel-block`]} />}
         </div>,
       ];
     },
     save: ({ attributes }) => {
-      const { title, copy } = attributes;
+      const { title, copy, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });
