@@ -46,12 +46,14 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
             'text_or_image' => '',
             'image_id' => '',
             'image_alt' => '',
+            'anchor_id' => '',
+            'anchor_href' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
 ?>
-        <div class="component-padding <?php echo $attributes->bgColour ?> custom-component <?php echo is_singular('product') ? '-mb-10' : '' ?>">
+        <div id="<?php echo $attributes->anchor_id ?>" class="component-padding <?php echo $attributes->bgColour ?> custom-component <?php echo is_singular('product') ? '-mb-10' : '' ?>">
             <div class="container flex animated-element tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if ($attributes->text_or_image === 'image') : ?>
@@ -111,11 +113,13 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
             </div>
             <?php if (!empty($attributes->cta_text)) : ?>
                 <div class="container flex justify-end animated-element">
-                    <a href="#job-anchor" class="primary-button flex items-center w-full tb:w-8/12 mt-8 tb:mt-14">
-                        <p class="underline-cta  <?php echo $attributes->bgColour ?>">
-                            <?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8 down"><?php echo pg_render_icon('arrow-down'); ?></span>
-                        </p>
-                    </a>
+                    <div class="w-full tb:w-8/12 mt-8 tb:mt-14">
+                        <a href="<?php echo $attributes->anchor_href ?>" class="primary-button">
+                            <p class="underline-cta w-fit <?php echo $attributes->bgColour ?>">
+                                <?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8 down"><?php echo pg_render_icon('arrow-down'); ?></span>
+                            </p>
+                        </a>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>

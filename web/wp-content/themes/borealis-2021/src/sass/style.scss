@@ -38,6 +38,9 @@
     }
   }
   .tab-container {
+    .video-tabbable {
+      @apply py-0;
+    }
     .custom-video-panel {
       @apply w-full;
     }

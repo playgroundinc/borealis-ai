@@ -1807,6 +1807,7 @@ function jobBlock() {
       createBlock = _wp$blocks.createBlock;
   var _wp = wp,
       i18n = _wp.i18n;
+  var TextControl = wp.components.TextControl;
   var blockSlug = "job-block";
   var blockTitle = "Open Roles/Jobs Block";
   var blockDescription = "Component to create job block";
@@ -1815,6 +1816,10 @@ function jobBlock() {
 
   var attributes = {
     title: {
+      type: "String",
+      default: ""
+    },
+    anchor_id: {
       type: "String",
       default: ""
     },
@@ -1835,7 +1840,8 @@ function jobBlock() {
       var attributes = props.attributes,
           setAttributes = props.setAttributes;
       var title = attributes.title,
-          background_color = attributes.background_color;
+          background_color = attributes.background_color,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -1849,7 +1855,7 @@ function jobBlock() {
         value: "bg-shade-grey-100 text-shade-black-400 before:bg-shade-black-400 hover-dark"
       }];
       return [/*#__PURE__*/React.createElement("div", {
-        class: "custom-job__block"
+        class: "custom-job__block custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
       }, "Jobs Block"), /*#__PURE__*/React.createElement(_reusable_block_custom_settings_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -1874,12 +1880,19 @@ function jobBlock() {
           tagName: "p",
           placeholder: "Please provide a title"
         }]
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }))];
     },
     save: function save(_ref) {
       var attributes = _ref.attributes;
       var title = attributes.title,
-          background_color = attributes.background_color;
+          background_color = attributes.background_color,
+          anchor_id = attributes.anchor_id;
     }
   });
 }
@@ -1907,6 +1920,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function featuredJobsBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "jobs-container"; // slug for the block
@@ -1918,6 +1932,10 @@ function featuredJobsBlock() {
 
   var attributes = {
     title: {
+      type: "String",
+      default: ""
+    },
+    anchor_id: {
       type: "String",
       default: ""
     },
@@ -1938,7 +1956,8 @@ function featuredJobsBlock() {
       var attributes = props.attributes,
           setAttributes = props.setAttributes;
       var title = attributes.title,
-          background_color = attributes.background_color;
+          background_color = attributes.background_color,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -1978,6 +1997,12 @@ function featuredJobsBlock() {
           placeholder: "Please provide a title (optional)",
           settings: []
         }]
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-job")]
       }))];
@@ -1985,7 +2010,8 @@ function featuredJobsBlock() {
     save: function save(_ref) {
       var attributes = _ref.attributes;
       var title = attributes.title,
-          background_color = attributes.background_color;
+          background_color = attributes.background_color,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -7781,6 +7807,7 @@ function text2UpContainerBlock() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var useSelect = wp.data.useSelect;
   var _wp = wp,
       i18n = _wp.i18n;
@@ -7835,6 +7862,14 @@ function text2UpContainerBlock() {
     image_url: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
+    },
+    anchor_href: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -7858,7 +7893,9 @@ function text2UpContainerBlock() {
           image_alt = attributes.image_alt,
           image_id = attributes.image_id,
           image_url = attributes.image_url,
-          text_or_image = attributes.text_or_image;
+          text_or_image = attributes.text_or_image,
+          anchor_id = attributes.anchor_id,
+          anchor_href = attributes.anchor_href;
       var bgStyles = [{
         label: "Default",
         value: "bg-shade-white-400 text-shade-black-400 before:bg-shade-black-400"
@@ -8024,6 +8061,18 @@ function text2UpContainerBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID: (optional)"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_href,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_href", value);
+        },
+        label: "Anchor HREF: (optional)"
       }))];
     },
     save: function save() {
@@ -8037,7 +8086,9 @@ function text2UpContainerBlock() {
           image_alt = attributes.image_alt,
           image_id = attributes.image_id,
           image_url = attributes.image_url,
-          text_or_image = attributes.text_or_image;
+          text_or_image = attributes.text_or_image,
+          anchor_id = attributes.anchor_id,
+          anchor_href = attributes.anchor_href;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
