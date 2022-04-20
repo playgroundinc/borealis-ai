@@ -40,6 +40,7 @@ if (!function_exists('pg_render_callout_container_block')) {
             'description' => '',
             'title' => '',
             'image_id' => 0,
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
@@ -47,7 +48,7 @@ if (!function_exists('pg_render_callout_container_block')) {
         $allowed_html = pg_allowed_html();
         ob_start();
 ?>
-        <div class="custom-component component-dark py-20 bg-cover bg-center animated-element" style="background-image: url(<?php echo esc_url_raw($image) ?>)">
+        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component component-dark py-20 bg-cover bg-center animated-element callout" style="background-image: url(<?php echo esc_url_raw($image) ?>)">
             <div class="container">
                 <div class="text-shade-white-400 md:flex justify-between">
                     <div class="basis-1/3 shrink-0 pr-8">

@@ -39,6 +39,7 @@ if (!function_exists('pg_render_slider_container_block')) {
         $fields     = array(
             'title'        => '',
             'link' => '',
+            'anchor_id'    => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
@@ -46,7 +47,7 @@ if (!function_exists('pg_render_slider_container_block')) {
         ob_start();
         if (!empty($block['innerBlocks'])) :
 ?>
-            <div class="custom-component animated-element no-background-padding">
+            <div id="<?php echo $attributes->anchor_id ?>" class="custom-component animated-element no-background-padding slider">
                 <div class="container">
                     <div class="md:flex slider">
                         <div class="md:w-4/12 shrink-0 md:pr-4 flex flex-col">

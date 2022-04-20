@@ -5,6 +5,7 @@ import CustomRichText from "../reusable/custom-richtext-component.jsx";
 export default function tagCloudContainerBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
   const { i18n } = wp;
 
   const blockSlug = "tag-cloud-container-block"; // slug for the block
@@ -22,6 +23,10 @@ export default function tagCloudContainerBlock() {
       type: "String",
       default: "",
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -32,7 +37,7 @@ export default function tagCloudContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { attributes, setAttributes } = props;
-      const { title, background_color } = attributes;
+      const { title, background_color, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -81,12 +86,19 @@ export default function tagCloudContainerBlock() {
               },
             ]}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
           {save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/tag-cloud-item-block`]} />}
         </div>,
       ];
     },
     save: ({ attributes }) => {
-      const { title, background_color } = attributes;
+      const { title, background_color, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

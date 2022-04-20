@@ -6,6 +6,7 @@ import CustomImageUpload from "../reusable/custom-image-upload.jsx";
 export default function trmcAccordionBlock() {
   const { registerBlockType } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
   const { i18n } = wp;
 
   const blockSlug = "callout-container";
@@ -35,6 +36,10 @@ export default function trmcAccordionBlock() {
       type: "Number",
       default: 0,
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -45,7 +50,7 @@ export default function trmcAccordionBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { description, image_alt, image_id, image_url, title } = attributes;
+      const { description, image_alt, image_id, image_url, title, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -91,14 +96,19 @@ export default function trmcAccordionBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
-          <div className={`col--${columns}`}>
-            {save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/callout-column`]} />}
-          </div>
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
+          <div className={`col--${columns}`}>{save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/callout-column`]} />}</div>
         </div>,
       ];
     },
     save: () => {
-      const { columns, description, title } = attributes;
+      const { columns, description, title, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

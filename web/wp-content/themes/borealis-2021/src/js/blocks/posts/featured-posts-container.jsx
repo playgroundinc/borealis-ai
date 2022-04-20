@@ -10,6 +10,7 @@ export default function featuredPostsContainerBlock() {
    */
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
   const { i18n } = wp;
 
   const slug = "featured-posts-container";
@@ -23,6 +24,10 @@ export default function featuredPostsContainerBlock() {
       type: "String",
       default: "12",
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
   registerBlockType(`${namespace}/${slug}`, {
     title: i18n.__(title, `${namespace}`),
@@ -32,7 +37,7 @@ export default function featuredPostsContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { columns } = attributes;
+      const { columns, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -58,16 +63,19 @@ export default function featuredPostsContainerBlock() {
         />,
         <div className={`custom-container`}>
           <p className="block-title">Featured Post(s)</p>
-          {save ? (
-            <InnerBlocks.Content />
-          ) : (
-            <InnerBlocks allowedBlocks={[`${namespace}/select-research-blogs`, `${namespace}/select-news`]} />
-          )}
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
+          {save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/select-research-blogs`, `${namespace}/select-news`]} />}
         </div>,
       ];
     },
     save: ({ attributes }) => {
-      const { columns } = attributes;
+      const { columns, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

@@ -5,6 +5,7 @@ import CustomRichText from "../reusable/custom-richtext-component.jsx";
 export default function productContainerBlock() {
   const { registerBlockType } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
   const { i18n } = wp;
 
   const blockSlug = "product-container";
@@ -27,10 +28,14 @@ export default function productContainerBlock() {
         type: "String",
         default: "",
       },
+      anchor_id: {
+        type: "String",
+        default: "",
+      },
     },
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title, background_color } = attributes;
+      const { title, background_color, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -80,12 +85,18 @@ export default function productContainerBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
           {save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/select-product`]} />}
         </div>,
       ];
     },
     save: () => {
-      // const { title, background_color } = attributes;
       return <InnerBlocks.Content />;
     },
   });

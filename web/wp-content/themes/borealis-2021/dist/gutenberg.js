@@ -180,6 +180,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function accordionBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "accordion";
@@ -188,7 +189,7 @@ function accordionBlock() {
   var blockCategory = "containers";
   var blockIcon = "feedback"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ["description", "title"];
+  var stringAttrs = ["description", "title", "anchor_id"];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
@@ -202,7 +203,8 @@ function accordionBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var description = attributes.description,
-          title = attributes.title;
+          title = attributes.title,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -230,11 +232,20 @@ function accordionBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/accordion-row")]
       }))];
     },
     save: function save() {
+      var title = attributes.title,
+          description = attributes.description,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -536,6 +547,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function trmcAccordionBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "callout-container";
@@ -564,6 +576,10 @@ function trmcAccordionBlock() {
     image_id: {
       type: "Number",
       default: 0
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -581,7 +597,8 @@ function trmcAccordionBlock() {
           image_alt = attributes.image_alt,
           image_id = attributes.image_id,
           image_url = attributes.image_url,
-          title = attributes.title;
+          title = attributes.title,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -621,6 +638,12 @@ function trmcAccordionBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), /*#__PURE__*/React.createElement("div", {
         className: "col--".concat(columns)
       }, save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
@@ -630,7 +653,8 @@ function trmcAccordionBlock() {
     save: function save() {
       var columns = attributes.columns,
           description = attributes.description,
-          title = attributes.title;
+          title = attributes.title,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -1084,6 +1108,10 @@ function customVideoBlock() {
     image_id: {
       type: "Number",
       default: 0
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
@@ -1102,7 +1130,8 @@ function customVideoBlock() {
           video_alt = attributes.video_alt,
           image_url = attributes.image_url,
           image_id = attributes.image_id,
-          image_alt = attributes.image_alt;
+          image_alt = attributes.image_alt,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -1138,6 +1167,12 @@ function customVideoBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }))];
     },
     save: function save(_ref) {
@@ -1147,7 +1182,8 @@ function customVideoBlock() {
           video_alt = attributes.video_alt,
           image_url = attributes.image_url,
           image_id = attributes.image_id,
-          image_alt = attributes.image_alt;
+          image_alt = attributes.image_alt,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -1539,6 +1575,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function galleryContainerBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "gallery-container"; // slug for the block
@@ -1568,6 +1605,10 @@ function galleryContainerBlock() {
     font_size: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -1585,7 +1626,8 @@ function galleryContainerBlock() {
           description = attributes.description,
           link = attributes.link,
           link_text = attributes.link_text,
-          font_size = attributes.font_size;
+          font_size = attributes.font_size,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -1643,6 +1685,12 @@ function galleryContainerBlock() {
           placeholder: "Please provide a link text (optional)",
           settings: []
         }]
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), /*#__PURE__*/React.createElement("p", null, "Please included a minimum of 4 new blocks below"), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-team-member"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-image")]
       }))];
@@ -1653,7 +1701,8 @@ function galleryContainerBlock() {
           description = attributes.description,
           link = attributes.link,
           link_text = attributes.link_text,
-          font_size = attributes.font_size;
+          font_size = attributes.font_size,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -2239,7 +2288,9 @@ function iconListContainerBlock() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
-  var ToggleControl = wp.components.ToggleControl;
+  var _wp$components = wp.components,
+      ToggleControl = _wp$components.ToggleControl,
+      TextControl = _wp$components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "icon-list-container-block"; // slug for the block
@@ -2261,6 +2312,10 @@ function iconListContainerBlock() {
     icon: {
       type: "Boolean",
       default: false
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -2276,7 +2331,8 @@ function iconListContainerBlock() {
           setAttributes = props.setAttributes;
       var title = attributes.title,
           description = attributes.description,
-          icon = attributes.icon;
+          icon = attributes.icon,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -2313,6 +2369,12 @@ function iconListContainerBlock() {
         onChange: function onChange(change) {
           updateAttributeValue("icon", change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/custom-icon-list-item-block")]
       }))];
@@ -2321,7 +2383,8 @@ function iconListContainerBlock() {
       var attributes = _ref.attributes;
       var title = attributes.title,
           description = attributes.description,
-          icon = attributes.icon;
+          icon = attributes.icon,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -2753,6 +2816,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helper-functions/constants */ "./src/js/blocks/helper-functions/constants.js");
 /* harmony import */ var _reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reusable/custom-richtext-component.jsx */ "./src/js/blocks/reusable/custom-richtext-component.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 function imageRowContainer() {
@@ -2761,6 +2826,7 @@ function imageRowContainer() {
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
   var useSelect = wp.data.useSelect;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "image-row-container"; // slug for the block
@@ -2778,6 +2844,10 @@ function imageRowContainer() {
     limit: {
       type: "Number",
       default: 0
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -2792,6 +2862,14 @@ function imageRowContainer() {
       var innerBlockCount = useSelect(function (select) {
         return select("core/block-editor").getBlock(props.clientId).innerBlocks;
       });
+      var setAttributes = props.setAttributes,
+          attributes = props.attributes;
+      var anchor_id = attributes.anchor_id;
+
+      function updateAttributeValue(attribute, value) {
+        setAttributes(_defineProperty({}, attribute, value));
+      }
+
       return [/*#__PURE__*/React.createElement("div", {
         class: "custom-component"
       }, /*#__PURE__*/React.createElement("p", {
@@ -2805,9 +2883,16 @@ function imageRowContainer() {
             return false;
           }
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }))];
     },
     save: function save() {
+      var anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -2845,7 +2930,9 @@ function imageTextStripBlock() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
-  var ToggleControl = wp.components.ToggleControl;
+  var _wp$components = wp.components,
+      ToggleControl = _wp$components.ToggleControl,
+      TextControl = _wp$components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var slug = "image-text-strip";
@@ -2906,6 +2993,10 @@ function imageTextStripBlock() {
     text_color: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
@@ -2931,7 +3022,8 @@ function imageTextStripBlock() {
           image_url = attributes.image_url,
           reverse = attributes.reverse,
           full_width = attributes.full_width,
-          text_color = attributes.text_color;
+          text_color = attributes.text_color,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -3046,6 +3138,12 @@ function imageTextStripBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }))];
     },
     save: function save(_ref) {
@@ -3060,7 +3158,8 @@ function imageTextStripBlock() {
           full_width = attributes.full_width,
           image_id = attributes.image_id,
           image_id_mobile = attributes.image_id_mobile,
-          text_color = attributes.text_color;
+          text_color = attributes.text_color,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -3241,6 +3340,7 @@ function LocationsContainerBlock() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var useSelect = wp.data.useSelect;
   var _wp = wp,
       i18n = _wp.i18n;
@@ -3259,6 +3359,10 @@ function LocationsContainerBlock() {
     description: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -3273,7 +3377,8 @@ function LocationsContainerBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var title = attributes.title,
-          description = attributes.description;
+          description = attributes.description,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -3309,6 +3414,12 @@ function LocationsContainerBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/location")],
         renderAppender: function renderAppender() {
@@ -3322,7 +3433,8 @@ function LocationsContainerBlock() {
     },
     save: function save() {
       var title = attributes.title,
-          description = attributes.description;
+          description = attributes.description,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -3445,6 +3557,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function pgLogoContainerBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "logos-container";
@@ -3461,6 +3574,10 @@ function pgLogoContainerBlock() {
     title: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -3475,7 +3592,8 @@ function pgLogoContainerBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var copy = attributes.copy,
-          title = attributes.title;
+          title = attributes.title,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -3503,6 +3621,12 @@ function pgLogoContainerBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), /*#__PURE__*/React.createElement("div", {
         className: "col--4"
       }, save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
@@ -3510,6 +3634,9 @@ function pgLogoContainerBlock() {
       })))];
     },
     save: function save() {
+      var title = attributes.title,
+          copy = attributes.copy,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -4409,6 +4536,7 @@ function pageStripGraphicContainer() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var useSelect = wp.data.useSelect;
   var _wp = wp,
       i18n = _wp.i18n;
@@ -4431,6 +4559,10 @@ function pageStripGraphicContainer() {
     column_amount: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -4447,7 +4579,8 @@ function pageStripGraphicContainer() {
       });
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var column_amount = attributes.column_amount;
+      var column_amount = attributes.column_amount,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -4476,6 +4609,12 @@ function pageStripGraphicContainer() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/page-strip-graphic")],
         renderAppender: function renderAppender() {
@@ -4488,7 +4627,8 @@ function pageStripGraphicContainer() {
       }))];
     },
     save: function save() {
-      var column_amount = attributes.column_amount;
+      var column_amount = attributes.column_amount,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -4911,6 +5051,7 @@ function podcastBlock() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var useSelect = wp.data.useSelect;
   var _wp = wp,
       i18n = _wp.i18n;
@@ -4945,6 +5086,10 @@ function podcastBlock() {
     image_url: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -4963,7 +5108,8 @@ function podcastBlock() {
           link_url = attributes.link_url,
           image_id = attributes.image_id,
           image_url = attributes.image_url,
-          image_alt = attributes.image_alt;
+          image_alt = attributes.image_alt,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -5022,6 +5168,12 @@ function podcastBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }))];
     },
     save: function save() {
@@ -5030,7 +5182,8 @@ function podcastBlock() {
           link_url = attributes.link_url,
           image_id = attributes.image_id,
           image_url = attributes.image_url,
-          image_alt = attributes.image_alt;
+          image_alt = attributes.image_alt,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -5064,6 +5217,7 @@ function featuredPostsContainerBlock() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var slug = "featured-posts-container";
@@ -5076,6 +5230,10 @@ function featuredPostsContainerBlock() {
     columns: {
       type: "String",
       default: "12"
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
@@ -5089,7 +5247,8 @@ function featuredPostsContainerBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var columns = attributes.columns;
+      var columns = attributes.columns,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -5117,13 +5276,20 @@ function featuredPostsContainerBlock() {
         className: "custom-container"
       }, /*#__PURE__*/React.createElement("p", {
         className: "block-title"
-      }, "Featured Post(s)"), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
+      }, "Featured Post(s)"), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
+      }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-research-blogs"), "".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-news")]
       }))];
     },
     save: function save(_ref) {
       var attributes = _ref.attributes;
-      var columns = attributes.columns;
+      var columns = attributes.columns,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -5152,6 +5318,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function productContainerBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "product-container";
@@ -5173,6 +5340,10 @@ function productContainerBlock() {
       background_color: {
         type: "String",
         default: ""
+      },
+      anchor_id: {
+        type: "String",
+        default: ""
       }
     },
     edit: function edit(props) {
@@ -5181,7 +5352,8 @@ function productContainerBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var title = attributes.title,
-          background_color = attributes.background_color;
+          background_color = attributes.background_color,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -5222,12 +5394,17 @@ function productContainerBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-product")]
       }))];
     },
     save: function save() {
-      // const { title, background_color } = attributes;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -5332,6 +5509,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function publicationsContainerBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "publications-container"; // slug for the block
@@ -5349,6 +5527,10 @@ function publicationsContainerBlock() {
     link: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -5363,7 +5545,8 @@ function publicationsContainerBlock() {
       var attributes = props.attributes,
           setAttributes = props.setAttributes;
       var title = attributes.title,
-          link = attributes.link;
+          link = attributes.link,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -5395,6 +5578,12 @@ function publicationsContainerBlock() {
           placeholder: "Please provide a link for the View All button",
           settings: []
         }]
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-publications"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-research-blogs"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-news")]
       }))];
@@ -5402,7 +5591,8 @@ function publicationsContainerBlock() {
     save: function save(_ref) {
       var attributes = _ref.attributes;
       var title = attributes.title,
-          link = attributes.link;
+          link = attributes.link,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -6661,7 +6851,7 @@ function pgNewsSlideBlock() {
   var blockCategory = "rows";
   var blockIcon = "external"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ['link', 'title', 'source'];
+  var stringAttrs = ["link", "title", "source"];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
@@ -6689,26 +6879,26 @@ function pgNewsSlideBlock() {
         className: "block-title"
       }, "News Slide"), /*#__PURE__*/React.createElement(_reusable_custom_richtext_component_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
         components: [{
-          reference: 'title',
+          reference: "title",
           value: title,
-          tagName: 'h3',
-          classes: ['h3'],
+          tagName: "h3",
+          classes: ["h3"],
           settings: [],
-          placeholder: 'Provide the title for the news item (required)'
+          placeholder: "Provide the title for the news item (required)"
         }, {
-          reference: 'link',
+          reference: "link",
           value: link,
-          tagName: 'p',
-          classes: ['paragraph'],
+          tagName: "p",
+          classes: ["paragraph"],
           settings: [],
-          placeholder: 'Provide a link to the news item (required)'
+          placeholder: "Provide a link to the news item (required)"
         }, {
-          reference: 'source',
+          reference: "source",
           value: source,
-          tagName: 'p',
-          classes: ['paragraph'],
+          tagName: "p",
+          classes: ["paragraph"],
           settings: [],
-          placeholder: 'Provide the name for the news source (optional)'
+          placeholder: "Provide the name for the news source (optional)"
         }],
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
@@ -6747,6 +6937,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function pgCarouselBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "carousel";
@@ -6755,7 +6946,7 @@ function pgCarouselBlock() {
   var blockCategory = "carousels";
   var blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ["link", "title"];
+  var stringAttrs = ["link", "title", "anchor_id"];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
@@ -6769,7 +6960,8 @@ function pgCarouselBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var link = attributes.link,
-          title = attributes.title;
+          title = attributes.title,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -6798,13 +6990,20 @@ function pgCarouselBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), /*#__PURE__*/React.createElement("p", null, "Please included a minimum of 4 new blocks below"), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-research-blogs"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/select-news"), "".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/news-slide")]
       }))];
     },
     save: function save() {
       var link = attributes.link,
-          title = attributes.title;
+          title = attributes.title,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -6969,6 +7168,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function testimonialSliderBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "testimonial-carousel";
@@ -6977,7 +7177,7 @@ function testimonialSliderBlock() {
   var blockCategory = "carousels";
   var blockIcon = "slides"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
-  var stringAttrs = ["title"];
+  var stringAttrs = ["title", "anchor_id"];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_2__["default"])(stringAttrs);
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
     title: i18n.__(blockTitle),
@@ -6988,6 +7188,10 @@ function testimonialSliderBlock() {
       title: {
         type: "String",
         default: ""
+      },
+      anchor_id: {
+        type: "String",
+        default: ""
       }
     },
     edit: function edit(props) {
@@ -6995,7 +7199,8 @@ function testimonialSliderBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
-      var title = attributes.title;
+      var title = attributes.title,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -7017,13 +7222,20 @@ function testimonialSliderBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/testimonial")]
       }))];
     },
     save: function save() {
       var link = attributes.link,
-          title = attributes.title;
+          title = attributes.title,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -7266,6 +7478,7 @@ function statisticsContainerBlock() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var useSelect = wp.data.useSelect;
   var _wp = wp,
       i18n = _wp.i18n;
@@ -7288,6 +7501,10 @@ function statisticsContainerBlock() {
     bgColour: {
       type: "String",
       default: "default"
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -7303,7 +7520,8 @@ function statisticsContainerBlock() {
           attributes = props.attributes;
       var title = attributes.title,
           description = attributes.description,
-          bgColour = attributes.bgColour;
+          bgColour = attributes.bgColour,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -7358,6 +7576,12 @@ function statisticsContainerBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/statistics")],
         renderAppender: function renderAppender() {
@@ -7372,7 +7596,8 @@ function statisticsContainerBlock() {
     save: function save() {
       var title = attributes.title,
           description = attributes.description,
-          bgColour = attributes.bgColour;
+          bgColour = attributes.bgColour,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -7401,6 +7626,7 @@ function tabbedContentContainerBlock() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "tabbed-content-container-block"; // slug for the block
@@ -7434,6 +7660,10 @@ function tabbedContentContainerBlock() {
     title: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -7452,7 +7682,8 @@ function tabbedContentContainerBlock() {
           cta_one_link = attributes.cta_one_link,
           cta_two_text = attributes.cta_two_text,
           cta_two_link = attributes.cta_two_link,
-          title = attributes.title;
+          title = attributes.title,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -7497,6 +7728,12 @@ function tabbedContentContainerBlock() {
           tagName: "p",
           placeholder: "Please provide a link for the second CTA (optional)"
         }]
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tabbed-content-panel-block")]
       }))];
@@ -7504,7 +7741,8 @@ function tabbedContentContainerBlock() {
     save: function save(_ref) {
       var attributes = _ref.attributes;
       var title = attributes.title,
-          copy = attributes.copy;
+          copy = attributes.copy,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -7622,6 +7860,7 @@ function tagCloudContainerBlock() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "tag-cloud-container-block"; // slug for the block
@@ -7639,6 +7878,10 @@ function tagCloudContainerBlock() {
     background_color: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -7653,7 +7896,8 @@ function tagCloudContainerBlock() {
       var attributes = props.attributes,
           setAttributes = props.setAttributes;
       var title = attributes.title,
-          background_color = attributes.background_color;
+          background_color = attributes.background_color,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -7693,6 +7937,12 @@ function tagCloudContainerBlock() {
           placeholder: "Please provide a title (optional)",
           settings: []
         }]
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/tag-cloud-item-block")]
       }))];
@@ -7700,7 +7950,8 @@ function tagCloudContainerBlock() {
     save: function save(_ref) {
       var attributes = _ref.attributes;
       var title = attributes.title,
-          background_color = attributes.background_color;
+          background_color = attributes.background_color,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -8353,6 +8604,7 @@ function textImageContainerBlock() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var useSelect = wp.data.useSelect;
   var _wp = wp,
       i18n = _wp.i18n;
@@ -8371,6 +8623,10 @@ function textImageContainerBlock() {
     copy: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -8385,7 +8641,8 @@ function textImageContainerBlock() {
       var setAttributes = props.setAttributes,
           attributes = props.attributes;
       var title = attributes.title,
-          copy = attributes.copy;
+          copy = attributes.copy,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -8429,11 +8686,18 @@ function textImageContainerBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }))];
     },
     save: function save() {
       var title = attributes.title,
-          copy = attributes.copy;
+          copy = attributes.copy,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -8496,6 +8760,10 @@ function titleTextCtaBlock() {
     background_colour: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants_js__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(slug), {
@@ -8513,7 +8781,8 @@ function titleTextCtaBlock() {
           copy = attributes.copy,
           cta_url = attributes.cta_url,
           cta_text = attributes.cta_text,
-          background_colour = attributes.background_colour;
+          background_colour = attributes.background_colour,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -8588,6 +8857,12 @@ function titleTextCtaBlock() {
           updateAttributeValue("cta_url", value);
         },
         label: "CTA Url:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }))];
     },
     save: function save(_ref) {
@@ -8596,7 +8871,8 @@ function titleTextCtaBlock() {
           copy = attributes.copy,
           cta_url = attributes.cta_url,
           cta_text = attributes.cta_text,
-          background_colour = attributes.background_colour;
+          background_colour = attributes.background_colour,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });
@@ -8627,6 +8903,7 @@ function videoTabbedContentContainerBlock() {
       registerBlockType = _wp$blocks.registerBlockType,
       createBlock = _wp$blocks.createBlock;
   var InnerBlocks = wp.blockEditor.InnerBlocks;
+  var TextControl = wp.components.TextControl;
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "video-tabbed-content-container-block"; // slug for the block
@@ -8652,6 +8929,10 @@ function videoTabbedContentContainerBlock() {
     title: {
       type: "String",
       default: ""
+    },
+    anchor_id: {
+      type: "String",
+      default: ""
     }
   };
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/").concat(blockSlug), {
@@ -8668,7 +8949,8 @@ function videoTabbedContentContainerBlock() {
       var image_id = attributes.image_id,
           image_url = attributes.image_url,
           image_alt = attributes.image_alt,
-          title = attributes.title;
+          title = attributes.title,
+          anchor_id = attributes.anchor_id;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -8701,6 +8983,12 @@ function videoTabbedContentContainerBlock() {
         onChange: function onChange(attribute, change) {
           updateAttributeValue(attribute, change);
         }
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: anchor_id,
+        onChange: function onChange(value) {
+          updateAttributeValue("anchor_id", value);
+        },
+        label: "Anchor ID:"
       }), save ? /*#__PURE__*/React.createElement(InnerBlocks.Content, null) : /*#__PURE__*/React.createElement(InnerBlocks, {
         allowedBlocks: ["".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/video-tabbed-content-panel-block")]
       }))];
@@ -8710,7 +8998,8 @@ function videoTabbedContentContainerBlock() {
       var image_id = attributes.image_id,
           image_url = attributes.image_url,
           image_alt = attributes.image_alt,
-          title = attributes.title;
+          title = attributes.title,
+          anchor_id = attributes.anchor_id;
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);
     }
   });

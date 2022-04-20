@@ -38,13 +38,14 @@ if (!function_exists('pg_render_publications_container_block')) {
         $fields     = array(
             'title' => '',
             'link' => '',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
 
         ob_start();
 ?>
-        <div class="custom-component animated-element nestable component-padding">
+        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component animated-element nestable component-padding publications">
             <div class="md:flex nested-flex md:container">
                 <div class="md:basis-4/12 container md:m-0 shrink-0">
                     <?php if (!empty($attributes->title)) : ?>
