@@ -40,7 +40,7 @@ if ( ! function_exists( 'pg_render_spacer_container' ) ) {
         $allowed_html = pg_allowed_html();
         ob_start();
         ?>
-           <div class="bg-shade-grey-100 w-full">
+           <div class="spacer w-full">
             <?php foreach ($block['innerBlocks'] as $index => $inner_block) : ?>
               <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
             <?php endforeach; ?>

@@ -32,7 +32,7 @@ if ( ! function_exists( 'pg_render_spacer_block' ) ) {
 
         ob_start();
         ?>
-            <div class="h-3.125 bg-white"></div>
+            <div class="h-7 md:h-14 bg-white"></div>
         <?php
         return ob_get_clean();
     }

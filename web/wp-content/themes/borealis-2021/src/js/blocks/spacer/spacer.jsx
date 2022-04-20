@@ -12,7 +12,7 @@ export default function pgSpacerBlock() {
 
 	const slug = "spacer";
 	const title = "Spacer";
-	const description = "Adds 50px of vertical space";
+	const description = "Adds vertical spacer";
 	const category = "rows";
 	const icon = "insert"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
@@ -31,7 +31,7 @@ export default function pgSpacerBlock() {
 		edit: (props, editor = false, save = false) => {
 			return [
 				<section class="child-component h-14">
-					<p> 50px of Space</p>
+					<p> 56px of Space</p>
 				</section>,
 			];
 		},

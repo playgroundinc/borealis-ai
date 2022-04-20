@@ -7082,7 +7082,7 @@ function pgSpacerBlock() {
       i18n = _wp.i18n;
   var slug = "spacer";
   var title = "Spacer";
-  var description = "Adds 50px of vertical space";
+  var description = "Adds vertical spacer";
   var category = "rows";
   var icon = "insert"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
 
@@ -7103,7 +7103,7 @@ function pgSpacerBlock() {
       var save = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
       return [/*#__PURE__*/React.createElement("section", {
         class: "child-component h-14"
-      }, /*#__PURE__*/React.createElement("p", null, " 50px of Space"))];
+      }, /*#__PURE__*/React.createElement("p", null, " 56px of Space"))];
     },
     save: function save() {
       return /*#__PURE__*/React.createElement(InnerBlocks.Content, null);

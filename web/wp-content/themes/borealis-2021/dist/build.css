@@ -1542,8 +1542,8 @@ ol.footnotes li small{
 .h-9{
   height: 36px;
 }
-.h-12{
-  height: 48px;
+.h-3{
+  height: 12px;
 }
 .h-8{
   height: 32px;
@@ -1551,11 +1551,8 @@ ol.footnotes li small{
 .h-14{
   height: 56px;
 }
-.h-3\.125{
-  height: 3.125rem;
-}
-.h-3{
-  height: 12px;
+.h-7{
+  height: 28px;
 }
 .max-h-screen{
   max-height: 100vh;
@@ -3163,6 +3160,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:h-11{
     height: 44px;
+  }
+    .md\:h-14{
+    height: 56px;
   }
     .md\:min-h-\[280px\]{
     min-height: 280px;
