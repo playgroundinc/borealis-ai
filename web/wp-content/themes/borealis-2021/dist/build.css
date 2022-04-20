@@ -1542,17 +1542,14 @@ ol.footnotes li small{
 .h-9{
   height: 36px;
 }
-.h-3{
-  height: 12px;
+.h-7{
+  height: 28px;
 }
 .h-8{
   height: 32px;
 }
 .h-14{
   height: 56px;
-}
-.h-7{
-  height: 28px;
 }
 .max-h-screen{
   max-height: 100vh;
