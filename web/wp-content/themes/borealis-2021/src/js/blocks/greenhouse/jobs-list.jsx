@@ -5,7 +5,6 @@ import CustomRichText from "../reusable/custom-richtext-component.jsx";
 export default function featuredJobsBlock() {
   const { registerBlockType } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
-  const { TextControl } = wp.components;
   const { i18n } = wp;
 
   const blockSlug = "jobs-container"; // slug for the block
@@ -16,10 +15,6 @@ export default function featuredJobsBlock() {
 
   const attributes = {
     title: {
-      type: "String",
-      default: "",
-    },
-    anchor_id: {
       type: "String",
       default: "",
     },
@@ -37,7 +32,7 @@ export default function featuredJobsBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { attributes, setAttributes } = props;
-      const { title, background_color, anchor_id } = attributes;
+      const { title, background_color } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -86,19 +81,12 @@ export default function featuredJobsBlock() {
               },
             ]}
           />
-          <TextControl
-            value={anchor_id}
-            onChange={(value) => {
-              updateAttributeValue("anchor_id", value);
-            }}
-            label="Anchor ID:"
-          />
           {save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/select-job`]} />}
         </div>,
       ];
     },
     save: ({ attributes }) => {
-      const { title, background_color, anchor_id } = attributes;
+      const { title, background_color } = attributes;
       return <InnerBlocks.Content />;
     },
   });

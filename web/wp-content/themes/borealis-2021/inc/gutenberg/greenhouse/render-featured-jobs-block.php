@@ -38,7 +38,6 @@ if (!function_exists('pg_render_featured_jobs_block')) {
         $fields     = array(
             'title'        => '',
             'background_color' => '',
-            'anchor_id'  => '',
         );
         $namespace = pg_get_namespace();
         $attributes = pg_get_attributes($attrs, $fields);
@@ -51,7 +50,7 @@ if (!function_exists('pg_render_featured_jobs_block')) {
         ob_start();
 
 ?>
-        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component component-padding <?php echo $attributes->background_color ?>">
+        <div id="job-anchor" class="custom-component component-padding <?php echo $attributes->background_color ?>">
             <div class="animated-element <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:container') : '' ?>">
                 <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:flex') : '' ?>">
                     <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : '' ?> md:w-full md:m-0 md:basis-1/3 shrink-0 md:pr-10">

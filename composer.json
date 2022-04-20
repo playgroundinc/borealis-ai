@@ -44,11 +44,6 @@
     "sort-packages": true,
     "platform": {
       "php": "7.3"
-    },
-    "allow-plugins": {
-      "composer/installers": true,
-      "johnpbloch/wordpress-core-installer": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
   "extra": {

@@ -578,10 +578,8 @@ class Loader {
     if (markup && markup.length > 0) {
       this.generateMarkup(markup);
     } else {
-      const listItem = document.createElement('li'); // Adding a class of hidden to this for now because not entirely sure we need this at all. 
-      // No results found message is already in the markup for all individual search bars.
-
-      listItem.classList = 'container paragraph py-7 hidden';
+      const listItem = document.createElement('li');
+      listItem.classList = 'container paragraph py-7';
       listItem.innerText = 'No results found';
       this.list.append(listItem);
     }

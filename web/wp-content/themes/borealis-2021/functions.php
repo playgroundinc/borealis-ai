@@ -242,10 +242,6 @@ require get_template_directory() . '/inc/gutenberg/locations/render-location-blo
 // Custom Video Block
 require get_template_directory() . '/inc/gutenberg/custom-video/render-custom-video-block.php';
 
-// Spacing Blocks
-require get_template_directory() . '/inc/gutenberg/spacer/render-spacer.php';
-require get_template_directory() . '/inc/gutenberg/spacer/render-spacer-container.php';
-
 // add hook for subnav
 add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects_sub_menu', 10, 2);
 
@@ -345,12 +341,3 @@ function mytheme_admin_bar_render()
   $wp_admin_bar->remove_menu('comments');
 }
 add_action('wp_before_admin_bar_render', 'mytheme_admin_bar_render');
-
-function add_svg_mime_types( $mimes ) {
-  // SVGZ allowed mime types.
-  $mimes['svg'] = 'image/svg+xml';
-  $mimes['svgz'] = 'image/svg+xml';
-
-  return $mimes;
-}
-add_filter( 'upload_mimes', 'add_svg_mime_types' );

@@ -5,7 +5,6 @@ import CustomRichText from "../reusable/custom-richtext-component.jsx";
 export default function jobBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { i18n } = wp;
-  const { TextControl } = wp.components;
 
   const blockSlug = "job-block";
   const blockTitle = "Open Roles/Jobs Block";
@@ -15,10 +14,6 @@ export default function jobBlock() {
 
   const attributes = {
     title: {
-      type: "String",
-      default: "",
-    },
-    anchor_id: {
       type: "String",
       default: "",
     },
@@ -36,7 +31,7 @@ export default function jobBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { attributes, setAttributes } = props;
-      const { title, background_color, anchor_id } = attributes;
+      const { title, background_color } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -54,7 +49,7 @@ export default function jobBlock() {
       ];
 
       return [
-        <div class="custom-job__block custom-container">
+        <div class="custom-job__block">
           <p className="block-title">Jobs Block</p>
           <BlockSettings
             title="Block Settings"
@@ -84,18 +79,11 @@ export default function jobBlock() {
               },
             ]}
           />
-          <TextControl
-            value={anchor_id}
-            onChange={(value) => {
-              updateAttributeValue("anchor_id", value);
-            }}
-            label="Anchor ID:"
-          />
         </div>,
       ];
     },
     save: ({ attributes }) => {
-      const { title, background_color, anchor_id } = attributes;
+      const { title, background_color } = attributes;
     },
   });
 }
