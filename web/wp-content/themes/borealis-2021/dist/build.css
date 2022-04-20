@@ -1542,17 +1542,14 @@ ol.footnotes li small{
 .h-9{
   height: 36px;
 }
-.h-3{
-  height: 12px;
+.h-7{
+  height: 28px;
 }
 .h-8{
   height: 32px;
 }
 .h-14{
   height: 56px;
-}
-.h-7{
-  height: 28px;
 }
 .max-h-screen{
   max-height: 100vh;
@@ -2022,6 +2019,10 @@ ol.footnotes li small{
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.py-8{
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
 .py-10{
   padding-top: 40px;
   padding-bottom: 40px;
@@ -2053,10 +2054,6 @@ ol.footnotes li small{
 .py-6{
   padding-top: 24px;
   padding-bottom: 24px;
-}
-.py-8{
-  padding-top: 32px;
-  padding-bottom: 32px;
 }
 .py-7{
   padding-top: 28px;
