@@ -57,10 +57,8 @@
     $Menu = new PG_Custom_Menus();
     $has_subnav = pg_check_for_submenu('navigation-main', $post->ID);
     $custom_logo_id = get_theme_mod('custom_logo');
-    $image = wp_get_attachment_image_src($custom_logo_id, 'full')[0];
-    $imgPath = parse_url($image)['path'];
+    $logo = wp_get_attachment_image($custom_logo_id, 'full');
     $url = get_home_url();
-    $logoUrl = $url . $imgPath;
     $hero_image = get_the_post_thumbnail_url($post->ID, 'full');
     if (empty($hero_image)) {
         $hero_image = get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg';
@@ -124,7 +122,7 @@
                     <div class="flex md:flex-row flex-col items-center px-4 md:px-5 lg:px-0 lg:container">
                         <div class="logo shrink-0 h-fit flex md:w-auto w-full justify-between align-center">
                             <a href="<?php echo get_home_url(); ?>">
-                                <img src="<?php echo $logoUrl ?>" alt="">
+                                <?php echo $logo ?>
                             </a>
                             <button role="button" class="text-shade-white-400 icon--lg md:hidden menu-toggle" data-toggle="main-nav-items" aria-expanded="false" aria-label="Open Main Menu">
                                 <?php echo pg_render_icon('hamburger') ?>
