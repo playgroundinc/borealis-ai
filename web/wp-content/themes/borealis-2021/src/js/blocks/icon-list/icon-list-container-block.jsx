@@ -5,7 +5,7 @@ import CustomRichText from "../reusable/custom-richtext-component.jsx";
 export default function iconListContainerBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
-  const { ToggleControl } = wp.components;
+  const { ToggleControl, TextControl } = wp.components;
   const { i18n } = wp;
 
   const blockSlug = "icon-list-container-block"; // slug for the block
@@ -27,6 +27,10 @@ export default function iconListContainerBlock() {
       type: "Boolean",
       default: false,
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -37,7 +41,7 @@ export default function iconListContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { attributes, setAttributes } = props;
-      const { title, description, icon } = attributes;
+      const { title, description, icon, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -80,12 +84,19 @@ export default function iconListContainerBlock() {
               updateAttributeValue("icon", change);
             }}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
           {save ? <InnerBlocks.Content /> : <InnerBlocks allowedBlocks={[`${namespace}/custom-icon-list-item-block`]} />}
         </div>,
       ];
     },
     save: ({ attributes }) => {
-      const { title, description, icon } = attributes;
+      const { title, description, icon, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

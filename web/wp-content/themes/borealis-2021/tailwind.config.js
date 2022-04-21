@@ -113,6 +113,10 @@ module.exports = {
 				animate: "opacity top",
 				filter: "filter",
 			},
+			height: {
+				7: "28px",
+				14: "56px",
+			},
 			width: {
 				"3/8": "calc((100% / 8) * 3)",
 				"5/8": "calc((100% / 8) * 5)",

@@ -39,6 +39,7 @@ if (!function_exists('pg_render_testimonial_slider_block')) {
         $fields     = array(
             'title'        => '',
             'display_style' => 'dark',
+            'anchor_id'    => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
@@ -46,7 +47,7 @@ if (!function_exists('pg_render_testimonial_slider_block')) {
         ob_start();
         if (!empty($block['innerBlocks'])) :
 ?>
-            <div class="custom-component animated-element testimonial-slider relative component-dark">
+            <div id="<?php echo $attributes->anchor_id ?>" class="custom-component animated-element testimonial-slider relative component-dark">
                 <div class="absolute right-0 bottom-12 w-full z-10">
                     <div class="slider-block__controls container text-shade-white-400">
                         <div class="flex md:justify-end">

@@ -38,13 +38,14 @@ if (!function_exists('pg_render_products_container_block')) {
         $fields     = array(
             'title' => '',
             'background_color' => '',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
 
         ob_start();
 ?>
-        <div class="custom-component component-padding <?php echo $attributes->background_color ?>">
+        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component component-padding product-list <?php echo $attributes->background_color ?>">
             <div class="container pb-10 animated-element">
                 <?php if (!empty($attributes->title)) : ?>
                     <h2 class="h3 text-shade-grey-700"><?php echo $attributes->title ?></h2>

@@ -38,6 +38,10 @@ export default function titleTextCtaBlock() {
       type: "String",
       default: "",
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
   registerBlockType(`${namespace}/${slug}`, {
     title: i18n.__(title, `${namespace}`),
@@ -47,7 +51,7 @@ export default function titleTextCtaBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title, copy, cta_url, cta_text, background_colour } = attributes;
+      const { title, copy, cta_url, cta_text, background_colour, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -137,11 +141,18 @@ export default function titleTextCtaBlock() {
             }}
             label="CTA Url:"
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
         </section>,
       ];
     },
     save: ({ attributes }) => {
-      const { title, copy, cta_url, cta_text, background_colour } = attributes;
+      const { title, copy, cta_url, cta_text, background_colour, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

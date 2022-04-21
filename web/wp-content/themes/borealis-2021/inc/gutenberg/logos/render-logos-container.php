@@ -38,12 +38,13 @@ if (!function_exists('pg_render_logos_container_block')) {
         $fields     = array(
             'copy' => '',
             'title' => '',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
         ob_start();
 ?>
-        <div class="bg-shade-grey-100 w-full custom-component animated-element component-dark">
+        <div id="<?php echo $attributes->anchor_id ?>" class="bg-shade-grey-100 w-full custom-component animated-element component-dark logo-parade">
             <div class="container flex justify-between pt-7 md:pt-14 tb:flex-row flex-col">
                 <div class="w-full tb:w-3/12">
                     <?php if (!empty($attributes->title)) : ?>

@@ -5,6 +5,7 @@ import BlockSettings from "../reusable/block-custom-settings.jsx";
 export default function LocationsContainerBlock() {
   const { registerBlockType, createBlock } = wp.blocks;
   const { InnerBlocks } = wp.blockEditor;
+  const { TextControl } = wp.components;
   const { useSelect } = wp.data;
   const { i18n } = wp;
 
@@ -23,6 +24,10 @@ export default function LocationsContainerBlock() {
       type: "String",
       default: "",
     },
+    anchor_id: {
+      type: "String",
+      default: "",
+    },
   };
 
   registerBlockType(`${namespace}/${blockSlug}`, {
@@ -33,7 +38,7 @@ export default function LocationsContainerBlock() {
     attributes,
     edit: (props, editor = false, save = false) => {
       const { setAttributes, attributes } = props;
-      const { title, description } = attributes;
+      const { title, description, anchor_id } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -73,6 +78,13 @@ export default function LocationsContainerBlock() {
               updateAttributeValue(attribute, change);
             }}
           />
+          <TextControl
+            value={anchor_id}
+            onChange={(value) => {
+              updateAttributeValue("anchor_id", value);
+            }}
+            label="Anchor ID:"
+          />
           <InnerBlocks
             allowedBlocks={[`${namespace}/location`]}
             renderAppender={() => {
@@ -87,7 +99,7 @@ export default function LocationsContainerBlock() {
       ];
     },
     save: () => {
-      const { title, description } = attributes;
+      const { title, description, anchor_id } = attributes;
       return <InnerBlocks.Content />;
     },
   });

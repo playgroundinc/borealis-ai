@@ -38,12 +38,13 @@ if (!function_exists('pg_render_accordion_block')) {
         $fields     = array(
             'description' => '',
             'title'        => '',
+            'anchor_id'    => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         $allowed_html = pg_allowed_html();
         ob_start();
 ?>
-        <div class="custom-component animated-element component-padding accordion-padding">
+        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component animated-element component-padding accordion-padding accordion">
             <div class="container flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('tb:flex-row') : ''; ?> custom-component nested-flex">
                 <div class="w-full mb-5 tb:mb-0 md:w-4/12 accordion-title">
                     <?php if (!empty($attributes->title)) : ?>

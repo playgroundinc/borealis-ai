@@ -38,11 +38,12 @@ if (!function_exists('pg_render_image_row_container_block')) {
         // Need to set the name of the attribute and the default as a safeguard.
         $fields = array(
             'title' => '',
+            'anchor_id' => '',
         );
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <div class="custom-component animated-element container component-padding">
+        <div id="<?php echo $attributes->anchor_id ?>" class="custom-component animated-element container component-padding image-row">
             <div aria-labelledby="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="flex flex-col md:flex-row justify-between gap-6">
                 <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
                     <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
