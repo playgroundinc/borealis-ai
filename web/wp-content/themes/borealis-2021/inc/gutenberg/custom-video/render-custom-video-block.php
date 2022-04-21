@@ -48,8 +48,8 @@ if (!function_exists('pg_render_custom_video_block')) {
         ob_start();
 ?>
         <div id="<?php echo $attributes->anchor_id ?>" class="custom-component nestable animated-element component-padding video-tabbable custom-video">
-            <div class="flex w-full justify-end container">
-                <div class="w-full tb:w-8/12 custom-video-panel">
+            <div class="flex w-full justify-end <?php echo is_singular(['research-blogs', 'news']) ? '' : 'container' ?>">
+                <div class="w-full tb:<?php echo is_singular(['research-blogs', 'news']) ? 'w-full' : 'w-8/12' ?> custom-video-panel">
                     <div class="md:min-h-[350px] tb:min-h-[400px] lg:min-h-[540px] relative video-block rounded-large overflow-hidden pt-video md:pt-video-md lg:pt-video-lg">
                         <?php if (!empty($attributes->image_url)) : ?>
                             <div class="bg-cover bg-center absolute inset-0 z-10 video-block__overlay transition-all duration-400" style="background-image: url(<?php echo esc_url_raw($attributes->image_url) ?>)">
