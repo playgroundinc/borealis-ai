@@ -11,7 +11,7 @@ if (!function_exists('pg_generate_job_query_bar')) {
             </div>
         </div>
         <div class="bg-shade-white-400 hover-item-background w-full tb:m-0 tb:w-4/12 md:pr-10">
-            <div id="search-filters" class="container" role="region" aria-labelledby="search-topics">
+            <div id="search-filters" class="m-0" role="region" aria-labelledby="search-topics">
                 <div class="pt-6 pb-6">
                     <form method="post">
                         <fieldset class="checkbox-form job-checkboxes" id="Departments">
