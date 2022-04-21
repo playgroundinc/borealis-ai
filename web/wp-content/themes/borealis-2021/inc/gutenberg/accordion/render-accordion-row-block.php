@@ -57,7 +57,7 @@ if (!function_exists('pg_render_accordion_row_block')) {
                             </span>
                         </button>
                     </h3>
-                    <div aria-hidden="true" id="<?php echo esc_attr($id); ?>" class="slide-toggle paragraph" role="region" aria-labelledby="<?php echo esc_attr($heading_id); ?>">
+                    <div aria-hidden="true" id="<?php echo esc_attr($id); ?>" class="slide-toggle paragraph relative -top-2" role="region" aria-labelledby="<?php echo esc_attr($heading_id); ?>">
                         <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
                             <div class="pb-4 pl-6">
                                 <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
