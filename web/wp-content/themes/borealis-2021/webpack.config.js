@@ -25,6 +25,7 @@ const entry = {
     mainSearch: JS_DIR + "/scripts/main-search.js",
     blogModal: JS_DIR + "/scripts/blogModal.js",
     blogShare: JS_DIR + "/scripts/blogShare.js",
+    imgHover: JS_DIR + "/scripts/imgHover.js",
     location: JS_DIR + "/scripts/location.js",
     mathjax: JS_DIR + "/scripts/mathjax.js",
     gallery: JS_DIR + "/scripts/gallery.js",
