@@ -67,7 +67,7 @@
     @apply text-primary-electric-blue-400 visited:text-primary-electric-purple-400 block hover:underline;
   }
   .text-2-up a {
-    @apply text-primary-electric-blue-400 visited:text-primary-electric-purple-400 inline-block hover:underline;
+    @apply text-primary-electric-blue-400 visited:text-primary-electric-purple-400 inline-block;
   }
   .current_page_item .submenu {
     @apply block;
