@@ -1218,9 +1218,6 @@ ol.footnotes li small{
   white-space: nowrap;
   border-width: 0;
 }
-.invisible{
-  visibility: hidden;
-}
 .fixed{
   position: fixed;
 }
@@ -1278,12 +1275,6 @@ ol.footnotes li small{
 }
 .top-6{
   top: 24px;
-}
-.right-6{
-  right: 24px;
-}
-.-top-20{
-  top: -80px;
 }
 .bottom-12{
   bottom: 48px;
@@ -1458,9 +1449,6 @@ ol.footnotes li small{
 }
 .mt-7{
   margin-top: 28px;
-}
-.mb-1{
-  margin-bottom: 4px;
 }
 .mt-14{
   margin-top: 56px;
@@ -2124,9 +2112,6 @@ ol.footnotes li small{
 .pt-42{
   padding-top: 168px;
 }
-.pt-10{
-  padding-top: 40px;
-}
 .pt-8{
   padding-top: 32px;
 }
@@ -2207,6 +2192,9 @@ ol.footnotes li small{
 }
 .pt-full{
   padding-top: 100%;
+}
+.pt-10{
+  padding-top: 40px;
 }
 .pr-8{
   padding-right: 32px;
@@ -2697,6 +2685,11 @@ mjx-container::-webkit-scrollbar-thumb,
   cursor: pointer;
 }
 
+.hover\:bg-primary-navy-400:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 15 120 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-shade-grey-50:hover{
   background-color: rgba(244,244,251,0.5);
 }
@@ -2714,6 +2707,11 @@ mjx-container::-webkit-scrollbar-thumb,
 .hover\:text-primary-electric-blue-400:hover{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-shade-white-400:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:text-primary-electric-purple-400:hover{
@@ -3616,9 +3614,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:-top-8{
     top: -32px;
   }
-    .tb\:-top-14{
-    top: -56px;
-  }
     .tb\:-top-20{
     top: -80px;
   }
@@ -3656,14 +3651,8 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:ml-auto{
     margin-left: auto;
   }
-    .tb\:-mt-14{
-    margin-top: -56px;
-  }
     .tb\:mb-5{
     margin-bottom: 20px;
-  }
-    .tb\:-mt-40{
-    margin-top: -160px;
   }
     .tb\:block{
     display: block;
@@ -3804,12 +3793,6 @@ mjx-container::-webkit-scrollbar-thumb,
       width: calc(100% - 0);
     }
   }
-    .group:hover .tb\:group-hover\:visible{
-    visibility: visible;
-  }
-    .group:hover .tb\:group-hover\:opacity-100{
-    opacity: 1;
-  }
 }
 
 @media (min-width: 1440px){
@@ -3837,17 +3820,11 @@ mjx-container::-webkit-scrollbar-thumb,
     .page .lg\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
-    .lg\:-top-21{
-    top: -84px;
-  }
     .lg\:-top-24{
     top: -96px;
   }
     .lg\:mr-16{
     margin-right: 64px;
-  }
-    .lg\:-mt-11{
-    margin-top: -44px;
   }
     .lg\:flex{
     display: flex;
