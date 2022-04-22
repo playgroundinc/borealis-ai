@@ -53,7 +53,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         ob_start();
 ?>
-        <div id="<?php echo $attributes->anchor_id ?>" class="component-padding <?php echo $attributes->bgColour ?> custom-component <?php echo is_singular('product') ? '-mb-10' : '' ?>">
+        <div id="<?php echo $attributes->anchor_id ?>" class="text-2-up component-padding pb-0 <?php echo $attributes->bgColour ?> custom-component <?php echo is_singular('product') ? '-mb-10' : '' ?>">
             <div class="container flex animated-element tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if ($attributes->text_or_image === 'image') : ?>

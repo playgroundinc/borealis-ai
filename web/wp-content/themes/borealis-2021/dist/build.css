@@ -1218,9 +1218,6 @@ ol.footnotes li small{
   white-space: nowrap;
   border-width: 0;
 }
-.invisible{
-  visibility: hidden;
-}
 .fixed{
   position: fixed;
 }
@@ -1278,12 +1275,6 @@ ol.footnotes li small{
 }
 .top-6{
   top: 24px;
-}
-.right-6{
-  right: 24px;
-}
-.-top-20{
-  top: -80px;
 }
 .bottom-12{
   bottom: 48px;
@@ -1458,9 +1449,6 @@ ol.footnotes li small{
 }
 .mt-7{
   margin-top: 28px;
-}
-.mb-1{
-  margin-bottom: 4px;
 }
 .mt-14{
   margin-top: 56px;
@@ -2175,6 +2163,9 @@ ol.footnotes li small{
 .pt-50{
   padding-top: 200px;
 }
+.pb-0{
+  padding-bottom: 0px;
+}
 .pt-6{
   padding-top: 24px;
 }
@@ -2222,9 +2213,6 @@ ol.footnotes li small{
 }
 .pt-7{
   padding-top: 28px;
-}
-.pb-0{
-  padding-bottom: 0px;
 }
 .pb-2{
   padding-bottom: 8px;
@@ -3801,12 +3789,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:container{
       width: calc(100% - 0);
     }
-  }
-    .group:hover .tb\:group-hover\:visible{
-    visibility: visible;
-  }
-    .group:hover .tb\:group-hover\:opacity-100{
-    opacity: 1;
   }
 }
 

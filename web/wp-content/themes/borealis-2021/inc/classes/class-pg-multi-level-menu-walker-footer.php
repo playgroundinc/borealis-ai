@@ -76,9 +76,9 @@ class PG_Multi_Level_Menu_Walker_Footer extends Walker_Nav_Menu {
             $output .= '<li role="menuitem" class="' . $classes . '">';
             $output .= '<a class="' . $link_classes . ' flex py-4 paragraph-sm text-shade-grey-700 hover:text-primary-electric-blue-400" href="' . $permalink . '">';
             $output .= $title;
-            $output .= '<svg class="relative -top-2 icon-careers h-6 w-18" aria-labelledby="icon-careers">
-                <title id="icon-careers">careers</title>
-                <use xlink:href="#icon-careers"></use>
+            $output .= '<svg class="relative -top-2 icon-careers h-6 w-18" aria-labelledby="careers">
+                <title id="careers">careers</title>
+                <use href="#icon-careers"></use>
                 </svg>';
             $output .= '</a>';
             

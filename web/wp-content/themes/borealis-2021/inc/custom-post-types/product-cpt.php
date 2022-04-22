@@ -21,7 +21,8 @@ if (!function_exists('pg_register_product_cpt')) {
             'market' => 'text',
             'description' => 'text',
             'cta_text' => 'text',
-            'cta_link' => 'text'
+            'cta_link' => 'text',
+            'image_url' => 'text'
         );
         $Product_CPT->register_meta($meta_values);
     }
