@@ -70,7 +70,7 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                             ?>
                             <?php if ($inner_block === key($block['innerBlocks'])) : ?>
                                 <div class="flex justify-between flex-col tb:flex-row w-full cursor-default items-center" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
-                                    <div class="w-full tb:w-5/12 lg:w-4/12 tb:-mt-14 lg:-mt-11 pr-12">
+                                    <div class="w-full tb:w-5/12 lg:w-4/12 pr-12 tb:relative tb:-top-20 lg:-top-24">
                                         <?php if (!empty($title)) : ?>
                                             <h2 id="<?php echo esc_html($title) ?>" class="h3"><?php echo esc_html($title) ?></h2>
                                         <?php endif; ?>
@@ -99,7 +99,7 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                                 </div>
                             <?php else : ?>
                                 <div class="flex hidden justify-between flex-col tb:flex-row w-full cursor-default items-center" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
-                                    <div class="w-full tb:w-5/12 lg:w-4/12 tb:-mt-14 lg:-mt-11 pr-12">
+                                    <div class="w-full tb:w-5/12 lg:w-4/12 pr-12">
                                         <?php if (!empty($title)) : ?>
                                             <h2 id="<?php echo esc_html($title) ?>" class="h3"><?php echo esc_html($title) ?></h2>
                                         <?php endif; ?>
@@ -145,9 +145,9 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                                 ?>
 
                                 <?php if ($inner_block === key($block['innerBlocks'])) : ?>
-                                    <button class="h-8 pill-secondary pill-secondary-active shrink-0" role="tab" aria-selected="true" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
+                                    <button class="h-8 pill-secondary pill-secondary-active shrink-0 mb-4" role="tab" aria-selected="true" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
                                 <?php else : ?>
-                                    <button class="h-8 pill-secondary shrink-0" role="tab" aria-selected="false" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
+                                    <button class="h-8 pill-secondary shrink-0 mb-4" role="tab" aria-selected="false" id="<?php echo esc_attr($titleSlug . '-tab') ?>" aria-controls="<?php echo esc_attr($titleSlug . '-content-panel') ?>"><?php echo esc_html($title) ?></button>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         </div>

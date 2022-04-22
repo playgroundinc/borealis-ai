@@ -3608,8 +3608,14 @@ mjx-container::-webkit-scrollbar-thumb,
     .page .tb\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
+    .tb\:relative{
+    position: relative;
+  }
     .tb\:-top-8{
     top: -32px;
+  }
+    .tb\:-top-20{
+    top: -80px;
   }
     .tb\:m-0{
     margin: 0px;
@@ -3644,9 +3650,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:ml-auto{
     margin-left: auto;
-  }
-    .tb\:-mt-14{
-    margin-top: -56px;
   }
     .tb\:mb-5{
     margin-bottom: 20px;
@@ -3817,11 +3820,11 @@ mjx-container::-webkit-scrollbar-thumb,
     .page .lg\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
+    .lg\:-top-24{
+    top: -96px;
+  }
     .lg\:mr-16{
     margin-right: 64px;
-  }
-    .lg\:-mt-11{
-    margin-top: -44px;
   }
     .lg\:flex{
     display: flex;
