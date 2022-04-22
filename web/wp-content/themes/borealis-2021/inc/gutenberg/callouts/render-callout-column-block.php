@@ -44,13 +44,13 @@ if (!function_exists('pg_render_callout_column_block')) {
         ob_start();
 ?>
         <li class="basis-card grow-0 md:nth-child-3n:ml-0 md:nth-child-4:mt-8 md:nth-child-2:ml-8 nth-child-2:mt-5 md:nth-child-2:mt-0">
-            <a href="<?php echo esc_url_raw($attributes->link) ?>" class="block rounded-large bg-shade-white-400 min-h-[224px] md:min-h-[244px] flex flex-col">
-                <div class="text-primary-electric-blue-400 h3 py-4 px-5" aria-hidden="true">
+            <a href="<?php echo esc_url_raw($attributes->link) ?>" class="block backdrop rounded-large min-h-[224px] md:min-h-[244px] flex flex-col">
+                <div class="text-shade-white-400 h3 py-4 px-5" aria-hidden="true">
                     <?php echo pg_render_icon('callout'); ?>
                 </div>
                 <div class="grow flex flex-col justify-end text-right px-9 py-7">
-                    <p class="h4"><?php echo $attributes->title; ?></p>
-                    <p class="paragraph text-shade-grey-700 pt-4"><?php echo $attributes->subtitle; ?></p>
+                    <p class="h4 text-shade-white-400"><?php echo $attributes->title; ?></p>
+                    <p class="paragraph text-shade-white-400 pt-4"><?php echo $attributes->subtitle; ?></p>
                 </div>
             </a>
         </li>
