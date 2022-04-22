@@ -2112,9 +2112,6 @@ ol.footnotes li small{
 .pt-42{
   padding-top: 168px;
 }
-.pt-10{
-  padding-top: 40px;
-}
 .pt-8{
   padding-top: 32px;
 }
@@ -2195,6 +2192,9 @@ ol.footnotes li small{
 }
 .pt-full{
   padding-top: 100%;
+}
+.pt-10{
+  padding-top: 40px;
 }
 .pr-8{
   padding-right: 32px;
@@ -2685,6 +2685,11 @@ mjx-container::-webkit-scrollbar-thumb,
   cursor: pointer;
 }
 
+.hover\:bg-primary-navy-400:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 15 120 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-shade-grey-50:hover{
   background-color: rgba(244,244,251,0.5);
 }
@@ -2702,6 +2707,11 @@ mjx-container::-webkit-scrollbar-thumb,
 .hover\:text-primary-electric-blue-400:hover{
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-shade-white-400:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:text-primary-electric-purple-400:hover{
