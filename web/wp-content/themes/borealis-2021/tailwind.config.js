@@ -116,11 +116,20 @@ module.exports = {
 			height: {
 				7: "28px",
 				14: "56px",
+				"80vw": "80vw",
+			},
+			padding: {
+				"4vw": "4vw",
+				"2vw": "2vw",
 			},
 			width: {
 				"3/8": "calc((100% / 8) * 3)",
 				"5/8": "calc((100% / 8) * 5)",
 				gallery: "450px",
+				"24vw": "24vw",
+				"32vw": "32vw",
+				"36vw": "36vw",
+				"64vw": "64vw",
 			},
 		},
 	},
