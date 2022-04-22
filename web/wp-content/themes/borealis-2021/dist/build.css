@@ -1483,9 +1483,6 @@ ol.footnotes li small{
 .mr-7{
   margin-right: 28px;
 }
-.-mt-2{
-  margin-top: -8px;
-}
 .block{
   display: block;
 }
@@ -2181,6 +2178,9 @@ ol.footnotes li small{
 .pt-50{
   padding-top: 200px;
 }
+.pb-0{
+  padding-bottom: 0px;
+}
 .pt-6{
   padding-top: 24px;
 }
@@ -2225,9 +2225,6 @@ ol.footnotes li small{
 }
 .pt-7{
   padding-top: 28px;
-}
-.pb-0{
-  padding-bottom: 0px;
 }
 .pb-2{
   padding-bottom: 8px;
@@ -3613,8 +3610,17 @@ mjx-container::-webkit-scrollbar-thumb,
     .page .tb\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
   }
+    .tb\:relative{
+    position: relative;
+  }
     .tb\:-top-8{
     top: -32px;
+  }
+    .tb\:-top-14{
+    top: -56px;
+  }
+    .tb\:-top-20{
+    top: -80px;
   }
     .tb\:m-0{
     margin: 0px;
@@ -3655,6 +3661,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:mb-5{
     margin-bottom: 20px;
+  }
+    .tb\:-mt-40{
+    margin-top: -160px;
   }
     .tb\:block{
     display: block;
@@ -3827,6 +3836,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .page .lg\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
+  }
+    .lg\:-top-21{
+    top: -84px;
+  }
+    .lg\:-top-24{
+    top: -96px;
   }
     .lg\:mr-16{
     margin-right: 64px;
