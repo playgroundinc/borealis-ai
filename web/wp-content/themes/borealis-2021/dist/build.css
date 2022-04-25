@@ -2124,9 +2124,6 @@ ol.footnotes li small{
 .pb-4{
   padding-bottom: 16px;
 }
-.pt-100{
-  padding-top: 400px;
-}
 .pl-5{
   padding-left: 20px;
 }
@@ -2159,6 +2156,9 @@ ol.footnotes li small{
 }
 .pt-15{
   padding-top: 60px;
+}
+.pt-100{
+  padding-top: 400px;
 }
 .pt-50{
   padding-top: 200px;
