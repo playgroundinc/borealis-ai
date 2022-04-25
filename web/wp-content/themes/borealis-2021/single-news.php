@@ -8,17 +8,25 @@
  * @package pg-wp-starter
  */
 
-get_header();
-$hero_image_url = get_the_post_thumbnail_url($post->ID, 'full');
-$title = get_the_title($post->ID);
-$publication_date = get_post_meta($post->ID, 'publication_date', true);
-$authors = get_post_meta($post->ID, 'authors', true);
-$url = get_permalink($post->ID);
+  get_header();
+  $thumbnail_id = get_post_thumbnail_id( $post->ID );
+  $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); 
+
+
+  $title = get_the_title($post->ID);
+  $publication_date = get_post_meta($post->ID, 'publication_date', true);
+  $authors = get_post_meta($post->ID, 'authors', true);
+  $url = get_permalink($post->ID);
+
 ?>
-<?php if (isset($hero_image_url) && !empty($hero_image_url)) : ?>
-    <div aria-hidden="true" class="pt-100 mt-19 bg-cover bg-no-repeat bg-center" style="background-image: url(<?php echo esc_url_raw($hero_image_url) ?>)"></div>
+<?php if (!empty($thumbnail_id)) : ?>
+  <div class="container">
+  <div class="mt-19">
+    <?php the_post_thumbnail( 'full', array( 'alt' => $alt ) );?>
+  </div>
+</div>
 <?php endif; ?>
-<main class="main-content container research-blog">
+<main class="main-content container news">
     <?php echo pg_generate_blog_sidebar_cite($post->ID); ?>
     <div class="pt-14 lg:flex">
         <aside class="lg:w-1/6">
