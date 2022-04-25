@@ -114,7 +114,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
             <?php if (!empty($attributes->cta_text)) : ?>
                 <div class="container flex justify-end animated-element">
                     <div class="w-full tb:w-8/12 mt-8 tb:mt-14">
-                        <a href="<?php echo $attributes->anchor_href ?>" class="primary-button no-underline">
+                        <a href="<?php echo $attributes->anchor_href ?>" class="primary-button">
                             <p class="underline-cta w-fit <?php echo $attributes->bgColour ?>">
                                 <?php echo $attributes->cta_text ?><span class="pl-8 tb:pl-4 lg:pl-8 down"><?php echo pg_render_icon('arrow-down'); ?></span>
                             </p>
