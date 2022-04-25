@@ -86,9 +86,10 @@ if (!function_exists('pg_render_gallery_container_block')) {
                                 $image = wp_get_attachment_image_url($attributes->image_id, 'full');
                                 $placholder = wp_get_attachment_image_url($attributes->image_id);
                                 ?>
-                                <li class="nth-child-2:ml-5">
+                                <li class="nth-child-2:pl-5 pr-2vw">
+
                                     <picture>
-                                        <img class="max-h-[450px] max-w-[450px] rounded-large overflow-hidden block " src="<?php echo esc_url_raw($image) ?>" alt="<?php echo !empty($attributes->image_alt) ? esc_attr($attributes->image_alt) : null ?>">
+                                        <img class="max-w-[64vw] w-[64vw] md:max-w-[32vw] md:w-[32vw] lg:max-w-[36vw] lg:w-36vw xl:max-w-[24vw] xl:w-24vw rounded-large overflow-hidden block" src="<?php echo esc_url_raw($image) ?>" alt="<?php echo !empty($attributes->image_alt) ? esc_attr($attributes->image_alt) : null ?>">
                                     </picture>
                                 </li>
                             <?php elseif ($inner_block['blockName'] === $namespace . '/select-team-member') : ?>
@@ -106,7 +107,7 @@ if (!function_exists('pg_render_gallery_container_block')) {
                                 $position = get_post_meta($post->ID, 'position', true);
                                 $url = get_permalink($post->ID);
                                 ?>
-                                <li class="nth-child-2:ml-5  basis-team-member shrink-0 grow-0">
+                                <li class="nth-child-2:ml-5 basis-team-member shrink-0 grow-0">
                                     <a href="<?php echo esc_url_raw($url) ?>" class="block" aria-labelledby="<?php echo esc_attr($slug) ?>">
                                         <img class="block rounded-large" src="<?php echo $image && strlen($image) > 0 ? esc_url_raw($image) : get_bloginfo('stylesheet_directory') . '/src/images/teamMember.png' ?>" />
                                         <p id="<?php echo esc_attr($slug) ?>" class="h4 pt-12"><?php echo esc_html($post->post_title); ?></p>
