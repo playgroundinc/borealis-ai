@@ -10,7 +10,7 @@ function locationModal(locationContainer) {
   const imageModal = locationContainer.querySelector("#img-modal");
   const containerHTML = document.querySelector("html");
   const imageSlideShow = locationContainer.querySelector("#image-slideshow");
-  const nav = document.querySelector("#main-navigation");
+  const nav = document.getElementById("main-navigation");
 
   const classToggle = (el, classToRemove, classToAdd) => {
     if (classToAdd) {
