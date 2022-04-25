@@ -29,6 +29,13 @@ if (!function_exists('pg_blog_share_script')) {
     }
 }
 
+if (!function_exists('pg_img_hover_script')) {
+    function pg_img_hover_script()
+    {
+        wp_enqueue_script('imgHover', get_template_directory_uri() . '/dist/imgHover.js', array(), '20151215', true);
+    }
+}
+
 if (!function_exists('pg_location_modal_script')) {
     function pg_location_modal_script()
     {
@@ -125,6 +132,7 @@ function pg_wp_starter_scripts()
     pg_main_search_script();
     pg_blog_modal_script();
     pg_blog_share_script();
+    pg_img_hover_script();
     pg_location_modal_script();
     pg_gallery_script();
     pg_podcast_script();

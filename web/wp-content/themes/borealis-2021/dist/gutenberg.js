@@ -4076,7 +4076,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function productMetaBlock() {
   var registerBlockType = wp.blocks.registerBlockType;
   var TextControl = wp.components.TextControl;
-  var meta_fields = ["market", "description", "cta_text", "cta_link"];
+  var meta_fields = ["market", "description", "cta_text", "cta_link", "image_url"];
   var attributes = (0,_helper_functions_default_attrs__WEBPACK_IMPORTED_MODULE_1__["default"])(meta_fields, "meta");
   registerBlockType("".concat(_helper_functions_constants__WEBPACK_IMPORTED_MODULE_0__.namespace, "/product-meta-block"), {
     title: "Product Meta",
@@ -4092,7 +4092,8 @@ function productMetaBlock() {
       var market = attributes.market,
           description = attributes.description,
           cta_text = attributes.cta_text,
-          cta_link = attributes.cta_link;
+          cta_link = attributes.cta_link,
+          image_url = attributes.image_url;
 
       function updateAttributeValue(attribute, value) {
         setAttributes(_defineProperty({}, attribute, value));
@@ -4130,6 +4131,12 @@ function productMetaBlock() {
           updateAttributeValue("cta_link", value);
         },
         label: "CTA Link:"
+      }), /*#__PURE__*/React.createElement(TextControl, {
+        value: image_url,
+        onChange: function onChange(value) {
+          updateAttributeValue("image_url", value);
+        },
+        label: "Cursor URL:"
       }))))];
     },
     // No information saved to the block

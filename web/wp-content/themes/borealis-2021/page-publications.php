@@ -56,8 +56,8 @@ get_header();
                 <?php endforeach;  // End of Query Loop 
                 ?>
             </ul>
-            <div class="border-solid border-b border-shade-grey-500">
-                <button class="container block h4 pt-10 pb-8 text-center w-full load-more"><?php echo esc_html('Load More Publications') ?></button>
+            <div class="border-solid border-b border-shade-grey-500 hover:bg-primary-navy-400 hover:text-shade-white-400 transition-all duration-300 load-more">
+                <button class="container block h4 py-8 text-center w-full load-more"><?php echo esc_html('Load More Publications') ?></button>
             </div>
         </div>
         <?php

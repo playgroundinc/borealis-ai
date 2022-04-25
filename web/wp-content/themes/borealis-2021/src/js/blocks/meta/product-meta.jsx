@@ -6,7 +6,7 @@ export default function productMetaBlock() {
   const { registerBlockType } = wp.blocks;
   const { TextControl } = wp.components;
 
-  const meta_fields = ["market", "description", "cta_text", "cta_link"];
+  const meta_fields = ["market", "description", "cta_text", "cta_link", "image_url"];
   const attributes = defaultAttrs(meta_fields, "meta");
 
   registerBlockType(`${namespace}/product-meta-block`, {
@@ -19,7 +19,7 @@ export default function productMetaBlock() {
     attributes,
     edit: (props) => {
       const { setAttributes, attributes } = props;
-      const { market, description, cta_text, cta_link } = attributes;
+      const { market, description, cta_text, cta_link, image_url } = attributes;
 
       function updateAttributeValue(attribute, value) {
         setAttributes({ [attribute]: value });
@@ -58,6 +58,13 @@ export default function productMetaBlock() {
                   updateAttributeValue("cta_link", value);
                 }}
                 label="CTA Link:"
+              />
+              <TextControl
+                value={image_url}
+                onChange={(value) => {
+                  updateAttributeValue("image_url", value);
+                }}
+                label="Cursor URL:"
               />
             </div>
           </div>
