@@ -69,8 +69,8 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                             $titleSlug = pg_slugify($attributes->title);
                             ?>
                             <?php if ($inner_block === key($block['innerBlocks'])) : ?>
-                                <div class="flex justify-between flex-col tb:flex-row w-full cursor-default items-center" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
-                                    <div class="w-full tb:w-5/12 lg:w-4/12 pr-12 tb:relative tb:-top-20 lg:-top-24">
+                                <div class="flex justify-between flex-col tb:flex-row w-full cursor-default tb:items-start" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
+                                    <div class="w-full tb:w-5/12 lg:w-4/12 pr-12 tb:relative tb:-top-16">
                                         <?php if (!empty($title)) : ?>
                                             <h2 id="<?php echo esc_html($title) ?>" class="h3"><?php echo esc_html($title) ?></h2>
                                         <?php endif; ?>
