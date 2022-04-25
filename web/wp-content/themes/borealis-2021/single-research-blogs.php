@@ -24,7 +24,7 @@ function getbaseurl($url)
     return $domain;
 }
 ?>
-<?php if (isset($thumbnail_id) && !empty($thumbnail_id)) : ?>
+<?php if (!empty($thumbnail_id)) : ?>
   <div class="container">
   <div class="mt-19">
     <?php the_post_thumbnail( 'full', array( 'alt' => $alt ) );?>
