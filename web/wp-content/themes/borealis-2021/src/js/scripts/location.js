@@ -5,6 +5,7 @@ function locationModal(locationContainer) {
     const imageModal = locationContainer.querySelector("#img-modal");
     const containerHTML = document.querySelector("html");
     const imageSlideShow = locationContainer.querySelector("#image-slideshow");
+    const nav = document.querySelector("#main-navigation");
 
     const classToggle = (el, classToRemove, classToAdd) => {
         if (classToAdd) {
@@ -40,11 +41,13 @@ function locationModal(locationContainer) {
 
     const openModal = (el, target) => {
         classToggle(el, ["opacity-0", "-z-10"], ["opacity-1", "z-20"]);
+        nav.classList.add("opacity-0");
         target !== null && classToggle(target, ["z-10"], ["z-30"]);
     };
 
     const closeModal = (el, target) => {
         classToggle(el, ["opacity-1", "z-20"], ["opacity-0", "-z-10"]);
+        nav.classList.remove("opacity-0");
         target !== null && classToggle(target, ["z-30"], ["z-10"]);
     };
 
