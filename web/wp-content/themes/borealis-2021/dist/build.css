@@ -874,10 +874,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-.text-2-up a:hover{
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
-}
 .current_page_item .submenu{
   display: block;
 }
@@ -1612,6 +1608,9 @@ ol.footnotes li small{
 .w-36{
   width: 144px;
 }
+.w-\[64vw\]{
+  width: 64vw;
+}
 .w-13{
   width: 52px;
 }
@@ -1641,9 +1640,6 @@ ol.footnotes li small{
 }
 .w-22{
   width: 88px;
-}
-.w-\[64vw\]{
-  width: 64vw;
 }
 .max-w-\[560px\]{
   max-width: 560px;
@@ -2163,9 +2159,6 @@ ol.footnotes li small{
 .pt-50{
   padding-top: 200px;
 }
-.pb-0{
-  padding-bottom: 0px;
-}
 .pt-6{
   padding-top: 24px;
 }
@@ -2216,6 +2209,9 @@ ol.footnotes li small{
 }
 .pt-7{
   padding-top: 28px;
+}
+.pb-0{
+  padding-bottom: 0px;
 }
 .pb-2{
   padding-bottom: 8px;
@@ -2342,8 +2338,16 @@ ol.footnotes li small{
   --tw-blur: blur(12px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
+.blur{
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.backdrop-filter{
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 .transition{
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
@@ -2568,6 +2572,11 @@ legend {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden; }
+
+.backdrop {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.1); }
 
 .wp-block-table {
   margin-top: 64px;
@@ -3220,6 +3229,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:w-11\/12{
     width: 91.666667%;
   }
+    .md\:w-\[32vw\]{
+    width: 32vw;
+  }
     .md\:w-11{
     width: 44px;
   }
@@ -3240,9 +3252,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:w-5\/8{
     width: calc((100% / 8) * 5);
-  }
-    .md\:w-\[32vw\]{
-    width: 32vw;
   }
     .md\:max-w-\[32vw\]{
     max-width: 32vw;
