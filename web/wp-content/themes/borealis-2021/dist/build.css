@@ -3623,9 +3623,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:-top-8{
     top: -32px;
   }
-    .tb\:-top-20{
-    top: -80px;
-  }
     .tb\:-top-16{
     top: -64px;
   }
@@ -3834,9 +3831,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .page .lg\:container .nestable .container .icon-list-title, .page .container .nestable .container .accordion-title{
     display: none;
-  }
-    .lg\:-top-24{
-    top: -96px;
   }
     .lg\:mr-16{
     margin-right: 64px;
