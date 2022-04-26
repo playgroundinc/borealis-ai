@@ -57,7 +57,7 @@ if (!function_exists('pg_render_testimonial_block')) {
                     <div class="w-full pt-full md:pt-0 md:w-4/12 md:absolute inset-0 lg:w-full-bleed bg-cover bg-center shrink-0" style="background-image: url(<?php echo esc_url_raw($image); ?>)"></div>
                     <div class="container flex flex-col grow md:flex-row justify-center md:justify-end items-start md:items-end pb-29 md:pb-12 py-12 text-shade-white-400">
                         <div class="w-full md:w-7/12">
-                            <p class="paragraph-lg"><?php echo esc_html($attributes->quote); ?></p>
+                            <p class="paragraph-lg lg:paragraph-lg-desktop"><?php echo esc_html($attributes->quote); ?></p>
                             <?php if ($hasRole || $hasSpeaker) : ?>
                                 <div class="mt-22 w-7/12 tb:w-8/12">
                                     <?php if ($hasSpeaker) : ?>
@@ -77,7 +77,7 @@ if (!function_exists('pg_render_testimonial_block')) {
             <li class="w-full flex flex-col justify-center group shrink-0 slide" aria-roledescription="slide">
                 <div class="container flex flex-col  justify-center md:justify-end items-end md:justify-center pt-8 md:pt-0 pb-15 md:pb-0">
                     <div>
-                        <p class="paragraph-lg"><?php echo esc_html($attributes->quote); ?></p>
+                        <p class="paragraph-lg lg:paragraph-lg-desktop"><?php echo esc_html($attributes->quote); ?></p>
                         <?php if ($hasRole || $hasSpeaker || $hasThumbnail) : ?>
                             <div class="mt-22 md:w-7/12 tb:w-8/12 flex items-center">
                                 <?php if ($hasThumbnail) : ?>

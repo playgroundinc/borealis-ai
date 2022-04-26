@@ -119,8 +119,9 @@ module.exports = {
 				"80vw": "80vw",
 			},
 			padding: {
-				"4vw": "4vw",
 				"2vw": "2vw",
+				"3vw": "3.125vw",
+				"4vw": "4vw",
 			},
 			width: {
 				"3/8": "calc((100% / 8) * 3)",

@@ -33,7 +33,7 @@ $additional_content = array_filter($blocks, function ($block) {
             </div>
         <?php endif; ?>
         <div class="<?php echo isset($image) && strlen($image) > 0 ? esc_attr('basis-8/12 pt-14 md:pt-0') : esc_attr('w-full'); ?> shrink-0 paragraph-style mb-20 md:mb-40">
-            <p class="paragraph-lg"><?php echo esc_html($excerpt) ?></p>
+            <p class="paragraph-lg paragraph-lg-desktop"><?php echo esc_html($excerpt) ?></p>
             <?php if (!empty($paragraphs)) : ?>
                 <?php
                 foreach ($paragraphs as $paragraph) {

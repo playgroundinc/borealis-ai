@@ -54,7 +54,7 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
             <div class="flex justify-center">
                 <div class="w-full max-w-[560px]">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h3 class="h3 mb-11">
+                        <h3 class="h3 tb:h3-desktop mb-11">
                             <?php echo $attributes->title ?>
                         </h3>
                     <?php endif ?>
@@ -77,7 +77,7 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
         <div class="md:hidden block <?php echo $attributes->background_colour ?>">
             <div class="w-full bg-cover pb-78 bg-no-repeat pt-15 px-6" style="background-image: url(<?php echo $image_mobile ?>)">
                 <?php if (!empty($attributes->title)) : ?>
-                    <h3 class="h3 mb-6">
+                    <h3 class="h3 tb:h3-desktop mb-6">
                         <?php echo $attributes->title ?>
                     </h3>
                 <?php endif ?>

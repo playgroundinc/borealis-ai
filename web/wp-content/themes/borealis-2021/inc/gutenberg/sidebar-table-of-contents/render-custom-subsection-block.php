@@ -43,7 +43,7 @@ if ( ! function_exists( 'pg_render_custom_subsection_block' ) ) {
         ?>
             <div aria-labelledby="<?php echo esc_attr($url . '-title') ?>" id="<?php echo esc_attr($url); ?>" class="custom-component">
                 <?php if (!empty($attributes->title)): ?>
-                    <h3 id="<?php echo esc_attr($url . '-title') ?>" class="h3 mt-11 md:mt-13"><?php echo wp_kses($attributes->title, $allowed_html) ?></h2>
+                    <h3 id="<?php echo esc_attr($url . '-title') ?>" class="h3 tb:h3-desktop mt-11 md:mt-13"><?php echo wp_kses($attributes->title, $allowed_html) ?></h2>
                 <?php endif; ?>
                 <?php foreach ( $block['innerBlocks'] as $inner_block ) : ?>
                     <?php echo wp_kses( render_block($inner_block), $allowed_html ); ?>

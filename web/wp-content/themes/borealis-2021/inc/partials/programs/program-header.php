@@ -12,7 +12,7 @@ if (!function_exists('pg_generate_program_header')) {
             </div>
             <?php if (isset($excerpt) && strlen($excerpt) > 0) : ?>
                 <div class="basis-8/12 shrink-0 pt-5 lg:pt-0">
-                    <p class="paragraph md:paragraph-lg"><?php echo esc_html($excerpt); ?></p>
+                    <p class="paragraph md:paragraph-lg lg:paragraph-lg-desktop"><?php echo esc_html($excerpt); ?></p>
                 </div>
             <?php endif; ?>
         </div>

@@ -56,7 +56,7 @@ if (!function_exists('pg_render_featured_jobs_block')) {
                 <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:flex') : '' ?>">
                     <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container') : '' ?> md:w-full md:m-0 md:basis-1/3 shrink-0 md:pr-10">
                         <?php if (!empty($attributes->title)) : ?>
-                            <h2 class="h3 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('md:pb-12') : '' ?>"><?php echo $attributes->title ?></h2>
+                            <h2 class="h3 tb:h3-desktop <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('md:pb-12') : '' ?>"><?php echo $attributes->title ?></h2>
                         <?php endif; ?>
                     </div>
                     <ul class="grow pt-7 md:pt-0 nested-block">

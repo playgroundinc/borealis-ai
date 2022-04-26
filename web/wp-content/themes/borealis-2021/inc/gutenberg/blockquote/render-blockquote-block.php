@@ -58,7 +58,7 @@ if (!function_exists('pg_render_blockquote_block')) {
                         </div>
                     </div>
                     <div class="pt-10 md:pt-0 md:w-3/4">
-                        <p class="paragraph md:paragraph-lg"><?php echo  esc_html($attributes->quote); ?></p>
+                        <p class="paragraph md:paragraph-lg lg:paragraph-lg-desktop"><?php echo  esc_html($attributes->quote); ?></p>
                         <?php if ($hasSpeaker || $hasRole) : ?>
                             <p class="pt-10 md:pt-0">
                                 <?php if ($hasSpeaker) : ?>
@@ -82,7 +82,7 @@ if (!function_exists('pg_render_blockquote_block')) {
                             <img class="rounded-full absolute inset-0 block h-full w-full" src="<?php echo esc_url_raw($image) ?>" />
                         </div>
                     </div>
-                    <p class="paragraph md:paragraph-lg pt-10 md:text-center"><?php echo  esc_html($attributes->quote); ?></p>
+                    <p class="paragraph md:paragraph-lg lg:paragraph-lg-desktop pt-10 md:text-center"><?php echo  esc_html($attributes->quote); ?></p>
                     <?php if ($hasSpeaker || $hasRole) : ?>
                         <p class="pt-10 md:text-center">
                             <?php if ($hasSpeaker) : ?>
@@ -101,7 +101,7 @@ if (!function_exists('pg_render_blockquote_block')) {
             <?php if ($attributes->style === 'dark' && $hasImage) : ?>
                 <div class="container">
                     <div class="bg-primary-navy-400 py-8 md:py-10 px-8 md:px-15 rounded-large text-shade-white-400">
-                        <p class="paragraph md:paragraph-lg"><?php echo  $attributes->quote; ?></p>
+                        <p class="paragraph md:paragraph-lg lg:paragraph-lg-desktop"><?php echo  $attributes->quote; ?></p>
                         <div class="flex md:flex-row flex-col-reverse md:items-center md:justify-between pt-10">
                             <div>
                                 <?php if ($hasSpeaker || $hasRole) : ?>
@@ -136,7 +136,7 @@ if (!function_exists('pg_render_blockquote_block')) {
                         <span class="text-primary-electric-blue-400 rotate-180" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
                         <span class="text-primary-electric-blue-400 rotate-180" style="font-size: 47px"><?php echo pg_render_icon('quote'); ?></span>
                     </div>
-                    <p class="paragraph md:paragraph-lg pt-8 md:pt-11"><?php echo esc_html($attributes->quote); ?></p>
+                    <p class="paragraph md:paragraph-lg lg:paragraph-lg-desktop pt-8 md:pt-11"><?php echo esc_html($attributes->quote); ?></p>
                     <?php if ($hasImage || $hasRole || $hasSpeaker) : ?>
                         <div class="flex items-center pt-8 md:pt-11">
                             <?php if ($hasImage) : ?>

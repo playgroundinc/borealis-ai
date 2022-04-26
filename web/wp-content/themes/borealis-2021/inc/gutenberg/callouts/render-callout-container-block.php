@@ -52,7 +52,7 @@ if (!function_exists('pg_render_callout_container_block')) {
             <div class="container">
                 <div class="text-shade-white-400 md:flex justify-between">
                     <div class="basis-1/3 shrink-0 pr-8">
-                        <h2 class="h3"><?php echo ($attributes->title) ?></h2>
+                        <h2 class="h3 tb:h3-desktop"><?php echo ($attributes->title) ?></h2>
                     </div>
                     <div class="basis-7/12 shrink-0 mt-8 md:mt-0">
                         <?php if ($attributes->description && strlen($attributes->description) > 0) : ?>

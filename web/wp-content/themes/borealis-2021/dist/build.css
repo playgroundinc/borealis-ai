@@ -368,12 +368,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .h3{
-    font-size: calc(30px + ((30 - 30) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(30px + ((60 - 30) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
   .h3{
-    font-size: 30px;
+    font-size: 60px;
   }
 }
 .h4{
@@ -396,7 +396,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .paragraph-lg{
-  font-size: 27px;
+  font-size: 22px;
   font-family: Inter, sans-serif;
   line-height: 1.80;
   letter-spacing: normal;
@@ -406,11 +406,30 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .paragraph-lg{
-    font-size: calc(27px + ((27 - 27) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(22px + ((27 - 22) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
   .paragraph-lg{
+    font-size: 27px;
+  }
+}
+.paragraph-lg-desktop{
+  font-size: 16px;
+  font-family: Inter, sans-serif;
+  line-height: 1.80;
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: 300;
+  word-break: break-word;
+}
+@media (min-width: 375px){
+  .paragraph-lg-desktop{
+    font-size: calc(16px + ((27 - 16) * ((100vw - 375px) / (1920 - 375))));
+  }
+}
+@media (min-width: 1920px){
+  .paragraph-lg-desktop{
     font-size: 27px;
   }
 }
@@ -1032,12 +1051,12 @@ ol.footnotes li small{
   }
   @media (min-width: 375px){
     .greenhouse h2{
-      font-size: calc(30px + ((30 - 30) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(30px + ((60 - 30) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
     .greenhouse h2{
-      font-size: 30px;
+      font-size: 60px;
     }
   }
   .greenhouse h2 + .paragraph-blog{
@@ -2419,12 +2438,12 @@ ol.footnotes li small{
 }
 @media (min-width: 768px){
   .container{
-    width: calc(100% - 56px);
+    width: calc(100% - 5.8vw);
   }
 }
 @media (min-width: 1920px){
   .container{
-    width: calc(100% - 0);
+    width: calc(100% - 2.9vw);
   }
 }
 .slide-toggle{
@@ -2850,7 +2869,7 @@ mjx-container::-webkit-scrollbar-thumb,
 
 @media (min-width: 768px){
   .md\:h1-desktop{
-    font-size: 36px;
+    font-size: 38px;
     font-family: Metrophobic, sans-serif;
     line-height: 1.10;
     letter-spacing: -0.04em;
@@ -2860,7 +2879,7 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 375px){
     .md\:h1-desktop{
-      font-size: calc(36px + ((70 - 36) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(38px + ((70 - 38) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
@@ -2917,16 +2936,16 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 375px){
     .md\:h3{
-      font-size: calc(30px + ((30 - 30) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(30px + ((60 - 30) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
     .md\:h3{
-      font-size: 30px;
+      font-size: 60px;
     }
   }
   .md\:paragraph-lg{
-    font-size: 27px;
+    font-size: 22px;
     font-family: Inter, sans-serif;
     line-height: 1.80;
     letter-spacing: normal;
@@ -2936,7 +2955,7 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 375px){
     .md\:paragraph-lg{
-      font-size: calc(27px + ((27 - 27) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(22px + ((27 - 22) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
@@ -3389,6 +3408,10 @@ mjx-container::-webkit-scrollbar-thumb,
     padding-top: 60px;
     padding-bottom: 60px;
   }
+    .md\:py-3vw{
+    padding-top: 3.125vw;
+    padding-bottom: 3.125vw;
+  }
     .md\:pr-5{
     padding-right: 20px;
   }
@@ -3523,12 +3546,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     @media (min-width: 768px){
     .md\:container{
-      width: calc(100% - 56px);
+      width: calc(100% - 5.8vw);
     }
   }
     @media (min-width: 1920px){
     .md\:container{
-      width: calc(100% - 0);
+      width: calc(100% - 2.9vw);
     }
   }
     .md\:hover\:text-shade-white-400:hover{
@@ -3587,8 +3610,27 @@ mjx-container::-webkit-scrollbar-thumb,
       font-size: 60px;
     }
   }
+  .tb\:h3-desktop{
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    line-height: 1.10;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    font-weight: normal;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .tb\:h3-desktop{
+      font-size: calc(16px + ((30 - 16) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .tb\:h3-desktop{
+      font-size: 30px;
+    }
+  }
   .tb\:paragraph-lg{
-    font-size: 27px;
+    font-size: 22px;
     font-family: Inter, sans-serif;
     line-height: 1.80;
     letter-spacing: normal;
@@ -3598,11 +3640,30 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 375px){
     .tb\:paragraph-lg{
-      font-size: calc(27px + ((27 - 27) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(22px + ((27 - 22) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
     .tb\:paragraph-lg{
+      font-size: 27px;
+    }
+  }
+  .tb\:paragraph-lg-desktop{
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    line-height: 1.80;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: 300;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .tb\:paragraph-lg-desktop{
+      font-size: calc(16px + ((27 - 16) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .tb\:paragraph-lg-desktop{
       font-size: 27px;
     }
   }
@@ -3810,17 +3871,36 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     @media (min-width: 768px){
     .tb\:container{
-      width: calc(100% - 56px);
+      width: calc(100% - 5.8vw);
     }
   }
     @media (min-width: 1920px){
     .tb\:container{
-      width: calc(100% - 0);
+      width: calc(100% - 2.9vw);
     }
   }
 }
 
 @media (min-width: 1440px){
+  .lg\:paragraph-lg-desktop{
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    line-height: 1.80;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: 300;
+    word-break: break-word;
+  }
+  @media (min-width: 375px){
+    .lg\:paragraph-lg-desktop{
+      font-size: calc(16px + ((27 - 16) * ((100vw - 375px) / (1920 - 375))));
+    }
+  }
+  @media (min-width: 1920px){
+    .lg\:paragraph-lg-desktop{
+      font-size: 27px;
+    }
+  }
   .page .lg\:container .nestable .container{
     width: 100%;
   }
@@ -3928,12 +4008,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     @media (min-width: 768px){
     .lg\:container{
-      width: calc(100% - 56px);
+      width: calc(100% - 5.8vw);
     }
   }
     @media (min-width: 1920px){
     .lg\:container{
-      width: calc(100% - 0);
+      width: calc(100% - 2.9vw);
     }
   }
     .lg\:nth-child-2n\:ml-5:nth-child(2n + 1){
