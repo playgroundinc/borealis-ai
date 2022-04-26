@@ -9,11 +9,14 @@
  */
 
 get_header();
-$hero_image_url = get_the_post_thumbnail_url($post->ID, 'full');
+$thumbnail_id = get_post_thumbnail_id( $post->ID );
+$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); 
+
 $title = get_the_title($post->ID);
 $publication_date = get_post_meta($post->ID, 'publication_date', true);
 $authors = get_post_meta($post->ID, 'authors', true);
 $url = get_permalink($post->ID);
+
 function getbaseurl($url)
 {
 
@@ -21,7 +24,13 @@ function getbaseurl($url)
     return $domain;
 }
 ?>
-<div aria-hidden="true" class="pt-100 mt-19 bg-cover bg-no-repeat bg-center" style="background-image: url(<?php echo isset($hero_image_url) && !empty($hero_image_url) ? esc_url_raw($hero_image_url) : get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg'; ?>)"></div>
+<?php if (!empty($thumbnail_id)) : ?>
+  <div class="container">
+    <div class="mt-19">
+      <?php the_post_thumbnail('full', ['class' => 'w-full'] );?>
+    </div>
+  </div>
+<?php endif; ?>
 <main class="main-content container research-blog">
     <?php echo pg_generate_blog_sidebar_cite($post->ID); ?>
     <div class="pt-14 tb:flex">
