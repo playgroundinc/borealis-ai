@@ -26,10 +26,10 @@ function getbaseurl($url)
 ?>
 <?php if (!empty($thumbnail_id)) : ?>
   <div class="container">
-  <div class="mt-19">
-    <?php the_post_thumbnail( 'full', array( 'alt' => $alt ) );?>
+    <div class="mt-19">
+      <?php the_post_thumbnail('full', ['class' => 'w-full'] );?>
+    </div>
   </div>
-</div>
 <?php endif; ?>
 <main class="main-content container research-blog">
     <?php echo pg_generate_blog_sidebar_cite($post->ID); ?>
