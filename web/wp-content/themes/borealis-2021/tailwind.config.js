@@ -107,8 +107,12 @@ module.exports = {
 					},
 				},
 			},
+			dropShadow: {
+				nav: "0px 4px 10px rgba(76, 83, 149, 0.14)",
+			},
 			transitionProperty: {
 				"background-color": "background-color",
+				all: "all",
 				slider: "left right",
 				animate: "opacity top",
 				filter: "filter",
