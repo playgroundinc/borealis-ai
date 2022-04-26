@@ -24,7 +24,7 @@ class PG_Dropdown_Menu_Walker extends Walker_Nav_Menu
     public function start_lvl(&$output, $depth = 0, $args = null)
     {
         $indent  = str_repeat("\t", $depth);
-        $output .= "\n$indent<div role=\"region\" class=\"submenu bg-shade-white-400 md:rounded-b-large w-full hidden md:flex-row-reverse text-primary-navy-400 md:absolute top-full right-0 mb-xs-2 mb-md-5 pl-4 md:pl-0\">\n";
+        $output .= "\n$indent<div role=\"region\" class=\"submenu drop-shadow-nav bg-shade-white-400 md:rounded-b-large w-full hidden md:flex-row-reverse text-primary-navy-400 md:absolute top-full right-0 mb-xs-2 mb-md-5 pl-4 md:pl-0\">\n";
         $output .= "\n$indent<ul class=\"md:flex md:container justify-end\" role=\"menu\">\n";
     }
     /**
