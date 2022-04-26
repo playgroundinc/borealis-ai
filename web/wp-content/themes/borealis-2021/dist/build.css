@@ -1389,6 +1389,9 @@ ol.footnotes li small{
 .ml-7{
   margin-left: 28px;
 }
+.mt-7{
+  margin-top: 28px;
+}
 .mt-8{
   margin-top: 32px;
 }
@@ -1442,9 +1445,6 @@ ol.footnotes li small{
 }
 .mb-13{
   margin-bottom: 52px;
-}
-.mt-7{
-  margin-top: 28px;
 }
 .mt-14{
   margin-top: 56px;
@@ -1775,6 +1775,12 @@ ol.footnotes li small{
 .justify-between{
   justify-content: space-between;
 }
+.gap-0{
+  gap: 0px;
+}
+.gap-7{
+  gap: 28px;
+}
 .gap-6{
   gap: 24px;
 }
@@ -1977,8 +1983,8 @@ ol.footnotes li small{
 .p-5{
   padding: 20px;
 }
-.p-20{
-  padding: 80px;
+.p-17{
+  padding: 68px;
 }
 .p-12{
   padding: 48px;
@@ -2152,6 +2158,9 @@ ol.footnotes li small{
 }
 .pt-15{
   padding-top: 60px;
+}
+.pt-0{
+  padding-top: 0px;
 }
 .pt-100{
   padding-top: 400px;
@@ -3315,6 +3324,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:justify-between{
     justify-content: space-between;
+  }
+    .md\:gap-7{
+    gap: 28px;
   }
     .md\:gap-y-15{
     row-gap: 60px;
