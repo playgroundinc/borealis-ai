@@ -865,12 +865,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-.text-2-up a{
+.text-2-up a, .paragraph a{
   display: inline-block;
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
 }
-.text-2-up a:visited{
+.text-2-up a:visited, .paragraph a:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
@@ -1093,6 +1093,17 @@ ol.footnotes li small{
       font-size: 18px;
     }
   }
+  .greenhouse p a, .greenhouse li a{
+    display: inline-block;
+  }
+  .greenhouse p a, .greenhouse li a{
+    --tw-text-opacity: 1;
+    color: rgb(0 68 255 / var(--tw-text-opacity));
+  }
+  .greenhouse p a:visited, .greenhouse li a:visited{
+    --tw-text-opacity: 1;
+    color: rgb(96 55 215 / var(--tw-text-opacity));
+  }
 }
 .greenhouse ul{
   list-style-position: inside;
@@ -1159,6 +1170,15 @@ ol.footnotes li small{
     font-size: 18px;
   }
 }
+.paragraph-style .paragraph-blog a{
+  display: inline-block;
+  --tw-text-opacity: 1;
+  color: rgb(0 68 255 / var(--tw-text-opacity));
+}
+.paragraph-style .paragraph-blog a:visited{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
+}
 .paragraph-blog{
   font-size: 18px;
   font-family: Inter, sans-serif;
@@ -1177,6 +1197,15 @@ ol.footnotes li small{
   .paragraph-blog{
     font-size: 18px;
   }
+}
+.paragraph-blog a{
+  display: inline-block;
+  --tw-text-opacity: 1;
+  color: rgb(0 68 255 / var(--tw-text-opacity));
+}
+.paragraph-blog a:visited{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
 }
 .animated-element{
   position: relative;
@@ -3038,6 +3067,17 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:icon--lg{
       font-size: 24px;
     }
+  }
+  .text-2-up a, .md\:paragraph a{
+    display: inline-block;
+  }
+  .text-2-up a, .md\:paragraph a{
+    --tw-text-opacity: 1;
+    color: rgb(0 68 255 / var(--tw-text-opacity));
+  }
+  .text-2-up a:visited, .md\:paragraph a:visited{
+    --tw-text-opacity: 1;
+    color: rgb(96 55 215 / var(--tw-text-opacity));
   }
   .md\:h2 + .paragraph-blog, .h3 + .paragraph-blog, .h4 + .paragraph-blog{
     margin-top: 12px;
