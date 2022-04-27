@@ -48,10 +48,15 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         $image = wp_get_attachment_image_url($attributes->image_id, 'full');
         $image_mobile = wp_get_attachment_image_url($attributes->image_id_mobile, 'full');
+        $blacktext = false;
+        $isEmpty = false;
+        if ($attributes->background_colour === 'bg-shade-white-400 text-shade-black-400' or $attributes->background_colour === 'bg-shade-grey-100 text-shade-black-400') {
+            $blacktext = true;
+        }
         ob_start();
 ?>
-        <div class="hidden md:flex h-full <?php echo $attributes->text_position === 'bottom' ? 'flex-col' : 'flex-col-reverse' ?>  justify-end <?php echo $attributes->background_colour ?> bg-cover bg-no-repeat p-20" style="background-image: url(<?php echo $image ?>)">
-            <div class="flex justify-center">
+        <div class="hidden md:flex h-full <?php echo $attributes->text_position === 'bottom' ? 'flex-col' : 'flex-col-reverse' ?>  justify-end <?php echo $attributes->background_colour ?> bg-cover bg-no-repeat p-17 rounded-large bg-center" style="background-image: url(<?php echo $image ?>)">
+            <div class="flex justify-start">
                 <div class="w-full max-w-[560px]">
                     <?php if (!empty($attributes->title)) : ?>
                         <h3 class="h3 tb:h3-desktop mb-11">
@@ -64,7 +69,7 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
                         </p>
                     <?php endif ?>
                     <?php if (!empty($attributes->btn_text) and !empty($attributes->btn_url)) : ?>
-                        <a href="<?php echo $attributes->btn_url ?>" class="primary-button flex items-end underline-cta w-fit <?php echo $attributes->background_colour === 'bg-shade-white-400 text-shade-black-400' ? 'black-underline text-shade-black-400' : 'white-underline text-shade-white-400' ?>">
+                        <a href="<?php echo $attributes->btn_url ?>" class="primary-button flex items-end underline-cta w-fit <?php echo $blacktext ? 'black-underline text-shade-black-400' : 'white-underline text-shade-white-400' ?>">
                             <?php echo $attributes->btn_text ?>
                             <span class="icon icon--lg ml-7 relative top-0">
                                 <?php echo pg_render_icon('arrow-general') ?>
@@ -74,8 +79,8 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
                 </div>
             </div>
         </div>
-        <div class="md:hidden block <?php echo $attributes->background_colour ?>">
-            <div class="w-full bg-cover pb-78 bg-no-repeat pt-15 px-6" style="background-image: url(<?php echo $image_mobile ?>)">
+        <div class="md:hidden block <?php echo $attributes->background_colour ?> rounded-large mt-7">
+            <div class="w-full bg-cover <?php echo $image ? 'pb-78' : 'pb-15' ?> bg-no-repeat pt-15 px-6 bg-center rounded-large" style="background-image: url(<?php echo $image_mobile ?>)">
                 <?php if (!empty($attributes->title)) : ?>
                     <h3 class="h3 tb:h3-desktop mb-6">
                         <?php echo $attributes->title ?>
@@ -87,7 +92,7 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
                     </p>
                 <?php endif ?>
                 <?php if (!empty($attributes->btn_text) and !empty($attributes->btn_url)) : ?>
-                    <a href="<?php echo $attributes->btn_url ?>" class="primary-button flex items-end underline-cta w-fit <?php echo $attributes->background_colour === 'bg-shade-white-400 text-shade-black-400' ? 'black-underline text-shade-black-400' : 'white-underline text-shade-white-400' ?>">
+                    <a href="<?php echo $attributes->btn_url ?>" class="primary-button flex items-end underline-cta w-fit <?php echo $blacktext ? 'black-underline text-shade-black-400' : 'white-underline text-shade-white-400' ?>">
                         <?php echo $attributes->btn_text ?>
                         <span class="icon icon--lg ml-7 relative top-0">
                             <?php echo pg_render_icon('arrow-general') ?>

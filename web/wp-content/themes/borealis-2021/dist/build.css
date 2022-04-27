@@ -1408,6 +1408,9 @@ ol.footnotes li small{
 .ml-7{
   margin-left: 28px;
 }
+.mt-7{
+  margin-top: 28px;
+}
 .mt-8{
   margin-top: 32px;
 }
@@ -1461,9 +1464,6 @@ ol.footnotes li small{
 }
 .mb-13{
   margin-bottom: 52px;
-}
-.mt-7{
-  margin-top: 28px;
 }
 .mt-14{
   margin-top: 56px;
@@ -1794,6 +1794,12 @@ ol.footnotes li small{
 .justify-between{
   justify-content: space-between;
 }
+.gap-0{
+  gap: 0px;
+}
+.gap-7{
+  gap: 28px;
+}
 .gap-6{
   gap: 24px;
 }
@@ -1996,8 +2002,8 @@ ol.footnotes li small{
 .p-5{
   padding: 20px;
 }
-.p-20{
-  padding: 80px;
+.p-17{
+  padding: 68px;
 }
 .p-12{
   padding: 48px;
@@ -2171,6 +2177,9 @@ ol.footnotes li small{
 }
 .pt-15{
   padding-top: 60px;
+}
+.pt-0{
+  padding-top: 0px;
 }
 .pt-100{
   padding-top: 400px;
@@ -2359,6 +2368,10 @@ ol.footnotes li small{
 }
 .blur{
   --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.drop-shadow-nav{
+  --tw-drop-shadow: drop-shadow(0px 4px 10px rgba(76, 83, 149, 0.14));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .filter{
@@ -2596,6 +2609,12 @@ legend {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.1); }
+
+.wp-block-table tbody tr:nth-child(2n + 1) {
+  background-color: none !important; }
+
+.wp-block-table tbody tr:nth-child(2n + 1) td {
+  background-color: #f4f4fb; }
 
 .wp-block-table {
   margin-top: 64px;
@@ -3328,6 +3347,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:justify-between{
     justify-content: space-between;
+  }
+    .md\:gap-7{
+    gap: 28px;
   }
     .md\:gap-y-15{
     row-gap: 60px;
