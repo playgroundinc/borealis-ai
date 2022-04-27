@@ -2597,6 +2597,10 @@ legend {
 .wp-block-table tbody tr:nth-child(2n + 1) td {
   background-color: #f4f4fb; }
 
+.wp-block-table thead th {
+  text-align: left !important;
+  background-color: #000f78; }
+
 .wp-block-table {
   margin-top: 64px;
   padding-bottom: 32px; }
