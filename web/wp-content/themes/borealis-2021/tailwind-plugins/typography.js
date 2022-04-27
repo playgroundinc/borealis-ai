@@ -6,7 +6,7 @@ module.exports = plugin(function ({ addBase }) {
 		{
 			className: "h1",
 			max: "70",
-			min: "70",
+			min: "45",
 			lineHeight: "1.10",
 			fontFamily: "Metrophobic, sans-serif",
 			letterSpacing: "-0.04em",
@@ -22,7 +22,7 @@ module.exports = plugin(function ({ addBase }) {
 		{
 			className: "h2",
 			max: "60",
-			min: "57",
+			min: "37",
 			lineHeight: "1.10",
 			fontFamily: "Metrophobic, sans-serif",
 			letterSpacing: "-0.04em",
@@ -38,7 +38,7 @@ module.exports = plugin(function ({ addBase }) {
 		{
 			className: "h3",
 			max: "60",
-			min: "30",
+			min: "25",
 			lineHeight: "1.10",
 			fontFamily: "Inter, sans-serif",
 			letterSpacing: "-0.02em",
