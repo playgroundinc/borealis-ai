@@ -60,7 +60,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
                         <img class="mb-6" src="<?php echo $image ?>" alt="<?php echo $attributes->image_id ?>">
                     <?php else : ?>
                         <?php if (!empty($attributes->title)) : ?>
-                            <h2 class="<?php echo $attributes->title_size ?> mb-8"><?php echo $attributes->title ?></h2>
+                            <h1 class="<?php echo $attributes->title_size ?> mb-8"><?php echo $attributes->title ?></h1>
                         <?php endif; ?>
                         <?php if (!empty($attributes->subtitle)) : ?>
                             <h3 class="h4 mb-8"><?php echo $attributes->subtitle ?></h3>
