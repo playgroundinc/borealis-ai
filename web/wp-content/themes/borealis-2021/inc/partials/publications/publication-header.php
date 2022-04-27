@@ -41,7 +41,7 @@ if (!function_exists('pg_generate_publication_header')) {
         <div class="pt-41 pb-14">
             <div class="tb:w-8/12">
                 <div class="flex flex-col-reverse">
-                    <h1 class="h3 md:h1-desktop pt-4 md:pt-8 break-normal"><?php echo esc_html(the_title()) ?></h1>
+                    <h1 class="h3 tb:h3-desktop md:h1-desktop pt-4 md:pt-8 break-normal"><?php echo esc_html(the_title()) ?></h1>
                     <div class="md:flex">
                         <p class="paragraph-small text-shade-grey-700 pr-4"><?php echo !empty($type[0]) ? esc_html($type[0]->name) : 'Publication' ?></p>
                         <?php if (!empty($research_areas)) : ?>
@@ -59,7 +59,7 @@ if (!function_exists('pg_generate_publication_header')) {
                     <?php if (isset($authors_string)) : ?>
                         <div class="pt-6 md:pt-0 md:w-5/8">
                             <p class="paragraph"><?php echo wp_kses($authors_string, $allowed_html); ?></p>
-                            <p class="mt-4 paragraph-sm text-shade-grey-700"><?php echo esc_html('*Denotes Equal Contribution') ?></p>
+                            <p class="mt-4 paragraph-sm text-shade-grey-700 <?php echo str_contains($authors_string, '*') ? '' : 'hidden' ?>"><?php echo esc_html('*Denotes Equal Contribution') ?></p>
                         </div>
                     <?php endif; ?>
                 </div>

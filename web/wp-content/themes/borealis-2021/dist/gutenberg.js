@@ -8307,7 +8307,7 @@ function text2UpContainerBlock() {
       }];
       var copyStyles = [{
         label: "Large",
-        value: "paragraph-lg"
+        value: "paragraph-lg tb:paragraph-lg-desktop"
       }, {
         label: "Small",
         value: "paragraph"

@@ -50,17 +50,17 @@ if (!function_exists('pg_render_callout_container_block')) {
 ?>
         <div id="<?php echo $attributes->anchor_id ?>" class="custom-component component-dark py-20 bg-cover bg-center animated-element callout" style="background-image: url(<?php echo esc_url_raw($image) ?>)">
             <div class="container">
-                <div class="text-shade-white-400 md:flex justify-between">
-                    <div class="basis-1/3 shrink-0 pr-8">
-                        <h2 class="h3"><?php echo ($attributes->title) ?></h2>
+                <div class="text-shade-white-400 md:flex justify-between tb:flex-row flex-col">
+                    <div class="tb:w-4/12 w-full pr-8">
+                        <h2 class="h3 tb:h3-desktop"><?php echo ($attributes->title) ?></h2>
                     </div>
-                    <div class="basis-7/12 shrink-0 mt-8 md:mt-0">
+                    <div class="tb:w-8/12 w-full mt-8 tb:mt-0">
                         <?php if ($attributes->description && strlen($attributes->description) > 0) : ?>
                             <p class="paragraph"><?php echo wp_kses($attributes->description, $allowed_html) ?></p>
                         <?php endif; ?>
                     </div>
                 </div>
-                <ul class="mt-25 md:mt-24 md:flex flex-wrap">
+                <ul class="mt-25 md:mt-24 md:flex flex-wrap justify-between">
                     <?php foreach ($block['innerBlocks'] as $index => $inner_block) : ?>
                         <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>
                     <?php endforeach; ?>
