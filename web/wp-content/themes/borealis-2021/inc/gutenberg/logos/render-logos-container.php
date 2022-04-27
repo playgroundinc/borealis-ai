@@ -48,7 +48,7 @@ if (!function_exists('pg_render_logos_container_block')) {
             <div class="container flex justify-between pt-7 md:pt-14 tb:flex-row flex-col">
                 <div class="w-full tb:w-3/12">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h2 class="h3 mb-8 pr-10"><?php echo wp_kses($attributes->title, $allowed_html); ?></h2>
+                        <h2 class="h3 tb:h3-desktop mb-8 pr-10"><?php echo wp_kses($attributes->title, $allowed_html); ?></h2>
                     <?php endif; ?>
                     <?php if (!empty($attributes->copy)) : ?>
                         <p class="paragraph mb-8">

@@ -48,7 +48,7 @@ if (!function_exists('pg_render_title_text_cta_block')) {
 ?>
         <div id="<?php echo $attributes->anchor_id ?>" class="w-full component-padding custom-component animated-element title-text <?php echo $attributes->background_colour ?> component-dark">
             <div class="container flex flex-col tb:flex-row gap-6">
-                <h3 class="h3 w-full tb:w-4/12"> <?php echo $attributes->title ?></h3>
+                <h3 class="h3 tb:h3-desktop w-full tb:w-4/12"> <?php echo $attributes->title ?></h3>
                 <p class="w-full tb:w-4/12 tb:self-center">
                     <?php echo $attributes->copy ?>
                 </p>
