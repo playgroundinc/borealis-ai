@@ -54,13 +54,13 @@ function pg_init_menus()
             )
         ),
 
-        // 404 page settings submenu with English and French sections.
+        // 404 page settings submenu.
         '404 Page Settings' => array(
             'slug' => $namespace . '-404-settings',
             'parent' => $parent,
             'description' => 'Use this page to update the copy on the 404 page. If left blank it will default to the value set on the main Borealis site.',
             'sections' => array(
-                '404 Page English' => array(
+                '404 Page' => array(
                     'id' => $namespace . '-404-en',
                     'fields' => array(
                         '404_title' => 'text',
@@ -70,7 +70,7 @@ function pg_init_menus()
             )
         ),
 
-        // Cookie Notification settings with English and French sections.
+        // Cookie Notification settings.
         'Cookie Notification Settings' => array(
             'slug' => $namespace . '-cookie-settings',
             'parent' => $parent,
@@ -96,7 +96,7 @@ function pg_init_menus()
             // Sections allow for breaking up the inputs onto the page. 
             // The key for each item will act as the section's title. 
             'sections' => array(
-                'Footer Banner English' => array(
+                'Footer Banner' => array(
                     'id' => $namespace . '-footer-banner-en',
                     'fields' => array(
                         'footer_banner_copy' => 'textarea',
@@ -115,7 +115,7 @@ function pg_init_menus()
             // The key for each item will act as the section's title. 
             'sections' => array(
 
-                'Social Media English' => array(
+                'Social Media' => array(
                     'id' => $namespace . '-socials-en',
                     // The key should be written in kebab case. 
                     // It will be deslugified and turned into the label. 

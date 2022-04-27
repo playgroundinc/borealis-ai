@@ -201,8 +201,6 @@
                         <?php echo $header ?>
                     <?php endif; ?>
                 </div>
-            <?php elseif ($no_header) : ?>
-                <h1 class="sr-only"><?php echo esc_html(the_title()); ?></h1>
             <?php else : ?>
                 <div class="container">
                     <?php if (!empty($headline)) : ?>

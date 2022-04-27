@@ -43,7 +43,7 @@ if (!function_exists('pg_render_callout_column_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <li class="basis-card grow-0 md:nth-child-3n:ml-0 md:nth-child-4:mt-8 md:nth-child-2:ml-8 nth-child-2:mt-5 md:nth-child-2:mt-0">
+        <li class="w-full tb:basis-card tb:mb-0 mb-7">
             <a href="<?php echo esc_url_raw($attributes->link) ?>" class="block backdrop rounded-large min-h-[224px] md:min-h-[244px] flex flex-col">
                 <div class="text-shade-white-400 h3 py-4 px-5" aria-hidden="true">
                     <?php echo pg_render_icon('callout'); ?>
