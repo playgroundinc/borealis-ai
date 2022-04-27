@@ -1467,6 +1467,9 @@ ol.footnotes li small{
 .mr-7{
   margin-right: 28px;
 }
+.mb-7{
+  margin-bottom: 28px;
+}
 .block{
   display: block;
 }
@@ -1640,6 +1643,9 @@ ol.footnotes li small{
 }
 .w-22{
   width: 88px;
+}
+.w-4\/12{
+  width: 33.333333%;
 }
 .max-w-\[560px\]{
   max-width: 560px;
@@ -3698,6 +3704,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:mb-5{
     margin-bottom: 20px;
   }
+    .tb\:mt-24{
+    margin-top: 96px;
+  }
     .tb\:block{
     display: block;
   }
@@ -3712,6 +3721,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:min-h-\[400px\]{
     min-height: 400px;
+  }
+    .tb\:min-h-\[244px\]{
+    min-height: 244px;
   }
     .tb\:w-8\/12{
     width: 66.666667%;
@@ -3763,6 +3775,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:w-2\/5{
     width: 40%;
+  }
+    .tb\:basis-card{
+    flex-basis: calc((100% - 64px) / 3);
   }
     .tb\:flex-row{
     flex-direction: row;
@@ -3840,6 +3855,18 @@ mjx-container::-webkit-scrollbar-thumb,
       width: calc(100% - 0);
     }
   }
+    .tb\:nth-child-2\:ml-8:nth-child(n + 2){
+    margin-left: 32px;
+  }
+    .tb\:nth-child-2\:mt-0:nth-child(n + 2){
+    margin-top: 0px;
+  }
+    .tb\:nth-child-3n\:ml-0:nth-child(3n + 1){
+    margin-left: 0px;
+  }
+    .tb\:nth-child-4\:mt-8:nth-child(n + 4){
+    margin-top: 32px;
+  }
 }
 
 @media (min-width: 1440px){
@@ -3869,6 +3896,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:mr-16{
     margin-right: 64px;
+  }
+    .lg\:mt-0{
+    margin-top: 0px;
+  }
+    .lg\:mt-24{
+    margin-top: 96px;
   }
     .lg\:flex{
     display: flex;
