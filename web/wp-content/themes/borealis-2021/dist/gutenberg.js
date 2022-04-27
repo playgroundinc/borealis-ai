@@ -6853,7 +6853,7 @@ function pgNewsSlideBlock() {
   var _wp = wp,
       i18n = _wp.i18n;
   var blockSlug = "news-slide";
-  var blockTitle = "News Slide";
+  var blockTitle = "External Link";
   var blockDescription = "Creates a slide for an external news source.";
   var blockCategory = "rows";
   var blockIcon = "external"; // Dashicons: https://developer.wordpress.org/resource/dashicons/
