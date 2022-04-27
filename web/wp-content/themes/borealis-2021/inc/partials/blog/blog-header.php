@@ -78,7 +78,7 @@ if (!function_exists('pg_generate_blog_header')) {
                     <?php if (isset($authors_string)) : ?>
                         <div class="pt-6 md:pt-0 md:w-5/8">
                             <p class="paragraph"><?php echo wp_kses($authors_string, $allowed_html); ?></p>
-                            <p class="mt-4 paragraph-sm text-shade-grey-700"><?php echo esc_html('*Denotes Equal Contribution') ?></p>
+                            <p class="mt-4 paragraph-sm text-shade-grey-700 <?php echo str_contains($authors_string, '*') ? '' : 'hidden' ?>"><?php echo esc_html('*Denotes Equal Contribution') ?></p>
                         </div>
                     <?php endif; ?>
                 </div>
