@@ -59,7 +59,7 @@ if (!function_exists('pg_render_gallery_container_block')) {
                 </div>
                 <div class="md:w-8/12">
                     <?php if (strlen($attributes->description) > 0) : ?>
-                        <p class="<?php echo $font[1] !== "" ? $font[1] : 'paragraph tb:paragraph-lg' ?> pt-8 md:pt-0"><?php echo esc_html($attributes->description); ?></p>
+                        <p class="<?php echo $font[1] !== "" ? $font[1] : 'paragraph tb:paragraph-lg lg:paragraph-lg-desktop' ?> pt-8 md:pt-0"><?php echo esc_html($attributes->description); ?></p>
                     <?php endif; ?>
                     <?php if (!empty($attributes->link) && strlen($attributes->link_text) > 0) : ?>
                         <a href="<?php echo esc_attr($attributes->link) ?>" class="primary-button flex items-center underline-cta w-fit black-underline text-shade-black-400 visited:text-primary-electric-purple-400 paragraph mt-7 md:mt-14">

@@ -19,10 +19,10 @@ if (!function_exists('pg_render_products_item')) {
 ?>
             <li class="block border-b border-color-shade-grey-500 overflow-hidden image-hover">
                 <a class="hover-item block transition-background-color duration-300 group" href="<?php echo $cta_link ?>" target="_blank" rel="noopener noreferrer">
-                    <div class="container md:flex items-center hover py-8 md:py-15">
+                    <div class="container md:flex items-center hover py-8 md:py-3vw">
                         <div class="basis-1/3 shrink-0 md:pr-12">
                             <?php if (isset($market) && strlen($market) > 0) : ?>
-                                <p class="h3"><?php echo esc_html($market); ?></p>
+                                <p class="h3 tb:h3-desktop"><?php echo esc_html($market); ?></p>
                             <?php endif; ?>
                         </div>
                         <div class="basis-1/2 shrink-0 pt-5 md:pt-0 md:pr-6">
