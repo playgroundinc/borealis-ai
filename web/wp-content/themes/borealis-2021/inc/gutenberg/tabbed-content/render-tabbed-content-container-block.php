@@ -65,7 +65,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                         <div class="basis-8/12 shrink-0 pt-5 lg:pt-0">
                             <?php if (!empty($attributes->copy)) : ?>
                                 <div class="pb-8">
-                                    <p class="paragraph"><?php echo esc_html($attributes->copy) ?></p>
+                                    <p class="paragraph"><?php echo $attributes->copy ?></p>
                                     <?php if (!empty($attributes->cta_one_text) && !empty($attributes->cta_one_link) && strlen($attributes->cta_one_text) > 0 && strlen($attributes->cta_one_link) > 0) : ?>
                                         <div class="md:flex flex-wrap">
                                             <a class="primary-button flex items-center pt-11 pb-4" href="<?php echo esc_url_raw($attributes->cta_one_link) ?>"><?php echo esc_html($attributes->cta_one_text) ?><span class="pl-6"><?php echo pg_render_icon('arrow-white') ?></span></a>
