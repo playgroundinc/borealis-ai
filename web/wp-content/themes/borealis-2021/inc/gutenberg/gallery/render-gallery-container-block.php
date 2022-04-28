@@ -74,7 +74,7 @@ if (!function_exists('pg_render_gallery_container_block')) {
             </div>
             <div>
                 <div class="mx-auto md:ml-auto md:mr-0 w-full md:w-11/12 relative pt-gallery transition-all duration-400">
-                    <ul class="flex absolute left-0 top-0 bottom-0 max-w-full visible-scroll scrollbar-height overflow-x-scroll pl-6 items-center pr-6 md:pr-25 lg:pr-gallery-offset custom-gallery overflow-y-hidden">
+                    <ul class="flex absolute left-0 top-0 bottom-0 max-w-full visible-scroll scrollbar-height overflow-x-scroll pl-6 items-center pr-6 md:pr-25 lg:pr-gallery-offset custom-gallery">
                         <?php foreach ($block['innerBlocks'] as $index => $inner_block) : ?>
                             <?php if ($inner_block['blockName'] === $namespace . '/custom-image') : ?>
                                 <?php
