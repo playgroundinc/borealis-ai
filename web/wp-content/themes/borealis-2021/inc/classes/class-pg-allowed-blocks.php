@@ -85,8 +85,6 @@ class PG_Allowed_Blocks
             'video-tabbed-content-panel-block',
 
             // Video
-            'core/embed-youtube',
-            'core/video',
             'core/embed'
 
         );
@@ -166,20 +164,16 @@ class PG_Allowed_Blocks
             'spacer',
 
             // Video
-            'core/embed-youtube',
-            'core/video',
             'core/embed'
         );
         $this->shared_core_blocks = array(
             'core/embed-youtube',
-            'core/video',
             'core/embed'
         );
         $this->blog_core_blocks = array(
             'core/table',
             'core/quote',
             'core/embed-youtube',
-            'core/video',
             'core/embed'
         );
         $this->author_blocks = array(
