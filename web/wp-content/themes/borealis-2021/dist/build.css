@@ -320,7 +320,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 .h1{
-  font-size: 45px;
+  font-size: 40px;
   font-family: Metrophobic, sans-serif;
   line-height: 1.10;
   letter-spacing: -0.04em;
@@ -330,7 +330,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .h1{
-    font-size: calc(45px + ((70 - 45) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(40px + ((70 - 40) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -339,7 +339,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .h2{
-  font-size: 37px;
+  font-size: 30px;
   font-family: Metrophobic, sans-serif;
   line-height: 1.10;
   letter-spacing: -0.04em;
@@ -349,7 +349,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .h2{
-    font-size: calc(37px + ((60 - 37) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(30px + ((60 - 30) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -358,7 +358,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .h3{
-  font-size: 25px;
+  font-size: 20px;
   font-family: Inter, sans-serif;
   line-height: 1.10;
   letter-spacing: -0.02em;
@@ -368,12 +368,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .h3{
-    font-size: calc(25px + ((60 - 25) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(20px + ((30 - 20) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
   .h3{
-    font-size: 60px;
+    font-size: 30px;
   }
 }
 .h4{
@@ -396,7 +396,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .paragraph-lg{
-  font-size: 22px;
+  font-size: 20px;
   font-family: Inter, sans-serif;
   line-height: 1.80;
   letter-spacing: normal;
@@ -406,35 +406,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .paragraph-lg{
-    font-size: calc(22px + ((27 - 22) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(20px + ((27 - 20) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
   .paragraph-lg{
-    font-size: 27px;
-  }
-}
-.paragraph-lg-desktop{
-  font-size: 16px;
-  font-family: Inter, sans-serif;
-  line-height: 1.80;
-  letter-spacing: normal;
-  text-transform: none;
-  font-weight: 300;
-  word-break: break-word;
-}
-@media (min-width: 375px){
-  .paragraph-lg-desktop{
-    font-size: calc(16px + ((27 - 16) * ((100vw - 375px) / (1920 - 375))));
-  }
-}
-@media (min-width: 1920px){
-  .paragraph-lg-desktop{
     font-size: 27px;
   }
 }
 .paragraph{
-  font-size: 18px;
+  font-size: 16px;
   font-family: Inter, sans-serif;
   line-height: 1.80;
   letter-spacing: normal;
@@ -444,7 +425,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .paragraph{
-    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -453,7 +434,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .paragraph-md{
-  font-size: 16px;
+  font-size: 14px;
   font-family: Inter, sans-serif;
   line-height: 1.80;
   letter-spacing: normal;
@@ -463,7 +444,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .paragraph-md{
-    font-size: calc(16px + ((16 - 16) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(14px + ((16 - 14) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -491,7 +472,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .paragraph-blog{
-  font-size: 18px;
+  font-size: 16px;
   font-family: Martel, serif;
   line-height: 2.2;
   letter-spacing: 0.01em;
@@ -501,7 +482,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .paragraph-blog{
-    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -548,7 +529,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .primary-button{
-  font-size: 18px;
+  font-size: 16px;
   font-family: Inter, sans-serif;
   line-height: auto;
   letter-spacing: normal;
@@ -558,7 +539,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .primary-button{
-    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -567,7 +548,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .text-link{
-  font-size: 18px;
+  font-size: 16px;
   font-family: Inter, sans-serif;
   line-height: 1.50;
   letter-spacing: normal;
@@ -577,7 +558,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .text-link{
-    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -1041,7 +1022,7 @@ ol.footnotes li small{
 }
 @media (min-width: 768px){
   .greenhouse h2{
-    font-size: 25px;
+    font-size: 20px;
     font-family: Inter, sans-serif;
     line-height: 1.10;
     letter-spacing: -0.02em;
@@ -1051,12 +1032,12 @@ ol.footnotes li small{
   }
   @media (min-width: 375px){
     .greenhouse h2{
-      font-size: calc(25px + ((60 - 25) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(20px + ((30 - 20) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
     .greenhouse h2{
-      font-size: 60px;
+      font-size: 30px;
     }
   }
   .greenhouse h2 + .paragraph-blog{
@@ -1094,7 +1075,7 @@ ol.footnotes li small{
 }
 @media (min-width: 768px){
   .greenhouse p, .greenhouse li{
-    font-size: 18px;
+    font-size: 16px;
     font-family: Inter, sans-serif;
     line-height: 1.80;
     letter-spacing: normal;
@@ -1104,7 +1085,7 @@ ol.footnotes li small{
   }
   @media (min-width: 375px){
     .greenhouse p, .greenhouse li{
-      font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
@@ -1171,7 +1152,7 @@ ol.footnotes li small{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .paragraph-style .paragraph-blog{
-  font-size: 18px;
+  font-size: 16px;
   font-family: Inter, sans-serif;
   line-height: 1.80;
   letter-spacing: normal;
@@ -1181,7 +1162,7 @@ ol.footnotes li small{
 }
 @media (min-width: 375px){
   .paragraph-style .paragraph-blog{
-    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -1199,7 +1180,7 @@ ol.footnotes li small{
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
 .paragraph-blog{
-  font-size: 18px;
+  font-size: 16px;
   font-family: Inter, sans-serif;
   line-height: 1.80;
   letter-spacing: normal;
@@ -1209,7 +1190,7 @@ ol.footnotes li small{
 }
 @media (min-width: 375px){
   .paragraph-blog{
-    font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -1298,9 +1279,6 @@ ol.footnotes li small{
 }
 .right-0{
   right: 0px;
-}
-.top-3{
-  top: 12px;
 }
 .top-2{
   top: 8px;
@@ -2923,27 +2901,8 @@ mjx-container::-webkit-scrollbar-thumb,
 }
 
 @media (min-width: 768px){
-  .md\:h1-desktop{
-    font-size: 38px;
-    font-family: Metrophobic, sans-serif;
-    line-height: 1.10;
-    letter-spacing: -0.04em;
-    text-transform: none;
-    font-weight: normal;
-    word-break: break-word;
-  }
-  @media (min-width: 375px){
-    .md\:h1-desktop{
-      font-size: calc(38px + ((70 - 38) * ((100vw - 375px) / (1920 - 375))));
-    }
-  }
-  @media (min-width: 1920px){
-    .md\:h1-desktop{
-      font-size: 70px;
-    }
-  }
   .md\:h2{
-    font-size: 37px;
+    font-size: 30px;
     font-family: Metrophobic, sans-serif;
     line-height: 1.10;
     letter-spacing: -0.04em;
@@ -2953,35 +2912,16 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 375px){
     .md\:h2{
-      font-size: calc(37px + ((60 - 37) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(30px + ((60 - 30) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
     .md\:h2{
-      font-size: 60px;
-    }
-  }
-  .md\:h2-desktop{
-    font-size: 31px;
-    font-family: Metrophobic, sans-serif;
-    line-height: 1.10;
-    letter-spacing: -0.04em;
-    text-transform: none;
-    font-weight: normal;
-    word-break: break-word;
-  }
-  @media (min-width: 375px){
-    .md\:h2-desktop{
-      font-size: calc(31px + ((60 - 31) * ((100vw - 375px) / (1920 - 375))));
-    }
-  }
-  @media (min-width: 1920px){
-    .md\:h2-desktop{
       font-size: 60px;
     }
   }
   .md\:h3{
-    font-size: 25px;
+    font-size: 20px;
     font-family: Inter, sans-serif;
     line-height: 1.10;
     letter-spacing: -0.02em;
@@ -2991,16 +2931,16 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 375px){
     .md\:h3{
-      font-size: calc(25px + ((60 - 25) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(20px + ((30 - 20) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
     .md\:h3{
-      font-size: 60px;
+      font-size: 30px;
     }
   }
   .md\:paragraph-lg{
-    font-size: 22px;
+    font-size: 20px;
     font-family: Inter, sans-serif;
     line-height: 1.80;
     letter-spacing: normal;
@@ -3010,7 +2950,7 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 375px){
     .md\:paragraph-lg{
-      font-size: calc(22px + ((27 - 22) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(20px + ((27 - 20) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
@@ -3019,7 +2959,7 @@ mjx-container::-webkit-scrollbar-thumb,
     }
   }
   .md\:paragraph{
-    font-size: 18px;
+    font-size: 16px;
     font-family: Inter, sans-serif;
     line-height: 1.80;
     letter-spacing: normal;
@@ -3029,7 +2969,7 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 375px){
     .md\:paragraph{
-      font-size: calc(18px + ((18 - 18) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
@@ -3433,9 +3373,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:p-20{
     padding: 80px;
   }
-    .md\:py-5{
-    padding-top: 20px;
-    padding-bottom: 20px;
+    .md\:py-0{
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
     .md\:px-5{
     padding-left: 20px;
@@ -3445,9 +3385,9 @@ mjx-container::-webkit-scrollbar-thumb,
     padding-top: 8px;
     padding-bottom: 8px;
   }
-    .md\:py-0{
-    padding-top: 0px;
-    padding-bottom: 0px;
+    .md\:py-0\.8vw{
+    padding-top: 0.8vw;
+    padding-bottom: 0.8vw;
   }
     .md\:py-14{
     padding-top: 56px;
@@ -3476,6 +3416,10 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:py-3vw{
     padding-top: 3.125vw;
     padding-bottom: 3.125vw;
+  }
+    .md\:py-5{
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
     .md\:pr-5{
     padding-right: 20px;
@@ -3549,11 +3493,17 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pl-4{
     padding-left: 16px;
   }
-    .md\:pl-8{
-    padding-left: 32px;
+    .md\:pl-1\.17vw{
+    padding-left: 1.7vw;
   }
-    .md\:pr-14{
-    padding-right: 56px;
+    .md\:pr-2\.9vw{
+    padding-right: 2.9vw;
+  }
+    .md\:pl-1{
+    padding-left: 4px;
+  }
+    .md\:pr-2{
+    padding-right: 8px;
   }
     .md\:pr-4{
     padding-right: 16px;
@@ -3566,6 +3516,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:pb-20{
     padding-bottom: 80px;
+  }
+    .md\:pl-8{
+    padding-left: 32px;
   }
     .md\:pb-10{
     padding-bottom: 40px;
@@ -3650,46 +3603,8 @@ mjx-container::-webkit-scrollbar-thumb,
 }
 
 @media (min-width: 1000px){
-  .tb\:h2-desktop{
-    font-size: 31px;
-    font-family: Metrophobic, sans-serif;
-    line-height: 1.10;
-    letter-spacing: -0.04em;
-    text-transform: none;
-    font-weight: normal;
-    word-break: break-word;
-  }
-  @media (min-width: 375px){
-    .tb\:h2-desktop{
-      font-size: calc(31px + ((60 - 31) * ((100vw - 375px) / (1920 - 375))));
-    }
-  }
-  @media (min-width: 1920px){
-    .tb\:h2-desktop{
-      font-size: 60px;
-    }
-  }
-  .tb\:h3-desktop{
-    font-size: 16px;
-    font-family: Inter, sans-serif;
-    line-height: 1.10;
-    letter-spacing: -0.02em;
-    text-transform: none;
-    font-weight: normal;
-    word-break: break-word;
-  }
-  @media (min-width: 375px){
-    .tb\:h3-desktop{
-      font-size: calc(16px + ((30 - 16) * ((100vw - 375px) / (1920 - 375))));
-    }
-  }
-  @media (min-width: 1920px){
-    .tb\:h3-desktop{
-      font-size: 30px;
-    }
-  }
   .tb\:paragraph-lg{
-    font-size: 22px;
+    font-size: 20px;
     font-family: Inter, sans-serif;
     line-height: 1.80;
     letter-spacing: normal;
@@ -3699,30 +3614,11 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 375px){
     .tb\:paragraph-lg{
-      font-size: calc(22px + ((27 - 22) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(20px + ((27 - 20) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
     .tb\:paragraph-lg{
-      font-size: 27px;
-    }
-  }
-  .tb\:paragraph-lg-desktop{
-    font-size: 16px;
-    font-family: Inter, sans-serif;
-    line-height: 1.80;
-    letter-spacing: normal;
-    text-transform: none;
-    font-weight: 300;
-    word-break: break-word;
-  }
-  @media (min-width: 375px){
-    .tb\:paragraph-lg-desktop{
-      font-size: calc(16px + ((27 - 16) * ((100vw - 375px) / (1920 - 375))));
-    }
-  }
-  @media (min-width: 1920px){
-    .tb\:paragraph-lg-desktop{
       font-size: 27px;
     }
   }
@@ -3944,25 +3840,6 @@ mjx-container::-webkit-scrollbar-thumb,
 }
 
 @media (min-width: 1440px){
-  .lg\:paragraph-lg-desktop{
-    font-size: 16px;
-    font-family: Inter, sans-serif;
-    line-height: 1.80;
-    letter-spacing: normal;
-    text-transform: none;
-    font-weight: 300;
-    word-break: break-word;
-  }
-  @media (min-width: 375px){
-    .lg\:paragraph-lg-desktop{
-      font-size: calc(16px + ((27 - 16) * ((100vw - 375px) / (1920 - 375))));
-    }
-  }
-  @media (min-width: 1920px){
-    .lg\:paragraph-lg-desktop{
-      font-size: 27px;
-    }
-  }
   .page .lg\:container .nestable .container{
     width: 100%;
   }

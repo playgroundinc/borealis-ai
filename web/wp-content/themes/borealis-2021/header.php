@@ -88,7 +88,7 @@
         $setting_names = array('cookie_policy_title', 'cookie_policy_copy', 'cookie_policy_link', 'cookie_policy_link_text');
         $settings = pg_get_settings($setting_names);
         if (!empty($settings['cookie_policy_title']) || !empty($settings['cookie_policy_copy']) || !empty($settings['cookie_policy_link']) || !empty($settings['cookie_policy_link_text'])) { ?>
-            <div class="cookies bg-shade-grey-100 text-primary-navy-400 cursor-default pl-7 md:pl-6 py-4 md:py-5 flex justify-between hidden fixed z-40 bottom-2 md:bottom-5 right-2 md:right-5">
+            <div class="cookies bg-shade-grey-100 text-primary-navy-400 cursor-default pl-7 md:pl-6 py-4 md:py-0.8vw flex justify-between hidden fixed z-40 bottom-2 md:bottom-5 right-2 md:right-5">
                 <div>
                     <h2 class="paragraph-sm md:paragraph"><?php echo esc_html($settings['cookie_policy_title']) ?></h2>
                     <p class="icon-md md:paragraph-sm mr-4"><?php echo esc_html($settings['cookie_policy_copy']) ?>&nbsp;
@@ -117,10 +117,10 @@
         <!-- Skip to Content link -->
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'pg-wp-starter'); ?></a>
         <header id="masthead" class="<?php echo $no_header ? esc_attr($header_height) : esc_attr('bg-cover bg-bottom min-h-[400px] md:min-h-[280px] flex flex-col justify-end') ?>" style="background-image: url(<?php echo $no_header ? '' : esc_attr($hero_image) ?> )">
-            <nav id="main-navigation" class="fixed z-50 left-0 right-0 top-3 transition-top duration-700">
-                <div class="<?php echo ($has_subnav) ? 'rounded-b-large md:rounded-b-none rounded-t-large' : 'rounded-large'; ?> relative mt-4 top-2 py-4 nav-container drop-shadow-nav <?php echo (is_home() || is_front_page()) ? 'bg-transparent transition-background-color duration-700' : 'bg-primary-navy-400'; ?>">
+            <nav id="main-navigation" class="fixed z-50 left-0 right-0 top-2 transition-top duration-700">
+                <div class="<?php echo ($has_subnav) ? 'rounded-b-large md:rounded-b-none rounded-t-large' : 'rounded-large'; ?> relative mt-4 py-4 md:py-0.8vw nav-container drop-shadow-nav <?php echo (is_home() || is_front_page()) ? 'bg-transparent transition-background-color duration-700' : 'bg-primary-navy-400'; ?>">
                     <div class="flex md:flex-row flex-col items-center px-4 md:px-5 lg:px-0 lg:container">
-                        <div class="logo shrink-0 h-fit flex md:w-auto w-full justify-between align-center">
+                        <div class="logo shrink-0 h-fit flex md:w-auto w-full justify-between align-center md:py-0.8vw">
                             <a href="<?php echo get_home_url(); ?>">
                                 <?php echo $logo ?>
                             </a>
@@ -137,7 +137,7 @@
                                 $Menu->generate_menu('navigation-main', 'dropdown');
                                 ?>
 
-                                <a href="/search" class="mt-6 md:mt-0 px-6 md:px-5 border-t md:border-t-0 w-full md:w-auto text-primary-navy-400 md:text-shade-white-400 text-shade-grey-700 py-4 md:py-2 legal flex items-center md:block">
+                                <a href="/search" class="mt-6 md:mt-0 px-6 md:px-5 border-t md:border-t-0 w-full md:w-auto text-primary-navy-400 md:text-shade-white-400 py-4 md:py-0.8vw legal flex items-center md:block">
                                     <span class="md:hidden paragraph grow"><?php echo esc_html('Search') ?></span>
                                     <?php echo pg_render_icon('search') ?>
                                 </a>

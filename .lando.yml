@@ -6,9 +6,11 @@ config:
   id: 7c6ad968-c37a-40d5-8591-e6c85d4abc7f
 services:
   node:
-    type: node:14
+    type: 'node:14'
     build:
-      - cd web/wp-content/themes/borealis-2021 && npm rebuild node-sass && npm install && npm run build 
+      - >-
+        cd web/wp-content/themes/borealis-2021 && npm rebuild node-sass && npm
+        install && npm run build
 tooling:
   npm:
     service: node
