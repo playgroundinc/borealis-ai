@@ -23,8 +23,7 @@ if (!function_exists('pg_render_list_block')) {
     {
         ob_start();
 ?>
-        <div class="custom-component nestable animated-element container flex flex-col tb:flex-row">
-            <div class="w-full tb:w-4/12"></div>
+        <div class="custom-component nestable animated-element flex flex-col tb:flex-row">
             <div class="w-full flex flex-col tb:w-8/12 my-8 list-disc core-list text-shade-black-400 paragraph">
                 <?php echo $block['innerContent'][0] ?>
             </div>
