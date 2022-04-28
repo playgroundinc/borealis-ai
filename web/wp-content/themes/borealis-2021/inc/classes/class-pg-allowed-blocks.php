@@ -166,6 +166,7 @@ class PG_Allowed_Blocks
         $this->blog_core_blocks = array(
             'core/table',
             'core/quote',
+            'core/list'
         );
         $this->author_blocks = array(
             $this->namespace . '/author-meta-block',
