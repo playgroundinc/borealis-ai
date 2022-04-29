@@ -120,12 +120,14 @@ module.exports = {
 			height: {
 				7: "28px",
 				14: "56px",
+				"350px": "350px",
 				"80vw": "80vw",
 			},
+			spacing: {},
 			padding: {
 				"0.8vw": "0.8vw", // 16px @ 1920
 				"1.17vw": "1.7vw", // 32px @ 1920
-				"2vw": "2vw",
+				"2vw": "2vw", // 40px @ 1920
 				"2.9vw": "2.9vw", // 56px @ 1920
 				"3vw": "3.125vw",
 				"4vw": "4vw",
