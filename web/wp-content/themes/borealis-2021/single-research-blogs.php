@@ -105,7 +105,7 @@ function getbaseurl($url)
             <?php endif; ?>
         </aside>
         <div class="page__content tb:w-5/6">
-            <div class="mx-auto tb:w-5/6">
+            <div class="mx-auto tb:w-70%">
                 <?php
                 if (have_posts()) :
                     while (have_posts()) :

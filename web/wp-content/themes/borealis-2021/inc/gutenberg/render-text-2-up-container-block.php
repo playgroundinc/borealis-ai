@@ -73,7 +73,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
                     <div class="w-full tb:w-8/12 flex flex-col">
                         <div class="w-full">
                             <div class="mb-10 md:mb-0 w-full text-2-up">
-                                <p class="<?php echo $attributes->copy_size ?> md:pr-10">
+                                <p class="<?php echo $attributes->copy_size ?> md:pr-10 link-hover">
                                     <?php echo $block['innerBlocks'][0]['attrs']['copy'] ?>
                                 </p>
                             </div>
@@ -102,7 +102,7 @@ if (!function_exists('pg_render_text_2_up_container_block')) {
                 ?>
                     <div class="w-full md:flex-row flex-col tb:w-8/12">
                         <div class="mb-10 md:mb-0 w-full text-2-up">
-                            <p class="<?php echo $attributes->copy_size ?> md:pr-10">
+                            <p class="<?php echo $attributes->copy_size ?> md:pr-10 link-hover">
                                 <?php echo $block['innerBlocks'][0]['attrs']['copy'] ?>
                             </p>
                         </div>

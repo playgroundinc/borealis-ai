@@ -72,7 +72,7 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                                 <div class="flex justify-between flex-col tb:flex-row w-full cursor-default tb:items-start" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
                                     <div class="w-full tb:w-5/12 lg:w-4/12 pr-12 tb:relative tb:-top-16">
                                         <?php if (!empty($title)) : ?>
-                                            <h2 id="<?php echo esc_html($title) ?>" class="h3 tb:h3-desktop"><?php echo esc_html($title) ?></h2>
+                                            <h2 id="<?php echo esc_html($title) ?>" class="h3  "><?php echo esc_html($title) ?></h2>
                                         <?php endif; ?>
                                         <?php if (!empty($attributes->title)) : ?>
                                             <h2 id="<?php echo esc_html($attributes->title) ?>" class="h4 pt-10 tb:pt-20"><?php echo esc_html($attributes->title) ?></h2>
@@ -101,7 +101,7 @@ if (!function_exists('pg_render_video_tabbed_content_container_block')) {
                                 <div class="flex hidden justify-between flex-col tb:flex-row w-full cursor-default items-center" id="<?php echo esc_attr($titleSlug . '-content-panel') ?>" role="tabpanel" aria-labelledby="<?php echo esc_attr($titleSlug . '-tab') ?>">
                                     <div class="w-full tb:w-5/12 lg:w-4/12 pr-12">
                                         <?php if (!empty($title)) : ?>
-                                            <h2 id="<?php echo esc_html($title) ?>" class="h3 tb:h3-desktop"><?php echo esc_html($title) ?></h2>
+                                            <h2 id="<?php echo esc_html($title) ?>" class="h3  "><?php echo esc_html($title) ?></h2>
                                         <?php endif; ?>
                                         <?php if (!empty($attributes->title)) : ?>
                                             <h2 id="<?php echo esc_html($attributes->title) ?>" class="h4 pt-10 tb:pt-20"><?php echo esc_html($attributes->title) ?></h2>

@@ -19,7 +19,7 @@ $options = pg_get_options($option_names);
 <footer class="bg-shade-white-400">
 	<div class="tb:flex pt-13 container w-full mt-20 border-solid border-b border-shade-grey-500 border-opacity-40">
 		<div class="pr-14">
-			<div class="mb-4 h1 md:h1-desktop">
+			<div class="mb-4 h1  ">
 				<?php echo pg_render_icon('rbc'); ?>
 			</div>
 			<div class="legal text-shade-grey-700">

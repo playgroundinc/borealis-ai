@@ -35,7 +35,7 @@ if (!function_exists('pg_generate_blog_sidebar_cite')) {
                         <use xlink:href="#icon-close"></use>
                     </svg>
                 </button>
-                <h3 class="h3 tb:h3-desktop pl-12 py-10">Citation</h3>
+                <h3 class="h3   pl-12 py-10">Citation</h3>
                 <div class="bg-shade-grey-100 py-8 px-12 rounded-large">
                     <p class="paragraph">
                         <?php echo wp_kses($authors_string, $allowed_html); ?>

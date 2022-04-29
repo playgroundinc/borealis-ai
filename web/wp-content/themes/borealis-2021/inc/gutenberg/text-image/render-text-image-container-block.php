@@ -48,7 +48,7 @@ if (!function_exists('pg_render_text_image_container_block')) {
             <div class="container flex tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h2 class="h3 tb:h3-desktop mb-8 pr-20"><?php echo $attributes->title ?></h2>
+                        <h2 class="h3   mb-8 pr-20"><?php echo $attributes->title ?></h2>
                     <?php endif; ?>
                 </div>
                 <div class="w-full md:flex-row flex-col tb:w-8/12">

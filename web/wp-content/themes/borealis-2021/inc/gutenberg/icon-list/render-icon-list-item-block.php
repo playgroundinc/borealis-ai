@@ -48,9 +48,9 @@ if (!function_exists('pg_render_icon_list_item_block')) {
         $attributes = pg_get_attributes($attrs, $fields);
         ob_start();
 ?>
-        <li class="flex mb-12 w-full tb:flex-row flex-col tb:border-b-0 border-b border-color-shade-grey-500 <?php echo $attributes->width === 'full-width' ? ' tb:border-b border-b border-color-shade-grey-500 pb-0 tb:pb-8' : 'tb:w-6/12 pr-8' ?> " aria-labelledby="<?php echo esc_html(pg_slugify($attributes->subtitle)) ?>">
+        <li class="flex mb-12 md:mb-2.9vw w-full tb:flex-row flex-col tb:border-b-0 border-b border-color-shade-grey-500 <?php echo $attributes->width === 'full-width' ? ' tb:border-b border-b border-color-shade-grey-500 pb-0 tb:pb-8' : 'tb:w-6/12 pr-8 md:pr-1.17vw' ?> " aria-labelledby="<?php echo esc_html(pg_slugify($attributes->subtitle)) ?>">
             <?php if (!empty($attributes->image_url) and $block["icon"]) : ?>
-                <img class="mr-10 h-13 w-13 tb:mb-0 mb-8" src="<?php echo esc_html($attributes->image_url) ?>" alt="<?php echo esc_html($attributes->image_alt) ?>">
+                <img class="mr-10 h-13 w-13 tb:mr-2vw tb:w-2.9vw tb:h-2.9vw tb:mb-0 mb-8" src="<?php echo esc_html($attributes->image_url) ?>" alt="<?php echo esc_html($attributes->image_alt) ?>">
             <?php endif; ?>
             <div class="flex flex-col text-shade-black-400">
                 <?php if (!empty($attributes->title)) : ?>

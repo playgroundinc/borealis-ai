@@ -49,7 +49,7 @@ if (!function_exists('pg_render_publications_container_block')) {
             <div class="md:flex nested-flex md:container">
                 <div class="md:basis-4/12 container md:m-0 shrink-0">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h2 class="h3 tb:h3-desktop"><?php echo $attributes->title ?></h2>
+                        <h2 class="h3  "><?php echo $attributes->title ?></h2>
                         <?php if (!empty($attributes->link)) : ?>
                             <a class="py-4 text-link paragraph" href="<?php echo esc_attr($attributes->link) ?>"><?php echo esc_html('View All'); ?></a>
                         <?php endif; ?>

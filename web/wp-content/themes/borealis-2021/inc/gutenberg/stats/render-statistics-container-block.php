@@ -48,7 +48,7 @@ if (!function_exists('pg_render_statistics_container_block')) {
             <div class="container flex md:pt-16 md:pb-20 py-10 tb:flex-row flex-col">
                 <div class="w-full tb:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h3 class="h3 tb:h3-desktop mb-8"><?php echo $attributes->title ?></h3>
+                        <h3 class="h3   mb-8"><?php echo $attributes->title ?></h3>
                     <?php endif; ?>
                     <?php if (!empty($attributes->description)) : ?>
                         <h4 class="h4 mb-8"><?php echo $attributes->description ?></h4>

@@ -55,16 +55,16 @@ get_header();
         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
         <ul class="posts-listing" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="<?php echo esc_attr($post_type) ?>">
             <?php if (empty($Query->posts)) : ?>
-                <div class="text-shade-black-400 border-solid border-b border-shade-grey-500">
+                <div class="text-shade-black-400 border-solid border-b border-gray-200">
                     <div class=" container">
-                        <p class="h3 tb:h3-desktop py-8">No results found for <?php echo esc_html($query) ?></p>
+                        <p class="h3 py-8">No results found for <?php echo esc_html($query) ?></p>
                     </div>
                 </div>
             <?php elseif (!empty($query) and !empty($Query->posts)) : ?>
                 <div class="text-shade-black-400">
                     <?php foreach ($Query->posts as $post) : // Start of Query loop 
                     ?>
-                        <li class="border-b border-shade-grey-500">
+                        <li class="border-b border-gray-200">
                             <?php echo pg_generate_blog_result($post, $research_areas); ?>
                         </li>
                     <?php endforeach;  // End of Query Loop 
