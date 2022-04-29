@@ -31,11 +31,11 @@ get_header();
     ?>
     <?php if (!empty($query) and !empty($Query->posts)) : ?>
         <div class="container pt-8 text-shade-black-400">
-            <p class="h3 tb:h3-desktop py-10">Results for <?php echo esc_html($query) ?></p>
+            <p class="h3   py-10">Results for <?php echo esc_html($query) ?></p>
         </div>
     <?php elseif (!empty($query) and empty($Query->posts)) : ?>
         <div class="container pt-8 text-shade-black-400">
-            <p class="h3 tb:h3-desktop py-10">No results found for <?php echo esc_html($query) ?></p>
+            <p class="h3   py-10">No results found for <?php echo esc_html($query) ?></p>
         </div>
     <?php endif; ?>
     <?php

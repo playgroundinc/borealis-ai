@@ -42,7 +42,7 @@ if (!empty($settings['greenhouse_api_key']) && strlen($settings['greenhouse_url'
             <div class="container w-full tb:w-8/12 m-auto pb-14">
                 <div class="flex flex-col-reverse">
                     <div class="flex justify-between items-start flex-col tb:flex-row tb:items-end">
-                        <h1 class="h3 tb:h3-desktop text-shade-black-400 mb-4 tb:mb-0 md:h1-desktop pt-5 break-normal"><?php echo $data['title'] ?></h1>
+                        <h1 class="h3   text-shade-black-400 mb-4 tb:mb-0   pt-5 break-normal"><?php echo $data['title'] ?></h1>
                         <h4 class="h4 text-shade-grey-700"><?php echo $data['location']['name'] ?></h4>
                     </div>
                     <div class="flex">

@@ -415,7 +415,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .paragraph{
-  font-size: 16px;
+  font-size: 14px;
   font-family: Inter, sans-serif;
   line-height: 1.80;
   letter-spacing: normal;
@@ -425,7 +425,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .paragraph{
-    font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(14px + ((18 - 14) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -472,9 +472,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .paragraph-blog{
-  font-size: 16px;
+  font-size: 14px;
   font-family: Martel, serif;
-  line-height: 2.2;
+  line-height: 1.5;
   letter-spacing: 0.01em;
   text-transform: none;
   font-weight: normal;
@@ -482,7 +482,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .paragraph-blog{
-    font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(14px + ((18 - 14) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -529,7 +529,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .primary-button{
-  font-size: 16px;
+  font-size: 14px;
   font-family: Inter, sans-serif;
   line-height: auto;
   letter-spacing: normal;
@@ -539,7 +539,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .primary-button{
-    font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(14px + ((18 - 14) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -548,7 +548,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .text-link{
-  font-size: 16px;
+  font-size: 14px;
   font-family: Inter, sans-serif;
   line-height: 1.50;
   letter-spacing: normal;
@@ -558,7 +558,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 @media (min-width: 375px){
   .text-link{
-    font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(14px + ((18 - 14) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -696,8 +696,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 .canvas {
-    height: 615px !important;
-    max-height: 100vh; }
+    height: 75vh !important;
+    max-height: 100vh;
+    min-height: 350px; }
 .core-list ul{
   list-style-position: inside;
   list-style-type: disc;
@@ -1075,7 +1076,7 @@ ol.footnotes li small{
 }
 @media (min-width: 768px){
   .greenhouse p, .greenhouse li{
-    font-size: 16px;
+    font-size: 14px;
     font-family: Inter, sans-serif;
     line-height: 1.80;
     letter-spacing: normal;
@@ -1085,7 +1086,7 @@ ol.footnotes li small{
   }
   @media (min-width: 375px){
     .greenhouse p, .greenhouse li{
-      font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(14px + ((18 - 14) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
@@ -1152,7 +1153,7 @@ ol.footnotes li small{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .paragraph-style .paragraph-blog{
-  font-size: 16px;
+  font-size: 14px;
   font-family: Inter, sans-serif;
   line-height: 1.80;
   letter-spacing: normal;
@@ -1162,7 +1163,7 @@ ol.footnotes li small{
 }
 @media (min-width: 375px){
   .paragraph-style .paragraph-blog{
-    font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(14px + ((18 - 14) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -1180,7 +1181,7 @@ ol.footnotes li small{
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
 .paragraph-blog{
-  font-size: 16px;
+  font-size: 14px;
   font-family: Inter, sans-serif;
   line-height: 1.80;
   letter-spacing: normal;
@@ -1190,7 +1191,7 @@ ol.footnotes li small{
 }
 @media (min-width: 375px){
   .paragraph-blog{
-    font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
+    font-size: calc(14px + ((18 - 14) * ((100vw - 375px) / (1920 - 375))));
   }
 }
 @media (min-width: 1920px){
@@ -1564,6 +1565,9 @@ ol.footnotes li small{
 .h-14{
   height: 56px;
 }
+.h-\[75vh\]{
+  height: 75vh;
+}
 .max-h-screen{
   max-height: 100vh;
 }
@@ -1593,6 +1597,9 @@ ol.footnotes li small{
 }
 .min-h-\[224px\]{
   min-height: 224px;
+}
+.min-h-\[350px\]{
+  min-height: 350px;
 }
 .w-full{
   width: 100%;
@@ -2962,7 +2969,7 @@ mjx-container::-webkit-scrollbar-thumb,
     }
   }
   .md\:paragraph{
-    font-size: 16px;
+    font-size: 14px;
     font-family: Inter, sans-serif;
     line-height: 1.80;
     letter-spacing: normal;
@@ -2972,7 +2979,7 @@ mjx-container::-webkit-scrollbar-thumb,
   }
   @media (min-width: 375px){
     .md\:paragraph{
-      font-size: calc(16px + ((18 - 16) * ((100vw - 375px) / (1920 - 375))));
+      font-size: calc(14px + ((18 - 14) * ((100vw - 375px) / (1920 - 375))));
     }
   }
   @media (min-width: 1920px){
@@ -3163,6 +3170,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:mr-0{
     margin-right: 0px;
+  }
+    .md\:mb-2\.9vw{
+    margin-bottom: 2.9vw;
+  }
+    .md\:mb-2{
+    margin-bottom: 8px;
   }
     .md\:mr-8{
     margin-right: 32px;
@@ -3475,6 +3488,12 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pb-12{
     padding-bottom: 48px;
   }
+    .md\:pr-1\.17vw{
+    padding-right: 1.7vw;
+  }
+    .md\:pr-1{
+    padding-right: 4px;
+  }
     .md\:pt-14{
     padding-top: 56px;
   }
@@ -3683,6 +3702,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:mt-0{
     margin-top: 0px;
   }
+    .tb\:mr-2vw{
+    margin-right: 2vw;
+  }
     .tb\:mr-10{
     margin-right: 40px;
   }
@@ -3704,8 +3726,11 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:hidden{
     display: none;
   }
-    .tb\:min-h-\[350px\]{
-    min-height: 350px;
+    .tb\:h-2\.9vw{
+    height: 2.9vw;
+  }
+    .tb\:h-2{
+    height: 8px;
   }
     .tb\:min-h-\[400px\]{
     min-height: 400px;
@@ -3721,6 +3746,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:w-5\/6{
     width: 83.333333%;
+  }
+    .tb\:w-70\%{
+    width: 70%;
+  }
+    .tb\:w-70{
+    width: 280px;
   }
     .tb\:w-7\/12{
     width: 58.333333%;
@@ -3739,6 +3770,12 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:w-6\/12{
     width: 50%;
+  }
+    .tb\:w-2\.9vw{
+    width: 2.9vw;
+  }
+    .tb\:w-2{
+    width: 8px;
   }
     .tb\:w-3\/12{
     width: 25%;

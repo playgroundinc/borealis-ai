@@ -59,7 +59,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                     <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('lg:flex') : '' ?> justify-between default-tabs">
                         <div class="lg:basis-4/12 shrink-0">
                             <?php if (!empty($attributes->title)) : ?>
-                                <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3 tb:h3-desktop pr-6 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('pb-4') : '' ?>"><?php echo esc_html($attributes->title) ?></h2>
+                                <h2 id="<?php echo esc_html(pg_slugify($attributes->title)) ?>" class="h3   pr-6 <?php echo is_singular(array('news', 'research-blogs')) ? esc_attr('pb-4') : '' ?>"><?php echo esc_html($attributes->title) ?></h2>
                             <?php endif; ?>
                         </div>
                         <div class="basis-8/12 shrink-0 pt-5 lg:pt-0">

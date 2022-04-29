@@ -1635,7 +1635,7 @@ function galleryContainerBlock() {
 
       var fontStyles = [{
         label: "Large",
-        value: ["h3 tb:h2-desktop", "paragraph tb:paragraph-lg"]
+        value: ["h3  ", "paragraph tb:paragraph-lg"]
       }, {
         label: "Small",
         value: ["h3", "paragraph"]

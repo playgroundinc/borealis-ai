@@ -48,7 +48,7 @@ if (!function_exists('pg_render_accordion_block')) {
             <div class="container flex flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('tb:flex-row') : ''; ?> custom-component nested-flex">
                 <div class="w-full mb-5 tb:mb-0 md:w-4/12 accordion-title">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h3 class="h3 tb:h3-desktop">
+                        <h3 class="h3  ">
                             <?php echo wp_kses($attributes->title, $allowed_html); ?>
                         </h3>
                     <?php endif; ?>

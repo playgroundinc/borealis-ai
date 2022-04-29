@@ -57,7 +57,7 @@ get_header();
             <?php if (empty($Query->posts)) : ?>
                 <div class="text-shade-black-400 border-solid border-b border-shade-grey-500">
                     <div class=" container">
-                        <p class="h3 tb:h3-desktop py-8">No results found for <?php echo esc_html($query) ?></p>
+                        <p class="h3   py-8">No results found for <?php echo esc_html($query) ?></p>
                     </div>
                 </div>
             <?php elseif (!empty($query) and !empty($Query->posts)) : ?>

@@ -22,7 +22,7 @@ if (!function_exists('pg_render_products_item')) {
                     <div class="container md:flex items-center hover py-8 md:py-3vw">
                         <div class="basis-1/3 shrink-0 md:pr-12">
                             <?php if (isset($market) && strlen($market) > 0) : ?>
-                                <p class="h3 tb:h3-desktop"><?php echo esc_html($market); ?></p>
+                                <p class="h3  "><?php echo esc_html($market); ?></p>
                             <?php endif; ?>
                         </div>
                         <div class="basis-1/2 shrink-0 pt-5 md:pt-0 md:pr-6">

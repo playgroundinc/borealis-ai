@@ -9,7 +9,7 @@ if (!function_exists('pg_generate_team_member_header')) {
 ?>
         <div class="md:flex pt-41 pb-8 md:pb-15 items-center">
             <div class="basis-7/12 shrink-0">
-                <h1 class="h1 md:h1-desktop"><?php echo esc_html(the_title()); ?></h1>
+                <h1 class="h1  "><?php echo esc_html(the_title()); ?></h1>
             </div>
             <div class="basis-5/12 shrink-0 pt-11 md:pt-0">
                 <?php if (isset($position) && strlen($position) > 0) : ?>

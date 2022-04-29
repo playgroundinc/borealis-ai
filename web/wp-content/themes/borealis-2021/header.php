@@ -64,7 +64,7 @@
         $hero_image = get_bloginfo('stylesheet_directory') . '/src/images/heroImage.jpg';
     }
     $headline = get_post_meta($post->ID, 'headline', true);
-    $header_height = is_front_page() ? 'max-h-screen h-[615px] flex flex-col' : 'min-h-[125px]';
+    $header_height = is_front_page() ? 'max-h-screen h-[75vh] min-h-[350px] flex flex-col' : 'min-h-[125px]';
     $no_header = is_page_template('page-search.php') || is_page_template('page-single-job-listing.php') || is_singular(['research-blogs', 'news', 'team-member', 'publications', 'product', 'program']) || is_front_page();
     ?>
     <style>
@@ -204,7 +204,7 @@
             <?php else : ?>
                 <div class="container">
                     <?php if (!empty($headline)) : ?>
-                        <h1 class="h1 md:h1-desktop text-shade-white-400 pb-10 md:pb-8 <?php echo $has_subnav ? esc_attr('pt-55') : esc_attr('pt-42') ?>"><?php echo esc_html($headline) ?></h1>
+                        <h1 class="h1   text-shade-white-400 pb-10 md:pb-8 <?php echo $has_subnav ? esc_attr('pt-55') : esc_attr('pt-42') ?>"><?php echo esc_html($headline) ?></h1>
                     <?php else : ?>
                         <h1 class="sr-only"><?php echo the_title(); ?></h1>
                     <?php endif; ?>

@@ -63,7 +63,7 @@ if (!function_exists('pg_render_image_text_strip_block')) {
                             <div class="flex justify-center flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:m-0 md:w-3/4 tb:w-2/3 grow') : '' ?>">
                                 <div class="md:mt-0 mt-15 md:pb-0 <?php echo $attributes->text_color ?>">
                                     <?php if (!empty($attributes->title)) : ?>
-                                        <h3 class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('h3 tb:h3-desktop mb-6 tb:mb-11') : esc_attr('h4 mb-4') ?>">
+                                        <h3 class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('h3   mb-6 tb:mb-11') : esc_attr('h4 mb-4') ?>">
                                             <?php echo $attributes->title ?>
                                         </h3>
                                     <?php endif ?>
@@ -98,7 +98,7 @@ if (!function_exists('pg_render_image_text_strip_block')) {
                             <div class="flex justify-center flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:m-0 md:w-3/4 tb:w-2/3 grow') : '' ?>">
                                 <div class="md:mt-0 mt-15 md:pb-0 <?php echo $attributes->text_color ?>">
                                     <?php if (!empty($attributes->title)) : ?>
-                                        <h3 class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('h3 tb:h3-desktop mb-6 tb:mb-11') : esc_attr('h4 mb-4') ?>">
+                                        <h3 class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('h3   mb-6 tb:mb-11') : esc_attr('h4 mb-4') ?>">
                                             <?php echo $attributes->title ?>
                                         </h3>
                                     <?php endif ?>

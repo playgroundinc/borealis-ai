@@ -47,7 +47,7 @@ $allowed_html = pg_allowed_html();
             <?php if (!boolval($applications_open)) : ?>
                 <div class="flex justify-end container">
                     <div class="md:basis-3/4 bg-alert-error-400 text-shade-white-400 py-9 px-6">
-                        <div class="flex justify-center items-center"><span aria-hidden="true" class="h3 tb:h3-desktop"><?php echo pg_render_icon('applications-closed') ?></span>
+                        <div class="flex justify-center items-center"><span aria-hidden="true" class="h3  "><?php echo pg_render_icon('applications-closed') ?></span>
                             <p class="grow text-center pl-8 paragraph"><?php echo isset($applications_closed_copy) && strlen($applications_closed_copy) > 0 ? esc_html($applications_closed_copy) : esc_html($post->post_title . ' submission is closed'); ?></p>
                         </div>
                     </div>

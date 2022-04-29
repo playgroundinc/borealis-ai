@@ -79,7 +79,7 @@ module.exports = plugin(function ({ addBase }) {
 		{
 			className: "paragraph",
 			max: "18",
-			min: "16",
+			min: "14",
 			fontFamily: "Inter, sans-serif",
 			lineHeight: "1.80",
 		},
@@ -101,8 +101,8 @@ module.exports = plugin(function ({ addBase }) {
 			className: "paragraph-blog",
 			fontFamily: "Martel, serif",
 			max: "18",
-			min: "16",
-			lineHeight: "2.2",
+			min: "14",
+			lineHeight: "1.5",
 			letterSpacing: "0.01em",
 		},
 		{
@@ -122,7 +122,7 @@ module.exports = plugin(function ({ addBase }) {
 		{
 			className: "primary-button",
 			max: "18",
-			min: "16",
+			min: "14",
 			fontFamily: "Inter, sans-serif",
 			lineHeight: "auto",
 			fontWeight: "700",
@@ -130,7 +130,7 @@ module.exports = plugin(function ({ addBase }) {
 		{
 			className: "text-link",
 			max: "18",
-			min: "16",
+			min: "14",
 			fontFamily: "Inter, sans-serif",
 			lineHeight: "1.50",
 		},
