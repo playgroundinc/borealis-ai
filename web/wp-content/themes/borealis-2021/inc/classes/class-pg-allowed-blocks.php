@@ -82,7 +82,11 @@ class PG_Allowed_Blocks
 
             // Video Tabbed Content
             'video-tabbed-content-container-block',
-            'video-tabbed-content-panel-block'
+            'video-tabbed-content-panel-block',
+
+            // Video
+            'core/embed'
+
         );
         $this->custom_blocks = array(
             // Blockquote
@@ -157,16 +161,21 @@ class PG_Allowed_Blocks
 
             // Spacer
             'spacer-container',
-            'spacer'
+            'spacer',
+
+            // Video
+            'core/embed'
         );
         $this->shared_core_blocks = array(
             'core/embed-youtube',
-            'core/video',
+            'core/embed'
         );
         $this->blog_core_blocks = array(
             'core/table',
             'core/quote',
-            'core/list'
+            'core/list',
+            'core/embed-youtube',
+            'core/embed'
         );
         $this->author_blocks = array(
             $this->namespace . '/author-meta-block',
