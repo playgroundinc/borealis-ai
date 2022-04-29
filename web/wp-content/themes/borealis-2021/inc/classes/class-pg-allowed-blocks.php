@@ -173,6 +173,7 @@ class PG_Allowed_Blocks
         $this->blog_core_blocks = array(
             'core/table',
             'core/quote',
+            'core/list',
             'core/embed-youtube',
             'core/embed'
         );
