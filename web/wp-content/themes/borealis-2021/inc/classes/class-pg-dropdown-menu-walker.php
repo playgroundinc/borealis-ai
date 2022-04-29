@@ -72,7 +72,7 @@ class PG_Dropdown_Menu_Walker extends Walker_Nav_Menu
         }
         $menu_item_classes = $link_classes;
         $output .= '<li role="menuitem"  class="' . $classes . '">';
-        $output .= '<a class="' . $menu_item_classes . ' py-3 md:hyperlink paragraph-md text-primary-navy-400 hover:text-primary-electric-blue-400" href="' . $permalink . '">';
+        $output .= '<a class="' . $menu_item_classes . ' py-3 md:py-0.8vw md:hyperlink paragraph-md text-primary-navy-400 hover:text-primary-electric-blue-400" href="' . $permalink . '">';
         $output .= $title;
         $output .= '</a>';
     }

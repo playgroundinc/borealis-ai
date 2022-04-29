@@ -54,7 +54,7 @@ if (!function_exists('pg_render_slider_container_block')) {
                             <div class="flex flex-col grow justify-between">
                                 <div>
                                     <?php if (!empty($attributes->title)) : ?>
-                                        <h2 class="h3 tb:h3-desktop"><?php echo $attributes->title ?></h2>
+                                        <h2 class="h3  "><?php echo $attributes->title ?></h2>
                                     <?php endif; ?>
                                     <?php if (!empty($attributes->link)) : // Start of Link check 
                                     ?>

@@ -44,7 +44,7 @@ if ( ! function_exists( 'pg_render_fellowship_container_block' ) ) {
         ?>
         <div class="custom-component animated-element">
             <?php if (isset($attributes->title) && strlen($attributes->title) > 0): ?>
-                <h2 class="h3 tb:h3-desktop mb-13 md:mb-10"><?php echo esc_html($attributes->title); ?></h2>
+                <h2 class="h3   mb-13 md:mb-10"><?php echo esc_html($attributes->title); ?></h2>
             <?php endif; ?>
             <ul class="sm:flex flex-wrap">
                 <?php 

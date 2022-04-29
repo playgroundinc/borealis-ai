@@ -48,7 +48,7 @@ if (!function_exists('pg_render_products_container_block')) {
         <div id="<?php echo $attributes->anchor_id ?>" class="custom-component component-padding product-list <?php echo $attributes->background_color ?>">
             <div class="container pb-10 animated-element">
                 <?php if (!empty($attributes->title)) : ?>
-                    <h2 class="h3 tb:h3-desktop text-shade-grey-700"><?php echo $attributes->title ?></h2>
+                    <h2 class="h3   text-shade-grey-700"><?php echo $attributes->title ?></h2>
                 <?php endif; ?>
             </div>
             <ul class="border-t border-color-shade-grey-700">

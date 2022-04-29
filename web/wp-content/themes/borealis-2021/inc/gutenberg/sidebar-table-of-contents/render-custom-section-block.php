@@ -45,7 +45,7 @@ if (!function_exists('pg_render_custom_section_block')) {
 ?>
         <section class="pt-10" id="<?php echo esc_attr(pg_slugify($attributes->title)) ?>" aria-labelledby="<?php echo esc_attr(pg_slugify($attributes->title . '-title')) ?>" class="custom-component">
             <?php if (!empty($attributes->title)) : ?>
-                <h2 id=<?php echo esc_attr(pg_slugify($attributes->title . '-title')) ?> class="h3 tb:h3-desktop md:h2-desktop"><?php echo wp_kses($attributes->title, $allowed_html) ?></h2>
+                <h2 id=<?php echo esc_attr(pg_slugify($attributes->title . '-title')) ?> class="h3   md:h2-desktop"><?php echo wp_kses($attributes->title, $allowed_html) ?></h2>
             <?php endif; ?>
             <?php foreach ($block['innerBlocks'] as $inner_block) : ?>
                 <?php echo wp_kses(render_block($inner_block), $allowed_html); ?>

@@ -26,7 +26,7 @@ $bibtex = get_post_meta($post->ID, 'bibtex', true);
     <div class="bg-shade-grey-100 md:mt-20 mt-10 py-18">
         <div class="md:container flex flex-col md:flex-row">
             <div class="w-full mb-10 md:mb-0 md:w-2/6">
-                <h3 class="h3 tb:h3-desktop container md:w-full md:m-0">Related Research</h3>
+                <h3 class="h3   container md:w-full md:m-0">Related Research</h3>
             </div>
             <div class="w-full md:w-4/6">
                 <?php

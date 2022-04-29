@@ -54,7 +54,7 @@ if (!function_exists('pg_render_gallery_container_block')) {
             <div class="md:flex container">
                 <div class="md:w-4/12">
                     <?php if (!empty($attributes->title)) : ?>
-                        <h2 class="<?php echo $font[0] !== "" ? $font[0] : 'h3 tb:h2-desktop' ?> pr-8"><?php echo $attributes->title ?></h2>
+                        <h2 class="<?php echo $font[0] !== "" ? $font[0] : 'h3  ' ?> pr-8"><?php echo $attributes->title ?></h2>
                     <?php endif; ?>
                 </div>
                 <div class="md:w-8/12">

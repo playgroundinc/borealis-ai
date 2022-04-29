@@ -31,11 +31,11 @@ get_header();
     ?>
     <?php if (!empty($query) and !empty($Query->posts)) : ?>
         <div class="container pt-8 text-shade-black-400">
-            <p class="h3 tb:h3-desktop py-10">Results for <?php echo esc_html($query) ?></p>
+            <p class="h3   py-10">Results for <?php echo esc_html($query) ?></p>
         </div>
     <?php elseif (!empty($query) and empty($Query->posts)) : ?>
         <div class="container pt-8 text-shade-black-400">
-            <p class="h3 tb:h3-desktop py-10">No results found for <?php echo esc_html($query) ?></p>
+            <p class="h3   py-10">No results found for <?php echo esc_html($query) ?></p>
         </div>
     <?php endif; ?>
     <?php
@@ -50,7 +50,7 @@ get_header();
             <ul class="posts-listing" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="publications">
                 <?php foreach ($Query->posts as $post) : // Start of Query loop 
                 ?>
-                    <li class="border-b border-shade-grey-500">
+                    <li class="border-b border-gray-200">
                         <?php echo pg_generate_publication_result($post, $research_areas); ?>
                     </li>
                 <?php endforeach;  // End of Query Loop 
