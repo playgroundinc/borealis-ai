@@ -871,19 +871,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(96 55 215 / var(--tw-border-opacity));
 }
-.text-link{
-  display: block;
-  --tw-text-opacity: 1;
-  color: rgb(0 68 255 / var(--tw-text-opacity));
-}
-.text-link:visited{
-  --tw-text-opacity: 1;
-  color: rgb(96 55 215 / var(--tw-text-opacity));
-}
-.text-link:hover{
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
-}
 .text-2-up a, .paragraph a{
   display: inline-block;
   --tw-text-opacity: 1;
@@ -892,6 +879,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-2-up a:visited, .paragraph a:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
+}
+.text-link, .link-hover a{
+  display: block;
+  --tw-text-opacity: 1;
+  color: rgb(0 68 255 / var(--tw-text-opacity));
+}
+.text-link:visited, .link-hover a:visited{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
+}
+.text-link:hover, .link-hover a:hover{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 .current_page_item .submenu{
   display: block;
