@@ -45,8 +45,8 @@
                 </div>
             <?php endif; ?>
         </aside>
-        <div class="page__content lg:w-5/6">
-            <div class="mx-auto lg:w-5/6">
+        <div class="page__content tb:w-5/6">
+            <div class="mx-auto tb:w- tb:w-70%">
                 <?php
                 if (have_posts()) :
                     while (have_posts()) :

@@ -64,7 +64,7 @@ if (!function_exists('pg_render_graphic_page_strip_block')) {
                         </h3>
                     <?php endif ?>
                     <?php if (!empty($attributes->copy)) : ?>
-                        <p class="paragraph mb-8 w-full tb:w-7/12">
+                        <p class="paragraph mb-8 w-full tb:w-1/2">
                             <?php echo $attributes->copy ?>
                         </p>
                     <?php endif ?>
