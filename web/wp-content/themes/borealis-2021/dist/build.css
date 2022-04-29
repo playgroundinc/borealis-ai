@@ -853,6 +853,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(96 55 215 / var(--tw-border-opacity));
 }
+.text-link{
+  display: block;
+  --tw-text-opacity: 1;
+  color: rgb(0 68 255 / var(--tw-text-opacity));
+}
+.text-link:visited{
+  --tw-text-opacity: 1;
+  color: rgb(96 55 215 / var(--tw-text-opacity));
+}
+.text-link:hover{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
 .text-2-up a, .paragraph a{
   display: inline-block;
   --tw-text-opacity: 1;
@@ -861,19 +874,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-2-up a:visited, .paragraph a:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
-}
-.text-link, .link-hover a{
-  display: block;
-  --tw-text-opacity: 1;
-  color: rgb(0 68 255 / var(--tw-text-opacity));
-}
-.text-link:visited, .link-hover a:visited{
-  --tw-text-opacity: 1;
-  color: rgb(96 55 215 / var(--tw-text-opacity));
-}
-.text-link:hover, .link-hover a:hover{
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
 }
 .current_page_item .submenu{
   display: block;
@@ -1524,8 +1524,8 @@ ol.footnotes li small{
 .h-full{
   height: 100%;
 }
-.h-\[615px\]{
-  height: 615px;
+.h-\[75vh\]{
+  height: 75vh;
 }
 .h-fit{
   height: -webkit-fit-content;
@@ -1565,9 +1565,6 @@ ol.footnotes li small{
 .h-14{
   height: 56px;
 }
-.h-\[75vh\]{
-  height: 75vh;
-}
 .max-h-screen{
   max-height: 100vh;
 }
@@ -1579,6 +1576,9 @@ ol.footnotes li small{
 }
 .max-h-15{
   max-height: 60px;
+}
+.min-h-\[350px\]{
+  min-height: 350px;
 }
 .min-h-\[125px\]{
   min-height: 125px;
@@ -1597,9 +1597,6 @@ ol.footnotes li small{
 }
 .min-h-\[224px\]{
   min-height: 224px;
-}
-.min-h-\[350px\]{
-  min-height: 350px;
 }
 .w-full{
   width: 100%;
@@ -1826,9 +1823,6 @@ ol.footnotes li small{
 .overflow-scroll{
   overflow: scroll;
 }
-.overflow-y-hidden{
-  overflow-y: hidden;
-}
 .overflow-x-scroll{
   overflow-x: scroll;
 }
@@ -1907,6 +1901,10 @@ ol.footnotes li small{
   --tw-border-opacity: 1;
   border-color: rgb(92 93 118 / var(--tw-border-opacity));
 }
+.border-gray-200{
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
 .border-primary-electric-purple-400{
   --tw-border-opacity: 1;
   border-color: rgb(96 55 215 / var(--tw-border-opacity));
@@ -1928,10 +1926,6 @@ ol.footnotes li small{
 }
 .border-shade-transparent-400{
   border-color: transparent;
-}
-.border-gray-200{
-  --tw-border-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 .border-l-shade-black-400{
   --tw-border-opacity: 1;
@@ -3742,12 +3736,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .tb\:w-8\/12{
     width: 66.666667%;
   }
-    .tb\:w-1\/6{
-    width: 16.666667%;
-  }
-    .tb\:w-full{
-    width: 100%;
-  }
     .tb\:w-5\/6{
     width: 83.333333%;
   }
@@ -3756,6 +3744,15 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:w-70{
     width: 280px;
+  }
+    .tb\:w-1\/6{
+    width: 16.666667%;
+  }
+    .tb\:w-full{
+    width: 100%;
+  }
+    .tb\:w-1\/2{
+    width: 50%;
   }
     .tb\:w-7\/12{
     width: 58.333333%;
@@ -3801,9 +3798,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .tb\:w-2\/5{
     width: 40%;
-  }
-    .tb\:w-1\/2{
-    width: 50%;
   }
     .tb\:basis-card{
     flex-basis: calc((100% - 64px) / 3);
@@ -3925,9 +3919,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:w-1\/6{
     width: 16.666667%;
-  }
-    .lg\:w-5\/6{
-    width: 83.333333%;
   }
     .lg\:w-36vw{
     width: 36vw;
