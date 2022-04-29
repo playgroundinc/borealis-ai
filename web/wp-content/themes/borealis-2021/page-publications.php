@@ -50,7 +50,7 @@ get_header();
             <ul class="posts-listing" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="publications">
                 <?php foreach ($Query->posts as $post) : // Start of Query loop 
                 ?>
-                    <li class="border-b border-shade-grey-500">
+                    <li class="border-b border-gray-200">
                         <?php echo pg_generate_publication_result($post, $research_areas); ?>
                     </li>
                 <?php endforeach;  // End of Query Loop 
