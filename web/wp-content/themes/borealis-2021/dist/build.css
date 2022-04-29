@@ -1841,9 +1841,6 @@ ol.footnotes li small{
 .overflow-scroll{
   overflow: scroll;
 }
-.overflow-y-hidden{
-  overflow-y: hidden;
-}
 .overflow-x-scroll{
   overflow-x: scroll;
 }
