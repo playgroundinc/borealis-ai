@@ -112,7 +112,7 @@ if (!function_exists('pg_render_gallery_container_block')) {
                                         <img class="block rounded-large" src="<?php echo $image && strlen($image) > 0 ? esc_url_raw($image) : get_bloginfo('stylesheet_directory') . '/src/images/teamMember.png' ?>" />
                                         <p id="<?php echo esc_attr($slug) ?>" class="h4 pt-12"><?php echo esc_html($post->post_title); ?></p>
                                         <?php if ($position && strlen($position) > 0) : ?>
-                                            <p class="paragraph pt-4"><?php echo esc_html($position) ?></p>
+                                            <p class="h-10 md:h-20 paragraph pt-4"><?php echo esc_html($position) ?></p>
                                         <?php endif; ?>
                                     </a>
                                 </li>

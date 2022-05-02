@@ -1565,6 +1565,12 @@ ol.footnotes li small{
 .h-14{
   height: 56px;
 }
+.h-20{
+  height: 80px;
+}
+.h-10{
+  height: 40px;
+}
 .max-h-screen{
   max-height: 100vh;
 }
@@ -3213,6 +3219,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:h-14{
     height: 56px;
+  }
+    .md\:h-20{
+    height: 80px;
   }
     .md\:min-h-\[280px\]{
     min-height: 280px;
