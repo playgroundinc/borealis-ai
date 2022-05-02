@@ -4,10 +4,10 @@ if (!function_exists('pg_generate_search_bar')) {
     {
         ob_start();
 ?>
-        <div class="border-b border-shade-grey-500">
+        <div class="border-b border-color-shade-grey-500">
             <div class="md:container md:flex">
                 <div class="md:flex grow items-center">
-                    <form class="search-form grow border-b md:border-b-0 border-shade-grey-500">
+                    <form class="search-form grow border-b md:border-b-0 border-color-shade-grey-500">
                         <div class="container md:w-full relative md:m-0">
                             <label class="sr-only" for="search"><?php echo esc_html('Search') ?></label>
                             <span class="icon icon--lg absolute left-0 top-6 text-shade-grey-700"><?php echo pg_render_icon('search-publication') ?></span>
@@ -50,7 +50,7 @@ if (!function_exists('pg_generate_search_bar')) {
                 </div>
             </div>
         </div>
-        <div id="search-filters" class="border-b border-shade-grey-700 bg-shade-grey-100 slide-toggle" role="region" aria-labelledby="search-topics">
+        <div id="search-filters" class="border-b border-color-shade-grey-500 bg-shade-grey-100 slide-toggle" role="region" aria-labelledby="search-topics">
             <div class="container">
                 <div class="pt-12 pb-6">
                     <form method="post">

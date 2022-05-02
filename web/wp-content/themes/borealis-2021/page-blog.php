@@ -51,7 +51,7 @@ get_header();
         endwhile;
     endif;
     ?>
-    <div class="load-more-results min-h-[400px] md:min-h-[800px]">
+    <div class="load-more-results border-solid border-t border-color-shade-grey-500 min-h-[400px] md:min-h-[800px]">
         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
         <ul class="posts-listing" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="<?php echo esc_attr($post_type) ?>">
             <?php if (empty($Query->posts)) : ?>
@@ -72,7 +72,7 @@ get_header();
                 </div>
             <?php endif; ?>
         </ul>
-        <div class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> border-solid border-b border-shade-grey-500 hover:bg-primary-navy-400 hover:text-shade-white-400 transition-all duration-300 load-more">
+        <div class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> border-solid border-b border-color-shade-grey-500 hover:bg-primary-navy-400 hover:text-shade-white-400 transition-all duration-300 load-more">
             <button class="container block h4 py-8 text-center w-full load-more"><?php echo esc_html('Load More Posts') ?></button>
         </div>
         <?php wp_reset_query(); ?>

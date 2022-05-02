@@ -51,7 +51,7 @@ if (!function_exists('pg_render_products_container_block')) {
                     <h2 class="h3   text-shade-grey-700"><?php echo $attributes->title ?></h2>
                 <?php endif; ?>
             </div>
-            <ul class="border-t border-color-shade-grey-700">
+            <ul class="border-t border-color-shade-grey-500">
                 <?php foreach ($block['innerBlocks'] as $index => $inner_block) : ?>
                     <?php echo pg_render_products_item($inner_block, $attributes->link) ?>
                 <?php endforeach; ?>
