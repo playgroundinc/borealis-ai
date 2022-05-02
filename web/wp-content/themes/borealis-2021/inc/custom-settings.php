@@ -54,17 +54,17 @@ function pg_init_menus()
             )
         ),
 
-        // 404 page settings submenu.
+        // // 404 page settings submenu.
         '404 Page Settings' => array(
             'slug' => $namespace . '-404-settings',
             'parent' => $parent,
-            'description' => 'Use this page to update the copy on the 404 page. If left blank it will default to the value set on the main Borealis site.',
+            'description' => 'Use this page to update the copy on the 404 page.',
             'sections' => array(
                 '404 Page' => array(
                     'id' => $namespace . '-404-en',
                     'fields' => array(
-                        '404_title' => 'text',
-                        '404_description' => 'textarea',
+                        '404_title_en' => 'text',
+                        '404_description_en' => 'textarea',
                     )
                 ),
             )
@@ -88,18 +88,18 @@ function pg_init_menus()
             )
         ),
 
+
         'Footer Settings' => array(
             'slug' => $namespace . '-footer-settings',
-            // This will create a submenu page. 
             'parent' => $parent,
-            'description' => 'This is where you can add links for the social media integrations on your site. If left blank it will default to the value set on the main Borealis site.',
+            'description' => 'This is where you can add links for the social media integrations on your site.',
             // Sections allow for breaking up the inputs onto the page. 
             // The key for each item will act as the section's title. 
             'sections' => array(
                 'Footer Banner' => array(
                     'id' => $namespace . '-footer-banner-en',
                     'fields' => array(
-                        'footer_banner_copy' => 'textarea',
+                        'footer_banner_copy_en' => 'textarea',
                     )
                 ),
             ),
@@ -108,7 +108,6 @@ function pg_init_menus()
         // Social Media settings submenu.
         'Social Media Settings' => array(
             'slug' => $namespace . '-social-settings',
-            // This will create a submenu page. 
             'parent' => $parent,
             'description' => 'This is where you can add links for the social media integrations on your site. If left blank it will default to the value set on the main Borealis site.',
             // Sections allow for breaking up the inputs onto the page. 
@@ -121,10 +120,10 @@ function pg_init_menus()
                     // It will be deslugified and turned into the label. 
                     // The value here defines what kind of input it should be.
                     'fields' => array(
-                        'linkedin' => 'text',
-                        'github' => 'text',
-                        'youtube' => 'text',
-                        'twitter' => 'text',
+                        'linkedin_en' => 'text',
+                        'github_en' => 'text',
+                        'youtube_en' => 'text',
+                        'twitter_en' => 'text',
                     )
                 ),
             )
