@@ -108,7 +108,6 @@ function pg_init_menus()
         // Social Media settings submenu.
         'Social Media Settings' => array(
             'slug' => $namespace . '-social-settings',
-            // This will create a submenu page. 
             'parent' => $parent,
             'description' => 'This is where you can add links for the social media integrations on your site. If left blank it will default to the value set on the main Borealis site.',
             // Sections allow for breaking up the inputs onto the page. 
