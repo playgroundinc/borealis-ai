@@ -3196,6 +3196,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:mt-3{
     margin-top: 12px;
   }
+    .md\:mt-2vw{
+    margin-top: 2vw;
+  }
     .md\:block{
     display: block;
   }
