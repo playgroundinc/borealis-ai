@@ -1522,16 +1522,16 @@
         },
         {
             "name": "friendsofphp/proxy-manager-lts",
-            "version": "v1.0.7",
+            "version": "v1.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/proxy-manager-lts.git",
-                "reference": "c828ced1f932094ab79e4120a106a666565e4d9c"
+                "reference": "88dda72c48633326c81a01b861c8b6a923948f56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/proxy-manager-lts/zipball/c828ced1f932094ab79e4120a106a666565e4d9c",
-                "reference": "c828ced1f932094ab79e4120a106a666565e4d9c",
+                "url": "https://api.github.com/repos/FriendsOfPHP/proxy-manager-lts/zipball/88dda72c48633326c81a01b861c8b6a923948f56",
+                "reference": "88dda72c48633326c81a01b861c8b6a923948f56",
                 "shasum": ""
             },
             "require": {
@@ -1596,7 +1596,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-02T09:29:19+00:00"
+            "time": "2022-05-01T10:41:21+00:00"
         },
         {
             "name": "genesis/behat-fail-aid",
@@ -3279,12 +3279,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "e5e096c731d21614b952983804581389eb2a484f"
+                "reference": "0e5a0abdd695cd45870e442647ef03a70f2ec1e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/e5e096c731d21614b952983804581389eb2a484f",
-                "reference": "e5e096c731d21614b952983804581389eb2a484f",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0e5a0abdd695cd45870e442647ef03a70f2ec1e5",
+                "reference": "0e5a0abdd695cd45870e442647ef03a70f2ec1e5",
                 "shasum": ""
             },
             "conflict": {
@@ -3343,6 +3343,8 @@
                 "craftcms/cms": "<3.7.29",
                 "croogo/croogo": "<3.0.7",
                 "cuyz/valinor": ">=0.5,<0.7",
+                "czproject/git-php": "<4.0.3",
+                "darylldoyle/safe-svg": "<1.9.10",
                 "datadog/dd-trace": ">=0.30,<0.30.2",
                 "david-garcia/phpwhois": "<=4.3.1",
                 "derhansen/sf_event_mgt": "<4.3.1|>=5,<5.1.1",
@@ -3375,16 +3377,17 @@
                 "ezsystems/ezplatform": "<=1.13.6|>=2,<=2.5.24",
                 "ezsystems/ezplatform-admin-ui": ">=1.3,<1.3.5|>=1.4,<1.4.6|>=1.5,<1.5.27",
                 "ezsystems/ezplatform-admin-ui-assets": ">=4,<4.2.1|>=5,<5.0.1|>=5.1,<5.1.1",
-                "ezsystems/ezplatform-kernel": "<=1.2.5|>=1.3,<1.3.12",
+                "ezsystems/ezplatform-kernel": "<=1.2.5|>=1.3,<1.3.17",
                 "ezsystems/ezplatform-rest": ">=1.2,<=1.2.2|>=1.3,<1.3.8",
                 "ezsystems/ezplatform-richtext": ">=2.3,<=2.3.7",
                 "ezsystems/ezplatform-user": ">=1,<1.0.1",
-                "ezsystems/ezpublish-kernel": "<=6.13.8.1|>=7,<7.5.26",
+                "ezsystems/ezpublish-kernel": "<=6.13.8.1|>=7,<7.5.28",
                 "ezsystems/ezpublish-legacy": "<=2017.12.7.3|>=2018.6,<=2019.3.5.1",
                 "ezsystems/platform-ui-assets-bundle": ">=4.2,<4.2.3",
                 "ezsystems/repository-forms": ">=2.3,<2.3.2.1",
                 "ezyang/htmlpurifier": "<4.1.1",
                 "facade/ignition": "<1.16.15|>=2,<2.4.2|>=2.5,<2.5.2",
+                "facturascripts/facturascripts": "<2022.6",
                 "feehi/cms": "<=2.1.1",
                 "feehi/feehicms": "<=0.1.3",
                 "fenom/fenom": "<=2.12.1",
@@ -3423,6 +3426,7 @@
                 "hjue/justwriting": "<=1",
                 "hov/jobfair": "<1.0.13|>=2,<2.0.2",
                 "hyn/multi-tenant": ">=5.6,<5.7.2",
+                "ibexa/core": ">=4,<4.0.5|>=4.1,<4.1.2",
                 "ibexa/post-install": "<=1.0.4",
                 "icecoder/icecoder": "<=8.1",
                 "illuminate/auth": ">=4,<4.0.99|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.10",
@@ -3565,7 +3569,7 @@
                 "shopware/core": "<=6.4.9",
                 "shopware/platform": "<=6.4.9",
                 "shopware/production": "<=6.3.5.2",
-                "shopware/shopware": "<5.7.7",
+                "shopware/shopware": "<5.7.9",
                 "shopware/storefront": "<=6.4.8.1",
                 "showdoc/showdoc": "<2.10.4",
                 "silverstripe/admin": ">=1,<1.8.1",
@@ -3587,7 +3591,7 @@
                 "simplito/elliptic-php": "<1.0.6",
                 "slim/slim": "<2.6",
                 "smarty/smarty": "<3.1.43|>=4,<4.0.3",
-                "snipe/snipe-it": "<5.4.2|>= 6.0.0-RC-1, <= 6.0.0-RC-5",
+                "snipe/snipe-it": "<5.4.3|>= 6.0.0-RC-1, <= 6.0.0-RC-5",
                 "socalnick/scn-social-auth": "<1.15.2",
                 "socialiteproviders/steam": "<1.1",
                 "spipu/html2pdf": "<5.2.4",
@@ -3699,10 +3703,10 @@
                 "zendframework/zend-crypt": ">=2,<2.4.9|>=2.5,<2.5.2",
                 "zendframework/zend-db": ">=2,<2.0.99|>=2.1,<2.1.99|>=2.2,<2.2.10|>=2.3,<2.3.5",
                 "zendframework/zend-developer-tools": ">=1.2.2,<1.2.3",
-                "zendframework/zend-diactoros": ">=1,<1.8.4",
-                "zendframework/zend-feed": ">=1,<2.10.3",
+                "zendframework/zend-diactoros": "<1.8.4",
+                "zendframework/zend-feed": "<2.10.3",
                 "zendframework/zend-form": ">=2,<2.2.7|>=2.3,<2.3.1",
-                "zendframework/zend-http": ">=1,<2.8.1",
+                "zendframework/zend-http": "<2.8.1",
                 "zendframework/zend-json": ">=2.1,<2.1.6|>=2.2,<2.2.6",
                 "zendframework/zend-ldap": ">=2,<2.0.99|>=2.1,<2.1.99|>=2.2,<2.2.8|>=2.3,<2.3.3",
                 "zendframework/zend-mail": ">=2,<2.4.11|>=2.5,<2.7.2",
@@ -3749,7 +3753,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-22T22:04:12+00:00"
+            "time": "2022-04-29T21:04:00+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -4565,16 +4569,16 @@
         },
         {
             "name": "symfony/config",
-            "version": "v5.4.7",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "05624c386afa1b4ccc1357463d830fade8d9d404"
+                "reference": "9f8964f56f7234f8ace16f66cb3fbae950c04e68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/05624c386afa1b4ccc1357463d830fade8d9d404",
-                "reference": "05624c386afa1b4ccc1357463d830fade8d9d404",
+                "url": "https://api.github.com/repos/symfony/config/zipball/9f8964f56f7234f8ace16f66cb3fbae950c04e68",
+                "reference": "9f8964f56f7234f8ace16f66cb3fbae950c04e68",
                 "shasum": ""
             },
             "require": {
@@ -4637,20 +4641,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-21T13:42:03+00:00"
+            "time": "2022-04-12T16:02:29+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v5.4.7",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "900275254f0a1a2afff1ab0e11abd5587a10e1d6"
+                "reference": "ffe3aed36c4d60da2cf1b0a1cee6b8f2e5fa881b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/900275254f0a1a2afff1ab0e11abd5587a10e1d6",
-                "reference": "900275254f0a1a2afff1ab0e11abd5587a10e1d6",
+                "url": "https://api.github.com/repos/symfony/console/zipball/ffe3aed36c4d60da2cf1b0a1cee6b8f2e5fa881b",
+                "reference": "ffe3aed36c4d60da2cf1b0a1cee6b8f2e5fa881b",
                 "shasum": ""
             },
             "require": {
@@ -4733,7 +4737,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-31T17:09:19+00:00"
+            "time": "2022-04-12T16:02:29+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -4800,16 +4804,16 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v5.4.7",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "35588b2afb08ea3a142d62fefdcad4cb09be06ed"
+                "reference": "855e29cd715ad62bb840c9841fe09a7cde50811f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/35588b2afb08ea3a142d62fefdcad4cb09be06ed",
-                "reference": "35588b2afb08ea3a142d62fefdcad4cb09be06ed",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/855e29cd715ad62bb840c9841fe09a7cde50811f",
+                "reference": "855e29cd715ad62bb840c9841fe09a7cde50811f",
                 "shasum": ""
             },
             "require": {
@@ -4882,7 +4886,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-08T15:43:06+00:00"
+            "time": "2022-04-26T13:08:29+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -5948,16 +5952,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v5.4.3",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "92043b7d8383e48104e411bc9434b260dbeb5a10"
+                "reference": "3c061a76bff6d6ea427d85e12ad1bb8ed8cd43e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/92043b7d8383e48104e411bc9434b260dbeb5a10",
-                "reference": "92043b7d8383e48104e411bc9434b260dbeb5a10",
+                "url": "https://api.github.com/repos/symfony/string/zipball/3c061a76bff6d6ea427d85e12ad1bb8ed8cd43e8",
+                "reference": "3c061a76bff6d6ea427d85e12ad1bb8ed8cd43e8",
                 "shasum": ""
             },
             "require": {
@@ -6027,20 +6031,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-02T09:53:40+00:00"
+            "time": "2022-04-19T10:40:37+00:00"
         },
         {
             "name": "symfony/translation",
-            "version": "v5.4.7",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "e1eb790575202ee3ac2659f55b93b05853726f8e"
+                "reference": "f5c0f6d1f20993b2606f3a5f36b1dc8c1899170b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/e1eb790575202ee3ac2659f55b93b05853726f8e",
-                "reference": "e1eb790575202ee3ac2659f55b93b05853726f8e",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/f5c0f6d1f20993b2606f3a5f36b1dc8c1899170b",
+                "reference": "f5c0f6d1f20993b2606f3a5f36b1dc8c1899170b",
                 "shasum": ""
             },
             "require": {
@@ -6121,7 +6125,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-24T17:09:09+00:00"
+            "time": "2022-04-22T08:14:12+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -6272,16 +6276,16 @@
         },
         {
             "name": "textalk/websocket",
-            "version": "1.5.7",
+            "version": "1.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Textalk/websocket-php.git",
-                "reference": "1712325e99b6bf869ccbf9bf41ab749e7328ea46"
+                "reference": "d05dbaa97500176447ffb1f1800573f23085ab13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Textalk/websocket-php/zipball/1712325e99b6bf869ccbf9bf41ab749e7328ea46",
-                "reference": "1712325e99b6bf869ccbf9bf41ab749e7328ea46",
+                "url": "https://api.github.com/repos/Textalk/websocket-php/zipball/d05dbaa97500176447ffb1f1800573f23085ab13",
+                "reference": "d05dbaa97500176447ffb1f1800573f23085ab13",
                 "shasum": ""
             },
             "require": {
@@ -6313,7 +6317,7 @@
                 }
             ],
             "description": "WebSocket client and server",
-            "time": "2022-03-29T09:46:59+00:00"
+            "time": "2022-04-26T06:28:24+00:00"
         },
         {
             "name": "theseer/tokenizer",
