@@ -122,7 +122,7 @@ get_header();
                             <?php endforeach;  // End of Query Loop 
                             ?>
                         </ul>
-                        <div class="border-solid border-t border-shade-grey-500 <?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> hover:bg-primary-navy-400 hover:text-shade-white-400 transition-all duration-300 load-more">
+                        <div class="border-solid border-t border-shade-grey-500 <?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> hover:bg-primary-navy-400 bg-shade-grey-50 hover:text-shade-white-400 transition-all duration-300 load-more">
                             <button class=" container block h4 py-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
                         </div>
                     <?php endif; ?>
@@ -143,7 +143,7 @@ get_header();
                             <?php endforeach;  // End of Query Loop 
                             ?>
                         </ul>
-                        <div class="border-solid border-t border-shade-grey-500 <?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> hover:bg-primary-navy-400 hover:text-shade-white-400 transition-all duration-300 load-more">
+                        <div class="border-solid border-t border-shade-grey-500 <?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?>  bg-shade-grey-50 hover:text-shade-white-400 transition-all duration-300 load-more">
                             <button class=" container block h4 py-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
                         </div>
                     <?php endif; ?>
