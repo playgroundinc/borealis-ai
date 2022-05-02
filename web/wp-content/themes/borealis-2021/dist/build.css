@@ -2757,16 +2757,6 @@ mjx-container::-webkit-scrollbar-thumb,
   cursor: pointer;
 }
 
-.hover\:border-shade-grey-500:hover{
-  --tw-border-opacity: 1;
-  border-color: rgb(101 104 146 / var(--tw-border-opacity));
-}
-
-.hover\:border-primary-electric-purple-400:hover{
-  --tw-border-opacity: 1;
-  border-color: rgb(96 55 215 / var(--tw-border-opacity));
-}
-
 .hover\:border-primary-electric-blue-400:hover{
   --tw-border-opacity: 1;
   border-color: rgb(0 68 255 / var(--tw-border-opacity));
