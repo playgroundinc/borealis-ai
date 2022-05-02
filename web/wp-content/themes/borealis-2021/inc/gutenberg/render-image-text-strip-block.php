@@ -57,7 +57,7 @@ if (!function_exists('pg_render_image_text_strip_block')) {
         if (!empty($image)) :
 ?>
             <div id="<?php echo $attributes->anchor_id ?>" class="w-full custom-component animated-element component-dark image-text">
-                <div class="md:flex hidden <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('flex flex-col md:min-h-[500px] relative') : '' ?> <?php echo $attributes->full_width === true ? 'bg-cover bg-no-repeat md:p-20' : '' ?>" style="background-image: url(<?php echo $attributes->full_width === true ? $image : '' ?>)">
+                <div class="md:flex hidden <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('flex flex-col md:min-h-[500px] relative') : '' ?> <?php echo $attributes->full_width === true ? 'bg-cover bg-no-repeat md:p-20 bg-center' : '' ?>" style="background-image: url(<?php echo $attributes->full_width === true ? $image : '' ?>)">
                     <div class="flex justify-between <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:container grow flex-col md:flex-row') : esc_attr('flex-col-reverse') ?>  <?php echo $attributes->reverse === true ? 'md:flex-row-reverse' : 'md:flex-row' ?>">
                         <div class="<?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('container md:m-0 md:basis-6/12 grow-0 flex flex-col-reverse') : esc_attr('md:w-6/12') ?> <?php echo $attributes->reverse === true ? 'items-center' : '' ?>">
                             <div class="flex justify-center flex-col <?php echo !is_singular(array('news', 'research-blogs')) ? esc_attr('md:m-0 md:w-3/4 tb:w-2/3 grow') : '' ?>">
