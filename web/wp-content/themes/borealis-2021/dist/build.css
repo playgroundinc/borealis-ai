@@ -1901,10 +1901,6 @@ ol.footnotes li small{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
-.border-shade-grey-500{
-  --tw-border-opacity: 1;
-  border-color: rgb(101 104 146 / var(--tw-border-opacity));
-}
 .border-shade-black-400{
   --tw-border-opacity: 1;
   border-color: rgb(34 39 49 / var(--tw-border-opacity));
@@ -1916,6 +1912,10 @@ ol.footnotes li small{
 .border-shade-white-400{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+.border-shade-grey-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(101 104 146 / var(--tw-border-opacity));
 }
 .border-l-shade-black-400{
   --tw-border-opacity: 1;
