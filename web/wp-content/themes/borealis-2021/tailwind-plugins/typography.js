@@ -11,14 +11,6 @@ module.exports = plugin(function ({ addBase }) {
 			fontFamily: "Metrophobic, sans-serif",
 			letterSpacing: "-0.04em",
 		},
-		// {
-		// 	className: "h1-desktop",
-		// 	max: "70",
-		// 	min: "38",
-		// 	lineHeight: "1.10",
-		// 	fontFamily: "Metrophobic, sans-serif",
-		// 	letterSpacing: "-0.04em",
-		// },
 		{
 			className: "h2",
 			max: "60",
