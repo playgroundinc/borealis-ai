@@ -398,7 +398,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .paragraph-lg{
   font-size: 20px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: 300;
@@ -417,7 +417,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .paragraph{
   font-size: 14px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -436,7 +436,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .paragraph-md{
   font-size: 14px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -1078,7 +1078,7 @@ ol.footnotes li small{
   .greenhouse p, .greenhouse li{
     font-size: 14px;
     font-family: Inter, sans-serif;
-    line-height: 1.80;
+    line-height: 1.50;
     letter-spacing: normal;
     text-transform: none;
     font-weight: normal;
@@ -1155,7 +1155,7 @@ ol.footnotes li small{
 .paragraph-style .paragraph-blog{
   font-size: 14px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -1183,7 +1183,7 @@ ol.footnotes li small{
 .paragraph-blog{
   font-size: 14px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -2950,7 +2950,7 @@ mjx-container::-webkit-scrollbar-thumb,
   .md\:paragraph-lg{
     font-size: 20px;
     font-family: Inter, sans-serif;
-    line-height: 1.80;
+    line-height: 1.50;
     letter-spacing: normal;
     text-transform: none;
     font-weight: 300;
@@ -2969,7 +2969,7 @@ mjx-container::-webkit-scrollbar-thumb,
   .md\:paragraph{
     font-size: 14px;
     font-family: Inter, sans-serif;
-    line-height: 1.80;
+    line-height: 1.50;
     letter-spacing: normal;
     text-transform: none;
     font-weight: normal;
@@ -3626,7 +3626,7 @@ mjx-container::-webkit-scrollbar-thumb,
   .tb\:paragraph-lg{
     font-size: 20px;
     font-family: Inter, sans-serif;
-    line-height: 1.80;
+    line-height: 1.50;
     letter-spacing: normal;
     text-transform: none;
     font-weight: 300;
