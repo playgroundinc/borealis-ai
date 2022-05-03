@@ -64,7 +64,8 @@
   .default-tabs .pill-secondary.pill-secondary-active {
     @apply border-b-4 border-primary-electric-purple-400 rounded-none;
   }
-  .text-link {
+  .text-link,
+  .link-hover {
     @apply text-primary-electric-blue-400 visited:text-primary-electric-purple-400 block hover:underline;
   }
   .text-2-up a,
