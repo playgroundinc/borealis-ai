@@ -4,7 +4,7 @@ if (!function_exists('pg_generate_search_bar_main')) {
     {
         ob_start();
 ?>
-        <div class="border-t border-shade-grey-500">
+        <div class="border-t border-color-shade-grey-500">
             <div class="container flex">
                 <form class="search-form relative grow">
                     <label class="sr-only" for="search">Search</label>
@@ -25,7 +25,7 @@ if (!function_exists('pg_generate_search_bar_main')) {
                 <button id="search-topics"> <span class="topics"><?php echo esc_html('0') ?></span></button>
             </div>
         </div>
-        <div class="bg-shade-white-400 border-b border-shade-grey-500">
+        <div class="bg-shade-white-400 border-b border-color-shade-grey-500">
             <div id="search-filters" class="container" role="region" aria-labelledby="search-topics">
                 <div class="pt-12 pb-6">
                     <form method="post">
@@ -42,7 +42,7 @@ if (!function_exists('pg_generate_search_bar_main')) {
                                     <?php foreach ($terms as $term) : ?>
                                         <div class="mr-3 mb-4 relative mt-1">
                                             <input tabindex="0" class="focus:outline-4 peer absolute top-0 left-0 right-0 bottom-0 h-full w-full z-0" value="<?php echo esc_attr($term->term_id) ?>" name="<?php echo esc_attr($term->term_id . '[]') ?>" type="checkbox" id="<?php echo esc_attr($term->term_id) ?>">
-                                            <label tabindex="-1" class="bg-shade-white-400 w-max pill peer-checked:pill-active hover:cursor-pointer focus:outline-4 relative z-2" for="<?php echo esc_attr($term->term_id) ?>">
+                                            <label tabindex="-1" class="bg-shade-white-400 w-max pill peer-checked:pill-active hover:cursor-pointer hover:border-primary-electric-blue-400 text-shade-black-400 focus:outline-4 relative z-2" for="<?php echo esc_attr($term->term_id) ?>">
                                                 <?php echo esc_html($term->name) ?>
                                             </label>
                                         </div>
