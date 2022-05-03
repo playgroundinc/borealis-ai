@@ -853,25 +853,25 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(96 55 215 / var(--tw-border-opacity));
 }
-.text-link, .link-hover{
+.text-link, .link-hover a{
   display: block;
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
 }
-.text-link:visited, .link-hover:visited{
+.text-link:visited, .link-hover a:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-.text-link:hover, .link-hover:hover{
+.text-link:hover, .link-hover a:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-.text-2-up a, .paragraph a{
+.paragraph a{
   display: inline-block;
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
 }
-.text-2-up a:visited, .paragraph a:visited{
+.paragraph a:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
@@ -2159,9 +2159,6 @@ ol.footnotes li small{
 .pt-115{
   padding-top: 460px;
 }
-.pt-25{
-  padding-top: 100px;
-}
 .pt-video{
   padding-top: 70.17%;
 }
@@ -2176,6 +2173,9 @@ ol.footnotes li small{
 }
 .pl-0{
   padding-left: 0px;
+}
+.pt-25{
+  padding-top: 100px;
 }
 .pl-4{
   padding-left: 16px;
@@ -3047,14 +3047,14 @@ mjx-container::-webkit-scrollbar-thumb,
       font-size: 24px;
     }
   }
-  .text-2-up a, .md\:paragraph a{
+  .md\:paragraph a{
     display: inline-block;
   }
-  .text-2-up a, .md\:paragraph a{
+  .md\:paragraph a{
     --tw-text-opacity: 1;
     color: rgb(0 68 255 / var(--tw-text-opacity));
   }
-  .text-2-up a:visited, .md\:paragraph a:visited{
+  .md\:paragraph a:visited{
     --tw-text-opacity: 1;
     color: rgb(96 55 215 / var(--tw-text-opacity));
   }
@@ -3464,14 +3464,14 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:pb-6{
     padding-bottom: 24px;
   }
+    .md\:pt-0{
+    padding-top: 0px;
+  }
     .md\:pt-video-md{
     padding-top: 34.59%;
   }
     .md\:pl-5{
     padding-left: 20px;
-  }
-    .md\:pt-0{
-    padding-top: 0px;
   }
     .md\:pl-0{
     padding-left: 0px;
