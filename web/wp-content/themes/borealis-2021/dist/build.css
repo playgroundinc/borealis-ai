@@ -1541,6 +1541,9 @@ ol.footnotes li small{
 .h-35{
   height: 140px;
 }
+.h-10{
+  height: 40px;
+}
 .h-13{
   height: 52px;
 }
@@ -3202,6 +3205,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:h-auto{
     height: auto;
+  }
+    .md\:h-20{
+    height: 80px;
   }
     .md\:h-11{
     height: 44px;
