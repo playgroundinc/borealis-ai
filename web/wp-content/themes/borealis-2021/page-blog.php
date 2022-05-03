@@ -72,7 +72,7 @@ get_header();
                 </div>
             <?php endif; ?>
         </ul>
-        <div class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> border-solid border-b border-color-shade-grey-500 hover:bg-primary-navy-400 hover:text-shade-white-400 transition-all duration-300 load-more">
+        <div class="<?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> border-solid border-b border-color-shade-grey-500 bg-shade-grey-50 hover:bg-primary-navy-400 hover:text-shade-white-400 transition-all duration-300 load-more">
             <button class="container block h4 py-8 text-center w-full load-more"><?php echo esc_html('Load More Posts') ?></button>
         </div>
         <?php wp_reset_query(); ?>

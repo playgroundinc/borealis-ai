@@ -1897,6 +1897,10 @@ ol.footnotes li small{
 .border-transparent{
   border-color: transparent;
 }
+.border-shade-grey-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(101 104 146 / var(--tw-border-opacity));
+}
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1912,10 +1916,6 @@ ol.footnotes li small{
 .border-shade-white-400{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-.border-shade-grey-500{
-  --tw-border-opacity: 1;
-  border-color: rgb(101 104 146 / var(--tw-border-opacity));
 }
 .border-l-shade-black-400{
   --tw-border-opacity: 1;
@@ -2745,6 +2745,11 @@ mjx-container::-webkit-scrollbar-thumb,
 
 .hover\:cursor-pointer:hover{
   cursor: pointer;
+}
+
+.hover\:border-primary-electric-blue-400:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 68 255 / var(--tw-border-opacity));
 }
 
 .hover\:bg-primary-navy-400:hover{
