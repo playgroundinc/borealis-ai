@@ -1544,6 +1544,9 @@ ol.footnotes li small{
 .h-35{
   height: 140px;
 }
+.h-10{
+  height: 40px;
+}
 .h-13{
   height: 52px;
 }
@@ -1564,12 +1567,6 @@ ol.footnotes li small{
 }
 .h-14{
   height: 56px;
-}
-.h-20{
-  height: 80px;
-}
-.h-10{
-  height: 40px;
 }
 .max-h-screen{
   max-height: 100vh;
@@ -2763,6 +2760,11 @@ mjx-container::-webkit-scrollbar-thumb,
   cursor: pointer;
 }
 
+.hover\:border-primary-electric-blue-400:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 68 255 / var(--tw-border-opacity));
+}
+
 .hover\:bg-primary-navy-400:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(0 15 120 / var(--tw-bg-opacity));
@@ -3214,14 +3216,14 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:h-auto{
     height: auto;
   }
+    .md\:h-20{
+    height: 80px;
+  }
     .md\:h-11{
     height: 44px;
   }
     .md\:h-14{
     height: 56px;
-  }
-    .md\:h-20{
-    height: 80px;
   }
     .md\:min-h-\[280px\]{
     min-height: 280px;

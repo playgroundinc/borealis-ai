@@ -25,6 +25,10 @@ if (!function_exists('pg_generate_search_bar')) {
                             <fieldset id="posttype" class="shrink-0 radio-form">
                                 <title class="sr-only"><?php echo esc_html('Show results for:'); ?></title>
                                 <ul class="flex items-center mr-6">
+                                    <li tabindex="0" class="focus:outline-4">
+                                        <input name="blog-toggle" id="<?php echo esc_attr('all-toggle') ?>" class="peer sr-only" type="radio" value="all" <?php echo $post_type && $post_type === 'all' ? esc_attr('checked') : null ?>>
+                                        <label for="<?php echo esc_attr('all-toggle') ?>" class="pill block mr-2 peer-checked:pill-active hover:border-primary-electric-blue-400 text-shade-black-400 cursor-pointer"><?php echo esc_html('All'); ?></label>
+                                    </li>
                                     <?php foreach ($tab_array as $inner_block => $element) : ?>
                                         <?php
                                         $id = $element['id'];
@@ -32,13 +36,9 @@ if (!function_exists('pg_generate_search_bar')) {
                                         ?>
                                         <li tabindex="0" class="focus:outline-4">
                                             <input name="blog-toggle" id="<?php echo esc_attr($id . '-toggle') ?>" class="peer sr-only" type="radio" value="<?php echo esc_attr($id) ?>" <?php echo $post_type && $post_type === $id ? esc_attr('checked') : null ?>>
-                                            <label for="<?php echo esc_attr($id . '-toggle') ?>" class="pill block mr-2 peer-checked:pill-active"><?php echo esc_html($title); ?></label>
+                                            <label for="<?php echo esc_attr($id . '-toggle') ?>" class="pill block mr-2 peer-checked:pill-active hover:border-primary-electric-blue-400 text-shade-black-400 cursor-pointer"><?php echo esc_html($title); ?></label>
                                         </li>
                                     <?php endforeach; ?>
-                                    <li tabindex="0" class="focus:outline-4">
-                                        <input name="blog-toggle" id="<?php echo esc_attr('all-toggle') ?>" class="peer sr-only" type="radio" value="all" <?php echo $post_type && $post_type === 'all' ? esc_attr('checked') : null ?>>
-                                        <label for="<?php echo esc_attr('all-toggle') ?>" class="pill block mr-2 peer-checked:pill-active"><?php echo esc_html('All'); ?></label>
-                                    </li>
                                 </ul>
                             </fieldset>
                         </form>
@@ -68,7 +68,7 @@ if (!function_exists('pg_generate_search_bar')) {
                                     <?php foreach ($terms as $term) : ?>
                                         <div class="mr-3 mb-4 relative mt-1 ">
                                             <input tabindex="0" class="focus:outline-4 peer absolute top-0 left-0 right-0 bottom-0 h-full w-full z-0" value="<?php echo esc_attr($term->term_id) ?>" name="<?php echo esc_attr($term->term_id . '[]') ?>" type="checkbox" id="<?php echo esc_attr($term->term_id) ?>">
-                                            <label tabindex="-1" class="bg-shade-white-400 w-max pill peer-checked:pill-active hover:cursor-pointer focus:outline-4 relative z-2" for="<?php echo esc_attr($term->term_id) ?>">
+                                            <label tabindex="-1" class="bg-shade-white-400 w-max pill peer-checked:pill-active hover:cursor-pointer hover:border-primary-electric-blue-400 text-shade-black-400 focus:outline-4 relative z-2" for="<?php echo esc_attr($term->term_id) ?>">
                                                 <?php echo esc_html($term->name) ?>
                                             </label>
                                         </div>
