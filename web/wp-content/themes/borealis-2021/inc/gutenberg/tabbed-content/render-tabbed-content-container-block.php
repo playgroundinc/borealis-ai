@@ -77,7 +77,7 @@ if (!function_exists('pg_render_tabbed_content_container_block')) {
                                 </div>
                             <?php endif; ?>
 
-                            <div class="flex border-b border-shade-grey-700 md:overflow-hidden overflow-x-scroll" role="tablist" aria-orientation="horizontal">
+                            <div class="flex border-b border-color-shade-grey-500 md:overflow-hidden overflow-x-scroll" role="tablist" aria-orientation="horizontal">
                                 <?php foreach ($block['innerBlocks'] as $inner_block => $element) : ?>
                                     <?php
                                     $fields = array(

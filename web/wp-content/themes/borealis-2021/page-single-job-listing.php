@@ -53,7 +53,7 @@ if (!empty($settings['greenhouse_api_key']) && strlen($settings['greenhouse_url'
                     </div>
                 </div>
             </div>
-            <div class="border-b border-shade-grey-500 mb-19"></div>
+            <div class="border-b border-color-shade-grey-500 mb-19"></div>
             <div class="container w-full tb:w-8/12 m-auto greenhouse mb-36"><?php echo  htmlspecialchars_decode($data['content']); ?></div>
             <div class="w-full bg-shade-grey-100 mt-20 md:mt-36">
                 <h2 class="w-full tb:w-8/12 container md:h2-desktop h3 text-shade-black-400 pt-14 md:pt-20 pb-4 md:pb-6 bg-shade-grey-100">Ready to Apply?</h2>
