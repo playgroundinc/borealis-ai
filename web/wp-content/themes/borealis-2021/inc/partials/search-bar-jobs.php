@@ -4,7 +4,7 @@ if (!function_exists('pg_generate_job_query_bar')) {
     {
         ob_start();
 ?>
-        <div class="border-t border-shade-grey-500 mt-8 hidden">
+        <div class="border-t border-color-shade-grey-500 mt-8 hidden">
 
             <div class="hidden">
                 <button id="search-topics"> <span class="topics"><?php echo esc_html('0') ?></span></button>

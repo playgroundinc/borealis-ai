@@ -81,7 +81,7 @@
     @apply mt-3 md:mt-8;
   }
   .custom-component + .load-more-results {
-    @apply mt-16 border-t border-shade-grey-500;
+    @apply mt-16;
   }
   .single {
     .custom-component:first-child {
