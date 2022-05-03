@@ -64,7 +64,7 @@ if (!function_exists('pg_generate_blog_header')) {
                     <div class="md:flex">
                         <p class="paragraph-small text-shade-grey-700 pr-4"><?php echo !empty($type[0]) ? esc_html($type[0]->name) : 'Blog' ?></p>
                         <?php if (!empty($research_areas)) : ?>
-                            <p class="paragraph-small text-shade-grey-700 md:pl-4 md:border-l border-shade-black-400 hidden md:block"><?php echo esc_html($research_areas) ?></p>
+                            <p class="paragraph-small text-shade-grey-700 md:pl-4 md:border-l border-color-shade-black-400 hidden md:block"><?php echo esc_html($research_areas) ?></p>
                         <?php endif; ?>
                     </div>
                 </div>

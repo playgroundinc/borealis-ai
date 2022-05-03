@@ -178,7 +178,7 @@
                 <?php endif; // End of check for empty blog header. 
                 ?>
             <?php elseif (is_singular('team-member')) : ?>
-                <div class="border-b border-shade-grey-700">
+                <div class="border-b border-color-shade-grey-500">
                     <div class="container">
                         <?php $header = pg_generate_team_member_header($post->ID); ?>
                         <?php if (isset($header) && !empty($header)) : ?>
