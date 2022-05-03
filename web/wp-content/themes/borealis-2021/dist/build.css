@@ -398,7 +398,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .paragraph-lg{
   font-size: 20px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: 300;
@@ -417,7 +417,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .paragraph{
   font-size: 14px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -436,7 +436,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .paragraph-md{
   font-size: 14px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -853,16 +853,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(96 55 215 / var(--tw-border-opacity));
 }
-.text-link{
+.text-link, .link-hover{
   display: block;
   --tw-text-opacity: 1;
   color: rgb(0 68 255 / var(--tw-text-opacity));
 }
-.text-link:visited{
+.text-link:visited, .link-hover:visited{
   --tw-text-opacity: 1;
   color: rgb(96 55 215 / var(--tw-text-opacity));
 }
-.text-link:hover{
+.text-link:hover, .link-hover:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
@@ -888,9 +888,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .custom-component + .load-more-results{
   margin-top: 64px;
-  border-top-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(101 104 146 / var(--tw-border-opacity));
 }
 @media (min-width: 1440px){
   .single .custom-component:first-child{
@@ -1078,7 +1075,7 @@ ol.footnotes li small{
   .greenhouse p, .greenhouse li{
     font-size: 14px;
     font-family: Inter, sans-serif;
-    line-height: 1.80;
+    line-height: 1.50;
     letter-spacing: normal;
     text-transform: none;
     font-weight: normal;
@@ -1155,7 +1152,7 @@ ol.footnotes li small{
 .paragraph-style .paragraph-blog{
   font-size: 14px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -1183,7 +1180,7 @@ ol.footnotes li small{
 .paragraph-blog{
   font-size: 14px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -1452,9 +1449,6 @@ ol.footnotes li small{
 .mb-2{
   margin-bottom: 8px;
 }
-.mt-16{
-  margin-top: 64px;
-}
 .mt-18{
   margin-top: 72px;
 }
@@ -1484,6 +1478,9 @@ ol.footnotes li small{
 }
 .mt-26{
   margin-top: 104px;
+}
+.mt-16{
+  margin-top: 64px;
 }
 .ml-15{
   margin-left: 60px;
@@ -1543,6 +1540,9 @@ ol.footnotes li small{
 }
 .h-35{
   height: 140px;
+}
+.h-10{
+  height: 40px;
 }
 .h-13{
   height: 52px;
@@ -1889,18 +1889,6 @@ ol.footnotes li small{
 .border-solid{
   border-style: solid;
 }
-.border-shade-black-400{
-  --tw-border-opacity: 1;
-  border-color: rgb(34 39 49 / var(--tw-border-opacity));
-}
-.border-shade-grey-500{
-  --tw-border-opacity: 1;
-  border-color: rgb(101 104 146 / var(--tw-border-opacity));
-}
-.border-shade-grey-700{
-  --tw-border-opacity: 1;
-  border-color: rgb(92 93 118 / var(--tw-border-opacity));
-}
 .border-gray-200{
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
@@ -1912,9 +1900,17 @@ ol.footnotes li small{
 .border-transparent{
   border-color: transparent;
 }
+.border-shade-grey-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(101 104 146 / var(--tw-border-opacity));
+}
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+.border-shade-black-400{
+  --tw-border-opacity: 1;
+  border-color: rgb(34 39 49 / var(--tw-border-opacity));
 }
 .border-primary-electric-blue-400{
   --tw-border-opacity: 1;
@@ -1923,9 +1919,6 @@ ol.footnotes li small{
 .border-shade-white-400{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-.border-shade-transparent-400{
-  border-color: transparent;
 }
 .border-l-shade-black-400{
   --tw-border-opacity: 1;
@@ -2244,11 +2237,20 @@ ol.footnotes li small{
 .pt-gallery{
   padding-top: 600px;
 }
+.pl-2\.9vw{
+  padding-left: 2.9vw;
+}
 .pr-6{
   padding-right: 24px;
 }
-.pr-2vw{
-  padding-right: 2vw;
+.pl-2{
+  padding-left: 8px;
+}
+.pr-2\.9vw{
+  padding-right: 2.9vw;
+}
+.pr-2{
+  padding-right: 8px;
 }
 .pt-7{
   padding-top: 28px;
@@ -2270,12 +2272,6 @@ ol.footnotes li small{
 }
 .pt-2{
   padding-top: 8px;
-}
-.pr-2{
-  padding-right: 8px;
-}
-.pl-2{
-  padding-left: 8px;
 }
 .pt-72{
   padding-top: 288px;
@@ -2757,6 +2753,11 @@ mjx-container::-webkit-scrollbar-thumb,
   cursor: pointer;
 }
 
+.hover\:border-primary-electric-blue-400:hover{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 68 255 / var(--tw-border-opacity));
+}
+
 .hover\:bg-primary-navy-400:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(0 15 120 / var(--tw-bg-opacity));
@@ -2876,8 +2877,12 @@ mjx-container::-webkit-scrollbar-thumb,
   margin-top: 40px;
 }
 
-.nth-child-2\:pl-5:nth-child(n + 2){
-  padding-left: 20px;
+.nth-child-2\:ml-2vw:nth-child(n + 2){
+  margin-left: 2vw;
+}
+
+.nth-child-2\:pl-2vw:nth-child(n + 2){
+  padding-left: 2vw;
 }
 
 .nth-child-3\:pt-12:nth-child(n + 3){
@@ -2950,7 +2955,7 @@ mjx-container::-webkit-scrollbar-thumb,
   .md\:paragraph-lg{
     font-size: 20px;
     font-family: Inter, sans-serif;
-    line-height: 1.80;
+    line-height: 1.50;
     letter-spacing: normal;
     text-transform: none;
     font-weight: 300;
@@ -2969,7 +2974,7 @@ mjx-container::-webkit-scrollbar-thumb,
   .md\:paragraph{
     font-size: 14px;
     font-family: Inter, sans-serif;
-    line-height: 1.80;
+    line-height: 1.50;
     letter-spacing: normal;
     text-transform: none;
     font-weight: normal;
@@ -3163,12 +3168,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:mt-14{
     margin-top: 56px;
   }
-    .md\:ml-auto{
-    margin-left: auto;
-  }
-    .md\:mr-0{
-    margin-right: 0px;
-  }
     .md\:mb-2\.9vw{
     margin-bottom: 2.9vw;
   }
@@ -3187,8 +3186,14 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:mt-11{
     margin-top: 44px;
   }
+    .md\:mr-0{
+    margin-right: 0px;
+  }
     .md\:mr-7{
     margin-right: 28px;
+  }
+    .md\:mt-2vw{
+    margin-top: 2vw;
   }
     .md\:mb-12{
     margin-bottom: 48px;
@@ -3207,6 +3212,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:h-auto{
     height: auto;
+  }
+    .md\:h-20{
+    height: 80px;
   }
     .md\:h-11{
     height: 44px;
@@ -3265,11 +3273,8 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:w-36{
     width: 144px;
   }
-    .md\:w-11\/12{
-    width: 91.666667%;
-  }
-    .md\:w-\[32vw\]{
-    width: 32vw;
+    .md\:w-\[30vw\]{
+    width: 30vw;
   }
     .md\:w-11{
     width: 44px;
@@ -3292,8 +3297,8 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:w-5\/8{
     width: calc((100% / 8) * 5);
   }
-    .md\:max-w-\[32vw\]{
-    max-width: 32vw;
+    .md\:max-w-\[30vw\]{
+    max-width: 30vw;
   }
     .md\:basis-3\/4{
     flex-basis: 75%;
@@ -3626,7 +3631,7 @@ mjx-container::-webkit-scrollbar-thumb,
   .tb\:paragraph-lg{
     font-size: 20px;
     font-family: Inter, sans-serif;
-    line-height: 1.80;
+    line-height: 1.50;
     letter-spacing: normal;
     text-transform: none;
     font-weight: 300;
@@ -3969,8 +3974,11 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:pl-8{
     padding-left: 32px;
   }
+    .lg\:pl-gallery-offset{
+    padding-left: calc((100vw - 1440px) / 2);
+  }
     .lg\:pr-gallery-offset{
-    padding-right: calc((100vw - 1300px) / 2);
+    padding-right: calc((100vw - 1440px) / 2);
   }
     .lg\:pt-125{
     padding-top: 500px;

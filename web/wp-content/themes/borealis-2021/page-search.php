@@ -113,16 +113,16 @@ get_header();
                     if (!empty($Query->posts)) : // Empty Query check. 
                     ?>
                         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
-                        <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="<?php echo esc_attr($id) ?>">
+                        <ul class="posts-listing border-color-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="<?php echo esc_attr($id) ?>">
                             <?php foreach ($Query->posts as $post) : // Start of Query loop 
                             ?>
-                                <li class="last:border-b-0 border-b border-shade-grey-500">
+                                <li class="last:border-b-0 border-b border-color-shade-grey-500">
                                     <?php echo pg_generate_main_search_result($post, $research_areas, $id); ?>
                                 </li>
                             <?php endforeach;  // End of Query Loop 
                             ?>
                         </ul>
-                        <div class="border-solid border-t border-shade-grey-500 <?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> hover:bg-primary-navy-400 hover:text-shade-white-400 transition-all duration-300 load-more">
+                        <div class="border-solid border-t border-color-shade-grey-500 <?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> hover:bg-primary-navy-400 hover:text-shade-white-400 transition-all duration-300 load-more">
                             <button class=" container block h4 py-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
                         </div>
                     <?php endif; ?>
@@ -134,20 +134,23 @@ get_header();
                     if (!empty($Query->posts)) : // Empty Query check. 
                     ?>
                         <button class="refresh-results hidden"><?php echo esc_html('Refresh Results') ?></button>
-                        <ul class="posts-listing border-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="<?php echo esc_attr($id) ?>">
+                        <ul class="posts-listing border-color-shade-grey-500 border-t" data-page="1" data-research-areas="<?php echo esc_attr(implode(',', $research_areas)) ?>" data-total="<?php echo esc_attr($Query->max_num_pages) ?>" data-query="<?php echo esc_attr($query) ?>" data-posttype="<?php echo esc_attr($id) ?>">
                             <?php foreach ($Query->posts as $post) : // Start of Query loop 
                             ?>
-                                <li class="last:border-b-0 border-b border-shade-grey-500">
+                                <li class="last:border-b-0 border-b border-color-shade-grey-500">
                                     <?php echo pg_generate_main_search_result($post, $research_areas, $id); ?>
                                 </li>
                             <?php endforeach;  // End of Query Loop 
                             ?>
                         </ul>
-                        <div class="border-solid border-t border-shade-grey-500 <?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> hover:bg-primary-navy-400 hover:text-shade-white-400 transition-all duration-300 load-more">
-                            <button class=" container block h4 py-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
-                        </div>
-                    <?php endif; ?>
-                    <?php wp_reset_query(); ?>
+                        <<<<<<< HEAD <div class="border-solid border-t border-color-shade-grey-500 <?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?> hover:bg-primary-navy-400 hover:text-shade-white-400 transition-all duration-300 load-more">
+                            =======
+                            <div class="border-solid border-t border-shade-grey-500 <?php echo intval($Query->max_num_pages) > 1 ? '' : 'hidden' ?>  bg-shade-grey-50 hover:text-shade-white-400 transition-all duration-300 load-more">
+                                >>>>>>> 42a49c5f46771414644978aad62233a2a98e56a8
+                                <button class=" container block h4 py-8 text-center w-full load-more"><?php echo 'Load More ' . $title ?></button>
+                            </div>
+                        <?php endif; ?>
+                        <?php wp_reset_query(); ?>
                 </div>
             <?php } ?>
         <?php
@@ -155,7 +158,7 @@ get_header();
         }
         ?>
     </section>
-    <div class="border-b border-shade-grey-500"></div>
+    <div class="border-b border-color-shade-grey-500"></div>
 </div>
 <?php
 get_footer();
