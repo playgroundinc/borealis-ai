@@ -2244,8 +2244,14 @@ ol.footnotes li small{
 .pt-gallery{
   padding-top: 600px;
 }
+.pl-2\.9vw{
+  padding-left: 2.9vw;
+}
 .pr-6{
   padding-right: 24px;
+}
+.pl-2{
+  padding-left: 8px;
 }
 .pr-2\.9vw{
   padding-right: 2.9vw;
@@ -2273,9 +2279,6 @@ ol.footnotes li small{
 }
 .pt-2{
   padding-top: 8px;
-}
-.pl-2{
-  padding-left: 8px;
 }
 .pt-72{
   padding-top: 288px;
@@ -2309,12 +2312,6 @@ ol.footnotes li small{
 }
 .pr-3{
   padding-right: 12px;
-}
-.pl-2vw{
-  padding-left: 2vw;
-}
-.pl-2\.9vw{
-  padding-left: 2.9vw;
 }
 .text-left{
   text-align: left;
@@ -2890,16 +2887,8 @@ mjx-container::-webkit-scrollbar-thumb,
   margin-left: 8px;
 }
 
-.nth-child-2\:pl-5:nth-child(n + 2){
-  padding-left: 20px;
-}
-
-.nth-child-2\:pl-2.9vw:nth-child(n + 2){
-  padding-left: 2.9vw;
-}
-
-.nth-child-2\:pl-2:nth-child(n + 2){
-  padding-left: 8px;
+.nth-child-2\:ml-2vw:nth-child(n + 2){
+  margin-left: 2vw;
 }
 
 .nth-child-2\:pl-2vw:nth-child(n + 2){
@@ -3189,12 +3178,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:mt-14{
     margin-top: 56px;
   }
-    .md\:ml-auto{
-    margin-left: auto;
-  }
-    .md\:mr-0{
-    margin-right: 0px;
-  }
     .md\:mb-2\.9vw{
     margin-bottom: 2.9vw;
   }
@@ -3212,6 +3195,9 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:mt-11{
     margin-top: 44px;
+  }
+    .md\:mr-0{
+    margin-right: 0px;
   }
     .md\:mr-7{
     margin-right: 28px;
@@ -3293,9 +3279,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:w-36{
     width: 144px;
-  }
-    .md\:w-11\/12{
-    width: 91.666667%;
   }
     .md\:w-\[30vw\]{
     width: 30vw;
@@ -3998,6 +3981,9 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:pl-8{
     padding-left: 32px;
   }
+    .lg\:pl-gallery-offset{
+    padding-left: calc((100vw - 1440px) / 2);
+  }
     .lg\:pr-gallery-offset{
     padding-right: calc((100vw - 1440px) / 2);
   }
@@ -4006,9 +3992,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .lg\:pt-0{
     padding-top: 0px;
-  }
-    .lg\:pl-gallery-offset{
-    padding-left: calc((100vw - 1440px) / 2);
   }
     .lg\:container{
     margin: 0 auto;

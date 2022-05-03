@@ -107,7 +107,7 @@ if (!function_exists('pg_render_gallery_container_block')) {
                                 $position = get_post_meta($post->ID, 'position', true);
                                 $url = get_permalink($post->ID);
                                 ?>
-                                <li class="nth-child-2:ml-2.9vw basis-team-member shrink-0 grow-0">
+                                <li class="nth-child-2:ml-2vw basis-team-member shrink-0 grow-0">
                                     <a href="<?php echo esc_url_raw($url) ?>" class="block" aria-labelledby="<?php echo esc_attr($slug) ?>">
                                         <img class="block rounded-large" src="<?php echo $image && strlen($image) > 0 ? esc_url_raw($image) : get_bloginfo('stylesheet_directory') . '/src/images/teamMember.png' ?>" />
                                         <p id="<?php echo esc_attr($slug) ?>" class="h4 pt-12"><?php echo esc_html($post->post_title); ?></p>
