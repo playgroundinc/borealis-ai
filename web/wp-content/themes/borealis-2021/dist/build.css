@@ -398,7 +398,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .paragraph-lg{
   font-size: 20px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: 300;
@@ -417,7 +417,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .paragraph{
   font-size: 14px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -436,7 +436,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .paragraph-md{
   font-size: 14px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -1075,7 +1075,7 @@ ol.footnotes li small{
   .greenhouse p, .greenhouse li{
     font-size: 14px;
     font-family: Inter, sans-serif;
-    line-height: 1.80;
+    line-height: 1.50;
     letter-spacing: normal;
     text-transform: none;
     font-weight: normal;
@@ -1152,7 +1152,7 @@ ol.footnotes li small{
 .paragraph-style .paragraph-blog{
   font-size: 14px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -1180,7 +1180,7 @@ ol.footnotes li small{
 .paragraph-blog{
   font-size: 14px;
   font-family: Inter, sans-serif;
-  line-height: 1.80;
+  line-height: 1.50;
   letter-spacing: normal;
   text-transform: none;
   font-weight: normal;
@@ -2237,11 +2237,20 @@ ol.footnotes li small{
 .pt-gallery{
   padding-top: 600px;
 }
+.pl-2\.9vw{
+  padding-left: 2.9vw;
+}
 .pr-6{
   padding-right: 24px;
 }
-.pr-2vw{
-  padding-right: 2vw;
+.pl-2{
+  padding-left: 8px;
+}
+.pr-2\.9vw{
+  padding-right: 2.9vw;
+}
+.pr-2{
+  padding-right: 8px;
 }
 .pt-7{
   padding-top: 28px;
@@ -2263,12 +2272,6 @@ ol.footnotes li small{
 }
 .pt-2{
   padding-top: 8px;
-}
-.pr-2{
-  padding-right: 8px;
-}
-.pl-2{
-  padding-left: 8px;
 }
 .pt-72{
   padding-top: 288px;
@@ -2874,8 +2877,12 @@ mjx-container::-webkit-scrollbar-thumb,
   margin-top: 40px;
 }
 
-.nth-child-2\:pl-5:nth-child(n + 2){
-  padding-left: 20px;
+.nth-child-2\:ml-2vw:nth-child(n + 2){
+  margin-left: 2vw;
+}
+
+.nth-child-2\:pl-2vw:nth-child(n + 2){
+  padding-left: 2vw;
 }
 
 .nth-child-3\:pt-12:nth-child(n + 3){
@@ -2948,7 +2955,7 @@ mjx-container::-webkit-scrollbar-thumb,
   .md\:paragraph-lg{
     font-size: 20px;
     font-family: Inter, sans-serif;
-    line-height: 1.80;
+    line-height: 1.50;
     letter-spacing: normal;
     text-transform: none;
     font-weight: 300;
@@ -2967,7 +2974,7 @@ mjx-container::-webkit-scrollbar-thumb,
   .md\:paragraph{
     font-size: 14px;
     font-family: Inter, sans-serif;
-    line-height: 1.80;
+    line-height: 1.50;
     letter-spacing: normal;
     text-transform: none;
     font-weight: normal;
@@ -3161,12 +3168,6 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:mt-14{
     margin-top: 56px;
   }
-    .md\:ml-auto{
-    margin-left: auto;
-  }
-    .md\:mr-0{
-    margin-right: 0px;
-  }
     .md\:mb-2\.9vw{
     margin-bottom: 2.9vw;
   }
@@ -3185,8 +3186,14 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:mt-11{
     margin-top: 44px;
   }
+    .md\:mr-0{
+    margin-right: 0px;
+  }
     .md\:mr-7{
     margin-right: 28px;
+  }
+    .md\:mt-2vw{
+    margin-top: 2vw;
   }
     .md\:mb-12{
     margin-bottom: 48px;
@@ -3266,11 +3273,8 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:w-36{
     width: 144px;
   }
-    .md\:w-11\/12{
-    width: 91.666667%;
-  }
-    .md\:w-\[32vw\]{
-    width: 32vw;
+    .md\:w-\[30vw\]{
+    width: 30vw;
   }
     .md\:w-11{
     width: 44px;
@@ -3293,8 +3297,8 @@ mjx-container::-webkit-scrollbar-thumb,
     .md\:w-5\/8{
     width: calc((100% / 8) * 5);
   }
-    .md\:max-w-\[32vw\]{
-    max-width: 32vw;
+    .md\:max-w-\[30vw\]{
+    max-width: 30vw;
   }
     .md\:basis-3\/4{
     flex-basis: 75%;
@@ -3627,7 +3631,7 @@ mjx-container::-webkit-scrollbar-thumb,
   .tb\:paragraph-lg{
     font-size: 20px;
     font-family: Inter, sans-serif;
-    line-height: 1.80;
+    line-height: 1.50;
     letter-spacing: normal;
     text-transform: none;
     font-weight: 300;
@@ -3970,8 +3974,11 @@ mjx-container::-webkit-scrollbar-thumb,
     .lg\:pl-8{
     padding-left: 32px;
   }
+    .lg\:pl-gallery-offset{
+    padding-left: calc((100vw - 1440px) / 2);
+  }
     .lg\:pr-gallery-offset{
-    padding-right: calc((100vw - 1300px) / 2);
+    padding-right: calc((100vw - 1440px) / 2);
   }
     .lg\:pt-125{
     padding-top: 500px;

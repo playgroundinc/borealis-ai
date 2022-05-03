@@ -32,14 +32,14 @@ if (!function_exists('pg_render_featured_post')) {
                     <p class="paragraph basis-1/2 pt-6 md:pt-0"><?php echo esc_html($post_obj->post_excerpt) ?></p>
                 <?php endif; ?>
             </div>
-            <div class="mt-10">
+            <div class="mt-10 md:mt-2vw">
                 <div class="<?php echo $full ? esc_attr('pt-featured-image') : esc_attr('pt-featured-image-sm') ?> md:pt-featured-image-md bg-center bg-cover rounded-large" style="background-image: url(<?php echo esc_url_raw($image) ?>)"></div>
             </div>
             <?php if (!$full && strlen($post_obj->post_excerpt) > 0) : ?>
                 <p class="pt-6 w-full md:w-10/12"><?php echo esc_html($post_obj->post_excerpt) ?></p>
             <?php endif; ?>
             <div class="md:flex flex-col <?php !$full ? esc_attr('md:items-end') : '' ?>">
-                <div class="flex mt-10 text-shade-grey-700 md:w-5/6 grow-2 items-end">
+                <div class="flex mt-10 md:mt-2vw text-shade-grey-700 md:w-5/6 grow-2 items-end">
                     <p class="paragraph-sm pr-10 shrink-0"><?php echo $post_obj->post_type === 'news' ? esc_html('News') : esc_html('Blog') ?></p>
                     <?php if (strlen($terms_string) > 0) : ?>
                         <p class="paragraph-sm border-l border-l-shade-black-400 pl-4"><?php echo esc_html($terms_string) ?></p>
