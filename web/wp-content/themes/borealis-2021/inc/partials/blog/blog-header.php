@@ -18,9 +18,11 @@ if (!function_exists('pg_generate_blog_header')) {
                     'research-blogs'
                 ),
                 'tax_query' => array(
-                    'taxonomy' => 'series',
-                    'field' => 'slug',
-                    'terms' => $series[0]->slug,
+                    array(
+                        'taxonomy' => 'series',
+                        'field' => 'slug',
+                        'terms' => $series[0]->slug,
+                    )
                 ),
                 'orderby' => 'meta_value_num',
                 'meta_key' => 'series_order',
