@@ -908,13 +908,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 .component-padding{
-  padding-top: 28px;
-  padding-bottom: 28px;
+  padding-top: 0.7vw;
+  padding-bottom: 0.7vw;
 }
 @media (min-width: 768px){
   .component-padding{
-    padding-top: 56px;
-    padding-bottom: 56px;
+    padding-top: 2.9vw;
+    padding-bottom: 2.9vw;
   }
 }
 .icon-padding + .icon-padding{
@@ -930,7 +930,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .default-tabs .icon-container{
   flex-direction: column;
-  padding-top: 28px;
+  padding-top: 0.7vw;
 }
 .tab-container .accordion-list{
   width: 100%;
@@ -1570,13 +1570,13 @@ ol.footnotes li small{
   height: 36px;
 }
 .h-7{
-  height: 28px;
+  height: 0.7vw;
 }
 .h-8{
   height: 32px;
 }
 .h-14{
-  height: 56px;
+  height: 2.9vw;
 }
 .max-h-screen{
   max-height: 100vh;
@@ -2086,8 +2086,8 @@ ol.footnotes li small{
   padding-bottom: 24px;
 }
 .py-7{
-  padding-top: 28px;
-  padding-bottom: 28px;
+  padding-top: 0.7vw;
+  padding-bottom: 0.7vw;
 }
 .px-8{
   padding-left: 32px;
@@ -2114,8 +2114,8 @@ ol.footnotes li small{
   padding-bottom: 8px;
 }
 .py-14{
-  padding-top: 56px;
-  padding-bottom: 56px;
+  padding-top: 2.9vw;
+  padding-bottom: 2.9vw;
 }
 .py-12{
   padding-top: 48px;
@@ -2125,7 +2125,7 @@ ol.footnotes li small{
   padding-top: 52px;
 }
 .pr-14{
-  padding-right: 56px;
+  padding-right: 2.9vw;
 }
 .pt-12{
   padding-top: 48px;
@@ -2140,10 +2140,10 @@ ol.footnotes li small{
   padding-bottom: 32px;
 }
 .pl-7{
-  padding-left: 28px;
+  padding-left: 0.7vw;
 }
 .pb-14{
-  padding-bottom: 56px;
+  padding-bottom: 2.9vw;
 }
 .pb-10{
   padding-bottom: 40px;
@@ -2161,7 +2161,7 @@ ol.footnotes li small{
   padding-top: 20px;
 }
 .pt-14{
-  padding-top: 56px;
+  padding-top: 2.9vw;
 }
 .pb-4{
   padding-bottom: 16px;
@@ -2266,7 +2266,7 @@ ol.footnotes li small{
   padding-right: 8px;
 }
 .pt-7{
-  padding-top: 28px;
+  padding-top: 0.7vw;
 }
 .pb-0{
   padding-bottom: 0px;
@@ -3233,7 +3233,7 @@ mjx-container::-webkit-scrollbar-thumb,
     height: 44px;
   }
     .md\:h-14{
-    height: 56px;
+    height: 2.9vw;
   }
     .md\:min-h-\[280px\]{
     min-height: 280px;
@@ -3422,12 +3422,12 @@ mjx-container::-webkit-scrollbar-thumb,
     padding-bottom: 8px;
   }
     .md\:py-14{
-    padding-top: 56px;
-    padding-bottom: 56px;
+    padding-top: 2.9vw;
+    padding-bottom: 2.9vw;
   }
     .md\:py-7{
-    padding-top: 28px;
-    padding-bottom: 28px;
+    padding-top: 0.7vw;
+    padding-bottom: 0.7vw;
   }
     .md\:py-10{
     padding-top: 40px;
@@ -3457,7 +3457,7 @@ mjx-container::-webkit-scrollbar-thumb,
     padding-right: 20px;
   }
     .md\:pt-7{
-    padding-top: 28px;
+    padding-top: 0.7vw;
   }
     .md\:pb-0{
     padding-bottom: 0px;
@@ -3511,7 +3511,7 @@ mjx-container::-webkit-scrollbar-thumb,
     padding-right: 4px;
   }
     .md\:pt-14{
-    padding-top: 56px;
+    padding-top: 2.9vw;
   }
     .md\:pt-featured-image-md{
     padding-top: 450px;
@@ -3562,7 +3562,7 @@ mjx-container::-webkit-scrollbar-thumb,
     padding-bottom: 40px;
   }
     .md\:pb-7{
-    padding-bottom: 28px;
+    padding-bottom: 0.7vw;
   }
     .md\:pt-8{
     padding-top: 32px;
@@ -3851,8 +3851,8 @@ mjx-container::-webkit-scrollbar-thumb,
     border-bottom-width: 1px;
   }
     .tb\:py-14{
-    padding-top: 56px;
-    padding-bottom: 56px;
+    padding-top: 2.9vw;
+    padding-bottom: 2.9vw;
   }
     .tb\:pt-6{
     padding-top: 24px;
@@ -3979,7 +3979,7 @@ mjx-container::-webkit-scrollbar-thumb,
     padding-right: 0px;
   }
     .lg\:pt-7{
-    padding-top: 28px;
+    padding-top: 0.7vw;
   }
     .lg\:pt-video-lg{
     padding-top: 30%;
