@@ -29,6 +29,7 @@ const entry = {
     location: JS_DIR + "/scripts/location.js",
     mathjax: JS_DIR + "/scripts/mathjax.js",
     gallery: JS_DIR + "/scripts/gallery.js",
+    headerHeight: JS_DIR + "/scripts/headerHeight.js",
 };
 
 const output = {

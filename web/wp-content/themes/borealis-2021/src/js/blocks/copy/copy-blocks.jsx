@@ -6,7 +6,7 @@ const blocks = [
     slug: "paragraph",
     title: "Paragraph",
     description: "Add a paragraph",
-    classes: "paragraph-blog mt-10 md:mt-15 wp-block-pg-paragraph first:mt-0",
+    classes: "paragraph-blog wp-block-pg-paragraph mt-0",
     category: "copy",
     icon: "editor-paragraph",
     tagName: "p",
