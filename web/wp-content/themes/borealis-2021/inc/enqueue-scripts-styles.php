@@ -60,6 +60,13 @@ if (!function_exists('pg_gallery_script')) {
     }
 }
 
+if (!function_exists('pg_header_height_script')) {
+    function pg_header_height_script()
+    {
+        wp_enqueue_script('headerHeight', get_template_directory_uri() . '/dist/headerHeight.js', array(), '20151215', true);
+    }
+}
+
 if (!function_exists('pg_podcast_script')) {
     function pg_podcast_script()
     {
@@ -132,6 +139,7 @@ function pg_wp_starter_scripts()
     pg_main_search_script();
     pg_blog_modal_script();
     pg_blog_share_script();
+    pg_header_height_script();
     pg_img_hover_script();
     pg_location_modal_script();
     pg_gallery_script();

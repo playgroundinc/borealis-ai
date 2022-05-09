@@ -1230,6 +1230,23 @@ ol.footnotes li small{
     top: 32px;
   }
 }
+.fade-in {
+    transition: opacity 1s ease-in-out;
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    -ms-animation: fadeIn 1s; }
+@-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0; }
+    100% {
+      opacity: 1; } }
+@keyframes fadeIn {
+    0% {
+      opacity: 0; }
+    100% {
+      opacity: 1; } }
 .component-dark, .component-dark + .component-dark{
   margin-top: 0px;
 }
@@ -2610,7 +2627,8 @@ ol.footnotes li small{
 
 @media (prefers-reduced-motion) {
   .underline-cta::before,
-  .underline-cta:hover span {
+  .underline-cta:hover span,
+  .fade-in {
     transition: none;
     transform: none; } }
 
@@ -3234,9 +3252,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:h-14{
     height: 2.9vw;
-  }
-    .md\:min-h-\[280px\]{
-    min-height: 280px;
   }
     .md\:min-h-\[800px\]{
     min-height: 800px;
