@@ -116,7 +116,7 @@
         <?php } ?>
         <!-- Skip to Content link -->
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'pg-wp-starter'); ?></a>
-        <header id="masthead" class="<?php echo (is_home() || is_front_page()) ? '' : 'nav-height-resize' ?> <?php echo $no_header ? esc_attr($header_height) : esc_attr('bg-cover bg-bottom flex flex-col justify-end') ?> <?php is_page('blog') && 'special_lisa_class' ?>" style="background-image: url(<?php echo $no_header ? '' : esc_attr($hero_image) ?> )">
+        <header id="masthead" class="<?php echo (is_home() || is_front_page()) ? '' : 'nav-height-resize fade-in' ?> <?php echo $no_header ? esc_attr($header_height) : esc_attr('bg-cover bg-bottom flex flex-col justify-end') ?> <?php is_page('blog') && 'special_lisa_class' ?>" style="background-image: url(<?php echo $no_header ? '' : esc_attr($hero_image) ?> )">
             <nav id="main-navigation" class="fixed z-50 left-0 right-0 top-2 transition-top duration-700">
                 <div class="<?php echo ($has_subnav) ? 'rounded-b-large md:rounded-b-none rounded-t-large' : 'rounded-large'; ?> relative mt-4 py-4 md:py-0.8vw nav-container drop-shadow-nav <?php echo (is_home() || is_front_page()) ? 'bg-transparent transition-background-color duration-700' : 'bg-primary-navy-400'; ?>">
                     <div class="flex md:flex-row flex-col items-center px-4 md:px-5 lg:px-0 lg:container">

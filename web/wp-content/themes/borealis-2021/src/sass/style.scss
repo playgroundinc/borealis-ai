@@ -188,6 +188,24 @@
     @apply opacity-0 relative motion-safe:top-8 transition-animate duration-700;
   }
 
+  .fade-in {
+    transition: opacity 1s ease-in-out;
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    -ms-animation: fadeIn 1s;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   .component-dark,
   .component-dark + .component-dark {
     @apply mt-0;
@@ -330,7 +348,8 @@
 
 @media (prefers-reduced-motion) {
   .underline-cta::before,
-  .underline-cta:hover span {
+  .underline-cta:hover span,
+  .fade-in {
     -webkit-transition: none;
     transition: none;
     transform: none;
