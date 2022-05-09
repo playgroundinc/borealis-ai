@@ -2644,6 +2644,9 @@ legend {
   text-align: left !important;
   background-color: #000f78; }
 
+.paragraph-blog {
+  margin-top: 30px; }
+
 .wp-block-table {
   margin-top: 64px;
   padding-bottom: 32px; }
@@ -3165,9 +3168,6 @@ mjx-container::-webkit-scrollbar-thumb,
   }
     .md\:mt-24{
     margin-top: 96px;
-  }
-    .md\:mt-15{
-    margin-top: 60px;
   }
     .md\:mt-13{
     margin-top: 52px;
