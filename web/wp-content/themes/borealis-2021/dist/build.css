@@ -2474,6 +2474,9 @@ ol.footnotes li small{
 .duration-500{
   transition-duration: 500ms;
 }
+.duration-1000{
+  transition-duration: 1000ms;
+}
 .ease-in-out{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -2664,6 +2667,15 @@ legend {
 
 .paragraph-blog {
   margin-top: 30px; }
+
+.location-hover {
+  border-radius: 50%;
+  padding: 10px;
+  margin-left: -10px;
+  transition: 1s background ease-in-out; }
+
+.location-hover:hover {
+  background-color: rgba(255, 255, 255, 0.24); }
 
 .wp-block-table {
   margin-top: 64px;
