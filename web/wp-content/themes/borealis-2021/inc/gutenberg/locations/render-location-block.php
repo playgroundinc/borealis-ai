@@ -56,7 +56,7 @@ if (!function_exists('pg_render_locations_block')) {
                     </p>
                     <div class="text-primary-electric-blue-400 h3 flex justify-start mt-6 md:mt-8">
                         <?php if (!empty($block['innerBlocks'])) : ?>
-                            <button aria-label="Open fullscreen image modal" type="button" id="open-img" class="mr-10 relative z-10">
+                            <button aria-label="Open fullscreen image modal" type="button" id="open-img" class="mr-10 relative z-10 location-hover">
                                 <?php echo pg_render_icon('eye-btn'); ?>
                             </button>
                         <?php endif; ?>
@@ -78,7 +78,7 @@ if (!function_exists('pg_render_locations_block')) {
                     </div>
                 <?php endif; ?>
                 <?php if (!empty($block['innerBlocks'])) : ?>
-                    <div aria-hidden="true" aria-modal="true" id="img-modal" class="px-6 w-full h-full fixed m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out delay-150 -z-10">
+                    <div aria-hidden="true" aria-modal="true" id="img-modal" class="px-6 w-full h-full fixed m-auto right-0 left-0 top-0 bottom-0 bg-shade-black-400 opacity-0 transition ease-in-out duration-1000 -z-10">
                         <div id="image-slideshow" class="grid-container w-full relative mt-26">
                             <?php foreach ($block['innerBlocks'] as $key => $inner_block) : ?>
                                 <div id="image<?php echo $key + 1 ?>" class="image-slideshow opacity-0">

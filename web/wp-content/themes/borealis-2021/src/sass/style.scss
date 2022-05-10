@@ -397,6 +397,17 @@ legend {
   margin-top: 30px;
 }
 
+.location-hover {
+  border-radius: 50%;
+  padding: 10px;
+  margin-left: -10px;
+  transition: 1s background ease-in-out;
+}
+
+.location-hover:hover {
+  background-color: rgba(255, 255, 255, 0.24);
+}
+
 @import "./wp-blocks/tables";
 @import "./wp-blocks/mathjax";
 @import "./wp-blocks/video";

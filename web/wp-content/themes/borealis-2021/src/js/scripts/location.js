@@ -46,7 +46,7 @@ function locationModal(locationContainer) {
     };
 
     const closeModal = (el, target) => {
-        classToggle(el, ["opacity-1", "z-20"], ["opacity-0", "-z-10"]);
+        classToggle(el, ["opacity-1", "z-20"], ["opacity-0"]);
         nav.classList.remove("opacity-0");
         target !== null && classToggle(target, ["z-30"], ["z-10"]);
     };
